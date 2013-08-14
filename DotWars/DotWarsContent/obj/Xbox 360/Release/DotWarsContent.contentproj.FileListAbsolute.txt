@@ -1,0 +1,2 @@
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWarsContent\obj\Xbox 360\Release\ResolveAssemblyReference.cache
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWarsContent\obj\Xbox 360\Release\Audio\GameAudio.xml

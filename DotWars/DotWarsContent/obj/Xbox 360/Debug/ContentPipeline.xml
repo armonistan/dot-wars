@@ -1664,7 +1664,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\CommanderCards.xnb</Output>
-      <Time>2013-08-14T16:19:41.5308679-05:00</Time>
+      <Time>2013-08-14T16:50:10.5794835-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Menu\GameScreen.png</Source>
@@ -1700,7 +1700,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\teamCards.xnb</Output>
-      <Time>2013-08-14T16:15:12.7844965-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Menu\TeamScreen.png</Source>
@@ -1709,7 +1709,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\TeamScreen.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Menu\controllerCards.png</Source>
@@ -1718,7 +1718,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\controllerCards.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Relic\meteorAnimated2.png</Source>
@@ -1727,7 +1727,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Relic\meteorAnimated2.xnb</Output>
-      <Time>2013-07-30T20:34:58-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Relic\pulse.png</Source>
@@ -1736,7 +1736,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Relic\pulse.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Relic\relicBackground.png</Source>
@@ -1745,7 +1745,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Relic\relicBackground.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Relic\relicBlockers.png</Source>
@@ -1754,7 +1754,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Relic\relicBlockers.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Faercrag\faercragBackground.png</Source>
@@ -1763,7 +1763,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercragBackground.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Faercrag\faercragBlockers.png</Source>
@@ -1772,7 +1772,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercragBlockers.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Faercrag\faercragImpassable.png</Source>
@@ -1781,7 +1781,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercragImpassable.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Archipelago\whirlpool1.png</Source>
@@ -1790,7 +1790,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\whirlpool1.xnb</Output>
-      <Time>2013-07-30T20:45:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Archipelago\whirlpool2.png</Source>
@@ -1799,7 +1799,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\whirlpool2.xnb</Output>
-      <Time>2013-07-30T20:48:14-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Archipelago\whirlpool3.png</Source>
@@ -1808,7 +1808,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\whirlpool3.xnb</Output>
-      <Time>2013-07-30T20:48:32-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Archipelago\whirlpool4.png</Source>
@@ -1817,7 +1817,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\whirlpool4.xnb</Output>
-      <Time>2013-07-30T20:48:42-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Archipelago\whirlpool5.png</Source>
@@ -1826,7 +1826,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\whirlpool5.xnb</Output>
-      <Time>2013-07-30T20:48:50-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Archipelago\whirlpool0.png</Source>
@@ -1835,7 +1835,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\whirlpool0.xnb</Output>
-      <Time>2013-07-30T21:15:06-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\ZenGarden\zenBackground.png</Source>
@@ -1844,7 +1844,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ZenGarden\zenBackground.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\ZenGarden\zenBlockers.png</Source>
@@ -1853,7 +1853,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ZenGarden\zenBlockers.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\ZenGarden\zenForeground.png</Source>
@@ -1862,7 +1862,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ZenGarden\zenForeground.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Switch\switchBackground.png</Source>
@@ -1871,7 +1871,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\switchBackground.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Switch\switchBlockers.png</Source>
@@ -1880,7 +1880,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\switchBlockers.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Switch\switchForeground.png</Source>
@@ -1889,7 +1889,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\switchForeground.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Switch\switchCrane.png</Source>
@@ -1898,7 +1898,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\switchCrane.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Plaza\plazaBackground.png</Source>
@@ -1907,7 +1907,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaBackground.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Plaza\plazaBlockers.png</Source>
@@ -1916,7 +1916,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaBlockers.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Plaza\plazaLighting.png</Source>
@@ -1925,7 +1925,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaLighting.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Plaza\light.png</Source>
@@ -1934,7 +1934,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\light.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Menu\menuBackground.png</Source>
@@ -1943,7 +1943,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\menuBackground.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Menu\backButton.png</Source>
@@ -1952,7 +1952,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\backButton.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Menu\startButton.png</Source>
@@ -1961,7 +1961,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\startButton.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\HUD\2playerSplit.png</Source>
@@ -1970,7 +1970,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\2playerSplit.xnb</Output>
-      <Time>2013-07-02T16:33:06-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\HUD\4playerSplit.png</Source>
@@ -1979,7 +1979,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\4playerSplit.xnb</Output>
-      <Time>2013-07-02T16:33:06-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Fonts\text.bmp</Source>
@@ -1988,7 +1988,7 @@
       <Processor>FontTextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Fonts\text.xnb</Output>
-      <Time>2013-08-06T21:53:04-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\HUD\pauseOverlay.png</Source>
@@ -1997,7 +1997,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\pauseOverlay.xnb</Output>
-      <Time>2013-07-02T16:33:06-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\HUD\hud_teammates.png</Source>
@@ -2006,7 +2006,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_teammates.xnb</Output>
-      <Time>2013-07-02T16:33:06-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\ResultsScreen\winnersBackground.png</Source>
@@ -2015,7 +2015,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ResultsScreen\winnersBackground.xnb</Output>
-      <Time>2013-07-30T21:36:58-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\ResultsScreen\resultsBackground.png</Source>
@@ -2024,7 +2024,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ResultsScreen\resultsBackground.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Menu\mapGametypeCard.png</Source>
@@ -2033,7 +2033,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\mapGametypeCard.xnb</Output>
-      <Time>2013-08-14T16:17:57.1328966-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\HUD\hud_score_frame.png</Source>
@@ -2042,7 +2042,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_score_frame.xnb</Output>
-      <Time>2013-08-14T16:05:13.8562397-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\HUD\hud_time_frame.png</Source>
@@ -2051,7 +2051,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_time_frame.xnb</Output>
-      <Time>2013-08-14T16:05:36.5225362-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\PreGame\splashTemplate.png</Source>
@@ -2060,7 +2060,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\splashTemplate.xnb</Output>
-      <Time>2013-07-23T18:19:38-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\PreGame\commanders.png</Source>
@@ -2069,7 +2069,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\commanders.xnb</Output>
-      <Time>2013-07-23T18:19:38-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\PreGame\profileBombardier.png</Source>
@@ -2078,7 +2078,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileBombardier.xnb</Output>
-      <Time>2013-08-02T14:43:38-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\PreGame\profileGunner.png</Source>
@@ -2087,7 +2087,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileGunner.xnb</Output>
-      <Time>2013-08-02T14:43:38-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\PreGame\profileJuggernaut.png</Source>
@@ -2096,7 +2096,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileJuggernaut.xnb</Output>
-      <Time>2013-08-02T14:43:38-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\PreGame\profileMedic.png</Source>
@@ -2105,7 +2105,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileMedic.xnb</Output>
-      <Time>2013-08-02T14:43:38-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\PreGame\profileSniper.png</Source>
@@ -2114,7 +2114,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileSniper.xnb</Output>
-      <Time>2013-08-02T14:43:38-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\PreGame\profileSpecialist.png</Source>
@@ -2123,7 +2123,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileSpecialist.xnb</Output>
-      <Time>2013-08-02T14:43:38-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\LogoScreen\controllerSplash.png</Source>
@@ -2132,7 +2132,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\LogoScreen\controllerSplash.xnb</Output>
-      <Time>2013-08-04T18:09:36-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\HUD\bar_damage.png</Source>
@@ -2141,7 +2141,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\bar_damage.xnb</Output>
-      <Time>2013-08-12T19:07:42-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\LogoScreen\splashLogoCombined.png</Source>
@@ -2150,7 +2150,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\LogoScreen\splashLogoCombined.xnb</Output>
-      <Time>2013-08-14T15:09:25.1297035-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Menu\triggersOnly.png</Source>
@@ -2159,7 +2159,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\triggersOnly.xnb</Output>
-      <Time>2013-08-14T15:50:13.7287554-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Menu\triggers.png</Source>
@@ -2168,7 +2168,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\triggers.xnb</Output>
-      <Time>2013-08-14T15:50:13.7327556-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Fonts\bigtext.bmp</Source>
@@ -2177,7 +2177,7 @@
       <Processor>FontTextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Fonts\bigtext.xnb</Output>
-      <Time>2013-08-14T15:51:20.42157-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\PreGame\profileGrunt.png</Source>
@@ -2186,7 +2186,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileGrunt.xnb</Output>
-      <Time>2013-08-14T15:53:42.7077083-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\explosion.wav</Source>
@@ -2195,7 +2195,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\explosion.xnb</Output>
-      <Time>2013-07-02T16:33:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\fireballSound.wav</Source>
@@ -2204,7 +2204,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\fireballSound.xnb</Output>
-      <Time>2013-07-02T16:33:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\flareShoot.wav</Source>
@@ -2213,7 +2213,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\flareShoot.xnb</Output>
-      <Time>2013-07-02T16:33:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\grenadeShoot.wav</Source>
@@ -2222,7 +2222,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\grenadeShoot.xnb</Output>
-      <Time>2013-07-02T16:33:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\healShoot.wav</Source>
@@ -2231,7 +2231,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\healShoot.xnb</Output>
-      <Time>2013-07-02T16:33:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\machineShoot.wav</Source>
@@ -2240,7 +2240,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\machineShoot.xnb</Output>
-      <Time>2013-07-02T16:33:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\planeFly.wav</Source>
@@ -2249,7 +2249,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\planeFly.xnb</Output>
-      <Time>2013-07-02T16:33:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\rocketShoot.wav</Source>
@@ -2258,7 +2258,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\rocketShoot.xnb</Output>
-      <Time>2013-07-02T16:33:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\rockSound.wav</Source>
@@ -2267,7 +2267,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\rockSound.xnb</Output>
-      <Time>2013-07-02T16:33:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\shotgunShoot.wav</Source>
@@ -2276,7 +2276,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\shotgunShoot.xnb</Output>
-      <Time>2013-07-02T16:33:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\sniperShoot.wav</Source>
@@ -2285,7 +2285,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\sniperShoot.xnb</Output>
-      <Time>2013-07-02T16:33:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\sparkSound.wav</Source>
@@ -2294,7 +2294,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\sparkSound.xnb</Output>
-      <Time>2013-07-02T16:33:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\standardShoot.wav</Source>
@@ -2303,7 +2303,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\standardShoot.xnb</Output>
-      <Time>2013-07-02T16:33:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\staticCall.wav</Source>
@@ -2312,7 +2312,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\staticCall.xnb</Output>
-      <Time>2013-07-02T16:33:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\waterSound.wav</Source>
@@ -2321,7 +2321,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\waterSound.xnb</Output>
-      <Time>2013-07-02T16:33:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\part1.wav</Source>
@@ -2330,7 +2330,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\part1.xnb</Output>
-      <Time>2013-07-02T16:33:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\part2.wav</Source>
@@ -2339,7 +2339,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\part2.xnb</Output>
-      <Time>2013-07-02T16:33:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\part3.wav</Source>
@@ -2348,7 +2348,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\part3.xnb</Output>
-      <Time>2013-07-02T16:33:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\testMusic.wav</Source>
@@ -2357,7 +2357,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\testMusic.xnb</Output>
-      <Time>2013-07-02T16:33:00-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\confirm.wav</Source>
@@ -2366,7 +2366,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\confirm.xnb</Output>
-      <Time>2013-08-05T18:53:30-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\return.wav</Source>
@@ -2375,7 +2375,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\return.xnb</Output>
-      <Time>2013-08-05T19:36:16-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\menu\back_style_2_002.wav</Source>
@@ -2384,7 +2384,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\menu\back_style_2_002.xnb</Output>
-      <Time>2013-08-10T15:29:26-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\menu\confirm_style_2_002.wav</Source>
@@ -2393,9 +2393,9 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\menu\confirm_style_2_002.xnb</Output>
-      <Time>2013-08-10T15:29:26-05:00</Time>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
-    <BuildSuccessful>true</BuildSuccessful>
+    <BuildSuccessful>false</BuildSuccessful>
     <Settings>
       <TargetPlatform>Xbox360</TargetPlatform>
       <TargetProfile>HiDef</TargetProfile>

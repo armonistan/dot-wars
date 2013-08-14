@@ -29,4 +29,3 @@ C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\dotWars\DotWars\DotWarsConte
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWarsContent\obj\Xbox 360\Debug\Audio\GameAudio.xml
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWarsContent\obj\Xbox 360\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
 C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWarsContent\obj\Xbox 360\Debug\ResolveAssemblyReference.cache
-C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWarsContent\obj\Xbox 360\Debug\Audio\GameAudio.xml
