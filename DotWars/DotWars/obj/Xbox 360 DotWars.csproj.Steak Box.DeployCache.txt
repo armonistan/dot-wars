@@ -1,0 +1,565 @@
+802ce290fff24919857f7ef41c75689b
+0
+Steak Box
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\
+130172850980000000
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\GameThumbnail.png
+2013-07-02T21:32:33.2138944Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\DotWars.exe
+2013-07-03T00:21:03.0611446Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\DotWars.exe.orig
+2013-07-02T21:32:35.2520109Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\DotWars.pdb.orig
+2013-07-02T21:32:35.2910132Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\GameAudio.xgs
+2013-07-03T00:21:00.2599843Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Sound Bank.xsb
+2013-07-03T00:21:00.3939920Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Wave Bank.xwb
+2013-07-03T00:21:00.3929919Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\explosion.xnb
+2013-07-03T00:20:41.4419080Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\fireballSound.xnb
+2013-07-03T00:20:41.5429138Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\flareShoot.xnb
+2013-07-03T00:20:41.6659208Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\grenadeShoot.xnb
+2013-07-03T00:20:41.6909222Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\healShoot.xnb
+2013-07-03T00:20:41.6989227Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\machineShoot.xnb
+2013-07-03T00:20:41.7299245Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\part1.xnb
+2013-07-03T00:20:45.4031346Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\part2.xnb
+2013-07-03T00:20:48.2592979Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\part3.xnb
+2013-07-03T00:20:51.1644641Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\planeFly.xnb
+2013-07-03T00:20:41.8609320Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\rocketShoot.xnb
+2013-07-03T00:20:41.9249356Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\rockSound.xnb
+2013-07-03T00:20:41.9889393Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\shotgunShoot.xnb
+2013-07-03T00:20:42.0249414Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\sniperShoot.xnb
+2013-07-03T00:20:42.1229470Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\sparkSound.xnb
+2013-07-03T00:20:42.3769615Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\standardShoot.xnb
+2013-07-03T00:20:42.4789673Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\staticCall.xnb
+2013-07-03T00:20:42.9769958Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\testMusic.xnb
+2013-07-03T00:20:59.9959692Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\waterSound.xnb
+2013-07-03T00:20:43.4920253Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Fonts\bigtext.xnb
+2013-07-03T00:20:37.1246611Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Fonts\text.xnb
+2013-07-03T00:20:37.4936822Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\bases.xnb
+2013-07-03T00:18:59.2570634Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\flash.xnb
+2013-07-03T00:18:59.3900710Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\health_station.xnb
+2013-07-03T00:18:59.5740815Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\press_start.xnb
+2013-07-03T00:18:59.7140895Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\square.xnb
+2013-07-03T00:19:18.1271427Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_blue_ripple.xnb
+2013-07-03T00:19:33.4060166Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_blue_splash.xnb
+2013-07-03T00:19:33.5580253Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_blue_spread.xnb
+2013-07-03T00:19:33.9840496Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_blue_spread2.xnb
+2013-07-03T00:19:38.1702891Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_green.xnb
+2013-07-03T00:19:33.1970046Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_red.xnb
+2013-07-03T00:19:32.9929930Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\yellow_test.xnb
+2013-07-03T00:19:34.2090625Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\archipelago_background.xnb
+2013-07-03T00:19:12.8038382Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\archipelago_solid.xnb
+2013-07-03T00:19:14.2519210Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\archipelago_trees.xnb
+2013-07-03T00:19:31.9479332Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\whirlpool0.xnb
+2013-07-03T00:20:12.5742569Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\whirlpool1.xnb
+2013-07-03T00:20:11.7482096Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\whirlpool2.xnb
+2013-07-03T00:20:11.9372204Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\whirlpool3.xnb
+2013-07-03T00:20:12.0762284Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\whirlpool4.xnb
+2013-07-03T00:20:12.2042357Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\whirlpool5.xnb
+2013-07-03T00:20:12.3262427Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Caged\caged.xnb
+2013-07-02T21:32:34.3969620Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Caged\cagedBackground.xnb
+2013-07-03T00:19:42.9815643Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Caged\cagedBlockers.xnb
+2013-07-03T00:19:43.8606145Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Caged\cagedBridges.xnb
+2013-07-02T21:32:34.4349642Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Caged\cagedImpassable.xnb
+2013-07-03T00:19:45.6127148Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Caged\caged_impassable.xnb
+2013-07-02T21:32:34.4359643Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Caged\caged_obstacle.xnb
+2013-07-02T21:32:34.4369643Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Caged\caged_walkable.xnb
+2013-07-02T21:32:34.4409646Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Caged\lava.xnb
+2013-07-03T00:19:44.8416707Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercragBackground.xnb
+2013-07-03T00:20:08.2110073Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercragBlockers.xnb
+2013-07-03T00:20:09.8911034Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercragImpassable.xnb
+2013-07-03T00:20:11.5431979Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercrag_obstacles_big.xnb
+2013-07-02T21:32:34.4719663Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercrag_walkable_big.xnb
+2013-07-02T21:32:34.4979678Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Glade\gladeBackground.xnb
+2013-07-03T00:19:41.6294869Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Glade\gladeBarriersagain.xnb
+2013-07-02T21:32:34.5019680Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Glade\gladeBkg.xnb
+2013-07-02T21:32:34.5059683Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Glade\gladeBlockers.xnb
+2013-07-03T00:19:40.1894046Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\LogoScreen\splashLogoCombined.xnb
+2013-07-03T00:20:39.3407878Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\backButton.xnb
+2013-07-03T00:20:32.6944077Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\CommanderCards.xnb
+2013-07-03T00:19:52.2250930Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\controllerCards.xnb
+2013-07-03T00:19:58.2184358Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\GameScreen.xnb
+2013-07-03T00:19:53.4311619Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\GametypeCards.xnb
+2013-07-03T00:19:54.5142239Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\LogoScreen.xnb
+2013-07-03T00:19:48.1028572Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\MapCards.xnb
+2013-07-03T00:19:55.8513004Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\mapGametypeCard.xnb
+2013-07-03T00:20:41.3509028Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\menuBackground.xnb
+2013-07-03T00:20:31.6823498Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\PlayerScreen.xnb
+2013-07-03T00:19:46.7957824Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\startButton.xnb
+2013-07-03T00:20:33.9004767Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\teamCards.xnb
+2013-07-03T00:19:56.7223502Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\TeamScreen.xnb
+2013-07-03T00:19:57.8984175Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\testBack.xnb
+2013-07-03T00:19:49.9969655Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\bridges.xnb
+2013-07-03T00:19:23.5284516Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\bridgesDown.xnb
+2013-07-03T00:19:28.6177427Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\bridgesUp.xnb
+2013-07-03T00:19:29.7068050Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\bubbles.xnb
+2013-07-03T00:19:34.9041023Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\fort.xnb
+2013-07-03T00:19:37.7002622Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\lilypadA.xnb
+2013-07-03T00:19:23.6674596Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\lilypadB.xnb
+2013-07-03T00:19:23.7974670Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\lilypadC.xnb
+2013-07-03T00:19:23.9654766Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\lilypadD.xnb
+2013-07-03T00:19:24.1194854Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\lilypadE.xnb
+2013-07-03T00:19:24.2824947Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\mireBkg.xnb
+2013-07-03T00:19:26.3306119Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\mireSolid.xnb
+2013-07-03T00:19:27.5296805Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\waterBlocker.xnb
+2013-07-03T00:19:36.7142058Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\192and608_animated.xnb
+2013-07-02T21:32:34.6249751Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\light.xnb
+2013-07-03T00:20:29.7782409Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaBackground.xnb
+2013-07-03T00:20:25.8000133Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaBkgBot.xnb
+2013-07-02T21:32:34.6679775Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaBkgBot1.xnb
+2013-07-02T21:32:34.6679775Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaBkgBot2.xnb
+2013-07-02T21:32:34.6689776Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaBkgBot3.xnb
+2013-07-02T21:32:34.6739779Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaBlockers.xnb
+2013-07-03T00:20:27.5131113Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaLighting.xnb
+2013-07-03T00:20:29.3502164Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaSolid.xnb
+2013-07-02T21:32:34.6779781Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Relic\meteorAnimated2.xnb
+2013-07-03T00:19:59.1364883Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Relic\pulse.xnb
+2013-07-03T00:20:02.7996978Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Relic\relicBackground.xnb
+2013-07-03T00:20:04.5007951Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Relic\relicBlockers.xnb
+2013-07-03T00:20:05.8348714Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ResultsScreen\resultsBackground.xnb
+2013-07-03T00:20:41.0138835Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ResultsScreen\winnersBackground.xnb
+2013-07-03T00:20:39.8698181Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\BL.xnb
+2013-07-03T00:19:34.3990734Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\BLr.xnb
+2013-07-03T00:19:38.3653002Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\BR.xnb
+2013-07-03T00:19:34.6230862Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\BRr.xnb
+2013-07-03T00:19:38.5663117Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\BT.xnb
+2013-07-03T00:19:34.7860955Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\BTr.xnb
+2013-07-03T00:19:38.7063197Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\DBr.xnb
+2013-07-03T00:19:38.8693291Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\diagonalBelt.xnb
+2013-07-02T21:32:34.7329813Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect1.xnb
+2013-07-03T00:19:14.3859287Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect10.xnb
+2013-07-03T00:19:14.5199364Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect11.xnb
+2013-07-03T00:19:14.6819456Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect12.xnb
+2013-07-03T00:19:14.8419548Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect2.xnb
+2013-07-03T00:19:15.0249652Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect3.xnb
+2013-07-03T00:19:15.1989752Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect4.xnb
+2013-07-03T00:19:15.3679849Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect5.xnb
+2013-07-03T00:19:15.5129932Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect6.xnb
+2013-07-03T00:19:15.6660019Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect7.xnb
+2013-07-03T00:19:15.8230109Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect8.xnb
+2013-07-03T00:19:16.0040212Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect9.xnb
+2013-07-03T00:19:16.1660305Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\electricity.xnb
+2013-07-03T00:19:17.0520812Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\fanLeft.xnb
+2013-07-03T00:19:38.9923361Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\gustLeft.xnb
+2013-07-03T00:19:39.1693462Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\horizontalBelt.xnb
+2013-07-02T21:32:34.7399817Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\switchBackground.xnb
+2013-07-03T00:20:20.8117280Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\switchBlockers.xnb
+2013-07-03T00:20:21.9307920Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\switchBox.xnb
+2013-07-03T00:18:59.8190955Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\switchCrane.xnb
+2013-07-03T00:20:23.2358667Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\switchForeground.xnb
+2013-07-03T00:20:23.0208544Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\verticalBelt.xnb
+2013-07-02T21:32:34.7749837Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ZenGarden\zenBackground.xnb
+2013-07-03T00:20:15.6424324Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ZenGarden\zenBkg.xnb
+2013-07-02T21:32:34.7869843Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ZenGarden\zenBlockers.xnb
+2013-07-03T00:20:17.4935382Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ZenGarden\zenForeground.xnb
+2013-07-03T00:20:19.2776403Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\bombardier_blue.xnb
+2013-07-03T00:19:00.0741101Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\bomber_blue.xnb
+2013-07-03T00:18:59.9571034Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\commander_blue.xnb
+2013-07-03T00:19:00.2241187Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\grunt_blue.xnb
+2013-07-03T00:19:00.3491258Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\gunner_blue.xnb
+2013-07-03T00:19:00.4821334Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\juggernaut_blue.xnb
+2013-07-03T00:19:00.6111408Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\medic_blue.xnb
+2013-07-03T00:19:00.7601493Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\sniper_blue.xnb
+2013-07-03T00:19:00.8911568Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\specialist_blue.xnb
+2013-07-03T00:19:01.0081635Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\bombardier_green.xnb
+2013-07-03T00:19:01.2791790Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\bomber_green.xnb
+2013-07-03T00:19:01.1721729Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\commander_green.xnb
+2013-07-03T00:19:01.3891853Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\grunt_green.xnb
+2013-07-03T00:19:01.4991916Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\gunner_green.xnb
+2013-07-03T00:19:01.6101980Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\juggernaut_green.xnb
+2013-07-03T00:19:01.7172041Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\medic_green.xnb
+2013-07-03T00:19:01.8632124Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\sniper_green.xnb
+2013-07-03T00:19:02.0022204Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\specialist_green.xnb
+2013-07-03T00:19:02.1302277Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Grey\grey_claimable.xnb
+2013-07-03T00:19:02.2652354Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Grey\grey_suicide.xnb
+2013-07-03T00:19:02.4092437Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\bombardier_red.xnb
+2013-07-03T00:19:02.6822593Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\bomber_red.xnb
+2013-07-03T00:19:02.5542520Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\commander_red.xnb
+2013-07-03T00:19:02.7942657Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\grunt_red.xnb
+2013-07-03T00:19:02.8982716Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\gunner_red.xnb
+2013-07-03T00:19:03.0052778Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\juggernaut_red.xnb
+2013-07-03T00:19:03.1222844Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\medic_red.xnb
+2013-07-03T00:19:03.2522919Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\sniper_red.xnb
+2013-07-03T00:19:03.3902998Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\specialist_red.xnb
+2013-07-03T00:19:03.5313078Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\bombardier_yellow.xnb
+2013-07-03T00:19:03.8463259Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\bomber_yellow.xnb
+2013-07-03T00:19:03.7063178Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\commander_yellow.xnb
+2013-07-03T00:19:03.9943343Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\grunt_yellow.xnb
+2013-07-03T00:19:04.1203415Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\gunner_yellow.xnb
+2013-07-03T00:19:04.2603495Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\juggernaut_yellow.xnb
+2013-07-03T00:19:04.4023577Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\medic_yellow.xnb
+2013-07-03T00:19:04.5463659Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\sniper_yellow.xnb
+2013-07-03T00:19:04.6693729Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\specialist_yellow.xnb
+2013-07-03T00:19:04.7983803Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\explodeBottom.xnb
+2013-07-03T00:19:29.8638140Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\explodeTop.xnb
+2013-07-03T00:19:30.0378239Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\flash.xnb
+2013-07-03T00:19:04.9453887Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\floating_health.xnb
+2013-07-03T00:19:05.0563951Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\grass_test.xnb
+2013-07-03T00:19:05.1914028Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\indicator_bluecom.xnb
+2013-07-02T21:32:34.9419932Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\indicator_greencom.xnb
+2013-07-02T21:32:34.9419932Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\indicator_redcom.xnb
+2013-07-02T21:32:34.9429933Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\indicator_yellowcom.xnb
+2013-07-02T21:32:34.9429933Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_blood.xnb
+2013-07-02T21:32:34.9429933Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_blood_blue.xnb
+2013-07-03T00:19:21.9873635Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_blood_green.xnb
+2013-07-03T00:19:22.1613734Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_blood_red.xnb
+2013-07-03T00:19:22.4393893Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_blood_yellow.xnb
+2013-07-03T00:19:22.2853805Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_fire.xnb
+2013-07-03T00:19:05.2964088Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_heal.xnb
+2013-07-03T00:19:30.2168342Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_leaves.xnb
+2013-07-03T00:19:05.4144155Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_rock.xnb
+2013-07-03T00:19:05.5354225Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_smoke.xnb
+2013-07-03T00:19:05.6604296Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_water.xnb
+2013-07-03T00:19:05.8104382Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\PI_blueCommander.xnb
+2013-07-03T00:19:32.1829466Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\PI_greenCommander.xnb
+2013-07-03T00:19:32.3619569Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\PI_medic.xnb
+2013-07-03T00:19:05.9884484Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\PI_redCommander.xnb
+2013-07-03T00:19:32.5639684Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\PI_YellowCommander.xnb
+2013-07-03T00:19:32.7769806Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_blue.xnb
+2013-07-03T00:19:09.4526465Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_bullet.xnb
+2013-07-03T00:19:06.1064551Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_green.xnb
+2013-07-03T00:19:09.5826540Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_red.xnb
+2013-07-03T00:19:09.7176617Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_standard.xnb
+2013-07-03T00:19:06.2324623Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_standard2.xnb
+2013-07-03T00:19:06.3464689Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_yellow.xnb
+2013-07-03T00:19:09.8436689Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\spark_blue.xnb
+2013-07-03T00:19:09.9816768Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\spark_green.xnb
+2013-07-03T00:19:10.1196847Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\spark_red.xnb
+2013-07-03T00:19:10.2466919Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\spark_yellow.xnb
+2013-07-03T00:19:10.3706990Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadBombBlue.xnb
+2013-07-03T00:19:18.2781513Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadCommanderBlue.xnb
+2013-07-03T00:19:18.4261598Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadGruntBlue.xnb
+2013-07-03T00:19:18.5711681Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadGunnerBlue.xnb
+2013-07-03T00:19:18.7201766Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadJuggBlue.xnb
+2013-07-03T00:19:18.8751855Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadMedicBlue.xnb
+2013-07-03T00:19:19.0151935Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadSniperBlue.xnb
+2013-07-03T00:19:19.1432008Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadSpecialistBlue.xnb
+2013-07-03T00:19:19.2772085Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadBombGreen.xnb
+2013-07-03T00:19:19.4102161Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadCommanderGreen.xnb
+2013-07-03T00:19:19.5422236Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadGruntGreen.xnb
+2013-07-03T00:19:19.6822316Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadGunnerGreen.xnb
+2013-07-03T00:19:19.8272399Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadJuggGreen.xnb
+2013-07-03T00:19:19.9682480Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadMedicGreen.xnb
+2013-07-03T00:19:20.1192566Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadSniperGreen.xnb
+2013-07-03T00:19:20.2662650Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadSpecialistGreen.xnb
+2013-07-03T00:19:20.4242741Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadBombRed.xnb
+2013-07-03T00:19:17.1960894Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadCommanderRed.xnb
+2013-07-03T00:19:20.5792829Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadGruntRed.xnb
+2013-07-03T00:19:17.3300971Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadGunnerRed.xnb
+2013-07-03T00:19:17.4661049Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadJuggRed.xnb
+2013-07-03T00:19:17.5991125Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadMedicRed.xnb
+2013-07-03T00:19:17.7351203Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadSniperRed.xnb
+2013-07-03T00:19:17.8551271Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadSpecialistRed.xnb
+2013-07-03T00:19:17.9891348Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadBombYellow.xnb
+2013-07-03T00:19:20.7352919Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadCommanderYellow.xnb
+2013-07-03T00:19:20.9023014Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadGruntYellow.xnb
+2013-07-03T00:19:21.0743112Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadGunnerYellow.xnb
+2013-07-03T00:19:21.2373206Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadJuggYellow.xnb
+2013-07-03T00:19:21.3653279Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadMedicYellow.xnb
+2013-07-03T00:19:21.5733398Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadSniperYellow.xnb
+2013-07-03T00:19:21.6873463Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadSpecialistYellow.xnb
+2013-07-03T00:19:21.8463554Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\2playerSplit.xnb
+2013-07-03T00:20:35.0335415Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\4playerSplit.xnb
+2013-07-03T00:20:36.1446050Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\bar_health.xnb
+2013-07-03T00:19:06.4464746Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\bar_special.xnb
+2013-07-03T00:19:06.5574809Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_background.xnb
+2013-07-03T00:19:06.7024892Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_blue.xnb
+2013-07-03T00:19:06.8634984Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_green.xnb
+2013-07-03T00:19:07.0255077Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_gun.xnb
+2013-07-03T00:19:07.1655157Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_red.xnb
+2013-07-03T00:19:07.3205246Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_teammates.xnb
+2013-07-03T00:20:38.1557200Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_toss.xnb
+2013-07-03T00:19:07.4515321Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_yellow.xnb
+2013-07-03T00:19:07.6105412Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\pauseOverlay.xnb
+2013-07-03T00:20:38.0337131Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\MapObjects\meteorAnimated.xnb
+2013-07-02T21:32:35.0129973Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\MapObjects\pulse.xnb
+2013-07-02T21:32:35.0229978Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Objectives\flag_blue.xnb
+2013-07-03T00:19:07.7595497Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Objectives\flag_green.xnb
+2013-07-03T00:19:07.8915572Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Objectives\flag_red.xnb
+2013-07-03T00:19:08.0115641Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Objectives\flag_yellow.xnb
+2013-07-03T00:19:08.1385714Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_bombs.xnb
+2013-07-03T00:19:08.2545780Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_rocket.xnb
+2013-07-03T00:19:08.3565838Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_shotgun.xnb
+2013-07-03T00:19:08.4815910Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_sniper.xnb
+2013-07-03T00:19:08.6145986Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_standard.xnb
+2013-07-03T00:19:08.7476062Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_blue.xnb
+2013-07-03T00:19:08.8706132Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_green.xnb
+2013-07-03T00:19:08.9886200Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_red.xnb
+2013-07-03T00:19:09.1016264Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_yellow.xnb
+2013-07-03T00:19:09.2166330Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\grenade.xnb
+2013-07-03T00:19:09.3246392Z

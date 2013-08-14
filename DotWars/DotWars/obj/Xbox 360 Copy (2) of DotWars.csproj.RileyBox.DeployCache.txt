@@ -1,0 +1,471 @@
+802ce290fff24919857f7ef41c75689b
+0
+RileyBox
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\
+129845251400000000
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\GameThumbnail.png
+2011-12-22T17:21:04.0000000Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\DotWars.exe
+2012-06-18T20:32:14.6031189Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\TestFont.xnb
+2012-06-18T20:32:13.9010787Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\bullet1.xnb
+2012-06-18T20:32:14.0850892Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Explosion1.xnb
+2012-06-18T20:32:14.1680940Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\bases.xnb
+2012-06-18T20:31:13.1049214Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\flash.xnb
+2012-06-18T20:31:13.1499240Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\health_station.xnb
+2012-06-18T20:31:13.2469295Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\press_start.xnb
+2012-06-18T20:31:13.2999325Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\square.xnb
+2012-06-18T20:31:40.6119382Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_blue_ripple.xnb
+2012-06-18T20:32:05.0673968Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_blue_splash.xnb
+2012-06-18T20:32:05.1133994Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_blue_spread.xnb
+2012-06-18T20:32:05.3154110Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_green.xnb
+2012-06-18T20:32:05.0103936Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_red.xnb
+2012-06-18T20:32:04.9603907Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\yellow_test.xnb
+2012-06-18T20:32:05.3384123Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\archipelago_background.xnb
+2012-06-18T20:31:30.1704101Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\archipelago_pool.xnb
+2012-06-18T20:31:47.4278796Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\archipelago_solid.xnb
+2012-06-18T20:31:31.2664728Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\archipelago_trees.xnb
+2012-06-18T20:31:48.5599443Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Caged\caged.xnb
+2012-06-18T20:31:33.5531811Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Caged\cagedBridges.xnb
+2012-06-18T20:31:42.6600510Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Caged\caged_impassable.xnb
+2012-06-18T20:32:04.3291563Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Caged\caged_obstacle.xnb
+2012-06-18T20:32:04.8823862Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Caged\caged_walkable.xnb
+2012-06-18T20:31:34.4462322Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\caged_impassable.xnb
+2012-06-18T20:32:03.2583150Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\caged_obstacle.xnb
+2012-06-18T20:32:03.8143468Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercragBase.xnb
+2012-06-18T20:31:50.4556346Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercragBase1.xnb
+2012-06-18T20:31:51.6257015Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercragBase2.xnb
+2012-06-18T20:31:52.7673616Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercragBase3.xnb
+2012-06-18T20:31:53.8904259Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercragTop.xnb
+2012-06-18T20:31:54.9982823Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercrag_impassable.xnb
+2012-06-18T20:31:56.1823500Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercrag_obstacles.xnb
+2012-06-18T20:31:35.6808976Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercrag_obstacles_big.xnb
+2012-04-16T03:31:00.0000000Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercrag_walkable.xnb
+2012-06-18T20:31:37.7090050Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercrag_walkable_big.xnb
+2012-04-16T03:31:06.0000000Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Glade\gladeBarriersagain.xnb
+2012-06-18T20:31:13.7779599Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Glade\gladeBkg.xnb
+2012-06-18T20:31:14.2949851Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\aButton.xnb
+2012-06-18T20:31:14.6925897Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\bButton.xnb
+2012-06-18T20:31:14.7105907Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\gametypeHighlight.xnb
+2012-06-18T20:31:14.7285918Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\levelHighlight.xnb
+2012-06-18T20:31:14.7605936Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\menuBackground.xnb
+2012-06-18T20:31:16.5366952Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\menuOutside.xnb
+2012-06-18T20:31:41.4229845Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\paneGameTypesProto.xnb
+2012-06-18T20:31:16.8309060Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\paneLevel.xnb
+2012-06-18T20:31:17.1229227Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\panePlayer.xnb
+2012-06-18T20:31:17.4169395Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\press_start.xnb
+2012-06-18T20:31:14.3417852Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\tdmInfographic.xnb
+2012-06-18T20:32:10.3600831Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\title_animation.xnb
+2012-06-18T20:31:14.6725886Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\bridges.xnb
+2012-06-18T20:31:43.3682768Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\bridgesDown.xnb
+2012-06-18T20:31:46.4428319Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\bridgesUp.xnb
+2012-06-18T20:31:47.1418632Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\bubbles.xnb
+2012-06-18T20:32:09.4698382Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\lilypadA.xnb
+2012-06-18T20:31:43.4012787Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\lilypadB.xnb
+2012-06-18T20:31:43.4182796Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\lilypadC.xnb
+2012-06-18T20:31:43.4362807Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\lilypadD.xnb
+2012-06-18T20:31:43.4562818Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\lilypadE.xnb
+2012-06-18T20:31:43.4722827Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\mireBkg.xnb
+2012-06-18T20:31:44.9237580Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\mireSolid.xnb
+2012-06-18T20:31:45.7698064Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\192and608_animated.xnb
+2012-06-18T20:31:17.4919438Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaBkg.xnb
+2012-06-18T20:31:20.3168855Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaBkgBot.xnb
+2012-06-18T20:31:58.2788622Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaBkgBot1.xnb
+2012-06-18T20:31:59.4319238Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaBkgBot2.xnb
+2012-06-18T20:32:00.5629798Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaBkgBot3.xnb
+2012-06-18T20:32:02.4796756Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaLighting.xnb
+2012-06-18T20:31:32.6611301Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaSolid.xnb
+2012-06-18T20:31:21.7081633Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\testlight.xnb
+2012-06-18T20:32:09.4488370Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Relic\meteorAnimated.xnb
+2012-06-18T20:32:10.9901191Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Relic\pulse.xnb
+2012-06-18T20:32:13.8200741Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Relic\relicBkg.xnb
+2012-06-18T20:31:23.2394448Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Relic\relicSolid.xnb
+2012-06-18T20:31:24.2665036Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\BL.xnb
+2012-06-18T20:32:09.0178124Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\BR.xnb
+2012-06-18T20:32:09.0768158Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\BT.xnb
+2012-06-18T20:32:09.1188182Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\crane.xnb
+2012-06-18T20:31:39.4342803Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\diagonalBelt.xnb
+2012-06-18T20:31:13.3659363Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect1.xnb
+2012-06-18T20:31:39.4654804Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect10.xnb
+2012-06-18T20:31:39.5060818Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect11.xnb
+2012-06-18T20:31:39.5370836Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect12.xnb
+2012-06-18T20:31:39.5700855Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect2.xnb
+2012-06-18T20:31:39.5990871Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect3.xnb
+2012-06-18T20:31:39.6320890Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect4.xnb
+2012-06-18T20:31:39.6610907Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect5.xnb
+2012-06-18T20:31:39.6900923Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect6.xnb
+2012-06-18T20:31:39.7130937Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect7.xnb
+2012-06-18T20:31:39.7570962Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect8.xnb
+2012-06-18T20:31:39.7960984Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect9.xnb
+2012-06-18T20:31:39.8241000Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\electricity.xnb
+2012-06-18T20:31:40.4321348Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\horizontalBelt.xnb
+2012-05-18T15:06:43.0000000Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\switchBkg.xnb
+2012-06-18T20:31:27.1678635Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\switchBox.xnb
+2012-06-18T20:31:13.3829373Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\switchSolid.xnb
+2012-06-18T20:31:28.0309128Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\verticalBelt.xnb
+2012-05-18T15:07:36.0000000Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ZenGarden\zenBase.xnb
+2012-06-18T20:32:07.6997413Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ZenGarden\zenBkg.xnb
+2012-05-18T15:07:22.0000000Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ZenGarden\zenLevel1.xnb
+2012-06-18T20:32:08.9658094Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ZenGarden\zenSolid.xnb
+2012-06-18T20:31:39.2938801Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\bombardier_blue.xnb
+2012-06-18T20:31:24.3295072Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\bomber_blue.xnb
+2012-06-18T20:31:24.2965053Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\commander_blue.xnb
+2012-06-18T20:31:24.3515084Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\grunt_blue.xnb
+2012-06-18T20:31:24.3705095Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\gunner_blue.xnb
+2012-06-18T20:31:24.3895106Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\juggernaut_blue.xnb
+2012-06-18T20:31:24.4085117Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\medic_blue.xnb
+2012-06-18T20:31:24.4265127Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\sniper_blue.xnb
+2012-06-18T20:31:24.4465139Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\specialist_blue.xnb
+2012-06-18T20:31:24.4645149Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\bombardier_green.xnb
+2012-06-18T20:31:24.5305187Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\bomber_green.xnb
+2012-06-18T20:31:24.4945166Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\commander_green.xnb
+2012-06-18T20:31:24.5525199Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\grunt_green.xnb
+2012-06-18T20:31:24.5725211Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\gunner_green.xnb
+2012-06-18T20:31:24.5915222Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\juggernaut_green.xnb
+2012-06-18T20:31:24.6115233Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\medic_green.xnb
+2012-06-18T20:31:24.6305244Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\sniper_green.xnb
+2012-06-18T20:31:24.6505255Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\specialist_green.xnb
+2012-06-18T20:31:24.6695266Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Grey\grey_claimable.xnb
+2012-06-18T20:31:24.6895278Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Grey\grey_suicide.xnb
+2012-06-18T20:31:24.7135291Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\bombardier_red.xnb
+2012-06-18T20:31:24.7775328Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\bomber_red.xnb
+2012-06-18T20:31:24.7575317Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\commander_red.xnb
+2012-06-18T20:31:24.8025342Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\grunt_red.xnb
+2012-06-18T20:31:24.8245355Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\gunner_red.xnb
+2012-06-18T20:31:24.8435366Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\juggernaut_red.xnb
+2012-06-18T20:31:24.8625377Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\medic_red.xnb
+2012-06-18T20:31:24.8825388Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\sniper_red.xnb
+2012-06-18T20:31:24.9015399Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\specialist_red.xnb
+2012-06-18T20:31:24.9225411Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\bombardier_yellow.xnb
+2012-06-18T20:31:24.9805444Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\bomber_yellow.xnb
+2012-06-18T20:31:24.9615433Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\commander_yellow.xnb
+2012-06-18T20:31:25.0035457Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\grunt_yellow.xnb
+2012-06-18T20:31:25.0225468Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\gunner_yellow.xnb
+2012-06-18T20:31:25.0415479Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\juggernaut_yellow.xnb
+2012-06-18T20:31:25.0595489Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\medic_yellow.xnb
+2012-06-18T20:31:25.0785500Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\sniper_yellow.xnb
+2012-06-18T20:31:25.0975511Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\specialist_yellow.xnb
+2012-06-18T20:31:25.1165522Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\explodeBottom.xnb
+2012-06-18T20:31:47.1838656Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\explodeTop.xnb
+2012-06-18T20:31:47.2428690Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\flash.xnb
+2012-06-18T20:31:25.1775557Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\floating_health.xnb
+2012-06-18T20:31:25.1995569Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\grass_test.xnb
+2012-06-18T20:31:25.2305587Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\indicator_bluecom.xnb
+2012-04-05T19:05:44.0000000Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\indicator_greencom.xnb
+2012-04-05T19:05:44.0000000Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\indicator_redcom.xnb
+2012-04-05T19:05:44.0000000Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\indicator_yellowcom.xnb
+2012-04-05T19:05:44.0000000Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_blood.xnb
+2012-02-12T01:52:50.0000000Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_blood_blue.xnb
+2012-06-18T20:31:42.1320208Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_blood_green.xnb
+2012-06-18T20:31:42.1500218Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_blood_red.xnb
+2012-06-18T20:31:42.1980245Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_blood_yellow.xnb
+2012-06-18T20:31:42.1820236Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_fire.xnb
+2012-06-18T20:31:25.2465596Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_heal.xnb
+2012-06-18T20:31:47.2778710Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_leaves.xnb
+2012-06-18T20:31:25.2635606Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_rock.xnb
+2012-06-18T20:31:25.2785615Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_smoke.xnb
+2012-06-18T20:31:25.2935623Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_water.xnb
+2012-06-18T20:31:25.3285643Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\PI_blueCommander.xnb
+2012-06-18T20:32:02.5456794Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\PI_greenCommander.xnb
+2012-06-18T20:32:02.6126832Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\PI_medic.xnb
+2012-06-18T20:31:25.3935680Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\PI_redCommander.xnb
+2012-06-18T20:32:02.6786870Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\PI_yellowCommander.xnb
+2012-06-18T20:32:02.7436907Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_blue.xnb
+2012-06-18T20:31:26.0716068Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_bullet.xnb
+2012-06-18T20:31:25.4095690Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_green.xnb
+2012-06-18T20:31:26.0876077Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_red.xnb
+2012-06-18T20:31:26.1026086Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_standard.xnb
+2012-06-18T20:31:25.4275700Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_standard2.xnb
+2012-06-18T20:31:25.4445710Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_yellow.xnb
+2012-06-18T20:31:26.1176094Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\spark_blue.xnb
+2012-06-18T20:31:26.1326103Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\spark_green.xnb
+2012-06-18T20:31:26.1626120Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\spark_red.xnb
+2012-06-18T20:31:26.1776129Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\spark_yellow.xnb
+2012-06-18T20:31:26.1926137Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadBombBlue.xnb
+2012-06-18T20:31:41.4479860Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadCommanderBlue.xnb
+2012-06-18T20:31:41.4839880Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadGruntBlue.xnb
+2012-06-18T20:31:41.5089895Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadGunnerBlue.xnb
+2012-06-18T20:31:41.5349909Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadJuggBlue.xnb
+2012-06-18T20:31:41.5739932Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadMedicBlue.xnb
+2012-06-18T20:31:41.5899941Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadSniperBlue.xnb
+2012-06-18T20:31:41.6211941Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadSpecialistBlue.xnb
+2012-06-18T20:31:41.6367942Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadBombGreen.xnb
+2012-06-18T20:31:41.6739946Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadCommanderGreen.xnb
+2012-06-18T20:31:41.7079965Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadGruntGreen.xnb
+2012-06-18T20:31:41.7349981Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadGunnerGreen.xnb
+2012-06-18T20:31:41.7609996Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadJuggGreen.xnb
+2012-06-18T20:31:41.7890012Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadMedicGreen.xnb
+2012-06-18T20:31:41.8150026Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadSniperGreen.xnb
+2012-06-18T20:31:41.8400041Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadSpecialistGreen.xnb
+2012-06-18T20:31:41.8640054Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadBombRed.xnb
+2012-06-18T20:31:40.4561362Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadCommanderRed.xnb
+2012-06-18T20:31:41.8970073Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadGruntRed.xnb
+2012-06-18T20:31:40.4731371Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadGunnerRed.xnb
+2012-06-18T20:31:40.4887372Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadJuggRed.xnb
+2012-06-18T20:31:40.5199372Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadMedicRed.xnb
+2012-06-18T20:31:40.5355372Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadSniperRed.xnb
+2012-06-18T20:31:40.5667373Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadSpecialistRed.xnb
+2012-06-18T20:31:40.5823373Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadBombYellow.xnb
+2012-06-18T20:31:41.9210087Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadCommanderYellow.xnb
+2012-06-18T20:31:41.9530105Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadGruntYellow.xnb
+2012-06-18T20:31:41.9890126Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadGunnerYellow.xnb
+2012-06-18T20:31:42.0140140Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadJuggYellow.xnb
+2012-06-18T20:31:42.0390155Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadMedicYellow.xnb
+2012-06-18T20:31:42.0640169Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadSniperYellow.xnb
+2012-06-18T20:31:42.0900184Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadSpecialistYellow.xnb
+2012-06-18T20:31:42.1160199Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\bar_health.xnb
+2012-06-18T20:31:25.4725726Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\bar_special.xnb
+2012-06-18T20:31:25.5025743Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_background.xnb
+2012-06-18T20:31:25.5435766Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_blue.xnb
+2012-06-18T20:31:25.5875791Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_green.xnb
+2012-06-18T20:31:25.6325817Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_gun.xnb
+2012-06-18T20:31:25.6555830Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_red.xnb
+2012-06-18T20:31:25.6985855Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_toss.xnb
+2012-06-18T20:31:25.7165865Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_yellow.xnb
+2012-06-18T20:31:25.7765899Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\MapObjects\meteorAnimated.xnb
+2012-05-18T15:07:02.0000000Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\MapObjects\pulse.xnb
+2012-05-18T15:07:05.0000000Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Objectives\flag_blue.xnb
+2012-06-18T20:31:25.8055916Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Objectives\flag_green.xnb
+2012-06-18T20:31:25.8365934Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Objectives\flag_red.xnb
+2012-06-18T20:31:25.8665951Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Objectives\flag_yellow.xnb
+2012-06-18T20:31:25.8965968Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_bombs.xnb
+2012-06-18T20:31:25.9125977Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_rocket.xnb
+2012-06-18T20:31:25.9275986Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_shotgun.xnb
+2012-06-18T20:31:25.9485998Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_sniper.xnb
+2012-06-18T20:31:25.9636006Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_standard.xnb
+2012-06-18T20:31:25.9786015Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_blue.xnb
+2012-06-18T20:31:25.9946024Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_green.xnb
+2012-06-18T20:31:26.0106033Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_red.xnb
+2012-06-18T20:31:26.0256042Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_yellow.xnb
+2012-06-18T20:31:26.0406050Z
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\grenade.xnb
+2012-06-18T20:31:26.0566060Z
