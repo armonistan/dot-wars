@@ -1982,15 +1982,6 @@
       <Time>2013-07-02T16:33:06-05:00</Time>
     </Item>
     <Item>
-      <Source>Fonts\bigtext.bmp</Source>
-      <Name>Fonts\bigtext</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>FontTextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Fonts\bigtext.xnb</Output>
-      <Time>2013-08-14T15:51:20.42157-05:00</Time>
-    </Item>
-    <Item>
       <Source>Fonts\text.bmp</Source>
       <Name>Fonts\text</Name>
       <Importer>TextureImporter</Importer>
@@ -2160,6 +2151,42 @@
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\LogoScreen\splashLogoCombined.xnb</Output>
       <Time>2013-08-14T15:09:25.1297035-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Menu\triggersOnly.png</Source>
+      <Name>Textures\Backgrounds\Menu\triggersOnly</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\triggersOnly.xnb</Output>
+      <Time>2013-08-14T15:50:13.7287554-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Menu\triggers.png</Source>
+      <Name>Textures\Backgrounds\Menu\triggers</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\triggers.xnb</Output>
+      <Time>2013-08-14T15:50:13.7327556-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\bigtext.bmp</Source>
+      <Name>Fonts\bigtext</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>FontTextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Fonts\bigtext.xnb</Output>
+      <Time>2013-08-14T15:51:20.42157-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\PreGame\profileGrunt.png</Source>
+      <Name>Textures\Backgrounds\PreGame\profileGrunt</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileGrunt.xnb</Output>
+      <Time>2013-08-14T15:53:42.7077083-05:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\explosion.wav</Source>
@@ -2367,33 +2394,6 @@
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\menu\confirm_style_2_002.xnb</Output>
       <Time>2013-08-10T15:29:26-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Menu\triggersOnly.png</Source>
-      <Name>Textures\Backgrounds\Menu\triggersOnly</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\triggersOnly.xnb</Output>
-      <Time>2013-08-14T15:50:13.7287554-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Menu\triggers.png</Source>
-      <Name>Textures\Backgrounds\Menu\triggers</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\triggers.xnb</Output>
-      <Time>2013-08-14T15:50:13.7327556-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\PreGame\profileGrunt.png</Source>
-      <Name>Textures\Backgrounds\PreGame\profileGrunt</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileGrunt.xnb</Output>
-      <Time>2013-08-14T15:53:42.7077083-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

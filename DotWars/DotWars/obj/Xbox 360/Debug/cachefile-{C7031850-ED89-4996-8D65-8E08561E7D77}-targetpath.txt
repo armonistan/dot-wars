@@ -218,7 +218,6 @@ Content\Textures\Backgrounds\Menu\backButton.xnb
 Content\Textures\Backgrounds\Menu\startButton.xnb
 Content\Textures\HUD\2playerSplit.xnb
 Content\Textures\HUD\4playerSplit.xnb
-Content\Fonts\bigtext.xnb
 Content\Fonts\text.xnb
 Content\Textures\HUD\pauseOverlay.xnb
 Content\Textures\HUD\hud_teammates.xnb
@@ -238,6 +237,10 @@ Content\Textures\Backgrounds\PreGame\profileSpecialist.xnb
 Content\Textures\Backgrounds\LogoScreen\controllerSplash.xnb
 Content\Textures\HUD\bar_damage.xnb
 Content\Textures\Backgrounds\LogoScreen\splashLogoCombined.xnb
+Content\Textures\Backgrounds\Menu\triggersOnly.xnb
+Content\Textures\Backgrounds\Menu\triggers.xnb
+Content\Fonts\bigtext.xnb
+Content\Textures\Backgrounds\PreGame\profileGrunt.xnb
 Content\Audio\Waves\explosion.xnb
 Content\Audio\Waves\fireballSound.xnb
 Content\Audio\Waves\flareShoot.xnb
@@ -261,9 +264,6 @@ Content\Audio\Waves\confirm.xnb
 Content\Audio\Waves\return.xnb
 Content\Audio\Waves\menu\back_style_2_002.xnb
 Content\Audio\Waves\menu\confirm_style_2_002.xnb
-Content\Textures\Backgrounds\Menu\triggersOnly.xnb
-Content\Textures\Backgrounds\Menu\triggers.xnb
-Content\Textures\Backgrounds\PreGame\profileGrunt.xnb
 Content\Audio\GameAudio.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb
