@@ -1,0 +1,117 @@
+﻿using System;
+using Microsoft.Xna.Framework;
+
+namespace DotWars
+{
+    public class Explosion : Particle
+    {
+        #region Declarations
+
+        private readonly float radius;
+        private NPC.AffliationTypes affiliation;
+        private int damage;
+
+        #endregion
+
+        public Explosion()
+        {
+            asset = "Effects/explodeTop";
+
+            radius = 64;
+        }
+
+        public override void Update(ManagerHelper mH)
+        {
+            foreach (
+                NPC a in
+                    mH.GetNPCManager().GetAllXInRadius(GetOriginPosition(), radius, mH.GetNPCManager().GetNPCs()))
+            {
+                if (a.GetAffiliation() != affiliation)
+                {
+                    a.ChangeHealth(-1*damage, creator);
+                }
+
+                //Make screen rumble
+                if (a is Commander)
+                {
+                    var tempCom = (Commander) a;
+                    mH.GetCameraManager().SetRumble(mH.GetCameraManager().GetPlayerIndex(tempCom), 1000);
+                }
+            }
+
+            frameIndex = (int) (existanceTime*10);
+
+            //Move particles from explosions
+            foreach (Particle p in mH.GetParticleManager().GetParticles())
+            {
+                float dir = PathHelper.Direction(GetOriginPosition(), p.GetOriginPosition());
+                p.AddAcceleration(PathHelper.Direction(dir) * 10000.0f /
+                                    (float)
+                                    (Math.Pow(PathHelper.Distance(GetOriginPosition(), p.GetOriginPosition()), 2)));
+            }
+            foreach (Gut g in mH.GetParticleManager().GetGuts())
+            {
+                float dir = PathHelper.Direction(GetOriginPosition(), g.GetOriginPosition());
+                g.AddAcceleration(PathHelper.Direction(dir) * 10000.0f /
+                                    (float)
+                                    (Math.Pow(PathHelper.Distance(GetOriginPosition(), g.GetOriginPosition()), 2)));
+            }
+
+            Turn((float) Math.PI/21);
+
+            //Spawn Fires to make effect
+            if (mH.GetRandom().NextDouble() < 0.25f)
+            {
+                mH.GetParticleManager()
+                  .AddFire(GetOriginPosition(),
+                           PathHelper.Direction((float) (mH.GetRandom().NextDouble()*Math.PI*2))*500*
+                           (float) mH.GetRandom().NextDouble(), 1, 0.01f, 1, 0.1f);
+                for (int d = damage - 75; d >= 0; d -= 20)
+                {
+                    mH.GetParticleManager()
+                      .AddFire(GetOriginPosition(),
+                               PathHelper.Direction((float) (mH.GetRandom().NextDouble()*Math.PI*2))*500*
+                               (float) mH.GetRandom().NextDouble(), 1, 0.01f, 1, 0.1f);
+                }
+            }
+
+            base.Update(mH);
+        }
+
+        //public void Set(Vector2 p, int d, NPC aT, ManagerHelper mH)
+        //{
+        //    base.Set(asset, p, Vector2.Zero, 0.1f, 0, 0, 0.5f, mH);
+        //
+        //    existanceTime = 0.1f;
+        //    affiliation = aT.GetAffiliation();
+        //    creator = aT;
+        //    damage = d;
+        //
+        //    mH.GetAudioManager().Play("Other/explosion", mH.GetAudioManager().NumberVolume("Other/explosion", 2, 1, mH), AudioManager.RandomPitch(mH), 0);
+        //}
+
+        public void Set(Vector2 p, int d, NPC n, ManagerHelper mH)
+        {
+            base.Set(asset, p, Vector2.Zero, 0.1f, 0, 0, 0.5f, mH);
+
+            existanceTime = 0.1f;
+            affiliation = n.GetAffiliation();
+            creator = n;
+            damage = d;
+
+            mH.GetAudioManager().Play("explosion", AudioManager.RandomVolume(mH), AudioManager.RandomPitch(mH), 0, false);
+        }
+
+        public void Set(Vector2 p, int d, NPC.AffliationTypes aT, ManagerHelper mH)
+        {
+            base.Set(asset, p, Vector2.Zero, 0.1f, 0, 0, 0.5f, mH);
+
+            existanceTime = 0.1f;
+            affiliation = aT;
+            creator = null;
+            damage = d;
+
+            mH.GetAudioManager().Play("explosion", AudioManager.RandomVolume(mH), AudioManager.RandomPitch(mH), 0, false);
+        }
+    }
+}

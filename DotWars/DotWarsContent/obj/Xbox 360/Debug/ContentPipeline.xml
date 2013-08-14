@@ -1,0 +1,2413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Textures\bases.png</Source>
+      <Name>Textures\bases</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\bases.xnb</Output>
+      <Time>2013-07-02T16:33:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\flash.png</Source>
+      <Name>Textures\flash</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\flash.xnb</Output>
+      <Time>2013-07-02T16:33:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\health_station.png</Source>
+      <Name>Textures\health_station</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\health_station.xnb</Output>
+      <Time>2013-07-02T16:33:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\press_start.png</Source>
+      <Name>Textures\press_start</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\press_start.xnb</Output>
+      <Time>2013-07-02T16:33:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\switchBox.png</Source>
+      <Name>Textures\Backgrounds\Switch\switchBox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\switchBox.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Blue\bomber_blue.png</Source>
+      <Name>Textures\Dots\Blue\bomber_blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\bomber_blue.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Blue\bombardier_blue.png</Source>
+      <Name>Textures\Dots\Blue\bombardier_blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\bombardier_blue.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Blue\commander_blue.png</Source>
+      <Name>Textures\Dots\Blue\commander_blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\commander_blue.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Blue\grunt_blue.png</Source>
+      <Name>Textures\Dots\Blue\grunt_blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\grunt_blue.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Blue\gunner_blue.png</Source>
+      <Name>Textures\Dots\Blue\gunner_blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\gunner_blue.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Blue\juggernaut_blue.png</Source>
+      <Name>Textures\Dots\Blue\juggernaut_blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\juggernaut_blue.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Blue\medic_blue.png</Source>
+      <Name>Textures\Dots\Blue\medic_blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\medic_blue.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Blue\sniper_blue.png</Source>
+      <Name>Textures\Dots\Blue\sniper_blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\sniper_blue.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Blue\specialist_blue.png</Source>
+      <Name>Textures\Dots\Blue\specialist_blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\specialist_blue.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Green\bomber_green.png</Source>
+      <Name>Textures\Dots\Green\bomber_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\bomber_green.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Green\bombardier_green.png</Source>
+      <Name>Textures\Dots\Green\bombardier_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\bombardier_green.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Green\commander_green.png</Source>
+      <Name>Textures\Dots\Green\commander_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\commander_green.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Green\grunt_green.png</Source>
+      <Name>Textures\Dots\Green\grunt_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\grunt_green.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Green\gunner_green.png</Source>
+      <Name>Textures\Dots\Green\gunner_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\gunner_green.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Green\juggernaut_green.png</Source>
+      <Name>Textures\Dots\Green\juggernaut_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\juggernaut_green.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Green\medic_green.png</Source>
+      <Name>Textures\Dots\Green\medic_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\medic_green.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Green\sniper_green.png</Source>
+      <Name>Textures\Dots\Green\sniper_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\sniper_green.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Green\specialist_green.png</Source>
+      <Name>Textures\Dots\Green\specialist_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\specialist_green.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Grey\grey_claimable.png</Source>
+      <Name>Textures\Dots\Grey\grey_claimable</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Grey\grey_claimable.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Grey\grey_suicide.png</Source>
+      <Name>Textures\Dots\Grey\grey_suicide</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Grey\grey_suicide.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Red\bomber_red.png</Source>
+      <Name>Textures\Dots\Red\bomber_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\bomber_red.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Red\bombardier_red.png</Source>
+      <Name>Textures\Dots\Red\bombardier_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\bombardier_red.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Red\commander_red.png</Source>
+      <Name>Textures\Dots\Red\commander_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\commander_red.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Red\grunt_red.png</Source>
+      <Name>Textures\Dots\Red\grunt_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\grunt_red.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Red\gunner_red.png</Source>
+      <Name>Textures\Dots\Red\gunner_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\gunner_red.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Red\juggernaut_red.png</Source>
+      <Name>Textures\Dots\Red\juggernaut_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\juggernaut_red.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Red\medic_red.png</Source>
+      <Name>Textures\Dots\Red\medic_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\medic_red.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Red\sniper_red.png</Source>
+      <Name>Textures\Dots\Red\sniper_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\sniper_red.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Red\specialist_red.png</Source>
+      <Name>Textures\Dots\Red\specialist_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\specialist_red.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Yellow\bomber_yellow.png</Source>
+      <Name>Textures\Dots\Yellow\bomber_yellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\bomber_yellow.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Yellow\bombardier_yellow.png</Source>
+      <Name>Textures\Dots\Yellow\bombardier_yellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\bombardier_yellow.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Yellow\commander_yellow.png</Source>
+      <Name>Textures\Dots\Yellow\commander_yellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\commander_yellow.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Yellow\grunt_yellow.png</Source>
+      <Name>Textures\Dots\Yellow\grunt_yellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\grunt_yellow.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Yellow\gunner_yellow.png</Source>
+      <Name>Textures\Dots\Yellow\gunner_yellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\gunner_yellow.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Yellow\juggernaut_yellow.png</Source>
+      <Name>Textures\Dots\Yellow\juggernaut_yellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\juggernaut_yellow.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Yellow\medic_yellow.png</Source>
+      <Name>Textures\Dots\Yellow\medic_yellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\medic_yellow.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Yellow\sniper_yellow.png</Source>
+      <Name>Textures\Dots\Yellow\sniper_yellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\sniper_yellow.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Yellow\specialist_yellow.png</Source>
+      <Name>Textures\Dots\Yellow\specialist_yellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\specialist_yellow.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\flash.png</Source>
+      <Name>Textures\Effects\flash</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\flash.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\floating_health.png</Source>
+      <Name>Textures\Effects\floating_health</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\floating_health.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\grass_test.png</Source>
+      <Name>Textures\Effects\grass_test</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\grass_test.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\particle_fire.png</Source>
+      <Name>Textures\Effects\particle_fire</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_fire.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\particle_leaves.png</Source>
+      <Name>Textures\Effects\particle_leaves</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_leaves.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\particle_rock.png</Source>
+      <Name>Textures\Effects\particle_rock</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_rock.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\particle_smoke.png</Source>
+      <Name>Textures\Effects\particle_smoke</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_smoke.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\particle_water.png</Source>
+      <Name>Textures\Effects\particle_water</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_water.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\PI_medic.png</Source>
+      <Name>Textures\Effects\PI_medic</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\PI_medic.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\smoke_bullet.png</Source>
+      <Name>Textures\Effects\smoke_bullet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_bullet.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\smoke_standard.png</Source>
+      <Name>Textures\Effects\smoke_standard</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_standard.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\smoke_standard2.png</Source>
+      <Name>Textures\Effects\smoke_standard2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_standard2.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\HUD\bar_health.png</Source>
+      <Name>Textures\HUD\bar_health</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\bar_health.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\HUD\bar_special.png</Source>
+      <Name>Textures\HUD\bar_special</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\bar_special.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\HUD\hud_background.png</Source>
+      <Name>Textures\HUD\hud_background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_background.xnb</Output>
+      <Time>2013-08-06T20:51:32-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\HUD\hud_blue.png</Source>
+      <Name>Textures\HUD\hud_blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_blue.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\HUD\hud_green.png</Source>
+      <Name>Textures\HUD\hud_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_green.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\HUD\hud_gun.png</Source>
+      <Name>Textures\HUD\hud_gun</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_gun.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\HUD\hud_red.png</Source>
+      <Name>Textures\HUD\hud_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_red.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\HUD\hud_toss.png</Source>
+      <Name>Textures\HUD\hud_toss</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_toss.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\HUD\hud_yellow.png</Source>
+      <Name>Textures\HUD\hud_yellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_yellow.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Objectives\flag_blue.png</Source>
+      <Name>Textures\Objectives\flag_blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Objectives\flag_blue.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Objectives\flag_green.png</Source>
+      <Name>Textures\Objectives\flag_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Objectives\flag_green.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Objectives\flag_red.png</Source>
+      <Name>Textures\Objectives\flag_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Objectives\flag_red.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Objectives\flag_yellow.png</Source>
+      <Name>Textures\Objectives\flag_yellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Objectives\flag_yellow.xnb</Output>
+      <Time>2013-07-02T16:33:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Projectiles\bullet_bombs.png</Source>
+      <Name>Textures\Projectiles\bullet_bombs</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_bombs.xnb</Output>
+      <Time>2013-07-02T16:33:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Projectiles\bullet_rocket.png</Source>
+      <Name>Textures\Projectiles\bullet_rocket</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_rocket.xnb</Output>
+      <Time>2013-07-02T16:33:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Projectiles\bullet_shotgun.png</Source>
+      <Name>Textures\Projectiles\bullet_shotgun</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_shotgun.xnb</Output>
+      <Time>2013-07-02T16:33:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Projectiles\bullet_sniper.png</Source>
+      <Name>Textures\Projectiles\bullet_sniper</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_sniper.xnb</Output>
+      <Time>2013-07-02T16:33:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Projectiles\bullet_standard.png</Source>
+      <Name>Textures\Projectiles\bullet_standard</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_standard.xnb</Output>
+      <Time>2013-07-02T16:33:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Projectiles\flare_blue.png</Source>
+      <Name>Textures\Projectiles\flare_blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_blue.xnb</Output>
+      <Time>2013-07-02T16:33:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Projectiles\flare_green.png</Source>
+      <Name>Textures\Projectiles\flare_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_green.xnb</Output>
+      <Time>2013-07-02T16:33:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Projectiles\flare_red.png</Source>
+      <Name>Textures\Projectiles\flare_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_red.xnb</Output>
+      <Time>2013-07-02T16:33:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Projectiles\flare_yellow.png</Source>
+      <Name>Textures\Projectiles\flare_yellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_yellow.xnb</Output>
+      <Time>2013-07-02T16:33:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Projectiles\grenade.png</Source>
+      <Name>Textures\Projectiles\grenade</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\grenade.xnb</Output>
+      <Time>2013-07-02T16:33:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\smoke_blue.png</Source>
+      <Name>Textures\Effects\smoke_blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_blue.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\smoke_green.png</Source>
+      <Name>Textures\Effects\smoke_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_green.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\smoke_red.png</Source>
+      <Name>Textures\Effects\smoke_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_red.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\smoke_yellow.png</Source>
+      <Name>Textures\Effects\smoke_yellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_yellow.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\spark_blue.png</Source>
+      <Name>Textures\Effects\spark_blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\spark_blue.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\spark_green.png</Source>
+      <Name>Textures\Effects\spark_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\spark_green.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\spark_red.png</Source>
+      <Name>Textures\Effects\spark_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\spark_red.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\spark_yellow.png</Source>
+      <Name>Textures\Effects\spark_yellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\spark_yellow.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Archipelago\archipelago_background.png</Source>
+      <Name>Textures\Backgrounds\Archipelago\archipelago_background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\archipelago_background.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Archipelago\archipelago_solid.png</Source>
+      <Name>Textures\Backgrounds\Archipelago\archipelago_solid</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\archipelago_solid.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\elect1.png</Source>
+      <Name>Textures\Backgrounds\Switch\elect1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect1.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\elect10.png</Source>
+      <Name>Textures\Backgrounds\Switch\elect10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect10.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\elect11.png</Source>
+      <Name>Textures\Backgrounds\Switch\elect11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect11.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\elect12.png</Source>
+      <Name>Textures\Backgrounds\Switch\elect12</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect12.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\elect2.png</Source>
+      <Name>Textures\Backgrounds\Switch\elect2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect2.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\elect3.png</Source>
+      <Name>Textures\Backgrounds\Switch\elect3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect3.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\elect4.png</Source>
+      <Name>Textures\Backgrounds\Switch\elect4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect4.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\elect5.png</Source>
+      <Name>Textures\Backgrounds\Switch\elect5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect5.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\elect6.png</Source>
+      <Name>Textures\Backgrounds\Switch\elect6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect6.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\elect7.png</Source>
+      <Name>Textures\Backgrounds\Switch\elect7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect7.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\elect8.png</Source>
+      <Name>Textures\Backgrounds\Switch\elect8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect8.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\elect9.png</Source>
+      <Name>Textures\Backgrounds\Switch\elect9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\elect9.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\electricity.png</Source>
+      <Name>Textures\Backgrounds\Switch\electricity</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\electricity.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Red\deadBombRed.png</Source>
+      <Name>Textures\Effects\Guts\Red\deadBombRed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadBombRed.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Red\deadGruntRed.png</Source>
+      <Name>Textures\Effects\Guts\Red\deadGruntRed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadGruntRed.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Red\deadGunnerRed.png</Source>
+      <Name>Textures\Effects\Guts\Red\deadGunnerRed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadGunnerRed.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Red\deadJuggRed.png</Source>
+      <Name>Textures\Effects\Guts\Red\deadJuggRed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadJuggRed.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Red\deadMedicRed.png</Source>
+      <Name>Textures\Effects\Guts\Red\deadMedicRed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadMedicRed.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Red\deadSniperRed.png</Source>
+      <Name>Textures\Effects\Guts\Red\deadSniperRed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadSniperRed.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Red\deadSpecialistRed.png</Source>
+      <Name>Textures\Effects\Guts\Red\deadSpecialistRed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadSpecialistRed.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\square.png</Source>
+      <Name>Textures\square</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\square.xnb</Output>
+      <Time>2013-07-02T16:33:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Blue\deadBombBlue.png</Source>
+      <Name>Textures\Effects\Guts\Blue\deadBombBlue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadBombBlue.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Blue\deadCommanderBlue.png</Source>
+      <Name>Textures\Effects\Guts\Blue\deadCommanderBlue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadCommanderBlue.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Blue\deadGruntBlue.png</Source>
+      <Name>Textures\Effects\Guts\Blue\deadGruntBlue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadGruntBlue.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Blue\deadGunnerBlue.png</Source>
+      <Name>Textures\Effects\Guts\Blue\deadGunnerBlue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadGunnerBlue.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Blue\deadJuggBlue.png</Source>
+      <Name>Textures\Effects\Guts\Blue\deadJuggBlue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadJuggBlue.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Blue\deadMedicBlue.png</Source>
+      <Name>Textures\Effects\Guts\Blue\deadMedicBlue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadMedicBlue.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Blue\deadSniperBlue.png</Source>
+      <Name>Textures\Effects\Guts\Blue\deadSniperBlue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadSniperBlue.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Blue\deadSpecialistBlue.png</Source>
+      <Name>Textures\Effects\Guts\Blue\deadSpecialistBlue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Blue\deadSpecialistBlue.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Green\deadBombGreen.png</Source>
+      <Name>Textures\Effects\Guts\Green\deadBombGreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadBombGreen.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Green\deadCommanderGreen.png</Source>
+      <Name>Textures\Effects\Guts\Green\deadCommanderGreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadCommanderGreen.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Green\deadGruntGreen.png</Source>
+      <Name>Textures\Effects\Guts\Green\deadGruntGreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadGruntGreen.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Green\deadGunnerGreen.png</Source>
+      <Name>Textures\Effects\Guts\Green\deadGunnerGreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadGunnerGreen.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Green\deadJuggGreen.png</Source>
+      <Name>Textures\Effects\Guts\Green\deadJuggGreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadJuggGreen.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Green\deadMedicGreen.png</Source>
+      <Name>Textures\Effects\Guts\Green\deadMedicGreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadMedicGreen.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Green\deadSniperGreen.png</Source>
+      <Name>Textures\Effects\Guts\Green\deadSniperGreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadSniperGreen.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Green\deadSpecialistGreen.png</Source>
+      <Name>Textures\Effects\Guts\Green\deadSpecialistGreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Green\deadSpecialistGreen.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Red\deadCommanderRed.png</Source>
+      <Name>Textures\Effects\Guts\Red\deadCommanderRed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Red\deadCommanderRed.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Yellow\deadBombYellow.png</Source>
+      <Name>Textures\Effects\Guts\Yellow\deadBombYellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadBombYellow.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Yellow\deadCommanderYellow.png</Source>
+      <Name>Textures\Effects\Guts\Yellow\deadCommanderYellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadCommanderYellow.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Yellow\deadGruntYellow.png</Source>
+      <Name>Textures\Effects\Guts\Yellow\deadGruntYellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadGruntYellow.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Yellow\deadGunnerYellow.png</Source>
+      <Name>Textures\Effects\Guts\Yellow\deadGunnerYellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadGunnerYellow.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Yellow\deadJuggYellow.png</Source>
+      <Name>Textures\Effects\Guts\Yellow\deadJuggYellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadJuggYellow.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Yellow\deadMedicYellow.png</Source>
+      <Name>Textures\Effects\Guts\Yellow\deadMedicYellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadMedicYellow.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Yellow\deadSniperYellow.png</Source>
+      <Name>Textures\Effects\Guts\Yellow\deadSniperYellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadSniperYellow.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\Guts\Yellow\deadSpecialistYellow.png</Source>
+      <Name>Textures\Effects\Guts\Yellow\deadSpecialistYellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\Guts\Yellow\deadSpecialistYellow.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\particle_blood_blue.png</Source>
+      <Name>Textures\Effects\particle_blood_blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_blood_blue.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\particle_blood_green.png</Source>
+      <Name>Textures\Effects\particle_blood_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_blood_green.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\particle_blood_yellow.png</Source>
+      <Name>Textures\Effects\particle_blood_yellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_blood_yellow.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\particle_blood_red.png</Source>
+      <Name>Textures\Effects\particle_blood_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_blood_red.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Mire\bridges.png</Source>
+      <Name>Textures\Backgrounds\Mire\bridges</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\bridges.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Mire\lilypadA.png</Source>
+      <Name>Textures\Backgrounds\Mire\lilypadA</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\lilypadA.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Mire\lilypadB.png</Source>
+      <Name>Textures\Backgrounds\Mire\lilypadB</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\lilypadB.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Mire\lilypadC.png</Source>
+      <Name>Textures\Backgrounds\Mire\lilypadC</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\lilypadC.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Mire\lilypadD.png</Source>
+      <Name>Textures\Backgrounds\Mire\lilypadD</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\lilypadD.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Mire\lilypadE.png</Source>
+      <Name>Textures\Backgrounds\Mire\lilypadE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\lilypadE.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Mire\mireBkg.png</Source>
+      <Name>Textures\Backgrounds\Mire\mireBkg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\mireBkg.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Mire\mireSolid.png</Source>
+      <Name>Textures\Backgrounds\Mire\mireSolid</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\mireSolid.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Mire\bridgesDown.png</Source>
+      <Name>Textures\Backgrounds\Mire\bridgesDown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\bridgesDown.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Mire\bridgesUp.png</Source>
+      <Name>Textures\Backgrounds\Mire\bridgesUp</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\bridgesUp.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\explodeBottom.png</Source>
+      <Name>Textures\Effects\explodeBottom</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\explodeBottom.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\explodeTop.png</Source>
+      <Name>Textures\Effects\explodeTop</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\explodeTop.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\particle_heal.png</Source>
+      <Name>Textures\Effects\particle_heal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_heal.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Archipelago\archipelago_trees.png</Source>
+      <Name>Textures\Backgrounds\Archipelago\archipelago_trees</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\archipelago_trees.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\PI_blueCommander.png</Source>
+      <Name>Textures\Effects\PI_blueCommander</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\PI_blueCommander.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\PI_greenCommander.png</Source>
+      <Name>Textures\Effects\PI_greenCommander</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\PI_greenCommander.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\PI_redCommander.png</Source>
+      <Name>Textures\Effects\PI_redCommander</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\PI_redCommander.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\PI_YellowCommander.png</Source>
+      <Name>Textures\Effects\PI_YellowCommander</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\PI_YellowCommander.xnb</Output>
+      <Time>2013-07-02T16:33:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Abilities\ability_red.png</Source>
+      <Name>Textures\Abilities\ability_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_red.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Abilities\ability_green.png</Source>
+      <Name>Textures\Abilities\ability_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_green.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Abilities\ability_blue_ripple.png</Source>
+      <Name>Textures\Abilities\ability_blue_ripple</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_blue_ripple.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Abilities\ability_blue_splash.png</Source>
+      <Name>Textures\Abilities\ability_blue_splash</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_blue_splash.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Abilities\ability_blue_spread.png</Source>
+      <Name>Textures\Abilities\ability_blue_spread</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_blue_spread.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Abilities\yellow_test.png</Source>
+      <Name>Textures\Abilities\yellow_test</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\yellow_test.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\BL.png</Source>
+      <Name>Textures\Backgrounds\Switch\BL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\BL.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\BR.png</Source>
+      <Name>Textures\Backgrounds\Switch\BR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\BR.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\BT.png</Source>
+      <Name>Textures\Backgrounds\Switch\BT</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\BT.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Mire\bubbles.png</Source>
+      <Name>Textures\Backgrounds\Mire\bubbles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\bubbles.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Mire\waterBlocker.png</Source>
+      <Name>Textures\Backgrounds\Mire\waterBlocker</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\waterBlocker.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Mire\fort.png</Source>
+      <Name>Textures\Backgrounds\Mire\fort</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Mire\fort.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Abilities\ability_blue_spread2.png</Source>
+      <Name>Textures\Abilities\ability_blue_spread2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_blue_spread2.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\BLr.png</Source>
+      <Name>Textures\Backgrounds\Switch\BLr</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\BLr.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\BRr.png</Source>
+      <Name>Textures\Backgrounds\Switch\BRr</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\BRr.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\BTr.png</Source>
+      <Name>Textures\Backgrounds\Switch\BTr</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\BTr.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\DBr.png</Source>
+      <Name>Textures\Backgrounds\Switch\DBr</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\DBr.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\fanLeft.png</Source>
+      <Name>Textures\Backgrounds\Switch\fanLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\fanLeft.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\gustLeft.png</Source>
+      <Name>Textures\Backgrounds\Switch\gustLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\gustLeft.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Glade\gladeBlockers.png</Source>
+      <Name>Textures\Backgrounds\Glade\gladeBlockers</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Glade\gladeBlockers.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Glade\gladeBackground.png</Source>
+      <Name>Textures\Backgrounds\Glade\gladeBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Glade\gladeBackground.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Caged\cagedBackground.png</Source>
+      <Name>Textures\Backgrounds\Caged\cagedBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Caged\cagedBackground.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Caged\cagedBlockers.png</Source>
+      <Name>Textures\Backgrounds\Caged\cagedBlockers</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Caged\cagedBlockers.xnb</Output>
+      <Time>2013-08-06T19:45:48-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Caged\lava.png</Source>
+      <Name>Textures\Backgrounds\Caged\lava</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Caged\lava.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Caged\cagedImpassable.png</Source>
+      <Name>Textures\Backgrounds\Caged\cagedImpassable</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Caged\cagedImpassable.xnb</Output>
+      <Time>2013-08-06T19:45:56-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Menu\PlayerScreen.png</Source>
+      <Name>Textures\Backgrounds\Menu\PlayerScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\PlayerScreen.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Menu\LogoScreen.png</Source>
+      <Name>Textures\Backgrounds\Menu\LogoScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\LogoScreen.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Menu\testBack.png</Source>
+      <Name>Textures\Backgrounds\Menu\testBack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\testBack.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Menu\CommanderCards.png</Source>
+      <Name>Textures\Backgrounds\Menu\CommanderCards</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\CommanderCards.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Menu\GameScreen.png</Source>
+      <Name>Textures\Backgrounds\Menu\GameScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\GameScreen.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Menu\GametypeCards.png</Source>
+      <Name>Textures\Backgrounds\Menu\GametypeCards</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\GametypeCards.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Menu\MapCards.png</Source>
+      <Name>Textures\Backgrounds\Menu\MapCards</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\MapCards.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Menu\teamCards.png</Source>
+      <Name>Textures\Backgrounds\Menu\teamCards</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\teamCards.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Menu\TeamScreen.png</Source>
+      <Name>Textures\Backgrounds\Menu\TeamScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\TeamScreen.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Menu\controllerCards.png</Source>
+      <Name>Textures\Backgrounds\Menu\controllerCards</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\controllerCards.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Relic\meteorAnimated2.png</Source>
+      <Name>Textures\Backgrounds\Relic\meteorAnimated2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Relic\meteorAnimated2.xnb</Output>
+      <Time>2013-07-30T20:34:58-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Relic\pulse.png</Source>
+      <Name>Textures\Backgrounds\Relic\pulse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Relic\pulse.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Relic\relicBackground.png</Source>
+      <Name>Textures\Backgrounds\Relic\relicBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Relic\relicBackground.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Relic\relicBlockers.png</Source>
+      <Name>Textures\Backgrounds\Relic\relicBlockers</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Relic\relicBlockers.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Faercrag\faercragBackground.png</Source>
+      <Name>Textures\Backgrounds\Faercrag\faercragBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercragBackground.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Faercrag\faercragBlockers.png</Source>
+      <Name>Textures\Backgrounds\Faercrag\faercragBlockers</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercragBlockers.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Faercrag\faercragImpassable.png</Source>
+      <Name>Textures\Backgrounds\Faercrag\faercragImpassable</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Faercrag\faercragImpassable.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Archipelago\whirlpool1.png</Source>
+      <Name>Textures\Backgrounds\Archipelago\whirlpool1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\whirlpool1.xnb</Output>
+      <Time>2013-07-30T20:45:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Archipelago\whirlpool2.png</Source>
+      <Name>Textures\Backgrounds\Archipelago\whirlpool2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\whirlpool2.xnb</Output>
+      <Time>2013-07-30T20:48:14-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Archipelago\whirlpool3.png</Source>
+      <Name>Textures\Backgrounds\Archipelago\whirlpool3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\whirlpool3.xnb</Output>
+      <Time>2013-07-30T20:48:32-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Archipelago\whirlpool4.png</Source>
+      <Name>Textures\Backgrounds\Archipelago\whirlpool4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\whirlpool4.xnb</Output>
+      <Time>2013-07-30T20:48:42-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Archipelago\whirlpool5.png</Source>
+      <Name>Textures\Backgrounds\Archipelago\whirlpool5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\whirlpool5.xnb</Output>
+      <Time>2013-07-30T20:48:50-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Archipelago\whirlpool0.png</Source>
+      <Name>Textures\Backgrounds\Archipelago\whirlpool0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\whirlpool0.xnb</Output>
+      <Time>2013-07-30T21:15:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\ZenGarden\zenBackground.png</Source>
+      <Name>Textures\Backgrounds\ZenGarden\zenBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ZenGarden\zenBackground.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\ZenGarden\zenBlockers.png</Source>
+      <Name>Textures\Backgrounds\ZenGarden\zenBlockers</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ZenGarden\zenBlockers.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\ZenGarden\zenForeground.png</Source>
+      <Name>Textures\Backgrounds\ZenGarden\zenForeground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ZenGarden\zenForeground.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\switchBackground.png</Source>
+      <Name>Textures\Backgrounds\Switch\switchBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\switchBackground.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\switchBlockers.png</Source>
+      <Name>Textures\Backgrounds\Switch\switchBlockers</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\switchBlockers.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\switchForeground.png</Source>
+      <Name>Textures\Backgrounds\Switch\switchForeground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\switchForeground.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Switch\switchCrane.png</Source>
+      <Name>Textures\Backgrounds\Switch\switchCrane</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\switchCrane.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Plaza\plazaBackground.png</Source>
+      <Name>Textures\Backgrounds\Plaza\plazaBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaBackground.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Plaza\plazaBlockers.png</Source>
+      <Name>Textures\Backgrounds\Plaza\plazaBlockers</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaBlockers.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Plaza\plazaLighting.png</Source>
+      <Name>Textures\Backgrounds\Plaza\plazaLighting</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaLighting.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Plaza\light.png</Source>
+      <Name>Textures\Backgrounds\Plaza\light</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\light.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Menu\menuBackground.png</Source>
+      <Name>Textures\Backgrounds\Menu\menuBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\menuBackground.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Menu\backButton.png</Source>
+      <Name>Textures\Backgrounds\Menu\backButton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\backButton.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Menu\startButton.png</Source>
+      <Name>Textures\Backgrounds\Menu\startButton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\startButton.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\HUD\2playerSplit.png</Source>
+      <Name>Textures\HUD\2playerSplit</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\2playerSplit.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\HUD\4playerSplit.png</Source>
+      <Name>Textures\HUD\4playerSplit</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\4playerSplit.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\bigtext.bmp</Source>
+      <Name>Fonts\bigtext</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>FontTextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Fonts\bigtext.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\text.bmp</Source>
+      <Name>Fonts\text</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>FontTextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Fonts\text.xnb</Output>
+      <Time>2013-08-06T21:53:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\HUD\pauseOverlay.png</Source>
+      <Name>Textures\HUD\pauseOverlay</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\pauseOverlay.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\HUD\hud_teammates.png</Source>
+      <Name>Textures\HUD\hud_teammates</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_teammates.xnb</Output>
+      <Time>2013-07-02T16:33:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\LogoScreen\splashLogoCombined.png</Source>
+      <Name>Textures\Backgrounds\LogoScreen\splashLogoCombined</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\LogoScreen\splashLogoCombined.xnb</Output>
+      <Time>2013-08-08T20:59:46-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\ResultsScreen\winnersBackground.png</Source>
+      <Name>Textures\Backgrounds\ResultsScreen\winnersBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ResultsScreen\winnersBackground.xnb</Output>
+      <Time>2013-07-30T21:36:58-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\ResultsScreen\resultsBackground.png</Source>
+      <Name>Textures\Backgrounds\ResultsScreen\resultsBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ResultsScreen\resultsBackground.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Menu\mapGametypeCard.png</Source>
+      <Name>Textures\Backgrounds\Menu\mapGametypeCard</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\mapGametypeCard.xnb</Output>
+      <Time>2013-07-02T16:33:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\HUD\hud_score_frame.png</Source>
+      <Name>Textures\HUD\hud_score_frame</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_score_frame.xnb</Output>
+      <Time>2013-08-06T20:48:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\HUD\hud_time_frame.png</Source>
+      <Name>Textures\HUD\hud_time_frame</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_time_frame.xnb</Output>
+      <Time>2013-08-06T20:48:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\PreGame\splashTemplate.png</Source>
+      <Name>Textures\Backgrounds\PreGame\splashTemplate</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\splashTemplate.xnb</Output>
+      <Time>2013-07-23T18:19:38-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\PreGame\commanders.png</Source>
+      <Name>Textures\Backgrounds\PreGame\commanders</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\commanders.xnb</Output>
+      <Time>2013-07-23T18:19:38-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\PreGame\profileBombardier.png</Source>
+      <Name>Textures\Backgrounds\PreGame\profileBombardier</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileBombardier.xnb</Output>
+      <Time>2013-08-02T14:43:38-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\PreGame\profileGunner.png</Source>
+      <Name>Textures\Backgrounds\PreGame\profileGunner</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileGunner.xnb</Output>
+      <Time>2013-08-02T14:43:38-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\PreGame\profileJuggernaut.png</Source>
+      <Name>Textures\Backgrounds\PreGame\profileJuggernaut</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileJuggernaut.xnb</Output>
+      <Time>2013-08-02T14:43:38-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\PreGame\profileMedic.png</Source>
+      <Name>Textures\Backgrounds\PreGame\profileMedic</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileMedic.xnb</Output>
+      <Time>2013-08-02T14:43:38-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\PreGame\profileSniper.png</Source>
+      <Name>Textures\Backgrounds\PreGame\profileSniper</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileSniper.xnb</Output>
+      <Time>2013-08-02T14:43:38-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\PreGame\profileSpecialist.png</Source>
+      <Name>Textures\Backgrounds\PreGame\profileSpecialist</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileSpecialist.xnb</Output>
+      <Time>2013-08-02T14:43:38-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\LogoScreen\controllerSplash.png</Source>
+      <Name>Textures\Backgrounds\LogoScreen\controllerSplash</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\LogoScreen\controllerSplash.xnb</Output>
+      <Time>2013-08-04T18:09:36-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\HUD\bar_damage.png</Source>
+      <Name>Textures\HUD\bar_damage</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\bar_damage.xnb</Output>
+      <Time>2013-08-12T19:07:40.898787-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\explosion.wav</Source>
+      <Name>Audio\Waves\explosion</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\explosion.xnb</Output>
+      <Time>2013-07-02T16:33:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\fireballSound.wav</Source>
+      <Name>Audio\Waves\fireballSound</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\fireballSound.xnb</Output>
+      <Time>2013-07-02T16:33:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\flareShoot.wav</Source>
+      <Name>Audio\Waves\flareShoot</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\flareShoot.xnb</Output>
+      <Time>2013-07-02T16:33:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\grenadeShoot.wav</Source>
+      <Name>Audio\Waves\grenadeShoot</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\grenadeShoot.xnb</Output>
+      <Time>2013-07-02T16:33:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\healShoot.wav</Source>
+      <Name>Audio\Waves\healShoot</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\healShoot.xnb</Output>
+      <Time>2013-07-02T16:33:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\machineShoot.wav</Source>
+      <Name>Audio\Waves\machineShoot</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\machineShoot.xnb</Output>
+      <Time>2013-07-02T16:33:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\planeFly.wav</Source>
+      <Name>Audio\Waves\planeFly</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\planeFly.xnb</Output>
+      <Time>2013-07-02T16:33:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\rocketShoot.wav</Source>
+      <Name>Audio\Waves\rocketShoot</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\rocketShoot.xnb</Output>
+      <Time>2013-07-02T16:33:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\rockSound.wav</Source>
+      <Name>Audio\Waves\rockSound</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\rockSound.xnb</Output>
+      <Time>2013-07-02T16:33:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\shotgunShoot.wav</Source>
+      <Name>Audio\Waves\shotgunShoot</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\shotgunShoot.xnb</Output>
+      <Time>2013-07-02T16:33:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\sniperShoot.wav</Source>
+      <Name>Audio\Waves\sniperShoot</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\sniperShoot.xnb</Output>
+      <Time>2013-07-02T16:33:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\sparkSound.wav</Source>
+      <Name>Audio\Waves\sparkSound</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\sparkSound.xnb</Output>
+      <Time>2013-07-02T16:33:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\standardShoot.wav</Source>
+      <Name>Audio\Waves\standardShoot</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\standardShoot.xnb</Output>
+      <Time>2013-07-02T16:33:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\staticCall.wav</Source>
+      <Name>Audio\Waves\staticCall</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\staticCall.xnb</Output>
+      <Time>2013-07-02T16:33:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\waterSound.wav</Source>
+      <Name>Audio\Waves\waterSound</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\waterSound.xnb</Output>
+      <Time>2013-07-02T16:33:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\part1.wav</Source>
+      <Name>Audio\Waves\part1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\part1.xnb</Output>
+      <Time>2013-07-02T16:33:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\part2.wav</Source>
+      <Name>Audio\Waves\part2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\part2.xnb</Output>
+      <Time>2013-07-02T16:33:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\part3.wav</Source>
+      <Name>Audio\Waves\part3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\part3.xnb</Output>
+      <Time>2013-07-02T16:33:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\testMusic.wav</Source>
+      <Name>Audio\Waves\testMusic</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\testMusic.xnb</Output>
+      <Time>2013-07-02T16:33:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\confirm.wav</Source>
+      <Name>Audio\Waves\confirm</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\confirm.xnb</Output>
+      <Time>2013-08-05T18:53:30-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\return.wav</Source>
+      <Name>Audio\Waves\return</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\return.xnb</Output>
+      <Time>2013-08-05T19:36:16-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\menu\back_style_2_002.wav</Source>
+      <Name>Audio\Waves\menu\back_style_2_002</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\menu\back_style_2_002.xnb</Output>
+      <Time>2013-08-10T15:29:25.1585417-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\menu\confirm_style_2_002.wav</Source>
+      <Name>Audio\Waves\menu\confirm_style_2_002</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\menu\confirm_style_2_002.xnb</Output>
+      <Time>2013-08-10T15:29:25.1605418-05:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Xbox360</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>true</CompressContent>
+      <RootDirectory>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWarsContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWarsContent\obj\Xbox 360\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2011-05-30T18:40:52.2036078-05:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

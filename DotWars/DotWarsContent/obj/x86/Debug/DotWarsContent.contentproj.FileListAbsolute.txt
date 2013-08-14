@@ -1,0 +1,54 @@
+G:\Actual Files\Dot Wars\Code\DotWarsAlphaB\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\Actual Files\Dot Wars\Code\DotWarsAlphaC\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\Actual Files\Dot Wars\Code\DotWarsAlphaD\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaD\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaE\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaF\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\AAAZ\Desktop\DotWarsAlphaF\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\AAAZ\Desktop\DotWarsAlphaG\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaH\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+\\GOD2\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaH\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaI\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaK\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\AAAZ\Desktop\DotWarsAlphaK\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaL\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\AAAZ\Desktop\DotWarsAlphaL\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaM\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaN\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\AAAZ\Desktop\DotWarsAlphaO\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaP\DotWars\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaQ\DotWars\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\AAAZ\Desktop\DotWarsAlphaQ\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\AAAZ\Desktop\DotWarsAlphaR\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaS\DotWars\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\AAAZ\Desktop\DotWarsAlphaT\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+I:\Emberware\DotWarsAlphaU\DotWars\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaU\DotWars\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaV\DotWars\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\Daniel\Dropbox\Dot Wars\Combined\DotWarsAlphaW\DotWars\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\AAAZ\Desktop\DotWars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Daniel\Dropbox\Dot Wars\Combined\DotWarsAlphaX\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaX\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaY\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsAlphaZ\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsBetaA\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsBetaB\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsBetaC\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsBetaD\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\AAAZ\Desktop\DotWarsBetaD\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\AAAZ\Desktop\DotWarsBetaE\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Dot Wars\Code\DotWarsBetaE\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\AAAZ\Desktop\dot-wars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\1574\Desktop\dot-wars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Riley\Documents\Emberware\dwCode\dot-wars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars\DotWars\DotWarsContent\obj\x86\Debug\Audio\GameAudio.xml
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\dot-wars\DotWars\DotWarsContent\obj\x86\Debug\Audio\GameAudio.xml
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\dot-wars\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\1574\Desktop\dot-wars-ignored\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\1574\Desktop\dot-wars-ignored\DotWars\DotWarsContent\obj\x86\Debug\Audio\GameAudio.xml
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\dotWars\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\dotWars\DotWars\DotWarsContent\obj\x86\Debug\Audio\GameAudio.xml
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWarsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWarsContent\obj\x86\Debug\Audio\GameAudio.xml
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWarsContent\obj\x86\Debug\Audio\GameAudio.xml
