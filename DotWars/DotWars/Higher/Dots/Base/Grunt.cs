@@ -16,7 +16,7 @@ namespace DotWars
             grenadeCounter = 0; //default
             grenadeSpeed = 3; //Three second recharge
 
-            awareness = 75;
+            
 
             affiliation = AffliationTypes.red;
         }

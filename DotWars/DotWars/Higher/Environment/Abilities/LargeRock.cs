@@ -93,6 +93,11 @@ namespace DotWars
             return health;
         }
 
+        public void SetHealth(int newHealth)
+        {
+            health = newHealth;
+        }
+
         public NPC GetLastDamager()
         {
             return lastDamager;

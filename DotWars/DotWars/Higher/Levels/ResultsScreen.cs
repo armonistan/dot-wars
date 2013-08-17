@@ -13,6 +13,17 @@ namespace DotWars
         private String leftHandStats = "";
         private String centerStats = "";
         private String rightHandStats = "";
+        private String winnerString = "fuck you";
+        private String winsString = "Wins!";
+        private Sprite winnerSpriteLeft;
+        private Sprite winnerSpriteRight;
+        private int winnerFrameLeft = -1;
+        private int winnerFrameRight = -1;
+
+        private const int RED_INDEX = 0;
+        private const int BLUE_INDEX = 1;
+        private const int GREEN_INDEX = 2;
+        private const int YELLOW_INDEX = 3;
 
         public ResultsScreen(Level l, TextureManager tM, AudioManager audio)
             : base(
@@ -20,48 +31,8 @@ namespace DotWars
                 new Vector2(1248, 720), tM, audio)
         {
             result = l;
-
-            if (result.GetManagerHelper().GetGametype() is Assasssins || result.GetManagerHelper().GetGametype() is Deathmatch ||
-                result.GetManagerHelper().GetGametype() is CaptureTheFlag)
-            {
-                
-                //tempResult += result.GetManagerHelper().GetStatisticsManager().GetMostMedicsKilledStatistic();
-                //tempResult += "\n";
-               // tempResult += result.GetManagerHelper().GetStatisticsManager().GetMaxTimeAliveStatistic();
-               // tempResult += "\n";
-                //tempResult += result.GetManagerHelper().GetStatisticsManager().GetMostFlagsCaputuredStatistic();
-                //tempResult += "\n";
-                //tempResult += result.GetManagerHelper().GetStatisticsManager().GetMostFlagsReturnedStatistic();
-                //tempResult += "\n";
-                //tempResult += result.GetManagerHelper().GetStatisticsManager().GetVendittaStatistic();
-                //tempResult += "\n";
-                //tempResult += result.GetManagerHelper().GetStatisticsManager().GetYellowCommanderPowerStatistic();
-                //tempResult += "\n";
-                //tempResult += result.GetManagerHelper().GetStatisticsManager().GetRocksDestroyedStatistic();
-                //tempResult += "\n";
-                //tempResult += result.GetManagerHelper().GetStatisticsManager().GetBlueCommanderPowerStatistic();
-                //tempResult += "\n";
-                //tempResult += result.GetManagerHelper().GetStatisticsManager().GetMostDotsRecruitedStatistic();
-                //tempResult += "\n";
-                //tempResult += result.GetManagerHelper().GetStatisticsManager().GetQuickestFlagCaptureStatistic();
-                //tempResult += "\n";
-                //tempResult += result.GetManagerHelper().GetStatisticsManager().GetRedCommanderPowerStatistic();
-                //tempResult += "\n";
-                // += result.GetManagerHelper().GetStatisticsManager().GetCasualitiesStatistic();
-            }
-            else if (result.GetManagerHelper().GetGametype() is Assault)
-            {
-                NPC.AffliationTypes tempWinner;
-                var tempAss = (Assault)result.GetManagerHelper().GetGametype();
-                if (result.GetManagerHelper().GetGametype().GetGameEndTimer() <= 0)
-                {
-                    tempWinner = tempAss.GetDefender();
-                }
-                else
-                {
-                    tempWinner = tempAss.GetAttacker();
-                }
-            }
+            winnerSpriteLeft = new Sprite("Backgrounds/PreGame/commanders", new Vector2(210, 270));
+            winnerSpriteRight = new Sprite("Backgrounds/PreGame/commanders", new Vector2(1020, 270));
         }
 
         public override void Initialize()
@@ -73,10 +44,16 @@ namespace DotWars
             GenerateLeftHandStatistic();
             GenerateCenterStatistic();
             GenerateRightHandStatistic();
+            GenerateWinnerString();
         }
 
         public override void LoadContent(ContentManager cM)
         {
+            if (winnerSpriteLeft != null && winnerSpriteRight != null)
+            {
+                winnerSpriteLeft.LoadContent(textures);
+                winnerSpriteRight.LoadContent(textures);
+            }
             base.LoadContent(cM);
         }
 
@@ -104,9 +81,26 @@ namespace DotWars
             objects.DrawTop(sB, Vector2.Zero);
             agents.DrawHighest(sB, Vector2.Zero);
             backgrounds.Drawforegrounds(sB, Vector2.Zero);
-            managers.GetTextureManager().DrawString(sB, leftHandStats, new Vector2(100, 500), Color.White, TextureManager.FontSizes.small);
-            managers.GetTextureManager().DrawString(sB, centerStats, new Vector2(400, 500), Color.White, TextureManager.FontSizes.small);
-            managers.GetTextureManager().DrawString(sB, rightHandStats, new Vector2(900, 500), Color.White, TextureManager.FontSizes.small);
+            managers.GetTextureManager().DrawString(sB, leftHandStats, new Vector2(195, 570), Color.White, TextureManager.FontSizes.small);
+            managers.GetTextureManager().DrawString(sB, centerStats, new Vector2(590, 605), Color.White, TextureManager.FontSizes.small);
+            managers.GetTextureManager().DrawString(sB, rightHandStats, new Vector2(990, 590), Color.White, TextureManager.FontSizes.small);
+            managers.GetTextureManager().DrawString(sB, winnerString, new Vector2(620, 150), Color.White, TextureManager.FontSizes.big);
+
+            if(winnerString.CompareTo("Tie Game...") != 0)
+                managers.GetTextureManager().DrawString(sB, winsString, new Vector2(620, 260), Color.White, TextureManager.FontSizes.big);
+
+            if (winnerSpriteLeft != null)
+            {
+                winnerSpriteLeft.SetFrameIndex(winnerFrameLeft);
+                winnerSpriteLeft.UpdateFrame();
+                winnerSpriteLeft.Draw(sB, Vector2.Zero, managers);
+            }
+            if (winnerSpriteRight != null)
+            {
+                winnerSpriteRight.SetFrameIndex(winnerFrameRight);
+                winnerSpriteRight.UpdateFrame();
+                winnerSpriteRight.Draw(sB, Vector2.Zero, managers);
+            }
             sB.End();
         }
 
@@ -181,6 +175,8 @@ namespace DotWars
             }
             else if (result.GetManagerHelper().GetGametype() is Conquest)
             {
+                rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetCasualitiesStatistic();
+                rightHandStats += "\n";
                 rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetMostMedicsKilledStatistic();
                 rightHandStats += "\n";
                 rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetCasualitiesStatistic();
@@ -194,6 +190,215 @@ namespace DotWars
                 rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetMostDotsRecruitedStatistic();
                 rightHandStats += "\n";
             }
+        }
+
+        public void GenerateWinnerString()
+        {
+            NPC secondaryWinner = null;
+
+            if (result.GetManagerHelper().GetGametype() is Assasssins)
+            {
+                Assasssins gametypeWinner = (Assasssins)result.GetManagerHelper().GetGametype();
+                NPC.AffliationTypes winner = gametypeWinner.GetWinner();
+                secondaryWinner = result.GetManagerHelper().GetNPCManager().GetSecondaryCommander(winner);
+
+                switch (winner)
+                {
+                    case NPC.AffliationTypes.red:
+                        winnerString = "Mustachio ";
+                        winnerFrameLeft = RED_INDEX;
+                        break;
+                    case NPC.AffliationTypes.blue:
+                        winnerString = "Aqueos ";
+                        winnerFrameLeft = BLUE_INDEX;
+                        break;
+                    case NPC.AffliationTypes.green:
+                        winnerString = "Terran ";
+                        winnerFrameLeft = GREEN_INDEX;
+                        break;
+                    case NPC.AffliationTypes.yellow:
+                        winnerString = "Dian ";
+                        winnerFrameLeft = YELLOW_INDEX;
+                        break;
+                    case NPC.AffliationTypes.same:
+                        winnerString = "Tie Game...";
+                        winnerSpriteRight = null;
+                        winnerSpriteLeft = null;
+                        break;
+                }
+            }
+            else if (result.GetManagerHelper().GetGametype() is Assault)
+            {
+                Assault gametypeWinner = (Assault)result.GetManagerHelper().GetGametype();
+                NPC.AffliationTypes winner = gametypeWinner.GetWinner();
+                secondaryWinner = result.GetManagerHelper().GetNPCManager().GetSecondaryCommander(winner);
+
+                switch (winner)
+                {
+                    case NPC.AffliationTypes.red:
+                        winnerString = "Red Team ";
+                        winnerFrameLeft = RED_INDEX;
+                        break;
+                    case NPC.AffliationTypes.blue:
+                        winnerString = "Blue Team ";
+                        winnerFrameLeft = BLUE_INDEX;
+                        break;
+                    case NPC.AffliationTypes.green:
+                        winnerString = "Green Team ";
+                        winnerFrameLeft = GREEN_INDEX;
+                        break;
+                    case NPC.AffliationTypes.yellow:
+                        winnerString = "Yellow Team ";
+                        winnerFrameLeft = YELLOW_INDEX;
+                        break;
+                    case NPC.AffliationTypes.same:
+                        winnerString = "Tie Game...";
+                        winnerSpriteRight = null;
+                        winnerSpriteLeft = null;
+                        break;
+                }
+            }
+            else if (result.GetManagerHelper().GetGametype() is CaptureTheFlag)
+            {
+                CaptureTheFlag gametypeWinner = (CaptureTheFlag)result.GetManagerHelper().GetGametype();
+                NPC.AffliationTypes winner = gametypeWinner.GetWinner();
+                secondaryWinner = result.GetManagerHelper().GetNPCManager().GetSecondaryCommander(winner);
+
+                switch (winner)
+                {
+                    case NPC.AffliationTypes.red:
+                        winnerString = "Red Team ";
+                        winnerFrameLeft = RED_INDEX;
+                        break;
+                    case NPC.AffliationTypes.blue:
+                        winnerString = "Blue Team ";
+                        winnerFrameLeft = BLUE_INDEX;
+                        break;
+                    case NPC.AffliationTypes.green:
+                        winnerString = "Green Team ";
+                        winnerFrameLeft = GREEN_INDEX;
+                        break;
+                    case NPC.AffliationTypes.yellow:
+                        winnerString = "Yellow Team ";
+                        winnerFrameLeft = YELLOW_INDEX;
+                        break;
+                    case NPC.AffliationTypes.same:
+                        winnerString = "Tie Game...";
+                        winnerSpriteRight = null;
+                        winnerSpriteLeft = null;
+                        break;
+                }
+            }
+            else if (result.GetManagerHelper().GetGametype() is Conquest)
+            {
+                Conquest gametypeWinner = (Conquest)result.GetManagerHelper().GetGametype();
+                NPC.AffliationTypes winner = gametypeWinner.GetWinner();
+                secondaryWinner = result.GetManagerHelper().GetNPCManager().GetSecondaryCommander(winner);
+
+                switch (winner)
+                {
+                    case NPC.AffliationTypes.red:
+                        winnerString = "Red Team ";
+                        winnerFrameLeft = RED_INDEX;
+                        break;
+                    case NPC.AffliationTypes.blue:
+                        winnerString = "Blue Team ";
+                        winnerFrameLeft = BLUE_INDEX;
+                        break;
+                    case NPC.AffliationTypes.green:
+                        winnerString = "Green Team ";
+                        winnerFrameLeft = GREEN_INDEX;
+                        break;
+                    case NPC.AffliationTypes.yellow:
+                        winnerString = "Yellow Team ";
+                        winnerFrameLeft = YELLOW_INDEX;
+                        break;
+                    case NPC.AffliationTypes.same:
+                        winnerString = "Tie Game...";
+                        winnerSpriteRight = null;
+                        winnerSpriteLeft = null;
+                        break;
+                }
+            }
+            else if (result.GetManagerHelper().GetGametype() is Deathmatch)
+            {
+                Deathmatch gametypeWinner = (Deathmatch)result.GetManagerHelper().GetGametype();
+                NPC.AffliationTypes winner = gametypeWinner.GetWinner();
+                secondaryWinner = result.GetManagerHelper().GetNPCManager().GetSecondaryCommander(winner);
+
+                switch (winner)
+                {
+                    case NPC.AffliationTypes.red:
+                        winnerString = "Red Team ";
+                        winnerFrameLeft = RED_INDEX;
+                        break;
+                    case NPC.AffliationTypes.blue:
+                        winnerString = "Blue Team ";
+                        winnerFrameLeft = BLUE_INDEX;
+                        break;
+                    case NPC.AffliationTypes.green:
+                        winnerString = "Green Team ";
+                        winnerFrameLeft = GREEN_INDEX;
+                        break;
+                    case NPC.AffliationTypes.yellow:
+                        winnerString = "Yellow Team ";
+                        winnerFrameLeft = YELLOW_INDEX;
+                        break;
+                    case NPC.AffliationTypes.same:
+                        winnerString = "Tie Game...";
+                        winnerSpriteRight = null;
+                        winnerSpriteLeft = null;
+                        break;
+                }
+            }
+            else if (result.GetManagerHelper().GetGametype() is Survival)
+            {
+                Survival gametypeWinner = (Survival)result.GetManagerHelper().GetGametype();
+                NPC.AffliationTypes winner = gametypeWinner.GetWinner();
+                secondaryWinner = result.GetManagerHelper().GetNPCManager().GetSecondaryCommander(winner);
+
+                switch (winner)
+                {
+                    case NPC.AffliationTypes.red:
+                        winnerString = "Mustachio ";
+                        winnerFrameLeft = RED_INDEX;
+                        break;
+                    case NPC.AffliationTypes.blue:
+                        winnerString = "Aqueos ";
+                        winnerFrameLeft = BLUE_INDEX;
+                        break;
+                    case NPC.AffliationTypes.green:
+                        winnerString = "Terran ";
+                        winnerFrameLeft = GREEN_INDEX;
+                        break;
+                    case NPC.AffliationTypes.yellow:
+                        winnerString = "Dian ";
+                        winnerFrameLeft = YELLOW_INDEX;
+                        break;
+                    case NPC.AffliationTypes.same:
+                        winnerString = "Tie Game...";
+                        winnerSpriteRight = null;
+                        winnerSpriteLeft = null;
+                        break;
+                }
+            }
+
+            if(secondaryWinner != null)
+                switch (secondaryWinner.GetPersonalAffilation())
+                {
+                    case NPC.AffliationTypes.red:
+                        winnerFrameRight = RED_INDEX;
+                        break;
+                    case NPC.AffliationTypes.blue:
+                        winnerFrameRight = BLUE_INDEX;
+                        break;
+                    case NPC.AffliationTypes.green:
+                        winnerFrameRight = GREEN_INDEX;
+                        break;
+                    case NPC.AffliationTypes.yellow:
+                        winnerFrameRight = YELLOW_INDEX;
+                        break;
+                }
         }
     }
 }

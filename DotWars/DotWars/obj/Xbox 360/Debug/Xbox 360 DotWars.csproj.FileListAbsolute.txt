@@ -3394,3 +3394,8 @@ C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWar
 C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\triggersOnly.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\triggers.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileGrunt.xnb
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\triggers.xnb
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\triggersOnly.xnb
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileGrunt.xnb
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\suicide_spawn_particle.xnb
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\suicide_spawn_sprite.xnb

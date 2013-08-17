@@ -40,6 +40,8 @@ namespace DotWars
             //TODO: Make this compatable with NPC death code
             if (target != null && CollisionHelper.IntersectPixelsRadius(this, target, 24, 24) != new Vector2(-1))
                 Explode(mH);
+            else if (PathHelper.Distance(this.GetOriginPosition(), FindClosestRock(mH)) < 48)
+                Explode(mH);
         }
 
         protected override bool ProjectileCheck(ManagerHelper mH)
@@ -118,11 +120,33 @@ namespace DotWars
         {
             NPC tempEnemy = mH.GetNPCManager()
                               .GetClosestInList(mH.GetNPCManager().GetAllButAllies(affiliation), GetOriginPosition());
+            Vector2 closetRockPosition = FindClosestRock(mH);
 
-            if (tempEnemy != null)
+            if (closetRockPosition != new Vector2(-1, -1))
+                return mH.GetPathHelper().FindClearPath(GetOriginPosition(), closetRockPosition, mH);
+            else if (tempEnemy != null)
                 return mH.GetPathHelper().FindClearPath(GetOriginPosition(), tempEnemy.GetOriginPosition(), mH);
             else
                 return RandomPath(mH);
+        }
+
+        private Vector2 FindClosestRock(ManagerHelper mH)
+        {
+            float closestDistance = 10000;
+            float distance = 0;
+            LargeRock closestRock = null;
+
+            foreach (LargeRock rock in mH.GetAbilityManager().GetLargeRocks())
+            {
+                distance = PathHelper.Distance(rock.GetOriginPosition(), this.GetOriginPosition());
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closestRock = rock;
+                }
+            }
+
+            return (closestRock != null ? closestRock.GetOriginPosition() : new Vector2(-1,-1));
         }
     }
 }

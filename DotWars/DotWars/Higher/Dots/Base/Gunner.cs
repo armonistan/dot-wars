@@ -13,8 +13,6 @@ namespace DotWars
             movementSpeed = 80; //Slightly below average movement speed
             shootingSpeed = .15; //Fast fire rate
 
-            vision = 120;
-
             affiliation = AffliationTypes.red;
         }
 
@@ -30,7 +28,7 @@ namespace DotWars
 
             mH.GetProjectileManager()
               .AddProjectile("Projectiles/bullet_standard", GetOriginPosition() + tempPos, this,
-                             PathHelper.Direction(rotation)*300, 15, false, 4);
+                             PathHelper.Direction(rotation)*350, 15, false, 4);
 
             mH.GetAudioManager().Play("standardShoot", AudioManager.RandomVolume(mH),
                 AudioManager.RandomPitch(mH), 0, false);

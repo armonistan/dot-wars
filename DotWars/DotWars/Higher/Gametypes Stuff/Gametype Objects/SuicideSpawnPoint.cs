@@ -8,6 +8,12 @@ namespace DotWars
 {
     public class SuicideSpawnPoint : SpawnPoint
     {
+        private Sprite suicideSpawnSprite;
+        private float particleTimer;
+        private float particleEndtime;
+        private float spriteTimer;
+        private float spriteEndtime;
+
         public SuicideSpawnPoint(Vector2 sP, ManagerHelper mH)
             :base(sP, NPC.AffliationTypes.black, mH)
         {
@@ -16,12 +22,49 @@ namespace DotWars
             path = new Path();
             asset = "Dots/Grey/grey_claimable";
             movementSpeed = 50;
+
+            spriteEndtime = .05f;
+            spriteTimer = 0;
+            suicideSpawnSprite = new Sprite("Effects/suicide_spawn_sprite", sP, Vector2.Zero);
+
+            particleTimer = 0;
+            particleEndtime = .07f;
+        }
+
+        public override void LoadContent(TextureManager tM)
+        {
+            suicideSpawnSprite.LoadContent(tM);
+            base.LoadContent(tM);
+        }
+
+        private void animateEffects(ManagerHelper mH)
+        {
+            //animation of spawn sprite
+            if (spriteTimer > spriteEndtime)
+            {
+                suicideSpawnSprite.SetFrameIndex(suicideSpawnSprite.GetFrameIndex() + 1);
+
+                if (suicideSpawnSprite.GetFrameIndex() > 10)
+                {
+                    suicideSpawnSprite.SetFrameIndex(0);
+                }
+                spriteTimer = 0;
+            }
+            else
+            {
+                spriteTimer += (float)mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            }
+
+            suicideSpawnSprite.position = new Vector2(position.X - origin.X, position.Y - origin.Y);
+            suicideSpawnSprite.Update(mH);
         }
 
         public override void Update(ManagerHelper mH)
         {
             NPCUpdate(mH);
             spawnPoint = GetOriginPosition();
+            
+            animateEffects(mH);
             base.Update(mH);
         }
 
@@ -96,7 +139,6 @@ namespace DotWars
             frame.Y = modeIndex * frame.Height;
         }
 
-
         protected override bool ProjectileCheck(ManagerHelper mH)
         {
             return false;
@@ -106,6 +148,13 @@ namespace DotWars
         protected override Path SpecialPath(ManagerHelper mH)
         {
             return RandomPath(mH);
+        }
+
+        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, Vector2 displacement, ManagerHelper mH)
+        {
+            //suicideSpawnParticle.Draw(sB, displacement, mH);
+            suicideSpawnSprite.Draw(sB, displacement, mH);
+            //base.Draw(sB, displacement, mH);
         }
     }
 }

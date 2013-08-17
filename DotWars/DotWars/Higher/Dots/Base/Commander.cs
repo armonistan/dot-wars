@@ -38,7 +38,7 @@ namespace DotWars
             maxHealth = health; //The units starting health will always be his max health
             movementSpeed = 135; //Above average movement speed. He is an elite, no?
             shootingSpeed = .3; //Above average shooting speed for machine gun in seconds
-            shotgunShootingSpeed = 1.5; //Average shooting speed for shotgun
+            shotgunShootingSpeed = 1.2; //Average shooting speed for shotgun
             weaponType = 0; //machine gun default
             grenadeType = 0;
 
@@ -55,6 +55,9 @@ namespace DotWars
             abilityPercent = 0.5f;
 
             awareness = 500;
+            vision = (float) Math.PI/2;
+            sight = 300;
+            turningSpeed = (float) Math.PI/20;
 
             affiliation = AffliationTypes.red;
 
@@ -182,30 +185,14 @@ namespace DotWars
         {
             Vector2 tempPos = PathHelper.Direction(rotation + (float) (Math.PI/2))*new Vector2(10);
 
-            mH.GetProjectileManager()
+            //7 Shots
+            for (int s = 0; s < 7; s++)
+            {
+                mH.GetProjectileManager()
               .AddProjectile("Projectiles/bullet_shotgun", GetOriginPosition() + tempPos, this,
                              PathHelper.Direction(rotation + (float) mH.GetRandom().NextDouble()/4 - 0.125f)*500, 15,
                              false, 1);
-            mH.GetProjectileManager()
-              .AddProjectile("Projectiles/bullet_shotgun", GetOriginPosition() + tempPos, this,
-                             PathHelper.Direction(rotation + (float) mH.GetRandom().NextDouble()/4 - 0.125f)*500, 15,
-                             false, 1);
-            mH.GetProjectileManager()
-              .AddProjectile("Projectiles/bullet_shotgun", GetOriginPosition() + tempPos, this,
-                             PathHelper.Direction(rotation + (float) mH.GetRandom().NextDouble()/4 - 0.125f)*500, 15,
-                             false, 1);
-            mH.GetProjectileManager()
-              .AddProjectile("Projectiles/bullet_shotgun", GetOriginPosition() + tempPos, this,
-                             PathHelper.Direction(rotation + (float) mH.GetRandom().NextDouble()/4 - 0.125f)*500, 15,
-                             false, 1);
-            mH.GetProjectileManager()
-              .AddProjectile("Projectiles/bullet_shotgun", GetOriginPosition() + tempPos, this,
-                             PathHelper.Direction(rotation + (float) mH.GetRandom().NextDouble()/4 - 0.125f)*500, 15,
-                             false, 1);
-            mH.GetProjectileManager()
-              .AddProjectile("Projectiles/bullet_shotgun", GetOriginPosition() + tempPos, this,
-                             PathHelper.Direction(rotation + (float) mH.GetRandom().NextDouble()/4 - 0.125f)*500, 15,
-                             false, 1);
+            }
 
             ShotgunSound(mH);
         }
@@ -222,7 +209,7 @@ namespace DotWars
 
             mH.GetProjectileManager()
               .AddProjectile("Projectiles/bullet_standard", GetOriginPosition() + tempPos, this,
-                             PathHelper.Direction(rotation + (float)mH.GetRandom().NextDouble() / 8 - 0.0625f) * 300, 25,
+                             PathHelper.Direction(rotation + (float)mH.GetRandom().NextDouble() / 8 - 0.0625f) * 400, 25,
                              false, 5);
 
             ShootSound(mH);
@@ -275,10 +262,8 @@ namespace DotWars
                 {
                     var temp = (Conquest) tempGameType;
                     hasAllies = (mH.GetNPCManager().GetAlliesInRadius(affiliation, GetOriginPosition(), 250).Count > 2);
-                    bool isNearBase =
-                        (PathHelper.Distance(GetOriginPosition(),
-                                             temp.GetClosestInList(temp.GetEnemyBases(affiliation), GetOriginPosition())
-                                                 .GetOriginPosition()) < 128);
+                    var closestBase = temp.GetClosestInList(temp.GetEnemyBases(affiliation), GetOriginPosition());
+                    bool isNearBase = closestBase != null && (PathHelper.Distance(GetOriginPosition(), closestBase.GetOriginPosition()) < 128) ;
 
                     return (hasAllies && isNearBase);
                 }

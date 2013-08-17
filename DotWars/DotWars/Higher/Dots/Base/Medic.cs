@@ -13,12 +13,14 @@ namespace DotWars
         public Medic(String aN, Vector2 p)
             : base(aN, p)
         {
-            health = 75; //As a non combat personal unit, the medic has below average health
+            health = 100;
             maxHealth = health; //The units starting health will always be his max health
-            movementSpeed = 100; //Average speed
+            movementSpeed = 110;
             shootingSpeed = 0.5f; //the medic is unique in that it doesn't have a shooting rate it has a healing rate
 
-            awareness = 2000; //So he may see everyone
+            awareness = 300; //So he may see everyone
+            vision = (float) Math.PI;
+            turningSpeed = (float) Math.PI/10;
             healRadius = 70;
 
             affiliation = AffliationTypes.red;

@@ -17,11 +17,13 @@ namespace DotWars
         {
             health = 90;//Lightly armored, the sniper can take a little bit more than a medic but thats it. Slightly below average health
             maxHealth = health; //The units starting health will always be his max health
-            movementSpeed = 120; //The sniper must rely on speed more than armor. Above average speed
-            shootingSpeed = 2.5; //Snipers are one shot one kills. Slow reload time
+            movementSpeed = 130; //The sniper must rely on speed more than armor. Above average speed
+            shootingSpeed = 2; //Snipers are one shot one kills. Slow reload time
 
-            awareness = 75;
-            sight = 550;
+            awareness = 150;
+            vision = (float) Math.PI/2;
+            sight = 750;
+            turningSpeed = (float) Math.PI/20;
 
             pathTimerEnd = 100;
             path = null;
@@ -81,7 +83,7 @@ namespace DotWars
 
             mH.GetProjectileManager()
               .AddProjectile("Projectiles/bullet_standard", GetOriginPosition() + tempPos, this,
-                             PathHelper.Direction(rotation + (float)mH.GetRandom().NextDouble() / 8 - 0.0625f) * 600, 75,
+                             PathHelper.Direction(rotation + (float)mH.GetRandom().NextDouble() / 8 - 0.0625f) * 1200, 90,
                              false, 5);
 
             mH.GetAudioManager().Play("sniperShoot", AudioManager.RandomVolume(mH),

@@ -20,9 +20,8 @@ namespace DotWars
         #endregion
 
         public Conquest(List<NPC.AffliationTypes> tL, Dictionary<Type, NPC.AffliationTypes> pL, int pC, float sT)
-            : base(tL, pL, 10, pC, sT)
+            : base(tL, pL, 0, pC, sT)
         {
-            //Replenishes commanders every 5 secs
             spawnSecs = 4;
             counter = 0;
             this.typeOfGame = GT.CONQUEST;
@@ -196,16 +195,26 @@ namespace DotWars
 
             #endregion
 
-            if (winScore != -1)
-            {
-                if (GetWinner() != NPC.AffliationTypes.same)
-                {
-                    return true;
-                }
-            }
-
             if (gameEndTimer < 0)
             {
+                return true;
+            }
+
+            var tryGetWinner = GetWinner();
+
+            if (tryGetWinner != NPC.AffliationTypes.same)
+            {
+                foreach (KeyValuePair<Type, NPC.AffliationTypes> commander in commanders)
+                {
+                    if (commander.Value != tryGetWinner)
+                    {
+                        if (mH.GetNPCManager().DoesNPCExist(mH.GetNPCManager().GetCommander(commander.Key)))
+                        {
+                            return false;
+                        }
+                    }
+                }
+
                 return true;
             }
 

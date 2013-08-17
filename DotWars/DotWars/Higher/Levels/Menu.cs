@@ -577,7 +577,7 @@ namespace DotWars
                                         }
                                         for (int t = 0; t < teamCards.Length; t++)
                                         {
-                                            teamCards[c].SetFrameIndex(0);
+                                            teamCards[t].SetFrameIndex(0);
                                         }
 
                                         ResetAllCounters();

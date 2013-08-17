@@ -15,13 +15,15 @@ namespace DotWars
         public Bombardier(String aN, Vector2 p)
             : base(aN, p)
         {
-            health = 100; //About average armor
+            health = 90;
             maxHealth = health; //The units starting health will always be his max health
             movementSpeed = 100; //The bombardier isn't the most athletic, average speed (still under decision
             shootingSpeed = 6; //Bombardiers call in plane. Slow "reload" time
 
-            awareness = 75;
+            awareness = 100;
+            vision = (float) Math.PI/2;
             sight = 550;
+            turningSpeed = (float) Math.PI/20;
 
             pathTimerEnd = 100;
             path = null;

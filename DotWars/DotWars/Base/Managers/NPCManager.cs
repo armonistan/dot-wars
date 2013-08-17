@@ -453,6 +453,16 @@ namespace DotWars
             return null;
         }
 
+        public NPC GetSecondaryCommander(NPC.AffliationTypes teamAffilation)
+        {
+            foreach (NPC commander in commanders)
+            {
+                if (commander.GetAffiliation() == teamAffilation && commander.GetPersonalAffilation() != teamAffilation)
+                    return commander;
+            }
+
+            return null;
+        }
         #endregion
 
         public NPC GetSpecificCommander(NPC.AffliationTypes personalAffilation)

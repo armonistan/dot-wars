@@ -981,8 +981,12 @@ namespace DotWars
             return NPC.AffliationTypes.grey;
         }
 
-        public NPC.AffliationTypes GetWinner()
+        public virtual NPC.AffliationTypes GetWinner()
         {
+            int highestScoreIndex = -1;
+            int highestScore = -1;
+            bool isTie = true;
+
             //Go through each team and see if they won
             for (int i = 0; i < teams.Count; i++)
             {
@@ -990,9 +994,21 @@ namespace DotWars
                 {
                     return teams[i];
                 }
+                else if(gameEndTimer <= 0) 
+                    if(scores[i] == highestScore)
+                        isTie = true;
+                    else if (scores[i] > highestScore)
+                    {
+                        highestScoreIndex = i;
+                        highestScore = scores[i];
+                        isTie = false;
+                    }
             }
 
-            return NPC.AffliationTypes.same;
+            if (isTie)
+                return NPC.AffliationTypes.same;
+            else
+                return teams[highestScoreIndex];
         }
 
         public List<NPC.AffliationTypes> GetHighestScores()
@@ -1049,7 +1065,7 @@ namespace DotWars
             int cap = 2;
             if (teams.Count == 5)
                 cap = 4;
-            for (int i = cap - 1; i > -1; i--)
+            for (int i = 0; i < cap; i++)
             {
                 score += scores[i] + " ";
             }

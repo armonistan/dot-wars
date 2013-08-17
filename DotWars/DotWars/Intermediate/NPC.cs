@@ -71,13 +71,12 @@ namespace DotWars
             velocity = new Vector2(1, 0)*movementSpeed;
             drag = 0;
 
-
             movementSpeed = 75;
             shootingSpeed = 0.2f;
             grenadeSpeed = 3f;
-            turningSpeed = maxTurningSpeed = (float) Math.PI/40;
+            turningSpeed = maxTurningSpeed = (float) Math.PI/30;
 
-            awareness = 150;
+            awareness = 75;
             sight = 250;
             vision = (float) Math.PI/3;
 
@@ -467,7 +466,7 @@ namespace DotWars
 
             mH.GetProjectileManager()
               .AddProjectile("Projectiles/bullet_standard", GetOriginPosition() + tempPos, this,
-                             PathHelper.Direction(rotation + (float) mH.GetRandom().NextDouble()/8 - 0.0625f)*300, 25,
+                             PathHelper.Direction(rotation + (float) mH.GetRandom().NextDouble()/8 - 0.0625f)*400, 25,
                              false, 5);
 
             mH.GetAudioManager().Play("standardShoot", AudioManager.RandomVolume(mH),

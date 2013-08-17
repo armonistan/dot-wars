@@ -216,6 +216,8 @@ namespace DotWars
             textures.Add("Effects/smoke_yellow", new Rectangle(0, 0, 9, 9));
             textures.Add("Effects/smoke_standard", new Rectangle(0, 0, 30, 30));
 
+            textures.Add("Effects/suicide_spawn_sprite", new Rectangle(0, 0, 96, 96));
+
             textures.Add("Effects/spark_red", new Rectangle(0, 0, 5, 5));
             textures.Add("Effects/spark_blue", new Rectangle(0, 0, 5, 5));
             textures.Add("Effects/spark_green", new Rectangle(0, 0, 5, 5));

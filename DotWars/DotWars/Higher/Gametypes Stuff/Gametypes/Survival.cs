@@ -28,7 +28,7 @@ namespace DotWars
             gameEndTimer = 120;
             counter = 0;
             spawnSecs = 2;
-            winScore = -1;
+            winScore = 100;
             redCommanderHasSpawned = false;
             blueCommanderHasSpawned = false;
             greenCommanderHasSpawned = false;
@@ -153,50 +153,82 @@ namespace DotWars
             return null;
         }
 
-        public virtual void SpawnCommander(ManagerHelper mH, Type commanderType, NPC.AffliationTypes team, Vector2 point)
+        public override void SpawnCommander(ManagerHelper mH, Type commanderType, NPC.AffliationTypes team, Vector2 point)
         {
-            if (redCommanderHasSpawned && commanderType == typeof(RedCommander))
+            if (!redCommanderHasSpawned && commanderType == typeof(RedCommander))
             {
                 mH.GetNPCManager().Add(new RedCommander(point, team));
                 redCommanderHasSpawned = true;
             }
-            else if (blueCommanderHasSpawned && commanderType == typeof(BlueCommander))
+            else if (!blueCommanderHasSpawned && commanderType == typeof(BlueCommander))
             {
                 mH.GetNPCManager().Add(new BlueCommander(point, team));
                 blueCommanderHasSpawned = true;
             }
-            else if (greenCommanderHasSpawned && commanderType == typeof(GreenCommander))
+            else if (!greenCommanderHasSpawned && commanderType == typeof(GreenCommander))
             {
                 mH.GetNPCManager().Add(new GreenCommander(point, team));
                 greenCommanderHasSpawned = true;
             }
-            else if (yellowCommanderHasSpawned && commanderType == typeof(YellowCommander))
+            else if (!yellowCommanderHasSpawned && commanderType == typeof(YellowCommander))
             {
                 mH.GetNPCManager().Add(new YellowCommander(point, team));
                 yellowCommanderHasSpawned = true;
             }
-            else if (redCommanderHasSpawned && commanderType == typeof(RedPlayerCommander))
+            else if (!redCommanderHasSpawned && commanderType == typeof(RedPlayerCommander))
             {
                 mH.GetNPCManager().Add(new RedPlayerCommander(point, team, mH));
                 redCommanderHasSpawned = true;
             }
-            else if (blueCommanderHasSpawned && commanderType == typeof(BluePlayerCommander))
+            else if (!blueCommanderHasSpawned && commanderType == typeof(BluePlayerCommander))
             {
                 mH.GetNPCManager().Add(new BluePlayerCommander(point, team, mH));
                 blueCommanderHasSpawned = true;
             }
-            else if (greenCommanderHasSpawned && commanderType == typeof(GreenPlayerCommander))
+            else if (!greenCommanderHasSpawned && commanderType == typeof(GreenPlayerCommander))
             {
                 mH.GetNPCManager().Add(new GreenPlayerCommander(point, team, mH));
                 greenCommanderHasSpawned = true;
             }
-            else if (yellowCommanderHasSpawned && commanderType == typeof(YellowPlayerCommander))
+            else if (!yellowCommanderHasSpawned && commanderType == typeof(YellowPlayerCommander))
             {
                 mH.GetNPCManager().Add(new YellowPlayerCommander(point, team, mH));
                 yellowCommanderHasSpawned = true;
             }
         }
 
+        public override NPC.AffliationTypes GetWinner()
+        {
+            int maxScore = 0;
+            int winningTeam = 0;
+
+            //Go through each team and see if they won
+            for (int i = 0; i < teams.Count; i++)
+            {
+                if (scores[i] >= winScore)
+                {
+                    return teams[i];
+                }
+            }
+
+            //Go through each team and see who got highest score
+            if (gameEndTimer <= 0)
+            {
+                for (int i = 0; i < teams.Count; i++)
+                {
+                    if (scores[i] >= maxScore)
+                    {
+                        winningTeam = i;
+                        maxScore = scores[i];
+                    }
+                }
+
+                if (maxScore > 0)
+                    return teams[winningTeam];
+            }
+
+            return NPC.AffliationTypes.same;
+        }
 
         public override string GetName()
         {
