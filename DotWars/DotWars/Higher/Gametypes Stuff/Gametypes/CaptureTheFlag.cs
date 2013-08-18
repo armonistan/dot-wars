@@ -14,7 +14,7 @@ namespace DotWars
         #endregion
 
         public CaptureTheFlag(List<NPC.AffliationTypes> tL, Dictionary<Type, NPC.AffliationTypes> pL, int pC, float sT)
-            : base(tL, pL, 2, pC, sT)
+            : base(tL, pL, 3, pC, sT)
         {
             this.typeOfGame = GT.CTF;
         }

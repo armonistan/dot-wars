@@ -94,7 +94,7 @@ namespace DotWars
                 {
                     if (mH.GetNPCManager().GetCommander(commanders.Keys.ElementAt(i)) == null)
                     {
-                        if (spawnsCounters[i] > spawnTime)
+                        if (spawnsCounters[i] > spawnTime && (!HasSomeoneWon() || GetWinner() == commanders.Values.ElementAt(i)))
                         {
                             if (commanders.Keys.ElementAt(i) == typeof (RedCommander))
                             {
@@ -208,7 +208,7 @@ namespace DotWars
                 {
                     if (commander.Value != tryGetWinner)
                     {
-                        if (mH.GetNPCManager().DoesNPCExist(mH.GetNPCManager().GetCommander(commander.Key)))
+                        if (mH.GetNPCManager().GetCommander(commander.Key) != null)
                         {
                             return false;
                         }
@@ -322,7 +322,7 @@ namespace DotWars
         {
             ConquestBase fb = null;
 
-            if (GetAlliedBases(a).Count != 0)
+            if (GetAlliedBases(a).Count != 0 && GetAlliedBases(a).Count != winScore)
             {
                 foreach (ConquestBase b in GetAlliedBases(a))
                 {
@@ -342,6 +342,19 @@ namespace DotWars
             }
 
             return fb;
+        }
+
+        private bool HasSomeoneWon()
+        {
+            foreach (int score in scores)
+            {
+                if (score == winScore)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         #endregion

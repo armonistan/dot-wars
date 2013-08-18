@@ -10,12 +10,14 @@ namespace DotWars
         private readonly float radius;
         private NPC.AffliationTypes affiliation;
         private int damage;
+        private bool exploaded;
 
         #endregion
 
         public Explosion()
         {
             asset = "Effects/explodeTop";
+            exploaded = false;
 
             radius = 64;
         }
@@ -26,9 +28,14 @@ namespace DotWars
                 NPC a in
                     mH.GetNPCManager().GetAllXInRadius(GetOriginPosition(), radius, mH.GetNPCManager().GetNPCs()))
             {
-                if (a.GetAffiliation() != affiliation)
+                if (!exploaded && a.GetAffiliation() != affiliation)
                 {
                     a.ChangeHealth(-1*damage, creator);
+
+                    if (a.GetHealth() < 0)
+                    {
+                        mH.GetNPCManager().Remove(a);
+                    }
                 }
 
                 //Make screen rumble
@@ -36,6 +43,16 @@ namespace DotWars
                 {
                     var tempCom = (Commander) a;
                     mH.GetCameraManager().SetRumble(mH.GetCameraManager().GetPlayerIndex(tempCom), 1000);
+                }
+            }
+
+            foreach (LargeRock largeRock in mH.GetAbilityManager().GetLargeRocks())
+            {
+                var test = PathHelper.DistanceSquared(GetOriginPosition(), largeRock.GetOriginPosition());
+
+                if (!exploaded && test < radius * radius)
+                {
+                    largeRock.ChangeHealth(-1 * damage);
                 }
             }
 
@@ -76,6 +93,8 @@ namespace DotWars
             }
 
             base.Update(mH);
+
+            exploaded = true;
         }
 
         //public void Set(Vector2 p, int d, NPC aT, ManagerHelper mH)
@@ -98,6 +117,9 @@ namespace DotWars
             affiliation = n.GetAffiliation();
             creator = n;
             damage = d;
+            exploaded = false;
+
+            originPosition = position + origin;
 
             mH.GetAudioManager().Play("explosion", AudioManager.RandomVolume(mH), AudioManager.RandomPitch(mH), 0, false);
         }
@@ -110,6 +132,7 @@ namespace DotWars
             affiliation = aT;
             creator = null;
             damage = d;
+            exploaded = false;
 
             mH.GetAudioManager().Play("explosion", AudioManager.RandomVolume(mH), AudioManager.RandomPitch(mH), 0, false);
         }

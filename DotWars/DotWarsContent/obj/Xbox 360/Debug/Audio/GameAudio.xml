@@ -9,14 +9,8 @@
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
     Compression Preset Name = &lt;none&gt;;
-    Xbox Bank Last Modified Low = 0;
-    Xbox Bank Last Modified High = 0;
-    PC Bank Last Modified Low = 0;
-    PC Bank Last Modified High = 0;
-    Header Last Modified Low = 0;
-    Header Last Modified High = 0;
-    Bank Last Revised Low = 2706314695;
-    Bank Last Revised High = 30316248;
+    Bank Last Revised Low = 3050090533;
+    Bank Last Revised High = 30317612;
 
     Wave
     {
@@ -413,22 +407,22 @@
     {
         Name = DotWars;
         File = ..\..\..\..\..\..\..\..\Dropbox\Dot Wars\Daniel\Sounds\DotWars.wav;
-        Build Settings Last Modified Low = 3195082134;
-        Build Settings Last Modified High = 30316230;
+        Build Settings Last Modified Low = 2971936063;
+        Build Settings Last Modified High = 30317612;
 
         Cache
         {
             Format Tag = 0;
             Channels = 2;
-            Sampling Rate = 96000;
+            Sampling Rate = 44100;
             Bits Per Sample = 1;
             Play Region Offset = 44;
-            Play Region Length = 42550248;
+            Play Region Length = 19549440;
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 2309835743;
-            Last Modified High = 30314644;
+            Last Modified Low = 2106366555;
+            Last Modified High = 30317612;
         }
     }
 }

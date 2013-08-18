@@ -11,11 +11,13 @@ namespace DotWars
 
         private readonly List<NPC> doomedDots;
         private readonly List<NPC> dotsSetOnFire;
-        private readonly float endAnimation;
-        private readonly float endLife;
         private NPC.AffliationTypes affiliation;
         private ManagerHelper managers;
-        private float timer;
+
+        private int frameCounter;
+        private const int drawFrames = 10;
+        private const int existFrames = 60;
+        private const int burnFrames = 3;
 
         #endregion
 
@@ -24,14 +26,12 @@ namespace DotWars
         {
             doomedDots = new List<NPC>();
             dotsSetOnFire = new List<NPC>();
-            endLife = 5;
-            endAnimation = 0.1f;
             managers = mH;
         }
 
         public void Set(Vector2 p, NPC.AffliationTypes aT, ManagerHelper mH)
         {
-            timer = 0;
+            frameCounter = 0;
             doomedDots.Clear();
             affiliation = aT;
             frameIndex = 0;
@@ -45,7 +45,7 @@ namespace DotWars
         {
             if (frameIndex < totalFrames)
             {
-                frameIndex = (int) (timer/endAnimation*4);
+                frameIndex = (int)((float)frameCounter/drawFrames*totalFrames);
 
                 //Spawn fire
                 if (mH.GetRandom().NextDouble() < 0.7f)
@@ -67,7 +67,7 @@ namespace DotWars
                             a.ChangeFireStatus();
                             dotsSetOnFire.Add(a);
                         }
-                        a.ChangeHealth(-10, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.red));
+                        a.ChangeHealth(-30, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.red));
                     }
                 }
             }
@@ -90,18 +90,22 @@ namespace DotWars
                       .AddFire(a.GetOriginPosition(),
                                PathHelper.Direction((float) (mH.GetRandom().NextDouble()*Math.PI*2))*30, 1, 0.05f, 1,
                                0.1f);
-                    a.ChangeHealth(-4, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.red));
+                }
+
+                if (frameCounter%burnFrames == 0)
+                {
+                    a.ChangeHealth(-2, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.red));
                 }
             }
 
-            timer += (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            frameCounter++;
 
             base.Update(mH);
         }
 
         public override void Draw(SpriteBatch sB, Vector2 displacement, ManagerHelper mH)
         {
-            if (timer <= endAnimation)
+            if (frameCounter <= drawFrames)
             {
                 base.Draw(sB, displacement, mH);
             }
@@ -109,7 +113,7 @@ namespace DotWars
 
         public bool IsDone()
         {
-            return timer > endLife;
+            return frameCounter > existFrames;
         }
 
         public void ResetFireStatus()

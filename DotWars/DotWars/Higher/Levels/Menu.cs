@@ -96,15 +96,14 @@ namespace DotWars
             }
             theTeams = new List<NPC.AffliationTypes>(5);
 
-            mapNames = new String[8];
+            mapNames = new String[7];
             mapNames[0] = "Archipelago";
             mapNames[1] = "Relic";
             mapNames[2] = "Switch";
-            mapNames[3] = "Void";
-            mapNames[4] = "Faercrag";
-            mapNames[5] = "Caged";
-            mapNames[6] = "Zen Garden";
-            mapNames[7] = "Plaza";
+            mapNames[3] = "Faercrag";
+            mapNames[4] = "Caged";
+            mapNames[5] = "Zen Garden";
+            mapNames[6] = "Plaza";
 
             gametypeNames = new String[6];
             gametypeNames[0] = "Assassins";
@@ -377,18 +376,15 @@ namespace DotWars
                                     gametype = (gametype == 0 ? 4 : 0);
                                     break;
                                 case 3:
-                                    gametype = (gametype == 1 ? 3 : 1);
-                                    break;
-                                case 4:
                                     gametype = (gametype == 2 ? 4 : 2);
                                     break;
-                                case 5:
+                                case 4:
                                     gametype = (gametype == 0 ? 5 : 0);
                                     break;
-                                case 6:
+                                case 5:
                                     gametype = (gametype == 1 ? 5 : 1);
                                     break;
-                                case 7:
+                                case 6:
                                     gametype = (gametype == 3 ? 5 : 3);
                                     break;   
                             }
@@ -729,18 +725,15 @@ namespace DotWars
                     gametype = 0;
                     break;
                 case 3:
-                    gametype = 3;
-                    break;
-                case 4:
                     gametype = 4;
                     break;
-                case 5:
+                case 4:
                     gametype = 5;
                     break;
-                case 6:
+                case 5:
                     gametype = 1;
                     break;
-                case 7:
+                case 6:
                     gametype = 3;
                     break;
             }
@@ -959,13 +952,13 @@ namespace DotWars
                     return new PreGame(new Relic(theGametype, playerCommanders, textures, sounds), theGametype, playerIndices[indexOfKing], textures, sounds);
                 case 2:
                     return new PreGame(new Switch(theGametype, playerCommanders, textures, sounds), theGametype, playerIndices[indexOfKing], textures, sounds);
-                case 4:
+                case 3:
                     return new PreGame(new Faercrag(theGametype, playerCommanders, textures, sounds), theGametype, playerIndices[indexOfKing], textures, sounds);
-                case 5:
+                case 4:
                     return new PreGame(new Caged(theGametype, playerCommanders, textures, sounds), theGametype, playerIndices[indexOfKing], textures, sounds);
-                case 6:
+                case 5:
                     return new PreGame(new ZenGarden(theGametype, playerCommanders, textures, sounds), theGametype, playerIndices[indexOfKing], textures, sounds);
-                case 7:
+                case 6:
                     return new PreGame(new Plaza(theGametype, playerCommanders, textures, sounds), theGametype, playerIndices[indexOfKing], textures, sounds);
                 default:
                     return this;

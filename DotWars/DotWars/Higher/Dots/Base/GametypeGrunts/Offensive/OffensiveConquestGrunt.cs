@@ -33,7 +33,7 @@ namespace DotWars
 
             else
             {
-                return base.NewPath(mH);
+                return EngagePath(mH);
             }
         }
     }

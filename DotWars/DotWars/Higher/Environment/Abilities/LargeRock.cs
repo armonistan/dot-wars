@@ -13,7 +13,7 @@ namespace DotWars
 
         private int health;
         private float timer;
-        private const int DAMAGE = 5;
+        private const int DAMAGE = 10;
 
         private NPC lastDamager;
 
@@ -74,7 +74,7 @@ namespace DotWars
             animateTime = 0.3f;
             timer = 0;
 
-            health = 100;
+            health = 150;
 
             affiliation = aT;
 
@@ -96,6 +96,11 @@ namespace DotWars
         public void SetHealth(int newHealth)
         {
             health = newHealth;
+        }
+
+        public void ChangeHealth(int amount)
+        {
+            SetHealth(GetHealth() + amount);
         }
 
         public NPC GetLastDamager()

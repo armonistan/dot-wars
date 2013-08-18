@@ -8,7 +8,7 @@ namespace DotWars
     public class Plaza : Level
     {
         public Plaza(Gametype gT, Dictionary<Type, int> pL, TextureManager tM, AudioManager audio) :
-            base(gT, pL, new Vector2(1312, 992), tM, audio)
+            base(gT, pL, new Vector2(1328, 1008), tM, audio)
         {
         }
 

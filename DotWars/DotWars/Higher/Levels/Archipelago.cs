@@ -81,7 +81,7 @@ namespace DotWars
                 //mid left
                 tempBases.Add(new ConquestBase(new Vector2(680, 80)));
                 //bot left
-                tempBases.Add(new ConquestBase(new Vector2(240, 660)));
+                tempBases.Add(new ConquestBase(new Vector2(240, 612)));
                 //top right
                 tempBases.Add(new ConquestBase(new Vector2(1080, 220)));
                 //fortress
@@ -94,7 +94,6 @@ namespace DotWars
                 sniperSpots.Add(new Vector2(1050, 600));
 
                 //base related spawns
-                //base one spawns
                 tempBases[0].AddSpawnpoint(tempBases[0].GetOriginPosition(), managers);
                 tempBases[0].AddSpawnpoint(new Vector2(760, 70), managers);
                 tempBases[0].AddSpawnpoint(new Vector2(280, 70), managers);
