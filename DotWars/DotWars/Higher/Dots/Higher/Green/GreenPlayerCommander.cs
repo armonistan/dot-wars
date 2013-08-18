@@ -19,11 +19,12 @@ namespace DotWars
             personalAffiliation = AffliationTypes.green;
             //Set up indicator
             indicator = new Sprite("Effects/PI_greenCommander", GetOriginPosition(), Vector2.Zero);
+            abilityUse = 55;
         }
 
         protected override void UsePower(ManagerHelper mH)
         {
-            if (CurrentPower() > MaxPower() * 0.55)
+            if (CurrentPower() > abilityUse)
             {
                 Vector2 tempPos = new Vector2(64) * PathHelper.Direction(rotation) + GetOriginPosition();
                 tempPos.X = tempPos.X - (tempPos.X % 32) + 16;
@@ -36,7 +37,7 @@ namespace DotWars
                     mH.GetAbilityManager().AddLargeRock(tempPos, affiliation);
 
                     base.UsePower(mH);
-                UpdatePowerStatistic();
+                    UpdatePowerStatistic();
                 }
             }
         }

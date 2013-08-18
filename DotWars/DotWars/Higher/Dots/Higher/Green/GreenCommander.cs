@@ -13,18 +13,20 @@ namespace DotWars
         }
 
         public GreenCommander(Vector2 p, AffliationTypes aT)
-            : base("Dots/Green/commander_green", p, 3)
+            : base("Dots/Green/commander_green", p)
         {
             rockCounter = 0;
             affiliation = aT;
             personalAffiliation = AffliationTypes.green;
             //Set up indicator
             indicator = new Sprite("Effects/PI_greenCommander", GetOriginPosition());
+
+            abilityUse = 55;
         }
 
         protected override void UsePower(ManagerHelper mH)
         {
-            if (CurrentPower() > MaxPower() * 0.5 && !mH.GetAbilityManager().HasReachedLargeRockCap())
+            if (CurrentPower() > abilityUse && !mH.GetAbilityManager().HasReachedLargeRockCap())
             {
                 Vector2 tempPos;
 

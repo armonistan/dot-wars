@@ -13,7 +13,7 @@ namespace DotWars
         #endif
 
         public PlayerCommander(string a, AffliationTypes aT, Vector2 p, ManagerHelper mH, double aS)
-            : base(a, p, aS)
+            : base(a, p)
         {
             affiliation = aT;
             wantedRotation = rotation;
@@ -141,7 +141,7 @@ namespace DotWars
             }
 
 #elif XBOX
-            if (theState.IsButtonDown(Buttons.A))
+            if (theState.IsButtonDown(Buttons.A) && !oldState.IsButtonDown(Buttons.A))
             {
                 UsePower(mH);
             }

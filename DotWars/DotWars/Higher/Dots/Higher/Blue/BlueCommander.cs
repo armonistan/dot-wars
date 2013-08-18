@@ -11,17 +11,19 @@ namespace DotWars
         }
 
         public BlueCommander(Vector2 p, AffliationTypes aT)
-            : base("Dots/Blue/commander_blue", p, 3)
+            : base("Dots/Blue/commander_blue", p)
         {
             affiliation = aT;
             personalAffiliation = AffliationTypes.blue;
             //Set up indicator
             indicator = new Sprite("Effects/PI_blueCommander", GetOriginPosition());
+
+            abilityUse = 60;
         }
 
         protected override void UsePower(ManagerHelper mH)
         {
-            if (CurrentPower() > MaxPower()*0.5)
+            if (CurrentPower() > abilityUse)
             {
                 Vector2 tempPos;
 

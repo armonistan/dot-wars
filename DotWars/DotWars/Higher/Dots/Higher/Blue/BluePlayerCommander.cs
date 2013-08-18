@@ -16,11 +16,13 @@ namespace DotWars
             //Set up indicator
             indicator = new Sprite("Effects/PI_blueCommander", GetOriginPosition(), Vector2.Zero);
             personalAffiliation = AffliationTypes.blue;
+
+            abilityUse = 60;
         }
 
         protected override void UsePower(ManagerHelper mH)
         {
-            if (CurrentPower() > MaxPower()*abilityPercent)
+            if (CurrentPower() > abilityUse)
             {
                 Vector2 tempPos = new Vector2(64)*PathHelper.Direction(rotation) + GetOriginPosition();
 

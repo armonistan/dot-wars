@@ -266,6 +266,10 @@ Content\Audio\Waves\menu\back_style_2_002.xnb
 Content\Audio\Waves\menu\confirm_style_2_002.xnb
 Content\Textures\Effects\suicide_spawn_particle.xnb
 Content\Textures\Effects\suicide_spawn_sprite.xnb
+Content\Textures\Dots\Blue\targetBlue.xnb
+Content\Textures\Dots\Green\targetGreen.xnb
+Content\Textures\Dots\Red\targetRed.xnb
+Content\Textures\Dots\Yellow\targetYellow.xnb
 Content\Audio\GameAudio.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb

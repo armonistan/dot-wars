@@ -120,14 +120,13 @@ namespace DotWars
             ctfTips[4] = new Tip("Only Grunts and Commanders can capture flags.", new DOTS[] { DOTS.AQUOES, DOTS.DIAN, DOTS.GRUNT, DOTS.MUSTACHIO, DOTS.TERRON });
             this.DictTip.Add(Gametype.GT.CTF, ctfTips);
 
-            Tip[] deathmatchTips = new Tip[7];
+            Tip[] deathmatchTips = new Tip[6];
             deathmatchTips[0] = new Tip("Coming face-to-face with a Gunner\nis almost certain death. Try to take a Gunner\nout from a distance by using grenades.", new DOTS[] { DOTS.GUNNER });
             deathmatchTips[1] = new Tip("Rockets explode, and can take out\nmany allied units at once.\nBeware the Specialist.", new DOTS[] { DOTS.SPECIALIST });
             deathmatchTips[2] = new Tip("The Medic heals nearby allies.", new DOTS[] { DOTS.MEDIC });
-            deathmatchTips[3] = new Tip("The Bombardier calls in devastating\nair strikes. When you hear the static, raise\nyour eyes to the skies.", new DOTS[] { DOTS.BOMBARDIER });
-            deathmatchTips[4] = new Tip("Bombardiers will try to stay\naway from the heat of battle. If airstrikes have got you down,\nhunt these guys.", new DOTS[] { DOTS.BOMBARDIER });
-            deathmatchTips[5] = new Tip("Keep an eye out for Snipers,\nwho can kill you from afar.", new DOTS[] { DOTS.SNIPER });
-            deathmatchTips[6] = new Tip("The Juggernaut will try to act as a shield\nfor his allies. Dispatch them by\ntossing grenades behind them.", new DOTS[] { DOTS.JUGGERNAUT });
+            deathmatchTips[3] = new Tip("The Bombardier calls in devastating\nair strikes. A large reticle \nwill appear to indicate their target.", new DOTS[] { DOTS.BOMBARDIER });
+            deathmatchTips[4] = new Tip("Keep an eye out for Snipers,\nwho can kill you from afar.", new DOTS[] { DOTS.SNIPER });
+            deathmatchTips[5] = new Tip("The Juggernaut will try to act as a shield\nfor his allies. Dispatch them by\ntossing grenades behind them.", new DOTS[] { DOTS.JUGGERNAUT });
             this.DictTip.Add(Gametype.GT.DEATHMATCH, deathmatchTips);
 
             Tip[] survivalTips = new Tip[2];

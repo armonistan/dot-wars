@@ -230,6 +230,11 @@ namespace DotWars
             return frameIndex;
         }
 
+        public int GetTotalFrames()
+        {
+            return totalFrames;
+        }
+
         public void SetFrameIndex(int fI)
         {
             frameIndex = fI;
@@ -238,6 +243,11 @@ namespace DotWars
         public int GetModeIndex()
         {
             return modeIndex;
+        }
+
+        public int GetTotalModes()
+        {
+            return totalModes;
         }
 
         public void SetModeIndex(int mI)

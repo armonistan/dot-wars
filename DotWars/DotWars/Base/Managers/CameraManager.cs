@@ -61,7 +61,7 @@ namespace DotWars
             {
                 cameras.Add(new Camera(pL.Keys.ElementAt(i), new Rectangle((i/2)*width, (i%2)*height, width, height),
                                        pL.Values.ElementAt(i), gT.GetTeammaterColor(pL.Keys.ElementAt(i))));
-                huds.Add(new HUD(cameras[i], safeArea, i));
+                huds.Add(new HUD(cameras[i], i, gT.GetTeams().Count));
             }
 
             pauseScreen = new Sprite("HUD/pauseOverlay", sS / 2);
@@ -432,7 +432,7 @@ namespace DotWars
             private Vector2 leftPos, rightPos;
             #endregion
 
-            public HUD(Camera c, Rectangle sA, int i)
+            public HUD(Camera c, int i, int numTeams)
             {
                 myCamera = c;
 
@@ -440,7 +440,7 @@ namespace DotWars
                 Vector2 safeAreaEnd = new Vector2(((i / 2 == 0) ? c.GetPort().TitleSafeArea.Left : 0) + c.GetPort().TitleSafeArea.Width, (i % 2 == 0) ? c.GetPort().TitleSafeArea.Top : 0);
 
                 leftPos = safeAreaStart + new Vector2(150, 50);
-                rightPos = safeAreaEnd + new Vector2(-24, 50);
+                rightPos = safeAreaEnd + new Vector2(-24 + (4 - Math.Min(numTeams, 4)) * 82, 50);
 
                 if (c.commanderType == typeof (RedCommander) || c.commanderType == typeof (RedPlayerCommander))
                 {

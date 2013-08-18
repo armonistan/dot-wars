@@ -16,7 +16,8 @@ namespace DotWars
         public const float SHOTGUNRANGE = 128;
         protected double abilityCounter;
         protected double abilityMax;
-        protected float abilityPercent;
+        protected double abilityUse;
+        protected double abilityCharge;
         public int commanderRadius;
 
         //Indicator stuff
@@ -31,7 +32,7 @@ namespace DotWars
 
         #endregion
 
-        public Commander(String aN, Vector2 p, double aS)
+        public Commander(String aN, Vector2 p)
             : base(aN, p)
         {
             health = 225; // Large amount of health, a health commander can take 3 sniper hits
@@ -51,8 +52,9 @@ namespace DotWars
             grenadeSpeed = 3; //Three second recharge
 
             //Ability Data
-            abilityMax = abilityCounter = aS;
-            abilityPercent = 0.5f;
+            abilityMax = abilityCounter = 100;
+            abilityUse = 50;
+            abilityCharge = 0.3;
 
             awareness = 500;
             vision = (float) Math.PI/2;
@@ -327,7 +329,7 @@ namespace DotWars
 
         protected virtual void UsePower(ManagerHelper mH)
         {
-            ChangePower(-1*MaxPower()*abilityPercent);
+            ChangePower(-1*abilityUse);
         }
 
         public double MaxPower()
@@ -356,7 +358,7 @@ namespace DotWars
 
         protected void ChargePower()
         {
-            ChangePower(0.01);
+            ChangePower(abilityCharge);
         }
 
         public virtual bool ShouldUsePower(ManagerHelper mH)

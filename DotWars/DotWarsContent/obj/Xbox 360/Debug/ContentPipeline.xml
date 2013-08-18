@@ -2413,6 +2413,42 @@
       <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\suicide_spawn_sprite.xnb</Output>
       <Time>2013-08-17T14:18:07.2355373-05:00</Time>
     </Item>
+    <Item>
+      <Source>Textures\Dots\Blue\targetBlue.png</Source>
+      <Name>Textures\Dots\Blue\targetBlue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\targetBlue.xnb</Output>
+      <Time>2013-08-18T13:03:30.5849251-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Green\targetGreen.png</Source>
+      <Name>Textures\Dots\Green\targetGreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\targetGreen.xnb</Output>
+      <Time>2013-08-18T13:03:39.4034295-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Red\targetRed.png</Source>
+      <Name>Textures\Dots\Red\targetRed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\targetRed.xnb</Output>
+      <Time>2013-08-18T13:03:45.6327858-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Yellow\targetYellow.png</Source>
+      <Name>Textures\Dots\Yellow\targetYellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\targetYellow.xnb</Output>
+      <Time>2013-08-18T13:03:53.5262372-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Xbox360</TargetPlatform>

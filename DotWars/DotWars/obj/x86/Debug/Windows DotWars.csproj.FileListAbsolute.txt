@@ -1331,3 +1331,7 @@ C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\Dot
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\profileGrunt.xnb
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\suicide_spawn_particle.xnb
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\suicide_spawn_sprite.xnb
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Dots\Blue\targetBlue.xnb
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Dots\Green\targetGreen.xnb
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Dots\Red\targetRed.xnb
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Dots\Yellow\targetYellow.xnb

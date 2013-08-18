@@ -11,17 +11,19 @@ namespace DotWars
         }
 
         public RedCommander(Vector2 p, AffliationTypes aT)
-            : base("Dots/Red/commander_red", p, 3)
+            : base("Dots/Red/commander_red", p)
         {
             affiliation = aT;
             personalAffiliation = AffliationTypes.red;
             //Set up indicator
             indicator = new Sprite("Effects/PI_redCommander", GetOriginPosition(), Vector2.Zero);
+
+            abilityUse = 75;
         }
 
         protected override void UsePower(ManagerHelper mH)
         {
-            if (CurrentPower() > MaxPower()*0.5)
+            if (CurrentPower() > abilityUse)
             {
                 Vector2 tempPos = new Vector2(64)*PathHelper.Direction(rotation) + GetOriginPosition();
                 mH.GetAbilityManager().AddFireball(tempPos, affiliation);

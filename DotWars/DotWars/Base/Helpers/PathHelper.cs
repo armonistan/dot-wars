@@ -126,15 +126,15 @@ namespace DotWars
             //    square.Draw(sB, d, mH);
             //}
 
-            foreach (NPC a in managers.GetNPCManager().GetNPCs())
-            {
-                if (a.GetPath() != null && a.GetPath().Count > 0)
-                {
-                    square.position.X = a.GetPath().First().X;
-                    square.position.Y = a.GetPath().First().Y;
-                    square.Draw(sB, d, managers);
-                }
-            }
+            //foreach (NPC a in managers.GetNPCManager().GetNPCs())
+            //{
+            //    if (a.GetPath() != null && a.GetPath().Count > 0)
+            //    {
+            //        square.position.X = a.GetPath().First().X;
+            //        square.position.Y = a.GetPath().First().Y;
+            //        square.Draw(sB, d, managers);
+            //    }
+            //}
         }
 
         public Path FindClearPath(Vector2 pA, Vector2 pB, ManagerHelper mH)

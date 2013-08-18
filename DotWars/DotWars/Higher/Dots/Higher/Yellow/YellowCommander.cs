@@ -6,6 +6,7 @@ namespace DotWars
     {
         private readonly int abilityOffSpeed;
         private readonly int abilitySpeed;
+
         private readonly float abilityTime;
         private float abilityTimer;
 
@@ -18,7 +19,7 @@ namespace DotWars
         }
 
         public YellowCommander(Vector2 p, AffliationTypes aT)
-            : base("Dots/Yellow/commander_yellow", p, 3)
+            : base("Dots/Yellow/commander_yellow", p)
         {
             affiliation = aT;
             personalAffiliation = AffliationTypes.yellow;
@@ -26,7 +27,6 @@ namespace DotWars
             indicator = new Sprite("Effects/PI_yellowCommander", GetOriginPosition());
 
             abilityTime = abilityTimer = 0.05f;
-            abilityPercent = 0.05f;
             shouldUsePower = false;
             abilitySpeed = 250;
             abilityOffSpeed = movementSpeed;
@@ -37,7 +37,7 @@ namespace DotWars
             base.Update(mH);
 
 
-            if (shouldUsePower && CurrentPower() > MaxPower()*abilityPercent)
+            if (shouldUsePower && CurrentPower() > abilityUse)
             {
                 if (abilityTimer < abilityTime)
                 {
@@ -61,7 +61,7 @@ namespace DotWars
 
         protected override void UsePower(ManagerHelper mH)
         {
-            if (CurrentPower() > MaxPower()*abilityPercent && !shouldUsePower)
+            if (CurrentPower() > abilityUse && !shouldUsePower)
             {
                 shouldUsePower = true;
                 movementSpeed = abilitySpeed;

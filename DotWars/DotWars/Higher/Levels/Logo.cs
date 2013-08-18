@@ -201,6 +201,11 @@ namespace DotWars
             textures.Add("Dots/Green/bomber_green", new Rectangle(0, 0, 96, 64));
             textures.Add("Dots/Yellow/bomber_yellow", new Rectangle(0, 0, 96, 64));
 
+            textures.Add("Dots/Red/targetRed", new Rectangle(0, 0, 64, 64));
+            textures.Add("Dots/Blue/targetBlue", new Rectangle(0, 0, 64, 64));
+            textures.Add("Dots/Green/targetGreen", new Rectangle(0, 0, 64, 64));
+            textures.Add("Dots/Yellow/targetYellow", new Rectangle(0, 0, 64, 64));
+
             textures.Add("Projectiles/bullet_standard", new Rectangle(0, 0, 6, 7));
             textures.Add("Projectiles/bullet_sniper", new Rectangle(0, 0, 6, 7));
             textures.Add("Projectiles/bullet_rocket", new Rectangle(0, 0, 6, 7));

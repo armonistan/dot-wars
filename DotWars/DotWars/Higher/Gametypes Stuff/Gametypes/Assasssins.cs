@@ -32,7 +32,7 @@ namespace DotWars
 
         public override string GetSummary()
         {
-            return "First commander to 3\nkills is the winner!";
+            return "First commander to 10\nkills is the winner!";
         }
     }
 }

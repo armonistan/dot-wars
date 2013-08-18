@@ -6,12 +6,15 @@ namespace DotWars
     {
         private readonly int abilityOffSpeed;
         private readonly int abilitySpeed;
+
         private readonly float abilityTime;
         private float abilityTimer;
-        private float abilityCutoff;
-        private float lightningTimer;
-        private float lightningTimerRefresh;
+
         private bool shouldUsePower;
+
+        private bool ranOut;
+        private const float bottom = 5;
+        private const float waitCharge = 20;
 
         public YellowPlayerCommander(Vector2 p, ManagerHelper mH)
             : this(p, AffliationTypes.yellow, mH)
@@ -25,31 +28,28 @@ namespace DotWars
             //Set up indicator
             indicator = new Sprite("Effects/PI_yellowCommander", GetOriginPosition(), Vector2.Zero);
 
-            abilityTime = abilityTimer = 1f;
-            abilityPercent = 0.01f;
+            abilityTime = abilityTimer = 0.05f;
+            abilityUse = 5;
             shouldUsePower = false;
+            ranOut = false;
+
             abilitySpeed = 250;
             abilityOffSpeed = movementSpeed;
-            abilityCutoff = 0.05f;
-            lightningTimer = 50.0f;
-            lightningTimerRefresh = 50.0f;
         }
 
         public override void Update(ManagerHelper mH)
         {
             base.Update(mH);
 
-            if (shouldUsePower && CurrentPower() > MaxPower() * abilityCutoff)
+            if (shouldUsePower && CurrentPower() > abilityUse)
             {
                 if (abilityTimer > abilityTime)
                 {
                     movementSpeed = abilitySpeed;
-                    if (lightningTimer > lightningTimerRefresh)
-                    {
-                        mH.GetAbilityManager().AddLightning(position, PathHelper.Direction(velocity), affiliation);
-                        lightningTimer = 0.0f;
-                    }
+                    mH.GetAbilityManager().AddLightning(position, PathHelper.Direction(velocity), affiliation);
+
                     base.UsePower(mH);
+                    abilityTimer = 0;
                 }
             }
             else
@@ -66,13 +66,22 @@ namespace DotWars
                 }
             }
 
+            if (CurrentPower() < bottom)
+            {
+                ranOut = true;
+            }
+
+            if (ranOut && CurrentPower() > waitCharge)
+            {
+                ranOut = false;
+            }
+
             abilityTimer += (float)mH.GetGameTime().ElapsedGameTime.TotalSeconds;
-            lightningTimer += (float)mH.GetGameTime().ElapsedGameTime.TotalMilliseconds;
         }
 
         protected override void UsePower(ManagerHelper mH)
         {
-            if (CurrentPower() > MaxPower() * abilityCutoff && !shouldUsePower)
+            if (CurrentPower() > abilityUse && !shouldUsePower && !ranOut)
             {
                 shouldUsePower = true;
             }
