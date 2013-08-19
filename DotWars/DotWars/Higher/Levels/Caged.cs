@@ -27,7 +27,7 @@ namespace DotWars
             base.LoadContent(cM);
 
             objects.AddStaticBlocker(new InDestructable("Backgrounds/Caged/cagedBlockers", new Vector2(432, 272)));
-            objects.AddImpassable(new Impassable("Backgrounds/Caged/cagedImpassable", new Vector2(432, 272)));
+            objects.AddImpathable(new LavaBurner(new Vector2(432, 272)));
 
             if (typeOfGame is Assasssins)
             {
@@ -71,7 +71,7 @@ namespace DotWars
             return base.Update(gT);
         }
 
-        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, GraphicsDeviceManager gM)
+        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, GraphicsDeviceManager gM, bool drawHUD)
         {
             foreach (CameraManager.Camera c in cameras.GetCameras())
             {
@@ -80,7 +80,7 @@ namespace DotWars
                 Vector2 displacement = cameras.GetDisplacement(c.commanderType);
             }
 
-            base.Draw(sB, gM);
+            base.Draw(sB, gM, drawHUD);
         }
 
         public override String ToString()

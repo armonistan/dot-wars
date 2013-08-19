@@ -499,14 +499,14 @@ namespace DotWars
 
             var temp = (Survival) mH.GetGametype();
             Claimable c = temp.GetClosestClaimable(GetOriginPosition());
-            NPC fucker =
+            NPC enemy =
                 mH.GetNPCManager()
                   .GetClosestInList(mH.GetNPCManager().GetAlliesInSight(AffliationTypes.black, this),
                                     GetOriginPosition());
 
-            if (fucker != null && PathHelper.Distance(GetOriginPosition(), fucker.GetOriginPosition()) < 200)
+            if (enemy != null && PathHelper.Distance(GetOriginPosition(), enemy.GetOriginPosition()) < 200)
             {
-                return mH.GetPathHelper().FindEscapePath(GetOriginPosition(), fucker.GetOriginPosition(), 400, mH, 200);
+                return mH.GetPathHelper().FindEscapePath(GetOriginPosition(), enemy.GetOriginPosition(), 400, mH, 200);
             }
             else if (c != null && temp.GetPopCap() > mH.GetNPCManager().GetAllies(affiliation).Count)
             {

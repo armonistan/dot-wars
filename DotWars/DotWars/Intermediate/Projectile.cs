@@ -30,6 +30,12 @@ namespace DotWars
                 isExplosive = false;
             }
 
+            if (position.X < 0 || position.X > mH.GetLevelSize().X ||
+                position.Y < 0 || position.Y > mH.GetLevelSize().Y)
+            {
+                SetDrawTime(0);
+            }
+
             if (drawTime > 0)
             {
                 drawTime -= (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;

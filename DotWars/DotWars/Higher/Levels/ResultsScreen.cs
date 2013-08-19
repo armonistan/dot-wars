@@ -11,9 +11,9 @@ namespace DotWars
     {
         private readonly Level result;
         private String leftHandStats = "";
-        private String centerStats = "";
         private String rightHandStats = "";
-        private String winnerString = "fuck you";
+        private string scores = "";
+        private String winnerString = "frick you";
         private String winsString = "Wins!";
         private Sprite winnerSpriteLeft;
         private Sprite winnerSpriteRight;
@@ -38,11 +38,10 @@ namespace DotWars
         public override void Initialize()
         {
             base.Initialize();
-            backgrounds.AddBackground(new Sprite("bases", Vector2.Zero));
             backgrounds.AddBackground(new Sprite("Backgrounds/ResultsScreen/winnersBackground", new Vector2(624, 240)));
             backgrounds.AddBackground(new Sprite("Backgrounds/ResultsScreen/resultsBackground", new Vector2(624, 360)));
+            GenerateScores();
             GenerateLeftHandStatistic();
-            GenerateCenterStatistic();
             GenerateRightHandStatistic();
             GenerateWinnerString();
         }
@@ -68,9 +67,9 @@ namespace DotWars
             return base.Update(gT);
         }
 
-        public override void Draw(SpriteBatch sB, GraphicsDeviceManager gM)
+        public override void Draw(SpriteBatch sB, GraphicsDeviceManager gM, bool drawHUD)
         {
-            result.Draw(sB, gM);
+            result.Draw(sB, gM, false);
 
             sB.Begin();
             backgrounds.DrawBackgrounds(sB, Vector2.Zero);
@@ -81,13 +80,13 @@ namespace DotWars
             objects.DrawTop(sB, Vector2.Zero);
             agents.DrawHighest(sB, Vector2.Zero);
             backgrounds.Drawforegrounds(sB, Vector2.Zero);
-            managers.GetTextureManager().DrawString(sB, leftHandStats, new Vector2(195, 570), Color.White, TextureManager.FontSizes.small);
-            managers.GetTextureManager().DrawString(sB, centerStats, new Vector2(590, 605), Color.White, TextureManager.FontSizes.small);
-            managers.GetTextureManager().DrawString(sB, rightHandStats, new Vector2(990, 590), Color.White, TextureManager.FontSizes.small);
-            managers.GetTextureManager().DrawString(sB, winnerString, new Vector2(620, 150), Color.White, TextureManager.FontSizes.big);
+            managers.GetTextureManager().DrawString(sB, leftHandStats, new Vector2(125, 482), Color.White, TextureManager.FontSizes.small, false);
+            managers.GetTextureManager().DrawString(sB, rightHandStats, new Vector2(650, 482), Color.White, TextureManager.FontSizes.small, false);
+            managers.GetTextureManager().DrawString(sB, winnerString, new Vector2(620, 150), Color.White, TextureManager.FontSizes.big, true);
+            managers.GetTextureManager().DrawString(sB, scores, new Vector2(620, 350), Color.White, TextureManager.FontSizes.small, true);
 
-            if(winnerString.CompareTo("Tie Game...") != 0)
-                managers.GetTextureManager().DrawString(sB, winsString, new Vector2(620, 260), Color.White, TextureManager.FontSizes.big);
+            if(winnerString.CompareTo("Tie Game ") != 0)
+                managers.GetTextureManager().DrawString(sB, winsString, new Vector2(620, 260), Color.White, TextureManager.FontSizes.big, true);
 
             if (winnerSpriteLeft != null)
             {
@@ -104,26 +103,21 @@ namespace DotWars
             sB.End();
         }
 
-        public void GenerateLeftHandStatistic()
+        private void GenerateScores()
         {
-            leftHandStats = result.ToString();
-            leftHandStats += "\n";
-            leftHandStats += result.GetManagerHelper().GetGametype().GetWinnerString();
-            leftHandStats += "\n";
-            leftHandStats += result.GetManagerHelper().GetGametype().GetEndScores();
-            leftHandStats += "\n";
+            scores += result.GetManagerHelper().GetGametype().GetEndScores();
         }
 
-        public void GenerateCenterStatistic()
+        public void GenerateLeftHandStatistic()
         {
-            centerStats += result.GetManagerHelper().GetStatisticsManager().GetKDStatistics();
-            centerStats += "\n";
+            leftHandStats += result.GetManagerHelper().GetStatisticsManager().GetKDStatistics();
+            leftHandStats += "\n";
         }
 
         public void GenerateRightHandStatistic()
         { 
             //players
-            switch(managers.GetRandom().Next(3))
+            switch(managers.GetRandom().Next(4))
             {
                 case 0:
                     rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetRedCommanderPowerStatistic();
@@ -179,8 +173,6 @@ namespace DotWars
                 rightHandStats += "\n";
                 rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetMostMedicsKilledStatistic();
                 rightHandStats += "\n";
-                rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetCasualitiesStatistic();
-                rightHandStats += "\n";
             }
             //survival
             else
@@ -209,11 +201,11 @@ namespace DotWars
                         winnerFrameLeft = RED_INDEX;
                         break;
                     case NPC.AffliationTypes.blue:
-                        winnerString = "Aqueos ";
+                        winnerString = "Aquoes ";
                         winnerFrameLeft = BLUE_INDEX;
                         break;
                     case NPC.AffliationTypes.green:
-                        winnerString = "Terran ";
+                        winnerString = "Terron ";
                         winnerFrameLeft = GREEN_INDEX;
                         break;
                     case NPC.AffliationTypes.yellow:
@@ -221,7 +213,7 @@ namespace DotWars
                         winnerFrameLeft = YELLOW_INDEX;
                         break;
                     case NPC.AffliationTypes.same:
-                        winnerString = "Tie Game...";
+                        winnerString = "Tie Game ";
                         winnerSpriteRight = null;
                         winnerSpriteLeft = null;
                         break;
@@ -252,7 +244,7 @@ namespace DotWars
                         winnerFrameLeft = YELLOW_INDEX;
                         break;
                     case NPC.AffliationTypes.same:
-                        winnerString = "Tie Game...";
+                        winnerString = "Tie Game ";
                         winnerSpriteRight = null;
                         winnerSpriteLeft = null;
                         break;
@@ -283,7 +275,7 @@ namespace DotWars
                         winnerFrameLeft = YELLOW_INDEX;
                         break;
                     case NPC.AffliationTypes.same:
-                        winnerString = "Tie Game...";
+                        winnerString = "Tie Game ";
                         winnerSpriteRight = null;
                         winnerSpriteLeft = null;
                         break;
@@ -314,7 +306,7 @@ namespace DotWars
                         winnerFrameLeft = YELLOW_INDEX;
                         break;
                     case NPC.AffliationTypes.same:
-                        winnerString = "Tie Game...";
+                        winnerString = "Tie Game ";
                         winnerSpriteRight = null;
                         winnerSpriteLeft = null;
                         break;
@@ -345,7 +337,7 @@ namespace DotWars
                         winnerFrameLeft = YELLOW_INDEX;
                         break;
                     case NPC.AffliationTypes.same:
-                        winnerString = "Tie Game...";
+                        winnerString = "Tie Game ";
                         winnerSpriteRight = null;
                         winnerSpriteLeft = null;
                         break;
@@ -364,11 +356,11 @@ namespace DotWars
                         winnerFrameLeft = RED_INDEX;
                         break;
                     case NPC.AffliationTypes.blue:
-                        winnerString = "Aqueos ";
+                        winnerString = "Aquoes ";
                         winnerFrameLeft = BLUE_INDEX;
                         break;
                     case NPC.AffliationTypes.green:
-                        winnerString = "Terran ";
+                        winnerString = "Terron ";
                         winnerFrameLeft = GREEN_INDEX;
                         break;
                     case NPC.AffliationTypes.yellow:
@@ -376,7 +368,7 @@ namespace DotWars
                         winnerFrameLeft = YELLOW_INDEX;
                         break;
                     case NPC.AffliationTypes.same:
-                        winnerString = "Tie Game...";
+                        winnerString = "Tie Game ";
                         winnerSpriteRight = null;
                         winnerSpriteLeft = null;
                         break;

@@ -526,7 +526,7 @@ namespace DotWars
                 timer.Draw(sB, Vector2.Zero, mH);
 
                 mH.GetTextureManager().DrawString(sB, mins + ":" + ((secs < 10) ? "0" : "") + secs, timer.GetOriginPosition(),
-                                                  Color.White, TextureManager.FontSizes.small);
+                                                  Color.White, TextureManager.FontSizes.small, true);
 
                 scoreboard.Draw(sB, Vector2.Zero, mH);
 
@@ -551,7 +551,7 @@ namespace DotWars
 
                     if (mH.GetGametype().GetTeams()[x] != NPC.AffliationTypes.black)
                     {
-                        mH.GetTextureManager().DrawString(sB, mH.GetGametype().GetScores()[x] + "", rightPos - new Vector2((4 - x) * 82 - 24, -10), teamColor, TextureManager.FontSizes.small);
+                        mH.GetTextureManager().DrawString(sB, mH.GetGametype().GetScores()[x] + "", rightPos - new Vector2((4 - x) * 82 - 24, -10), teamColor, TextureManager.FontSizes.small, true);
                     }
                 }
 

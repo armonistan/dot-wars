@@ -70,7 +70,13 @@ namespace DotWars
 
         protected override void Behavior(ManagerHelper mH)
         {
-            ;    
+            if (mH.GetRandom().Next(100) == 0)
+            {
+                //Spawn lightning thing
+                mH.GetParticleManager().AddParticle("Effects/spr_bolt_strip3", GetOriginPosition() +
+                    new Vector2(mH.GetRandom().Next(-16, 16), mH.GetRandom().Next(-16, 16)),
+                    Vector2.Zero, 0.05f, 0, 0, (float)MathHelper.Pi / 10);
+            }
         }
 
         protected override void PosUpdate(ManagerHelper mH)
@@ -152,9 +158,7 @@ namespace DotWars
 
         public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, Vector2 displacement, ManagerHelper mH)
         {
-            //suicideSpawnParticle.Draw(sB, displacement, mH);
             suicideSpawnSprite.Draw(sB, displacement, mH);
-            //base.Draw(sB, displacement, mH);
         }
     }
 }

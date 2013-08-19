@@ -270,6 +270,8 @@ Content\Textures\Dots\Blue\targetBlue.xnb
 Content\Textures\Dots\Green\targetGreen.xnb
 Content\Textures\Dots\Red\targetRed.xnb
 Content\Textures\Dots\Yellow\targetYellow.xnb
+Content\Textures\Effects\spr_bolt_strip3.xnb
+Content\Textures\Backgrounds\PreGame\tipsBases.xnb
 Content\Audio\GameAudio.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb

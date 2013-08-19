@@ -143,7 +143,7 @@ namespace DotWars
             commanderCards = new Sprite[4];
             for (int i = 0; i < commanderCards.Length; i++)
             {
-                commanderCards[i] = new Sprite("Backgrounds/Menu/CommanderCards", new Vector2(24 + 300*i, 153));
+                commanderCards[i] = new Sprite("Backgrounds/Menu/CommanderCards", new Vector2(GetSizeOfLevel().X / 2 + (-2 + i) * 300 + 16, 153));
                 commanderCards[i].LoadContent(textures);
                 commanderCards[i].position += commanderCards[i].origin;
             }
@@ -629,7 +629,7 @@ namespace DotWars
             return this;
         }
 
-        public override void Draw(SpriteBatch sB, GraphicsDeviceManager gM)
+        public override void Draw(SpriteBatch sB, GraphicsDeviceManager gM, bool drawHUD)
         {
             sB.Begin();
             testBack.Draw(sB, Vector2.Zero, managers);
@@ -640,7 +640,7 @@ namespace DotWars
                     startButton.Draw(sB, Vector2.Zero, managers);
                     break;
                 case MenuSelect.characterSelect:
-                    textures.DrawString(sB, "Commander Select", new Vector2(624, 88), Color.Black, TextureManager.FontSizes.big);//TODO: Make better
+                    textures.DrawString(sB, "Commander Select", new Vector2(624, 88), Color.Black, TextureManager.FontSizes.big, true);//TODO: Make better
                     startButton.Draw(sB, Vector2.Zero, managers);
                     backButton.Draw(sB, Vector2.Zero, managers);
                     foreach (Sprite cC in commanderCards)
@@ -652,17 +652,17 @@ namespace DotWars
                     triggers.Draw(sB, Vector2.Zero, managers);
                     startButton.Draw(sB, Vector2.Zero, managers);
                     backButton.Draw(sB, Vector2.Zero, managers);
-                    textures.DrawString(sB, "Game Select", new Vector2(624, 88), Color.Black, TextureManager.FontSizes.big);
+                    textures.DrawString(sB, "Game Select", new Vector2(624, 88), Color.Black, TextureManager.FontSizes.big, true);
                     mapCards.Draw(sB, Vector2.Zero, managers);
                     gametypeCards.Draw(sB, Vector2.Zero, managers);
-                    textures.DrawString(sB, mapNames[map], new Vector2(624, 260), Color.White, TextureManager.FontSizes.small);
-                    textures.DrawString(sB, gametypeNames[gametype], new Vector2(624, 512), Color.White, TextureManager.FontSizes.small);
+                    textures.DrawString(sB, mapNames[map], new Vector2(624, 260), Color.White, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, gametypeNames[gametype], new Vector2(624, 512), Color.White, TextureManager.FontSizes.small, true);
                     break;
                 case MenuSelect.teamSelect:
                     triggersOnly.Draw(sB, Vector2.Zero, managers);
                     startButton.Draw(sB, Vector2.Zero, managers);
                     backButton.Draw(sB, Vector2.Zero, managers);
-                    textures.DrawString(sB, "Team Select", new Vector2(624, 88), Color.Black, TextureManager.FontSizes.big);
+                    textures.DrawString(sB, "Team Select", new Vector2(624, 88), Color.Black, TextureManager.FontSizes.big, true);
 
                     foreach (Sprite tC in teamCards)
                     {

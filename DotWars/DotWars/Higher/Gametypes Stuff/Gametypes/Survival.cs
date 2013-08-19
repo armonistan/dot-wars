@@ -61,11 +61,6 @@ namespace DotWars
             if (mH.GetNPCManager().GetAllies(NPC.AffliationTypes.black).Count <= 15 && counter > spawnSecs)
             {
                 mH.GetNPCManager().Add(new Suicide(mH.GetSpawnHelper().SpawnSucideDots(), mH));
-                //mH.GetNPCManager().Add(new Suicide(new Vector2(mH.GetRandom().Next(500), mH.GetRandom().Next(500))));
-                //mH.GetNPCManager().Add(new Suicide(new Vector2(mH.GetRandom().Next(500), mH.GetRandom().Next(500))));
-                //mH.GetNPCManager().Add(new Suicide(new Vector2(mH.GetRandom().Next(500), mH.GetRandom().Next(500))));
-                //mH.GetNPCManager().Add(new Suicide(new Vector2(mH.GetRandom().Next(500), mH.GetRandom().Next(500))));
-                //mH.GetNPCManager().Add(new Suicide(new Vector2(mH.GetRandom().Next(500), mH.GetRandom().Next(500))));
 
                 counter = 0;
                 spawnSecs -= (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;

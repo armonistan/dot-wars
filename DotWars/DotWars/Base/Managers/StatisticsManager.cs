@@ -402,7 +402,7 @@ namespace DotWars
             if ((int)timeAlive[CalculateMaxTime()] == 0)
                 result += "never died!";
             else
-                result += " had the longest \nlife of " + (int)timeAlive[CalculateMaxTime()] + " seconds";
+                result += " had the longest life of " + (int)timeAlive[CalculateMaxTime()] + " seconds";
             
             return result;
         }
@@ -414,19 +414,19 @@ namespace DotWars
             switch (CalculateMostFlagsCaputured())
             {
                 case NPC.AffliationTypes.red:
-                    result += "Mustachio captured the \nmost flags (";
+                    result += "Mustachio captured the most flags (";
                     break;
                 case NPC.AffliationTypes.blue:
-                    result += "Aquoes captured the \nmost flags (";
+                    result += "Aquoes captured the most flags (";
                     break;
                 case NPC.AffliationTypes.green:
-                    result += "Terron captured the \nmost flags (";
+                    result += "Terron captured the most flags (";
                     break;
                 case NPC.AffliationTypes.yellow:
-                    result += "Dian captured the \nmost flags (";
+                    result += "Dian captured the most flags (";
                     break;
                 case NPC.AffliationTypes.black:
-                    return "No one bothered \ncapturing a flag";
+                    return "No one bothered capturing a flag";
             }
             result += "" + flagsCaptured[CalculateMostFlagsCaputured()] + ")";
 
@@ -440,19 +440,19 @@ namespace DotWars
             switch (CalculateMostFlagsReturned())
             {
                 case NPC.AffliationTypes.red:
-                    result += "Mustachio returned \nthe most flags(";
+                    result += "Mustachio returned the most flags(";
                     break;
                 case NPC.AffliationTypes.blue:
-                    result += "Aquoes returned the \nmost flags(";
+                    result += "Aquoes returned the most flags(";
                     break;
                 case NPC.AffliationTypes.green:
-                    result += "Terron returned the \nmost flags(";
+                    result += "Terron returned the most flags(";
                     break;
                 case NPC.AffliationTypes.yellow:
-                    result += "Dian returned the \nmost flags(";
+                    result += "Dian returned the most flags(";
                     break;
                 case NPC.AffliationTypes.black:
-                    return "No one cared to \nreturn their flag";
+                    return "No one cared to return their flag";
             }
             result += "" + flagsReturned[CalculateMostFlagsCaputured()] + ")";
 
@@ -470,13 +470,13 @@ namespace DotWars
                         switch (vendittaVictim)
                         {
                             case NPC.AffliationTypes.blue:
-                                result = "Mustachio killed \nAquoes " + vendittaKills + " times";
+                                result = "Mustachio killed Aquoes " + vendittaKills + " times";
                                 break;
                             case NPC.AffliationTypes.green:
-                                result = "Mustachio killed \nTerron " + vendittaKills + " times";
+                                result = "Mustachio killed Terron " + vendittaKills + " times";
                                 break;
                             case NPC.AffliationTypes.yellow:
-                                result = "Mustachio killed \nDian " + vendittaKills + " times";
+                                result = "Mustachio killed Dian " + vendittaKills + " times";
                                 break;
                         }
                         break;
@@ -486,13 +486,13 @@ namespace DotWars
                         switch (vendittaVictim)
                         {
                             case NPC.AffliationTypes.red:
-                                result = "Aquoes killed \nMustachio " + vendittaKills + " times";
+                                result = "Aquoes killed Mustachio " + vendittaKills + " times";
                                 break;
                             case NPC.AffliationTypes.green:
-                                result = "Aquoes killed \nTerron " + vendittaKills + " times";
+                                result = "Aquoes killed Terron " + vendittaKills + " times";
                                 break;
                             case NPC.AffliationTypes.yellow:
-                                result = "Aquoes killed \nDian " + vendittaKills + " times";
+                                result = "Aquoes killed Dian " + vendittaKills + " times";
                                 break;
                         }
                         break;
@@ -502,13 +502,13 @@ namespace DotWars
                         switch (vendittaVictim)
                         {
                             case NPC.AffliationTypes.blue:
-                                result = "Terron killed \nAquoes " + vendittaKills + " times";
+                                result = "Terron killed Aquoes " + vendittaKills + " times";
                                 break;
                             case NPC.AffliationTypes.red:
-                                result = "Terron killed \nMustachio " + vendittaKills + " times";
+                                result = "Terron killed Mustachio " + vendittaKills + " times";
                                 break;
                             case NPC.AffliationTypes.yellow:
-                                result = "Terron killed \nDian " + vendittaKills + " times";
+                                result = "Terron killed Dian " + vendittaKills + " times";
                                 break;
                         }
                         break;
@@ -518,13 +518,13 @@ namespace DotWars
                         switch (vendittaVictim)
                         {
                             case NPC.AffliationTypes.blue:
-                                result = "Dian killed \nAquoes " + vendittaKills + " times";
+                                result = "Dian killed Aquoes " + vendittaKills + " times";
                                 break;
                             case NPC.AffliationTypes.green:
-                                result = "Dian killed \nTerron " + vendittaKills + " times";
+                                result = "Dian killed Terron " + vendittaKills + " times";
                                 break;
                             case NPC.AffliationTypes.red:
-                                result = "Dian killed \nMustachio " + vendittaKills + " times";
+                                result = "Dian killed Mustachio " + vendittaKills + " times";
                                 break;
                         }
                         break;
@@ -536,22 +536,22 @@ namespace DotWars
 
         public String GetYellowCommanderPowerStatistic()
         {
-            return "Dian left " + lightningTravelledCounter + "\n" + "meters of lightning";
+            return "Dian left " + lightningTravelledCounter + " meters of lightning";
         }
 
         public String GetGreenCommanderPowerStatistic()
         {
-            return "Terron created " + rocksCreatedCounter + "\n" + " rocks";
+            return "Terron created " + rocksCreatedCounter + " rocks";
         }
 
         public String GetBlueCommanderPowerStatistic()
         {
-            return "Aquoes spilled " + waterSpilledCounter + "\n" + "gallons of water";
+            return "Aquoes spilled " + waterSpilledCounter + " gallons of water";
         }
        
         public String GetRedCommanderPowerStatistic()
         {
-            return "Mustachio set " + dotsSetOnFireCounter + " dots" + "\n" + "on fire";
+            return "Mustachio set " + dotsSetOnFireCounter + " dots on fire";
         }
         
         public String GetRocksDestroyedStatistic()
@@ -653,18 +653,19 @@ namespace DotWars
                 }
             }
 
+            //TODO: Why was no flag harmed?
             switch (af)
             {
                 case NPC.AffliationTypes.red:
-                    return "Quickest flag capture was \nred flag in " + minTime + " seconds";
+                    return "Quickest flag capture was red flag in " + minTime + " seconds";
                 case NPC.AffliationTypes.blue:
-                    return "Quickest flag capture was \nblue flag in " + minTime + " seconds";
+                    return "Quickest flag capture was blue flag in " + minTime + " seconds";
                 case NPC.AffliationTypes.green:
-                    return "Quickest flag capture was \ngreen flag in " + minTime + " seconds";
+                    return "Quickest flag capture was green flag in " + minTime + " seconds";
                 case NPC.AffliationTypes.yellow:
-                    return "Quickest flag capture was \nyellow flag in " + minTime + " seconds";
+                    return "Quickest flag capture was yellow flag in " + minTime + " seconds";
                 case NPC.AffliationTypes.black:
-                    return "No flag was harmed \nin this game";
+                    return "No flag was harmed in this game";
             }
 
             return "heh";
@@ -688,16 +689,16 @@ namespace DotWars
             switch (affilationOfMaxCasualities)
             {
                 case NPC.AffliationTypes.red:
-                    result += "Red Team suffered \n" + maxCasualities + " casualities";
+                    result += "Red Team suffered " + maxCasualities + " casualities";
                     break;
                 case NPC.AffliationTypes.blue:
-                    result += "Blue Team suffered \n" + maxCasualities + " casualities";
+                    result += "Blue Team suffered " + maxCasualities + " casualities";
                     break;
                 case NPC.AffliationTypes.green:
-                    result += "Green Team suffered \n" + maxCasualities + " casualities";
+                    result += "Green Team suffered " + maxCasualities + " casualities";
                     break;
                 case NPC.AffliationTypes.yellow:
-                    result += "Yellow Team suffered \n" + maxCasualities + " casualities";
+                    result += "Yellow Team suffered " + maxCasualities + " casualities";
                     break;
             }
 

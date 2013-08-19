@@ -141,7 +141,7 @@ namespace DotWars
         }
 
         //Does exactly as the method is named, draws the objects on the screen
-        public virtual void Draw(SpriteBatch sB, GraphicsDeviceManager gM)
+        public virtual void Draw(SpriteBatch sB, GraphicsDeviceManager gM, bool drawHUD)
         {
             foreach (CameraManager.Camera c in cameras.GetCameras())
             {
@@ -162,13 +162,17 @@ namespace DotWars
                 agents.DrawLowest(sB, displacement);
 
                 abilities.DrawTop(sB, displacement);
+                spawns.Draw(sB, displacement);
                 particles.DrawTop(sB, displacement);
                 objects.DrawTop(sB, displacement);
                 typeOfGame.DrawTop(sB, displacement);
-                spawns.Draw(sB, displacement);
                 agents.DrawHighest(sB, displacement);
                 backgrounds.Drawforegrounds(sB, displacement);
-                cameras.GetHud(c).Draw(sB, managers);
+
+                if (drawHUD)
+                {
+                    cameras.GetHud(c).Draw(sB, managers);
+                }
                 sB.End();
             }
 

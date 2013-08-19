@@ -156,6 +156,7 @@ namespace DotWars
             textures.Add("Backgrounds/PreGame/profileMedic", new Rectangle(0, 0, 200, 200));
             textures.Add("Backgrounds/PreGame/profileSniper", new Rectangle(0, 0, 400, 200));
             textures.Add("Backgrounds/PreGame/profileSpecialist", new Rectangle(0, 0, 200, 300));
+            textures.Add("Backgrounds/PreGame/tipsBases", new Rectangle(0, 0, 200, 200));
             #endregion
 
             #region Default Textures
@@ -243,6 +244,7 @@ namespace DotWars
             textures.Add("Dots/Grey/grey_claimable", new Rectangle(0, 0, 36, 36));
             textures.Add("Dots/Grey/grey_suicide", new Rectangle(0, 0, 32, 32));
             textures.Add("health_station", new Rectangle(0, 0, 64, 64));
+            textures.Add("Effects/spr_bolt_strip3", new Rectangle(0, 0, 30, 30));
 
             textures.Add("Projectiles/flare_red", new Rectangle(0, 0, 15, 15));
             textures.Add("Projectiles/flare_blue", new Rectangle(0, 0, 15, 15));
@@ -363,7 +365,7 @@ namespace DotWars
             return this;
         }
 
-        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, GraphicsDeviceManager gM)
+        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, GraphicsDeviceManager gM, bool drawHUD)
         {
             sB.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
             sB.GraphicsDevice.Clear(Color.White);
@@ -375,11 +377,11 @@ namespace DotWars
 
             if (textures.GetLoadPercent() != 100)
             {
-                textures.DrawString(sB, "Loading " + textures.GetLoadPercent() + "%", new Vector2(624, 624), Color.Gray, TextureManager.FontSizes.small);
+                textures.DrawString(sB, "Loading " + textures.GetLoadPercent() + "%", new Vector2(624, 624), Color.Gray, TextureManager.FontSizes.small, true);
             }
             else
             {
-                textures.DrawString(sB, "Finished Loading\n   Press Start", new Vector2(624, 624), Color.Gray, TextureManager.FontSizes.small);
+                textures.DrawString(sB, "Finished Loading\n   Press Start", new Vector2(624, 624), Color.Gray, TextureManager.FontSizes.small, true);
             }
             sB.End();
 

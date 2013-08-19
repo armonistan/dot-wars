@@ -110,7 +110,7 @@ namespace DotWars
         {
             GraphicsDevice.Clear(Color.Black);
 
-            current.Draw(spriteBatch, graphics);
+            current.Draw(spriteBatch, graphics, true);
 
             base.Draw(gameTime);
         }

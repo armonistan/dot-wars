@@ -22,7 +22,7 @@ namespace DotWars
 
         public override string GetGametypeStatistics()
         {
-            return "Daniel Sucks";
+            return "Daniel is Silly XD";
         }
 
         public override string GetName()

@@ -200,7 +200,7 @@ namespace DotWars
             return (int) ((float)assetNumber/assets.Count*100.0f);
         }
 
-        public void DrawString(SpriteBatch sB, String message, Vector2 loc, Color color, FontSizes fS)
+        public void DrawString(SpriteBatch sB, String message, Vector2 loc, Color color, FontSizes fS, bool centered)
         {
             SpriteFont temp;
 
@@ -215,11 +215,16 @@ namespace DotWars
                 default:
                     throw new ArgumentOutOfRangeException("fS");
             }
-            float offsetX = temp.MeasureString(message).X / 2;
-            loc.X -= offsetX;
 
-            float offsetY = temp.MeasureString(message).Y / 2;
-            loc.Y -= offsetY;
+            if (centered)
+            {
+                float offsetX = temp.MeasureString(message).X/2;
+                loc.X -= offsetX;
+
+                float offsetY = temp.MeasureString(message).Y/2;
+                loc.Y -= offsetY;
+            }
+
             sB.DrawString(temp, message, loc, color);
         }
     }

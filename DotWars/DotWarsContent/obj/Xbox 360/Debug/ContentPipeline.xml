@@ -1925,7 +1925,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Plaza\plazaLighting.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>2013-08-18T16:51:30.1983542-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Plaza\light.png</Source>
@@ -2042,7 +2042,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ResultsScreen\resultsBackground.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>2013-08-18T20:58:45.5038852-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Menu\mapGametypeCard.png</Source>
@@ -2150,7 +2150,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\LogoScreen\controllerSplash.xnb</Output>
-      <Time>2013-08-04T18:09:36-05:00</Time>
+      <Time>2013-08-18T17:20:36.1622176-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\HUD\bar_damage.png</Source>
@@ -2448,6 +2448,24 @@
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\targetYellow.xnb</Output>
       <Time>2013-08-18T13:03:53.5262372-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\spr_bolt_strip3.png</Source>
+      <Name>Textures\Effects\spr_bolt_strip3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\spr_bolt_strip3.xnb</Output>
+      <Time>2013-08-18T17:55:08.3577404-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\PreGame\tipsBases.png</Source>
+      <Name>Textures\Backgrounds\PreGame\tipsBases</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\tipsBases.xnb</Output>
+      <Time>2013-08-18T21:22:54.3997573-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
