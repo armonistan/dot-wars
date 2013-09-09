@@ -14,6 +14,7 @@ namespace DotWars
         protected float existenceTime;
         protected bool isExplosive;
         protected NPC creator;
+        protected bool shouldCollide;
         #endregion
 
         public Projectile(NPC c) :
@@ -77,7 +78,7 @@ namespace DotWars
 
         #region Sets and Gets
 
-        public virtual void Set(String a, Vector2 p, NPC n, Vector2 v, int d, bool iE, float dT, ManagerHelper mH)
+        public virtual void Set(String a, Vector2 p, NPC n, Vector2 v, int d, bool iE, bool collide, float dT, ManagerHelper mH)
         {
             asset = a;
             position = p;
@@ -89,6 +90,7 @@ namespace DotWars
             creator = n;
 
             isExplosive = iE;
+            shouldCollide = collide;
 
             //Get x and y values from angle and set up direction
             rotation = (float) Math.Atan2(velocity.Y, velocity.X);
@@ -122,6 +124,11 @@ namespace DotWars
         public float GetExistenceTime()
         {
             return existenceTime;
+        }
+
+        public bool GetIfShouldCollide()
+        {
+            return shouldCollide;
         }
 
         public NPC GetCreator() 

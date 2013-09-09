@@ -20,10 +20,6 @@ namespace DotWars
 #if WINDOWS
             oldState = Keyboard.GetState();
 #endif
-            maxHealth = 225;
-            health = maxHealth;
-
-            shootingSpeed = 0.35f;
         }
 
         public override void Update(ManagerHelper mH)

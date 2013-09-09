@@ -19,7 +19,6 @@ namespace DotWars
         private stage theStage;
         private ContentManager theContent;
         private Sprite logo, logoFade, controlsFade, controls;
-        private float fade;
         private int startLoad;
 
         public Logo()
@@ -28,7 +27,6 @@ namespace DotWars
             textures = new TextureManager();
             logo = new Sprite("Textures/Backgrounds/LogoScreen/splashLogoCombined", DEFAUT_SCREEN_SIZE / 2);
             controls = new Sprite("Textures/Backgrounds/LogoScreen/controllerSplash", DEFAUT_SCREEN_SIZE / 2);
-            fade = 1f;
             theStage = stage.drawing;
             sounds = new AudioManager();
         }
@@ -65,6 +63,7 @@ namespace DotWars
             //Results Screen
             textures.Add("Backgrounds/ResultsScreen/winnersBackground", new Rectangle(0, 0, 1028, 288));
             textures.Add("Backgrounds/ResultsScreen/resultsBackground", new Rectangle(0, 0, 1248, 720));
+            textures.Add("Backgrounds/ResultsScreen/startButtonWhite", new Rectangle(0, 0, 1248, 720));
 
             #endregion
 
@@ -275,6 +274,7 @@ namespace DotWars
             textures.Add("HUD/hud_teammates", new Rectangle(0, 0, 40, 20));
             textures.Add("HUD/hud_score_frame", new Rectangle(0, 0, 348, 94));
             textures.Add("HUD/hud_time_frame", new Rectangle(0, 0, 154, 94));
+            textures.Add("HUD/buttons", new Rectangle(0, 0, 1248, 720));
 
             //Guts
             textures.Add("Effects/Guts/Red/deadGruntRed", new Rectangle(0, 0, 32, 32));
@@ -334,15 +334,6 @@ namespace DotWars
 
         public override Level Update(GameTime gT)
         {
-            if (fade < .05f)
-            {
-                fade = 0f;
-            }
-            else if (textures.GetLoadPercent() > 65)
-            {
-                fade -= .012f;
-            }
-
             if (theStage == stage.loading)
             {
                 if (textures.GetLoadPercent() != 100)
@@ -354,12 +345,14 @@ namespace DotWars
                 {
                     textures.FinishLoad();
 
-                    if (GamePad.GetState(0).IsButtonDown(Buttons.Start) || Keyboard.GetState().IsKeyDown(Keys.Space))
+                    for (int c = 0; c < 4; c++)
                     {
-                        return new Menu(textures, sounds);
+                        if (GamePad.GetState(CameraManager.GetPlayerIndex(c)).IsButtonDown(Buttons.Start) || Keyboard.GetState().IsKeyDown(Keys.Space))
+                        {
+                            return new Menu(textures, sounds);
+                        }
                     }
-                }
-                    
+                }  
             }
 
             return this;
@@ -369,10 +362,13 @@ namespace DotWars
         {
             sB.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
             sB.GraphicsDevice.Clear(Color.White);
-            logo.Draw(sB, Vector2.Zero, null, Color.White * fade);
             if (textures.GetLoadPercent() > 65)
             {
-                controls.Draw(sB, Vector2.Zero, null, (Color.White * (1.0f - fade)));
+                controls.Draw(sB, Vector2.Zero, null);
+            }
+            else
+            {
+                logo.Draw(sB, Vector2.Zero, null);
             }
 
             if (textures.GetLoadPercent() != 100)

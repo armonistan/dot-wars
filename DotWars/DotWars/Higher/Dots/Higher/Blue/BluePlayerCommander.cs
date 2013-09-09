@@ -17,27 +17,17 @@ namespace DotWars
             indicator = new Sprite("Effects/PI_blueCommander", GetOriginPosition(), Vector2.Zero);
             personalAffiliation = AffliationTypes.blue;
 
-            abilityUse = 60;
+            abilityUse = 70;
         }
 
         protected override void UsePower(ManagerHelper mH)
         {
             if (CurrentPower() > abilityUse)
             {
-                Vector2 tempPos = new Vector2(64)*PathHelper.Direction(rotation) + GetOriginPosition();
-
-                mH.GetAbilityManager()
-                  .AddWaterpool(tempPos + new Vector2(mH.GetRandom().Next(-64, 64), mH.GetRandom().Next(-64, 64)),
-                                affiliation);
-                mH.GetAbilityManager()
-                  .AddWaterpool(tempPos + new Vector2(mH.GetRandom().Next(-64, 64), mH.GetRandom().Next(-64, 64)),
-                                affiliation);
-                mH.GetAbilityManager()
-                  .AddWaterpool(tempPos + new Vector2(mH.GetRandom().Next(-64, 64), mH.GetRandom().Next(-64, 64)),
-                                affiliation);
-                mH.GetAbilityManager()
-                  .AddWaterpool(tempPos + new Vector2(mH.GetRandom().Next(-64, 64), mH.GetRandom().Next(-64, 64)),
-                                affiliation);
+                for (int i = 0; i < 4; i++)
+                {
+                    mH.GetAbilityManager().AddWaterpool(new Vector2(32) * PathHelper.Direction(rotation + (i * (MathHelper.Pi / 2))) + GetOriginPosition(), affiliation);
+                }
 
                 base.UsePower(mH);
             }

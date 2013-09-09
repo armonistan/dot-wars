@@ -76,7 +76,10 @@ namespace DotWars
 
         public override int GetPowerStatistic()
         {
-            return rockCounter;
+            int tempBeforeCounterIsReset = rockCounter;
+            rockCounter = 0;
+
+            return tempBeforeCounterIsReset;
         }
     }
 }

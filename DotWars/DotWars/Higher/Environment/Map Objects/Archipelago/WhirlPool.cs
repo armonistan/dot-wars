@@ -44,7 +44,7 @@ namespace DotWars
                     if (tempDistance < 15)
                     {
                         //TODO: Modify
-                        a.position = mH.GetSpawnHelper().Spawn(a.GetAffiliation());
+                        a.position = mH.GetLevelSize() * new Vector2(mH.GetRandom().Next(2), mH.GetRandom().Next(2));
                     }
                     else if (tempDistance < (frame.Width/2))
                     {

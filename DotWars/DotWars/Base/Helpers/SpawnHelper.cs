@@ -70,14 +70,14 @@ namespace DotWars
                 }
             }
 
-            return LastPickSpawn(a, managers);
+            return LastPickSpawn(a);
         }
 
-        public Vector2 Spawn(NPC.AffliationTypes a, ManagerHelper mH, bool canUseNeutral)
+        public Vector2 Spawn(NPC.AffliationTypes a, bool canUseNeutral)
         {
             for (int i = 0; i < 50; i++)
             {
-                int x = mH.GetRandom().Next(spawnPoints.Count);
+                int x = managers.GetRandom().Next(spawnPoints.Count);
                 SpawnPoint sP = spawnPoints[x];
 
                 if (sP.IsGoodSpawnPoint() &&
@@ -89,7 +89,7 @@ namespace DotWars
             }
 
             //less picky choice returned
-            return LastPickSpawn(a, mH, canUseNeutral);
+            return LastPickSpawn(a, canUseNeutral);
         }
 
         public Vector2 SpawnSucideDots()
@@ -113,13 +113,13 @@ namespace DotWars
             return suicideSpawnPoints[spawnPick].GetOriginPosition();
         }
 
-        private Vector2 LastPickSpawn(NPC.AffliationTypes a, ManagerHelper mH, bool canUseNeutral)
+        private Vector2 LastPickSpawn(NPC.AffliationTypes a, bool canUseNeutral)
         {
             var v = new Vector2();
 
             for (int i = 0; i < 1000; i++)
             {
-                int x = mH.GetRandom().Next(spawnPoints.Count);
+                int x = managers.GetRandom().Next(spawnPoints.Count);
                 SpawnPoint sP = spawnPoints[x];
 
                 if (a == sP.GetAffilation() || (sP.GetAffilation() == NPC.AffliationTypes.grey && canUseNeutral))
@@ -132,13 +132,13 @@ namespace DotWars
             return v;
         }
 
-        private Vector2 LastPickSpawn(NPC.AffliationTypes a, ManagerHelper mH)
+        private Vector2 LastPickSpawn(NPC.AffliationTypes a)
         {
             var v = new Vector2();
 
             for (int i = 0; i < 1000; i++)
             {
-                int x = mH.GetRandom().Next(spawnPoints.Count);
+                int x = managers.GetRandom().Next(spawnPoints.Count);
                 SpawnPoint sP = spawnPoints[x];
 
                 if (a == sP.GetAffilation() || (sP.GetAffilation() == NPC.AffliationTypes.grey && sP.IsGoodSpawnPoint()))

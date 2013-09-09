@@ -11,7 +11,7 @@ namespace DotWars
             health = 125; //Above average health (he is a heavy trooper)
             maxHealth = health; //set up max health
             movementSpeed = 80; //He's a bit weighted down by all that gear. Below average speed
-            shootingCounter = shootingSpeed = 1.5; //Powerful weapon but harder to reload. Medium Slow shooting speed 
+            shootingCounter = shootingSpeed = 1.8; //Powerful weapon but harder to reload. Medium Slow shooting speed 
 
             affiliation = AffliationTypes.red;
         }
@@ -28,7 +28,7 @@ namespace DotWars
 
             mH.GetProjectileManager()
               .AddProjectile("Projectiles/bullet_rocket", GetOriginPosition() + tempPos, this,
-                             PathHelper.Direction(rotation)*300, 100, true, 5);
+                             PathHelper.Direction(rotation) * 300, 100, true, true, 5);
 
             mH.GetAudioManager().Play("rocketShoot", AudioManager.RandomVolume(mH),
                 AudioManager.RandomPitch(mH), 0, false);

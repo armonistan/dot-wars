@@ -77,7 +77,7 @@ namespace DotWars
             NUMGUNNER = TEAMCAP/3; //three represents grunts, on average for every three grunts there should be a gunner
             NUMMEDIC = TEAMCAP/4; //see above 
             NUMSPECIALIST = TEAMCAP/4; //see above the above
-            NUMGRUNT = TEAMCAP/2; //half the team can be grunts
+            NUMGRUNT = ((this is Survival) ? TEAMCAP : TEAMCAP/2); //half the team can be grunts
 
             managers = mH;
 
@@ -1060,14 +1060,27 @@ namespace DotWars
             return "error"; 
         }
 
-        public String GetEndScores() {
-            String score = "";
-            int cap = 2;
-            if (teams.Count == 5)
-                cap = 4;
-            for (int i = 0; i < cap; i++)
+        public String[] GetEndScores() {
+            String[] score = new String[4];
+
+            foreach (NPC.AffliationTypes teamColor in teams)
             {
-                score += scores[i] + " ";
+                if (teamColor == NPC.AffliationTypes.red)
+                {
+                    score[0] = scores[teams.IndexOf(teamColor)] + "";
+                }
+                else if (teamColor == NPC.AffliationTypes.blue)
+                {
+                    score[1] = scores[teams.IndexOf(teamColor)] + "";
+                }
+                else if (teamColor == NPC.AffliationTypes.green)
+                {
+                    score[2] = scores[teams.IndexOf(teamColor)] + "";
+                }
+                else if (teamColor == NPC.AffliationTypes.yellow)
+                {
+                    score[3] = scores[teams.IndexOf(teamColor)] + "";
+                }
             }
 
             return score;
@@ -1086,6 +1099,19 @@ namespace DotWars
         public Dictionary<Type, NPC.AffliationTypes> GetPlayers()
         {
             return commanders;
+        }
+
+        public NPC.AffliationTypes GetSecondaryWinner(NPC.AffliationTypes winner)
+        {
+            foreach (KeyValuePair<Type, NPC.AffliationTypes> commander in commanders)
+            {
+                if (NPC.CommanderColor(commander.Key) != winner && commander.Value == winner)
+                {
+                    return NPC.CommanderColor(commander.Key);
+                }
+            }
+
+            return NPC.AffliationTypes.red;
         }
 
         public Dictionary<NPC.AffliationTypes, int> GetFlagsReturned()
@@ -1134,6 +1160,7 @@ namespace DotWars
             if (timeFlagAway[a] < quickestFlagCapture[a])
                 quickestFlagCapture[a] = timeFlagAway[a];
         }
+
         #endregion
 
         public virtual String GetName()

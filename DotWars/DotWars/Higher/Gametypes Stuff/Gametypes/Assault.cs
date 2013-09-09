@@ -23,8 +23,6 @@ namespace DotWars
             //set up defender and attacker
             attacker = att;
             defender = def;
-
-            //set up the bases
         }
 
         public void Initialize(ManagerHelper mH, List<AssaultBase> bL)
@@ -116,6 +114,11 @@ namespace DotWars
         public NPC.AffliationTypes GetDefender()
         {
             return defender;
+        }
+
+        public NPC.AffliationTypes GetWinnerEnd()
+        {
+            return ((gameEndTimer <= 0) ? defender : attacker);
         }
 
         public override string GetGametypeStatistics()

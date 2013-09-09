@@ -11,7 +11,7 @@ namespace DotWars
     {
         #region Declarations
 
-        private readonly List<Camera> cameras;
+        public readonly List<Camera> cameras;
         private readonly int height;
         private readonly List<HUD> huds;
         private readonly int[] rumbleAmount;
@@ -20,7 +20,9 @@ namespace DotWars
         private Rectangle safeArea;
         private Sprite SplitScreen;
         private Sprite pauseScreen;
+        private Sprite pauseInstructions;
         private Type pauser;
+        private int pauserIndex;
 
         #endregion
 
@@ -61,10 +63,13 @@ namespace DotWars
             {
                 cameras.Add(new Camera(pL.Keys.ElementAt(i), new Rectangle((i/2)*width, (i%2)*height, width, height),
                                        pL.Values.ElementAt(i), gT.GetTeammaterColor(pL.Keys.ElementAt(i))));
-                huds.Add(new HUD(cameras[i], i, gT.GetTeams().Count));
+                huds.Add(new HUD(cameras[i], i, gT.GetTeams().Count, pL.Count <= 2));
             }
 
             pauseScreen = new Sprite("HUD/pauseOverlay", sS / 2);
+            pauseInstructions = new Sprite("HUD/buttons", sS / 2);
+
+            pauserIndex = 0;
         }
 
         public void LoadContent(ManagerHelper mH)
@@ -86,6 +91,7 @@ namespace DotWars
             }
 
             pauseScreen.LoadContent(mH.GetTextureManager());
+            pauseInstructions.LoadContent(mH.GetTextureManager());
         }
 
         public void Update(ManagerHelper mH)
@@ -118,6 +124,7 @@ namespace DotWars
                     cameras[i].GetState().IsButtonDown(Buttons.BigButton) && !cameras[i].GetState().IsButtonDown(Buttons.BigButton) && pauser == null)
                 {
                     SetPause(cameras[i].GetCommanderType(), mH);
+                    pauserIndex = i;
                 }
             }
 
@@ -188,6 +195,9 @@ namespace DotWars
             if (pauser != null)
             {
                 pauseScreen.Draw(sB, Vector2.Zero, mH);
+                pauseInstructions.Draw(sB, Vector2.Zero, mH);
+                mH.GetTextureManager().DrawString(sB, "Quit", new Vector2(140, 650), Color.White, TextureManager.FontSizes.small, false);
+                mH.GetTextureManager().DrawString(sB, "Continue", new Vector2(950, 650), Color.White, TextureManager.FontSizes.small, false);
             }
         }
 
@@ -211,6 +221,11 @@ namespace DotWars
             return pauser;
         }
 
+        public int GetPauserIndex()
+        {
+            return pauserIndex;
+        }
+
         public static Vector2 Transform(Vector2 p, Vector2 o)
         {
             return p - o;
@@ -227,6 +242,18 @@ namespace DotWars
             }
 
             return PlayerIndex.One;
+        }
+
+        public static PlayerIndex GetPlayerIndex(int index)
+        {
+            switch (index)
+            {
+                case 0: return PlayerIndex.One;
+                case 1: return PlayerIndex.Two;
+                case 2: return PlayerIndex.Three;
+                case 3: return PlayerIndex.Four;
+                default: return PlayerIndex.One;
+            }
         }
 
         public int GetPlayerInt(Type cT)
@@ -369,6 +396,11 @@ namespace DotWars
                 return oldState;
             }
 
+            public int GetIndex()
+            {
+                return index;
+            }
+
             public Vector2 GetFocus()
             {
                 return new Vector2(port.X, port.Y) - focus;
@@ -430,17 +462,21 @@ namespace DotWars
                 healthCalcWidth;
 
             private Vector2 leftPos, rightPos;
+
+            private bool shouldDrawScores;
             #endregion
 
-            public HUD(Camera c, int i, int numTeams)
+            public HUD(Camera c, int i, int numTeams, bool canDrawScores)
             {
                 myCamera = c;
+
+                shouldDrawScores = canDrawScores;
 
                 Vector2 safeAreaStart = new Vector2((i / 2 == 0) ? c.GetPort().TitleSafeArea.Left : 0, (i % 2 == 0) ? c.GetPort().TitleSafeArea.Top : 0);
                 Vector2 safeAreaEnd = new Vector2(((i / 2 == 0) ? c.GetPort().TitleSafeArea.Left : 0) + c.GetPort().TitleSafeArea.Width, (i % 2 == 0) ? c.GetPort().TitleSafeArea.Top : 0);
 
                 leftPos = safeAreaStart + new Vector2(150, 50);
-                rightPos = safeAreaEnd + new Vector2(-24 + (4 - Math.Min(numTeams, 4)) * 82, 50);
+                rightPos = ((shouldDrawScores) ? safeAreaEnd + new Vector2(-24 + (4 - Math.Min(numTeams, 4)) * 82, 50) : Level.DEFAUT_SCREEN_SIZE / 2 + new Vector2(364, -16));
 
                 if (c.commanderType == typeof (RedCommander) || c.commanderType == typeof (RedPlayerCommander))
                 {
@@ -516,7 +552,7 @@ namespace DotWars
                 timer.Update(mH);
             }
 
-            public void Draw(SpriteBatch sB, ManagerHelper mH)
+            public void DrawScores(SpriteBatch sB, ManagerHelper mH)
             {
                 //Draw time left
                 int timeLeft = (int)(mH.GetGametype().GetGameEndTimer()) + 1,
@@ -555,6 +591,14 @@ namespace DotWars
                     }
                 }
 
+            }
+
+            public void Draw(SpriteBatch sB, ManagerHelper mH)
+            {
+                if (shouldDrawScores)
+                {
+                    DrawScores(sB, mH);
+                }
 
                 NPC commander = mH.GetNPCManager().GetCommander(myCamera.commanderType);
                 if (commander != null)

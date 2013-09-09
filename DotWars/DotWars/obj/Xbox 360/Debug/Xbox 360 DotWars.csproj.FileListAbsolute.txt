@@ -3385,7 +3385,6 @@ C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\Dot
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\DotWars.pdb
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\obj\Xbox 360\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\bar_damage.xnb
-C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\obj\Xbox 360\Debug\Xbox 360 DotWars.csprojResolveAssemblyReference.cache
 C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\bar_damage.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\confirm.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\return.xnb
@@ -3405,3 +3404,6 @@ C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\Dot
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\targetYellow.xnb
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\spr_bolt_strip3.xnb
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\tipsBases.xnb
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ResultsScreen\startButtonWhite.xnb
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\buttons.xnb
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\obj\Xbox 360\Debug\Xbox 360 DotWars.csprojResolveAssemblyReference.cache

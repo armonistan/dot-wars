@@ -11,14 +11,11 @@ namespace DotWars
         //Variables unique to the commander
 
         //Constants unique to the commander
-        public const int MAXNUMFLARES = 1;
-        public const int MAXTEAMNUM = 4;
         public const float SHOTGUNRANGE = 128;
         protected double abilityCounter;
         protected double abilityMax;
         protected double abilityUse;
         protected double abilityCharge;
-        public int commanderRadius;
 
         //Indicator stuff
         protected float endtime;
@@ -28,7 +25,6 @@ namespace DotWars
         public double shotgunShootingSpeed;
         protected float timer;
         public int weaponType; //0 is the machine gun, 1 is shot gun
-        private PlayerIndex xboxIndex;
 
         #endregion
 
@@ -38,13 +34,10 @@ namespace DotWars
             health = 225; // Large amount of health, a health commander can take 3 sniper hits
             maxHealth = health; //The units starting health will always be his max health
             movementSpeed = 135; //Above average movement speed. He is an elite, no?
-            shootingSpeed = .3; //Above average shooting speed for machine gun in seconds
+            shootingSpeed = .2; //Above average shooting speed for machine gun in seconds
             shotgunShootingSpeed = 1.2; //Average shooting speed for shotgun
             weaponType = 0; //machine gun default
             grenadeType = 0;
-
-            commanderRadius = 50;
-                //Not bad...huh? Daniel can't sing at all. None of the woodwinds or the brass could play
 
             flareCount = 0; //Number of flares active
 
@@ -66,6 +59,8 @@ namespace DotWars
             //Set up indicator stuff
             timer = 0;
             endtime = 0.07f;
+
+            protectedTimer = 2;
         }
 
         public override void LoadContent(TextureManager tM)
@@ -111,7 +106,9 @@ namespace DotWars
                 indicator.Draw(sB, displacement, mH);
             }
 
-            base.Draw(sB, displacement, mH);
+            var test = Color.White*((IsProtected()) ? 0.5f : 1);
+
+            base.Draw(sB, displacement, mH, test);
         }
 
         //Returns the "threat" score of a dot. Lower is more dangerous
@@ -192,8 +189,8 @@ namespace DotWars
             {
                 mH.GetProjectileManager()
               .AddProjectile("Projectiles/bullet_shotgun", GetOriginPosition() + tempPos, this,
-                             PathHelper.Direction(rotation + (float) mH.GetRandom().NextDouble()/4 - 0.125f)*500, 15,
-                             false, 1);
+                             PathHelper.Direction(rotation + (float) mH.GetRandom().NextDouble()/4 - 0.125f)*500, 18,
+                             false, true, 0.5f);
             }
 
             ShotgunSound(mH);
@@ -211,8 +208,8 @@ namespace DotWars
 
             mH.GetProjectileManager()
               .AddProjectile("Projectiles/bullet_standard", GetOriginPosition() + tempPos, this,
-                             PathHelper.Direction(rotation + (float)mH.GetRandom().NextDouble() / 8 - 0.0625f) * 400, 25,
-                             false, 5);
+                             PathHelper.Direction(rotation + (float)mH.GetRandom().NextDouble() / 8 - 0.0625f) * 400, 15,
+                             false, true, 1.3f);
 
             ShootSound(mH);
         }

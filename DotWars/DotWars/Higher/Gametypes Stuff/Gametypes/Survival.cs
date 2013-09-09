@@ -17,22 +17,27 @@ namespace DotWars
         private bool blueCommanderHasSpawned;
         private bool greenCommanderHasSpawned;
         private bool yellowCommanderHasSpawned;
+
+        private bool hasAppliedModifier;
+
+        private const int NUM_SUICIDES = 15;
         #endregion
 
         public Survival(List<NPC.AffliationTypes> tL, Dictionary<Type, NPC.AffliationTypes> pL, int pC, float sT)
-            : base(tL, pL, 100, pC, sT)
+            : base(tL, pL, -1, pC, sT)
         {
             this.typeOfGame = GT.SURVIVAL;
-            suicideSpawnModifier = 1;
-            survivalPointModifier = 1;
+            suicideSpawnModifier = 0;
+            survivalPointModifier = -1;
             gameEndTimer = 120;
             counter = 0;
             spawnSecs = 2;
-            winScore = 100;
             redCommanderHasSpawned = false;
             blueCommanderHasSpawned = false;
             greenCommanderHasSpawned = false;
             yellowCommanderHasSpawned = false;
+
+            hasAppliedModifier = false;
         }
 
         public void Initialize(ManagerHelper mH, List<Claimable> cL)
@@ -47,18 +52,28 @@ namespace DotWars
 
         public override bool Update(ManagerHelper mH)
         {
-            if (GetIfAllCommandersAreDead(mH))
+            if (GetIfAllPlayersAreDead(mH) && redCommanderHasSpawned)
                 gameEndTimer = -1;
 
-            if (gameEndTimer % 30 == 0)
+            if ((int)gameEndTimer % 30 == 0)
             {
-                UpdateScoreSurvival(mH);
-                survivalPointModifier++;
+                if (!hasAppliedModifier)
+                {   
+                    survivalPointModifier++;
+                    suicideSpawnModifier++;
+                    UpdateScoreSurvival(mH);
+                        
+                    hasAppliedModifier = true;
+                }
+            }
+            else
+            {
+                hasAppliedModifier = false;
             }
 
             #region Spawns
 
-            if (mH.GetNPCManager().GetAllies(NPC.AffliationTypes.black).Count <= 15 && counter > spawnSecs)
+            if (mH.GetNPCManager().GetAllies(NPC.AffliationTypes.black).Count <= NUM_SUICIDES && counter > spawnSecs)
             {
                 mH.GetNPCManager().Add(new Suicide(mH.GetSpawnHelper().SpawnSucideDots(), mH));
 
@@ -76,9 +91,6 @@ namespace DotWars
                 c.Update(mH);
             }
 
-            if (gameEndTimer > 30)
-                suicideSpawnModifier = (120/gameEndTimer);
-
             return base.Update(mH);
         }
 
@@ -95,18 +107,43 @@ namespace DotWars
         private void UpdateScoreSurvival(ManagerHelper mH)
         {
             if (mH.GetNPCManager().GetCommander(NPC.AffliationTypes.red) != null)
-                scores[0]+=10;
+                scores[0]+=10 * survivalPointModifier;
             if (mH.GetNPCManager().GetCommander(NPC.AffliationTypes.blue) != null)
-                scores[1] += 10;
+                scores[1] += 10 * survivalPointModifier;
             if (mH.GetNPCManager().GetCommander(NPC.AffliationTypes.green) != null)
-                scores[2] += 10;
+                scores[2] += 10 * survivalPointModifier;
             if (mH.GetNPCManager().GetCommander(NPC.AffliationTypes.yellow) != null)
-                scores[3] += 10;
+                scores[3] += 10 * survivalPointModifier;
         }
 
         public bool GetIfAllCommandersAreDead(ManagerHelper mH)
         {
             return (redCommanderHasSpawned && blueCommanderHasSpawned && greenCommanderHasSpawned && yellowCommanderHasSpawned && mH.GetNPCManager().GetCommanders().Count == 0);
+        }
+
+        public bool GetIfAllPlayersAreDead(ManagerHelper mH)
+        {
+            foreach (Commander commander in mH.GetNPCManager().GetCommanders())
+            {
+                if (commander is RedPlayerCommander)
+                {
+                    return false;
+                }
+                else if (commander is BluePlayerCommander)
+                {
+                    return false;
+                }
+                else if (commander is GreenPlayerCommander)
+                {
+                    return false;
+                }
+                else if (commander is YellowPlayerCommander)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         public override void ChangeScore(NPC agent, int s)
@@ -197,30 +234,19 @@ namespace DotWars
             int maxScore = 0;
             int winningTeam = 0;
 
-            //Go through each team and see if they won
+            //Go through each team and see who got highest score
+
             for (int i = 0; i < teams.Count; i++)
             {
-                if (scores[i] >= winScore)
+                if (scores[i] >= maxScore)
                 {
-                    return teams[i];
+                    winningTeam = i;
+                    maxScore = scores[i];
                 }
             }
 
-            //Go through each team and see who got highest score
-            if (gameEndTimer <= 0)
-            {
-                for (int i = 0; i < teams.Count; i++)
-                {
-                    if (scores[i] >= maxScore)
-                    {
-                        winningTeam = i;
-                        maxScore = scores[i];
-                    }
-                }
-
-                if (maxScore > 0)
-                    return teams[winningTeam];
-            }
+            if (maxScore > 0)
+                return teams[winningTeam];
 
             return NPC.AffliationTypes.same;
         }

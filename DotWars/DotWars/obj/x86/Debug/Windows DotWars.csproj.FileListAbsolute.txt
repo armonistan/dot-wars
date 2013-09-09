@@ -1337,3 +1337,5 @@ C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\Dot
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Dots\Yellow\targetYellow.xnb
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\spr_bolt_strip3.xnb
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\tipsBases.xnb
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\ResultsScreen\startButtonWhite.xnb
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\HUD\buttons.xnb

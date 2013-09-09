@@ -12,7 +12,7 @@ namespace DotWars
         private readonly Level result;
         private String leftHandStats = "";
         private String rightHandStats = "";
-        private string scores = "";
+        private String[] scores = new String[4];
         private String winnerString = "frick you";
         private String winsString = "Wins!";
         private Sprite winnerSpriteLeft;
@@ -25,6 +25,8 @@ namespace DotWars
         private const int GREEN_INDEX = 2;
         private const int YELLOW_INDEX = 3;
 
+        private double continueTimer;
+
         public ResultsScreen(Level l, TextureManager tM, AudioManager audio)
             : base(
                 new ResultScreenGametype(), new Dictionary<Type, int>(),
@@ -33,6 +35,8 @@ namespace DotWars
             result = l;
             winnerSpriteLeft = new Sprite("Backgrounds/PreGame/commanders", new Vector2(210, 270));
             winnerSpriteRight = new Sprite("Backgrounds/PreGame/commanders", new Vector2(1020, 270));
+
+            continueTimer = 0.25;
         }
 
         public override void Initialize()
@@ -40,6 +44,7 @@ namespace DotWars
             base.Initialize();
             backgrounds.AddBackground(new Sprite("Backgrounds/ResultsScreen/winnersBackground", new Vector2(624, 240)));
             backgrounds.AddBackground(new Sprite("Backgrounds/ResultsScreen/resultsBackground", new Vector2(624, 360)));
+            backgrounds.AddBackground(new Sprite("Backgrounds/ResultsScreen/startButtonWhite", GetSizeOfLevel() / 2));
             GenerateScores();
             GenerateLeftHandStatistic();
             GenerateRightHandStatistic();
@@ -48,9 +53,13 @@ namespace DotWars
 
         public override void LoadContent(ContentManager cM)
         {
-            if (winnerSpriteLeft != null && winnerSpriteRight != null)
+            if (winnerSpriteLeft != null)
             {
                 winnerSpriteLeft.LoadContent(textures);
+            }
+
+            if (winnerSpriteRight != null)
+            {
                 winnerSpriteRight.LoadContent(textures);
             }
             base.LoadContent(cM);
@@ -58,11 +67,17 @@ namespace DotWars
 
         public override Level Update(GameTime gT)
         {
-            if (Keyboard.GetState().IsKeyDown(Keys.Space) ||
-                GamePad.GetState(PlayerIndex.One).IsButtonDown(Buttons.Start))
+            for (int c = 0; c < 4; c++)
             {
-                return new Menu(textures, sounds);
+                if (continueTimer <= 0 &&
+                    Keyboard.GetState().IsKeyDown(Keys.Space) ||
+                    GamePad.GetState(CameraManager.GetPlayerIndex(c)).IsButtonDown(Buttons.Start))
+                {
+                    return new Menu(textures, sounds);
+                }
             }
+
+            continueTimer -= gT.ElapsedGameTime.TotalSeconds;
 
             return base.Update(gT);
         }
@@ -83,7 +98,31 @@ namespace DotWars
             managers.GetTextureManager().DrawString(sB, leftHandStats, new Vector2(125, 482), Color.White, TextureManager.FontSizes.small, false);
             managers.GetTextureManager().DrawString(sB, rightHandStats, new Vector2(650, 482), Color.White, TextureManager.FontSizes.small, false);
             managers.GetTextureManager().DrawString(sB, winnerString, new Vector2(620, 150), Color.White, TextureManager.FontSizes.big, true);
-            managers.GetTextureManager().DrawString(sB, scores, new Vector2(620, 350), Color.White, TextureManager.FontSizes.small, true);
+
+            int ct = -1;
+            for (int i = 0; i < 4; i++){
+                if (scores[i] != null)
+                {
+                    ct++;
+                    switch (i) {
+                        case 0:
+                            managers.GetTextureManager().DrawString(sB, scores[i], new Vector2(520 + (80 * ct), 350), Color.Red, TextureManager.FontSizes.small, true);
+                            break;
+                        case 1:
+                            managers.GetTextureManager().DrawString(sB, scores[i], new Vector2(520 + (80 * ct), 350), Color.Blue, TextureManager.FontSizes.small, true);
+                            break;
+                        case 2:
+                            managers.GetTextureManager().DrawString(sB, scores[i], new Vector2(520 + (80 * ct), 350), Color.Green, TextureManager.FontSizes.small, true);
+                            break;
+                        case 3:
+                            managers.GetTextureManager().DrawString(sB, scores[i], new Vector2(520 + (80 * ct), 350), Color.Yellow, TextureManager.FontSizes.small, true);
+                            break;
+                        default:
+                            managers.GetTextureManager().DrawString(sB, scores[i], new Vector2(620, 350), Color.White, TextureManager.FontSizes.small, true);
+                            break;
+                    }
+                }
+            }
 
             if(winnerString.CompareTo("Tie Game ") != 0)
                 managers.GetTextureManager().DrawString(sB, winsString, new Vector2(620, 260), Color.White, TextureManager.FontSizes.big, true);
@@ -105,7 +144,7 @@ namespace DotWars
 
         private void GenerateScores()
         {
-            scores += result.GetManagerHelper().GetGametype().GetEndScores();
+            scores = result.GetManagerHelper().GetGametype().GetEndScores();
         }
 
         public void GenerateLeftHandStatistic()
@@ -154,7 +193,7 @@ namespace DotWars
             {
                 rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetCasualitiesStatistic();
                 rightHandStats += "\n";
-                switch(managers.GetRandom().Next(3))
+                switch(managers.GetRandom().Next(2))
                 {
                     case 0:
                         rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetMostFlagsCaputuredStatistic();
@@ -186,13 +225,13 @@ namespace DotWars
 
         public void GenerateWinnerString()
         {
-            NPC secondaryWinner = null;
+            NPC.AffliationTypes secondaryWinner = NPC.AffliationTypes.red;
 
             if (result.GetManagerHelper().GetGametype() is Assasssins)
             {
                 Assasssins gametypeWinner = (Assasssins)result.GetManagerHelper().GetGametype();
                 NPC.AffliationTypes winner = gametypeWinner.GetWinner();
-                secondaryWinner = result.GetManagerHelper().GetNPCManager().GetSecondaryCommander(winner);
+                secondaryWinner = result.GetManagerHelper().GetGametype().GetSecondaryWinner(winner);
 
                 switch (winner)
                 {
@@ -222,8 +261,8 @@ namespace DotWars
             else if (result.GetManagerHelper().GetGametype() is Assault)
             {
                 Assault gametypeWinner = (Assault)result.GetManagerHelper().GetGametype();
-                NPC.AffliationTypes winner = gametypeWinner.GetWinner();
-                secondaryWinner = result.GetManagerHelper().GetNPCManager().GetSecondaryCommander(winner);
+                NPC.AffliationTypes winner = gametypeWinner.GetWinnerEnd();
+                secondaryWinner = result.GetManagerHelper().GetGametype().GetSecondaryWinner(winner);
 
                 switch (winner)
                 {
@@ -254,7 +293,7 @@ namespace DotWars
             {
                 CaptureTheFlag gametypeWinner = (CaptureTheFlag)result.GetManagerHelper().GetGametype();
                 NPC.AffliationTypes winner = gametypeWinner.GetWinner();
-                secondaryWinner = result.GetManagerHelper().GetNPCManager().GetSecondaryCommander(winner);
+                secondaryWinner = result.GetManagerHelper().GetGametype().GetSecondaryWinner(winner);
 
                 switch (winner)
                 {
@@ -285,7 +324,7 @@ namespace DotWars
             {
                 Conquest gametypeWinner = (Conquest)result.GetManagerHelper().GetGametype();
                 NPC.AffliationTypes winner = gametypeWinner.GetWinner();
-                secondaryWinner = result.GetManagerHelper().GetNPCManager().GetSecondaryCommander(winner);
+                secondaryWinner = result.GetManagerHelper().GetGametype().GetSecondaryWinner(winner);
 
                 switch (winner)
                 {
@@ -316,7 +355,7 @@ namespace DotWars
             {
                 Deathmatch gametypeWinner = (Deathmatch)result.GetManagerHelper().GetGametype();
                 NPC.AffliationTypes winner = gametypeWinner.GetWinner();
-                secondaryWinner = result.GetManagerHelper().GetNPCManager().GetSecondaryCommander(winner);
+                secondaryWinner = result.GetManagerHelper().GetGametype().GetSecondaryWinner(winner);
 
                 switch (winner)
                 {
@@ -347,7 +386,7 @@ namespace DotWars
             {
                 Survival gametypeWinner = (Survival)result.GetManagerHelper().GetGametype();
                 NPC.AffliationTypes winner = gametypeWinner.GetWinner();
-                secondaryWinner = result.GetManagerHelper().GetNPCManager().GetSecondaryCommander(winner);
+                secondaryWinner = result.GetManagerHelper().GetGametype().GetSecondaryWinner(winner);
 
                 switch (winner)
                 {
@@ -375,8 +414,9 @@ namespace DotWars
                 }
             }
 
-            if(secondaryWinner != null)
-                switch (secondaryWinner.GetPersonalAffilation())
+            if (result.GetManagerHelper().GetGametype().GetTeams().Count == 2)
+            {
+                switch (secondaryWinner)
                 {
                     case NPC.AffliationTypes.red:
                         winnerFrameRight = RED_INDEX;
@@ -391,6 +431,11 @@ namespace DotWars
                         winnerFrameRight = YELLOW_INDEX;
                         break;
                 }
+            }
+            else
+            {
+                winnerSpriteRight = null;
+            }
         }
     }
 }

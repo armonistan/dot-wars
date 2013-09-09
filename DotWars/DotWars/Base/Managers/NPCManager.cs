@@ -19,7 +19,7 @@ namespace DotWars
         private ManagerHelper managers;
         private Dictionary<NPC.AffliationTypes, int> kills;
         private Dictionary<NPC.AffliationTypes, int> deaths;
-        private Dictionary<NPC.AffliationTypes, int> medicKills;
+        private int medicKills;
         private Dictionary<NPC.AffliationTypes, float> timeAlive;
         private Dictionary<NPC.AffliationTypes, float> maxTimeAlive;
         private Dictionary<NPC.AffliationTypes, bool> isAlive;
@@ -34,7 +34,7 @@ namespace DotWars
             commanders = new List<Commander>();
             kills = new Dictionary<NPC.AffliationTypes, int>();
             deaths = new Dictionary<NPC.AffliationTypes, int>();
-            medicKills = new Dictionary<NPC.AffliationTypes, int>();
+            medicKills = 0;
             timeAlive = new Dictionary<NPC.AffliationTypes, float>();
             maxTimeAlive = new Dictionary<NPC.AffliationTypes, float>();
             isAlive = new Dictionary<NPC.AffliationTypes, bool>();
@@ -49,7 +49,7 @@ namespace DotWars
             commanders = new List<Commander>();
             kills = new Dictionary<NPC.AffliationTypes, int>();
             deaths = new Dictionary<NPC.AffliationTypes, int>();
-            medicKills = new Dictionary<NPC.AffliationTypes, int>();
+            medicKills = 0;
             timeAlive = new Dictionary<NPC.AffliationTypes, float>();
             maxTimeAlive = new Dictionary<NPC.AffliationTypes, float>();
             isAlive = new Dictionary<NPC.AffliationTypes, bool>();
@@ -67,7 +67,6 @@ namespace DotWars
             {
                 kills.Add(a, 0);
                 deaths.Add(a, 0);
-                medicKills.Add(a, 0);
                 timeAlive.Add(a, 0);
                 maxTimeAlive.Add(a, 0);
                 isAlive.Add(a, false);
@@ -81,6 +80,9 @@ namespace DotWars
 
         public void Add(NPC a)
         {
+            if(a.GetOriginPosition() == new Vector2(-1, -1))
+                return;
+
             if (a is Bomber)
             {
                 bombers.Add(a);
@@ -111,25 +113,28 @@ namespace DotWars
 
         public void Remove(NPC a)
         {
-            UpdateCasualities(a.GetAffiliation());
-
-            if (a is Commander && a.GetLastDamager() != null)
-            {
-                if(a is Commander)
-                    this.UpdateDeaths(a.GetPersonalAffilation());
-                if (a.GetLastDamager() is Commander)
-                {
-                    if (a is Medic)
-                        this.UpdateMedicKills(a.GetLastDamager().GetPersonalAffilation());
-
-                    this.UpdateKillsToCommanders(a.GetLastDamager().GetPersonalAffilation(), a.GetAffiliation());
-                    this.UpdateKills(a.GetLastDamager().GetPersonalAffilation());
-                }
-            }
-
             if (a is Bomber)
             {
                 bombers.Remove(a);
+            }
+
+            UpdateCasualities(a.GetAffiliation());
+            if (a is Medic)
+                this.UpdateMedicKills();
+
+            else if (a is Commander && a.GetLastDamager() != null)
+            {
+                this.UpdateDeaths(a.GetPersonalAffilation());
+
+                if (a.GetLastDamager() is Commander)
+                {
+                    this.UpdateKillsToCommanders(a.GetLastDamager().GetPersonalAffilation(), a.GetAffiliation());
+                }
+            }
+
+            if(a.GetLastDamager() is Commander)
+            {
+                this.UpdateKills(a.GetLastDamager().GetPersonalAffilation());
             }
 
             List<NPC> tempList;
@@ -613,7 +618,7 @@ namespace DotWars
             return kills;
         }
 
-        public Dictionary<NPC.AffliationTypes, int> GetMedicKills()
+        public int GetMedicKills()
         {
             return medicKills;
         }
@@ -647,9 +652,9 @@ namespace DotWars
         }
         #endregion
 
-        public void UpdateMedicKills(NPC.AffliationTypes a)
+        public void UpdateMedicKills()
         {
-            medicKills[a]++;
+            medicKills++;
         }
 
         public void UpdateKills(NPC.AffliationTypes a)

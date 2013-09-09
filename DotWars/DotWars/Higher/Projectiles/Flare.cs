@@ -103,7 +103,7 @@ namespace DotWars
                     break;
             }
 
-            base.Set(color, n.GetOriginPosition(), n, v, 0, false, 3, mH);
+            base.Set(color, n.GetOriginPosition(), n, v, 0, false, true, 3, mH);
         }
     }
 }

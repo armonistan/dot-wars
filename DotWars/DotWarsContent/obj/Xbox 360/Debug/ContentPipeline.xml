@@ -2189,6 +2189,87 @@
       <Time>2013-08-17T11:03:16.7098775-05:00</Time>
     </Item>
     <Item>
+      <Source>Textures\Effects\suicide_spawn_particle.png</Source>
+      <Name>Textures\Effects\suicide_spawn_particle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\suicide_spawn_particle.xnb</Output>
+      <Time>2013-08-17T14:18:07.231537-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\suicide_spawn_sprite.png</Source>
+      <Name>Textures\Effects\suicide_spawn_sprite</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\suicide_spawn_sprite.xnb</Output>
+      <Time>2013-08-17T14:18:07.2355373-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Blue\targetBlue.png</Source>
+      <Name>Textures\Dots\Blue\targetBlue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\targetBlue.xnb</Output>
+      <Time>2013-08-18T13:03:30.5849251-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Green\targetGreen.png</Source>
+      <Name>Textures\Dots\Green\targetGreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\targetGreen.xnb</Output>
+      <Time>2013-08-18T13:03:39.4034295-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Red\targetRed.png</Source>
+      <Name>Textures\Dots\Red\targetRed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\targetRed.xnb</Output>
+      <Time>2013-08-18T13:03:45.6327858-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\Yellow\targetYellow.png</Source>
+      <Name>Textures\Dots\Yellow\targetYellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\targetYellow.xnb</Output>
+      <Time>2013-08-18T13:03:53.5262372-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\spr_bolt_strip3.png</Source>
+      <Name>Textures\Effects\spr_bolt_strip3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\spr_bolt_strip3.xnb</Output>
+      <Time>2013-08-18T17:55:08.3577404-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\PreGame\tipsBases.png</Source>
+      <Name>Textures\Backgrounds\PreGame\tipsBases</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\tipsBases.xnb</Output>
+      <Time>2013-08-18T21:22:54.3997573-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\ResultsScreen\startButtonWhite.png</Source>
+      <Name>Textures\Backgrounds\ResultsScreen\startButtonWhite</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ResultsScreen\startButtonWhite.xnb</Output>
+      <Time>2013-08-18T22:41:34.9657582-05:00</Time>
+    </Item>
+    <Item>
       <Source>Audio\Waves\explosion.wav</Source>
       <Name>Audio\Waves\explosion</Name>
       <Importer>WavImporter</Importer>
@@ -2396,76 +2477,13 @@
       <Time>2013-08-10T15:29:25.1605418-05:00</Time>
     </Item>
     <Item>
-      <Source>Textures\Effects\suicide_spawn_particle.png</Source>
-      <Name>Textures\Effects\suicide_spawn_particle</Name>
+      <Source>Textures\HUD\buttons.png</Source>
+      <Name>Textures\HUD\buttons</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\suicide_spawn_particle.xnb</Output>
-      <Time>2013-08-17T14:18:07.231537-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Effects\suicide_spawn_sprite.png</Source>
-      <Name>Textures\Effects\suicide_spawn_sprite</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\suicide_spawn_sprite.xnb</Output>
-      <Time>2013-08-17T14:18:07.2355373-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Dots\Blue\targetBlue.png</Source>
-      <Name>Textures\Dots\Blue\targetBlue</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\targetBlue.xnb</Output>
-      <Time>2013-08-18T13:03:30.5849251-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Dots\Green\targetGreen.png</Source>
-      <Name>Textures\Dots\Green\targetGreen</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Green\targetGreen.xnb</Output>
-      <Time>2013-08-18T13:03:39.4034295-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Dots\Red\targetRed.png</Source>
-      <Name>Textures\Dots\Red\targetRed</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Red\targetRed.xnb</Output>
-      <Time>2013-08-18T13:03:45.6327858-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Dots\Yellow\targetYellow.png</Source>
-      <Name>Textures\Dots\Yellow\targetYellow</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Yellow\targetYellow.xnb</Output>
-      <Time>2013-08-18T13:03:53.5262372-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Effects\spr_bolt_strip3.png</Source>
-      <Name>Textures\Effects\spr_bolt_strip3</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\spr_bolt_strip3.xnb</Output>
-      <Time>2013-08-18T17:55:08.3577404-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\PreGame\tipsBases.png</Source>
-      <Name>Textures\Backgrounds\PreGame\tipsBases</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\tipsBases.xnb</Output>
-      <Time>2013-08-18T21:22:54.3997573-05:00</Time>
+      <Output>C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\buttons.xnb</Output>
+      <Time>2013-08-20T20:18:26.8927917-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

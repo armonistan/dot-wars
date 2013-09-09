@@ -58,12 +58,12 @@ namespace DotWars
             managers = mH;
         }
 
-        public void AddProjectile(String a, Vector2 p, NPC n, Vector2 v, int d, bool iE, float dT)
+        public void AddProjectile(String a, Vector2 p, NPC n, Vector2 v, int d, bool iE, bool collide, float dT)
         {
             if (inactiveProjectiles.Count > 0)
             {
                 Projectile temp = inactiveProjectiles.Pop();
-                temp.Set(a, p, n, v, d, iE, dT, managers);
+                temp.Set(a, p, n, v, d, iE, collide, dT, managers);
                 activeProjectiles.Enqueue(temp);
             }
             else
@@ -82,7 +82,7 @@ namespace DotWars
             if (inactiveTossables.Count > 0)
             {
                 Tossable temp = inactiveTossables.Pop();
-                temp.Set(a, p, n, v, d, iE, dT, managers);
+                temp.Set(a, p, n, v, d, iE, true, dT, managers);
                 activeTossables.Enqueue(temp);
             }
         }

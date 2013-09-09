@@ -138,7 +138,7 @@ namespace DotWars
             survivalTips[5] = new Tip("You cannot kill one another in Survival.", new DOTS[] { DOTS.MUSTACHIO, DOTS.TERRON, DOTS.DIAN, DOTS.AQUOES });
             survivalTips[6] = new Tip("Gray dots will become faster over time.", new DOTS[] { DOTS.MUSTACHIO, DOTS.TERRON, DOTS.DIAN, DOTS.AQUOES, DOTS.GRUNT });
             survivalTips[7] = new Tip("You cannot kill one another in Survival.", new DOTS[] { DOTS.MUSTACHIO, DOTS.TERRON, DOTS.DIAN, DOTS.AQUOES });
-            survivalTips[8] = new Tip("SIE SIND DAS ESSEN UND WIR SIND DIE JÄGER!", new DOTS[] { DOTS.TERRON });
+            survivalTips[8] = new Tip("SIE SIND DAS ESSEN UND WIR SIND DIE JAGER!", new DOTS[] { DOTS.TERRON });
             this.DictTip.Add(Gametype.GT.SURVIVAL, survivalTips);
             #endregion
         }
@@ -248,7 +248,7 @@ namespace DotWars
             background.Draw(sB, Vector2.Zero, managers);
             textures.DrawString(sB, nextGame.GetName(), new Vector2(600, 64), Color.White, TextureManager.FontSizes.big, true);
             textures.DrawString(sB, nextGame.GetSummary(), new Vector2(452, 240), Color.White, TextureManager.FontSizes.small, true);
-            textures.DrawString(sB, ((timer <= beginTime) ? "Press Start!" : (int)timer + ""), new Vector2(1037, 600), Color.White, TextureManager.FontSizes.small, true);
+            textures.DrawString(sB, ((timer <= beginTime) ? "Press Start!" : (int)Math.Ceiling(timer) + ""), new Vector2(1037, 600), Color.White, TextureManager.FontSizes.small, true);
             textures.DrawString(sB, tipText, new Vector2(64, 530), Color.White, TextureManager.FontSizes.small, false);
             tipPic.Draw(sB, Vector2.Zero, managers);
             sB.End();

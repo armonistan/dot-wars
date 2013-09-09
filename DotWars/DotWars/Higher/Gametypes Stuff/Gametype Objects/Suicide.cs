@@ -11,9 +11,9 @@ namespace DotWars
         {
             var temp = (Survival) mH.GetGametype();
 
-            maxHealth = (int) (75*temp.suicideSpawnModifier);
+            maxHealth = (int) (50*temp.suicideSpawnModifier);
             health = maxHealth;
-            movementSpeed = (int) (100*temp.suicideSpawnModifier);
+            movementSpeed = (int) (50 + temp.suicideSpawnModifier * 50);
             affiliation = AffliationTypes.black;
             animateCounter = 0;
         }
@@ -39,59 +39,24 @@ namespace DotWars
 
             //TODO: Make this compatable with NPC death code
             if (target != null && CollisionHelper.IntersectPixelsRadius(this, target, 24, 24) != new Vector2(-1))
+            {
                 Explode(mH);
+            }
             else if (PathHelper.Distance(this.GetOriginPosition(), FindClosestRock(mH)) < 48)
+            {
                 Explode(mH);
-        }
-
-        protected override bool ProjectileCheck(ManagerHelper mH)
-        {
-            //TODO: Make this compatable with rest of code
-            if (health <= 0)
-            {
-                Explode(mH, lastDamager);
-                return true;
             }
-            else
-            {
-                foreach (Projectile p in mH.GetProjectileManager().GetProjectiles())
-                {
-                    if (p.GetAffiliation() != affiliation &&
-                        CollisionHelper.IntersectPixelsSimple(this, p) != new Vector2(-1))
-                    {
-                        lastDamagerDirection = PathHelper.DirectionVector(GetOriginPosition(), p.GetOriginPosition());
-                        ChangeHealth(-1*p.GetDamage(), p.GetCreator());
-                        counter = 0;
-
-                        if (health <= 0)
-                        {
-                            if (p.GetAffiliation() != AffliationTypes.grey)
-                                mH.GetGametype().ChangeScore(p.GetCreator(), 1);
-
-                            return true;
-                        }
-
-                        p.SetDrawTime(0);
-                    }
-
-                    else
-                        counter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
-
-                    if (counter > 2)
-                    {
-                        counter = 0;
-                        lastDamagerDirection = Vector2.Zero;
-                    }
-                }
-            }
-
-            return false;
         }
 
         protected override void Explode(ManagerHelper mH)
         {
-            mH.GetParticleManager().AddExplosion(GetOriginPosition(), this, 300);
+            mH.GetParticleManager().AddExplosion(GetOriginPosition(), ((lastDamager == null) ? this : lastDamager), 300);
             mH.GetNPCManager().Remove(this);
+
+            if (lastDamager != null)
+            {
+                mH.GetGametype().ChangeScore(lastDamager, 1);
+            }
         }
 
         private void Explode(ManagerHelper mH, NPC a)
@@ -139,7 +104,7 @@ namespace DotWars
             foreach (LargeRock rock in mH.GetAbilityManager().GetLargeRocks())
             {
                 distance = PathHelper.Distance(rock.GetOriginPosition(), this.GetOriginPosition());
-                if (distance < closestDistance)
+                if (distance < closestDistance && rock.IsFullyUp())
                 {
                     closestDistance = distance;
                     closestRock = rock;

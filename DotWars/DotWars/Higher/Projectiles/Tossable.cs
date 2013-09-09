@@ -128,9 +128,9 @@ namespace DotWars
             }
         }
 
-        public override void Set(string a, Vector2 p, NPC n, Vector2 v, int d, bool iE, float dT, ManagerHelper mH)
+        public override void Set(string a, Vector2 p, NPC n, Vector2 v, int d, bool iE, bool collide, float dT, ManagerHelper mH)
         {
-            base.Set(a, p, n, v, d, iE, dT, mH);
+            base.Set(a, p, n, v, d, iE, collide, dT, mH);
 
             drag = 0.03f;
         }

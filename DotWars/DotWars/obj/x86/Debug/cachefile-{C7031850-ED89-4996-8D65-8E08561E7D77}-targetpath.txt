@@ -272,6 +272,8 @@ Content\Textures\Dots\Red\targetRed.xnb
 Content\Textures\Dots\Yellow\targetYellow.xnb
 Content\Textures\Effects\spr_bolt_strip3.xnb
 Content\Textures\Backgrounds\PreGame\tipsBases.xnb
+Content\Textures\Backgrounds\ResultsScreen\startButtonWhite.xnb
+Content\Textures\HUD\buttons.xnb
 Content\Audio\GameAudio.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb

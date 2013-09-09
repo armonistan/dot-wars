@@ -58,24 +58,35 @@ namespace DotWars
                 return true;
             }
 
-            if (mH.GetGametype() is Survival)
-                return false;
             else
             {
                 foreach (Projectile p in mH.GetProjectileManager().GetProjectiles())
                 {
                     if (p.GetDrawTime() > 0 && p.GetAffiliation() != affiliation &&
-                        CollisionHelper.IntersectPixelsSimple(this, p) != new Vector2(-1)
-                        && (Math.Abs(p.GetRotation() - rotation) > (Math.PI*5/6)))
+                        CollisionHelper.IntersectPixelsSimple(this, p) != new Vector2(-1))
                     {
                         lastDamagerDirection = PathHelper.DirectionVector(GetOriginPosition(), p.GetOriginPosition());
-                        ChangeHealth(-1*p.GetDamage(), p.GetCreator());
-                        mH.GetParticleManager().AddBlood(this);
                         counter = 0;
 
-                        if (health <= 0)
+                        var test = p.GetRotation() + Math.PI;
+                        if (test > 2*Math.PI)
                         {
-                            return true;
+                            test -= 2*Math.PI;
+                        }
+
+                        if (Math.Abs(test - rotation) > (Math.PI*5/6))
+                        {
+                            ChangeHealth(-1*p.GetDamage(), p.GetCreator());
+                            mH.GetParticleManager().AddBlood(this);
+
+                            if (health <= 0)
+                            {
+                                return true;
+                            }
+                        }
+                        else
+                        {
+                            ;
                         }
 
                         p.SetDrawTime(0);

@@ -10,6 +10,8 @@ namespace DotWars
         public Vector2 spawnPoint;
         private double spawnTime; //
         private Vector2 velocity;
+        private bool isOneUse;
+        private bool isUsed;
 
         public SpawnPoint(Vector2 sP, NPC.AffliationTypes a, ManagerHelper mH)
             :base(null, sP)
@@ -20,32 +22,48 @@ namespace DotWars
             spawnCounter = 0;
             spawnTime = mH.GetGametype().GetSpawnTime()*1.1; //so same spot wont be used twice in a row
             velocity = Vector2.Zero;
-            
-           
-            if (a == NPC.AffliationTypes.grey)
-                spawnTime = 100000000;
+            isOneUse = (mH.GetGametype() is Conquest) && (affilation == NPC.AffliationTypes.grey);
+            isUsed = false;
         }
 
         public override void Update(ManagerHelper mH)
         {
+            //if black dont work
             if (affilation == NPC.AffliationTypes.black)
             {
                 spawnTime = 10000;
                 spawnCounter = 0;
             }
 
-            else
+            else if(isOneUse && !isUsed)
+            {
+                spawnTime = 8;
+                NPCManager temp = mH.GetNPCManager();
+
+                if (spawnCounter > spawnTime)
+                {
+                    isGoodSpawnPoint = temp.GetAllButAlliesInRadius(affilation, spawnPoint, 100).Count == 0;
+                }
+                else
+                {
+                    spawnCounter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                }
+            }
+
+            else if(!isUsed)
+            {
                 spawnTime = 8;
 
-            NPCManager temp = mH.GetNPCManager();
+                NPCManager temp = mH.GetNPCManager();
 
-            if (spawnCounter > spawnTime)
-            {
-                isGoodSpawnPoint = temp.GetAllButAlliesInRadius(affilation, spawnPoint, 100).Count == 0;
-            }
-            else
-            {
-                spawnCounter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                if (spawnCounter > spawnTime)
+                {
+                    isGoodSpawnPoint = temp.GetAllButAlliesInRadius(affilation, spawnPoint, 100).Count == 0;
+                }
+                else
+                {
+                    spawnCounter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                }
             }
         }
 
@@ -56,8 +74,16 @@ namespace DotWars
 
         public void Spawn()
         {
+            if (isOneUse)
+                isUsed = true;
+
             isGoodSpawnPoint = false;
             spawnCounter = 0;
+        }
+
+        public bool IsUsedUp()
+        {
+            return isUsed && isOneUse;
         }
 
         public bool IsGoodSpawnPoint()

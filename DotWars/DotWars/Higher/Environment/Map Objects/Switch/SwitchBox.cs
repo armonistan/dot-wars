@@ -56,7 +56,7 @@ namespace DotWars
                 for (int i = 0; i < theNet.boxNodes.Length; i++)
                 {
                     if (lastNode != theNet.boxNodes[i] &&
-                        PathHelper.Distance(GetOriginPosition(), theNet.boxNodes[i].pos) < 2)
+                        PathHelper.Distance(GetOriginPosition(), theNet.boxNodes[i].pos) < 4)
                     {
                         lastNode = theNet.boxNodes[i];
                         velocity = theNet.boxNodes[i].GetRandomDir(mH) * 15;

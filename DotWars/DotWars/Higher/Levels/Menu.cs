@@ -19,7 +19,7 @@ namespace DotWars
     {
         #region Declarations
 
-        private const double SECONDS_TO_WAIT_FOR_INPUT = 0.25;
+        private const double SECONDS_TO_WAIT_FOR_INPUT = 0.5;
         private readonly double[] stageCounters;
 
         private readonly GamePadState[] theStates;
@@ -936,7 +936,7 @@ namespace DotWars
                     theGametype = new CaptureTheFlag(theTeams, allCommanders, 8, 2);
                     break;
                 case 5:
-                    theGametype = new Survival(theTeams, allCommanders, 8, 2);
+                    theGametype = new Survival(theTeams, allCommanders, 4, 2);
                     break;
             }
         }

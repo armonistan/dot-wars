@@ -40,7 +40,7 @@ namespace DotWars
 
         #region Defaults
 
-        public Vector2 DEFAUT_SCREEN_SIZE = new Vector2(1248, 720);
+        public static Vector2 DEFAUT_SCREEN_SIZE = new Vector2(1248, 720);
 
         #endregion
 
@@ -133,6 +133,13 @@ namespace DotWars
                 backgrounds.Update();
                 statistics.Update(managers);
             }
+            else
+            {
+                if (cameras.GetCameras()[cameras.GetPauserIndex()].GetState().IsButtonDown(Buttons.Back))
+                {
+                    return new Menu(textures, sounds);
+                }
+            }
 
             cameras.Update(managers);
             cameras.UpdateStateAfter();
@@ -153,11 +160,11 @@ namespace DotWars
 
                 backgrounds.DrawBackgrounds(sB, displacement);
                 paths.Draw(sB, displacement);
+                abilities.DrawBottom(sB, displacement);
                 objects.DrawBottom(sB, displacement);
                 particles.DrawBottom(sB, displacement);
                 typeOfGame.DrawBottom(sB, displacement);
 
-                abilities.DrawBottom(sB, displacement);
                 projectiles.Draw(sB, displacement);
                 agents.DrawLowest(sB, displacement);
 
@@ -177,8 +184,15 @@ namespace DotWars
             }
 
             gM.GraphicsDevice.Viewport = cameras.GetFullSize();
+
             sB.Begin();
             cameras.DrawSplit(sB, managers);
+
+            if (drawHUD)
+            {
+                cameras.GetHud(cameras.GetCameras()[0]).DrawScores(sB, managers);
+            }
+
             cameras.DrawPause(sB, managers);
             sB.End();
         }

@@ -117,7 +117,7 @@ namespace DotWars
             {
                 mH.GetProjectileManager()
                   .AddProjectile("Projectiles/bullet_bombs", GetOriginPosition(), this,
-                                 PathHelper.Direction(rotation) * 500, 50, true, 0.5f);
+                                 PathHelper.Direction(rotation) * 500, 50, true, false, 0.5f);
             }
         }
 

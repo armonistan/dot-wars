@@ -39,14 +39,14 @@ namespace DotWars
                 //attacker
                 tempBases.Add(new AssaultBase(temp.GetTeams()[0], new Vector2(1132, 110) - savingTime, managers));
                 //defender
-                tempBases.Add(new AssaultBase(temp.GetTeams()[1], new Vector2(380, 630) - savingTime, managers));
+                tempBases.Add(new AssaultBase(temp.GetTeams()[1], new Vector2(90, 905) - savingTime, managers));
 
                 //intitialize bases
                 temp.Initialize(managers, tempBases);
 
                 //sniper positions
                 sniperSpots.Add(new Vector2(1290, 930) - savingTime);
-                sniperSpots.Add(new Vector2(220, 60) - savingTime);
+                sniperSpots.Add(new Vector2(200, 160) - savingTime);
                 sniperSpots.Add(new Vector2(1230, 155) - savingTime);
                 sniperSpots.Add(new Vector2(195, 860) - savingTime);
 
@@ -56,7 +56,7 @@ namespace DotWars
                                                temp.GetTeams()[0], managers));
                 spawnplaces.Add(new SpawnPoint(new Vector2(1050, 150) - savingTime, temp.GetTeams()[0], managers));
                 spawnplaces.Add(new SpawnPoint(new Vector2(1290, 405) - savingTime, temp.GetTeams()[0], managers));
-                spawnplaces.Add(new SpawnPoint(new Vector2(635, 40) - savingTime, temp.GetTeams()[0], managers));
+                spawnplaces.Add(new SpawnPoint(new Vector2(520, 120) - savingTime, temp.GetTeams()[0], managers));
                 spawnplaces.Add(new SpawnPoint(new Vector2(1140, 670) - savingTime, temp.GetTeams()[0], managers));
                 
                 //team two (defenders) spawns
@@ -84,9 +84,9 @@ namespace DotWars
                 spawnplaces.Add(new SpawnPoint(new Vector2(155, 945) - savingTime, NPC.AffliationTypes.grey, managers));
                 spawnplaces.Add(new SpawnPoint(new Vector2(155, 860) - savingTime, NPC.AffliationTypes.grey, managers));
 
-                suicideSpawnplaces.Add(new SuicideSpawnPoint(new Vector2(640, 40) - savingTime, managers));
+                suicideSpawnplaces.Add(new SuicideSpawnPoint(new Vector2(520, 120) - savingTime, managers));
                 suicideSpawnplaces.Add(new SuicideSpawnPoint(new Vector2(1050, 155) - savingTime, managers));
-                suicideSpawnplaces.Add(new SuicideSpawnPoint(new Vector2(220, 60) - savingTime, managers));
+                suicideSpawnplaces.Add(new SuicideSpawnPoint(new Vector2(200, 160) - savingTime, managers));
                 suicideSpawnplaces.Add(new SuicideSpawnPoint(new Vector2(1290, 405) - savingTime, managers));
 
                 spawns.LoadTextures(textures);

@@ -38,7 +38,6 @@ namespace DotWars
                 {
                     health -= p.GetDamage();
                     lastDamager = p.GetCreator();
-                    //mH.GetEnvironmentManager().AddTopParticle(new RockParticle(p.GetOriginPosition(), "Effects/explodeTop", mH));
 
                     p.SetDrawTime(0);
                 }
@@ -48,14 +47,30 @@ namespace DotWars
             {
                 frameIndex = (int) (timer/animateTime*12);
 
-                foreach (NPC a in mH.GetNPCManager().GetAllButAllies(affiliation))
+                if (mH.GetGametype() is Survival)
                 {
-                    if (PathHelper.Distance(GetOriginPosition(), a.GetOriginPosition()) < ((frameIndex + 1)*6))
+                    foreach (NPC a in mH.GetNPCManager().GetAllies(NPC.AffliationTypes.black))
                     {
-                        a.AddAcceleration(PathHelper.DirectionVector(GetOriginPosition(), a.GetOriginPosition()) * 10);
+                        var test = PathHelper.Distance(GetOriginPosition(), a.GetOriginPosition());
 
-                        if (mH.GetRandom().NextDouble() < 0.2f)
+                        if (test < ((frameIndex + 1) * 6))
                         {
+                            a.AddAcceleration(PathHelper.DirectionVector(GetOriginPosition(), a.GetOriginPosition()) * 10);
+
+                            a.ChangeHealth(-1 * DAMAGE, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.green));
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (NPC a in mH.GetNPCManager().GetAllButAllies(affiliation))
+                    {
+                        var test = PathHelper.Distance(GetOriginPosition(), a.GetOriginPosition());
+
+                        if (test < ((frameIndex + 1)*6))
+                        {
+                            a.AddAcceleration(PathHelper.DirectionVector(GetOriginPosition(), a.GetOriginPosition()) * 10);
+
                             a.ChangeHealth(-1 * DAMAGE, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.green));
                         }
                     }
@@ -106,6 +121,11 @@ namespace DotWars
         public NPC GetLastDamager()
         {
             return lastDamager;
+        }
+
+        public bool IsFullyUp()
+        {
+            return timer > animateTime;
         }
     }
 }

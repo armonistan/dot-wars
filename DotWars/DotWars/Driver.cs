@@ -95,8 +95,8 @@ namespace DotWars
                 current.Initialize();
                 current.LoadContent(Content);
                 graphics.GraphicsDevice.Viewport =
-                    new Viewport(new Rectangle(0, 0, (int) current.DEFAUT_SCREEN_SIZE.X,
-                                               (int) current.DEFAUT_SCREEN_SIZE.Y));
+                    new Viewport(new Rectangle(0, 0, (int) Level.DEFAUT_SCREEN_SIZE.X,
+                                               (int) Level.DEFAUT_SCREEN_SIZE.Y));
             }
 
             base.Update(gameTime);

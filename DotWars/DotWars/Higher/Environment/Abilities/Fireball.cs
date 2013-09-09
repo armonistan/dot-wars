@@ -33,10 +33,11 @@ namespace DotWars
         {
             frameCounter = 0;
             doomedDots.Clear();
+            dotsSetOnFire.Clear();
             affiliation = aT;
             frameIndex = 0;
-            position = p;
-            originPosition = position + origin;
+            originPosition = p;
+            position = p - origin;
 
             mH.GetAudioManager().Play("fireballSound", (float)mH.GetRandom().NextDouble()/4 + 0.75f, AudioManager.RandomPitch(mH), 0, false);
         }
@@ -56,18 +57,38 @@ namespace DotWars
                                0.1f);
                 }
 
-                foreach (NPC a in mH.GetNPCManager().GetAllButAlliesInRadius(affiliation, GetOriginPosition(), 64))
+                if (mH.GetGametype() is Survival)
                 {
-                    if (!doomedDots.Contains(a))
+                    foreach (NPC a in mH.GetNPCManager().GetAlliesInRadius(NPC.AffliationTypes.black, GetOriginPosition(), 64))
                     {
-                        doomedDots.Add(a);
-
-                        if (!a.GetFireStatus())
+                        if (!doomedDots.Contains(a))
                         {
-                            a.ChangeFireStatus();
-                            dotsSetOnFire.Add(a);
+                            doomedDots.Add(a);
+
+                            if (!a.GetFireStatus())
+                            {
+                                a.ChangeFireStatus();
+                                dotsSetOnFire.Add(a);
+                            }
+                            a.ChangeHealth(-30, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.red));
                         }
-                        a.ChangeHealth(-30, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.red));
+                    }
+                }
+                else
+                {
+                    foreach (NPC a in mH.GetNPCManager().GetAllButAlliesInRadius(affiliation, GetOriginPosition(), 64))
+                    {
+                        if (!doomedDots.Contains(a))
+                        {
+                            doomedDots.Add(a);
+
+                            if (!a.GetFireStatus())
+                            {
+                                a.ChangeFireStatus();
+                                dotsSetOnFire.Add(a);
+                            }
+                            a.ChangeHealth(-30, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.red));
+                        }
                     }
                 }
             }

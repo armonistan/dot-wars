@@ -13,6 +13,8 @@ namespace DotWars
             : base(tL, pL, 10, 0, sT)
         {
             this.typeOfGame = GT.ASSASSINS;
+
+            gameEndTimer = 180;
         }
 
         public override bool Update(ManagerHelper mH)

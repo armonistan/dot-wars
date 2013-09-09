@@ -84,7 +84,7 @@ namespace DotWars
             mH.GetProjectileManager()
               .AddProjectile("Projectiles/bullet_standard", GetOriginPosition() + tempPos, this,
                              PathHelper.Direction(rotation + (float)mH.GetRandom().NextDouble() / 8 - 0.0625f) * 1200, 90,
-                             false, 5);
+                             false, true, 5);
 
             mH.GetAudioManager().Play("sniperShoot", AudioManager.RandomVolume(mH),
                 AudioManager.RandomPitch(mH), 0, false);

@@ -29,8 +29,8 @@ namespace DotWars
 
         public void Set(Vector2 p, NPC.AffliationTypes aT, ManagerHelper mH)
         {
-            position = p;
-            originPosition = position + origin;
+            originPosition = p;
+            position = p - origin;
             affiliation = aT;
             animateTimer = 0;
             rotation = (float) (Math.PI*2*mH.GetRandom().NextDouble());
@@ -54,7 +54,7 @@ namespace DotWars
                 {
                     if (a.GetAffiliation() == affiliation)
                     {
-                        if (mH.GetRandom().Next(60) == 0)
+                        if (mH.GetRandom().Next(40) == 0)
                         {
                             a.ChangeHealth(10, NPC.AffliationTypes.same);
                             mH.GetParticleManager().AddHeal(a);

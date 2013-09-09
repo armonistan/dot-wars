@@ -6,7 +6,7 @@ namespace DotWars
 {
     public class Medic : NPC
     {
-        protected const int HEAL_NUM = 75;
+        protected const int HEAL_NUM = 20;
         protected int healRadius;
         protected NPC healTarget;
 
@@ -40,8 +40,7 @@ namespace DotWars
             else if (TargetDecider(mH) == null)
                 target = null;
 
-            if (shootingCounter > shootingSpeed && target != null &&
-                PathHelper.Distance(GetOriginPosition(), target.GetOriginPosition()) < 48)
+            if (shootingCounter > shootingSpeed)
             {
                 shootingCounter = 0;
                 Shoot(mH);
@@ -54,8 +53,14 @@ namespace DotWars
 
         protected override void Shoot(ManagerHelper mH)
         {
-            target.ChangeHealth(HEAL_NUM, this);
-            mH.GetParticleManager().AddHeal(target);
+            foreach (NPC agent in mH.GetNPCManager().GetAlliesInRadius(affiliation, GetOriginPosition(), healRadius))
+            {   
+                if (agent != this)
+                {
+                    agent.ChangeHealth(HEAL_NUM, this);
+                    mH.GetParticleManager().AddHeal(agent);
+                }
+            }
         }
 
         protected override NPC TargetDecider(ManagerHelper mH)

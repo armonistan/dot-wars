@@ -120,6 +120,8 @@ namespace DotWars
                     case NPC.AffliationTypes.yellow:
                         asset += "yellow";
                         break;
+                    case NPC.AffliationTypes.black:
+                        return;
                 }
             }
 

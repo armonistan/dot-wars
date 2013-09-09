@@ -27,14 +27,14 @@ namespace DotWars
             boxNodes = new Node[14];
             theCrane = c;
 
-            belts[0] = new Sprite("Backgrounds/Switch/BL", new Vector2(364, 288.5f));
+            belts[0] = new Sprite("Backgrounds/Switch/BL", new Vector2(364, 288));
             belts[1] = new Sprite("Backgrounds/Switch/BLr", new Vector2(512.5f, 435));
             belts[1].Turn((float)(Math.PI));
             belts[2] = new Sprite("Backgrounds/Switch/BRr", new Vector2(416, 221));
-            belts[3] = new Sprite("Backgrounds/Switch/BR", new Vector2(579, 383.5f));
+            belts[3] = new Sprite("Backgrounds/Switch/BR", new Vector2(579, 384));
             belts[3].Turn((float)(Math.PI));
             belts[4] = new Sprite("Backgrounds/Switch/BT", new Vector2(487, 192.5f));
-            belts[5] = new Sprite("Backgrounds/Switch/BTr", new Vector2(608.5f, 313));
+            belts[5] = new Sprite("Backgrounds/Switch/BTr", new Vector2(607, 313));
             belts[5].Turn((float)(Math.PI));
             belts[6] = new Sprite("Backgrounds/Switch/DBr", new Vector2(582, 217));
             belts[6].Turn((float)(Math.PI));

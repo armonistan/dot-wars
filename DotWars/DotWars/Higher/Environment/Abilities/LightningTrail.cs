@@ -35,7 +35,7 @@ namespace DotWars
                 {
                     if (CollisionHelper.IntersectPixelsDirectional(a, this) != -1)
                     {
-                        a.ChangeHealth(-1, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.red));
+                        a.ChangeHealth(-1, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.yellow));
                     }
                 }
             }

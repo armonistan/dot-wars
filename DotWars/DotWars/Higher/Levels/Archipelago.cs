@@ -69,7 +69,7 @@ namespace DotWars
                 spawnplaces.Add(new SpawnPoint(new Vector2(1170, 580), temp.GetTeams()[1], managers));
                 //neutral spawns
                 spawnplaces.Add(new SpawnPoint(new Vector2(1120, 220), NPC.AffliationTypes.grey, managers));
-                spawnplaces.Add(new SpawnPoint(new Vector2(400, 880), NPC.AffliationTypes.grey, managers));
+                spawnplaces.Add(new SpawnPoint(new Vector2(250, 580), NPC.AffliationTypes.grey, managers));
             }
 
             else if (typeOfGame is Conquest)
@@ -110,10 +110,11 @@ namespace DotWars
                 tempBases[3].AddSpawnpoint(new Vector2(800, 960), managers);
                 tempBases[3].AddSpawnpoint(new Vector2(1200, 900), managers);
 
-
                 //netural spawns
-                spawnplaces.Add(new SpawnPoint(new Vector2(290, 50), NPC.AffliationTypes.grey, managers));
-                spawnplaces.Add(new SpawnPoint(new Vector2(1230, 900), NPC.AffliationTypes.grey, managers));
+                spawnplaces.Add(new SpawnPoint(new Vector2(100, 130), NPC.AffliationTypes.grey, managers));
+                spawnplaces.Add(new SpawnPoint(new Vector2(1010, 40), NPC.AffliationTypes.grey, managers));
+                spawnplaces.Add(new SpawnPoint(new Vector2(1080, 490), NPC.AffliationTypes.grey, managers));
+                spawnplaces.Add(new SpawnPoint(new Vector2(420, 870), NPC.AffliationTypes.grey, managers));
 
                 //set up new spawnhelper for conquest gametype
                 tempCon.Initialize(managers, tempBases);

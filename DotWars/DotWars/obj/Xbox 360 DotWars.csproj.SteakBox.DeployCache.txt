@@ -6,7 +6,7 @@ C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\Dot
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\GameThumbnail.png
 2013-07-02T21:32:32.0000000Z
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\DotWars.exe
-2013-08-19T02:41:08.2393213Z
+2013-08-20T01:58:24.4387049Z
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\DotWars.exe.orig
 2013-07-23T23:19:40.0000000Z
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\DotWars.pdb.orig
@@ -263,6 +263,8 @@ C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\Dot
 2013-08-17T19:14:13.0581431Z
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ResultsScreen\resultsBackground.xnb
 2013-08-19T02:03:32.2592866Z
+C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ResultsScreen\startButtonWhite.xnb
+2013-08-19T18:16:33.8682234Z
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ResultsScreen\winnersBackground.xnb
 2013-08-17T19:14:58.3377329Z
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Switch\BL.xnb

@@ -31,11 +31,6 @@ namespace DotWars
                 if (!exploaded && a.GetAffiliation() != affiliation)
                 {
                     a.ChangeHealth(-1*damage, creator);
-
-                    if (a.GetHealth() < 0)
-                    {
-                        mH.GetNPCManager().Remove(a);
-                    }
                 }
 
                 //Make screen rumble

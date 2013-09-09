@@ -56,6 +56,8 @@ namespace DotWars
         private int otherUpdate;
 
         private bool fireStatus;
+
+        protected double protectedTimer;
         #endregion
 
         protected NPC(String a, Vector2 p) :
@@ -87,6 +89,8 @@ namespace DotWars
 
             lastDamager = null;
             fireStatus = false;
+
+            protectedTimer = 0;
         }
 
         public override void Update(ManagerHelper mH)
@@ -352,6 +356,8 @@ namespace DotWars
             //Update frames
             frame.X = frameIndex*frame.Width;
             frame.Y = modeIndex*frame.Height;
+
+            UpdateProtection(mH);
         }
 
         protected virtual void Behavior(ManagerHelper mH)
@@ -369,6 +375,19 @@ namespace DotWars
             }
         }
 
+        protected bool IsProtected()
+        {
+            return protectedTimer > 0;
+        }
+
+        protected void UpdateProtection(ManagerHelper mH)
+        {
+            if (protectedTimer > 0)
+            {
+                protectedTimer -= mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            }
+        }
+
         protected virtual bool ProjectileCheck(ManagerHelper mH)
         {
             if (health <= 0)
@@ -376,7 +395,7 @@ namespace DotWars
                 return true;
             }
 
-            if (mH.GetGametype() is Survival)
+            if (mH.GetGametype() is Survival && affiliation != AffliationTypes.black)
                 return false;
             else
             {
@@ -467,7 +486,7 @@ namespace DotWars
             mH.GetProjectileManager()
               .AddProjectile("Projectiles/bullet_standard", GetOriginPosition() + tempPos, this,
                              PathHelper.Direction(rotation + (float) mH.GetRandom().NextDouble()/8 - 0.0625f)*400, 25,
-                             false, 5);
+                             false, true, 5);
 
             mH.GetAudioManager().Play("standardShoot", AudioManager.RandomVolume(mH),
                 AudioManager.RandomPitch(mH), 0, false);
@@ -546,26 +565,37 @@ namespace DotWars
 
         public void ChangeHealth(int hM, NPC lD)
         {
-            health += hM;
-
-            if (health > maxHealth)
+            if (this is Suicide)
             {
-                health = maxHealth;
+                //TODO: Find out why large rocks kill suicides
             }
 
-            if (lD != null && lD.affiliation != affiliation && lD.affiliation != AffliationTypes.same)
+            if (!IsProtected())
             {
-                lastDamager = lD;
+                health += hM;
+
+                if (health > maxHealth)
+                {
+                    health = maxHealth;
+                }
+
+                if (lD != null && lD.affiliation != affiliation && lD.affiliation != AffliationTypes.same)
+                {
+                    lastDamager = lD;
+                }
             }
         }
 
         public void ChangeHealth(int hM, NPC.AffliationTypes lD)
         {
-            health += hM;
-
-            if (health > maxHealth)
+            if (!IsProtected())
             {
-                health = maxHealth;
+                health += hM;
+
+                if (health > maxHealth)
+                {
+                    health = maxHealth;
+                }
             }
         }
 

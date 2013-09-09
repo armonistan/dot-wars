@@ -74,7 +74,7 @@ namespace DotWars
                     if (b.affiliation != NPC.AffliationTypes.grey)
                     {
                         Spawn(mH, b.affiliation,
-                              mH.GetSpawnHelper().Spawn(b.affiliation, mH, (GetAlliedBases(b.affiliation).Count == 0)),
+                              mH.GetSpawnHelper().Spawn(b.affiliation, (GetAlliedBases(b.affiliation).Count == 0)),
                               mH.GetRandom().Next(3));
                     }
                 }
@@ -88,107 +88,104 @@ namespace DotWars
 
             #region Spawning Commanders
 
-            if (!(mH.GetLevel() is Menu))
+            for (int i = 0; i < commanders.Count; i++)
             {
-                for (int i = 0; i < commanders.Count; i++)
+                if (mH.GetNPCManager().GetCommander(commanders.Keys.ElementAt(i)) == null)
                 {
-                    if (mH.GetNPCManager().GetCommander(commanders.Keys.ElementAt(i)) == null)
+                    if (spawnsCounters[i] > spawnTime && (!HasSomeoneWon() || GetWinner() == commanders.Values.ElementAt(i)))
                     {
-                        if (spawnsCounters[i] > spawnTime && (!HasSomeoneWon() || GetWinner() == commanders.Values.ElementAt(i)))
+                        if (commanders.Keys.ElementAt(i) == typeof (RedCommander))
                         {
-                            if (commanders.Keys.ElementAt(i) == typeof (RedCommander))
-                            {
-                                mH.GetNPCManager()
-                                  .Add(
-                                      new RedCommander(
-                                          mH.GetSpawnHelper()
-                                            .Spawn(commanders.Values.ElementAt(i), mH,
-                                                   (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
-                                          commanders.Values.ElementAt(i)));
-                                spawnsCounters[i] = 0;
-                            }
-                            else if (commanders.Keys.ElementAt(i) == typeof (BlueCommander))
-                            {
-                                mH.GetNPCManager()
-                                  .Add(
-                                      new BlueCommander(
-                                          mH.GetSpawnHelper()
-                                            .Spawn(commanders.Values.ElementAt(i), mH,
-                                                   (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
-                                          commanders.Values.ElementAt(i)));
-                                spawnsCounters[i] = 0;
-                            }
-                            else if (commanders.Keys.ElementAt(i) == typeof (GreenCommander))
-                            {
-                                mH.GetNPCManager()
-                                  .Add(
-                                      new GreenCommander(
-                                          mH.GetSpawnHelper()
-                                            .Spawn(commanders.Values.ElementAt(i), mH,
-                                                   (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
-                                          commanders.Values.ElementAt(i)));
-                                spawnsCounters[i] = 0;
-                            }
-                            else if (commanders.Keys.ElementAt(i) == typeof (YellowCommander))
-                            {
-                                mH.GetNPCManager()
-                                  .Add(
-                                      new YellowCommander(
-                                          mH.GetSpawnHelper()
-                                            .Spawn(commanders.Values.ElementAt(i), mH,
-                                                   (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
-                                          commanders.Values.ElementAt(i)));
-                                spawnsCounters[i] = 0;
-                            }
-                            else if (commanders.Keys.ElementAt(i) == typeof (RedPlayerCommander))
-                            {
-                                mH.GetNPCManager()
-                                  .Add(
-                                      new RedPlayerCommander(
-                                          mH.GetSpawnHelper()
-                                            .Spawn(commanders.Values.ElementAt(i), mH,
-                                                   (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
-                                          commanders.Values.ElementAt(i), mH));
-                                spawnsCounters[i] = 0;
-                            }
-                            else if (commanders.Keys.ElementAt(i) == typeof (BluePlayerCommander))
-                            {
-                                mH.GetNPCManager()
-                                  .Add(
-                                      new BluePlayerCommander(
-                                          mH.GetSpawnHelper()
-                                            .Spawn(commanders.Values.ElementAt(i), mH,
-                                                   (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
-                                          commanders.Values.ElementAt(i), mH));
-                                spawnsCounters[i] = 0;
-                            }
-                            else if (commanders.Keys.ElementAt(i) == typeof (GreenPlayerCommander))
-                            {
-                                mH.GetNPCManager()
-                                  .Add(
-                                      new GreenPlayerCommander(
-                                          mH.GetSpawnHelper()
-                                            .Spawn(commanders.Values.ElementAt(i), mH,
-                                                   (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
-                                          commanders.Values.ElementAt(i), mH));
-                                spawnsCounters[i] = 0;
-                            }
-                            else if (commanders.Keys.ElementAt(i) == typeof (YellowPlayerCommander))
-                            {
-                                mH.GetNPCManager()
-                                  .Add(
-                                      new YellowPlayerCommander(
-                                          mH.GetSpawnHelper()
-                                            .Spawn(commanders.Values.ElementAt(i), mH,
-                                                   (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
-                                          commanders.Values.ElementAt(i), mH));
-                                spawnsCounters[i] = 0;
-                            }
+                            mH.GetNPCManager()
+                              .Add(
+                                  new RedCommander(
+                                      mH.GetSpawnHelper()
+                                        .Spawn(commanders.Values.ElementAt(i),
+                                               (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
+                                      commanders.Values.ElementAt(i)));
+                            spawnsCounters[i] = 0;
                         }
-                        else
+                        else if (commanders.Keys.ElementAt(i) == typeof (BlueCommander))
                         {
-                            spawnsCounters[i] += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                            mH.GetNPCManager()
+                              .Add(
+                                  new BlueCommander(
+                                      mH.GetSpawnHelper()
+                                        .Spawn(commanders.Values.ElementAt(i),
+                                               (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
+                                      commanders.Values.ElementAt(i)));
+                            spawnsCounters[i] = 0;
                         }
+                        else if (commanders.Keys.ElementAt(i) == typeof (GreenCommander))
+                        {
+                            mH.GetNPCManager()
+                              .Add(
+                                  new GreenCommander(
+                                      mH.GetSpawnHelper()
+                                        .Spawn(commanders.Values.ElementAt(i),
+                                               (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
+                                      commanders.Values.ElementAt(i)));
+                            spawnsCounters[i] = 0;
+                        }
+                        else if (commanders.Keys.ElementAt(i) == typeof (YellowCommander))
+                        {
+                            mH.GetNPCManager()
+                              .Add(
+                                  new YellowCommander(
+                                      mH.GetSpawnHelper()
+                                        .Spawn(commanders.Values.ElementAt(i),
+                                               (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
+                                      commanders.Values.ElementAt(i)));
+                            spawnsCounters[i] = 0;
+                        }
+                        else if (commanders.Keys.ElementAt(i) == typeof (RedPlayerCommander))
+                        {
+                            mH.GetNPCManager()
+                              .Add(
+                                  new RedPlayerCommander(
+                                      mH.GetSpawnHelper()
+                                        .Spawn(commanders.Values.ElementAt(i),
+                                               (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
+                                      commanders.Values.ElementAt(i), mH));
+                            spawnsCounters[i] = 0;
+                        }
+                        else if (commanders.Keys.ElementAt(i) == typeof (BluePlayerCommander))
+                        {
+                            mH.GetNPCManager()
+                              .Add(
+                                  new BluePlayerCommander(
+                                      mH.GetSpawnHelper()
+                                        .Spawn(commanders.Values.ElementAt(i),
+                                               (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
+                                      commanders.Values.ElementAt(i), mH));
+                            spawnsCounters[i] = 0;
+                        }
+                        else if (commanders.Keys.ElementAt(i) == typeof (GreenPlayerCommander))
+                        {
+                            mH.GetNPCManager()
+                              .Add(
+                                  new GreenPlayerCommander(
+                                      mH.GetSpawnHelper()
+                                        .Spawn(commanders.Values.ElementAt(i),
+                                               (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
+                                      commanders.Values.ElementAt(i), mH));
+                            spawnsCounters[i] = 0;
+                        }
+                        else if (commanders.Keys.ElementAt(i) == typeof (YellowPlayerCommander))
+                        {
+                            mH.GetNPCManager()
+                              .Add(
+                                  new YellowPlayerCommander(
+                                      mH.GetSpawnHelper()
+                                        .Spawn(commanders.Values.ElementAt(i),
+                                               (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
+                                      commanders.Values.ElementAt(i), mH));
+                            spawnsCounters[i] = 0;
+                        }
+                    }
+                    else
+                    {
+                        spawnsCounters[i] += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
                     }
                 }
             }
@@ -371,7 +368,7 @@ namespace DotWars
 
         public override string GetSummary()
         {
-            return "First team to capture\nallthe bases is the winner!";
+            return "Capture all bases and\nkill the enemy commanders!";
         }
     }
 }
