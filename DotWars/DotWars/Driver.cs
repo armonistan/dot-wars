@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace DotWars
@@ -27,8 +28,6 @@ namespace DotWars
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferHeight = 720;
             graphics.PreferredBackBufferWidth = 1248;
-            //graphics.ToggleFullScreen();
-            //graphics.ApplyChanges();
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
 
@@ -51,6 +50,8 @@ namespace DotWars
         {
             //Initialize current level
             current.Initialize();
+
+            Components.Add(new GamerServicesComponent(this));
 
             base.Initialize();
         }

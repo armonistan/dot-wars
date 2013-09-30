@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -97,8 +98,8 @@ namespace DotWars
             theTeams = new List<NPC.AffliationTypes>(5);
 
             mapNames = new String[7];
-            mapNames[0] = "Archipelago";
-            mapNames[1] = "Relic";
+            mapNames[0] = "Relic";
+            mapNames[1] = "Archipelago";
             mapNames[2] = "Switch";
             mapNames[3] = "Faercrag";
             mapNames[4] = "Caged";
@@ -367,10 +368,10 @@ namespace DotWars
                             switch (map)
                             {
                                 case 0:
-                                    gametype = (gametype == 2 ? 3 : 2);
+                                    gametype = (gametype == 1 ? 4 : 1);
                                     break;
                                 case 1:
-                                    gametype = (gametype == 1 ? 4 : 1);
+                                    gametype = (gametype == 2 ? 3 : 2);
                                     break;
                                 case 2:
                                     gametype = (gametype == 0 ? 4 : 0);
@@ -396,22 +397,25 @@ namespace DotWars
                         else if (keyState.IsKeyDown(Keys.Space) ||
                                  theStates[indexOfKing].IsButtonDown(Buttons.Start))
                         {
-                            sounds.Play("confirm", 3, 0, 0, false);
-                            if (gametype == 0 || gametype == 5)
+                            if (map == 0 || !Guide.IsTrialMode)
                             {
-                                //Set up teams
-                                SetUpFourTeams();
-                                SetUpGametypes();
-                                return SetUpMaps();
-                            }
-                            else
-                            {
-                                stage = MenuSelect.teamSelect;
-                                ResetAllCounters();
+                                sounds.Play("confirm", 3, 0, 0, false);
+                                if (gametype == 0 || gametype == 5)
+                                {
+                                    //Set up teams
+                                    SetUpFourTeams();
+                                    SetUpGametypes();
+                                    return SetUpMaps();
+                                }
+                                else
+                                {
+                                    stage = MenuSelect.teamSelect;
+                                    ResetAllCounters();
 
-                                //Set up king so they automatically get their team
-                                controllerCards[indexOfKing].SetFrameIndex(1);
-                                teamCards[0].SetFrameIndex(commanderCards[indexOfKing].GetFrameIndex());
+                                    //Set up king so they automatically get their team
+                                    controllerCards[indexOfKing].SetFrameIndex(1);
+                                    teamCards[0].SetFrameIndex(commanderCards[indexOfKing].GetFrameIndex());
+                                }
                             }
                         }
                         else if (theStates[indexOfKing].IsButtonDown(Buttons.Back))
@@ -657,6 +661,12 @@ namespace DotWars
                     gametypeCards.Draw(sB, Vector2.Zero, managers);
                     textures.DrawString(sB, mapNames[map], new Vector2(624, 260), Color.White, TextureManager.FontSizes.small, true);
                     textures.DrawString(sB, gametypeNames[gametype], new Vector2(624, 512), Color.White, TextureManager.FontSizes.small, true);
+
+                    //If it is trial mode and the map is not Relic
+                    if (Guide.IsTrialMode && map != 0)
+                    {
+                        textures.DrawString(sB, "Map not available in trial version", new Vector2(624, 390), Color.White, TextureManager.FontSizes.small, true);
+                    }
                     break;
                 case MenuSelect.teamSelect:
                     triggersOnly.Draw(sB, Vector2.Zero, managers);
@@ -716,10 +726,10 @@ namespace DotWars
             switch (map)
             {
                 case 0:
-                    gametype = 2;
+                    gametype = 1;
                     break;
                 case 1:
-                    gametype = 1;
+                    gametype = 2;
                     break;
                 case 2:
                     gametype = 0;
@@ -947,10 +957,10 @@ namespace DotWars
             switch (map)
             {
                 case 0:
-                    return new PreGame(new Archipelago(theGametype, playerCommanders, textures, sounds), theGametype, playerIndices[indexOfKing], textures, sounds);
-                case 1:
                     return new PreGame(new Relic(theGametype, playerCommanders, textures, sounds), theGametype, playerIndices[indexOfKing], textures, sounds);
-                case 2:
+                case 1:
+                    return new PreGame(new Archipelago(theGametype, playerCommanders, textures, sounds), theGametype, playerIndices[indexOfKing], textures, sounds);
+                    case 2:
                     return new PreGame(new Switch(theGametype, playerCommanders, textures, sounds), theGametype, playerIndices[indexOfKing], textures, sounds);
                 case 3:
                     return new PreGame(new Faercrag(theGametype, playerCommanders, textures, sounds), theGametype, playerIndices[indexOfKing], textures, sounds);
