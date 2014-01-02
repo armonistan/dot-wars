@@ -47,8 +47,8 @@ namespace DotWars
         private int startOptionInt;
 
         private Sprite[] commanderCards;
-        private Sprite buttonA;
-        private Sprite buttonB;
+        private Sprite commanderButtonA;
+        private Sprite commanderButtonB;
         private int[] commanderSlots;
         private int indexOfKing;
 
@@ -71,6 +71,9 @@ namespace DotWars
         private int gametype;
 
         private PlayerIndex[] playerIndices;
+
+        private Sprite exitButtonA;
+        private Sprite exitButtonB;
 
         #endregion
 
@@ -170,10 +173,10 @@ namespace DotWars
                 commanderCards[i].LoadContent(textures);
                 commanderCards[i].position += commanderCards[i].origin;
             }
-            buttonA = new Sprite("Backgrounds/Menu/buttonA", new Vector2(310, 660));
-            buttonB = new Sprite("Backgrounds/Menu/buttonB", new Vector2(940, 660));
-            buttonA.LoadContent(textures);
-            buttonB.LoadContent(textures);
+            commanderButtonA = new Sprite("Backgrounds/Menu/buttonA", new Vector2(310, 660));
+            commanderButtonB = new Sprite("Backgrounds/Menu/buttonB", new Vector2(940, 660));
+            commanderButtonA.LoadContent(textures);
+            commanderButtonB.LoadContent(textures);
 
             //GameScreen
             mapBackground = new Sprite("Backgrounds/Menu/mapGametypeCard", new Vector2(624, 260));
@@ -197,8 +200,14 @@ namespace DotWars
             }
 
             //Controls screen
-            controller = new Sprite("Backgrounds/LogoScreen/controllerSplash", DEFAUT_SCREEN_SIZE / 2);
+            controller = new Sprite("HUD/pauseOverlay", DEFAUT_SCREEN_SIZE / 2);
             controller.LoadContent(textures);
+
+            //Exit screen
+            exitButtonA = new Sprite("Backgrounds/Menu/buttonA", new Vector2(310, 660));
+            exitButtonB = new Sprite("Backgrounds/Menu/buttonB", new Vector2(940, 660));
+            exitButtonA.LoadContent(textures);
+            exitButtonB.LoadContent(textures);
         }
 
         public override Level Update(GameTime gT)
@@ -340,7 +349,6 @@ namespace DotWars
                                     sounds.Play("return", 3, 0, 0, false);
                                     stage = MenuSelect.start;
                                     ResetAllCounters();
-                                    ResetStart();
                                     for (int i = 0; i < commanderCards.Length; i++)
                                     {
                                         commanderCards[i].SetFrameIndex(0);
@@ -699,7 +707,6 @@ namespace DotWars
                                 sounds.Play("return", 3, 0, 0, false);
                                 stage = MenuSelect.start;
                                 ResetAllCounters();
-                                ResetStart();
                             }
                         }
                         else
@@ -721,7 +728,6 @@ namespace DotWars
                                 sounds.Play("return", 3, 0, 0, false);
                                 stage = MenuSelect.start;
                                 ResetAllCounters();
-                                ResetStart();
                             }
                         }
                         else
@@ -743,7 +749,6 @@ namespace DotWars
                                 sounds.Play("return", 3, 0, 0, false);
                                 stage = MenuSelect.start;
                                 ResetAllCounters();
-                                ResetStart();
                             }
                         }
                         else
@@ -769,7 +774,6 @@ namespace DotWars
                                 sounds.Play("return", 3, 0, 0, false);
                                 stage = MenuSelect.start;
                                 ResetAllCounters();
-                                ResetStart();
                             }
                         }
                         else
@@ -871,7 +875,10 @@ namespace DotWars
 
                 case MenuSelect.quit:
                     textures.DrawString(sB, "Are you sure you want to quit?", DEFAUT_SCREEN_SIZE / 2, Color.White, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, "Press A to confirm or B to cancel", DEFAUT_SCREEN_SIZE / 2 + new Vector2(0, 48), Color.White, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "A to confirm", DEFAUT_SCREEN_SIZE / 2 + new Vector2(0, 48), Color.White, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "B to cancel", DEFAUT_SCREEN_SIZE / 2 + new Vector2(0, 96), Color.White, TextureManager.FontSizes.small, true);
+                    exitButtonA.Draw(sB, Vector2.Zero, managers);
+                    exitButtonB.Draw(sB, Vector2.Zero, managers);
                     break;
 
                 default:
@@ -893,11 +900,6 @@ namespace DotWars
             }
 
             return tempNum;
-        }
-
-        private void ResetStart()
-        {
-            startOptionInt = 0;
         }
 
         private void DrawCommanderSelectHelp(SpriteBatch sB)
@@ -925,13 +927,13 @@ namespace DotWars
 
             if (pressA)
             {   
-                buttonA.Draw(sB, Vector2.Zero, managers);
+                commanderButtonA.Draw(sB, Vector2.Zero, managers);
                 textures.DrawString(sB, "lock in", middlePosition + new Vector2(-190, 0), Color.White, TextureManager.FontSizes.small, true);
             }
 
             if (pressB)
             {   
-                buttonB.Draw(sB, Vector2.Zero, managers);
+                commanderButtonB.Draw(sB, Vector2.Zero, managers);
                 textures.DrawString(sB, "back out", middlePosition + new Vector2(180, 0), Color.White, TextureManager.FontSizes.small, true);
             }
         }
