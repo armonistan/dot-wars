@@ -13,12 +13,18 @@ namespace DotWars
         start,
         characterSelect,
         levelSelect,
-        teamSelect
+        teamSelect,
+        dotopedia,
+        controls,
+        credits,
+        quit
     }
 
     public class Menu : Level
     {
         #region Declarations
+
+        private Sprite background;
 
         private const double SECONDS_TO_WAIT_FOR_INPUT = 0.5;
         private readonly double[] stageCounters;
@@ -35,22 +41,22 @@ namespace DotWars
         private Gametype theGametype;
 
         private Sprite logo;
+        private Sprite startOptionsBackground;
+        private Sprite startTriggers;
+        private string[] startOptions;
+        private int startOptionInt;
 
         private Sprite[] commanderCards;
         private int[] commanderSlots;
         private int indexOfKing;
 
-        private Sprite gametypeCards;
-        private Sprite mapCards;
-        private Sprite mapGametypeCards;
-
-        private Sprite[] controllerCards;
-        private Sprite[] teamCards;
-
+        private Sprite gametypeBackground;
+        private Sprite mapBackground;
         private String[] mapNames;
         private String[] gametypeNames;
 
-        private Sprite testBack;
+        private Sprite[] controllerCards;
+        private Sprite[] teamCards;
 
         private Sprite backButton;
         private Sprite startButton;
@@ -97,6 +103,15 @@ namespace DotWars
             }
             theTeams = new List<NPC.AffliationTypes>(5);
 
+            startOptions = new string[5];
+            startOptions[0] = "Set-up Game";
+            startOptions[1] = "Dot-o-pedia";
+            startOptions[2] = "Controls";
+            startOptions[3] = "Credits";
+            startOptions[4] = "Exit";
+
+            startOptionInt = 0;
+
             mapNames = new String[7];
             mapNames[0] = "Relic";
             mapNames[1] = "Archipelago";
@@ -123,8 +138,8 @@ namespace DotWars
         public override void LoadContent(ContentManager cM)
         {
             //Set up sprites
-            testBack = new Sprite("Backgrounds/Menu/menuBackground", new Vector2(624, 360));
-            testBack.LoadContent(textures);
+            background = new Sprite("Backgrounds/Menu/menuBackground", new Vector2(624, 360));
+            background.LoadContent(textures);
 
             backButton = new Sprite("Backgrounds/Menu/backButton", new Vector2(624, 360));
             startButton = new Sprite("Backgrounds/Menu/startButton", new Vector2(624, 360));
@@ -137,8 +152,11 @@ namespace DotWars
             triggersOnly.LoadContent(textures);
 
             //StartScreen
-            logo = new Sprite("Backgrounds/Menu/LogoScreen", new Vector2(624, 360));
+            logo = new Sprite("Backgrounds/Menu/LogoScreen", new Vector2(624, 180));
+            startOptionsBackground = new Sprite("Backgrounds/Menu/mapGametypeCard", new Vector2(624, 580));
+            startTriggers = new Sprite("Backgrounds/Menu/triggers", new Vector2(624, 680));
             logo.LoadContent(textures);
+            startOptionsBackground.LoadContent(textures);startTriggers.LoadContent(textures);
 
             //PlayerScreen
             commanderCards = new Sprite[4];
@@ -150,10 +168,10 @@ namespace DotWars
             }
 
             //GameScreen
-            mapCards = new Sprite("Backgrounds/Menu/mapGametypeCard", new Vector2(624, 260));
-            mapCards.LoadContent(textures);
-            gametypeCards = new Sprite("Backgrounds/Menu/mapGametypeCard", new Vector2(624, 520));
-            gametypeCards.LoadContent(textures);
+            mapBackground = new Sprite("Backgrounds/Menu/mapGametypeCard", new Vector2(624, 260));
+            mapBackground.LoadContent(textures);
+            gametypeBackground = new Sprite("Backgrounds/Menu/mapGametypeCard", new Vector2(624, 520));
+            gametypeBackground.LoadContent(textures);
 
             //TeamScreen
             teamCards = new Sprite[2];
@@ -169,8 +187,6 @@ namespace DotWars
                 controllerCards[c].LoadContent(textures);
                 controllerCards[c].SetModeIndex(c);
             }
-
-            //sounds.Play("testMusic", 0.5f, 0, 0);
         }
 
         public override Level Update(GameTime gT)
@@ -196,14 +212,45 @@ namespace DotWars
                     {
                         if (stageCounters[c] > SECONDS_TO_WAIT_FOR_INPUT)
                         {
-                            if (keyState.IsKeyDown(Keys.Escape) || theStates[c].IsButtonDown(Buttons.Back))
+                            if (keyState.IsKeyDown(Keys.Left) || theStates[c].IsButtonDown(Buttons.LeftTrigger))
                             {
+                                startOptionInt--;
+
+                                if (startOptionInt < 0)
+                                {
+                                    startOptionInt = startOptions.Length - 1;
+                                }
+
+                                ResetAllCounters();
+                            }
+                            else if (keyState.IsKeyDown(Keys.Right) || theStates[c].IsButtonDown(Buttons.RightTrigger))
+                            {
+                                startOptionInt++;
+
+                                if (startOptionInt >= startOptions.Length)
+                                {
+                                    startOptionInt = 0;
+                                }
+
+                                ResetAllCounters();
+                            }
+                            else if (keyState.IsKeyDown(Keys.Escape) || theStates[c].IsButtonDown(Buttons.Back))
+                            {
+                                //TODO: Remove
                                 return null;
                             }
                             else if (keyState.IsKeyDown(Keys.Space) || theStates[c].IsButtonDown(Buttons.Start))
                             {
                                 sounds.Play("confirm", 3, 0, 0, false);
-                                stage = MenuSelect.characterSelect;
+
+                                //TODO: Connect to other screens
+                                switch (startOptionInt)
+                                {
+                                    case 0:
+                                        stage = MenuSelect.characterSelect;
+                                        break;
+                                }
+
                                 ResetAllCounters();
                                 break;
                             }
@@ -274,6 +321,7 @@ namespace DotWars
                                     sounds.Play("return", 3, 0, 0, false);
                                     stage = MenuSelect.start;
                                     ResetAllCounters();
+                                    ResetStart();
                                     for (int i = 0; i < commanderCards.Length; i++)
                                     {
                                         commanderCards[i].SetFrameIndex(0);
@@ -434,8 +482,8 @@ namespace DotWars
                     }
 
                     //Update frames
-                    mapCards.UpdateFrame();
-                    gametypeCards.UpdateFrame();
+                    mapBackground.UpdateFrame();
+                    gametypeBackground.UpdateFrame();
                     break;
                 case MenuSelect.teamSelect:
                     //Let players pick teams
@@ -633,14 +681,22 @@ namespace DotWars
             return this;
         }
 
+        private void ResetStart()
+        {
+            startOptionInt = 0;
+        }
+
         public override void Draw(SpriteBatch sB, GraphicsDeviceManager gM, bool drawHUD)
         {
             sB.Begin();
-            testBack.Draw(sB, Vector2.Zero, managers);
+            background.Draw(sB, Vector2.Zero, managers);
             switch (stage)
             {
                 case MenuSelect.start:
                     logo.Draw(sB, Vector2.Zero, managers);
+                    startOptionsBackground.Draw(sB, Vector2.Zero, managers);
+                    textures.DrawString(sB, startOptions[startOptionInt], startOptionsBackground.GetOriginPosition(), Color.White, TextureManager.FontSizes.small, true);
+                    startTriggers.Draw(sB, Vector2.Zero, managers);
                     startButton.Draw(sB, Vector2.Zero, managers);
                     break;
                 case MenuSelect.characterSelect:
@@ -651,14 +707,16 @@ namespace DotWars
                     {
                         cC.Draw(sB, Vector2.Zero, managers);
                     }
+
+                    DrawCommanderSelectHelp(sB);
                     break;
                 case MenuSelect.levelSelect:
                     triggers.Draw(sB, Vector2.Zero, managers);
                     startButton.Draw(sB, Vector2.Zero, managers);
                     backButton.Draw(sB, Vector2.Zero, managers);
                     textures.DrawString(sB, "Game Select", new Vector2(624, 88), Color.Black, TextureManager.FontSizes.big, true);
-                    mapCards.Draw(sB, Vector2.Zero, managers);
-                    gametypeCards.Draw(sB, Vector2.Zero, managers);
+                    mapBackground.Draw(sB, Vector2.Zero, managers);
+                    gametypeBackground.Draw(sB, Vector2.Zero, managers);
                     textures.DrawString(sB, mapNames[map], new Vector2(624, 260), Color.White, TextureManager.FontSizes.small, true);
                     textures.DrawString(sB, gametypeNames[gametype], new Vector2(624, 512), Color.White, TextureManager.FontSizes.small, true);
 
@@ -706,6 +764,34 @@ namespace DotWars
             }
 
             return tempNum;
+        }
+
+        private void DrawCommanderSelectHelp(SpriteBatch sB)
+        {
+            //TODO: Add actual sprite draws
+            bool pressA = false;
+            bool pressB = false;
+
+            for (int c = 0; c < commanderCards.Length; c++)
+            {
+                switch (commanderCards[c].GetModeIndex())
+                {
+                    case 0:
+                        pressA = pressA || commanderCards[c].GetFrameIndex() != 0;
+                        break;
+                    case 1:
+                    case 2:
+                        pressB = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            Vector2 middlePosition = new Vector2(DEFAUT_SCREEN_SIZE.X/2, 670);
+
+            textures.DrawString(sB, ((pressA) ? "A to lock in" : ""), middlePosition + new Vector2(-260, 0), Color.White, TextureManager.FontSizes.small, true);
+            textures.DrawString(sB, ((pressB) ? "B to back out" : ""), middlePosition + new Vector2(260, 0), Color.White, TextureManager.FontSizes.small, true);
         }
 
         private void ResetSingleCounter(int i)
