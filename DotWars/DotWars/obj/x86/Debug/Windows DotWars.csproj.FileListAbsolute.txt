@@ -2197,3 +2197,7 @@ C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\DotWars.exe
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\DotWars.pdb
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\obj\x86\Debug\Windows DotWars.csprojResolveAssemblyReference.cache
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\menuSelector.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\buttonB.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\buttonA.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\Gametypes\tdmInfographic.xnb

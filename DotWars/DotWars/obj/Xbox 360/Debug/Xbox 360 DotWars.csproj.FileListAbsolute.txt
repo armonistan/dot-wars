@@ -4265,3 +4265,7 @@ C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\DotWars.e
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\DotWars.pdb
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\obj\Xbox 360\Debug\Xbox 360 DotWars.csprojResolveAssemblyReference.cache
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\obj\Xbox 360\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\menuSelector.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\buttonB.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\buttonA.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\Gametypes\tdmInfographic.xnb
