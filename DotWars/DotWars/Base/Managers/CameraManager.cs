@@ -526,7 +526,7 @@ namespace DotWars
                 toss = new Sprite("HUD/hud_toss", leftPos + new Vector2(-47, -8));
                 teammate = new Sprite("HUD/hud_teammates", leftPos + new Vector2(86, 11));
                 scoreboard = new Sprite("HUD/hud_score_frame", rightPos - new Vector2(180, -10));
-                timer = new Sprite("HUD/hud_time_frame", rightPos - new Vector2(440, -10));
+                timer = new Sprite("HUD/hud_time_frame", rightPos - new Vector2(440, -7));
             }
 
             public void LoadContent(ManagerHelper mH)
