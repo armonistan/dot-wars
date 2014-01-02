@@ -86,7 +86,8 @@ namespace DotWars
                         }
                         else
                         {
-                            ;
+                            Vector2 knockback = new Vector2((float)(p.velocity.X * .05), (float)(p.velocity.Y * .05));
+                            accelerations.Add(knockback);
                         }
 
                         p.SetDrawTime(0);
