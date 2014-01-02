@@ -55,3 +55,6 @@ C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\Dot
 C:\Users\Daniel\Documents\Actual Files\Git_Dot_Wars\current\dot-wars\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWarsContent\obj\x86\Debug\Audio\GameAudio.xml
+C:\Users\1574\Desktop\New folder\dot-wars\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\1574\Desktop\New folder\dot-wars\DotWars\DotWarsContent\obj\x86\Debug\Audio\GameAudio.xml
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWarsContent\obj\x86\Debug\DotWarsContent.contentprojResolveAssemblyReference.cache
