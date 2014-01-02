@@ -990,19 +990,19 @@ namespace DotWars
             //Go through each team and see if they won
             for (int i = 0; i < teams.Count; i++)
             {
-                if (scores[i] >= winScore)
+                if (gameEndTimer > 0 && scores[i] >= winScore)
                 {
                     return teams[i];
                 }
                 else if(gameEndTimer <= 0) 
-                    if(scores[i] == highestScore)
-                        isTie = true;
-                    else if (scores[i] > highestScore)
+                    if(scores[i] > highestScore)
                     {
                         highestScoreIndex = i;
                         highestScore = scores[i];
                         isTie = false;
                     }
+                    else if(scores[i] == highestScore)
+                        isTie = true;
             }
 
             if (isTie)
