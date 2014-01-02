@@ -45,9 +45,12 @@ namespace DotWars
             textures.Add("Backgrounds/Menu/startButton", new Rectangle(0, 0, 1248, 720));
             textures.Add("Backgrounds/Menu/triggers", new Rectangle(0, 0, 1248, 720));
             textures.Add("Backgrounds/Menu/triggersOnly", new Rectangle(0, 0, 1248, 720));
+            textures.Add("Backgrounds/Menu/menuSelector", new Rectangle(0, 0, 625, 139));
 
             //PlayerScreen
             textures.Add("Backgrounds/Menu/CommanderCards", new Rectangle(0, 0, 260, 432));
+            textures.Add("Backgrounds/Menu/buttonA", new Rectangle(0, 0, 76, 76));
+            textures.Add("Backgrounds/Menu/buttonB", new Rectangle(0, 0, 76, 76));
 
             //GameScreen
             textures.Add("Backgrounds/Menu/GameScreen", new Rectangle(0, 0, 1248, 720));
@@ -270,7 +273,7 @@ namespace DotWars
             textures.Add("HUD/hud_yellow", new Rectangle(0, 0, 240, 60));
             textures.Add("HUD/2playerSplit", cameras.GetFullSize().Bounds);
             textures.Add("HUD/4playerSplit", cameras.GetFullSize().Bounds);
-            textures.Add("HUD/pauseOverlay", new Rectangle(0, 0, 372, 123));
+            textures.Add("HUD/pauseOverlay", new Rectangle(0, 0, 1248, 720));
             textures.Add("HUD/hud_teammates", new Rectangle(0, 0, 40, 20));
             textures.Add("HUD/hud_score_frame", new Rectangle(0, 0, 348, 94));
             textures.Add("HUD/hud_time_frame", new Rectangle(0, 0, 154, 94));

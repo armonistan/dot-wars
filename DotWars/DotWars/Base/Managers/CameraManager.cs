@@ -198,6 +198,7 @@ namespace DotWars
                 pauseInstructions.Draw(sB, Vector2.Zero, mH);
                 mH.GetTextureManager().DrawString(sB, "Quit", new Vector2(140, 650), Color.White, TextureManager.FontSizes.small, false);
                 mH.GetTextureManager().DrawString(sB, "Continue", new Vector2(950, 650), Color.White, TextureManager.FontSizes.small, false);
+                mH.GetTextureManager().DrawString(sB, "Paused", Level.DEFAUT_SCREEN_SIZE / 2 + new Vector2(0, -75), GetPlayerColorFromType(pauser), TextureManager.FontSizes.small, true);
             }
         }
 
@@ -206,9 +207,6 @@ namespace DotWars
             if (pauser == null)
             {
                 pauser = c;
-
-                pauseScreen.SetModeIndex(GetCommanderInt(c));
-                pauseScreen.Update(mH);
             }
             else if (c == pauser)
             {
@@ -302,6 +300,30 @@ namespace DotWars
             }
 
             return 0;
+        }
+
+        private Color GetPlayerColorFromType(Type player)
+        {
+            if (player == typeof (RedPlayerCommander))
+            {
+                return Color.Red;
+            }
+            else if (player == typeof(BluePlayerCommander))
+            {
+                return Color.Blue;
+            }
+            else if (player == typeof(GreenPlayerCommander))
+            {
+                return Color.Green;
+            }
+            else if (player == typeof (YellowPlayerCommander))
+            {
+                return Color.Yellow;
+            }
+            else
+            {
+                return Color.Black;
+            }
         }
 
         public void SetAllRumble(int a)

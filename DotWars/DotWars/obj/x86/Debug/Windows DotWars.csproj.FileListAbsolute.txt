@@ -1624,3 +1624,6 @@ C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWar
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\obj\x86\Debug\DotWars.exe
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\obj\x86\Debug\DotWars.pdb
+C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\buttonA.xnb
+C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\buttonB.xnb
+C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\menuSelector.xnb

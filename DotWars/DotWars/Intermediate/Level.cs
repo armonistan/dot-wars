@@ -176,7 +176,7 @@ namespace DotWars
                 agents.DrawHighest(sB, displacement);
                 backgrounds.Drawforegrounds(sB, displacement);
 
-                if (drawHUD)
+                if (drawHUD && cameras.GetPauser() == null)
                 {
                     cameras.GetHud(c).Draw(sB, managers);
                 }
@@ -188,7 +188,7 @@ namespace DotWars
             sB.Begin();
             cameras.DrawSplit(sB, managers);
 
-            if (drawHUD)
+            if (drawHUD && cameras.GetPauser() == null)
             {
                 cameras.GetHud(cameras.GetCameras()[0]).DrawScores(sB, managers);
             }
