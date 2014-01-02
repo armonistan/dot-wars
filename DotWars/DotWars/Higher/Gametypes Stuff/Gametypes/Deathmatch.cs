@@ -15,7 +15,7 @@ namespace DotWars
         #endregion
 
         public Deathmatch(List<NPC.AffliationTypes> tL, Dictionary<Type, NPC.AffliationTypes> pL, int pC, float sT)
-            : base(tL, pL, 0, pC, sT)
+            : base(tL, pL, 50, pC, sT)
         {
             this.typeOfGame = GT.DEATHMATCH;
             commanderKills = new Dictionary<NPC.AffliationTypes, int>();
