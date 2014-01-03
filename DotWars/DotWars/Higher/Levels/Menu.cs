@@ -869,7 +869,17 @@ namespace DotWars
                     break;
 
                 case MenuSelect.credits:
-                    textures.DrawString(sB, "No one deserves credit.", DEFAUT_SCREEN_SIZE / 2, Color.White, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "Credits", new Vector2(624, 88), Color.Black, TextureManager.FontSizes.big, true);
+
+                    Vector2 creditsStartPos = DEFAUT_SCREEN_SIZE/2 + new Vector2(0, -100);
+
+                    textures.DrawString(sB, "Emberware Team:", creditsStartPos, Color.White, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "Armon Nayeraini", creditsStartPos + new Vector2(0, 48), Color.White, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "Daniel Pumford", creditsStartPos + new Vector2(0, 96), Color.White, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "David \"Steak\" Campbell", creditsStartPos + new Vector2(0, 144), Color.White, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "Riley Turben", creditsStartPos + new Vector2(0, 192), Color.White, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "Sound Credits:", creditsStartPos + new Vector2(0, 288), Color.White, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "www.emberware.com", creditsStartPos + new Vector2(0, 336), Color.White, TextureManager.FontSizes.small, true);
                     backButton.Draw(sB, Vector2.Zero, managers);
                     break;
 
