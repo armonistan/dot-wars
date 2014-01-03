@@ -45,6 +45,7 @@ namespace DotWars
         private Sprite startTriggers;
         private string[] startOptions;
         private int startOptionInt;
+        private float version;
 
         private Sprite[] commanderCards;
         private Sprite commanderButtonA;
@@ -138,6 +139,8 @@ namespace DotWars
 
             map = 0;
             gametype = 0;
+
+            version = 1.1f;
 
             sounds.Play("DotWars", 0.9f, 0, 0, true);
         }
@@ -296,95 +299,172 @@ namespace DotWars
 
                     #region Player Choices
 
+                    #region DEBUG: Controller override
+                    if (keyState.IsKeyDown(Keys.Up))
+                    {
+                        commanderCards[0].SetFrameIndex(1);
+                        commanderCards[0].SetModeIndex(2);
+                        commanderSlots[0] = 0;
+                        indexOfKing = 0;
+                        sounds.Play("confirm", 3, 0, 0, false);
+                        stage = MenuSelect.levelSelect;
+                        ResetGametypeCards();
+                        ResetAllCounters();
+                        break;
+                    }
+                    else if (keyState.IsKeyDown(Keys.Down))
+                    {
+                        commanderCards[0].SetFrameIndex(2);
+                        commanderCards[0].SetModeIndex(2);
+                        commanderSlots[1] = 0;
+                        indexOfKing = 0;
+                        sounds.Play("confirm", 3, 0, 0, false);
+                        stage = MenuSelect.levelSelect;
+                        ResetGametypeCards();
+                        ResetAllCounters();
+                        break;
+                    }
+                    else if (keyState.IsKeyDown(Keys.Left))
+                    {
+                        commanderCards[0].SetFrameIndex(3);
+                        commanderCards[0].SetModeIndex(2);
+                        commanderSlots[2] = 0;
+                        indexOfKing = 0;
+                        sounds.Play("confirm", 3, 0, 0, false);
+                        stage = MenuSelect.levelSelect;
+                        ResetGametypeCards();
+                        ResetAllCounters();
+                        break;
+                    }
+                    else if (keyState.IsKeyDown(Keys.Right))
+                    {
+                        commanderCards[0].SetFrameIndex(4);
+                        commanderCards[0].SetModeIndex(2);
+                        commanderSlots[3] = 0;
+                        indexOfKing = 0;
+                        sounds.Play("confirm", 3, 0, 0, false);
+                        stage = MenuSelect.levelSelect;
+                        ResetGametypeCards();
+                        ResetAllCounters();
+                        break;
+                    }
+                    #endregion
+
                     for (int c = 0; c < theStates.Length; c++)
                     {
-                        if (stageCounters[c] > SECONDS_TO_WAIT_FOR_INPUT)
+                        //Prevents controllers that aren't connected from playing
+                        if (!theStates[c].IsConnected)
                         {
-                            if (commanderCards[c].GetModeIndex() == 0)
+                            if (commanderCards[c].GetFrameIndex() > 0)
                             {
-                                if ((theStates[c].IsButtonDown(Buttons.A) || keyState.IsKeyDown(Keys.A)) &&
-                                    commanderCards[c].GetFrameIndex() != 0)
-                                {
-                                    if (commanderSlots[commanderCards[c].GetFrameIndex() - 1] == -1)
-                                    {
-                                        commanderSlots[commanderCards[c].GetFrameIndex() - 1] = c;
+                                commanderSlots[commanderCards[c].GetFrameIndex() - 1] = -1;
+                            }
 
+                            commanderCards[c].SetModeIndex(1);
+                            commanderCards[c].SetFrameIndex(0);
+
+                            //Find a new king if necessary
+                            FindNewKing(c);
+                        }
+                        else
+                        {
+                            if (commanderCards[c].GetModeIndex() == 1 && commanderCards[c].GetFrameIndex() == 0)
+                            {
+                                commanderCards[c].SetModeIndex(0);
+                                commanderCards[c].SetFrameIndex(0);
+                            }
+
+                            if (stageCounters[c] > SECONDS_TO_WAIT_FOR_INPUT)
+                            {
+                                if (commanderCards[c].GetModeIndex() == 0)
+                                {
+                                    if ((theStates[c].IsButtonDown(Buttons.A) || keyState.IsKeyDown(Keys.A)) &&
+                                        commanderCards[c].GetFrameIndex() != 0)
+                                    {
+                                        if (commanderSlots[commanderCards[c].GetFrameIndex() - 1] == -1)
+                                        {
+                                            commanderSlots[commanderCards[c].GetFrameIndex() - 1] = c;
+
+                                            sounds.Play("confirm", 3, 0, 0, false);
+                                            if (indexOfKing == -1)
+                                            {
+                                                indexOfKing = c;
+                                                commanderCards[c].SetModeIndex(2);
+                                            }
+                                            else
+                                            {
+                                                commanderCards[c].SetModeIndex(1);
+                                            }
+                                        }
+
+                                        ResetSingleCounter(c);
+                                    }
+                                    else if (keyState.IsKeyDown(Keys.Up) || theStates[c].IsButtonDown(Buttons.DPadUp))
+                                    {
+                                        commanderCards[c].SetFrameIndex(1);
+                                        ResetSingleCounter(c);
+                                    }
+                                    else if (keyState.IsKeyDown(Keys.Down) || theStates[c].IsButtonDown(Buttons.DPadDown))
+                                    {
+                                        commanderCards[c].SetFrameIndex(2);
+                                        ResetSingleCounter(c);
+                                    }
+                                    else if (keyState.IsKeyDown(Keys.Left) ||
+                                             theStates[c].IsButtonDown(Buttons.DPadLeft))
+                                    {
+                                        commanderCards[c].SetFrameIndex(3);
+                                        ResetSingleCounter(c);
+                                    }
+                                    else if (keyState.IsKeyDown(Keys.Right) ||
+                                             theStates[c].IsButtonDown(Buttons.DPadRight))
+                                    {
+                                        commanderCards[c].SetFrameIndex(4);
+                                        ResetSingleCounter(c);
+                                    }
+                                    else if (keyState.IsKeyDown(Keys.Escape) ||
+                                             theStates[((indexOfKing != -1) ? indexOfKing : c)].IsButtonDown
+                                                 (Buttons.Back))
+                                    {
+                                        sounds.Play("return", 3, 0, 0, false);
+                                        stage = MenuSelect.start;
+                                        ResetAllCounters();
+                                        for (int i = 0; i < commanderCards.Length; i++)
+                                        {
+                                            commanderCards[i].SetFrameIndex(0);
+                                            commanderCards[i].SetModeIndex(0);
+                                            commanderSlots[i] = -1;
+                                            indexOfKing = -1;
+                                        }
+                                        break;
+                                    }
+                                }
+                                else
+                                {
+                                    if ((theStates[c].IsButtonDown(Buttons.B) || keyState.IsKeyDown(Keys.B)) &&
+                                        commanderCards[c].GetFrameIndex() != 0)
+                                    {
+                                        commanderSlots[commanderCards[c].GetFrameIndex() - 1] = -1;
+                                        commanderCards[c].SetModeIndex(0);
+                                        ResetSingleCounter(c);
+
+                                        //Find a new king if necessary
+                                        FindNewKing(c);
+                                    }
+                                    else if (keyState.IsKeyDown(Keys.Space) ||
+                                             (indexOfKing != -1 && theStates[indexOfKing].IsButtonDown(Buttons.Start)))
+                                    {
                                         sounds.Play("confirm", 3, 0, 0, false);
-                                        if (indexOfKing == -1)
-                                        {
-                                            indexOfKing = c;
-                                            commanderCards[c].SetModeIndex(2);
-                                        }
-                                        else
-                                        {
-                                            commanderCards[c].SetModeIndex(1);
-                                        }
+                                        stage = MenuSelect.levelSelect;
+                                        ResetGametypeCards();
+                                        ResetAllCounters();
+                                        break;
                                     }
-
-                                    ResetSingleCounter(c);
-                                }
-                                else if (keyState.IsKeyDown(Keys.Up) || theStates[c].IsButtonDown(Buttons.DPadUp))
-                                {
-                                    commanderCards[c].SetFrameIndex(1);
-                                    ResetSingleCounter(c);
-                                }
-                                else if (keyState.IsKeyDown(Keys.Down) || theStates[c].IsButtonDown(Buttons.DPadDown))
-                                {
-                                    commanderCards[c].SetFrameIndex(2);
-                                    ResetSingleCounter(c);
-                                }
-                                else if (keyState.IsKeyDown(Keys.Left) || theStates[c].IsButtonDown(Buttons.DPadLeft))
-                                {
-                                    commanderCards[c].SetFrameIndex(3);
-                                    ResetSingleCounter(c);
-                                }
-                                else if (keyState.IsKeyDown(Keys.Right) || theStates[c].IsButtonDown(Buttons.DPadRight))
-                                {
-                                    commanderCards[c].SetFrameIndex(4);
-                                    ResetSingleCounter(c);
-                                }
-                                else if (keyState.IsKeyDown(Keys.Escape) ||
-                                         theStates[((indexOfKing != -1) ? indexOfKing : c)].IsButtonDown(Buttons.Back))
-                                {
-                                    sounds.Play("return", 3, 0, 0, false);
-                                    stage = MenuSelect.start;
-                                    ResetAllCounters();
-                                    for (int i = 0; i < commanderCards.Length; i++)
-                                    {
-                                        commanderCards[i].SetFrameIndex(0);
-                                        commanderCards[i].SetModeIndex(0);
-                                        commanderSlots[i] = -1;
-                                        indexOfKing = -1;
-                                    }
-                                    break;
                                 }
                             }
                             else
                             {
-                                if ((theStates[c].IsButtonDown(Buttons.B) || keyState.IsKeyDown(Keys.B)) &&
-                                    commanderCards[c].GetFrameIndex() != 0)
-                                {
-                                    commanderSlots[commanderCards[c].GetFrameIndex() - 1] = -1;
-                                    commanderCards[c].SetModeIndex(0);
-                                    ResetSingleCounter(c);
-
-                                    //Find a new king if necessary
-                                    FindNewKing(c);
-                                }
-                                else if (keyState.IsKeyDown(Keys.Space) ||
-                                         (indexOfKing != -1 && theStates[indexOfKing].IsButtonDown(Buttons.Start)))
-                                {
-                                    sounds.Play("confirm", 3, 0, 0, false);
-                                    stage = MenuSelect.levelSelect;
-                                    ResetGametypeCards();
-                                    ResetAllCounters();
-                                    break;
-                                }
+                                stageCounters[c] += gT.ElapsedGameTime.TotalSeconds;
                             }
-                        }
-                        else
-                        {
-                            stageCounters[c] += gT.ElapsedGameTime.TotalSeconds;
                         }
                     }
 
@@ -514,7 +594,8 @@ namespace DotWars
                     for (int c = 0; c < theStates.Length; c++)
                     {
                         //Make sure they are playing
-                        if (commanderCards[c].GetModeIndex() != 0)
+                        if (commanderCards[c].GetModeIndex() != 0 &&
+                            commanderCards[c].GetFrameIndex() != 0)
                         {
                             if (stageCounters[c] > SECONDS_TO_WAIT_FOR_INPUT)
                             {
@@ -624,7 +705,7 @@ namespace DotWars
                                         int numReady = 0;
                                         for (int s = 0; s < controllerCards.Length; s++)
                                         {
-                                            if (commanderCards[s].GetModeIndex() == 0 || controllerCards[s].GetFrameIndex() != 0)
+                                            if (commanderCards[s].GetModeIndex() == 1 && commanderCards[s].GetFrameIndex() == 0 || controllerCards[s].GetFrameIndex() != 0)
                                             {
                                                 numReady++;
                                             }
@@ -803,6 +884,7 @@ namespace DotWars
             {
                 case MenuSelect.start:
                     logo.Draw(sB, Vector2.Zero, managers);
+                    textures.DrawString(sB, version + "", new Vector2(950, 150), Color.White, TextureManager.FontSizes.small, false);
                     startOptionsBackground.Draw(sB, Vector2.Zero, managers);
                     textures.DrawString(sB, startOptions[startOptionInt], startOptionsBackground.GetOriginPosition(), Color.White, TextureManager.FontSizes.small, true);
                     startTriggers.Draw(sB, Vector2.Zero, managers);
@@ -851,7 +933,7 @@ namespace DotWars
 
                     for (int c = 0; c < controllerCards.Length; c++)
                     {
-                        if (commanderCards[c].GetModeIndex() != 0)
+                        if (commanderCards[c].GetModeIndex() != 0 && commanderCards[c].GetFrameIndex() != 0)
                         {
                             controllerCards[c].Draw(sB, Vector2.Zero, managers);
                         }
@@ -926,7 +1008,7 @@ namespace DotWars
                         break;
                     case 1:
                     case 2:
-                        pressB = true;
+                        pressB = pressB || commanderCards[c].GetFrameIndex() != 0;
                         break;
                     default:
                         break;
