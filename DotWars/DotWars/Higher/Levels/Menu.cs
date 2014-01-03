@@ -705,7 +705,9 @@ namespace DotWars
                                         int numReady = 0;
                                         for (int s = 0; s < controllerCards.Length; s++)
                                         {
-                                            if (commanderCards[s].GetModeIndex() == 1 && commanderCards[s].GetFrameIndex() == 0 || controllerCards[s].GetFrameIndex() != 0)
+                                            if (commanderCards[s].GetModeIndex() == 1 && commanderCards[s].GetFrameIndex() == 0 ||
+                                                commanderCards[s].GetModeIndex() == 0 ||
+                                                controllerCards[s].GetFrameIndex() != 0)
                                             {
                                                 numReady++;
                                             }
