@@ -204,8 +204,8 @@ namespace DotWars
             controller.LoadContent(textures);
 
             //Exit screen
-            exitButtonA = new Sprite("Backgrounds/Menu/buttonA", new Vector2(310, 660));
-            exitButtonB = new Sprite("Backgrounds/Menu/buttonB", new Vector2(940, 660));
+            exitButtonA = new Sprite("Backgrounds/Menu/buttonA", new Vector2(100, 660));
+            exitButtonB = new Sprite("Backgrounds/Menu/buttonB", new Vector2(1150, 660));
             exitButtonA.LoadContent(textures);
             exitButtonB.LoadContent(textures);
         }
@@ -879,14 +879,14 @@ namespace DotWars
                     textures.DrawString(sB, "David \"Steak\" Campbell", creditsStartPos + new Vector2(0, 144), Color.White, TextureManager.FontSizes.small, true);
                     textures.DrawString(sB, "Riley Turben", creditsStartPos + new Vector2(0, 192), Color.White, TextureManager.FontSizes.small, true);
                     textures.DrawString(sB, "Sound Credits:", creditsStartPos + new Vector2(0, 288), Color.White, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, "www.emberware.com", creditsStartPos + new Vector2(0, 336), Color.White, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "www.emberware.com/index.php?page=attributions.html", creditsStartPos + new Vector2(0, 336), Color.White, TextureManager.FontSizes.small, true);
                     backButton.Draw(sB, Vector2.Zero, managers);
                     break;
 
                 case MenuSelect.quit:
                     textures.DrawString(sB, "Are you sure you want to quit?", DEFAUT_SCREEN_SIZE / 2, Color.White, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, "A to confirm", DEFAUT_SCREEN_SIZE / 2 + new Vector2(0, 48), Color.White, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, "B to cancel", DEFAUT_SCREEN_SIZE / 2 + new Vector2(0, 96), Color.White, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "to confirm", new Vector2(230, 680), Color.White, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "to cancel", new Vector2(1040, 680), Color.White, TextureManager.FontSizes.small, true);
                     exitButtonA.Draw(sB, Vector2.Zero, managers);
                     exitButtonB.Draw(sB, Vector2.Zero, managers);
                     break;
@@ -938,13 +938,13 @@ namespace DotWars
             if (pressA)
             {   
                 commanderButtonA.Draw(sB, Vector2.Zero, managers);
-                textures.DrawString(sB, "lock in", middlePosition + new Vector2(-190, 0), Color.White, TextureManager.FontSizes.small, true);
+                textures.DrawString(sB, "lock in", middlePosition + new Vector2(-220, 0), Color.White, TextureManager.FontSizes.small, true);
             }
 
             if (pressB)
             {   
                 commanderButtonB.Draw(sB, Vector2.Zero, managers);
-                textures.DrawString(sB, "back out", middlePosition + new Vector2(180, 0), Color.White, TextureManager.FontSizes.small, true);
+                textures.DrawString(sB, "back out", middlePosition + new Vector2(210, 0), Color.White, TextureManager.FontSizes.small, true);
             }
         }
 
