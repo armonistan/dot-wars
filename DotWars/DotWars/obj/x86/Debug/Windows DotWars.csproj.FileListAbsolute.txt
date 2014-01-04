@@ -2201,3 +2201,4 @@ C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textur
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\buttonB.xnb
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\buttonA.xnb
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\Gametypes\tdmInfographic.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Audio\Waves\juggernautRicohet.xnb

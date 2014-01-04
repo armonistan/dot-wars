@@ -99,6 +99,26 @@ namespace DotWars
             drag = 0;
 
             LoadContent(mH.GetTextureManager());
+            setModeIndex();//set mode index
+        }
+
+        private void setModeIndex()
+        {
+            switch (affiliation)
+            {
+                case NPC.AffliationTypes.red:
+                    modeIndex = 0;
+                    break;
+                case NPC.AffliationTypes.blue:
+                    modeIndex = 1;
+                    break;
+                case NPC.AffliationTypes.green:
+                    modeIndex = 2;
+                    break;
+                case NPC.AffliationTypes.yellow:
+                    modeIndex = 3;
+                    break;
+            }
         }
 
         public int GetDamage()
