@@ -278,6 +278,7 @@ Content\Audio\Waves\confirm.xnb
 Content\Audio\Waves\return.xnb
 Content\Audio\Waves\menu\back_style_2_002.xnb
 Content\Audio\Waves\menu\confirm_style_2_002.xnb
+Content\Audio\Waves\juggernautRicohet.xnb
 Content\Audio\GameAudio.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb

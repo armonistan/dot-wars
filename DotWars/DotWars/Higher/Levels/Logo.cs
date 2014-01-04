@@ -209,10 +209,10 @@ namespace DotWars
             textures.Add("Dots/Green/targetGreen", new Rectangle(0, 0, 64, 64));
             textures.Add("Dots/Yellow/targetYellow", new Rectangle(0, 0, 64, 64));
 
-            textures.Add("Projectiles/bullet_standard", new Rectangle(0, 0, 6, 7));
-            textures.Add("Projectiles/bullet_sniper", new Rectangle(0, 0, 6, 7));
-            textures.Add("Projectiles/bullet_rocket", new Rectangle(0, 0, 6, 7));
-            textures.Add("Projectiles/bullet_shotgun", new Rectangle(0, 0, 6, 7));
+            textures.Add("Projectiles/bullet_standard", new Rectangle(0, 0, 7, 6));
+            textures.Add("Projectiles/bullet_sniper", new Rectangle(0, 0, 7, 6));
+            textures.Add("Projectiles/bullet_rocket", new Rectangle(0, 0, 7, 6));
+            textures.Add("Projectiles/bullet_shotgun", new Rectangle(0, 0, 7, 6));
 
             textures.Add("Projectiles/grenade", new Rectangle(0, 0, 15, 15));
             textures.Add("Projectiles/bullet_bombs", new Rectangle(0, 0, 14, 5));
