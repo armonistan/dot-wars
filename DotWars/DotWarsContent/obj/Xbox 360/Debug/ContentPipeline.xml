@@ -647,7 +647,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_shotgun.xnb</Output>
-      <Time>2013-07-02T16:33:08-05:00</Time>
+      <Time>2014-01-03T18:50:15.5835226-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Projectiles\bullet_sniper.png</Source>
@@ -656,7 +656,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_sniper.xnb</Output>
-      <Time>2013-07-02T16:33:08-05:00</Time>
+      <Time>2014-01-03T18:50:15.5845227-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Projectiles\bullet_standard.png</Source>
@@ -665,7 +665,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_standard.xnb</Output>
-      <Time>2013-07-02T16:33:08-05:00</Time>
+      <Time>2014-01-03T18:50:15.5865228-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Projectiles\flare_blue.png</Source>
@@ -2520,6 +2520,15 @@
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\menu\confirm_style_2_002.xnb</Output>
       <Time>2013-08-10T15:29:25-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\juggernautRicohet.wav</Source>
+      <Name>Audio\Waves\juggernautRicohet</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\juggernautRicohet.xnb</Output>
+      <Time>2014-01-03T18:55:11.8874703-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
