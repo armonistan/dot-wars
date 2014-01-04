@@ -141,7 +141,7 @@ namespace DotWars
             //}
         }
 
-        public Path FindClearPath(Vector2 pA, Vector2 pB, ManagerHelper mH)
+        public void FindClearPath(Vector2 pA, Vector2 pB, ManagerHelper mH, Path path)
         {
             counter = 0;
 
@@ -152,7 +152,7 @@ namespace DotWars
             if (pA.X < 0 || pA.X > mH.GetLevelSize().X || pA.Y < 0 || pA.Y > mH.GetLevelSize().Y ||
                 pB.X < 0 || pB.X > mH.GetLevelSize().X || pB.Y < 0 || pB.Y > mH.GetLevelSize().Y)
             {
-                return new Path();
+                return;
             }
 
             Vector2 end = new Vector2((int) (pB.X/nodeSize.X), (int) (pB.Y/nodeSize.Y)),
@@ -160,7 +160,7 @@ namespace DotWars
 
             if (end == beginning)
             {
-                return new Path();
+                return;
             }
 
             if (field[(int) end.X, (int) end.Y].GetBlocker())
@@ -259,43 +259,22 @@ namespace DotWars
             #region Create Path
 
             //Once end is found, compile path together
-            //Final Path to return
-            var clearPath = new Path();
+            path.Clear();
 
             Node point = parent;
             while (!(point.GetPosition() == beginning))
             {
                 if (!point.GetBlocker())
                 {
-                    clearPath.Add(point.GetPosition()*nodeSize + new Vector2(16), mH);
+                    path.Add(point.GetPosition()*nodeSize + new Vector2(16), mH);
                 }
                 point = point.GetParent();
             }
 
-            //Reverse path too have it go in the correct direction
-
-            //Refactor path to remove duplicates
-            //for (int i = 2; i < clearPath.Count; i++)
-            //{
-            //    //Get 3 vectors starting with 2 before i
-            //    Vector2 last = clearPath.ElementAt<Vector2>(i),
-            //        middle = clearPath.ElementAt<Vector2>(i - 1),
-            //        first = clearPath.ElementAt<Vector2>(i - 2);
-            //
-            //    //If they share either X or Y values, remove the middle to stop redundancy
-            //    if ((first.X == middle.X && middle.X == last.X) || (first.Y == middle.Y && middle.Y == last.Y))
-            //    {
-            //        clearPath.Remove(middle);
-            //        i--;
-            //    }
-            //}
-
             #endregion
-
-            return clearPath;
         }
 
-        public Path FindEscapePath(Vector2 pA, Vector2 pGTFA, float mD, ManagerHelper mH, float aw)
+        public void FindEscapePath(Vector2 pA, Vector2 pGTFA, float mD, ManagerHelper mH, float aw, Path path)
         {
             //Add blockers for enemies
             foreach (NPC n in mH.GetNPCManager().GetAlliesInRadius(NPC.AffliationTypes.black, pA, aw))
@@ -352,7 +331,7 @@ namespace DotWars
                 }
             }
 
-            return FindClearPath(pA, pointB, mH);
+            FindClearPath(pA, pointB, mH, path);
         }
 
         private Vector2 FindOpenNodePoint(Vector2 e, ManagerHelper mH)
@@ -389,32 +368,6 @@ namespace DotWars
             return e;
         }
 
-        //snipers and bombardiers
-        public Path FindSniperSpot(Vector2 sP, ManagerHelper mH)
-        {
-            Vector2 eP = Vector2.Zero;
-            float distance = 0;
-
-            foreach (Vector2 v in mH.GetLevel().GetSniperSpots())
-            {
-                if (mH.GetNPCManager().GetAllButAlliesInRadius(NPC.AffliationTypes.grey, v, 128).Count == 0)
-                {
-                    if (Distance(sP, v) > distance)
-                    {
-                        distance = Distance(sP, v);
-                        eP = v;
-                    }
-                }
-            }
-
-            if (eP != Vector2.Zero)
-                return mH.GetPathHelper().FindClearPath(sP, eP, mH);
-            else
-                return mH.GetPathHelper()
-                         .FindClearPath(sP,
-                                        new Vector2(mH.GetRandom().Next((int) mH.GetLevelSize().X),
-                                                    mH.GetRandom().Next((int) mH.GetLevelSize().Y)), mH);
-        }
 
         public bool IsVectorObstructed(Vector2 pA, Vector2 pB)
         {

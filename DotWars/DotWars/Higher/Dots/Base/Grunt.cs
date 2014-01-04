@@ -54,12 +54,12 @@ namespace DotWars
         }
 
         //Specialized Paths
-        protected Path DefensePath(ManagerHelper mH, Vector2 m)
+        protected void DefensePath(ManagerHelper mH, Vector2 m)
         {
             float x = mH.GetRandom().Next(-100, 100);
             float y = mH.GetRandom().Next(-100, 100);
 
-            return mH.GetPathHelper().FindClearPath(GetOriginPosition(), m + new Vector2(x, y), mH);
+            mH.GetPathHelper().FindClearPath(GetOriginPosition(), m + new Vector2(x, y), mH, path);
         }
     }
 }

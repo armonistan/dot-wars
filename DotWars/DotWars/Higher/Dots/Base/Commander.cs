@@ -374,26 +374,26 @@ namespace DotWars
 
         #region Paths
 
-        protected override Path NewPath(ManagerHelper mH)
+        protected override void NewPath(ManagerHelper mH)
         {
             if (mH.GetGametype() is Conquest)
-                return ConquestPath(mH);
+                ConquestPath(mH);
             else if (mH.GetGametype() is CaptureTheFlag)
-                return CTFPath(mH);
+                CTFPath(mH);
             else if (mH.GetGametype() is Assault)
-                return AssaultPath(mH);
+                AssaultPath(mH);
             else if (mH.GetGametype() is Deathmatch)
-                return DeathmatchPath(mH);
+                DeathmatchPath(mH);
             else if (mH.GetGametype() is Survival)
             {
                 pathTimerEnd = 0.1f;
-                return SurvivalPath(mH);
+                SurvivalPath(mH);
             }
             else
-                return EngagePath(mH);
+                EngagePath(mH);
         }
 
-        protected override Path ConquestPath(ManagerHelper mH)
+        protected override void ConquestPath(ManagerHelper mH)
         {
             var temp = (Conquest) mH.GetGametype();
             ConquestBase targetBase = temp.GetClosestInList(temp.GetEnemyBases(affiliation), GetOriginPosition());
@@ -401,99 +401,97 @@ namespace DotWars
             if (targetBase != null)
             {
                 if (PathHelper.Distance(GetOriginPosition(), targetBase.GetOriginPosition()) > 32)
-                    return mH.GetPathHelper().FindClearPath(GetOriginPosition(), targetBase.GetOriginPosition(), mH);
-
+                    mH.GetPathHelper().FindClearPath(GetOriginPosition(), targetBase.GetOriginPosition(), mH, path);
                 else
-                    return HoverPath(mH, targetBase.GetOriginPosition(), 16);
+                    HoverPath(mH, targetBase.GetOriginPosition(), 16);
             }
-
             else
             {
-                return EngagePath(mH);
+                EngagePath(mH);
             }
         }
 
-        protected override Path CTFPath(ManagerHelper mH)
+        protected override void CTFPath(ManagerHelper mH)
         {
             var temp = (CaptureTheFlag) mH.GetGametype();
 
             if (temp.GetEnemyBase(affiliation).GetMyFlag().status != Flag.FlagStatus.taken)
-                return mH.GetPathHelper()
+                mH.GetPathHelper()
                          .FindClearPath(GetOriginPosition(),
-                                        temp.GetEnemyBase(affiliation).GetMyFlag().GetOriginPosition(), mH);
+                                        temp.GetEnemyBase(affiliation).GetMyFlag().GetOriginPosition(), mH, path);
             else
             {
                 NPC captor = temp.GetEnemyBase(affiliation).GetMyFlag().GetCaptor();
 
                 if (captor == this)
-                    return mH.GetPathHelper()
-                             .FindClearPath(GetOriginPosition(), temp.GetAllyBase(affiliation).GetOriginPosition(), mH);
+                    mH.GetPathHelper()
+                             .FindClearPath(GetOriginPosition(), temp.GetAllyBase(affiliation).GetOriginPosition(), mH, path);
                 else
-                    return mH.GetPathHelper().FindClearPath(GetOriginPosition(), captor.GetOriginPosition(), mH);
+                    mH.GetPathHelper().FindClearPath(GetOriginPosition(), captor.GetOriginPosition(), mH, path);
             }
         }
 
-        protected override Path AssaultPath(ManagerHelper mH)
+        protected override void AssaultPath(ManagerHelper mH)
         {
             var temp = (Assault) mH.GetGametype();
 
             if (temp.GetAttacker() == affiliation)
             {
                 if (temp.GetEnemyBase(affiliation).GetMyFlag().status != Flag.FlagStatus.taken)
-                    return mH.GetPathHelper()
-                             .FindClearPath(GetOriginPosition(), temp.GetEnemyBase(affiliation).GetOriginPosition(), mH);
+                    mH.GetPathHelper()
+                             .FindClearPath(GetOriginPosition(), temp.GetEnemyBase(affiliation).GetOriginPosition(), mH, path);
                 else
                 {
                     NPC captor = temp.GetEnemyBase(affiliation).GetMyFlag().GetCaptor();
 
                     if (captor == this)
-                        return mH.GetPathHelper()
+                        mH.GetPathHelper()
                                  .FindClearPath(GetOriginPosition(), temp.GetAllyBase(affiliation).GetOriginPosition(),
-                                                mH);
+                                                mH, path);
                     else if (
                         mH.GetNPCManager().GetClosestInList(mH.GetNPCManager().GetAllButAllies(affiliation), captor) !=
                         null)
-                        return mH.GetPathHelper()
+                        mH.GetPathHelper()
                                  .FindClearPath(GetOriginPosition(),
                                                 mH.GetNPCManager()
                                                   .GetClosestInList(
                                                       mH.GetNPCManager().GetAllButAllies(affiliation), captor)
-                                                  .GetOriginPosition(), mH);
+                                                  .GetOriginPosition(), mH, path);
                     else
-                        return mH.GetPathHelper().FindClearPath(GetOriginPosition(), captor.GetOriginPosition(), mH);
+                        mH.GetPathHelper().FindClearPath(GetOriginPosition(), captor.GetOriginPosition(), mH, path);
                 }
             }
 
             else
             {
                 if (temp.GetAllyBase(affiliation).GetMyFlag().status == Flag.FlagStatus.home)
-                    return HoverPath(mH, temp.GetAllyBase(affiliation).GetOriginPosition(), 48);
+                    HoverPath(mH, temp.GetAllyBase(affiliation).GetOriginPosition(), 48);
                 else
                 {
                     NPC captor = temp.GetAllyBase(affiliation).GetMyFlag().GetCaptor();
 
                     if (captor != null)
-                        return mH.GetPathHelper().FindClearPath(GetOriginPosition(), captor.GetOriginPosition(), mH);
+                        mH.GetPathHelper().FindClearPath(GetOriginPosition(), captor.GetOriginPosition(), mH, path);
                     else
-                        return mH.GetPathHelper()
+                        mH.GetPathHelper()
                                  .FindClearPath(GetOriginPosition(),
-                                                temp.GetAllyBase(affiliation).GetMyFlag().GetOriginPosition(), mH);
+                                                temp.GetAllyBase(affiliation).GetMyFlag().GetOriginPosition(), mH, path);
                 }
             }
         }
 
-        protected override Path DeathmatchPath(ManagerHelper mH)
+        protected override void DeathmatchPath(ManagerHelper mH)
         {
             var temp = (Deathmatch) mH.GetGametype();
             Claimable c = temp.GetClosestClaimable(GetOriginPosition(), mH);
 
             if (c != null && temp.GetPopCap() > mH.GetNPCManager().GetAllies(affiliation).Count)
-                return mH.GetPathHelper().FindClearPath(GetOriginPosition(), c.GetOriginPosition(), mH);
+                mH.GetPathHelper().FindClearPath(GetOriginPosition(), c.GetOriginPosition(), mH, path);
             else
-                return EngagePath(mH);
+                EngagePath(mH);
         }
 
-        protected override Path SurvivalPath(ManagerHelper mH)
+        protected override void SurvivalPath(ManagerHelper mH)
         {
             pathTimerEnd = .5f;
 
@@ -506,15 +504,15 @@ namespace DotWars
 
             if (enemy != null && PathHelper.Distance(GetOriginPosition(), enemy.GetOriginPosition()) < 200)
             {
-                return mH.GetPathHelper().FindEscapePath(GetOriginPosition(), enemy.GetOriginPosition(), 400, mH, 200);
+                mH.GetPathHelper().FindEscapePath(GetOriginPosition(), enemy.GetOriginPosition(), 400, mH, 200, path);
             }
             else if (c != null && temp.GetPopCap() > mH.GetNPCManager().GetAllies(affiliation).Count)
             {
-                return mH.GetPathHelper().FindClearPath(GetOriginPosition(), c.GetOriginPosition(), mH);
+                mH.GetPathHelper().FindClearPath(GetOriginPosition(), c.GetOriginPosition(), mH, path);
             }
             else
             {
-                return RandomPath(mH);
+                RandomPath(mH);
             }
         }
 

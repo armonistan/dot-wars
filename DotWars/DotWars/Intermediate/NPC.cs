@@ -53,8 +53,6 @@ namespace DotWars
         protected float pathTimer;
         protected float pathTimerEnd;
 
-        private int otherUpdate;
-
         private bool fireStatus;
 
         protected double protectedTimer;
@@ -85,8 +83,6 @@ namespace DotWars
             shootingCounter = 0;
             grenadeCounter = 0;
 
-            otherUpdate = 0;
-
             lastDamager = null;
             fireStatus = false;
 
@@ -105,45 +101,12 @@ namespace DotWars
             //Set up dir for rotations
             float dir = rotation;
 
-            //TODO: What is going on here?
-            if (otherUpdate < 3)
-            {
-                otherUpdate = 0;
-
                 //Do Behaviour
-                Behavior(mH);
+            Behavior(mH);
 
-                dir = MoveNPC(mH, dir);
+            dir = MoveNPC(mH, dir);
 
-                RotateNPC(dir);
-            }
-            else
-            {
-                otherUpdate++;
-
-                #region movement
-
-                if (path.Count > 0)
-                {
-                    //Get next destination
-                    Vector2 next = path.First();
-
-                    //Find angle between points
-                    dir = PathHelper.Direction(base.GetOriginPosition(), next);
-
-                    //Get x and y values from angle and set up direction
-                    accelerations.Add(PathHelper.Direction(dir));
-
-                    //If already there...
-                    if (PathHelper.Distance(next, GetOriginPosition()) < 16)
-                    {
-                        //Go on to next destination
-                        path.RemoveLast();
-                    }
-                }
-
-                #endregion
-            }
+            RotateNPC(dir);
 
             PosUpdate(mH);
             originPosition = position + origin; //Update originPosition
@@ -154,17 +117,17 @@ namespace DotWars
         private float MoveNPC(ManagerHelper mH, float dir)
         {
             //If path is null, ie stay in same spot
-            if (path != null)
+            if (path.GetMoving())
             {
                 //If there are still destinations
                 if (pathTimer >= pathTimerEnd || path.Count == 0)
                 {
-                    path = NewPath(mH);
+                    NewPath(mH);
                     pathTimer = 0;
                 }
                 else
                 {
-                    Vector2 next = path.First(); //Get next destination
+                    Vector2 next = path.Last(); //Get next destination
                     dir = PathHelper.Direction(base.GetOriginPosition(), next); //Find angle between points
                     accelerations.Add(PathHelper.Direction(dir));
                         //Get x and y values from angle and set up direction
@@ -172,7 +135,8 @@ namespace DotWars
                     //If already there...
                     if (PathHelper.Distance(next, GetOriginPosition()) < 15)
                     {
-                        path.RemoveFirst(); //Go on to next destination
+                        //path.RemoveFirst(); //Go on to next destination
+                        path.RemoveAt(0);
                     }
 
                     pathTimer += (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
@@ -420,9 +384,9 @@ namespace DotWars
             return false;
         }
 
-        protected virtual Path NewPath(ManagerHelper mH)
+        protected virtual void NewPath(ManagerHelper mH)
         {
-            return SpecialPath(mH);
+            SpecialPath(mH);
         }
 
         protected virtual void Explode(ManagerHelper mH)
@@ -631,7 +595,7 @@ namespace DotWars
 
         #region Paths
 
-        protected Path RandomPath(ManagerHelper mH)
+        protected void RandomPath(ManagerHelper mH)
         {
             bool validPoint;
             Vector2 randPoint;
@@ -665,39 +629,39 @@ namespace DotWars
                 }
             } while (!validPoint);
 
-            return mH.GetPathHelper().FindClearPath(GetOriginPosition(), randPoint*32, mH);
+            mH.GetPathHelper().FindClearPath(GetOriginPosition(), randPoint*32, mH, path);
         }
 
-        protected virtual Path SpecialPath(ManagerHelper mH)
+        protected virtual void SpecialPath(ManagerHelper mH)
         {
             if (mH.GetGametype() is Conquest)
             {
-                return ConquestPath(mH);
+                ConquestPath(mH);
             }
             else if (mH.GetGametype() is CaptureTheFlag)
             {
-                return CTFPath(mH);
+                CTFPath(mH);
             }
             else if (mH.GetGametype() is Assault)
             {
-                return AssaultPath(mH);
+                AssaultPath(mH);
             }
             else if (mH.GetGametype() is Deathmatch)
             {
-                return DeathmatchPath(mH);
+                DeathmatchPath(mH);
             }
             else if (mH.GetGametype() is Survival)
             {
                 pathTimerEnd = 0.1f;
-                return SurvivalPath(mH);
+                SurvivalPath(mH);
             }
             else
             {
-                return EngagePath(mH);
+                EngagePath(mH);
             }
         }
 
-        protected Path EngagePath(ManagerHelper mH)
+        protected void EngagePath(ManagerHelper mH)
         {
             NPC tempEnemy;
 
@@ -717,37 +681,37 @@ namespace DotWars
             {
                 if (PathHelper.Distance(GetOriginPosition(), tempEnemy.GetOriginPosition()) > 128)
                 {
-                    return mH.GetPathHelper().FindClearPath(GetOriginPosition(), tempEnemy.GetOriginPosition(), mH);
+                    mH.GetPathHelper().FindClearPath(GetOriginPosition(), tempEnemy.GetOriginPosition(), mH, path);
                     
                 }
                 else
                 {
-                    return HoverPath(mH, GetOriginPosition(), 64);
+                    HoverPath(mH, GetOriginPosition(), 64);
                 }
             }
             else
             {
-                return RandomPath(mH);
+                RandomPath(mH);
             }
         }
 
-        protected Path FlarePath(ManagerHelper mH)
+        protected void FlarePath(ManagerHelper mH)
         {
             Flare f = mH.GetProjectileManager().GetFlare(affiliation);
             float tempDist = PathHelper.Distance(GetOriginPosition(), f.GetOriginPosition());
 
             if (!f.IsInList(this) && tempDist > f.GetFlareRadius())
             {
-                return mH.GetPathHelper().FindClearPath(GetOriginPosition(), f.GetOriginPosition(), mH);
+                mH.GetPathHelper().FindClearPath(GetOriginPosition(), f.GetOriginPosition(), mH, path);
             }
             else
             {
                 f.AddToList(this);
-                return SpecialPath(mH);
+                SpecialPath(mH);
             }
         }
 
-        protected Path HoverPath(ManagerHelper mH, Vector2 p, int r)
+        protected void HoverPath(ManagerHelper mH, Vector2 p, int r)
         {
             bool validPoint;
             Vector2 randPoint;
@@ -785,50 +749,50 @@ namespace DotWars
                 }
             } while (!validPoint);
 
-            return mH.GetPathHelper().FindClearPath(GetOriginPosition(), randPoint*32, mH);
+            mH.GetPathHelper().FindClearPath(GetOriginPosition(), randPoint*32, mH, path);
         }
 
-        protected virtual Path DeathmatchPath(ManagerHelper mH)
+        protected virtual void DeathmatchPath(ManagerHelper mH)
         {
-            return EngagePath(mH);
+            EngagePath(mH);
         }
 
-        protected virtual Path ConquestPath(ManagerHelper mH)
+        protected virtual void ConquestPath(ManagerHelper mH)
         {
-            return EngagePath(mH);
+            EngagePath(mH);
         }
 
-        protected virtual Path CTFPath(ManagerHelper mH)
+        protected virtual void CTFPath(ManagerHelper mH)
         {
             var ctf = (CaptureTheFlag) mH.GetGametype();
             Flag f = ctf.GetAllyBase(affiliation).GetMyFlag();
 
             if (f.status == Flag.FlagStatus.away)
             {
-                return mH.GetPathHelper().FindClearPath(GetOriginPosition(), f.GetOriginPosition(), mH);
+                mH.GetPathHelper().FindClearPath(GetOriginPosition(), f.GetOriginPosition(), mH, path);
             }
             else
             {
-                return EngagePath(mH);
+                EngagePath(mH);
             }
         }
 
-        protected virtual Path AssaultPath(ManagerHelper mH)
+        protected virtual void AssaultPath(ManagerHelper mH)
         {
             var ass = (Assault) mH.GetGametype();
             Flag f = ass.GetAllyBase(affiliation).GetMyFlag();
 
             if (f != null && f.status == Flag.FlagStatus.away)
             {
-                return mH.GetPathHelper().FindClearPath(GetOriginPosition(), f.GetOriginPosition(), mH);
+                mH.GetPathHelper().FindClearPath(GetOriginPosition(), f.GetOriginPosition(), mH, path);
             }
             else
             {
-                return EngagePath(mH);
+                EngagePath(mH);
             }
         }
 
-        protected virtual Path SurvivalPath(ManagerHelper mH)
+        protected virtual void SurvivalPath(ManagerHelper mH)
         {
             var c = (Commander) mH.GetNPCManager().GetCommander(affiliation);
 
@@ -836,16 +800,16 @@ namespace DotWars
             {
                 if (PathHelper.Distance(c.GetOriginPosition(), GetOriginPosition()) < 96)
                 {
-                    return HoverPath(mH, c.GetOriginPosition(), 96);
+                    HoverPath(mH, c.GetOriginPosition(), 96);
                 }
                 else
                 {
-                    return mH.GetPathHelper().FindClearPath(GetOriginPosition(), c.GetOriginPosition(), mH);
+                    mH.GetPathHelper().FindClearPath(GetOriginPosition(), c.GetOriginPosition(), mH, path);
                 }
             }
             else
             {
-                return RandomPath(mH);
+                RandomPath(mH);
             }
         }
 

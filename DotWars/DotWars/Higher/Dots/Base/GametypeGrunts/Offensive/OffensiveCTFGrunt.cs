@@ -9,31 +9,31 @@ namespace DotWars
         {
         }
 
-        protected override Path NewPath(ManagerHelper mH)
+        protected override void NewPath(ManagerHelper mH)
         {
             if (mH.GetProjectileManager().GetFlare(affiliation) != null)
-                return FlarePath(mH);
+                FlarePath(mH);
             else
-                return SpecialPath(mH);
+                SpecialPath(mH);
         }
 
-        protected override Path SpecialPath(ManagerHelper mH)
+        protected override void SpecialPath(ManagerHelper mH)
         {
             var temp = (CaptureTheFlag) mH.GetGametype();
 
             if (temp.GetEnemyBase(affiliation).GetMyFlag().status != Flag.FlagStatus.taken)
-                return mH.GetPathHelper()
+                mH.GetPathHelper()
                          .FindClearPath(GetOriginPosition(),
-                                        temp.GetEnemyBase(affiliation).GetMyFlag().GetOriginPosition(), mH);
+                                        temp.GetEnemyBase(affiliation).GetMyFlag().GetOriginPosition(), mH, path);
             else
             {
                 NPC captor = temp.GetEnemyBase(affiliation).GetMyFlag().GetCaptor();
 
                 if (captor == this)
-                    return mH.GetPathHelper()
-                             .FindClearPath(GetOriginPosition(), temp.GetAllyBase(affiliation).GetOriginPosition(), mH);
+                    mH.GetPathHelper()
+                             .FindClearPath(GetOriginPosition(), temp.GetAllyBase(affiliation).GetOriginPosition(), mH, path);
                 else
-                    return mH.GetPathHelper().FindClearPath(GetOriginPosition(), captor.GetOriginPosition(), mH);
+                    mH.GetPathHelper().FindClearPath(GetOriginPosition(), captor.GetOriginPosition(), mH, path);
             }
         }
     }

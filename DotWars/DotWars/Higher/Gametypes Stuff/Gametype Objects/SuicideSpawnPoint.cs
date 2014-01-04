@@ -151,9 +151,9 @@ namespace DotWars
             //return base.ProjectileCheck(mH);
         }
 
-        protected override Path SpecialPath(ManagerHelper mH)
+        protected override void SpecialPath(ManagerHelper mH)
         {
-            return RandomPath(mH);
+            RandomPath(mH);
         }
 
         public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, Vector2 displacement, ManagerHelper mH)

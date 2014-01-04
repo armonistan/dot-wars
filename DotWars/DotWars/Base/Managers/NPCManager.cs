@@ -599,20 +599,6 @@ namespace DotWars
             return false;
         }
 
-        public NPC GetSafeAlly(NPC.AffliationTypes af, NPC c)
-        {
-            List<NPC> allies = GetAlliesButBombAndSnipers(af);
-            var safeAllies = new List<NPC>();
-
-            foreach (NPC a in allies)
-            {
-                if (GetAllButAlliesInRadius(af, a.GetOriginPosition(), 224).Count == 0)
-                    safeAllies.Add(a);
-            }
-
-            return GetClosestInList(safeAllies, c.GetOriginPosition());
-        }
-
         public Dictionary<NPC.AffliationTypes, int> GetKills()
         {
             return kills;

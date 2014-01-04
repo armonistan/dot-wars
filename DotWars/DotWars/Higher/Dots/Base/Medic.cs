@@ -79,15 +79,15 @@ namespace DotWars
             return chosenOne;
         }
 
-        protected override Path SpecialPath(ManagerHelper mH)
+        protected override void SpecialPath(ManagerHelper mH)
         {
             if (target != null)
             {
-                return mH.GetPathHelper().FindClearPath(GetOriginPosition(), TargetDecider(mH).GetOriginPosition(), mH);
+                mH.GetPathHelper().FindClearPath(GetOriginPosition(), TargetDecider(mH).GetOriginPosition(), mH, path);
             }
             else
             {
-                return RandomPath(mH);
+                RandomPath(mH);
             }
         }
     }

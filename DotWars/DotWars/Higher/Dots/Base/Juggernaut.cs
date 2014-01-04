@@ -29,7 +29,7 @@ namespace DotWars
             //Do nothing
         }
 
-        protected override Path SpecialPath(ManagerHelper mH)
+        protected override void SpecialPath(ManagerHelper mH)
         {
             //do i have friends
             NPC friend = mH.GetNPCManager().GetClosestInList(mH.GetNPCManager().GetAllies(affiliation), this);
@@ -44,11 +44,11 @@ namespace DotWars
                 //we can now get a midpoint
                 destination = PathHelper.MidPoint(friend.GetOriginPosition(), target.GetOriginPosition());
                 //and wedge ourselves in
-                return mH.GetPathHelper().FindClearPath(GetOriginPosition(), destination, mH);
+                mH.GetPathHelper().FindClearPath(GetOriginPosition(), destination, mH, path);
             }
                 //else, we shall wander the planes between heaven and hell
             else
-                return RandomPath(mH);
+                RandomPath(mH);
         }
 
         protected override bool ProjectileCheck(ManagerHelper mH)

@@ -9,15 +9,15 @@ namespace DotWars
         {
         }
 
-        protected override Path NewPath(ManagerHelper mH)
+        protected override void NewPath(ManagerHelper mH)
         {
             if (mH.GetProjectileManager().GetFlare(affiliation) != null)
-                return FlarePath(mH);
+                FlarePath(mH);
             else
-                return SpecialPath(mH);
+                SpecialPath(mH);
         }
 
-        protected override Path SpecialPath(ManagerHelper mH)
+        protected override void SpecialPath(ManagerHelper mH)
         {
             var temp = (Conquest) mH.GetGametype();
             ConquestBase targetBase = temp.GetClosestInList(temp.GetEnemyBases(affiliation), GetOriginPosition());
@@ -25,15 +25,15 @@ namespace DotWars
             if (targetBase != null)
             {
                 if (PathHelper.Distance(GetOriginPosition(), targetBase.GetOriginPosition()) > 32)
-                    return mH.GetPathHelper().FindClearPath(GetOriginPosition(), targetBase.GetOriginPosition(), mH);
+                    mH.GetPathHelper().FindClearPath(GetOriginPosition(), targetBase.GetOriginPosition(), mH, path);
 
                 else
-                    return HoverPath(mH, targetBase.GetOriginPosition(), 32);
+                    HoverPath(mH, targetBase.GetOriginPosition(), 32);
             }
 
             else
             {
-                return EngagePath(mH);
+                EngagePath(mH);
             }
         }
     }

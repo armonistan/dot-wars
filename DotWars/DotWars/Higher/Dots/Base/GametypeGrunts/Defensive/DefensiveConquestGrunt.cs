@@ -9,26 +9,26 @@ namespace DotWars
         {
         }
 
-        protected override Path NewPath(ManagerHelper mH)
+        protected override void NewPath(ManagerHelper mH)
         {
             if (mH.GetProjectileManager().GetFlare(affiliation) != null)
-                return FlarePath(mH);
+                FlarePath(mH);
 
             else
-                return SpecialPath(mH);
+                SpecialPath(mH);
         }
 
-        protected override Path SpecialPath(ManagerHelper mH)
+        protected override void SpecialPath(ManagerHelper mH)
         {
             var temp = (Conquest) mH.GetGametype();
             ConquestBase forwardBase = temp.GetForwardBase(affiliation, mH);
             if (forwardBase != null)
             {
-                return mH.GetPathHelper().FindClearPath(GetOriginPosition(), forwardBase.GetOriginPosition(), mH);
+                mH.GetPathHelper().FindClearPath(GetOriginPosition(), forwardBase.GetOriginPosition(), mH, path);
             }
             else
             {
-                return EngagePath(mH);
+                EngagePath(mH);
             }
         }
     }

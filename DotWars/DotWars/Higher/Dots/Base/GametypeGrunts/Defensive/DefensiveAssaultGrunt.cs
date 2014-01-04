@@ -9,30 +9,30 @@ namespace DotWars
         {
         }
 
-        protected override Path NewPath(ManagerHelper mH)
+        protected override void NewPath(ManagerHelper mH)
         {
             if (mH.GetProjectileManager().GetFlare(affiliation) != null)
-                return FlarePath(mH);
+                FlarePath(mH);
             else
-                return SpecialPath(mH);
+                SpecialPath(mH);
         }
 
-        protected override Path SpecialPath(ManagerHelper mH)
+        protected override void SpecialPath(ManagerHelper mH)
         {
             var temp = (Assault) mH.GetGametype();
 
             if (temp.GetAllyBase(affiliation).GetMyFlag().status == Flag.FlagStatus.home)
-                return DefensePath(mH, temp.GetAllyBase(affiliation).GetOriginPosition());
+                DefensePath(mH, temp.GetAllyBase(affiliation).GetOriginPosition());
             else
             {
                 NPC captor = temp.GetAllyBase(affiliation).GetMyFlag().GetCaptor();
 
                 if (captor != null)
-                    return mH.GetPathHelper().FindClearPath(GetOriginPosition(), captor.GetOriginPosition(), mH);
+                    mH.GetPathHelper().FindClearPath(GetOriginPosition(), captor.GetOriginPosition(), mH, path);
                 else
-                    return mH.GetPathHelper()
+                    mH.GetPathHelper()
                              .FindClearPath(GetOriginPosition(),
-                                            temp.GetAllyBase(affiliation).GetMyFlag().GetOriginPosition(), mH);
+                                            temp.GetAllyBase(affiliation).GetMyFlag().GetOriginPosition(), mH, path);
             }
         }
     }

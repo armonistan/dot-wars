@@ -349,9 +349,9 @@ namespace DotWars
             originPosition = position + origin;
         }
 
-        protected override Path NewPath(ManagerHelper mH)
+        protected override void NewPath(ManagerHelper mH)
         {
-            return new Path();
+            //Do nothing
         }
 
         protected override void ShotgunSound(ManagerHelper mH)

@@ -26,7 +26,7 @@ namespace DotWars
             turningSpeed = (float) Math.PI/20;
 
             pathTimerEnd = 100;
-            path = null;
+            path.SetMoving(false);
 
             threatened = true;
             campingCounter = 11;
@@ -42,11 +42,11 @@ namespace DotWars
 
             target = TargetDecider(mH);
 
-            if (path == null)
+            if (path.GetMoving())
             {
                 if (threatened)
                 {
-                    path = NewPath(mH);
+                    NewPath(mH);
                 }
                 else
                 {
@@ -72,7 +72,7 @@ namespace DotWars
             }
             else if (path.Count == 0)
             {
-                path = null;
+                path.SetMoving(false);
                 campingCounter = 0;
             }
         }
@@ -90,7 +90,7 @@ namespace DotWars
                 AudioManager.RandomPitch(mH), 0, false);
         }
 
-        protected override Path NewPath(ManagerHelper mH)
+        protected override void NewPath(ManagerHelper mH)
         {
             List<Vector2> sniperSpots = mH.GetLevel().GetSniperSpots();
             Vector2 endPoint = GetOriginPosition();
@@ -104,7 +104,7 @@ namespace DotWars
                 }
             }
 
-            return mH.GetPathHelper().FindClearPath(GetOriginPosition(), endPoint, mH);
+            mH.GetPathHelper().FindClearPath(GetOriginPosition(), endPoint, mH, path);
         }
     }
 }

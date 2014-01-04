@@ -121,12 +121,9 @@ namespace DotWars
             }
         }
 
-        protected override Path NewPath(ManagerHelper mH)
+        protected override void NewPath(ManagerHelper mH)
         {
-            var aPath = new Path();
             path.Add(targetPosition, mH);
-
-            return aPath;
         }
     }
 }

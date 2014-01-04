@@ -81,18 +81,18 @@ namespace DotWars
                 animateCounter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
         }
 
-        protected override Path NewPath(ManagerHelper mH)
+        protected override void NewPath(ManagerHelper mH)
         {
             NPC tempEnemy = mH.GetNPCManager()
                               .GetClosestInList(mH.GetNPCManager().GetAllButAllies(affiliation), GetOriginPosition());
             Vector2 closetRockPosition = FindClosestRock(mH);
 
             if (closetRockPosition != new Vector2(-1, -1))
-                return mH.GetPathHelper().FindClearPath(GetOriginPosition(), closetRockPosition, mH);
+                mH.GetPathHelper().FindClearPath(GetOriginPosition(), closetRockPosition, mH, path);
             else if (tempEnemy != null)
-                return mH.GetPathHelper().FindClearPath(GetOriginPosition(), tempEnemy.GetOriginPosition(), mH);
+                mH.GetPathHelper().FindClearPath(GetOriginPosition(), tempEnemy.GetOriginPosition(), mH, path);
             else
-                return RandomPath(mH);
+                RandomPath(mH);
         }
 
         private Vector2 FindClosestRock(ManagerHelper mH)
