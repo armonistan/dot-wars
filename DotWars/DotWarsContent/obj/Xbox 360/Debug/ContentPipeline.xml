@@ -224,7 +224,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Grey\grey_claimable.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>2014-01-02T17:30:52.9079862-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Dots\Grey\grey_suicide.png</Source>
@@ -2069,7 +2069,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\HUD\hud_time_frame.xnb</Output>
-      <Time>2013-08-17T10:48:59-05:00</Time>
+      <Time>2014-01-02T17:30:52.9099863-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\PreGame\splashTemplate.png</Source>
