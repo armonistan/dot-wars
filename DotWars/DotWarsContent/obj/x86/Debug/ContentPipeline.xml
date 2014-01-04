@@ -2294,7 +2294,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\buttonB.xnb</Output>
-      <Time>2014-01-02T15:58:32-06:00</Time>
+      <Time>2014-01-03T18:26:11.5339277-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Menu\buttonA.png</Source>
@@ -2303,7 +2303,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\buttonA.xnb</Output>
-      <Time>2014-01-02T15:58:32-06:00</Time>
+      <Time>2014-01-03T18:26:11.5319276-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Menu\Gametypes\tdmInfographic.png</Source>
