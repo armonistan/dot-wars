@@ -647,7 +647,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_shotgun.xnb</Output>
-      <Time>2013-07-02T16:33:08-05:00</Time>
+      <Time>2014-01-03T18:50:33.9448984-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Projectiles\bullet_sniper.png</Source>
@@ -656,7 +656,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_sniper.xnb</Output>
-      <Time>2013-07-02T16:33:08-05:00</Time>
+      <Time>2014-01-03T18:50:33.9498987-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Projectiles\bullet_standard.png</Source>
@@ -665,7 +665,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_standard.xnb</Output>
-      <Time>2013-07-02T16:33:08-05:00</Time>
+      <Time>2014-01-03T18:50:33.9528989-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Projectiles\flare_blue.png</Source>
@@ -2285,7 +2285,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\buttonA.xnb</Output>
-      <Time>2014-01-02T13:37:18-06:00</Time>
+      <Time>2014-01-02T17:52:53-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Menu\buttonB.png</Source>
@@ -2294,7 +2294,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\buttonB.xnb</Output>
-      <Time>2014-01-02T13:37:08-06:00</Time>
+      <Time>2014-01-02T17:53:02-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Menu\menuSelector.png</Source>
@@ -2511,6 +2511,15 @@
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\menu\confirm_style_2_002.xnb</Output>
       <Time>2013-08-10T15:29:25.1605418-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Waves\juggernautRicohet.wav</Source>
+      <Name>Audio\Waves\juggernautRicohet</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\juggernautRicohet.xnb</Output>
+      <Time>2014-01-03T18:50:33.9358979-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
