@@ -99,7 +99,8 @@ namespace DotWars
             drag = 0;
 
             LoadContent(mH.GetTextureManager());
-            setModeIndex();//set mode index
+            if(!(this is Tossable))
+                setModeIndex();//set mode index
         }
 
         private void setModeIndex()
