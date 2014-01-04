@@ -42,7 +42,15 @@ namespace DotWars
 
                 if (spawnCounter > spawnTime)
                 {
-                    isGoodSpawnPoint = temp.GetAllButAlliesInRadius(affilation, spawnPoint, 100).Count == 0;
+                    isGoodSpawnPoint = true;
+
+                    foreach (var agent in mH.GetNPCManager().GetNPCs())
+                    {
+                        if (agent.GetAffiliation() != affiliation && NPCManager.IsNPCInRadius(agent, spawnPoint, 100))
+                        {
+                            isGoodSpawnPoint = false;
+                        }
+                    }
                 }
                 else
                 {
@@ -58,7 +66,15 @@ namespace DotWars
 
                 if (spawnCounter > spawnTime)
                 {
-                    isGoodSpawnPoint = temp.GetAllButAlliesInRadius(affilation, spawnPoint, 100).Count == 0;
+                    isGoodSpawnPoint = true;
+
+                    foreach (var agent in mH.GetNPCManager().GetNPCs())
+                    {
+                        if (agent.GetAffiliation() != affiliation && NPCManager.IsNPCInRadius(agent, spawnPoint, 100))
+                        {
+                            isGoodSpawnPoint = false;
+                        }
+                    }
                 }
                 else
                 {

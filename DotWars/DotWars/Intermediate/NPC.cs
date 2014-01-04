@@ -224,9 +224,9 @@ namespace DotWars
             float distSquared = 1000000;
 
             //Collisions
-            foreach (NPC a in mH.GetNPCManager().GetAllButAllies(affiliation)) //first go through every single npc
+            foreach (NPC a in mH.GetNPCManager().GetNPCs()) //first go through every single npc
             {
-                if (distSquared > PathHelper.DistanceSquared(a.GetOriginPosition(), tempOPos)) 
+                if (a.GetAffiliation() != affiliation && distSquared > PathHelper.DistanceSquared(a.GetOriginPosition(), tempOPos)) 
                 {
                     Vector2 tempVect = CollisionHelper.IntersectPixelsSimple(this, a);
                     if (tempVect != new Vector2(-1))
@@ -410,7 +410,18 @@ namespace DotWars
 
         protected bool GrenadeDecider(ManagerHelper mH)
         {
-            if (mH.GetNPCManager().GetAlliesInRadius(target.affiliation, target.GetOriginPosition(), 100).Count > 2)
+            int enemyCount = 0;
+
+            foreach (var enemy in mH.GetNPCManager().GetAllies(target.affiliation))
+            {
+                if (NPCManager.IsNPCInRadius(enemy, target.GetOriginPosition(), 100))
+                {
+                    enemyCount++;
+                }
+            }
+
+
+            if (enemyCount > 2)
                 return true;
             return false;
         }
@@ -418,18 +429,50 @@ namespace DotWars
         protected virtual NPC TargetDecider(ManagerHelper mH)
         {
             if (mH.GetGametype() is Survival)
-                return
-                    mH.GetNPCManager()
-                      .GetClosestInList(
-                          mH.GetNPCManager()
-                            .GetAlliesInDirection(AffliationTypes.black, GetOriginPosition(), sight, rotation, vision),
-                          this);
+            {
+                NPC closest = null;
+                float closestDistance = float.PositiveInfinity;
 
-            return
-                mH.GetNPCManager()
-                  .GetRandInList(
-                      mH.GetNPCManager()
-                        .GetAllButAlliesInDirection(affiliation, GetOriginPosition(), sight, rotation, vision), this);
+                foreach (var suicide in mH.GetNPCManager().GetAllies(NPC.AffliationTypes.black))
+                {
+                    if (NPCManager.IsNPCInRadius(suicide, GetOriginPosition(), sight) &&
+                        NPCManager.IsNPCInDirection(suicide, GetOriginPosition(), rotation, vision, mH))
+                    {
+                        float distanceToSuicide = PathHelper.Distance(GetOriginPosition(), suicide.GetOriginPosition());
+
+                        if (distanceToSuicide < closestDistance)
+                        {
+                            closestDistance = distanceToSuicide;
+                            closest = suicide;
+                        }
+                    }
+                }
+
+                return closest;
+            }
+            else
+            {
+                NPC closest = null;
+                float closestDistance = float.PositiveInfinity;
+
+                foreach (var agent in mH.GetNPCManager().GetNPCs())
+                {
+                    if (agent.GetAffiliation() != affiliation &&
+                        NPCManager.IsNPCInRadius(agent, GetOriginPosition(), sight) &&
+                        NPCManager.IsNPCInDirection(agent, GetOriginPosition(), rotation, vision, mH))
+                    {
+                        float distanceToAgent = PathHelper.Distance(GetOriginPosition(), agent.GetOriginPosition());
+
+                        if (distanceToAgent < closestDistance)
+                        {
+                            closestDistance = distanceToAgent;
+                            closest = agent;
+                        }
+                    }
+                }
+
+                return closest;
+            }
         }
 
         protected virtual void Shoot(ManagerHelper mH)
@@ -672,9 +715,24 @@ namespace DotWars
             }
             else
             {
-                tempEnemy = target ?? mH.GetNPCManager()
-                                        .GetClosestInList(mH.GetNPCManager().GetAllButAllies(affiliation),
-                                                          GetOriginPosition());
+                NPC tempClosestEnemy = null;
+                float tempClosestDistance = float.PositiveInfinity;
+
+                foreach (var agent in mH.GetNPCManager().GetNPCs())
+                {
+                    if (agent.GetAffiliation() != affiliation)
+                    {
+                        float distaceToEnemy = PathHelper.Distance(GetOriginPosition(), agent.GetOriginPosition());
+
+                        if (distaceToEnemy < tempClosestDistance)
+                        {
+                            tempClosestDistance = distaceToEnemy;
+                            tempClosestEnemy = agent;
+                        }
+                    }
+                }
+
+                tempEnemy = target != null ? target : tempClosestEnemy;
             }
 
             if (tempEnemy != null)

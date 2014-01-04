@@ -24,20 +24,21 @@ namespace DotWars
 
         public override void Update(ManagerHelper mH)
         {
-            foreach (
-                NPC a in
-                    mH.GetNPCManager().GetAllXInRadius(GetOriginPosition(), radius, mH.GetNPCManager().GetNPCs()))
+            foreach (NPC a in mH.GetNPCManager().GetNPCs())
             {
-                if (!exploaded && a.GetAffiliation() != affiliation)
+                if (NPCManager.IsNPCInRadius(a, GetOriginPosition(), radius))
                 {
-                    a.ChangeHealth(-1*damage, creator);
-                }
+                    if (!exploaded && a.GetAffiliation() != affiliation)
+                    {
+                        a.ChangeHealth(-1*damage, creator);
+                    }
 
-                //Make screen rumble
-                if (a is Commander)
-                {
-                    var tempCom = (Commander) a;
-                    mH.GetCameraManager().SetRumble(mH.GetCameraManager().GetPlayerIndex(tempCom), 1000);
+                    //Make screen rumble
+                    if (a is Commander)
+                    {
+                        var tempCom = (Commander) a;
+                        mH.GetCameraManager().SetRumble(mH.GetCameraManager().GetPlayerIndex(tempCom), 1000);
+                    }
                 }
             }
 

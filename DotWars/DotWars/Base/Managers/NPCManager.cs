@@ -12,6 +12,7 @@ namespace DotWars
 
         //Collection of NPCs
         private readonly Dictionary<NPC.AffliationTypes, List<NPC>> agents;
+        private readonly List<NPC> allAgents; 
         private readonly List<Commander> commanders;
         private List<NPC.AffliationTypes> teams = new List<NPC.AffliationTypes>();
         private List<NPC> bombers;
@@ -39,21 +40,8 @@ namespace DotWars
             maxTimeAlive = new Dictionary<NPC.AffliationTypes, float>();
             isAlive = new Dictionary<NPC.AffliationTypes, bool>();
             casualities = new Dictionary<NPC.AffliationTypes, int>();
-        }
 
-        public NPCManager(int gruntCount, int gunnerCount, int sniperCount, int medicCount, int specialistCount,
-                          int juggernautCount, int bombardierCount)
-        {
-            agents = new Dictionary<NPC.AffliationTypes, List<NPC>>();
-            bombers = new List<NPC>();
-            commanders = new List<Commander>();
-            kills = new Dictionary<NPC.AffliationTypes, int>();
-            deaths = new Dictionary<NPC.AffliationTypes, int>();
-            medicKills = 0;
-            timeAlive = new Dictionary<NPC.AffliationTypes, float>();
-            maxTimeAlive = new Dictionary<NPC.AffliationTypes, float>();
-            isAlive = new Dictionary<NPC.AffliationTypes, bool>();
-            casualities = new Dictionary<NPC.AffliationTypes, int>();
+            allAgents = new List<NPC>();
         }
 
         public void Initialize(ManagerHelper mH)
@@ -109,6 +97,7 @@ namespace DotWars
             }
 
             a.LoadContent(managers.GetTextureManager());
+            allAgents.Add(a);
         }
 
         public void Remove(NPC a)
@@ -151,6 +140,8 @@ namespace DotWars
             {
                 commanders.Remove((Commander) a);
             }
+
+            allAgents.Remove(a);
         }
 
         public void Update()
@@ -212,14 +203,7 @@ namespace DotWars
 
         public List<NPC> GetNPCs()
         {
-            var tempList = new List<NPC>();
-
-            foreach (var team in agents.Values)
-            {
-                tempList.AddRange(team);
-            }
-
-            return tempList;
+            return allAgents;
         }
 
         public List<Commander> GetCommanders()
@@ -232,203 +216,36 @@ namespace DotWars
             List<NPC> tempList;
             if (agents.TryGetValue(af, out tempList))
             {
-                return new List<NPC>(tempList);
+                return tempList;
             }
             else
             {
-                return new List<NPC>();
+                throw new Exception("Cannot find allies");
             }
-        }
-
-        public List<NPC> GetAllies(NPC.AffliationTypes af, NPC t)
-        {
-            List<NPC> them = GetAllies(af);
-
-            for (int i = 0; i < them.Count; i++)
-            {
-                if (them[i] == t)
-                {
-                    them.RemoveAt(i);
-                    break;
-                }
-            }
-
-            return them;
-        }
-
-        public List<NPC> GetAlliesInSight(NPC.AffliationTypes af, NPC c)
-        {
-            List<NPC> tempList,
-                      finalList = new List<NPC>();
-
-            foreach (NPC.AffliationTypes t in agents.Keys)
-            {
-                if (t == af)
-                {
-                    agents.TryGetValue(t, out tempList);
-                    finalList.AddRange(GetAllXInDirection(c.GetOriginPosition(), c.GetSight(), c.GetRotation(), c.GetVision(), tempList));
-                }
-            }
-
-            return finalList;
-        }
-
-        public List<NPC> GetAllButAllies(NPC.AffliationTypes af)
-        {
-            List<NPC> tempList,
-                      finalList = new List<NPC>();
-
-            foreach (NPC.AffliationTypes t in agents.Keys)
-            {
-                if (t != af)
-                {
-                    agents.TryGetValue(t, out tempList);
-                    finalList.AddRange(tempList);
-                }
-            }
-
-            return finalList;
-        }
-
-        public List<NPC> GetAllButAlliesInSight(NPC.AffliationTypes af, NPC c, ManagerHelper mH)
-        {
-            List<NPC> tempList,
-                      finalList = new List<NPC>();
-
-            foreach (NPC.AffliationTypes t in agents.Keys)
-            {
-                if (t != af)
-                {
-                    agents.TryGetValue(t, out tempList);
-                    finalList.AddRange(GetAllXInDirection(c.GetOriginPosition(), c.GetSight(), c.GetRotation(), c.GetVision(), tempList));
-                }
-            }
-
-            return finalList;
-        }
-
-        public List<NPC> GetAlliesButBombAndSnipers(NPC.AffliationTypes a)
-        {
-            var allies = new List<NPC>();
-
-            foreach (NPC n in GetAllies(a))
-            {
-                if (!(n is Bombardier) && !(n is Sniper))
-                    allies.Add(n);
-            }
-
-            return allies;
         }
 
         #endregion
 
-        #region Get In Radius
-
-        public List<NPC> GetAllButAlliesInRadius(NPC.AffliationTypes af, Vector2 p, float aw)
+        public static bool IsNPCInRadius(NPC agent, Vector2 pos,float radius)
         {
-            var finalList = new List<NPC>();
+            float distanceToNPC = PathHelper.Distance(agent.GetOriginPosition(), pos);
 
-            foreach (NPC.AffliationTypes t in agents.Keys)
-            {
-                if (t != af)
-                {
-                    finalList.AddRange(GetAlliesInRadius(t, p, aw));
-                }
-            }
-
-            return finalList;
+            return distanceToNPC <= radius;
         }
 
-        public List<NPC> GetAlliesInRadius(NPC.AffliationTypes af, Vector2 p, float aw)
+        public static bool IsNPCInDirection(NPC agent, Vector2 pos, float dir, float cone, ManagerHelper mH)
         {
-            List<NPC> tempList;
-
-            if (agents.TryGetValue(af, out tempList))
+            if (!mH.GetPathHelper().IsVectorObstructed(pos, agent.GetOriginPosition()))
             {
-                return GetAllXInRadius(p, aw, tempList);
+                float dirToAgent = PathHelper.Direction(pos, agent.GetOriginPosition());
+
+                return Math.Abs(dirToAgent - dir) < cone;
             }
             else
             {
-                foreach (NPC.AffliationTypes a in managers.GetGametype().GetTeams())
-                {
-                    if (a == af)
-                        return new List<NPC>();
-                }
-                throw new Exception("That teams does not exist.");
+                return false;
             }
         }
-
-        public List<NPC> GetAllXInRadius(Vector2 p, float r, List<NPC> nL)
-        {
-            var close = new List<NPC>();
-
-            foreach (NPC a in nL)
-            {
-                float distance = PathHelper.Distance(a.GetOriginPosition(), p);
-
-                if (distance <= r)
-                {
-                    close.Add(a);
-                }
-            }
-
-            return close;
-        }
-
-        #endregion
-
-        #region Get In Direction
-
-        public List<NPC> GetAllButAlliesInDirection(NPC.AffliationTypes af, Vector2 p, float r, float d, float aL)
-        {
-            var finalList = new List<NPC>();
-
-            foreach (NPC.AffliationTypes t in agents.Keys)
-            {
-                if (t != af)
-                {
-                    finalList.AddRange(GetAlliesInDirection(t, p, r, d, aL));
-                }
-            }
-
-            return finalList;
-        }
-
-        public List<NPC> GetAlliesInDirection(NPC.AffliationTypes af, Vector2 p, float r, float d, float aL)
-        {
-            List<NPC> tempList;
-
-            if (agents.TryGetValue(af, out tempList))
-            {
-                return GetAllXInDirection(p, r, d, aL, tempList);
-            }
-            else
-            {
-                return new List<NPC>();
-            }
-        }
-
-        public List<NPC> GetAllXInDirection(Vector2 p, float r, float d, float aL, List<NPC> nL)
-        {
-            var dirAgents = new List<NPC>();
-
-            foreach (NPC a in nL)
-            {
-                if (!managers.GetPathHelper().IsVectorObstructed(p, a.GetOriginPosition()))
-                {
-                    float dir = PathHelper.Direction(p, a.GetOriginPosition());
-
-                    if (Math.Abs(dir - d) < aL)
-                    {
-                        dirAgents.Add(a);
-                    }
-                }
-            }
-
-            return dirAgents;
-        }
-
-        #endregion
 
         #region Commanders
 
@@ -567,20 +384,6 @@ namespace DotWars
                 return closest;
             }
             return null;
-        }
-
-
-        public int GetNumBombers(NPC.AffliationTypes a)
-        {
-            int numBombers = 0;
-
-            foreach (Bomber b in bombers)
-            {
-                if (b.GetAffiliation() == a)
-                    numBombers++;
-            }
-
-            return numBombers;
         }
 
         public bool DoesNPCExist(NPC a)

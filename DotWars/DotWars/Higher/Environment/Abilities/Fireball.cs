@@ -59,9 +59,9 @@ namespace DotWars
 
                 if (mH.GetGametype() is Survival)
                 {
-                    foreach (NPC a in mH.GetNPCManager().GetAlliesInRadius(NPC.AffliationTypes.black, GetOriginPosition(), 64))
+                    foreach (NPC a in mH.GetNPCManager().GetAllies(NPC.AffliationTypes.black))
                     {
-                        if (!doomedDots.Contains(a))
+                        if (NPCManager.IsNPCInRadius(a, GetOriginPosition(), 64) && !doomedDots.Contains(a))
                         {
                             doomedDots.Add(a);
 
@@ -76,9 +76,9 @@ namespace DotWars
                 }
                 else
                 {
-                    foreach (NPC a in mH.GetNPCManager().GetAllButAlliesInRadius(affiliation, GetOriginPosition(), 64))
+                    foreach (NPC a in mH.GetNPCManager().GetNPCs())
                     {
-                        if (!doomedDots.Contains(a))
+                        if (a.GetAffiliation() != affiliation && NPCManager.IsNPCInRadius(a, GetOriginPosition(), 64) && !doomedDots.Contains(a))
                         {
                             doomedDots.Add(a);
 

@@ -53,9 +53,9 @@ namespace DotWars
 
         protected override void Shoot(ManagerHelper mH)
         {
-            foreach (NPC agent in mH.GetNPCManager().GetAlliesInRadius(affiliation, GetOriginPosition(), healRadius))
+            foreach (NPC agent in mH.GetNPCManager().GetAllies(affiliation))
             {   
-                if (agent != this)
+                if (agent != this && NPCManager.IsNPCInRadius(agent, GetOriginPosition(), healRadius))
                 {
                     agent.ChangeHealth(HEAL_NUM, this);
                     mH.GetParticleManager().AddHeal(agent);
@@ -65,15 +65,18 @@ namespace DotWars
 
         protected override NPC TargetDecider(ManagerHelper mH)
         {
-            List<NPC> allies = mH.GetNPCManager().GetAllies(affiliation, this);
+            List<NPC> allies = mH.GetNPCManager().GetAllies(affiliation);
             NPC chosenOne = null;
 
             foreach (NPC a in allies)
             {
-                if (chosenOne == null)
-                    chosenOne = a;
-                else if (a.GetPercentHealth() < chosenOne.GetPercentHealth() && !(a is Medic))
-                    chosenOne = a;
+                if (a != this)
+                {
+                    if (chosenOne == null)
+                        chosenOne = a;
+                    else if (a.GetPercentHealth() < chosenOne.GetPercentHealth() && !(a is Medic))
+                        chosenOne = a;
+                }
             }
 
             return chosenOne;

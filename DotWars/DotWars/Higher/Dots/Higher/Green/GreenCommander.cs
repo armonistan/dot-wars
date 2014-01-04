@@ -62,7 +62,19 @@ namespace DotWars
                 {
                     if (GetPercentHealth() < .5 && lastDamagerDirection != Vector2.Zero)
                         return true;
-                    if (mH.GetNPCManager().GetAllButAlliesInRadius(affiliation, GetOriginPosition(), 200).Count > 3)
+
+                    int enemyCount = 0;
+
+                    foreach (var agent in mH.GetNPCManager().GetNPCs())
+                    {
+                        if (agent.GetAffiliation() != affiliation &&
+                            NPCManager.IsNPCInRadius(agent, GetOriginPosition(), 200))
+                        {
+                            enemyCount++;
+                        }
+                    }
+
+                    if (enemyCount > 3)
                         return true;
                 }
             }

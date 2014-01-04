@@ -33,9 +33,30 @@ namespace DotWars
         {
             //do i have friends
             NPC friend = mH.GetNPCManager().GetClosestInList(mH.GetNPCManager().GetAllies(affiliation), this);
+
             if (friend != null)
-                target = mH.GetNPCManager()
-                           .GetClosestInList(mH.GetNPCManager().GetAllButAllies(affiliation), friend.GetOriginPosition());
+            {
+                float closestDistancetoTarget = float.PositiveInfinity;
+                target = null;
+
+                foreach (var team in mH.GetGametype().GetTeams())
+                {
+                    if (team != affiliation)
+                    {
+                        NPC closestTargetForTeam = mH.GetNPCManager()
+                                                     .GetClosestInList(mH.GetNPCManager().GetAllies(team),
+                                                                       friend.GetOriginPosition());
+                        float closestDiestanceToTargetForTeam = PathHelper.Distance(
+                            closestTargetForTeam.GetOriginPosition(), friend.GetOriginPosition());
+
+                        if (closestDiestanceToTargetForTeam < closestDistancetoTarget)
+                        {
+                            target = closestTargetForTeam;
+                            closestDistancetoTarget = closestDiestanceToTargetForTeam;
+                        }
+                    }
+                }
+            }
             Vector2 destination;
 
             //if so

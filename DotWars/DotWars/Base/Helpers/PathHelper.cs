@@ -277,21 +277,24 @@ namespace DotWars
         public void FindEscapePath(Vector2 pA, Vector2 pGTFA, float mD, ManagerHelper mH, float aw, Path path)
         {
             //Add blockers for enemies
-            foreach (NPC n in mH.GetNPCManager().GetAlliesInRadius(NPC.AffliationTypes.black, pA, aw))
+            foreach (NPC n in mH.GetNPCManager().GetAllies(NPC.AffliationTypes.black))
             {
-                int x = -1;
-                int y = -1;
-
-                for (int adjX = -32; adjX < 32; adjX += 32)
+                if (NPCManager.IsNPCInRadius(n, pA, aw))
                 {
-                    for (int adjY = -32; adjY < 32; adjY += 32)
-                    {
-                        x = (int) (n.GetOriginPosition().X/nodeSize.X) + adjX;
-                        y = (int) (n.GetOriginPosition().Y/nodeSize.Y);
+                    int x = -1;
+                    int y = -1;
 
-                        if ((y > 0 && y < mH.GetLevel().GetSizeOfLevel().Y) &&
-                            (x > 0 && y < mH.GetLevel().GetSizeOfLevel().X))
-                            field[x, y].SetBlocker(true);
+                    for (int adjX = -32; adjX < 32; adjX += 32)
+                    {
+                        for (int adjY = -32; adjY < 32; adjY += 32)
+                        {
+                            x = (int) (n.GetOriginPosition().X/nodeSize.X) + adjX;
+                            y = (int) (n.GetOriginPosition().Y/nodeSize.Y);
+
+                            if ((y > 0 && y < mH.GetLevel().GetSizeOfLevel().Y) &&
+                                (x > 0 && y < mH.GetLevel().GetSizeOfLevel().X))
+                                field[x, y].SetBlocker(true);
+                        }
                     }
                 }
             }

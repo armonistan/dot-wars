@@ -133,29 +133,21 @@ namespace DotWars
 
         private void Pulse(ManagerHelper mH)
         {
-            List<NPC> sillyDots = mH.GetNPCManager()
-                                    .GetAllButAlliesInRadius(NPC.AffliationTypes.grey, GetOriginPosition(), 200);
-
-            foreach (NPC a in sillyDots)
+            foreach (NPC a in mH.GetNPCManager().GetNPCs())
             {
-                float dir = PathHelper.Direction(a.GetOriginPosition(), GetOriginPosition()) + (float) Math.PI;
-
-                a.AddAcceleration(PathHelper.Direction(dir) * 15);
-
-                if (a is Commander)
+                if (NPCManager.IsNPCInRadius(a, GetOriginPosition(), 200))
                 {
-                    var tempCom = (Commander) a;
-                    mH.GetCameraManager().SetRumble(mH.GetCameraManager().GetPlayerIndex(tempCom), 512);
+                    float dir = PathHelper.Direction(a.GetOriginPosition(), GetOriginPosition()) + (float) Math.PI;
+
+                    a.AddAcceleration(PathHelper.Direction(dir) * 15);
+
+                    if (a is Commander)
+                    {
+                        var tempCom = (Commander) a;
+                        mH.GetCameraManager().SetRumble(mH.GetCameraManager().GetPlayerIndex(tempCom), 512);
+                    }
                 }
             }
-
-            //foreach (Particle p in mH.GetEnvironmentManager().GetTopParticles())
-            //{
-            //    if (PathHelper.Distance(GetOriginPosition(), p.GetOriginPosition()) < 200)
-            //    {
-            //        p.accelerations.Add(PathHelper.Direction(PathHelper.Direction(GetOriginPosition(), p.GetOriginPosition())) * 1000);
-            //    }
-            //}
         }
     }
 }

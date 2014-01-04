@@ -26,11 +26,27 @@ namespace DotWars
 
         protected override NPC TargetDecider(ManagerHelper mH)
         {
-            return
-                mH.GetNPCManager()
-                  .GetClosestInList(
-                      mH.GetNPCManager()
-                        .GetAllButAlliesInDirection(affiliation, GetOriginPosition(), sight, rotation, vision), this);
+            NPC bestEnemy = null;
+            float bestDistance = float.PositiveInfinity;
+
+            foreach (var agent in mH.GetNPCManager().GetNPCs())
+            {
+                if (agent.GetAffiliation() != affiliation &&
+                    NPCManager.IsNPCInRadius(agent, GetOriginPosition(), sight) &&
+                    NPCManager.IsNPCInDirection(agent, GetOriginPosition(), rotation, vision, mH))
+                {
+                    float distanceToEnemy = PathHelper.Distance(GetOriginPosition(), agent.GetOriginPosition());
+
+                    if (distanceToEnemy < bestDistance)
+                    {
+                        bestDistance = distanceToEnemy;
+                        bestEnemy = agent;
+                    }
+                }
+            }
+
+
+            return bestEnemy;
         }
 
         protected override void Behavior(ManagerHelper mH)
@@ -83,8 +99,23 @@ namespace DotWars
 
         protected override void NewPath(ManagerHelper mH)
         {
-            NPC tempEnemy = mH.GetNPCManager()
-                              .GetClosestInList(mH.GetNPCManager().GetAllButAllies(affiliation), GetOriginPosition());
+            NPC tempEnemy = null;
+            float shortestDistance = float.PositiveInfinity;
+
+            foreach (var agent in mH.GetNPCManager().GetNPCs())
+            {
+                if (agent.GetAffiliation() != affiliation)
+                {
+                    float distanceToAgent = PathHelper.Distance(GetOriginPosition(), agent.GetOriginPosition());
+
+                    if (distanceToAgent < shortestDistance)
+                    {
+                        shortestDistance = distanceToAgent;
+                        tempEnemy = agent;
+                    }
+                }
+            }
+
             Vector2 closetRockPosition = FindClosestRock(mH);
 
             if (closetRockPosition != new Vector2(-1, -1))

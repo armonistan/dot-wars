@@ -42,9 +42,9 @@ namespace DotWars
 
             else
             {
-                foreach (NPC a in mH.GetNPCManager().GetAllButAllies(affiliation))
+                foreach (NPC a in mH.GetNPCManager().GetNPCs())
                 {
-                    if (CollisionHelper.IntersectPixelsDirectional(a, this) != -1)
+                    if (a.GetAffiliation() != affiliation && CollisionHelper.IntersectPixelsDirectional(a, this) != -1)
                     {
                         a.ChangeHealth(-1, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.yellow));
                     }

@@ -103,10 +103,23 @@ namespace DotWars
                 spawnPick = managers.GetRandom().Next(0, suicideSpawnPoints.Count);
                 counter++;
 
-                if (
-                    managers.GetNPCManager()
-                      .GetAlliesInRadius(NPC.AffliationTypes.black, suicideSpawnPoints[spawnPick].GetOriginPosition(), 60)
-                      .Count < 1)
+                List<NPC> suicides = managers.GetNPCManager().GetAllies(NPC.AffliationTypes.black);
+                int suicideCount = 0;
+
+                foreach (NPC suicide in suicides)
+                {
+                    if (NPCManager.IsNPCInRadius(suicide, suicideSpawnPoints[spawnPick].GetOriginPosition(), 60))
+                    {
+                        suicideCount++;
+                    }
+
+                    if (suicideCount >= 1)
+                    {
+                        break;
+                    }
+                }
+
+                if (suicideCount < 1)
                     proceed = true;
             } while (!proceed && counter < 240);
 

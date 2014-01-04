@@ -45,14 +45,27 @@ namespace DotWars
             {
                 if (GetPercentHealth() < .5)
                     return true;
-                foreach (NPC ally in mH.GetNPCManager().GetAlliesInRadius(affiliation, GetOriginPosition(), 200))
+
+                foreach (NPC ally in mH.GetNPCManager().GetAllies(affiliation))
                 {
-                    if (ally.GetHealth() < (ally.GetMaxHealth() / 2))
+                    if (NPCManager.IsNPCInRadius(ally, GetOriginPosition(), 200) && ally.GetHealth() < (ally.GetMaxHealth() / 2))
                     {
                         return true;
                     }
                 }
-                if (mH.GetNPCManager().GetAllButAlliesInRadius(affiliation, GetOriginPosition(), 200).Count > 3)
+
+                //Check for number of enemies
+                int enemyCount = 0;
+
+                foreach (var agent in mH.GetNPCManager().GetNPCs())
+                {
+                    if (agent.GetAffiliation() != affiliation && NPCManager.IsNPCInRadius(agent, GetOriginPosition(), 200))
+                    {
+                        enemyCount++;
+                    }
+                }
+
+                if (enemyCount > 3)
                     return true;
             }
 

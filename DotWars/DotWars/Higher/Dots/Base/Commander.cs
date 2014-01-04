@@ -244,11 +244,32 @@ namespace DotWars
             {
                 #region General Combat Emergency
 
-                bool hasAllies = (mH.GetNPCManager().GetAlliesInRadius(affiliation, GetOriginPosition(), 250).Count > 3);
-                bool isThreat = ((target != null) &&
-                                 mH.GetNPCManager()
-                                   .GetAlliesInRadius(target.GetAffiliation(), target.GetOriginPosition(), target.GetAwareness())
-                                   .Count > 2 || target is Commander);
+                int closeAllyCount = 0;
+
+                foreach (var ally in mH.GetNPCManager().GetAllies(affiliation))
+                {
+                    if (NPCManager.IsNPCInRadius(ally, GetOriginPosition(), 250))
+                    {
+                        closeAllyCount++;
+                    }
+                }
+
+                int closeEnemiesCount = 0;
+
+                if (target != null)
+                {
+                    foreach (var enemy in mH.GetNPCManager().GetAllies(target.GetAffiliation()))
+                    {
+                        if (NPCManager.IsNPCInRadius(enemy, target.GetOriginPosition(), target.GetAwareness()))
+                        {
+                            closeEnemiesCount++;
+                        }
+                    }
+                    
+                }
+
+                bool hasAllies = (closeAllyCount > 3);
+                bool isThreat = ((target != null) && closeEnemiesCount > 2 || target is Commander);
 
                 if (hasAllies && isThreat)
                     return true;
@@ -263,7 +284,18 @@ namespace DotWars
                 else if (tempGameType is Conquest)
                 {
                     var temp = (Conquest) tempGameType;
-                    hasAllies = (mH.GetNPCManager().GetAlliesInRadius(affiliation, GetOriginPosition(), 250).Count > 2);
+
+                    int allyCount = 0;
+                    foreach (var ally in mH.GetNPCManager().GetAllies(affiliation))
+                    {
+                        if (NPCManager.IsNPCInRadius(ally, GetOriginPosition(), 250))
+                        {
+                            allyCount++;
+                        }
+                    }
+
+                    hasAllies = (allyCount > 2);
+
                     var closestBase = temp.GetClosestInList(temp.GetEnemyBases(affiliation), GetOriginPosition());
                     bool isNearBase = closestBase != null && (PathHelper.Distance(GetOriginPosition(), closestBase.GetOriginPosition()) < 128) ;
 
@@ -274,19 +306,32 @@ namespace DotWars
                 {
                     var temp = (CaptureTheFlag) tempGameType;
 
-                    if (tempGameType is CaptureTheFlag)
+                    int allyCount = 0;
+                    int enemyCount = 0;
+                    foreach (var agent in mH.GetNPCManager().GetNPCs())
                     {
-                        hasAllies = (mH.GetNPCManager().GetAlliesInRadius(affiliation, GetOriginPosition(), 250).Count >
-                                     2);
-                        bool isSucidal =
-                            (mH.GetNPCManager()
-                               .GetAllButAlliesInRadius(affiliation,
-                                                        temp.GetEnemyBase(affiliation).GetMyFlag().GetOriginPosition(),
-                                                        128)
-                               .Count > 2);
-
-                        return (hasAllies && isSucidal);
+                        if (agent.GetAffiliation() == affiliation)
+                        {
+                            if (NPCManager.IsNPCInRadius(agent, GetOriginPosition(), 250))
+                            {
+                                allyCount++;
+                            }
+                        }
+                        else
+                        {
+                            if (NPCManager.IsNPCInRadius(agent,
+                                                         temp.GetEnemyBase(affiliation).GetMyFlag().GetOriginPosition(),
+                                                         128))
+                            {
+                                enemyCount++;
+                            }
+                        }
                     }
+
+                    hasAllies = (allyCount > 2);
+                    bool isSucidal = (enemyCount > 2);
+
+                    return (hasAllies && isSucidal);
                 }
 
                 else if (tempGameType is Assault)
@@ -295,27 +340,60 @@ namespace DotWars
 
                     if (temp.GetAttacker() == affiliation)
                     {
-                        hasAllies = (mH.GetNPCManager().GetAlliesInRadius(affiliation, GetOriginPosition(), 250).Count >
-                                     2);
-                        bool isSucidal =
-                            (mH.GetNPCManager()
-                               .GetAllButAlliesInRadius(affiliation,
-                                                        temp.GetEnemyBase(affiliation).GetMyFlag().GetOriginPosition(),
-                                                        128)
-                               .Count > 2);
+                        int allyCount = 0;
+                        int enemyCount = 0;
+                        foreach (var agent in mH.GetNPCManager().GetNPCs())
+                        {
+                            if (agent.GetAffiliation() == affiliation)
+                            {
+                                if (NPCManager.IsNPCInRadius(agent, GetOriginPosition(), 250))
+                                {
+                                    allyCount++;
+                                }
+                            }
+                            else
+                            {
+                                if (NPCManager.IsNPCInRadius(agent,
+                                                             temp.GetEnemyBase(affiliation).GetMyFlag().GetOriginPosition(),
+                                                             128))
+                                {
+                                    enemyCount++;
+                                }
+                            }
+                        }
+
+                        hasAllies = (allyCount > 2);
+                        bool isSucidal = (enemyCount > 2);
 
                         return (hasAllies && isSucidal);
                     }
-
                     else
                     {
-                        hasAllies = (mH.GetNPCManager().GetAlliesInRadius(affiliation, GetOriginPosition(), 250).Count >
-                                     2);
-                        isThreat = ((target != null) &&
-                                    mH.GetNPCManager()
-                                      .GetAlliesInRadius(target.GetAffiliation(), target.GetOriginPosition(),
-                                                         target.GetAwareness())
-                                      .Count > 2 || target is Commander);
+                        int allyCount = 0;
+                        int enemyCount = 0;
+                        foreach (var agent in mH.GetNPCManager().GetNPCs())
+                        {
+                            if (agent.GetAffiliation() == affiliation)
+                            {
+                                if (NPCManager.IsNPCInRadius(agent, GetOriginPosition(), 250))
+                                {
+                                    allyCount++;
+                                }
+                            }
+                            else if (target != null && agent.GetAffiliation() == target.GetAffiliation())
+                            {
+                                if (NPCManager.IsNPCInRadius(agent,
+                                                             target.GetOriginPosition(),
+                                                             target.GetAwareness()))
+                                {
+                                    enemyCount++;
+                                }
+                            }
+                        }
+
+
+                        hasAllies = (allyCount > 2);
+                        isThreat = enemyCount > 2 || target is Commander;
 
                         return (hasAllies && isThreat);
                     }
@@ -444,21 +522,41 @@ namespace DotWars
                 {
                     NPC captor = temp.GetEnemyBase(affiliation).GetMyFlag().GetCaptor();
 
+                    NPC closestEnemy = null;
+                    float closestDistanceToEnemy = float.PositiveInfinity;
+
+                    foreach (var team in mH.GetGametype().GetTeams())
+                    {
+                        if (team != affiliation)
+                        {
+                            NPC closestEnemyForTeam =
+                                mH.GetNPCManager().GetClosestInList(mH.GetNPCManager().GetAllies(team), captor);
+                            float closestDistanceToEnemyForTeam =
+                                PathHelper.Distance(closestEnemyForTeam.GetOriginPosition(), captor.GetOriginPosition());
+
+                            if (closestDistanceToEnemyForTeam < closestDistanceToEnemy)
+                            {
+                                closestDistanceToEnemy = closestDistanceToEnemyForTeam;
+                                closestEnemy = closestEnemyForTeam;
+                            }
+                        }
+                    }
+
                     if (captor == this)
+                    {
                         mH.GetPathHelper()
-                                 .FindClearPath(GetOriginPosition(), temp.GetAllyBase(affiliation).GetOriginPosition(),
-                                                mH, path);
-                    else if (
-                        mH.GetNPCManager().GetClosestInList(mH.GetNPCManager().GetAllButAllies(affiliation), captor) !=
-                        null)
+                          .FindClearPath(GetOriginPosition(), temp.GetAllyBase(affiliation).GetOriginPosition(),
+                                         mH, path);
+                    }
+                    else if (closestEnemy != null)
+                    {
                         mH.GetPathHelper()
-                                 .FindClearPath(GetOriginPosition(),
-                                                mH.GetNPCManager()
-                                                  .GetClosestInList(
-                                                      mH.GetNPCManager().GetAllButAllies(affiliation), captor)
-                                                  .GetOriginPosition(), mH, path);
+                          .FindClearPath(GetOriginPosition(), closestEnemy.GetOriginPosition(), mH, path);
+                    }
                     else
+                    {
                         mH.GetPathHelper().FindClearPath(GetOriginPosition(), captor.GetOriginPosition(), mH, path);
+                    }
                 }
             }
 
@@ -499,7 +597,7 @@ namespace DotWars
             Claimable c = temp.GetClosestClaimable(GetOriginPosition());
             NPC enemy =
                 mH.GetNPCManager()
-                  .GetClosestInList(mH.GetNPCManager().GetAlliesInSight(AffliationTypes.black, this),
+                  .GetClosestInList(mH.GetNPCManager().GetAllies(AffliationTypes.black),
                                     GetOriginPosition());
 
             if (enemy != null && PathHelper.Distance(GetOriginPosition(), enemy.GetOriginPosition()) < 200)

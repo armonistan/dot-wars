@@ -37,9 +37,18 @@ namespace DotWars
         protected override void Behavior(ManagerHelper mH)
         {
             //am i threatened?
-            List<NPC> annoying = mH.GetNPCManager().GetAllButAlliesInRadius(affiliation, GetOriginPosition(), awareness);
+            threatened = false;
+            foreach (NPC agent in mH.GetNPCManager().GetNPCs())
+            {
+                if (agent.GetAffiliation() != affiliation &&
+                    NPCManager.IsNPCInRadius(agent, GetOriginPosition(), awareness))
+                {
+                    threatened = true;
+                }
+            }
+
             //also temp
-            threatened = (annoying.Count > 0) || campingCounter >= campingEnd;
+            threatened = threatened || campingCounter >= campingEnd;
 
             target = TargetDecider(mH);
 
@@ -103,7 +112,19 @@ namespace DotWars
 
             foreach (Vector2 v in sniperSpots)
             {
-                if (mH.GetNPCManager().GetAllButAlliesInRadius(affiliation, v, 200).Count == 0)
+                bool validPoint = true;
+
+                foreach (NPC agent in mH.GetNPCManager().GetNPCs())
+                {
+                    if (agent.GetAffiliation() != affiliation &&
+                        NPCManager.IsNPCInRadius(agent, GetOriginPosition(), 200))
+                    {
+                        validPoint = false;
+                        break;
+                    }
+                }
+
+                if (validPoint)
                 {
                     endPoint = v;
                     break;
@@ -115,7 +136,27 @@ namespace DotWars
 
         protected override NPC TargetDecider(ManagerHelper mH)
         {
-            return mH.GetNPCManager().GetClosestInList(mH.GetNPCManager().GetAllButAllies(affiliation), this);
+            NPC closest = null;
+            float closestDistance = float.PositiveInfinity;
+
+            foreach (var affliationType in mH.GetGametype().GetTeams())
+            {
+                if (affliationType != affiliation)
+                {
+                    NPC closestForTeam =
+                        mH.GetNPCManager().GetClosestInList(mH.GetNPCManager().GetAllies(affliationType), this);
+                    float closestDistanceForTeam = PathHelper.Distance(GetOriginPosition(),
+                                                                       closestForTeam.GetOriginPosition());
+
+                    if (closestDistanceForTeam < closestDistance)
+                    {
+                        closest = closestForTeam;
+                        closestDistance = closestDistanceForTeam;
+                    }
+                }
+            }
+
+            return closest;
         }
 
         protected override void Shoot(ManagerHelper mH)

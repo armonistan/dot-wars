@@ -26,9 +26,9 @@ namespace DotWars
         {
             if (!taken)
             {
-                foreach (NPC a in mH.GetNPCManager().GetAllButAllies(NPC.AffliationTypes.black))
+                foreach (NPC a in mH.GetNPCManager().GetCommanders())
                 {
-                    if (CollisionHelper.IntersectPixelsRadius(a, this, 16, 32) != new Vector2(-1) && (a is Commander))
+                    if (CollisionHelper.IntersectPixelsRadius(a, this, 16, 32) != new Vector2(-1))
                     {
                         if (mH.GetNPCManager().GetAllies(a.GetAffiliation()).Count < mH.GetGametype().GetPopCap())
                         {

@@ -36,13 +36,22 @@ namespace DotWars
         protected override void Behavior(ManagerHelper mH)
         {
             //am i threatened?
-            List<NPC> annoying = mH.GetNPCManager().GetAllButAlliesInRadius(affiliation, GetOriginPosition(), awareness);
+            threatened = false;
+            foreach (NPC agent in mH.GetNPCManager().GetNPCs())
+            {
+                if (agent.GetAffiliation() != affiliation &&
+                    NPCManager.IsNPCInRadius(agent, GetOriginPosition(), awareness))
+                {
+                    threatened = true;
+                }
+            }
+
             //also temp
-            threatened = (annoying.Count > 0) || campingCounter >= campingEnd;
+            threatened = threatened || campingCounter >= campingEnd;
 
             target = TargetDecider(mH);
 
-            if (path.GetMoving())
+            if (!path.GetMoving())
             {
                 if (threatened)
                 {
@@ -97,7 +106,19 @@ namespace DotWars
 
             foreach (Vector2 v in sniperSpots)
             {
-                if (mH.GetNPCManager().GetAllButAlliesInRadius(affiliation, v, 200).Count == 0)
+                bool validPoint = true;
+
+                foreach (NPC agent in mH.GetNPCManager().GetNPCs())
+                {
+                    if (agent.GetAffiliation() != affiliation &&
+                        NPCManager.IsNPCInRadius(agent, GetOriginPosition(), 200))
+                    {
+                        validPoint = false;
+                        break;
+                    }
+                }
+
+                if (validPoint)
                 {
                     endPoint = v;
                     break;

@@ -63,15 +63,18 @@ namespace DotWars
                 }
                 else
                 {
-                    foreach (NPC a in mH.GetNPCManager().GetAllButAllies(affiliation))
+                    foreach (NPC a in mH.GetNPCManager().GetNPCs())
                     {
-                        var test = PathHelper.Distance(GetOriginPosition(), a.GetOriginPosition());
-
-                        if (test < ((frameIndex + 1)*6))
+                        if (a.GetAffiliation() != affiliation)
                         {
-                            a.AddAcceleration(PathHelper.DirectionVector(GetOriginPosition(), a.GetOriginPosition()) * 10);
+                            var test = PathHelper.Distance(GetOriginPosition(), a.GetOriginPosition());
 
-                            a.ChangeHealth(-1 * DAMAGE, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.green));
+                            if (test < ((frameIndex + 1)*6))
+                            {
+                                a.AddAcceleration(PathHelper.DirectionVector(GetOriginPosition(), a.GetOriginPosition()) * 10);
+
+                                a.ChangeHealth(-1 * DAMAGE, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.green));
+                            }
                         }
                     }
                 }

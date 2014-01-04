@@ -117,7 +117,20 @@ namespace DotWars
                 return (target != null) && (PathHelper.Distance(GetOriginPosition(), target.GetOriginPosition()) < 200);
 
             else
-                return mH.GetNPCManager().GetAllButAlliesInRadius(affiliation, GetOriginPosition(), 120).Count > 1;
+            {
+                int enemyCount = 0;
+
+                foreach (var agent in mH.GetNPCManager().GetNPCs())
+                {
+                    if (agent.GetAffiliation() != affiliation &&
+                        NPCManager.IsNPCInRadius(agent, GetOriginPosition(), 120))
+                    {
+                        enemyCount++;
+                    }
+                }
+
+                return enemyCount > 1;
+            }
 
             return false;
         }
