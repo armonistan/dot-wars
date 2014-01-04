@@ -8,7 +8,7 @@ namespace DotWars
     {
         #region NPC Vectors
 
-        private const int NUM_DIRECTIONS = 8;
+        private const int NUM_DIRECTIONS = 64;
         private static readonly Vector2[] DIRECTIONS = new Vector2[NUM_DIRECTIONS];
         private static readonly float[] ROTATIONS = new float[NUM_DIRECTIONS];
 
@@ -16,7 +16,7 @@ namespace DotWars
 
         public static void Initialize()
         {
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < NUM_DIRECTIONS; i++)
             {
                 ROTATIONS[i] = (float) Math.PI*2*i/NUM_DIRECTIONS;
                 DIRECTIONS[i] = new Vector2((float) Math.Cos(ROTATIONS[i]), (float) Math.Sin(ROTATIONS[i]));
@@ -88,24 +88,16 @@ namespace DotWars
         {
             Vector2 tempVector = new Vector2(-1),
                     tempRadius = new Vector2(sA.origin.X);
-
-            var tempDirs = new List<int>(NUM_DIRECTIONS);
-
+            
             for (int i = 0; i < NUM_DIRECTIONS; i++)
             {
                 tempVector = IntersectPixelsPoint(fA + (DIRECTIONS[i]*tempRadius), sB);
 
                 if (tempVector != -Vector2.One)
                 {
-                    tempDirs.Add(i);
+                    return i;
                 }
             }
-
-            if (tempDirs.Count > 0)
-            {
-                return tempDirs[0];
-            }
-
             return -1;
         }
 

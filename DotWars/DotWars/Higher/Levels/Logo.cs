@@ -49,8 +49,8 @@ namespace DotWars
 
             //PlayerScreen
             textures.Add("Backgrounds/Menu/CommanderCards", new Rectangle(0, 0, 260, 432));
-            textures.Add("Backgrounds/Menu/buttonA", new Rectangle(0, 0, 76, 76));
-            textures.Add("Backgrounds/Menu/buttonB", new Rectangle(0, 0, 76, 76));
+            textures.Add("Backgrounds/Menu/buttonA", new Rectangle(0, 0, 48, 48));
+            textures.Add("Backgrounds/Menu/buttonB", new Rectangle(0, 0, 48, 48));
 
             //GameScreen
             textures.Add("Backgrounds/Menu/GameScreen", new Rectangle(0, 0, 1248, 720));
