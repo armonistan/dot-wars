@@ -116,7 +116,7 @@ namespace DotWars
 
             originPosition = position + origin;
 
-            mH.GetAudioManager().Play("explosion", AudioManager.RandomVolume(mH), AudioManager.RandomPitch(mH), 0, false);
+            mH.GetAudioManager().Play(AudioManager.EXPLOSION, AudioManager.RandomVolume(mH), AudioManager.RandomPitch(mH), 0, false);
         }
 
         public void Set(Vector2 p, int d, NPC.AffliationTypes aT, ManagerHelper mH)
@@ -129,7 +129,7 @@ namespace DotWars
             damage = d;
             exploaded = false;
 
-            mH.GetAudioManager().Play("explosion", AudioManager.RandomVolume(mH), AudioManager.RandomPitch(mH), 0, false);
+            mH.GetAudioManager().Play(AudioManager.EXPLOSION, AudioManager.RandomVolume(mH), AudioManager.RandomPitch(mH), 0, false);
         }
     }
 }

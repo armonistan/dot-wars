@@ -356,25 +356,25 @@ namespace DotWars
 
         protected override void ShotgunSound(ManagerHelper mH)
         {
-            mH.GetAudioManager().Play("commanderShotgun", 0.90f,
+            mH.GetAudioManager().Play(AudioManager.COMMANDER_SHOTGUN, 0.90f,
                 (float)(mH.GetRandom().NextDouble() * -0.25), 0, false);
         }
 
         protected override void ShootSound(ManagerHelper mH)
         {
-            mH.GetAudioManager().Play("commanderShoot", 0.90f,
+            mH.GetAudioManager().Play(AudioManager.COMMANDER_SHOOT, 0.90f,
                 (float)(mH.GetRandom().NextDouble() * -0.25), 0, false);
         }
 
         protected override void FlareSound(ManagerHelper mH)
         {
-            mH.GetAudioManager().Play("commanderFlare", 0.90f,
+            mH.GetAudioManager().Play(AudioManager.COMMANDER_FLARE, 0.90f,
                    AudioManager.RandomPitch(mH), 0, false);
         }
 
         protected override void GrenadeSound(ManagerHelper mH)
         {
-            mH.GetAudioManager().Play("commanderGrenade", 0.90f,
+            mH.GetAudioManager().Play(AudioManager.COMMANDER_GRENADE, 0.90f,
                    AudioManager.RandomPitch(mH), 0, false);
         }
     }

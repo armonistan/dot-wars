@@ -10,6 +10,7 @@ namespace DotWars
         protected double campingCounter; //search counter
         protected double campingEnd;
         protected bool threatened;
+
         private const float TURN_AMOUNT = 0.05f;
 
         public Bombardier(String aN, Vector2 p)
@@ -121,7 +122,7 @@ namespace DotWars
         {
             mH.GetNPCManager().Add(new Bomber(BomberOrigin(mH), affiliation, target, mH));
 
-            mH.GetAudioManager().Play("staticCall", AudioManager.RandomVolume(mH),
+            mH.GetAudioManager().Play(AudioManager.STATIC, AudioManager.RandomVolume(mH),
                 AudioManager.RandomPitch(mH), 0, false);
         }
     }

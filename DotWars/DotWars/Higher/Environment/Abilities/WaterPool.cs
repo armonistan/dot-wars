@@ -37,7 +37,7 @@ namespace DotWars
             splash.SetOriginPosition(originPosition);
             splash.position = position;
 
-            mH.GetAudioManager().Play("waterSound", (float)mH.GetRandom().NextDouble() / 4 + 0.5f, AudioManager.RandomPitch(mH), 0, false);
+            mH.GetAudioManager().Play(AudioManager.WATER, (float)mH.GetRandom().NextDouble() / 4 + 0.5f, AudioManager.RandomPitch(mH), 0, false);
         }
 
         public override void LoadContent(TextureManager tM)

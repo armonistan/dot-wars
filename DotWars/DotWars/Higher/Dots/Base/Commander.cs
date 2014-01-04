@@ -26,6 +26,9 @@ namespace DotWars
         protected float timer;
         public int weaponType; //0 is the machine gun, 1 is shot gun
 
+        private const string SHOTGUN_SHOOT = "shotgunShoot";
+        private const string FLARE_SHOOT = "flareShoot";
+
         #endregion
 
         public Commander(String aN, Vector2 p)
@@ -188,7 +191,7 @@ namespace DotWars
             for (int s = 0; s < 7; s++)
             {
                 mH.GetProjectileManager()
-              .AddProjectile("Projectiles/bullet_shotgun", GetOriginPosition() + tempPos, this,
+              .AddProjectile(ProjectileManager.SHOTGUN, GetOriginPosition() + tempPos, this,
                              PathHelper.Direction(rotation + (float) mH.GetRandom().NextDouble()/4 - 0.125f)*500, 18,
                              false, true, 0.5f);
             }
@@ -198,7 +201,7 @@ namespace DotWars
 
         protected virtual void ShotgunSound(ManagerHelper mH)
         {
-            mH.GetAudioManager().Play("shotgunShoot", AudioManager.RandomVolume(mH),
+            mH.GetAudioManager().Play(SHOTGUN_SHOOT, AudioManager.RandomVolume(mH),
                 (float)(mH.GetRandom().NextDouble() * -0.25), 0, false);
         }
 
@@ -207,7 +210,7 @@ namespace DotWars
             Vector2 tempPos = PathHelper.Direction(rotation + (float)(Math.PI / 2)) * new Vector2(10);
 
             mH.GetProjectileManager()
-              .AddProjectile("Projectiles/bullet_standard", GetOriginPosition() + tempPos, this,
+              .AddProjectile(ProjectileManager.STANDARD, GetOriginPosition() + tempPos, this,
                              PathHelper.Direction(rotation + (float)mH.GetRandom().NextDouble() / 8 - 0.0625f) * 400, 15,
                              false, true, 1.3f);
 
@@ -216,7 +219,7 @@ namespace DotWars
 
         protected virtual void ShootSound(ManagerHelper mH)
         {
-            mH.GetAudioManager().Play("standardShoot", AudioManager.RandomVolume(mH),
+            mH.GetAudioManager().Play(AudioManager.STANDARD_SHOOT, AudioManager.RandomVolume(mH),
                 AudioManager.RandomPitch(mH), 0, false);
         }
 
@@ -229,7 +232,7 @@ namespace DotWars
 
         protected virtual void FlareSound(ManagerHelper mH)
         {
-            mH.GetAudioManager().Play("flareShoot", AudioManager.RandomVolume(mH),
+            mH.GetAudioManager().Play(FLARE_SHOOT, AudioManager.RandomVolume(mH),
                    AudioManager.RandomPitch(mH), 0, false);
         }
 

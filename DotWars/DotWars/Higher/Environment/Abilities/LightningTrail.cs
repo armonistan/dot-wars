@@ -22,7 +22,7 @@ namespace DotWars
 
             lifeTimer = 2;
 
-            mH.GetAudioManager().Play("sparkSound", (float)mH.GetRandom().NextDouble() / 4 + 0.5f, AudioManager.RandomPitch(mH), 0, false);
+            mH.GetAudioManager().Play(AudioManager.SPARK, (float)mH.GetRandom().NextDouble() / 4 + 0.5f, AudioManager.RandomPitch(mH), 0, false);
         }
 
         public override void Update(ManagerHelper mH)

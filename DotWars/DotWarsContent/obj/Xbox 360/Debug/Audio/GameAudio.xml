@@ -406,7 +406,7 @@
     Wave
     {
         Name = DotWars;
-        File = C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWarsContent\Audio\Waves\testMusic.wav;
+        File = C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWarsContent\Audio\Waves\DotWars.wav;
         Build Settings Last Modified Low = 2971936063;
         Build Settings Last Modified High = 30317612;
 

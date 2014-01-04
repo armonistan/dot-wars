@@ -39,7 +39,7 @@ namespace DotWars
             originPosition = p;
             position = p - origin;
 
-            mH.GetAudioManager().Play("fireballSound", (float)mH.GetRandom().NextDouble()/4 + 0.75f, AudioManager.RandomPitch(mH), 0, false);
+            mH.GetAudioManager().Play(AudioManager.FIREBALL, (float)mH.GetRandom().NextDouble()/4 + 0.75f, AudioManager.RandomPitch(mH), 0, false);
         }
 
         public override void Update(ManagerHelper mH)

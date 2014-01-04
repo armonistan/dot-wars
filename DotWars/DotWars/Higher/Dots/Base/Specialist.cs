@@ -27,10 +27,10 @@ namespace DotWars
             Vector2 tempPos = PathHelper.Direction(rotation + (float) (Math.PI/2))*new Vector2(10);
 
             mH.GetProjectileManager()
-              .AddProjectile("Projectiles/bullet_rocket", GetOriginPosition() + tempPos, this,
+              .AddProjectile(ProjectileManager.ROCKET, GetOriginPosition() + tempPos, this,
                              PathHelper.Direction(rotation) * 300, 100, true, true, 5);
 
-            mH.GetAudioManager().Play("rocketShoot", AudioManager.RandomVolume(mH),
+            mH.GetAudioManager().Play(AudioManager.SPECIALIST_SHOOT, AudioManager.RandomVolume(mH),
                 AudioManager.RandomPitch(mH), 0, false);
         }
     }

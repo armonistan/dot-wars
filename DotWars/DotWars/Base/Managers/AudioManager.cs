@@ -20,8 +20,30 @@ namespace DotWars
 
         #region Location Constants
 
-        public const string AUDIO = "Audio/";
-        public const string MUSIC = "Music/";
+        public static string DOT_WARS = "DotWars";
+        public static string CONFIRM = "confirm";
+        public static string RETURN = "return";
+
+        public static string STANDARD_SHOOT = "standardShoot";
+        public static string GRENADE_SHOOT = "grenadeShoot";
+        public static string SNIPER_SHOOT = "sniperShoot";
+        public static string SPECIALIST_SHOOT = "rocketShoot";
+        public static string HEAL_SOUND = "healShoot";
+        public static string STATIC = "staticCall";
+        public static string PLANE = "planeFly";
+        public static string JUGGERNAUT_RICOHET = "juggernautRicohet";
+
+        public static string COMMANDER_SHOOT = "commanderShoot";
+        public static string COMMANDER_SHOTGUN = "commanderShotgun";
+        public static string COMMANDER_GRENADE = "commanderGrenade";
+        public static string COMMANDER_FLARE = "commanderFlare";
+
+        public static string FIREBALL = "fireballSound";
+        public static string LARGE_ROCK = "rockSound";
+        public static string SPARK = "sparkSound";
+        public static string WATER = "waterSound";
+
+        public static string EXPLOSION = "explosion";
 
         #endregion
 
@@ -47,7 +69,7 @@ namespace DotWars
             }
         }
 
-    public void Play(string a, float v, float pI, float pA, bool keep)
+        public void Play(string a, float v, float pI, float pA, bool keep)
         {
             Cue sound = theSounds.GetCue(a);
             sound.SetVariable("Volume", v);

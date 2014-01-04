@@ -57,7 +57,7 @@ namespace DotWars
 
             targetSprite = new Sprite(targeAsset, targetPosition);
 
-            mH.GetAudioManager().Play("planeFly", AudioManager.RandomVolume(mH),
+            mH.GetAudioManager().Play(AudioManager.PLANE, AudioManager.RandomVolume(mH),
                 AudioManager.RandomPitch(mH), 0, false);
         }
 
@@ -116,7 +116,7 @@ namespace DotWars
             for (int i = 0; i < NUM_BOMBS; i++)
             {
                 mH.GetProjectileManager()
-                  .AddProjectile("Projectiles/bullet_bombs", GetOriginPosition(), this,
+                  .AddProjectile(ProjectileManager.BOMB, GetOriginPosition(), this,
                                  PathHelper.Direction(rotation) * 500, 50, true, false, 0.5f);
             }
         }

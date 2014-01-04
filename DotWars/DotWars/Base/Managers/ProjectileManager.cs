@@ -21,6 +21,12 @@ namespace DotWars
         private readonly int tossableCap;
 
         private ManagerHelper managers;
+
+        public static string SHOTGUN = "Projectiles/bullet_shotgun";
+        public static string STANDARD = "Projectiles/bullet_standard";
+        public static string ROCKET = "Projectiles/bullet_rocket";
+        public static string BOMB = "Projectiles/bullet_bombs";
+        public static string GRENADE = "Projectiles/grenade";
         #endregion
 
         public ProjectileManager(int pC, int tC, int fC)

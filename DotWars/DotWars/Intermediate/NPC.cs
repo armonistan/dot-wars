@@ -144,18 +144,7 @@ namespace DotWars
 
                 #endregion
             }
-            /*
-            #region Calculate EndPath
 
-            if (path != null)
-            {
-                float d = path.GetDistance();
-                const float b = (float) .005;
-                pathTimerEnd = d*b;
-            }
-
-            #endregion
-            */
             PosUpdate(mH);
             originPosition = position + origin; //Update originPosition
         }
@@ -484,11 +473,11 @@ namespace DotWars
             Vector2 tempPos = PathHelper.Direction(rotation + (float) (Math.PI/2))*new Vector2(10);
 
             mH.GetProjectileManager()
-              .AddProjectile("Projectiles/bullet_standard", GetOriginPosition() + tempPos, this,
+              .AddProjectile(ProjectileManager.STANDARD, GetOriginPosition() + tempPos, this,
                              PathHelper.Direction(rotation + (float) mH.GetRandom().NextDouble()/8 - 0.0625f)*400, 25,
                              false, true, 5);
 
-            mH.GetAudioManager().Play("standardShoot", AudioManager.RandomVolume(mH),
+            mH.GetAudioManager().Play(AudioManager.STANDARD_SHOOT, AudioManager.RandomVolume(mH),
                 AudioManager.RandomPitch(mH), 0, false);
         }
 
@@ -497,7 +486,7 @@ namespace DotWars
             Vector2 tempPos = PathHelper.Direction(rotation + (float) (Math.PI/2))*new Vector2(10);
 
             mH.GetProjectileManager()
-              .AddTossable("Projectiles/grenade", GetOriginPosition() + tempPos, this,
+              .AddTossable(ProjectileManager.GRENADE, GetOriginPosition() + tempPos, this,
                            PathHelper.Direction(rotation)*500, 100, true, 1.5f);
 
             GrenadeSound(mH);
@@ -505,7 +494,7 @@ namespace DotWars
 
         protected virtual void GrenadeSound(ManagerHelper mH)
         {
-            mH.GetAudioManager().Play("grenadeShoot", AudioManager.RandomVolume(mH),
+            mH.GetAudioManager().Play(AudioManager.GRENADE_SHOOT, AudioManager.RandomVolume(mH),
                    AudioManager.RandomPitch(mH), 0, false);
         }
 

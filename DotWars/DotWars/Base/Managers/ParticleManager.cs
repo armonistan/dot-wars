@@ -149,7 +149,7 @@ namespace DotWars
             AddParticle("Effects/particle_heal", managers.GetRandom().Next(5), tempMode, n.GetOriginPosition(),
                         PathHelper.Direction((float) (managers.GetRandom().NextDouble()*2*Math.PI))*50, 2, 0.03f, 1, 0);
 
-            managers.GetAudioManager().Play("healShoot", AudioManager.RandomVolume(managers),
+            managers.GetAudioManager().Play(AudioManager.HEAL_SOUND, AudioManager.RandomVolume(managers),
                 AudioManager.RandomPitch(managers), 0, false);
         }
 

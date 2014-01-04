@@ -82,11 +82,11 @@ namespace DotWars
             Vector2 tempPos = PathHelper.Direction(rotation + (float)(Math.PI / 2)) * new Vector2(10);
 
             mH.GetProjectileManager()
-              .AddProjectile("Projectiles/bullet_standard", GetOriginPosition() + tempPos, this,
+              .AddProjectile(ProjectileManager.STANDARD, GetOriginPosition() + tempPos, this,
                              PathHelper.Direction(rotation + (float)mH.GetRandom().NextDouble() / 8 - 0.0625f) * 1200, 90,
                              false, true, 5);
 
-            mH.GetAudioManager().Play("sniperShoot", AudioManager.RandomVolume(mH),
+            mH.GetAudioManager().Play(AudioManager.SNIPER_SHOOT, AudioManager.RandomVolume(mH),
                 AudioManager.RandomPitch(mH), 0, false);
         }
 

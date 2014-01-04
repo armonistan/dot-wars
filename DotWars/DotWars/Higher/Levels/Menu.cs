@@ -142,7 +142,7 @@ namespace DotWars
 
             version = 1.1f;
 
-            sounds.Play("DotWars", 0.9f, 0, 0, true);
+            sounds.Play(AudioManager.DOT_WARS, 0.9f, 0, 0, true);
         }
 
         public override void LoadContent(ContentManager cM)
@@ -260,7 +260,7 @@ namespace DotWars
                             }
                             else if (keyState.IsKeyDown(Keys.Space) || theStates[c].IsButtonDown(Buttons.Start))
                             {
-                                sounds.Play("confirm", 3, 0, 0, false);
+                                sounds.Play(AudioManager.CONFIRM, 3, 0, 0, false);
 
                                 //TODO: Connect to other screens
                                 switch (startOptionInt)
@@ -306,7 +306,7 @@ namespace DotWars
                         commanderCards[0].SetModeIndex(2);
                         commanderSlots[0] = 0;
                         indexOfKing = 0;
-                        sounds.Play("confirm", 3, 0, 0, false);
+                        sounds.Play(AudioManager.CONFIRM, 3, 0, 0, false);
                         stage = MenuSelect.levelSelect;
                         ResetGametypeCards();
                         ResetAllCounters();
@@ -318,7 +318,7 @@ namespace DotWars
                         commanderCards[0].SetModeIndex(2);
                         commanderSlots[1] = 0;
                         indexOfKing = 0;
-                        sounds.Play("confirm", 3, 0, 0, false);
+                        sounds.Play(AudioManager.CONFIRM, 3, 0, 0, false);
                         stage = MenuSelect.levelSelect;
                         ResetGametypeCards();
                         ResetAllCounters();
@@ -330,7 +330,7 @@ namespace DotWars
                         commanderCards[0].SetModeIndex(2);
                         commanderSlots[2] = 0;
                         indexOfKing = 0;
-                        sounds.Play("confirm", 3, 0, 0, false);
+                        sounds.Play(AudioManager.CONFIRM, 3, 0, 0, false);
                         stage = MenuSelect.levelSelect;
                         ResetGametypeCards();
                         ResetAllCounters();
@@ -342,7 +342,7 @@ namespace DotWars
                         commanderCards[0].SetModeIndex(2);
                         commanderSlots[3] = 0;
                         indexOfKing = 0;
-                        sounds.Play("confirm", 3, 0, 0, false);
+                        sounds.Play(AudioManager.CONFIRM, 3, 0, 0, false);
                         stage = MenuSelect.levelSelect;
                         ResetGametypeCards();
                         ResetAllCounters();
@@ -385,7 +385,7 @@ namespace DotWars
                                         {
                                             commanderSlots[commanderCards[c].GetFrameIndex() - 1] = c;
 
-                                            sounds.Play("confirm", 3, 0, 0, false);
+                                            sounds.Play(AudioManager.CONFIRM, 3, 0, 0, false);
                                             if (indexOfKing == -1)
                                             {
                                                 indexOfKing = c;
@@ -425,7 +425,7 @@ namespace DotWars
                                              theStates[((indexOfKing != -1) ? indexOfKing : c)].IsButtonDown
                                                  (Buttons.Back))
                                     {
-                                        sounds.Play("return", 3, 0, 0, false);
+                                        sounds.Play(AudioManager.RETURN, 3, 0, 0, false);
                                         stage = MenuSelect.start;
                                         ResetAllCounters();
                                         for (int i = 0; i < commanderCards.Length; i++)
@@ -453,7 +453,7 @@ namespace DotWars
                                     else if (keyState.IsKeyDown(Keys.Space) ||
                                              (indexOfKing != -1 && theStates[indexOfKing].IsButtonDown(Buttons.Start)))
                                     {
-                                        sounds.Play("confirm", 3, 0, 0, false);
+                                        sounds.Play(AudioManager.CONFIRM, 3, 0, 0, false);
                                         stage = MenuSelect.levelSelect;
                                         ResetGametypeCards();
                                         ResetAllCounters();
@@ -548,7 +548,7 @@ namespace DotWars
                         {
                             if (map == 0 || !Guide.IsTrialMode)
                             {
-                                sounds.Play("confirm", 3, 0, 0, false);
+                                sounds.Play(AudioManager.CONFIRM, 3, 0, 0, false);
                                 if (gametype == 0 || gametype == 5)
                                 {
                                     //Set up teams
@@ -569,7 +569,7 @@ namespace DotWars
                         }
                         else if (theStates[indexOfKing].IsButtonDown(Buttons.Back))
                         {
-                            sounds.Play("return", 3, 0, 0, false);
+                            sounds.Play(AudioManager.RETURN, 3, 0, 0, false);
                             stage = MenuSelect.characterSelect;
                             gametype = 0;
                             map = 0;
@@ -716,7 +716,7 @@ namespace DotWars
                                         //If so, start game
                                         if (numReady == 4)
                                         {
-                                            sounds.Play("confirm", 3, 0, 0, false);
+                                            sounds.Play(AudioManager.CONFIRM, 3, 0, 0, false);
                                             SetUpTwoTeams();
                                             SetUpGametypes();
                                             return SetUpMaps();
@@ -724,7 +724,7 @@ namespace DotWars
                                     }
                                     else if (keyState.IsKeyDown(Keys.Escape) || theStates[c].IsButtonDown(Buttons.Back))
                                     {
-                                        sounds.Play("return", 3, 0, 0, false);
+                                        sounds.Play(AudioManager.RETURN, 3, 0, 0, false);
                                         //Reset Team choice variables
                                         for (int k = 0; k < controllerCards.Length; k++)
                                         {
@@ -787,7 +787,7 @@ namespace DotWars
                         {
                             if (keyState.IsKeyDown(Keys.Escape) || theStates[c].IsButtonDown(Buttons.Back))
                             {
-                                sounds.Play("return", 3, 0, 0, false);
+                                sounds.Play(AudioManager.RETURN, 3, 0, 0, false);
                                 stage = MenuSelect.start;
                                 ResetAllCounters();
                             }
@@ -808,7 +808,7 @@ namespace DotWars
                         {
                             if (keyState.IsKeyDown(Keys.Escape) || theStates[c].IsButtonDown(Buttons.Back))
                             {
-                                sounds.Play("return", 3, 0, 0, false);
+                                sounds.Play(AudioManager.RETURN, 3, 0, 0, false);
                                 stage = MenuSelect.start;
                                 ResetAllCounters();
                             }
@@ -829,7 +829,7 @@ namespace DotWars
                         {
                             if (keyState.IsKeyDown(Keys.Escape) || theStates[c].IsButtonDown(Buttons.Back))
                             {
-                                sounds.Play("return", 3, 0, 0, false);
+                                sounds.Play(AudioManager.RETURN, 3, 0, 0, false);
                                 stage = MenuSelect.start;
                                 ResetAllCounters();
                             }
@@ -854,7 +854,7 @@ namespace DotWars
                             }
                             else if (keyState.IsKeyDown(Keys.B) || theStates[c].IsButtonDown(Buttons.B))
                             {
-                                sounds.Play("return", 3, 0, 0, false);
+                                sounds.Play(AudioManager.RETURN, 3, 0, 0, false);
                                 stage = MenuSelect.start;
                                 ResetAllCounters();
                             }

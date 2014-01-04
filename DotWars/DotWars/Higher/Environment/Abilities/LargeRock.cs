@@ -95,7 +95,7 @@ namespace DotWars
 
             LoadContent(mH.GetTextureManager());
 
-            mH.GetAudioManager().Play("rockSound", (float)mH.GetRandom().NextDouble() / 4 + 0.75f, AudioManager.RandomPitch(mH), 0, false);
+            mH.GetAudioManager().Play(AudioManager.LARGE_ROCK, (float)mH.GetRandom().NextDouble() / 4 + 0.75f, AudioManager.RandomPitch(mH), 0, false);
 
             for (int i = 0; i < 10; i++)
             {

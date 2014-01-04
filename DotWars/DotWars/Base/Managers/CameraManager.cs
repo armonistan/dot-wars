@@ -486,6 +486,12 @@ namespace DotWars
             private Vector2 leftPos, rightPos;
 
             private bool shouldDrawScores;
+
+            private string gameTime = "";
+            private int lastMinute = 0;
+            private int lastSecond = 0;
+            private int[] lastScores;
+            private string[] lastScoreStrings;
             #endregion
 
             public HUD(Camera c, int i, int numTeams, bool canDrawScores)
@@ -494,7 +500,7 @@ namespace DotWars
 
                 shouldDrawScores = canDrawScores;
 
-                Vector2 safeAreaStart = new Vector2((i / 2 == 0) ? c.GetPort().TitleSafeArea.Left : 0, (i % 2 == 0) ? c.GetPort().TitleSafeArea.Top : 0);
+                Vector2 safeAreaStart = new Vector2((i / 2 == 0) ? (float) c.GetPort().TitleSafeArea.Left : 0, (i % 2 == 0) ? (float) c.GetPort().TitleSafeArea.Top : 0);
                 Vector2 safeAreaEnd = new Vector2(((i / 2 == 0) ? c.GetPort().TitleSafeArea.Left : 0) + c.GetPort().TitleSafeArea.Width, (i % 2 == 0) ? c.GetPort().TitleSafeArea.Top : 0);
 
                 leftPos = safeAreaStart + new Vector2(150, 50);
@@ -527,6 +533,15 @@ namespace DotWars
                 teammate = new Sprite("HUD/hud_teammates", leftPos + new Vector2(86, 11));
                 scoreboard = new Sprite("HUD/hud_score_frame", rightPos - new Vector2(180, -10));
                 timer = new Sprite("HUD/hud_time_frame", rightPos - new Vector2(440, -7));
+
+                lastScores = new int[numTeams];
+                lastScoreStrings = new string[numTeams];
+
+                for (int t = 0; t < numTeams; t++)
+                {
+                    lastScores[t] = 0;
+                    lastScoreStrings[t] = "" + lastScores[t];
+                }
             }
 
             public void LoadContent(ManagerHelper mH)
@@ -581,9 +596,23 @@ namespace DotWars
                     mins = timeLeft / 60,
                     secs = timeLeft % 60;
 
+                if (mins != lastMinute)
+                {
+                    lastMinute = mins;
+
+                    gameTime = mins + ":" + ((secs < 10) ? "0" : "") + secs;
+                }
+
+                if (secs != lastSecond)
+                {
+                    lastSecond = secs;
+
+                    gameTime = mins + ":" + ((secs < 10) ? "0" : "") + secs;
+                }
+
                 timer.Draw(sB, Vector2.Zero, mH);
 
-                mH.GetTextureManager().DrawString(sB, mins + ":" + ((secs < 10) ? "0" : "") + secs, timer.GetOriginPosition(),
+                mH.GetTextureManager().DrawString(sB, gameTime, timer.GetOriginPosition(),
                                                   Color.White, TextureManager.FontSizes.small, true);
 
                 scoreboard.Draw(sB, Vector2.Zero, mH);
@@ -609,7 +638,14 @@ namespace DotWars
 
                     if (mH.GetGametype().GetTeams()[x] != NPC.AffliationTypes.black)
                     {
-                        mH.GetTextureManager().DrawString(sB, mH.GetGametype().GetScores()[x] + "", rightPos - new Vector2((4 - x) * 82 - 24, -10), teamColor, TextureManager.FontSizes.small, true);
+                        if (lastScores[x] != mH.GetGametype().GetScores()[x])
+                        {
+                            lastScores[x] = mH.GetGametype().GetScores()[x];
+
+                            lastScoreStrings[x] = lastScores[x] + "";
+                        }
+
+                        mH.GetTextureManager().DrawString(sB, lastScoreStrings[x], rightPos - new Vector2((4 - x) * 82 - 24, -10), teamColor, TextureManager.FontSizes.small, true);
                     }
                 }
 

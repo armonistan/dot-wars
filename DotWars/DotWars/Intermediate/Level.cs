@@ -188,10 +188,10 @@ namespace DotWars
             sB.Begin();
             cameras.DrawSplit(sB, managers);
 
-            if (drawHUD && cameras.GetPauser() == null)
-            {
-                cameras.GetHud(cameras.GetCameras()[0]).DrawScores(sB, managers);
-            }
+            //if (drawHUD && cameras.GetPauser() == null)
+            //{
+            //    cameras.GetHud(cameras.GetCameras()[0]).DrawScores(sB, managers);
+            //}
 
             cameras.DrawPause(sB, managers);
             sB.End();
