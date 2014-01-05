@@ -47,6 +47,11 @@ namespace DotWars
             textures.Add("Backgrounds/Menu/triggersOnly", new Rectangle(0, 0, 1248, 720));
             textures.Add("Backgrounds/Menu/menuSelector", new Rectangle(0, 0, 625, 139));
 
+            //Dotapedia
+            textures.Add("Backgrounds/Menu/dotapedia", new Rectangle(0, 0, 1248, 720));
+            textures.Add("Dots/dotAtlas", new Rectangle(0, 0, 128, 32));
+            textures.Add("Dots/commanderAtlas", new Rectangle(0, 0, 32, 32));
+
             //PlayerScreen
             textures.Add("Backgrounds/Menu/CommanderCards", new Rectangle(0, 0, 260, 432));
             textures.Add("Backgrounds/Menu/buttonA", new Rectangle(0, 0, 48, 48));
@@ -159,6 +164,7 @@ namespace DotWars
             textures.Add("Backgrounds/PreGame/profileSniper", new Rectangle(0, 0, 400, 200));
             textures.Add("Backgrounds/PreGame/profileSpecialist", new Rectangle(0, 0, 200, 300));
             textures.Add("Backgrounds/PreGame/tipsBases", new Rectangle(0, 0, 200, 200));
+            textures.Add("Backgrounds/PreGame/profileMeanie", new Rectangle(0, 0, 250, 250));
             #endregion
 
             #region Default Textures

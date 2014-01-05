@@ -2530,6 +2530,42 @@
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\juggernautRicohet.xnb</Output>
       <Time>2014-01-03T18:55:11.8874703-06:00</Time>
     </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Menu\dotapedia.png</Source>
+      <Name>Textures\Backgrounds\Menu\dotapedia</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\dotapedia.xnb</Output>
+      <Time>2014-01-04T15:53:36.4669384-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\dotAtlas.png</Source>
+      <Name>Textures\Dots\dotAtlas</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\dotAtlas.xnb</Output>
+      <Time>2014-01-04T18:28:57.9538669-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Dots\commanderAtlas.png</Source>
+      <Name>Textures\Dots\commanderAtlas</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\commanderAtlas.xnb</Output>
+      <Time>2014-01-04T17:37:22.2790345-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\PreGame\profileMeanie.png</Source>
+      <Name>Textures\Backgrounds\PreGame\profileMeanie</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileMeanie.xnb</Output>
+      <Time>2014-01-04T18:17:27.2613616-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Xbox360</TargetPlatform>

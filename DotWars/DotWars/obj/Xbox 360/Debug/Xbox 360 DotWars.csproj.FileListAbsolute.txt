@@ -4560,3 +4560,7 @@ C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 36
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\obj\Xbox 360\Debug\ResolveAssemblyReference.cache
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\obj\Xbox 360\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\juggernautRicohet.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\dotapedia.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\dotAtlas.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\commanderAtlas.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileMeanie.xnb

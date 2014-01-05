@@ -279,6 +279,10 @@ Content\Audio\Waves\return.xnb
 Content\Audio\Waves\menu\back_style_2_002.xnb
 Content\Audio\Waves\menu\confirm_style_2_002.xnb
 Content\Audio\Waves\juggernautRicohet.xnb
+Content\Textures\Backgrounds\Menu\dotapedia.xnb
+Content\Textures\Dots\dotAtlas.xnb
+Content\Textures\Dots\commanderAtlas.xnb
+Content\Textures\Backgrounds\PreGame\profileMeanie.xnb
 Content\Audio\GameAudio.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb
