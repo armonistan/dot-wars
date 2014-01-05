@@ -18,14 +18,11 @@ namespace DotWars
         private List<NPC> bombers;
 
         private ManagerHelper managers;
-        private Dictionary<NPC.AffliationTypes, int> kills;
-        private Dictionary<NPC.AffliationTypes, int> deaths;
-        private int medicKills;
-        private Dictionary<NPC.AffliationTypes, float> timeAlive;
-        private Dictionary<NPC.AffliationTypes, float> maxTimeAlive;
-        private Dictionary<NPC.AffliationTypes, bool> isAlive;
-        private Dictionary<NPC.AffliationTypes, int> casualities;
+
+        private Dictionary<NPC.AffliationTypes, StatisticsManager.StatHolder> stats; 
+
         private int[,] killsToCommanders;
+        private int medicKills;
         #endregion
 
         public NPCManager()
@@ -33,15 +30,11 @@ namespace DotWars
             agents = new Dictionary<NPC.AffliationTypes, List<NPC>>();
             bombers = new List<NPC>();
             commanders = new List<Commander>();
-            kills = new Dictionary<NPC.AffliationTypes, int>();
-            deaths = new Dictionary<NPC.AffliationTypes, int>();
             medicKills = 0;
-            timeAlive = new Dictionary<NPC.AffliationTypes, float>();
-            maxTimeAlive = new Dictionary<NPC.AffliationTypes, float>();
-            isAlive = new Dictionary<NPC.AffliationTypes, bool>();
-            casualities = new Dictionary<NPC.AffliationTypes, int>();
 
             allAgents = new List<NPC>();
+
+            stats = new Dictionary<NPC.AffliationTypes, StatisticsManager.StatHolder>();
         }
 
         public void Initialize(ManagerHelper mH)
@@ -53,12 +46,7 @@ namespace DotWars
 
             foreach (NPC.AffliationTypes a in teams)
             {
-                kills.Add(a, 0);
-                deaths.Add(a, 0);
-                timeAlive.Add(a, 0);
-                maxTimeAlive.Add(a, 0);
-                isAlive.Add(a, false);
-                casualities.Add(a, 0);
+                stats.Add(a, new StatisticsManager.StatHolder(0, 0, new StatisticsManager.DoubleWrapper(0), 0, false, 0));
             }
 
             killsToCommanders = new int [4,4];
@@ -92,7 +80,7 @@ namespace DotWars
 
             if (a is Commander)
             {
-                isAlive[a.GetPersonalAffilation()] = true;
+                stats[a.GetAffiliation()].IsAlive = true;
                 commanders.Add((Commander) a);
             }
 
@@ -148,16 +136,20 @@ namespace DotWars
         {
             NPC a;
 
-            foreach (NPC.AffliationTypes af in teams)
-                if (isAlive[af])
-                    timeAlive[af] += (float)managers.GetGameTime().ElapsedGameTime.TotalSeconds;
+            foreach (var commander in stats)
+            {
+                if (commander.Value.IsAlive)
+                {
+                        commander.Value.TimeAlive.Increment(managers.GetGameTime().ElapsedGameTime.TotalSeconds);
+                }
+            }
 
             foreach (var team in agents.Values)
             {
                 for (int i = 0; i < team.Count; i++)
                 {
                     a = team[i];
-
+            
                     a.Update(managers);
                     if (!team.Contains(a))
                     {
@@ -165,12 +157,12 @@ namespace DotWars
                     }
                 }
             }
-
+            
             for (int i = 0; i < bombers.Count; i++)
             {
                 a = bombers[i];
-
-                a.Update(managers);
+            
+                //a.Update(managers);
                 if (!bombers.Contains(a))
                 {
                     i--;
@@ -402,43 +394,11 @@ namespace DotWars
             return false;
         }
 
-        public Dictionary<NPC.AffliationTypes, int> GetKills()
-        {
-            return kills;
-        }
-
         public int GetMedicKills()
         {
             return medicKills;
         }
 
-        public Dictionary<NPC.AffliationTypes, int> GetDeaths()
-        {
-            return deaths;
-        }
-        
-        public void ResetKills(ManagerHelper mH)
-        {
-            foreach (NPC.AffliationTypes a in mH.GetGametype().GetTeams())
-            {
-                kills[a] = 0;
-            }
-	}
-
-        public Dictionary<NPC.AffliationTypes, float> GetMaxTimeAlive()
-        {
-            return maxTimeAlive;
-        }
-
-        public int[,] GetKillsToCommanders()
-        {
-            return killsToCommanders;
-        }
-
-        public Dictionary<NPC.AffliationTypes, int> GetCasualities()
-        {
-            return casualities;
-        }
         #endregion
 
         public void UpdateMedicKills()
@@ -448,25 +408,20 @@ namespace DotWars
 
         public void UpdateKills(NPC.AffliationTypes a)
         {
-            kills[a]++;
+            stats[a].Kills++;
         }
 
         public void UpdateDeaths(NPC.AffliationTypes a)
         {
-            if (timeAlive[a] > maxTimeAlive[a])
-                maxTimeAlive[a] = timeAlive[a];
-            timeAlive[a] = 0;
-            isAlive[a] = false;
-
-            deaths[a]++;
-        }
-        
-        public void ResetDeaths(ManagerHelper mH)
-        {
-            foreach (NPC.AffliationTypes a in mH.GetGametype().GetTeams())
+            if (stats[a].TimeAlive.Get() > stats[a].MaxTimeAlive)
             {
-                deaths[a] = 0;
+                stats[a].MaxTimeAlive = stats[a].TimeAlive.Get();
             }
+
+            stats[a].TimeAlive.Set(0);
+            stats[a].IsAlive = false;
+
+            stats[a].Deaths++;
         }
 
         private void UpdateKillsToCommanders(NPC.AffliationTypes killer, NPC.AffliationTypes killed)
@@ -544,7 +499,14 @@ namespace DotWars
         private void UpdateCasualities(NPC.AffliationTypes killedAffilation)
         {
             if(killedAffilation != NPC.AffliationTypes.black)
-            casualities[killedAffilation]++;
+            {
+                stats[killedAffilation].Casualties++;
+            }
+        }
+
+        public StatisticsManager.StatHolder GetStats(NPC.AffliationTypes team)
+        {
+            return stats[team];
         }
     }
 }

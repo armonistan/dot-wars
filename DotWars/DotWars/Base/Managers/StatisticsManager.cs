@@ -8,18 +8,94 @@ namespace DotWars
 {
     public class StatisticsManager
     {
-        protected Dictionary<NPC.AffliationTypes, int> kills;
-        protected Dictionary<NPC.AffliationTypes, int> deaths;
+        public class DoubleWrapper
+        {
+            private double value;
+
+            public DoubleWrapper(double value)
+            {
+                Set(value);
+            }
+
+            public void Set(double value)
+            {
+                this.value = value;
+            }
+
+            public void Increment(double amount)
+            {
+                this.value += amount;
+            }
+
+            public double Get()
+            {
+                return value;
+            }
+        }
+
+        public class StatHolder
+        {
+            public int Kills
+            {
+                get { return kills; }
+                set { kills = value; }
+            }
+
+            public int Deaths
+            {
+                get { return deaths; }
+                set { deaths = value; }
+            }
+
+            public DoubleWrapper TimeAlive
+            {
+                get { return timeAlive; }
+                set { timeAlive = value; }
+            }
+
+            public double MaxTimeAlive
+            {
+                get { return maxTimeAlive; }
+                set { maxTimeAlive = value; }
+            }
+
+            public bool IsAlive
+            {
+                get { return isAlive; }
+                set { isAlive = value; }
+            }
+
+            public int Casualties
+            {
+                get { return casualties; }
+                set { casualties = value; }
+            }
+
+            private int kills;
+            private int deaths;
+            private DoubleWrapper timeAlive;
+            private double maxTimeAlive;
+            private bool isAlive;
+            private int casualties;
+
+            public StatHolder(int kills, int deaths, DoubleWrapper timeAlive, double maxTimeAlive, bool isAlive, int casualties)
+            {
+                this.kills = kills;
+                this.deaths = deaths;
+                this.timeAlive = timeAlive;
+                this.maxTimeAlive = maxTimeAlive;
+                this.isAlive = isAlive;
+                this.casualties = casualties;
+            }
+        }
+
+        private Dictionary<NPC.AffliationTypes, StatHolder> stats; 
 
         protected int medicKills;
-
-        protected Dictionary<NPC.AffliationTypes, float> timeAlive;
 
         protected Dictionary<NPC.AffliationTypes, int> flagsCaptured;
         
         protected Dictionary<NPC.AffliationTypes, int> flagsReturned;
-
-        protected Dictionary<NPC.AffliationTypes, int> casualities;
 
         private int[,] killsToCommanders;
         private int vendittaKills;
@@ -52,20 +128,18 @@ namespace DotWars
             foreach (NPC.AffliationTypes a in t)
                 if (a != NPC.AffliationTypes.black)
                     teams.Add(a);
+
+            stats = new Dictionary<NPC.AffliationTypes, StatHolder>();
         }
 
-        public void Intitialize()
+        public void Intitialize(ManagerHelper mH)
         {
             //kd stuff
-            kills = new Dictionary<NPC.AffliationTypes, int>();
-            deaths = new Dictionary<NPC.AffliationTypes, int>();
             medicKills = 0;
-            timeAlive = new Dictionary<NPC.AffliationTypes, float>();
             flagsCaptured = new Dictionary<NPC.AffliationTypes, int>();
             flagsReturned = new Dictionary<NPC.AffliationTypes, int>();
             rocksDestroyed = new Dictionary<NPC.AffliationTypes, int>();
             dotsRecruited = new Dictionary<NPC.AffliationTypes, int>();
-            casualities = new Dictionary<NPC.AffliationTypes, int>();
 
             killsToCommanders = new int[4, 4];
             vendittaKills = 0;
@@ -76,26 +150,20 @@ namespace DotWars
             lightningTravelledCounter = 0;
             foreach (NPC.AffliationTypes a in affilations)
             {
-                kills.Add(a, 0);
-                deaths.Add(a, 0);
-                timeAlive.Add(a, 0);
                 flagsCaptured.Add(a, 0);
                 flagsReturned.Add(a, 0);
                 rocksDestroyed.Add(a, 0);
                 dotsRecruited.Add(a, 0);
-                casualities.Add(a, 0);
+
+                stats.Add(a, mH.GetNPCManager().GetStats(a));
             }
         }
 
         public void Update(ManagerHelper mH) 
         {
-            kills = mH.GetNPCManager().GetKills();
-            deaths = mH.GetNPCManager().GetDeaths();
             medicKills = mH.GetNPCManager().GetMedicKills();
-            timeAlive = mH.GetNPCManager().GetMaxTimeAlive();
             flagsCaptured = mH.GetGametype().GetFlagsCaptured();
             flagsReturned = mH.GetGametype().GetFlagsReturned();
-            killsToCommanders = mH.GetNPCManager().GetKillsToCommanders();
             rocksCreatedCounter += (mH.GetNPCManager().GetSpecificCommander(NPC.AffliationTypes.green) != null) ? 
                 mH.GetNPCManager().GetSpecificCommander(NPC.AffliationTypes.green).GetPowerStatistic() : 0;
             rocksDestroyed = mH.GetAbilityManager().GetRocksDestroyedByCommanders();
@@ -105,37 +173,28 @@ namespace DotWars
             mostTimeFlagAway = mH.GetGametype().GetMostTimeFlagAway();
             quickestFlagCapture = mH.GetGametype().GetQuickestFlagCapture();
             dotsSetOnFireCounter = mH.GetAbilityManager().GetDotsSetOnFireCounter();
-            casualities = mH.GetNPCManager().GetCasualities();
-        }
 
-        public Dictionary<NPC.AffliationTypes, int> GetKills()
-        {
-            return kills;
-        }
-        
-        public Dictionary<NPC.AffliationTypes, int> GetDeaths()
-        {
-            return deaths;
+
         }
 
         private NPC.AffliationTypes CalculateMaxTime()
         {
-            float max = 0;
+            double max = 0;
             NPC.AffliationTypes team = NPC.AffliationTypes.black;
             bool immortal = false; //flag that indicates someone never died
 
             foreach (NPC.AffliationTypes a in affilations)
             {
-                if (timeAlive[a] == 0)
+                if (stats[a].MaxTimeAlive == 0)
                 {
                     immortal = true;
                     team = a;
-                    max = timeAlive[a];
+                    max = stats[a].MaxTimeAlive;
                 }
-                else if (!immortal && timeAlive[a] > max)
+                else if (!immortal && stats[a].MaxTimeAlive > max)
                 {
                     team = a;
-                    max = timeAlive[a];
+                    max = stats[a].MaxTimeAlive;
                 }
             }
             return team;
@@ -330,7 +389,7 @@ namespace DotWars
                            break;
                    }
 
-                    result += ("K: " + kills[a] + " D: " + deaths[a] + "\n");
+                    result += ("K: " + stats[a].Kills + " D: " + stats[a].Deaths + "\n");
                 }
             }
             return result;
@@ -355,10 +414,10 @@ namespace DotWars
                      result += "Dian ";
                      break;
              }
-            if ((int)timeAlive[CalculateMaxTime()] == 0)
+            if (stats[CalculateMaxTime()].MaxTimeAlive == 0)
                 result += "never died!";
             else
-                result += " lived longest (" + (int)timeAlive[CalculateMaxTime()] + " sec" + (((int)timeAlive[CalculateMaxTime()] != 1) ? "s" : "") + ")";
+                result += " lived longest (" + (int)stats[CalculateMaxTime()].MaxTimeAlive + " sec" + (((int)stats[CalculateMaxTime()].MaxTimeAlive != 1) ? "s" : "") + ")";
             
             return result;
         }
@@ -634,9 +693,9 @@ namespace DotWars
 
             foreach (NPC.AffliationTypes a in teams)
             {
-                if (casualities[a] > maxCasualities)
+                if (stats[a].Casualties > maxCasualities)
                 {
-                    maxCasualities = casualities[a];
+                    maxCasualities = stats[a].Casualties;
                     affilationOfMaxCasualities = a;
                 }
             }

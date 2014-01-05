@@ -5,7 +5,7 @@ namespace DotWars
     public class LightningTrail : Sprite
     {
         private NPC.AffliationTypes affiliation;
-        private float lifeTimer;
+        private double lifeTimer;
         private ManagerHelper managers;
 
         public LightningTrail(ManagerHelper mH)
@@ -51,12 +51,12 @@ namespace DotWars
                 }
             }
 
-            lifeTimer -= (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            lifeTimer -= mH.GetGameTime().ElapsedGameTime.TotalSeconds;
 
             base.Update(mH);
         }
 
-        public float GetLifeTime()
+        public double GetLifeTime()
         {
             return lifeTimer;
         }

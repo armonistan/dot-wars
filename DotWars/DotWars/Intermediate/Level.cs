@@ -95,7 +95,7 @@ namespace DotWars
             abilities.Initialize(managers);
             backgrounds.Initialize(managers);
             spawns.Intialize(managers);
-            statistics.Intitialize();
+            statistics.Intitialize(managers);
         }
 
         public virtual void LoadContent(ContentManager cM)
@@ -164,10 +164,10 @@ namespace DotWars
                 objects.DrawBottom(sB, displacement);
                 particles.DrawBottom(sB, displacement);
                 typeOfGame.DrawBottom(sB, displacement);
-
+                
                 projectiles.Draw(sB, displacement);
                 agents.DrawLowest(sB, displacement);
-
+                
                 abilities.DrawTop(sB, displacement);
                 spawns.Draw(sB, displacement);
                 particles.DrawTop(sB, displacement);
@@ -175,7 +175,7 @@ namespace DotWars
                 typeOfGame.DrawTop(sB, displacement);
                 agents.DrawHighest(sB, displacement);
                 backgrounds.Drawforegrounds(sB, displacement);
-
+                
                 if (drawHUD && cameras.GetPauser() == null)
                 {
                     cameras.GetHud(c).Draw(sB, managers);

@@ -114,21 +114,24 @@ namespace DotWars
         {
             #region Spawning Commanders
 
-            for (int i = 0; i < commanders.Count; i++)
+            int counter = 0;
+            foreach (var commander in commanders)
             {
-                if (mH.GetNPCManager().GetCommander(commanders.Keys.ElementAt(i)) == null)
+                if (mH.GetNPCManager().GetCommander(commander.Key) == null)
                 {
-                    if (spawnsCounters[i] > spawnTime)
+                    if (spawnsCounters[counter] > spawnTime)
                     {
-                        SpawnCommander(mH, commanders.Keys.ElementAt(i), commanders.Values.ElementAt(i), mH.GetSpawnHelper().Spawn(commanders.Values.ElementAt(i)));
-
-                        spawnsCounters[i] = 0;
+                        SpawnCommander(mH, commander.Key, commander.Value, mH.GetSpawnHelper().Spawn(commander.Value));
+                    
+                        spawnsCounters[counter] = 0;
                     }
                     else
                     {
-                        spawnsCounters[i] += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                        spawnsCounters[counter] += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
                     }
                 }
+
+                counter++;
             }
 
             #endregion
@@ -140,12 +143,12 @@ namespace DotWars
                     return true;
                 }
             }
-
+            
             if (gameEndTimer < 0)
             {
                 return true;
             }
-
+            
             gameEndTimer -= (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
 
             return false;

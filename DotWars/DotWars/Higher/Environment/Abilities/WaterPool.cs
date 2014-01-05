@@ -8,22 +8,22 @@ namespace DotWars
     {
         //Declarations
 
-        private readonly float animateEnd;
+        private readonly double animateEnd;
 
-        private readonly float deathTime;
+        private readonly double deathTime;
 
         private Sprite splash;
-        private readonly float splashEnd;
+        private readonly double splashEnd;
         private NPC.AffliationTypes affiliation;
 
-        private float animateTimer;
+        private double animateTimer;
 
         public WaterPool()
             : base("Abilities/ability_blue_spread2", Vector2.Zero, Vector2.Zero)
         {
             animateEnd = 3;
             deathTime = 7;
-            splashEnd = 0.2f;
+            splashEnd = 0.2;
             splash = new Sprite("Abilities/ability_blue_splash", GetOriginPosition());
         }
 
@@ -76,8 +76,8 @@ namespace DotWars
             {
                 splash.SetFrameIndex((int)(animateTimer/splashEnd*splash.totalFrames));
             }
-            animateTimer += (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds +
-                            (float) (mH.GetRandom().NextDouble()/1000);
+            animateTimer += mH.GetGameTime().ElapsedGameTime.TotalSeconds +
+                            (mH.GetRandom().NextDouble()/1000);
 
             //Base Updates
             splash.Update(mH);

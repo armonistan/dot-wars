@@ -49,7 +49,7 @@ namespace DotWars
                 frameIndex = (int)((float)frameCounter/drawFrames*totalFrames);
 
                 //Spawn fire
-                if (mH.GetRandom().NextDouble() < 0.7f)
+                if (mH.GetRandom().NextDouble() < 0.7)
                 {
                     mH.GetParticleManager()
                       .AddFire(GetOriginPosition(),

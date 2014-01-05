@@ -48,6 +48,9 @@ namespace DotWars
                     field[i, j] = new Node(null, 0, 0, false, i, j);
                 }
             }
+
+            open = new List<Node>(length*width);
+            closed = new List<Node>(length*width);
         }
 
         public void LoadContent(TextureManager tM)
@@ -145,8 +148,8 @@ namespace DotWars
         {
             counter = 0;
 
-            open = new List<Node>(length*width);
-            closed = new List<Node>(length*width);
+            open.Clear();
+            closed.Clear();
 
             //Prevent excecution if current position or end position is bad
             if (pA.X < 0 || pA.X > mH.GetLevelSize().X || pA.Y < 0 || pA.Y > mH.GetLevelSize().Y ||

@@ -101,7 +101,7 @@ namespace DotWars
             //Set up dir for rotations
             float dir = rotation;
 
-                //Do Behaviour
+            //Do Behaviour
             Behavior(mH);
 
             dir = MoveNPC(mH, dir);

@@ -130,7 +130,7 @@ namespace DotWars
 
             textures.Add(cM.Load<Texture2D>("./Textures/" + assets.ElementAt(assetNumber)));
             colors.Add(new Color[textures[assetNumber].Width, textures[assetNumber].Height]);
-            var tempColors = new Color[textures[assetNumber].Width * textures[assetNumber].Height];
+            Color[] tempColors = new Color[textures[assetNumber].Width * textures[assetNumber].Height];
             textures[assetNumber].GetData(tempColors);
 
             for (int x = 0; x < textures[assetNumber].Width; x++)
@@ -144,7 +144,7 @@ namespace DotWars
             int spriteCols = frames[assetNumber].Width / nodeSize,
                 spriteRows = frames[assetNumber].Height / nodeSize;
 
-            var tempBlockers =
+            List<Vector2>[,] tempBlockers =
                 new List<Vector2>[textures[assetNumber].Width / frames[assetNumber].Width, textures[assetNumber].Height / frames[assetNumber].Height];
 
             for (int j = 0; j < tempBlockers.GetLength(0); j++)
