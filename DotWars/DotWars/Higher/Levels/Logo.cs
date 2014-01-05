@@ -220,7 +220,7 @@ namespace DotWars
             textures.Add("Projectiles/bullet_rocket", new Rectangle(0, 0, 7, 6));
             textures.Add("Projectiles/bullet_shotgun", new Rectangle(0, 0, 7, 6));
 
-            textures.Add("Projectiles/grenade", new Rectangle(0, 0, 15, 15));
+            textures.Add("Projectiles/grenade", new Rectangle(0, 0, 16, 16));
             textures.Add("Projectiles/bullet_bombs", new Rectangle(0, 0, 14, 5));
 
             textures.Add("Effects/particle_smoke", new Rectangle(0, 0, 8, 8));

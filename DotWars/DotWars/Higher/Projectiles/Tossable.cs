@@ -5,11 +5,22 @@ namespace DotWars
 {
     public class Tossable : Projectile
     {
-        public Tossable() : base(null) { 
+        private int frameDirection;
+        private double pulseTime;
+        private double frameTimer;
+        private double pulseTimer;
+
+        private double elapsedTime;
+
+        public Tossable() : base(null) {
+            frameDirection = 1;
+            frameTimer = 0.0;
+            pulseTimer = 0.0;
         }
 
         public override void Update(ManagerHelper mH)
         {
+            elapsedTime = mH.GetGameTime().ElapsedGameTime.TotalSeconds;
             if (isExplosive && drawTime <= 0)
             {
                 mH.GetParticleManager().AddExplosion(GetOriginPosition(), creator, damage);
@@ -18,8 +29,9 @@ namespace DotWars
 
             if (drawTime > 0)
             {
-                drawTime -= (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
-
+                drawTime -= (float)elapsedTime;
+                pulseTimer += elapsedTime;
+                frameTimer += elapsedTime;
                 #region Tossable Update
 
                 #region Keep it in the level
@@ -91,13 +103,27 @@ namespace DotWars
                 originPosition = position + origin;
 
                 //Update frame
-                if (frameIndex < 0)
+                if (frameIndex < 1)
                 {
                     frameIndex = 0;
+                    frameDirection = 1;
                 }
-                else if (frameIndex >= totalFrames)
+                else if (frameIndex == totalFrames - 1)
                 {
-                    frameIndex = totalFrames;
+                    frameIndex = totalFrames - 1;
+                    frameDirection = -1;
+                }
+
+                if (pulseTimer > pulseTime)
+                {
+                    pulseTime /= 2;
+                    pulseTimer = 0;
+                }
+
+                if (frameTimer > pulseTime / (totalFrames * 2))
+                {
+                    frameTimer = 0;
+                    frameIndex += frameDirection;
                 }
 
                 if (modeIndex < 0)
@@ -117,7 +143,6 @@ namespace DotWars
                 //Spawn cool things to make it look better
                 EffectSpawnCode(mH);
             }
-
             existenceTime -= (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
         }
 
@@ -132,7 +157,9 @@ namespace DotWars
         public override void Set(string a, Vector2 p, NPC n, Vector2 v, int d, bool iE, bool collide, float dT, ManagerHelper mH)
         {
             base.Set(a, p, n, v, d, iE, collide, dT, mH);
-
+            pulseTime = dT *.5;
+            frameTimer = 0.0;
+            pulseTimer = 0.0;
             drag = 0.03f;
         }
     }
