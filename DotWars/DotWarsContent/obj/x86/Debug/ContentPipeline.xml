@@ -1727,7 +1727,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\controllerCards.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>2014-01-05T17:44:36.6753902-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Relic\meteorAnimated2.png</Source>
@@ -2565,6 +2565,15 @@
       <Options>None</Options>
       <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\profileMeanie.xnb</Output>
       <Time>2014-01-04T18:17:27.2613616-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\tinytext.bmp</Source>
+      <Name>Fonts\tinytext</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>FontTextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Fonts\tinytext.xnb</Output>
+      <Time>2014-01-05T17:40:45.3551594-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

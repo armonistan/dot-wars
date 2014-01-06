@@ -283,6 +283,7 @@ Content\Textures\Backgrounds\Menu\dotapedia.xnb
 Content\Textures\Dots\dotAtlas.xnb
 Content\Textures\Dots\commanderAtlas.xnb
 Content\Textures\Backgrounds\PreGame\profileMeanie.xnb
+Content\Fonts\tinytext.xnb
 Content\Audio\GameAudio.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb

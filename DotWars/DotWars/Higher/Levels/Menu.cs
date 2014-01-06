@@ -579,7 +579,7 @@ namespace DotWars
                                 }
                             }
                         }
-                        else if (theStates[indexOfKing].IsButtonDown(Buttons.Back))
+                        else if (theStates[indexOfKing].IsButtonDown(Buttons.Back) || keyState.IsKeyDown(Keys.Escape))
                         {
                             sounds.Play("return", 3, 0, 0, false);
                             stage = MenuSelect.characterSelect;
@@ -599,7 +599,13 @@ namespace DotWars
                     //Update frames
                     mapBackground.UpdateFrame();
                     gametypeBackground.UpdateFrame();
+                    for (int c = 0; c < theStates.Length; c++)
+                    {
+                        controllerCards[c].SetModeIndex(commanderCards[c].GetFrameIndex() - 1);
+                        Console.WriteLine(commanderCards[c].GetFrameIndex() - 1);
+                    }
                     break;
+
                 case MenuSelect.teamSelect:
                     #region Team Selection
 
@@ -985,6 +991,8 @@ namespace DotWars
                         if (commanderCards[c].GetModeIndex() != 0 && commanderCards[c].GetFrameIndex() != 0)
                         {
                             controllerCards[c].Draw(sB, Vector2.Zero, managers);
+                            textures.DrawString(sB, (c+1) + "", controllerCards[c].position + new Vector2(controllerCards[c].GetFrame().Width / 2,
+                                (controllerCards[c].GetFrame().Height / 2) - 8), Color.Black, TextureManager.FontSizes.tiny, true);
                         }
                     }
                     break;

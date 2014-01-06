@@ -4564,3 +4564,4 @@ C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 36
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\dotAtlas.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\commanderAtlas.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileMeanie.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Fonts\tinytext.xnb
