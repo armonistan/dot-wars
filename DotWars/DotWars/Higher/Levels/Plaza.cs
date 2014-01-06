@@ -20,6 +20,11 @@ namespace DotWars
 
             backgrounds.AddForeground(new Sprite("Backgrounds/Plaza/plazaLighting", new Vector2(664, 504) - savingTime));
             backgrounds.AddBackground(new Sprite("Backgrounds/Plaza/plazaBackground", new Vector2(664, 504) - savingTime));
+
+            sniperSpots.Add(new Vector2(80, 270));
+            sniperSpots.Add(new Vector2(930, 100));
+            sniperSpots.Add(new Vector2(930, 950));
+            sniperSpots.Add(new Vector2(1280, 270));
         }
 
         public override void LoadContent(ContentManager cM)

@@ -23,6 +23,13 @@ namespace DotWars
             //Set up background
             backgrounds.AddBackground(new Sprite("Backgrounds/ZenGarden/zenBackground", new Vector2(656, 496)));
             backgrounds.AddForeground(new Sprite("Backgrounds/ZenGarden/zenForeground", new Vector2(656, 496)));
+
+            sniperSpots.Add(new Vector2(90, 60));
+            sniperSpots.Add(new Vector2(290, 780));
+            sniperSpots.Add(new Vector2(670, 250));
+            sniperSpots.Add(new Vector2(670, 780));
+            sniperSpots.Add(new Vector2(1180, 960));
+            sniperSpots.Add(new Vector2(1290, 340));
         }
 
         public override void LoadContent(ContentManager cM)

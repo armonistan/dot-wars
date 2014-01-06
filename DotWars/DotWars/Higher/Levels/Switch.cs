@@ -21,7 +21,10 @@ namespace DotWars
             backgrounds.AddBackground(new Sprite("Backgrounds/Switch/switchBackground", new Vector2(400, 400)));
             backgrounds.AddForeground(new Sprite("Backgrounds/Switch/switchForeground", new Vector2(400, 400)));
 
-            //Set up background
+            sniperSpots.Add(new Vector2(80, 20));
+            sniperSpots.Add(new Vector2(770, 720));
+            sniperSpots.Add(new Vector2(230, 470));
+            sniperSpots.Add(new Vector2(330, 570));
         }
 
         public override void LoadContent(ContentManager cM)

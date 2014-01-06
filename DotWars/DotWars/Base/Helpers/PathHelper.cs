@@ -135,10 +135,10 @@ namespace DotWars
 
             //foreach (NPC a in managers.GetNPCManager().GetNPCs())
             //{
-            //    if (a.GetPath() != null && a.GetPath().Count > 0)
+            //    if (a.GetPath().Count > 0)
             //    {
-            //        square.position.X = a.GetPath().First().X;
-            //        square.position.Y = a.GetPath().First().Y;
+            //        square.position.X = a.GetPath().Last().X;
+            //        square.position.Y = a.GetPath().Last().Y;
             //        square.Draw(sB, d, managers);
             //    }
             //}

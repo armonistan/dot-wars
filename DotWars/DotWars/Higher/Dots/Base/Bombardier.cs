@@ -52,31 +52,30 @@ namespace DotWars
 
             target = TargetDecider(mH);
 
+            if (threatened)
+            {
+                NewPath(mH);
+                campingCounter = 0;
+            }
+
             if (path.GetMoving())
             {
-                if (threatened)
+                //If nothing to shoot at, turn around
+                if (target == null)
                 {
-                    NewPath(mH);
+                    Turn(TURN_AMOUNT);
+                    campingCounter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
                 }
                 else
                 {
-                    //If nothing to shoot at, turn around
-                    if (target == null)
+                    if (shootingCounter > shootingSpeed)
                     {
-                        Turn(TURN_AMOUNT);
-                        campingCounter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                        shootingCounter = 0;
+                        Shoot(mH);
                     }
                     else
                     {
-                        if (shootingCounter > shootingSpeed)
-                        {
-                            shootingCounter = 0;
-                            Shoot(mH);
-                        }
-                        else
-                        {
-                            shootingCounter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
-                        }
+                        shootingCounter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
                     }
                 }
             }

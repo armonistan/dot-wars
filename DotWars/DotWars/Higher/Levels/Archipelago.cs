@@ -25,6 +25,12 @@ namespace DotWars
 
             backgrounds.AddBackground(new Sprite("Backgrounds/Archipelago/archipelago_background", new Vector2(656, 496)));
             backgrounds.AddForeground(new Sprite("Backgrounds/Archipelago/archipelago_trees", new Vector2(656, 496)));
+
+            sniperSpots.Add(new Vector2(40, 460));
+            sniperSpots.Add(new Vector2(390, 880));
+            sniperSpots.Add(new Vector2(1020, 450));
+            sniperSpots.Add(new Vector2(1230, 940));
+            sniperSpots.Add(new Vector2(1280, 40));
         }
 
         public override void LoadContent(ContentManager cM)

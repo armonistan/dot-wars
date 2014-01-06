@@ -136,7 +136,7 @@ namespace DotWars
                     if (PathHelper.DistanceSquared(next, GetOriginPosition()) < 15 * 15)
                     {
                         //path.RemoveFirst(); //Go on to next destination
-                        path.RemoveAt(0);
+                        path.RemoveAt(path.Count - 1);
                     }
 
                     pathTimer += mH.GetGameTime().ElapsedGameTime.TotalSeconds;

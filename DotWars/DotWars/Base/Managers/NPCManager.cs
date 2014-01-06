@@ -49,6 +49,11 @@ namespace DotWars
                 stats.Add(a, new StatisticsManager.StatHolder(0, 0, new StatisticsManager.DoubleWrapper(0), 0, false, 0));
             }
 
+            foreach (var team in mH.GetGametype().GetTeams())
+            {
+                agents.Add(team, new List<NPC>());
+            }
+
             killsToCommanders = new int [4,4];
 
             managers = mH;
@@ -144,14 +149,14 @@ namespace DotWars
                 }
             }
 
-            foreach (var team in agents.Values)
+            foreach (var team in agents)
             {
-                for (int i = 0; i < team.Count; i++)
+                for (int i = 0; i < team.Value.Count; i++)
                 {
-                    a = team[i];
+                    a = team.Value[i];
             
                     a.Update(managers);
-                    if (!team.Contains(a))
+                    if (!team.Value.Contains(a))
                     {
                         i--;
                     }
@@ -162,7 +167,7 @@ namespace DotWars
             {
                 a = bombers[i];
             
-                //a.Update(managers);
+                a.Update(managers);
                 if (!bombers.Contains(a))
                 {
                     i--;
