@@ -1,3 +1,6 @@
+using System;
+using Microsoft.Xna.Framework;
+
 namespace DotWars
 {
 #if WINDOWS || XBOX

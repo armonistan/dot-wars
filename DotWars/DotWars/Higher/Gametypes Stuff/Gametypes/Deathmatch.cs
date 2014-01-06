@@ -61,13 +61,13 @@ namespace DotWars
             if (claimables.Count > 0)
             {
                 Claimable closest = claimables.First();
-                float minDist = PathHelper.Distance(p, closest.GetOriginPosition());
+                float minDist = PathHelper.DistanceSquared(p, closest.GetOriginPosition());
 
                 foreach (Claimable a in claimables)
                 {
                     if (!a.taken)
                     {
-                        float aDist = PathHelper.Distance(p, a.GetOriginPosition());
+                        float aDist = PathHelper.DistanceSquared(p, a.GetOriginPosition());
                         if (aDist < minDist)
                         {
                             closest = a;

@@ -126,7 +126,7 @@ namespace DotWars
             }
 
             AddParticle(asset, n.GetOriginPosition(),
-                        PathHelper.Direction((float) (managers.GetRandom().NextDouble()*2*Math.PI))*50, 2, 0.03f, 1, 2);
+                        PathHelper.Direction((float) (managers.GetRandom().NextDouble()*MathHelper.TwoPi))*50, 2, 0.03f, 1, 2);
         }
 
         public void AddHeal(NPC n)
@@ -147,7 +147,7 @@ namespace DotWars
             }
 
             AddParticle("Effects/particle_heal", managers.GetRandom().Next(5), tempMode, n.GetOriginPosition(),
-                        PathHelper.Direction((float) (managers.GetRandom().NextDouble()*2*Math.PI))*50, 2, 0.03f, 1, 0);
+                        PathHelper.Direction((float) (managers.GetRandom().NextDouble()*MathHelper.TwoPi))*50, 2, 0.03f, 1, 0);
 
             managers.GetAudioManager().Play(AudioManager.HEAL_SOUND, AudioManager.RandomVolume(managers),
                 AudioManager.RandomPitch(managers), 0, false);
@@ -156,7 +156,7 @@ namespace DotWars
         public void AddStandardSmoke(Vector2 p, float v)
         {
             AddParticle("Effects/smoke_standard", p,
-                                   PathHelper.Direction((float)(managers.GetRandom().NextDouble() * Math.PI * 2)) * v, 1, 0.01f, 1, 3);
+                                   PathHelper.Direction((float)(managers.GetRandom().NextDouble() * MathHelper.TwoPi)) * v, 1, 0.01f, 1, 3);
         }
 
         private void RemoveParticle()

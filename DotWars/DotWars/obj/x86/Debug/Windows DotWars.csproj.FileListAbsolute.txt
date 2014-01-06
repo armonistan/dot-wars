@@ -2492,3 +2492,4 @@ C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\obj\x86\Deb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Audio\Waves\juggernautRicohet.xnb
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Audio\Waves\DotWars.xnb
+C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\obj\x86\Debug\Windows DotWars.csprojResolveAssemblyReference.cache

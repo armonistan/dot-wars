@@ -9,10 +9,8 @@ namespace DotWars
     public class SuicideSpawnPoint : SpawnPoint
     {
         private Sprite suicideSpawnSprite;
-        private float particleTimer;
-        private float particleEndtime;
-        private float spriteTimer;
-        private float spriteEndtime;
+        private double spriteTimer;
+        private double spriteEndtime;
 
         public SuicideSpawnPoint(Vector2 sP, ManagerHelper mH)
             :base(sP, NPC.AffliationTypes.black, mH)
@@ -26,9 +24,6 @@ namespace DotWars
             spriteEndtime = .05f;
             spriteTimer = 0;
             suicideSpawnSprite = new Sprite("Effects/suicide_spawn_sprite", sP, Vector2.Zero);
-
-            particleTimer = 0;
-            particleEndtime = .07f;
         }
 
         public override void LoadContent(TextureManager tM)
@@ -52,7 +47,7 @@ namespace DotWars
             }
             else
             {
-                spriteTimer += (float)mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                spriteTimer += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
             }
 
             suicideSpawnSprite.position = new Vector2(position.X - origin.X, position.Y - origin.Y);
@@ -82,7 +77,7 @@ namespace DotWars
         protected override void PosUpdate(ManagerHelper mH)
         {
             //Update position
-            Vector2 tempPos = position + velocity * (float)mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            Vector2 tempPos = position + velocity * mH.GetDeltaSeconds();
             Vector2 tempOPos = tempPos + origin;
             float distSquared = 1000000;
 
@@ -110,7 +105,7 @@ namespace DotWars
                     }
                 }
             }
-            tempPos = position + velocity * (float)mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            tempPos = position + velocity * mH.GetDeltaSeconds();
 
             if (
                 !(tempPos.X < buffer || tempPos.X > mH.GetLevelSize().X - frame.Width - buffer || tempPos.Y < buffer ||

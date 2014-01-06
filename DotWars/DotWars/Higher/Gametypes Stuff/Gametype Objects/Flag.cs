@@ -14,7 +14,7 @@ namespace DotWars
 
         #region Declarations
 
-        private readonly float endTime;
+        private readonly double endTime;
         private readonly Vector2 homePosition;
         protected NPC.AffliationTypes affiliation;
 
@@ -22,7 +22,7 @@ namespace DotWars
         public FlagStatus status;
 
         //Animation Stuff
-        private float timer;
+        private double timer;
 
         #endregion
 
@@ -139,7 +139,7 @@ namespace DotWars
                 }
                 else
                 {
-                    timer += (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                    timer += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
                 }
             }
 

@@ -7,8 +7,8 @@ namespace DotWars
     {
         #region Declarations
 
-        private readonly float spawnTime;
-        private float timer;
+        private readonly double spawnTime;
+        private double timer;
 
         #endregion
 
@@ -45,7 +45,7 @@ namespace DotWars
                 }
                 else
                 {
-                    timer += (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                    timer += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
                 }
             }
 

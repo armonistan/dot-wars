@@ -35,7 +35,7 @@ namespace DotWars
                     NPCManager.IsNPCInRadius(agent, GetOriginPosition(), sight) &&
                     NPCManager.IsNPCInDirection(agent, GetOriginPosition(), rotation, vision, mH))
                 {
-                    float distanceToEnemy = PathHelper.Distance(GetOriginPosition(), agent.GetOriginPosition());
+                    float distanceToEnemy = PathHelper.DistanceSquared(GetOriginPosition(), agent.GetOriginPosition());
 
                     if (distanceToEnemy < bestDistance)
                     {
@@ -58,7 +58,7 @@ namespace DotWars
             {
                 Explode(mH);
             }
-            else if (PathHelper.Distance(this.GetOriginPosition(), FindClosestRock(mH)) < 48)
+            else if (PathHelper.DistanceSquared(this.GetOriginPosition(), FindClosestRock(mH)) < 48 * 48)
             {
                 Explode(mH);
             }
@@ -106,7 +106,7 @@ namespace DotWars
             {
                 if (agent.GetAffiliation() != affiliation)
                 {
-                    float distanceToAgent = PathHelper.Distance(GetOriginPosition(), agent.GetOriginPosition());
+                    float distanceToAgent = PathHelper.DistanceSquared(GetOriginPosition(), agent.GetOriginPosition());
 
                     if (distanceToAgent < shortestDistance)
                     {
@@ -128,13 +128,13 @@ namespace DotWars
 
         private Vector2 FindClosestRock(ManagerHelper mH)
         {
-            float closestDistance = 10000;
-            float distance = 0;
+            float closestDistance = float.PositiveInfinity;
+            float distance;
             LargeRock closestRock = null;
 
             foreach (LargeRock rock in mH.GetAbilityManager().GetLargeRocks())
             {
-                distance = PathHelper.Distance(rock.GetOriginPosition(), this.GetOriginPosition());
+                distance = PathHelper.DistanceSquared(rock.GetOriginPosition(), this.GetOriginPosition());
                 if (distance < closestDistance && rock.IsFullyUp())
                 {
                     closestDistance = distance;

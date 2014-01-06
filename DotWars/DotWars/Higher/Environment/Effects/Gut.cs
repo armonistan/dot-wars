@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Xna.Framework;
 
 namespace DotWars
 {
@@ -16,7 +17,7 @@ namespace DotWars
             //Slow it to a stop
             if (velocity.Length() > 5)
             {
-                Turn((float) (((turnRight) ? -1 : 1)*Math.PI/15*(velocity.Length()/64)));
+                Turn(((turnRight) ? -1 : 1)*MathHelper.Pi/15*(velocity.Length()/64));
 
                 //Spawn blood
                 if (mH.GetRandom().Next(100) < 0)

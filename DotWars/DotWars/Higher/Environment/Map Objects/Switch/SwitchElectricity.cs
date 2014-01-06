@@ -10,12 +10,11 @@ namespace DotWars
 
         private readonly bool[] beamOn;
         private readonly Impathable[] beams;
-        private readonly float endTimer;
-        private readonly SwitchFan fan1;
+        private readonly double endTimer;
         private readonly Vector2[] startPos;
         private bool on;
 
-        private float timer;
+        private double timer;
 
         #endregion
 
@@ -109,7 +108,7 @@ namespace DotWars
             }
             else
             {
-                timer += (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                timer += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
             }
 
             if (on)

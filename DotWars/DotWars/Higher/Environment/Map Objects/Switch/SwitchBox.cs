@@ -7,7 +7,7 @@ namespace DotWars
         private readonly Crane theCrane;
         private readonly SwitchBeltNetwork theNet;
         private SwitchBeltNetwork.Node lastNode;
-        private float lifeCounter;
+        private double lifeCounter;
 
         public SwitchBox(Vector2 p, SwitchBeltNetwork n, Crane c)
             : base("Backgrounds/Switch/switchBox", p, 50)
@@ -28,7 +28,7 @@ namespace DotWars
                 mH.GetEnvironmentManager().RemoveStaticBlocker(this);
             }
 
-            lifeCounter -= (float)mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            lifeCounter -= mH.GetGameTime().ElapsedGameTime.TotalSeconds;
 
             //Code for getting picked up
             if (theCrane.movementPhase == Crane.MovementPhaseType.picking)
@@ -56,7 +56,7 @@ namespace DotWars
                 for (int i = 0; i < theNet.boxNodes.Length; i++)
                 {
                     if (lastNode != theNet.boxNodes[i] &&
-                        PathHelper.Distance(GetOriginPosition(), theNet.boxNodes[i].pos) < 4)
+                        PathHelper.DistanceSquared(GetOriginPosition(), theNet.boxNodes[i].pos) < 4 * 4)
                     {
                         lastNode = theNet.boxNodes[i];
                         velocity = theNet.boxNodes[i].GetRandomDir(mH) * 15;

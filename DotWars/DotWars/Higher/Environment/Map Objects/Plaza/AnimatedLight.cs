@@ -4,9 +4,9 @@ namespace DotWars
 {
     internal class AnimatedLight : Environment
     {
-        private readonly float animationEnd;
+        private readonly double animationEnd;
         private bool animate;
-        private float animationTimer;
+        private double animationTimer;
 
         public AnimatedLight(Vector2 p, float r)
             : base("Backgrounds/Plaza/light", p, Vector2.Zero)
@@ -34,7 +34,7 @@ namespace DotWars
                 }
                 else
                 {
-                    animationTimer += (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                    animationTimer += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
                 }
             }
             else

@@ -7,13 +7,13 @@ namespace DotWars
     {
         #region Declarations
 
-        private readonly float endTime;
+        private readonly double endTime;
 
         private float endRotation;
         public MovementPhaseType movementPhase;
 
         public SwitchBox myBox;
-        private float timer;
+        private double timer;
 
         #endregion
 
@@ -59,14 +59,14 @@ namespace DotWars
                 }
                 else
                 {
-                    timer += (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                    timer += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
                 }
             }
             else
             {
-                if (Math.Abs(rotation - endRotation) > 0.01)
+                if (MathHelper.Distance(rotation, endRotation) > 0.01)
                 {
-                    Turn((float) (((movementPhase == MovementPhaseType.turningLeft) ? -1 : 1)*Math.PI/240));
+                    Turn(((movementPhase == MovementPhaseType.turningLeft) ? -1.0f : 1.0f)*MathHelper.Pi/240.0f);
                 }
                 else
                 {

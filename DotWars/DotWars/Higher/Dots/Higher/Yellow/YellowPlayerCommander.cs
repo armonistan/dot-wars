@@ -7,8 +7,8 @@ namespace DotWars
         private readonly int abilityOffSpeed;
         private readonly int abilitySpeed;
 
-        private readonly float abilityTime;
-        private float abilityTimer;
+        private readonly double abilityTime;
+        private double abilityTimer;
 
         private bool shouldUsePower;
 
@@ -76,7 +76,7 @@ namespace DotWars
                 ranOut = false;
             }
 
-            abilityTimer += (float)mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            abilityTimer += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
         }
 
         protected override void UsePower(ManagerHelper mH)

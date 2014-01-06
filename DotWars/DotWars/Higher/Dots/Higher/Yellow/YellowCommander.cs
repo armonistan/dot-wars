@@ -7,8 +7,8 @@ namespace DotWars
         private readonly int abilityOffSpeed;
         private readonly int abilitySpeed;
 
-        private readonly float abilityTime;
-        private float abilityTimer;
+        private readonly double abilityTime;
+        private double abilityTimer;
 
         private bool shouldUsePower;
 
@@ -41,7 +41,7 @@ namespace DotWars
             {
                 if (abilityTimer < abilityTime)
                 {
-                    abilityTimer += (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                    abilityTimer += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
                 }
                 else
                 {
@@ -86,7 +86,7 @@ namespace DotWars
                 if (temp.GetAttacker() == affiliation)
                 {
                     if (f.status != Flag.FlagStatus.taken)
-                        return (PathHelper.Distance(GetOriginPosition(), f.GetOriginPosition()) < 300);
+                        return (PathHelper.DistanceSquared(GetOriginPosition(), f.GetOriginPosition()) < 300 * 300);
                     else
                         return (f.GetCaptor() is YellowCommander);
                 }
@@ -104,7 +104,7 @@ namespace DotWars
 
                 if (eF.status != Flag.FlagStatus.taken)
                 {
-                    return (PathHelper.Distance(GetOriginPosition(), eF.GetOriginPosition()) < 240);
+                    return (PathHelper.DistanceSquared(GetOriginPosition(), eF.GetOriginPosition()) < 240 * 240);
                 }
 
                 else if (eF.GetCaptor() != null)
@@ -114,7 +114,7 @@ namespace DotWars
             }
 
             else if (mH.GetGametype() is Survival)
-                return (target != null) && (PathHelper.Distance(GetOriginPosition(), target.GetOriginPosition()) < 200);
+                return (target != null) && (PathHelper.DistanceSquared(GetOriginPosition(), target.GetOriginPosition()) < 200 * 200);
 
             else
             {

@@ -19,8 +19,8 @@ namespace DotWars
             shootingSpeed = 0.5f; //the medic is unique in that it doesn't have a shooting rate it has a healing rate
 
             awareness = 300; //So he may see everyone
-            vision = (float) Math.PI;
-            turningSpeed = (float) Math.PI/10;
+            vision = MathHelper.Pi;
+            turningSpeed = MathHelper.Pi/10;
             healRadius = 70;
 
             affiliation = AffliationTypes.red;
@@ -35,7 +35,7 @@ namespace DotWars
         protected override void Behavior(ManagerHelper mH)
         {
             if (TargetDecider(mH) != null &&
-                PathHelper.Distance(GetOriginPosition(), TargetDecider(mH).GetOriginPosition()) < 96)
+                PathHelper.DistanceSquared(GetOriginPosition(), TargetDecider(mH).GetOriginPosition()) < 96 * 96)
                 target = TargetDecider(mH);
             else if (TargetDecider(mH) == null)
                 target = null;

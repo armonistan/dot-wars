@@ -33,40 +33,41 @@ namespace DotWars
         {
             foreach (Sprite section in poolSections)
             {
-                section.Turn(10000.0f / (section.GetFrame().Width * section.GetFrame().Width) * (float)mH.GetGameTime().ElapsedGameTime.TotalSeconds);
+                section.Turn(10000.0f / (section.GetFrame().Width * section.GetFrame().Width) * mH.GetDeltaSeconds());
             }
 
             foreach (NPC a in mH.GetNPCManager().GetNPCs())
             {
                 if (!(a is Bomber))
                 {
-                    float tempDistance = PathHelper.Distance(GetOriginPosition(), a.GetOriginPosition());
-                    if (tempDistance < 15)
+                    float tempDistance = PathHelper.DistanceSquared(GetOriginPosition(), a.GetOriginPosition());
+
+                    if (tempDistance < 15 * 15)
                     {
                         //TODO: Modify
                         a.position = mH.GetLevelSize() * new Vector2(mH.GetRandom().Next(2), mH.GetRandom().Next(2));
                     }
-                    else if (tempDistance < (frame.Width/2))
+                    else if (tempDistance < frame.Width/2 * frame.Width/2)
                     {
                         float tempRot = PathHelper.Direction(a.GetOriginPosition(), GetOriginPosition()) -
-                                        (float) Math.PI/9;
-                        a.AddAcceleration(new Vector2((float)Math.Cos(tempRot), (float)Math.Sin(tempRot)) * 4);
+                                        MathHelper.Pi/9;
+                        a.AddAcceleration(new Vector2(DWMath.Cos(tempRot), DWMath.Sin(tempRot)) * 4);
                     }
                 }
             }
 
             foreach (Particle e in mH.GetParticleManager().GetParticles())
             {
-                float tempDistance = PathHelper.Distance(GetOriginPosition(), e.GetOriginPosition());
+                float tempDistance = PathHelper.DistanceSquared(GetOriginPosition(), e.GetOriginPosition());
 
-                if (tempDistance < 15)
+                if (tempDistance < 15 * 15)
                 {
                     e.SetDrawTime(0);
                 }
-                else if (tempDistance < (frame.Width/2))
+                else if (tempDistance < (frame.Width / 2) * (frame.Width / 2))
                 {
-                    float tempRot = PathHelper.Direction(e.GetOriginPosition(), GetOriginPosition()) + (float) Math.PI/9;
-                    e.AddAcceleration(new Vector2((float)Math.Cos(tempRot), (float)Math.Sin(tempRot)) * 100);
+                    float tempRot = PathHelper.Direction(e.GetOriginPosition(), GetOriginPosition()) + MathHelper.Pi/9;
+                    e.AddAcceleration(new Vector2((float)DWMath.Cos(tempRot), (float)DWMath.Sin(tempRot)) * 100);
                 }
             }
 

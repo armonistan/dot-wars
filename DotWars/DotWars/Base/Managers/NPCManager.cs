@@ -218,11 +218,11 @@ namespace DotWars
 
         #endregion
 
-        public static bool IsNPCInRadius(NPC agent, Vector2 pos,float radius)
+        public static bool IsNPCInRadius(NPC agent, Vector2 pos, float radius)
         {
-            float distanceToNPC = PathHelper.Distance(agent.GetOriginPosition(), pos);
+            float distanceToNPC = PathHelper.DistanceSquared(agent.GetOriginPosition(), pos);
 
-            return distanceToNPC <= radius;
+            return distanceToNPC <= radius * radius;
         }
 
         public static bool IsNPCInDirection(NPC agent, Vector2 pos, float dir, float cone, ManagerHelper mH)
@@ -231,7 +231,7 @@ namespace DotWars
             {
                 float dirToAgent = PathHelper.Direction(pos, agent.GetOriginPosition());
 
-                return Math.Abs(dirToAgent - dir) < cone;
+                return MathHelper.Distance(dirToAgent, dir) < cone;
             }
             else
             {
@@ -294,18 +294,14 @@ namespace DotWars
         {
             if (aL.Count > 0)
             {
-                NPC closest = aL.First();
-                var minDist =
-                    (float)
-                    (Math.Sqrt(Math.Pow(p.X - closest.GetOriginPosition().X, 2) +
-                               Math.Pow(p.Y - closest.GetOriginPosition().Y, 2)));
+                NPC closest = null;
+
+                float minDist = float.PositiveInfinity;
 
                 foreach (NPC a in aL)
                 {
-                    var aDist =
-                        (float)
-                        (Math.Sqrt(Math.Pow(p.X - a.GetOriginPosition().X, 2) +
-                                   Math.Pow(p.Y - a.GetOriginPosition().Y, 2)));
+                    var aDist = PathHelper.DistanceSquared(p, a.GetOriginPosition());
+
                     if (aDist < minDist)
                     {
                         closest = a;
@@ -325,20 +321,15 @@ namespace DotWars
 
             if (aL.Count > 0)
             {
-                NPC closest = aL.First();
-                var minDist =
-                    (float)
-                    (Math.Sqrt(Math.Pow(p.X - closest.GetOriginPosition().X, 2) +
-                               Math.Pow(p.Y - closest.GetOriginPosition().Y, 2)));
+                NPC closest = null;
+                var minDist = float.PositiveInfinity;
 
                 foreach (NPC a in aL)
                 {
                     if (a != n)
                     {
-                        var aDist =
-                            (float)
-                            (Math.Sqrt(Math.Pow(p.X - a.GetOriginPosition().X, 2) +
-                                       Math.Pow(p.Y - a.GetOriginPosition().Y, 2)));
+                        var aDist = PathHelper.DistanceSquared(p, a.GetOriginPosition());
+
                         if (aDist < minDist)
                         {
                             closest = a;
@@ -350,31 +341,6 @@ namespace DotWars
                 return closest;
             }
 
-            return null;
-        }
-
-        public NPC GetRandInList(List<NPC> aL, NPC n)
-        {
-            Vector2 p = n.GetOriginPosition();
-
-            if (aL.Count > 0)
-            {
-                NPC closest = aL.First();
-                var minDist =
-                    (float)
-                    (Math.Sqrt(Math.Pow(p.X - closest.GetOriginPosition().X, 2) +
-                               Math.Pow(p.Y - closest.GetOriginPosition().Y, 2)));
-
-                foreach (NPC a in aL)
-                {
-                    if (a != n && managers.GetRandom().Next(10) > 5)
-                    {
-                        closest = a;
-                    }
-                }
-
-                return closest;
-            }
             return null;
         }
 

@@ -9,13 +9,13 @@ namespace DotWars
     {
         #region Declarations
 
-        private readonly float endTime;
+        private readonly double endTime;
         private readonly Crane theCrane;
         public Sprite[] belts;
         public Node[] boxNodes;
         public Vector2[] directions;
 
-        private float timer;
+        private double timer;
 
         #endregion
 
@@ -29,15 +29,15 @@ namespace DotWars
 
             belts[0] = new Sprite("Backgrounds/Switch/BL", new Vector2(364, 288));
             belts[1] = new Sprite("Backgrounds/Switch/BLr", new Vector2(512.5f, 435));
-            belts[1].Turn((float)(Math.PI));
+            belts[1].Turn(MathHelper.Pi);
             belts[2] = new Sprite("Backgrounds/Switch/BRr", new Vector2(416, 221));
             belts[3] = new Sprite("Backgrounds/Switch/BR", new Vector2(579, 384));
-            belts[3].Turn((float)(Math.PI));
+            belts[3].Turn(MathHelper.Pi);
             belts[4] = new Sprite("Backgrounds/Switch/BT", new Vector2(487, 192.5f));
             belts[5] = new Sprite("Backgrounds/Switch/BTr", new Vector2(607, 313));
-            belts[5].Turn((float)(Math.PI));
+            belts[5].Turn(MathHelper.Pi);
             belts[6] = new Sprite("Backgrounds/Switch/DBr", new Vector2(582, 217));
-            belts[6].Turn((float)(Math.PI));
+            belts[6].Turn(MathHelper.Pi);
             belts[7] = new Sprite("Backgrounds/Switch/DBr", new Vector2(441, 359));
 
             directions[0] = new Vector2(-1, 0);
@@ -161,7 +161,7 @@ namespace DotWars
             }
             else
             {
-                timer += (float)(mH.GetGameTime().ElapsedGameTime.TotalSeconds);
+                timer += (mH.GetGameTime().ElapsedGameTime.TotalSeconds);
             }
         }
 

@@ -212,35 +212,6 @@ namespace DotWars
         {
             return notPathables;
         }
-
-        public Environment GetClosestInList(List<Environment> eL, Vector2 p)
-        {
-            if (eL.Count > 0)
-            {
-                Environment closest = eL.First();
-                var minDist =
-                    (float)
-                    (Math.Sqrt(Math.Pow(p.X - closest.GetOriginPosition().X, 2) +
-                               Math.Pow(p.Y - closest.GetOriginPosition().Y, 2)));
-
-                foreach (Environment e in eL)
-                {
-                    var aDist =
-                        (float)
-                        (Math.Sqrt(Math.Pow(p.X - e.GetOriginPosition().X, 2) +
-                                   Math.Pow(p.Y - e.GetOriginPosition().Y, 2)));
-                    if (aDist < minDist)
-                    {
-                        closest = e;
-                        minDist = aDist;
-                    }
-                }
-
-                return closest;
-            }
-
-            return null;
-        }
         #endregion
     }
 }

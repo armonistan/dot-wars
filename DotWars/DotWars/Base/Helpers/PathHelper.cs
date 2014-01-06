@@ -173,7 +173,7 @@ namespace DotWars
 
             //Set up parent according to A*
             Node parent = field[(int) beginning.X, (int) beginning.Y];
-            parent.SetFScore((int) (Math.Abs(end.X - beginning.X) + Math.Abs(end.Y - beginning.Y)));
+            parent.SetFScore((int) (MathHelper.Distance(end.X, beginning.X) + MathHelper.Distance(end.Y, beginning.Y)));
             open.Add(parent);
 
             //Makes the end not a blocker
@@ -232,9 +232,7 @@ namespace DotWars
                         current.SetGScore(parent.GetGScore() + mH.GetRandom().Next(0, randomness));
 
                         //Calculate other scores
-                        current.SetHScore(
-                            (int)
-                            ((Math.Abs(current.GetPosition().X - end.X) + Math.Abs(current.GetPosition().Y - end.Y))*10));
+                        current.SetHScore((int) (MathHelper.Distance(current.GetPosition().X, end.X) + MathHelper.Distance(current.GetPosition().Y, end.Y)) * 10);
                         current.SetFScore(current.GetGScore() + current.GetHScore());
 
                         #endregion
@@ -303,7 +301,7 @@ namespace DotWars
             }
 
             float farthest = 0;
-            float convenience = mD; //forces dot to go to furtherest location that is easiest to get to
+            float convenience = mD * mD; //forces dot to go to furtherest location that is easiest to get to
             Vector2 pointB = pA;
             int nodeX, nodeY;
 
@@ -322,8 +320,8 @@ namespace DotWars
                             if (!field[nodeX, nodeY].GetBlocker())
                             {
                                 var currentPoint = new Vector2(x, y);
-                                float dist = Distance(pGTFA, currentPoint);
-                                float tempCon = Distance(pA, currentPoint);
+                                float dist = DistanceSquared(pGTFA, currentPoint);
+                                float tempCon = DistanceSquared(pA, currentPoint);
 
                                 if (convenience > tempCon && dist > farthest)
                                 {
@@ -378,8 +376,8 @@ namespace DotWars
         public bool IsVectorObstructed(Vector2 pA, Vector2 pB)
         {
             var slope = new Vector2(pB.X - pA.X, pB.Y - pA.Y);
-            double theta = Math.Atan2(slope.Y, slope.X);
-            slope = new Vector2((float) Math.Cos(theta)*32, (float) Math.Sin(theta)*32);
+            float theta = DWMath.Atan2(slope.Y, slope.X);
+            slope = new Vector2(DWMath.Cos(theta)*32, DWMath.Sin(theta)*32);
 
             pB /= new Vector2(32);
             pB.X = (int) pB.X;
@@ -453,30 +451,25 @@ namespace DotWars
             return midPoint; //return our midpoint
         }
 
-        public static float Distance(Vector2 pA, Vector2 pB)
-        {
-            return (float) Math.Sqrt(Math.Pow(pA.X - pB.X, 2) + Math.Pow(pA.Y - pB.Y, 2));
-        }
-
         public static float DistanceSquared(Vector2 pA, Vector2 pB)
         {
-            return (float) (Math.Pow(pA.X - pB.X, 2) + Math.Pow(pA.Y - pB.Y, 2));
+            return (pA.X - pB.X) * (pA.X - pB.X) + (pA.Y - pB.Y) * (pA.Y - pB.Y);
         }
 
         public static float Direction(Vector2 pA, Vector2 pB)
         {
             //Slope
             float cX = pB.X - pA.X,
-                  cY = pB.Y - pA.Y,
-                  angle = (float) Math.Atan2(cY, cX);
+                  cY = pB.Y - pA.Y;
+            float angle = DWMath.Atan2(cY, cX);
 
             if (angle < 0)
             {
-                angle += (float) (Math.PI*2);
+                angle += MathHelper.TwoPi;
             }
-            else if (angle >= (Math.PI*2))
+            else if (angle >= MathHelper.TwoPi)
             {
-                angle -= (float) (Math.PI*2);
+                angle -= (MathHelper.TwoPi);
             }
 
             return angle;
@@ -484,7 +477,7 @@ namespace DotWars
 
         public static float Direction(Vector2 r)
         {
-            return (float) Math.Atan2(r.Y, r.X);
+            return DWMath.Atan2(r.Y, r.X);
         }
 
         public static Vector2 DirectionVector(Vector2 pA, Vector2 pB)
@@ -495,7 +488,7 @@ namespace DotWars
 
         public static Vector2 Direction(float r)
         {
-            return new Vector2((float) Math.Cos(r), (float) Math.Sin(r));
+            return new Vector2(DWMath.Cos(r), DWMath.Sin(r));
         }
 
         public static float DotProduct(Vector2 v1, Vector2 v2)

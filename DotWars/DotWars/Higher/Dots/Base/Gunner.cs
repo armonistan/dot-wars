@@ -24,7 +24,7 @@ namespace DotWars
 
         protected override void Shoot(ManagerHelper mH)
         {
-            Vector2 tempPos = PathHelper.Direction(rotation + (float) (Math.PI/2))*new Vector2(10);
+            Vector2 tempPos = PathHelper.Direction(rotation + MathHelper.PiOver2)*new Vector2(10);
 
             mH.GetProjectileManager()
               .AddProjectile(ProjectileManager.STANDARD, GetOriginPosition() + tempPos, this,

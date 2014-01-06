@@ -47,11 +47,6 @@ namespace DotWars
             base.Update(mH);
         }
 
-        public bool InAttractionRadius(Vector2 p, ManagerHelper mH)
-        {
-            return (PathHelper.Distance(GetOriginPosition(), p) < flareAttractRadius);
-        }
-
         public int GetFlareRadius()
         {
             return flareRadius;

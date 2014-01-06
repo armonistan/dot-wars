@@ -28,8 +28,8 @@ namespace DotWars
 
             objects.AddStaticBlocker(new InDestructable("Backgrounds/Plaza/plazaBlockers", new Vector2(664, 504) - savingTime));
             objects.AddTopObject(new AnimatedLight(new Vector2(516, 328) - savingTime, 0));
-            objects.AddTopObject(new AnimatedLight(new Vector2(872, 326) - savingTime, (float)(Math.PI) * .25f));
-            objects.AddTopObject(new AnimatedLight(new Vector2(872, 656) - savingTime, (float)(Math.PI) * .5f));
+            objects.AddTopObject(new AnimatedLight(new Vector2(872, 326) - savingTime, MathHelper.Pi * .25f));
+            objects.AddTopObject(new AnimatedLight(new Vector2(872, 656) - savingTime, MathHelper.Pi * .5f));
 
             if (typeOfGame is Assault)
             {

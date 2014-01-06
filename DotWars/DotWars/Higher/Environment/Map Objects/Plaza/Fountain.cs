@@ -6,8 +6,8 @@ namespace DotWars
     {
         #region Declarations
 
-        private readonly float endTime;
-        private float timer;
+        private readonly double endTime;
+        private double timer;
 
         #endregion
 
@@ -15,7 +15,7 @@ namespace DotWars
             base("Backgrounds/Plaza/192and608_animated", p)
         {
             timer = 0;
-            endTime = 0.5f;
+            endTime = 0.5;
         }
 
         public override void Update(ManagerHelper mH)
@@ -36,7 +36,7 @@ namespace DotWars
             }
             else
             {
-                timer += (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                timer += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
             }
 
             base.Update(mH);

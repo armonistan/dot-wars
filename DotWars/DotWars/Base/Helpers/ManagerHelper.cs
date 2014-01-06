@@ -24,8 +24,8 @@ namespace DotWars
         private CameraManager.Camera currentCam;
         private KeyboardState currentState;
         private StatisticsManager statistics;
-        private float fps;
         private GameTime time; //Used to get the current gametime from anywhere
+        private float deltaSeconds;
 
         #endregion
 
@@ -53,7 +53,7 @@ namespace DotWars
         public void Update(GameTime gT, KeyboardState kS)
         {
             time = gT;
-            fps = (float) (1.0f/gT.ElapsedGameTime.TotalSeconds);
+            deltaSeconds = (float) gT.ElapsedGameTime.TotalSeconds;
 
             currentState = kS;
         }
@@ -90,9 +90,9 @@ namespace DotWars
             return time;
         }
 
-        public float GetFPS()
+        public float GetDeltaSeconds()
         {
-            return fps;
+            return deltaSeconds;
         }
 
         public Gametype GetGametype()

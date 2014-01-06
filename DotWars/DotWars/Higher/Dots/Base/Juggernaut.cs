@@ -10,7 +10,7 @@ namespace DotWars
         {
             health = maxHealth = 250; //A completely defensive unit. Like a tank
             movementSpeed = 120; //He's worthless if he can't keep up with the npc's he's trying to defend
-            pathTimerEnd = 0.1f;
+            pathTimerEnd = 0.1;
 
             awareness = 200; //Needs to see things far away
             sight = 300;
@@ -46,7 +46,7 @@ namespace DotWars
                         NPC closestTargetForTeam = mH.GetNPCManager()
                                                      .GetClosestInList(mH.GetNPCManager().GetAllies(team),
                                                                        friend.GetOriginPosition());
-                        float closestDiestanceToTargetForTeam = PathHelper.Distance(
+                        float closestDiestanceToTargetForTeam = PathHelper.DistanceSquared(
                             closestTargetForTeam.GetOriginPosition(), friend.GetOriginPosition());
 
                         if (closestDiestanceToTargetForTeam < closestDistancetoTarget)
@@ -89,13 +89,13 @@ namespace DotWars
                         lastDamagerDirection = PathHelper.DirectionVector(GetOriginPosition(), p.GetOriginPosition());
                         counter = 0;
 
-                        var test = p.GetRotation() + Math.PI;
-                        if (test > 2*Math.PI)
+                        float test = p.GetRotation() + MathHelper.Pi;
+                        if (test > MathHelper.TwoPi)
                         {
-                            test -= 2*Math.PI;
+                            test -= MathHelper.TwoPi;
                         }
 
-                        if (Math.Abs(test - rotation) > (Math.PI*5/6))
+                        if (MathHelper.Distance(test, rotation) > (MathHelper.Pi*5/6))
                         {
                             ChangeHealth(-1*p.GetDamage(), p.GetCreator());
                             mH.GetParticleManager().AddBlood(this);

@@ -10,8 +10,8 @@ namespace DotWars
 
         protected NPC.AffliationTypes affiliation;
         protected int damage;
-        protected float drawTime;
-        protected float existenceTime;
+        protected double drawTime;
+        protected double existenceTime;
         protected bool isExplosive;
         protected NPC creator;
         protected bool shouldCollide;
@@ -39,7 +39,7 @@ namespace DotWars
 
             if (drawTime > 0)
             {
-                drawTime -= (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                drawTime -= mH.GetGameTime().ElapsedGameTime.TotalSeconds;
 
                 SpriteUpdate(mH);
 
@@ -48,7 +48,7 @@ namespace DotWars
                     EffectSpawnCode(mH);
             }
 
-            existenceTime -= (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            existenceTime -= mH.GetGameTime().ElapsedGameTime.TotalSeconds;
         }
 
         public override void Draw(SpriteBatch sB, Vector2 displacement, ManagerHelper mH)
@@ -66,7 +66,7 @@ namespace DotWars
             {
                 mH.GetParticleManager()
                   .AddParticle("Effects/particle_smoke", GetOriginPosition(),
-                               PathHelper.Direction((float) (Math.PI*mH.GetRandom().NextDouble())*2)*20, 4, 0.005f, 1,
+                               PathHelper.Direction((float) (MathHelper.Pi*mH.GetRandom().NextDouble())*2)*20, 4, 0.005f, 1,
                                0.1f);
             }
         }
@@ -93,7 +93,7 @@ namespace DotWars
             shouldCollide = collide;
 
             //Get x and y values from angle and set up direction
-            rotation = (float) Math.Atan2(velocity.Y, velocity.X);
+            rotation = DWMath.Atan2(velocity.Y, velocity.X);
 
             //No friction
             drag = 0;
@@ -127,12 +127,12 @@ namespace DotWars
             return damage;
         }
 
-        public void SetDrawTime(float dT)
+        public void SetDrawTime(double dT)
         {
             drawTime = dT;
         }
 
-        public float GetDrawTime()
+        public double GetDrawTime()
         {
             return drawTime;
         }
@@ -142,7 +142,7 @@ namespace DotWars
             return affiliation;
         }
 
-        public float GetExistenceTime()
+        public double GetExistenceTime()
         {
             return existenceTime;
         }

@@ -58,19 +58,17 @@ namespace DotWars
             foreach (Particle p in mH.GetParticleManager().GetParticles())
             {
                 float dir = PathHelper.Direction(GetOriginPosition(), p.GetOriginPosition());
-                p.AddAcceleration(PathHelper.Direction(dir) * 10000.0f /
-                                    (float)
-                                    (Math.Pow(PathHelper.Distance(GetOriginPosition(), p.GetOriginPosition()), 2)));
+                p.AddAcceleration(PathHelper.Direction(dir) * 10000.0f / 
+                                    PathHelper.DistanceSquared(GetOriginPosition(), p.GetOriginPosition()));
             }
             foreach (Gut g in mH.GetParticleManager().GetGuts())
             {
                 float dir = PathHelper.Direction(GetOriginPosition(), g.GetOriginPosition());
                 g.AddAcceleration(PathHelper.Direction(dir) * 10000.0f /
-                                    (float)
-                                    (Math.Pow(PathHelper.Distance(GetOriginPosition(), g.GetOriginPosition()), 2)));
+                                    PathHelper.DistanceSquared(GetOriginPosition(), g.GetOriginPosition()));
             }
 
-            Turn((float) Math.PI/21);
+            Turn(MathHelper.Pi/21);
 
             //Spawn Fires to make effect
             if (mH.GetRandom().NextDouble() < 0.25f)
@@ -83,7 +81,7 @@ namespace DotWars
                 {
                     mH.GetParticleManager()
                       .AddFire(GetOriginPosition(),
-                               PathHelper.Direction((float) (mH.GetRandom().NextDouble()*Math.PI*2))*500*
+                               PathHelper.Direction((float)(mH.GetRandom().NextDouble()*MathHelper.TwoPi))*500*
                                (float) mH.GetRandom().NextDouble(), 1, 0.01f, 1, 0.1f);
                 }
             }

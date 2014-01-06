@@ -208,25 +208,25 @@ namespace DotWars
                     new Vector2(mouseState.X, mouseState.Y));
             if (wantedRotation < 0)
             {
-                wantedRotation += (float) Math.PI*2;
+                wantedRotation += MathHelper.TwoPi;
             }
 
             //Calculate turningSpeed to maximize speed and minimize jittering
-            if (Math.Abs(rotation - wantedRotation) < turningSpeed && turningSpeed > (float) Math.PI/160)
+            if (MathHelper.Distance(rotation, wantedRotation) < turningSpeed && turningSpeed > MathHelper.Pi/160.0f)
             {
-                turningSpeed /= 2;
+                turningSpeed /= 2.0f;
             }
-            else if (Math.Abs(rotation - wantedRotation) > turningSpeed && turningSpeed < maxTurningSpeed)
+            else if (MathHelper.Distance(rotation, wantedRotation) > turningSpeed && turningSpeed < maxTurningSpeed)
             {
-                turningSpeed *= 2;
+                turningSpeed *= 2.0f;
             }
 
             //Apply turningSpeed to rotation in correct direction
-            float otherRot = rotation + ((float) Math.PI*2)*((rotation > Math.PI) ? -1 : 1);
+            float otherRot = rotation + MathHelper.TwoPi*((rotation > MathHelper.Pi) ? -1 : 1);
                 //Same angle, different name to compensate for linear numbers
-            float distADir = Math.Abs(wantedRotation - rotation),
+            float distADir = MathHelper.Distance(wantedRotation, rotation),
                   //Archlength sorta from actual rotation
-                  distBDir = Math.Abs(wantedRotation - otherRot); //Archlength sorta from same angle but 2pi over
+                  distBDir = MathHelper.Distance(wantedRotation, otherRot); //Archlength sorta from same angle but 2pi over
 
             //If the usual angle is closer
             if (distADir < distBDir)
@@ -247,7 +247,7 @@ namespace DotWars
                 //Do a rotation using the new number, which is able to give the correct turning direction
                 if (otherRot > wantedRotation)
                 {
-                    Turn(-1*turningSpeed);
+                    Turn(-1.0f*turningSpeed);
                 }
                 else if (otherRot < wantedRotation)
                 {
@@ -331,7 +331,7 @@ namespace DotWars
                 }
                 else
                 {
-                    timer += (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                    timer += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
                 }
 
                 indicator.position = new Vector2(position.X - origin.X, position.Y - origin.Y);

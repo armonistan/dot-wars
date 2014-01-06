@@ -38,7 +38,7 @@ namespace DotWars
         {
             if (mH.GetGametype() is Survival)
             {
-                if (target != null && PathHelper.Distance(target.GetOriginPosition(), GetOriginPosition()) < 200)
+                if (target != null && PathHelper.DistanceSquared(target.GetOriginPosition(), GetOriginPosition()) < 200 * 200)
                     return true;
             }
             else

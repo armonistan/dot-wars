@@ -34,7 +34,7 @@ namespace DotWars
 
         public override bool ShouldUsePower(ManagerHelper mH)
         {
-            if (target != null && PathHelper.Distance(target.GetOriginPosition(), GetOriginPosition()) < 50)
+            if (target != null && PathHelper.DistanceSquared(target.GetOriginPosition(), GetOriginPosition()) < 50 * 50)
                 return true;
             return false;
         }

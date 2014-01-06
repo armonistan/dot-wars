@@ -106,7 +106,7 @@ namespace DotWars
                 upDown = true;
 
             //Change mode
-            if (!warningStarted && nextPulseCounter >= nextPulseSpeed*0.95f)
+            if (!warningStarted && nextPulseCounter >= nextPulseSpeed*0.95)
             {
                 modeIndex = 1;
                 warningStarted = true;
@@ -128,7 +128,7 @@ namespace DotWars
             pulse.SetFrameIndex(index%4);
             pulse.SetModeIndex(index/4);
 
-            pulse.Turn((float) Math.PI/30);
+            pulse.Turn(MathHelper.Pi/30);
         }
 
         private void Pulse(ManagerHelper mH)
@@ -137,7 +137,7 @@ namespace DotWars
             {
                 if (NPCManager.IsNPCInRadius(a, GetOriginPosition(), 200))
                 {
-                    float dir = PathHelper.Direction(a.GetOriginPosition(), GetOriginPosition()) + (float) Math.PI;
+                    float dir = PathHelper.Direction(GetOriginPosition(), a.GetOriginPosition());
 
                     a.AddAcceleration(PathHelper.Direction(dir) * 15);
 

@@ -24,7 +24,7 @@ namespace DotWars
 
             if (targetBase != null)
             {
-                if (PathHelper.Distance(GetOriginPosition(), targetBase.GetOriginPosition()) > 32)
+                if (PathHelper.DistanceSquared(GetOriginPosition(), targetBase.GetOriginPosition()) > 32 * 32)
                     mH.GetPathHelper().FindClearPath(GetOriginPosition(), targetBase.GetOriginPosition(), mH, path);
 
                 else

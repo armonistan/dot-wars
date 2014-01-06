@@ -110,8 +110,8 @@ namespace DotWars
         private int dotsSetOnFireCounter;
 
         private Dictionary<NPC.AffliationTypes, int> dotsRecruited;
-        private Dictionary<NPC.AffliationTypes, float> mostTimeFlagAway;
-        private Dictionary<NPC.AffliationTypes, float> quickestFlagCapture;
+        private Dictionary<NPC.AffliationTypes, double> mostTimeFlagAway;
+        private Dictionary<NPC.AffliationTypes, double> quickestFlagCapture;
         //list of teams
         protected List<NPC.AffliationTypes> affilations;
         protected List<NPC.AffliationTypes> teams;
@@ -625,7 +625,7 @@ namespace DotWars
 
         public String GetMostTimeFlagAwayStatistic()
         {
-            float maxTime = 0;
+            double maxTime = 0;
             NPC.AffliationTypes af = NPC.AffliationTypes.black;
 
             foreach(NPC.AffliationTypes a in teams)
@@ -656,7 +656,7 @@ namespace DotWars
 
         public String GetQuickestFlagCaptureStatistic()
         {
-            float minTime = 1000;
+            double minTime = 1000;
             NPC.AffliationTypes af = NPC.AffliationTypes.black;
 
             foreach (NPC.AffliationTypes a in teams)

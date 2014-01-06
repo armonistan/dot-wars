@@ -22,9 +22,9 @@ namespace DotWars
             shootingSpeed = 6; //Bombardiers call in plane. Slow "reload" time
 
             awareness = 100;
-            vision = (float) Math.PI/2;
+            vision = MathHelper.PiOver2;
             sight = 550;
-            turningSpeed = (float) Math.PI/20;
+            turningSpeed = MathHelper.Pi/20;
 
             pathTimerEnd = 100;
             path.SetMoving(true);
@@ -64,7 +64,7 @@ namespace DotWars
                     if (target == null)
                     {
                         Turn(TURN_AMOUNT);
-                        campingCounter += (float)mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                        campingCounter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
                     }
                     else
                     {
@@ -145,13 +145,17 @@ namespace DotWars
                 {
                     NPC closestForTeam =
                         mH.GetNPCManager().GetClosestInList(mH.GetNPCManager().GetAllies(affliationType), this);
-                    float closestDistanceForTeam = PathHelper.Distance(GetOriginPosition(),
-                                                                       closestForTeam.GetOriginPosition());
 
-                    if (closestDistanceForTeam < closestDistance)
+                    if (closestForTeam != null)
                     {
-                        closest = closestForTeam;
-                        closestDistance = closestDistanceForTeam;
+                        float closestDistanceForTeam = PathHelper.DistanceSquared(GetOriginPosition(),
+                                                                            closestForTeam.GetOriginPosition());
+
+                        if (closestDistanceForTeam < closestDistance)
+                        {
+                            closest = closestForTeam;
+                            closestDistance = closestDistanceForTeam;
+                        }
                     }
                 }
             }

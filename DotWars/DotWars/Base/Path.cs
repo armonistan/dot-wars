@@ -25,14 +25,14 @@ namespace DotWars
 
             if (Count > 1)
             {
-                distance += PathHelper.Distance(base[Count - 1], base[Count - 2]);
+                distance += PathHelper.DistanceSquared(base[Count - 1], base[Count - 2]);
                 //distance += PathHelper.Distance(base.First.Value, base.First.Next.Value);
             }
 
             SetMoving(true);
         }
 
-        public float GetDistance()
+        public double GetDistance()
         {
             return distance;
         }

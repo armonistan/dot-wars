@@ -22,7 +22,7 @@ namespace DotWars
         protected Dictionary<Type, NPC.AffliationTypes> commanders;
         protected List<NPC.AffliationTypes> teams;
 
-        protected float gameEndTimer;
+        protected double gameEndTimer;
         protected int[] scores;
         protected int winScore;
         public GT typeOfGame;
@@ -35,9 +35,9 @@ namespace DotWars
         protected Dictionary<NPC.AffliationTypes, int> flagsCaptured;
         protected Dictionary<NPC.AffliationTypes, int> flagsReturned;
         protected Dictionary<NPC.AffliationTypes, int> dotsRecruited;
-        protected Dictionary<NPC.AffliationTypes, float> timeFlagAway;
-        protected Dictionary<NPC.AffliationTypes, float> mostTimeFlagAway;
-        protected Dictionary<NPC.AffliationTypes, float> quickestFlagCapture;
+        protected Dictionary<NPC.AffliationTypes, double> timeFlagAway;
+        protected Dictionary<NPC.AffliationTypes, double> mostTimeFlagAway;
+        protected Dictionary<NPC.AffliationTypes, double> quickestFlagCapture;
         #endregion
 
         public enum GT
@@ -99,9 +99,9 @@ namespace DotWars
             dotsRecruited.Add(NPC.AffliationTypes.green, 0);
             dotsRecruited.Add(NPC.AffliationTypes.yellow, 0);
 
-            timeFlagAway = new Dictionary<NPC.AffliationTypes, float>();
-            mostTimeFlagAway = new Dictionary<NPC.AffliationTypes, float>();
-            quickestFlagCapture = new Dictionary<NPC.AffliationTypes, float>(); 
+            timeFlagAway = new Dictionary<NPC.AffliationTypes, double>();
+            mostTimeFlagAway = new Dictionary<NPC.AffliationTypes, double>();
+            quickestFlagCapture = new Dictionary<NPC.AffliationTypes, double>(); 
             foreach (NPC.AffliationTypes af in teams)
             {
                 mostTimeFlagAway.Add(af, 0);
@@ -149,7 +149,7 @@ namespace DotWars
                 return true;
             }
             
-            gameEndTimer -= (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            gameEndTimer -= mH.GetGameTime().ElapsedGameTime.TotalSeconds;
 
             return false;
         }
@@ -1031,7 +1031,7 @@ namespace DotWars
             return tempHighestScores;
         }
 
-        public float GetGameEndTimer()
+        public double GetGameEndTimer()
         {
             return gameEndTimer;
         }
@@ -1122,7 +1122,7 @@ namespace DotWars
             return flagsReturned;
         }
 
-        public Dictionary<NPC.AffliationTypes, float> GetMostTimeFlagAway()
+        public Dictionary<NPC.AffliationTypes, double> GetMostTimeFlagAway()
         {
             return mostTimeFlagAway;
         }
@@ -1132,7 +1132,7 @@ namespace DotWars
             return dotsRecruited;
         }
 
-        public Dictionary<NPC.AffliationTypes, float> GetQuickestFlagCapture()
+        public Dictionary<NPC.AffliationTypes, double> GetQuickestFlagCapture()
         {
             return quickestFlagCapture;
         }
@@ -1149,7 +1149,7 @@ namespace DotWars
 
         public void UpdateTimeFlagAway(NPC.AffliationTypes a)
         {
-            timeFlagAway[a] += (float)managers.GetGameTime().ElapsedGameTime.TotalSeconds;
+            timeFlagAway[a] += managers.GetGameTime().ElapsedGameTime.TotalSeconds;
         }
 
         public void UpdateMostTimeFlagAway(NPC.AffliationTypes a)

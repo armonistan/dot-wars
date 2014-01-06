@@ -18,8 +18,8 @@ namespace DotWars
         {
             for (int i = 0; i < NUM_DIRECTIONS; i++)
             {
-                ROTATIONS[i] = (float) Math.PI*2*i/NUM_DIRECTIONS;
-                DIRECTIONS[i] = new Vector2((float) Math.Cos(ROTATIONS[i]), (float) Math.Sin(ROTATIONS[i]));
+                ROTATIONS[i] = MathHelper.TwoPi*i/NUM_DIRECTIONS;
+                DIRECTIONS[i] = new Vector2(DWMath.Cos(ROTATIONS[i]), DWMath.Sin(ROTATIONS[i]));
             }
         }
 
@@ -28,10 +28,10 @@ namespace DotWars
             var rand = new Random();
 
             //Skew the angle slightly to nudge the collider out of the way gradulaly
-            var angle = (float) (PathHelper.Direction(v1, v2) + (((rand.Next(2) == 0) ? -1 : 1)*Math.PI*4/5));
+            var angle = PathHelper.Direction(v1, v2) + (((rand.Next(2) == 0) ? -1 : 1)*MathHelper.Pi*4/5);
 
             //Exctract the x and y values from the skewed angle
-            return new Vector2((float) Math.Cos(angle), (float) Math.Sin(angle));
+            return new Vector2(DWMath.Cos(angle), DWMath.Sin(angle));
         }
 
         public static Vector2 CollideDirectional(Vector2 v, int i)
@@ -53,9 +53,9 @@ namespace DotWars
 
         public static Vector2 IntersectPixelsRadius(Sprite sA, Sprite sB, float rA, float rB)
         {
-            float dist = PathHelper.Distance(sA.GetOriginPosition(), sB.GetOriginPosition());
+            float dist = PathHelper.DistanceSquared(sA.GetOriginPosition(), sB.GetOriginPosition());
 
-            if (dist < (rA + rB))
+            if (dist < (rA * rA + rB * rB))
             {
                 return sB.GetOriginPosition();
             }

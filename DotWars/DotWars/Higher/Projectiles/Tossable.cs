@@ -18,14 +18,14 @@ namespace DotWars
 
             if (drawTime > 0)
             {
-                drawTime -= (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                drawTime -= mH.GetGameTime().ElapsedGameTime.TotalSeconds;
 
                 #region Tossable Update
 
                 #region Keep it in the level
 
                 //Update position
-                Vector2 tempPos = position + velocity*(float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                Vector2 tempPos = position + velocity*mH.GetDeltaSeconds();
 
                 //Check for collisions with environment
                 foreach (Environment e in mH.GetEnvironmentManager().GetStaticBlockers())
@@ -38,7 +38,7 @@ namespace DotWars
                     }
                 }
 
-                tempPos = position + velocity*(float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                tempPos = position + velocity*mH.GetDeltaSeconds();
 
                 if ((tempPos.X < 0 || tempPos.X > mH.GetLevelSize().X - frame.Width - 0 || tempPos.Y < 0 ||
                      tempPos.Y > mH.GetLevelSize().Y - frame.Height - 0))
@@ -77,7 +77,7 @@ namespace DotWars
 
                 foreach (Vector2 a in accelerations)
                 {
-                    acceleration += (a*(float) mH.GetGameTime().ElapsedGameTime.TotalSeconds);
+                    acceleration += a*mH.GetDeltaSeconds();
                 }
 
                 velocity += thrust*acceleration - drag*velocity;
@@ -118,7 +118,7 @@ namespace DotWars
                 EffectSpawnCode(mH);
             }
 
-            existenceTime -= (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            existenceTime -= mH.GetGameTime().ElapsedGameTime.TotalSeconds;
         }
 
         protected override void EffectSpawnCode(ManagerHelper mH)

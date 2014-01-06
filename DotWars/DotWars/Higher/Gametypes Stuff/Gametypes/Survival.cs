@@ -10,7 +10,7 @@ namespace DotWars
         #region Declarations
 
         public List<Claimable> claimables;
-        private float counter, spawnSecs;
+        private double counter, spawnSecs;
         public float suicideSpawnModifier;
         private int survivalPointModifier;
         private bool redCommanderHasSpawned;
@@ -78,11 +78,11 @@ namespace DotWars
                 mH.GetNPCManager().Add(new Suicide(mH.GetSpawnHelper().SpawnSucideDots(), mH));
 
                 counter = 0;
-                spawnSecs -= (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                spawnSecs -= mH.GetGameTime().ElapsedGameTime.TotalSeconds;
             }
 
             //Update spent time
-            counter += (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            counter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
 
             #endregion
 
@@ -161,16 +161,14 @@ namespace DotWars
             if (claimables.Count > 0)
             {
                 Claimable closest = null;
-                float minDist = 10000;
+                float minDist = float.PositiveInfinity;
 
                 foreach (Claimable a in claimables)
                 {
                     if (!a.taken)
                     {
-                        var aDist =
-                            (float)
-                            (Math.Sqrt(Math.Pow(p.X - a.GetOriginPosition().X, 2) +
-                                       Math.Pow(p.Y - a.GetOriginPosition().Y, 2)));
+                        float aDist = PathHelper.DistanceSquared(p, a.GetOriginPosition());
+
                         if (aDist < minDist)
                         {
                             closest = a;

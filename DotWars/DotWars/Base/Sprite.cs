@@ -97,7 +97,7 @@ namespace DotWars
 
             foreach (Vector2 a in accelerations)
             {
-                acceleration += (a*(float) mH.GetGameTime().ElapsedGameTime.TotalSeconds);
+                acceleration += a*mH.GetDeltaSeconds();
             }
 
             velocity += thrust*acceleration - drag*velocity;
@@ -108,7 +108,7 @@ namespace DotWars
             #endregion
 
             //Update position
-            position += velocity*(float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            position += velocity*mH.GetDeltaSeconds();
 
             //Update frame
             if (frameIndex < 0)
@@ -165,16 +165,16 @@ namespace DotWars
             rotation += d;
 
             //If rotation is larger than 2pi
-            if (rotation >= (Math.PI*2))
+            if (rotation >= MathHelper.TwoPi)
             {
                 //Reduce it by 2pi to keep it between 0 and 2pi exclusive
-                rotation -= (float) (Math.PI*2);
+                rotation -= MathHelper.TwoPi;
             }
                 //If rotation is smaller than 0
             else if (rotation < 0)
             {
                 //Add 2pi to it to keep it between 0 and 2pi exclusive
-                rotation += (float) (Math.PI*2);
+                rotation += MathHelper.TwoPi;
             }
         }
 

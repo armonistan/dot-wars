@@ -9,9 +9,9 @@ namespace DotWars
 
         #region Declarations
 
-        protected float drawTime;
+        protected double drawTime;
 
-        protected float existanceTime;
+        protected double existanceTime;
 
         private float rotationAmount;
 
@@ -53,11 +53,11 @@ namespace DotWars
             if (drawTime > 0)
             {
                 Turn(rotationAmount);
-                drawTime -= (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                drawTime -= mH.GetGameTime().ElapsedGameTime.TotalSeconds;
                 base.Update(mH);
             }
 
-            existanceTime -= (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            existanceTime -= mH.GetGameTime().ElapsedGameTime.TotalSeconds;
         }
 
         public override void Draw(SpriteBatch sB, Vector2 displacement, ManagerHelper mH)
@@ -68,7 +68,7 @@ namespace DotWars
             }
         }
 
-        public float GetExistanceTime()
+        public double GetExistanceTime()
         {
             return existanceTime;
         }

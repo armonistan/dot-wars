@@ -50,8 +50,8 @@ namespace DotWars
 
         //Path used for going
         protected Path path;
-        protected float pathTimer;
-        protected float pathTimerEnd;
+        protected double pathTimer;
+        protected double pathTimerEnd;
 
         private bool fireStatus;
 
@@ -74,11 +74,11 @@ namespace DotWars
             movementSpeed = 75;
             shootingSpeed = 0.2f;
             grenadeSpeed = 3f;
-            turningSpeed = maxTurningSpeed = (float) Math.PI/30;
+            turningSpeed = maxTurningSpeed = MathHelper.Pi/30;
 
             awareness = 75;
             sight = 250;
-            vision = (float) Math.PI/3;
+            vision = MathHelper.Pi/3;
 
             shootingCounter = 0;
             grenadeCounter = 0;
@@ -133,13 +133,13 @@ namespace DotWars
                         //Get x and y values from angle and set up direction
 
                     //If already there...
-                    if (PathHelper.Distance(next, GetOriginPosition()) < 15)
+                    if (PathHelper.DistanceSquared(next, GetOriginPosition()) < 15 * 15)
                     {
                         //path.RemoveFirst(); //Go on to next destination
                         path.RemoveAt(0);
                     }
 
-                    pathTimer += (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                    pathTimer += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
                 }
             }
 
@@ -167,21 +167,21 @@ namespace DotWars
             }
 
             //Calculate turningSpeed to maximize speed and minimize jittering
-            if (Math.Abs(rotation - dir) < turningSpeed && turningSpeed > (float) Math.PI/160)
+            if (MathHelper.Distance(rotation, dir) < turningSpeed && turningSpeed > MathHelper.Pi/160)
             {
                 turningSpeed /= 2;
             }
-            else if (Math.Abs(rotation - dir) > turningSpeed && turningSpeed < maxTurningSpeed)
+            else if (MathHelper.Distance(rotation, dir) > turningSpeed && turningSpeed < maxTurningSpeed)
             {
                 turningSpeed *= 2;
             }
 
             //Apply turningSpeed to rotation in correct direction
-            float otherRot = rotation + ((float) Math.PI*2)*((rotation > Math.PI) ? -1 : 1);
+            float otherRot = rotation + (MathHelper.TwoPi)*((rotation > MathHelper.Pi) ? -1 : 1);
             //Same angle, different name to compensate for linear numbers
-            float distADir = Math.Abs(dir - rotation),
+            float distADir = MathHelper.Distance(dir, rotation),
                   //Archlength sorta from actual rotation
-                  distBDir = Math.Abs(dir - otherRot); //Archlength sorta from same angle but 2pi over
+                  distBDir = MathHelper.Distance(dir, otherRot); //Archlength sorta from same angle but 2pi over
 
             //If the usual angle is closer
             if (distADir < distBDir)
@@ -219,7 +219,7 @@ namespace DotWars
         protected virtual void PosUpdate(ManagerHelper mH)
         {
             //Update position
-            Vector2 tempPos = position + velocity*(float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            Vector2 tempPos = position + velocity*mH.GetDeltaSeconds();
             Vector2 tempOPos = tempPos + origin;
             float distSquared = 1000000;
 
@@ -276,7 +276,7 @@ namespace DotWars
                 }
             }
 
-            tempPos = position + velocity*(float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            tempPos = position + velocity*mH.GetDeltaSeconds();
 
             if (
                 !(tempPos.X < buffer || tempPos.X > mH.GetLevelSize().X - frame.Width - buffer || tempPos.Y < buffer ||
@@ -438,7 +438,7 @@ namespace DotWars
                     if (NPCManager.IsNPCInRadius(suicide, GetOriginPosition(), sight) &&
                         NPCManager.IsNPCInDirection(suicide, GetOriginPosition(), rotation, vision, mH))
                     {
-                        float distanceToSuicide = PathHelper.Distance(GetOriginPosition(), suicide.GetOriginPosition());
+                        float distanceToSuicide = PathHelper.DistanceSquared(GetOriginPosition(), suicide.GetOriginPosition());
 
                         if (distanceToSuicide < closestDistance)
                         {
@@ -461,7 +461,7 @@ namespace DotWars
                         NPCManager.IsNPCInRadius(agent, GetOriginPosition(), sight) &&
                         NPCManager.IsNPCInDirection(agent, GetOriginPosition(), rotation, vision, mH))
                     {
-                        float distanceToAgent = PathHelper.Distance(GetOriginPosition(), agent.GetOriginPosition());
+                        float distanceToAgent = PathHelper.DistanceSquared(GetOriginPosition(), agent.GetOriginPosition());
 
                         if (distanceToAgent < closestDistance)
                         {
@@ -477,7 +477,7 @@ namespace DotWars
 
         protected virtual void Shoot(ManagerHelper mH)
         {
-            Vector2 tempPos = PathHelper.Direction(rotation + (float) (Math.PI/2))*new Vector2(10);
+            Vector2 tempPos = PathHelper.Direction(rotation + MathHelper.PiOver2)*new Vector2(10);
 
             mH.GetProjectileManager()
               .AddProjectile(ProjectileManager.STANDARD, GetOriginPosition() + tempPos, this,
@@ -490,7 +490,7 @@ namespace DotWars
 
         protected void TossGrenade(ManagerHelper mH)
         {
-            Vector2 tempPos = PathHelper.Direction(rotation + (float) (Math.PI/2))*new Vector2(10);
+            Vector2 tempPos = PathHelper.Direction(rotation + MathHelper.PiOver2)*new Vector2(10);
 
             mH.GetProjectileManager()
               .AddTossable(ProjectileManager.GRENADE, GetOriginPosition() + tempPos, this,
@@ -595,15 +595,6 @@ namespace DotWars
             }
         }
 
-        public int GetDistanceScore(NPC a, NPC b, ManagerHelper mH)
-        {
-            float distance = PathHelper.Distance(a.GetOriginPosition(), b.GetOriginPosition());
-                // distance between two npcs
-            var distanceScore = (int) (distance/10); //raw score
-
-            return distanceScore;
-        }
-
         public int GetHealthScore(NPC t)
         {
             int healthScore = t.GetHealth(); //raw score
@@ -695,7 +686,7 @@ namespace DotWars
             }
             else if (mH.GetGametype() is Survival)
             {
-                pathTimerEnd = 0.1f;
+                pathTimerEnd = 0.1;
                 SurvivalPath(mH);
             }
             else
@@ -722,7 +713,7 @@ namespace DotWars
                 {
                     if (agent.GetAffiliation() != affiliation)
                     {
-                        float distaceToEnemy = PathHelper.Distance(GetOriginPosition(), agent.GetOriginPosition());
+                        float distaceToEnemy = PathHelper.DistanceSquared(GetOriginPosition(), agent.GetOriginPosition());
 
                         if (distaceToEnemy < tempClosestDistance)
                         {
@@ -737,7 +728,7 @@ namespace DotWars
 
             if (tempEnemy != null)
             {
-                if (PathHelper.Distance(GetOriginPosition(), tempEnemy.GetOriginPosition()) > 128)
+                if (PathHelper.DistanceSquared(GetOriginPosition(), tempEnemy.GetOriginPosition()) > 128 * 128)
                 {
                     mH.GetPathHelper().FindClearPath(GetOriginPosition(), tempEnemy.GetOriginPosition(), mH, path);
                     
@@ -756,9 +747,9 @@ namespace DotWars
         protected void FlarePath(ManagerHelper mH)
         {
             Flare f = mH.GetProjectileManager().GetFlare(affiliation);
-            float tempDist = PathHelper.Distance(GetOriginPosition(), f.GetOriginPosition());
+            float tempDist = PathHelper.DistanceSquared(GetOriginPosition(), f.GetOriginPosition());
 
-            if (!f.IsInList(this) && tempDist > f.GetFlareRadius())
+            if (!f.IsInList(this) && tempDist > f.GetFlareRadius() * f.GetFlareRadius())
             {
                 mH.GetPathHelper().FindClearPath(GetOriginPosition(), f.GetOriginPosition(), mH, path);
             }
@@ -856,7 +847,7 @@ namespace DotWars
 
             if (c != null)
             {
-                if (PathHelper.Distance(c.GetOriginPosition(), GetOriginPosition()) < 96)
+                if (PathHelper.DistanceSquared(c.GetOriginPosition(), GetOriginPosition()) < 96 * 96)
                 {
                     HoverPath(mH, c.GetOriginPosition(), 96);
                 }

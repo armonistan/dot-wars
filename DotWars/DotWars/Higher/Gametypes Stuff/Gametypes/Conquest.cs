@@ -15,7 +15,7 @@ namespace DotWars
 
         //list of bases
         public List<ConquestBase> bases;
-        private float counter;
+        private double counter;
 
         #endregion
 
@@ -81,7 +81,7 @@ namespace DotWars
             }
             else
             {
-                counter += (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                counter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
             }
 
             #region base code slightly modified
@@ -215,7 +215,7 @@ namespace DotWars
                 return true;
             }
 
-            gameEndTimer -= (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            gameEndTimer -= mH.GetGameTime().ElapsedGameTime.TotalSeconds;
 
             return false;
 
@@ -285,18 +285,13 @@ namespace DotWars
         {
             if (bL.Count > 0)
             {
-                ConquestBase closest = bL.First();
-                var minDist =
-                    (float)
-                    (Math.Sqrt(Math.Pow(p.X - closest.GetOriginPosition().X, 2) +
-                               Math.Pow(p.Y - closest.GetOriginPosition().Y, 2)));
+                ConquestBase closest = null;
+                float minDist = float.PositiveInfinity;
 
                 foreach (ConquestBase b in bL)
                 {
-                    var aDist =
-                        (float)
-                        (Math.Sqrt(Math.Pow(p.X - b.GetOriginPosition().X, 2) +
-                                   Math.Pow(p.Y - b.GetOriginPosition().Y, 2)));
+                    float aDist = PathHelper.DistanceSquared(p, b.GetOriginPosition());
+
                     if (aDist < minDist)
                     {
                         closest = b;
@@ -326,10 +321,10 @@ namespace DotWars
                     if (fb == null)
                         fb = b;
                     else if (
-                        PathHelper.Distance(b.GetOriginPosition(),
+                        PathHelper.DistanceSquared(b.GetOriginPosition(),
                                             GetClosestInList(GetEnemyBases(a), b.GetOriginPosition())
                                                 .GetOriginPosition()) <
-                        PathHelper.Distance(fb.GetOriginPosition(),
+                        PathHelper.DistanceSquared(fb.GetOriginPosition(),
                                             GetClosestInList(GetEnemyBases(a), fb.GetOriginPosition())
                                                 .GetOriginPosition()))
                     {

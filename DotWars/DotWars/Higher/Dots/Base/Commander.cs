@@ -18,12 +18,12 @@ namespace DotWars
         protected double abilityCharge;
 
         //Indicator stuff
-        protected float endtime;
+        protected double endtime;
         public int flareCount;
         public int grenadeType;
         protected Sprite indicator;
         public double shotgunShootingSpeed;
-        protected float timer;
+        protected double timer;
         public int weaponType; //0 is the machine gun, 1 is shot gun
 
         private const string SHOTGUN_SHOOT = "shotgunShoot";
@@ -53,9 +53,9 @@ namespace DotWars
             abilityCharge = 0.3;
 
             awareness = 500;
-            vision = (float) Math.PI/2;
+            vision = MathHelper.PiOver2;
             sight = 300;
-            turningSpeed = (float) Math.PI/20;
+            turningSpeed = MathHelper.Pi/20;
 
             affiliation = AffliationTypes.red;
 
@@ -94,7 +94,7 @@ namespace DotWars
                 }
                 else
                 {
-                    timer += (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                    timer += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
                 }
 
                 indicator.position = new Vector2(position.X - origin.X, position.Y - origin.Y);
@@ -129,7 +129,7 @@ namespace DotWars
             if (target != null)
             {
                 //First find out what gun I want
-                if (PathHelper.Distance(GetOriginPosition(), target.GetOriginPosition()) > SHOTGUNRANGE)
+                if (PathHelper.DistanceSquared(GetOriginPosition(), target.GetOriginPosition()) > SHOTGUNRANGE * SHOTGUNRANGE)
                 {
                     weaponType = 1;
                 }
@@ -185,7 +185,7 @@ namespace DotWars
 
         protected void ShootShotgun(ManagerHelper mH)
         {
-            Vector2 tempPos = PathHelper.Direction(rotation + (float) (Math.PI/2))*new Vector2(10);
+            Vector2 tempPos = PathHelper.Direction(rotation + MathHelper.PiOver2)*new Vector2(10);
 
             //7 Shots
             for (int s = 0; s < 7; s++)
@@ -207,7 +207,7 @@ namespace DotWars
 
         protected override void Shoot(ManagerHelper mH)
         {
-            Vector2 tempPos = PathHelper.Direction(rotation + (float)(Math.PI / 2)) * new Vector2(10);
+            Vector2 tempPos = PathHelper.Direction(rotation + MathHelper.PiOver2) * new Vector2(10);
 
             mH.GetProjectileManager()
               .AddProjectile(ProjectileManager.STANDARD, GetOriginPosition() + tempPos, this,
@@ -297,7 +297,7 @@ namespace DotWars
                     hasAllies = (allyCount > 2);
 
                     var closestBase = temp.GetClosestInList(temp.GetEnemyBases(affiliation), GetOriginPosition());
-                    bool isNearBase = closestBase != null && (PathHelper.Distance(GetOriginPosition(), closestBase.GetOriginPosition()) < 128) ;
+                    bool isNearBase = closestBase != null && (PathHelper.DistanceSquared(GetOriginPosition(), closestBase.GetOriginPosition()) < 128 * 128) ;
 
                     return (hasAllies && isNearBase);
                 }
@@ -464,7 +464,6 @@ namespace DotWars
                 DeathmatchPath(mH);
             else if (mH.GetGametype() is Survival)
             {
-                pathTimerEnd = 0.1f;
                 SurvivalPath(mH);
             }
             else
@@ -478,7 +477,7 @@ namespace DotWars
 
             if (targetBase != null)
             {
-                if (PathHelper.Distance(GetOriginPosition(), targetBase.GetOriginPosition()) > 32)
+                if (PathHelper.DistanceSquared(GetOriginPosition(), targetBase.GetOriginPosition()) > 32 * 32)
                     mH.GetPathHelper().FindClearPath(GetOriginPosition(), targetBase.GetOriginPosition(), mH, path);
                 else
                     HoverPath(mH, targetBase.GetOriginPosition(), 16);
@@ -532,7 +531,7 @@ namespace DotWars
                             NPC closestEnemyForTeam =
                                 mH.GetNPCManager().GetClosestInList(mH.GetNPCManager().GetAllies(team), captor);
                             float closestDistanceToEnemyForTeam =
-                                PathHelper.Distance(closestEnemyForTeam.GetOriginPosition(), captor.GetOriginPosition());
+                                PathHelper.DistanceSquared(closestEnemyForTeam.GetOriginPosition(), captor.GetOriginPosition());
 
                             if (closestDistanceToEnemyForTeam < closestDistanceToEnemy)
                             {
@@ -591,7 +590,7 @@ namespace DotWars
 
         protected override void SurvivalPath(ManagerHelper mH)
         {
-            pathTimerEnd = .5f;
+            pathTimerEnd = .5;
 
             var temp = (Survival) mH.GetGametype();
             Claimable c = temp.GetClosestClaimable(GetOriginPosition());
@@ -600,7 +599,7 @@ namespace DotWars
                   .GetClosestInList(mH.GetNPCManager().GetAllies(AffliationTypes.black),
                                     GetOriginPosition());
 
-            if (enemy != null && PathHelper.Distance(GetOriginPosition(), enemy.GetOriginPosition()) < 200)
+            if (enemy != null && PathHelper.DistanceSquared(GetOriginPosition(), enemy.GetOriginPosition()) < 200 * 200)
             {
                 mH.GetPathHelper().FindEscapePath(GetOriginPosition(), enemy.GetOriginPosition(), 400, mH, 200, path);
             }

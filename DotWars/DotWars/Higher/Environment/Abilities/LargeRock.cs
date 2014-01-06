@@ -9,10 +9,10 @@ namespace DotWars
         #region Declarations
 
         private NPC.AffliationTypes affiliation;
-        private float animateTime;
+        private double animateTime;
 
         private int health;
-        private float timer;
+        private double timer;
         private const int DAMAGE = 10;
 
         private NPC lastDamager;
@@ -46,14 +46,15 @@ namespace DotWars
             if (timer < animateTime)
             {
                 frameIndex = (int) (timer/animateTime*12);
+                float frameModifier = ((frameIndex + 1)*6);
 
                 if (mH.GetGametype() is Survival)
                 {
                     foreach (NPC a in mH.GetNPCManager().GetAllies(NPC.AffliationTypes.black))
                     {
-                        var test = PathHelper.Distance(GetOriginPosition(), a.GetOriginPosition());
+                        float distanceToAgent = PathHelper.DistanceSquared(GetOriginPosition(), a.GetOriginPosition());
 
-                        if (test < ((frameIndex + 1) * 6))
+                        if (distanceToAgent < frameModifier * frameModifier)
                         {
                             a.AddAcceleration(PathHelper.DirectionVector(GetOriginPosition(), a.GetOriginPosition()) * 10);
 
@@ -67,9 +68,9 @@ namespace DotWars
                     {
                         if (a.GetAffiliation() != affiliation)
                         {
-                            var test = PathHelper.Distance(GetOriginPosition(), a.GetOriginPosition());
+                            var distanceToAgent = PathHelper.DistanceSquared(GetOriginPosition(), a.GetOriginPosition());
 
-                            if (test < ((frameIndex + 1)*6))
+                            if (distanceToAgent < frameModifier * frameModifier)
                             {
                                 a.AddAcceleration(PathHelper.DirectionVector(GetOriginPosition(), a.GetOriginPosition()) * 10);
 
@@ -79,7 +80,7 @@ namespace DotWars
                     }
                 }
 
-                timer += (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                timer += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
             }
 
             base.Update(mH);

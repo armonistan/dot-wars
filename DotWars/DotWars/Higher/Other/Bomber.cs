@@ -26,7 +26,7 @@ namespace DotWars
 
             //Set up direction
             float dir = PathHelper.Direction(GetOriginPosition(), t.GetOriginPosition());
-            velocity = new Vector2((float) Math.Cos(dir), (float) Math.Sin(dir))*movementSpeed;
+            velocity = new Vector2(DWMath.Cos(dir), DWMath.Sin(dir))*movementSpeed;
 
             //Set up path
             path = new Path();
@@ -70,15 +70,15 @@ namespace DotWars
         //This method will be used to dictate the AI's behavior in this public class
         public override void Update(ManagerHelper mH)
         {
-            float distanceToTarget = PathHelper.Distance(GetOriginPosition(), targetPosition);
+            double distanceToTarget = PathHelper.DistanceSquared(GetOriginPosition(), targetPosition);
 
-            if (distanceToTarget < 300 && !hasBombed)
+            if (distanceToTarget < 300 * 300 && !hasBombed)
             {
                 Bomb(mH);
                 hasBombed = true;
             }
 
-            if (distanceToTarget < 50)
+            if (distanceToTarget < 50 * 50)
             {
                 drawTarget = false;
             }
@@ -90,13 +90,13 @@ namespace DotWars
                 mH.GetNPCManager().Remove(this);
             }
 
-            var test =
+            var newTargetSpriteIndex =
                 (int)
                 (targetSprite.GetTotalFrames()*
                  Math.Max(0,
-                          Math.Min(1000, 1000 - PathHelper.Distance(GetOriginPosition(), targetPosition)))/
-                 1000);
-            targetSprite.SetFrameIndex(test);
+                          Math.Min(1000 * 1000, 1000 * 1000 - PathHelper.DistanceSquared(GetOriginPosition(), targetPosition)))/
+                 1000 * 1000);
+            targetSprite.SetFrameIndex(newTargetSpriteIndex);
 
             SpriteUpdate(mH);
             targetSprite.Update(mH);

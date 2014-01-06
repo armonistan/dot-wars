@@ -500,11 +500,11 @@ namespace DotWars
 
                 shouldDrawScores = canDrawScores;
 
-                Vector2 safeAreaStart = new Vector2((i / 2 == 0) ? (float) c.GetPort().TitleSafeArea.Left : 0, (i % 2 == 0) ? (float) c.GetPort().TitleSafeArea.Top : 0);
-                Vector2 safeAreaEnd = new Vector2(((i / 2 == 0) ? (float)c.GetPort().TitleSafeArea.Left : 0) + c.GetPort().TitleSafeArea.Width, (i % 2 == 0) ? (float)c.GetPort().TitleSafeArea.Top : 0);
+                Vector2 safeAreaStart = new Vector2((i / 2 == 0) ? c.GetPort().TitleSafeArea.Left : 0, (i % 2 == 0) ? c.GetPort().TitleSafeArea.Top : 0);
+                Vector2 safeAreaEnd = new Vector2(((i / 2 == 0) ? c.GetPort().TitleSafeArea.Left : 0) + c.GetPort().TitleSafeArea.Width, (i % 2 == 0) ? c.GetPort().TitleSafeArea.Top : 0);
 
                 leftPos = safeAreaStart + new Vector2(150, 50);
-                rightPos = ((shouldDrawScores) ? safeAreaEnd + new Vector2(-24 + (4 - Math.Min(numTeams, 4)) * 82, 50) : Level.DEFAUT_SCREEN_SIZE / 2 + new Vector2(364, -16));
+                rightPos = ((shouldDrawScores) ? safeAreaEnd + new Vector2(-24 + (4 - Math.Min(numTeams, 4)) * 82, 50) : Level.DEFAUT_SCREEN_SIZE / 2 + new Vector2(364.0f, -16.0f));
 
                 if (c.commanderType == typeof (RedCommander) || c.commanderType == typeof (RedPlayerCommander))
                 {

@@ -8,8 +8,8 @@ namespace DotWars
     public class Sniper : NPC
     {
         private bool threatened; //variable used to see if sniper feels unsecure
-        private float campingCounter;
-        private float campingEnd;
+        private double campingCounter;
+        private double campingEnd;
         private const float TURN_AMOUNT = 0.1f;
 
         protected Sniper(String aN, Vector2 p)
@@ -21,9 +21,9 @@ namespace DotWars
             shootingSpeed = 2; //Snipers are one shot one kills. Slow reload time
 
             awareness = 150;
-            vision = (float) Math.PI/2;
+            vision = MathHelper.PiOver2;
             sight = 750;
-            turningSpeed = (float) Math.PI/20;
+            turningSpeed = MathHelper.Pi/20;
 
             pathTimerEnd = 100;
             path.SetMoving(false);
@@ -63,7 +63,7 @@ namespace DotWars
                     if (target == null)
                     {
                         Turn(TURN_AMOUNT);
-                        campingCounter += (float) mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                        campingCounter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
                     }
                     else
                     {
@@ -88,7 +88,7 @@ namespace DotWars
 
         protected override void Shoot(ManagerHelper mH)
         {
-            Vector2 tempPos = PathHelper.Direction(rotation + (float)(Math.PI / 2)) * new Vector2(10);
+            Vector2 tempPos = PathHelper.Direction(rotation + MathHelper.PiOver2) * new Vector2(10);
 
             mH.GetProjectileManager()
               .AddProjectile(ProjectileManager.STANDARD, GetOriginPosition() + tempPos, this,
