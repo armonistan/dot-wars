@@ -92,18 +92,6 @@ namespace DotWars
             exploaded = true;
         }
 
-        //public void Set(Vector2 p, int d, NPC aT, ManagerHelper mH)
-        //{
-        //    base.Set(asset, p, Vector2.Zero, 0.1f, 0, 0, 0.5f, mH);
-        //
-        //    existanceTime = 0.1f;
-        //    affiliation = aT.GetAffiliation();
-        //    creator = aT;
-        //    damage = d;
-        //
-        //    mH.GetAudioManager().Play("Other/explosion", mH.GetAudioManager().NumberVolume("Other/explosion", 2, 1, mH), AudioManager.RandomPitch(mH), 0);
-        //}
-
         public void Set(Vector2 p, int d, NPC n, ManagerHelper mH)
         {
             base.Set(asset, p, Vector2.Zero, 0.1f, 0, 0, 0.5f, mH);

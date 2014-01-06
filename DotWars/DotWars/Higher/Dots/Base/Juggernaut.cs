@@ -88,7 +88,7 @@ namespace DotWars
                         {
                             Vector2 knockback = new Vector2((float)(p.velocity.X * .05), (float)(p.velocity.Y * .05));
                             accelerations.Add(knockback);
-                            mH.GetAudioManager().Play("juggernautRicohet", (float).05, 0, 0, false);
+                            mH.GetAudioManager().Play("juggernautRicohet", (float).05, (float)-.5, 0, false);
                         }
 
                         p.SetDrawTime(0);

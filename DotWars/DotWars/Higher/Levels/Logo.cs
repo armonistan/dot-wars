@@ -165,6 +165,7 @@ namespace DotWars
 
             textures.Add("Dots/Red/grunt_red", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Red/bombardier_red", new Rectangle(0, 0, 32, 32));
+            textures.Add("Effects/bombardier_redVFX", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Red/specialist_red", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Red/juggernaut_red", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Red/sniper_red", new Rectangle(0, 0, 32, 32));
@@ -174,6 +175,7 @@ namespace DotWars
 
             textures.Add("Dots/Blue/grunt_blue", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Blue/bombardier_blue", new Rectangle(0, 0, 32, 32));
+            textures.Add("Effects/bombardier_blueVFX", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Blue/specialist_blue", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Blue/juggernaut_blue", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Blue/sniper_blue", new Rectangle(0, 0, 32, 32));
@@ -183,6 +185,7 @@ namespace DotWars
 
             textures.Add("Dots/Green/grunt_green", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Green/bombardier_green", new Rectangle(0, 0, 32, 32));
+            textures.Add("Effects/bombardier_greenVFX", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Green/specialist_green", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Green/juggernaut_green", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Green/sniper_green", new Rectangle(0, 0, 32, 32));
@@ -192,6 +195,7 @@ namespace DotWars
 
             textures.Add("Dots/Yellow/grunt_yellow", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Yellow/bombardier_yellow", new Rectangle(0, 0, 32, 32));
+            textures.Add("Effects/bombardier_yellowVFX", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Yellow/specialist_yellow", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Yellow/juggernaut_yellow", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Yellow/sniper_yellow", new Rectangle(0, 0, 32, 32));
@@ -211,7 +215,7 @@ namespace DotWars
 
             textures.Add("Projectiles/bullet_standard", new Rectangle(0, 0, 7, 6));
             textures.Add("Projectiles/bullet_sniper", new Rectangle(0, 0, 7, 6));
-            textures.Add("Projectiles/bullet_rocket", new Rectangle(0, 0, 7, 6));
+            textures.Add("Projectiles/bullet_rocket", new Rectangle(0, 0, 17, 10));
             textures.Add("Projectiles/bullet_shotgun", new Rectangle(0, 0, 7, 6));
 
             textures.Add("Projectiles/grenade", new Rectangle(0, 0, 15, 15));
