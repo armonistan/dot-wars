@@ -35,6 +35,7 @@ namespace DotWars
 
         private SpriteFont smallFont;
         private SpriteFont bigFont;
+        private SpriteFont tinyFont;
         #endregion
 
         #region Location Constants
@@ -45,6 +46,7 @@ namespace DotWars
 
         public enum FontSizes
         {
+            tiny,
             small,
             big
         }
@@ -120,6 +122,7 @@ namespace DotWars
 
         public void StartLoad(ContentManager cM)
         {
+            tinyFont = cM.Load<SpriteFont>("Fonts/tinytext");
             smallFont = cM.Load<SpriteFont>("Fonts/text");
             bigFont = cM.Load<SpriteFont>("Fonts/bigtext");
         }
@@ -206,6 +209,9 @@ namespace DotWars
 
             switch (fS)
             {
+                case FontSizes.tiny:
+                    temp = tinyFont;
+                    break;
                 case FontSizes.small:
                     temp = smallFont;
                     break;

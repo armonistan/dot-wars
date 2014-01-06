@@ -638,7 +638,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_rocket.xnb</Output>
-      <Time>2014-01-03T21:38:41.4341809-06:00</Time>
+      <Time>2013-07-02T16:33:08-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\Projectiles\bullet_shotgun.png</Source>
@@ -2528,43 +2528,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\juggernautRicohet.xnb</Output>
-      <Time>2014-01-03T21:13:03.375209-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Effects\bombardier_blueVFX.png</Source>
-      <Name>Textures\Effects\bombardier_blueVFX</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\bombardier_blueVFX.xnb</Output>
-      <Time>2014-01-05T12:36:52.089649-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Effects\bombardier_greenVFX.png</Source>
-      <Name>Textures\Effects\bombardier_greenVFX</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\bombardier_greenVFX.xnb</Output>
-      <Time>2014-01-05T12:36:52.0966494-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Effects\bombardier_redVFX.png</Source>
-      <Name>Textures\Effects\bombardier_redVFX</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\bombardier_redVFX.xnb</Output>
-      <Time>2014-01-05T12:36:52.1006497-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Effects\bombardier_yellowVFX.png</Source>
-      <Name>Textures\Effects\bombardier_yellowVFX</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\bombardier_yellowVFX.xnb</Output>
-      <Time>2014-01-05T12:36:52.1046499-06:00</Time>
+      <Time>2014-01-03T17:52:38.9234497-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using DotWars.Higher.Levels;
 
 namespace DotWars
 {
@@ -76,6 +77,9 @@ namespace DotWars
         private Sprite exitButtonA;
         private Sprite exitButtonB;
 
+        private Sprite dotapediaBackground;
+        private Dotapedia dotpedia;
+
         #endregion
 
         public Menu(TextureManager tM, AudioManager audio) :
@@ -110,6 +114,9 @@ namespace DotWars
                 commanderSlots[i] = -1;
             }
             theTeams = new List<NPC.AffliationTypes>(5);
+
+            //create dotapedia
+            dotpedia = new Dotapedia();
 
             startOptions = new string[5];
             startOptions[0] = "Set-up Game";
@@ -167,6 +174,11 @@ namespace DotWars
             startTriggers = new Sprite("Backgrounds/Menu/triggers", new Vector2(624, 680));
             logo.LoadContent(textures);
             startOptionsBackground.LoadContent(textures);startTriggers.LoadContent(textures);
+
+            //dotapedia
+            dotapediaBackground = new Sprite("Backgrounds/Menu/dotapedia", new Vector2(624, 360));
+            dotapediaBackground.LoadContent(textures);
+            dotpedia.init(textures);
 
             //PlayerScreen
             commanderCards = new Sprite[4];
@@ -567,7 +579,7 @@ namespace DotWars
                                 }
                             }
                         }
-                        else if (theStates[indexOfKing].IsButtonDown(Buttons.Back))
+                        else if (theStates[indexOfKing].IsButtonDown(Buttons.Back) || keyState.IsKeyDown(Keys.Escape))
                         {
                             sounds.Play("return", 3, 0, 0, false);
                             stage = MenuSelect.characterSelect;
@@ -587,7 +599,13 @@ namespace DotWars
                     //Update frames
                     mapBackground.UpdateFrame();
                     gametypeBackground.UpdateFrame();
+                    for (int c = 0; c < theStates.Length; c++)
+                    {
+                        controllerCards[c].SetModeIndex(commanderCards[c].GetFrameIndex() - 1);
+                        Console.WriteLine(commanderCards[c].GetFrameIndex() - 1);
+                    }
                     break;
+
                 case MenuSelect.teamSelect:
                     #region Team Selection
 
@@ -781,8 +799,43 @@ namespace DotWars
 
                 case MenuSelect.dotopedia:
                     #region Dot-o-pedia functionality
+                    if (keyState.IsKeyDown(Keys.Left) && pastState.IsKeyUp(Keys.Left))
+                    {
+                        dotpedia.changeUnitType(-1);
+                    }
+                    else if (keyState.IsKeyDown(Keys.Right) && pastState.IsKeyUp(Keys.Right))
+                    {
+                        dotpedia.changeUnitType(1);
+                    }
+                    else if (keyState.IsKeyDown(Keys.Down) && pastState.IsKeyUp(Keys.Down))
+                    {
+                        dotpedia.changeUnit(1);
+                    }
+                    else if (keyState.IsKeyDown(Keys.Up) && pastState.IsKeyUp(Keys.Up))
+                    {
+                        dotpedia.changeUnit(-1);
+                    }
+
                     for (int c = 0; c < theStates.Length; c++)
                     {
+                        if (theStates[c].IsButtonDown(Buttons.LeftTrigger) && oldStates[c].IsButtonUp(Buttons.LeftTrigger))
+                        {
+                            dotpedia.changeUnitType(-1);
+                        }
+                        else if (theStates[c].IsButtonDown(Buttons.RightTrigger) && oldStates[c].IsButtonUp(Buttons.RightTrigger))
+                        {
+                            dotpedia.changeUnitType(1);
+                        }
+                        else if (theStates[c].IsButtonDown(Buttons.RightShoulder) && oldStates[c].IsButtonUp(Buttons.RightShoulder))
+                        {
+                            dotpedia.changeUnit(1);
+                        }
+                        else if (theStates[c].IsButtonDown(Buttons.LeftShoulder) && oldStates[c].IsButtonUp(Buttons.LeftShoulder))
+                        {
+                            dotpedia.changeUnit(-1);
+                        }
+
+
                         if (stageCounters[c] > SECONDS_TO_WAIT_FOR_INPUT)
                         {
                             if (keyState.IsKeyDown(Keys.Escape) || theStates[c].IsButtonDown(Buttons.Back))
@@ -938,12 +991,25 @@ namespace DotWars
                         if (commanderCards[c].GetModeIndex() != 0 && commanderCards[c].GetFrameIndex() != 0)
                         {
                             controllerCards[c].Draw(sB, Vector2.Zero, managers);
+                            textures.DrawString(sB, (c+1) + "", controllerCards[c].position + new Vector2(controllerCards[c].GetFrame().Width / 2,
+                                (controllerCards[c].GetFrame().Height / 2) - 8), Color.Black, TextureManager.FontSizes.tiny, true);
                         }
                     }
                     break;
 
                 case MenuSelect.dotopedia:
-                    textures.DrawString(sB, "There are no dots in this game.", DEFAUT_SCREEN_SIZE / 2, Color.White, TextureManager.FontSizes.small, true);
+                    dotapediaBackground.Draw(sB, Vector2.Zero, managers);
+                    dotpedia.getCurrentImage().Draw(sB, Vector2.Zero, managers);
+                    dotpedia.getCurrentIngameImage().Draw(sB, Vector2.Zero, managers);
+                    textures.DrawString(sB, "In-Game", new Vector2(280, 460), Color.Black, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, dotpedia.getCurrentUnitType(), new Vector2(274, 94), Color.Black, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, dotpedia.getCurrentName(), new Vector2(834, 94), Color.Black, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, dotpedia.getCurrentDescription(), new Vector2(850, 383), Color.Black, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, dotpedia.getCurrentDamage(), new Vector2(694, 184), Color.Black, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, dotpedia.getCurrentHealth(), new Vector2(834, 184), Color.Black, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, dotpedia.getCurrentReload(), new Vector2(960, 184), Color.Black, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, dotpedia.getCurrentVision(), new Vector2(1090, 184), Color.Black, TextureManager.FontSizes.small, true);
+                    //textures.DrawString(sB, "There are no dots in this game.", DEFAUT_SCREEN_SIZE / 2, Color.White, TextureManager.FontSizes.small, true);
                     backButton.Draw(sB, Vector2.Zero, managers);
                     break;
 

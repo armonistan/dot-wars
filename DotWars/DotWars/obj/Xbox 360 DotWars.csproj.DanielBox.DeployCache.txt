@@ -2,25 +2,25 @@
 0
 DanielBox
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\
-130332592160000000
+130333555180000000
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\GameThumbnail.png
 2013-07-02T21:32:32.0000000Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\DotWars.exe
-2014-01-04T00:14:04.7113559Z
+2014-01-05T00:29:08.4734686Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\DotWars.exe.orig
 2013-07-23T23:19:40.0000000Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\DotWars.pdb.orig
 2013-07-23T23:19:40.0000000Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\GameAudio.xgs
-2014-01-02T22:45:52.6055377Z
+2014-01-04T01:04:10.4212726Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\GameAudio.xgs.orig
 2013-07-23T23:19:42.0000000Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Sound Bank.xsb
-2014-01-02T22:45:52.7385453Z
+2014-01-04T01:04:10.5682810Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Sound Bank.xsb.orig
 2013-07-23T23:19:42.0000000Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Wave Bank.xwb
-2014-01-02T22:45:52.7385453Z
+2014-01-04T01:04:10.5672810Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Wave Bank.xwb.orig
 2013-07-23T23:19:42.0000000Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\confirm.xnb
@@ -35,6 +35,8 @@ C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 36
 2014-01-02T22:42:42.3086534Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\healShoot.xnb
 2014-01-02T22:42:42.3166538Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\juggernautRicohet.xnb
+2014-01-04T00:55:21.1890023Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\machineShoot.xnb
 2014-01-02T22:42:42.3426553Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\part1.xnb
@@ -158,13 +160,15 @@ C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 36
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\backButton.xnb
 2014-01-02T22:42:22.0374939Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\buttonA.xnb
-2014-01-02T22:42:40.8515700Z
+2014-01-04T00:30:33.4709097Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\buttonB.xnb
-2014-01-02T22:42:40.7615649Z
+2014-01-04T00:30:33.3859048Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\CommanderCards.xnb
 2014-01-02T22:41:47.6735284Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\controllerCards.xnb
 2014-01-02T22:41:52.6688141Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\dotapedia.xnb
+2014-01-04T21:59:30.0191604Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\GameScreen.xnb
 2014-01-02T22:41:48.6755857Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Menu\GametypeCards.xnb
@@ -251,6 +255,8 @@ C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 36
 2014-01-02T22:42:32.8361116Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileJuggernaut.xnb
 2014-01-02T22:42:33.0721251Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileMeanie.xnb
+2014-01-05T00:25:57.6995570Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileMedic.xnb
 2014-01-02T22:42:33.3031383Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileSniper.xnb
@@ -343,6 +349,10 @@ C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 36
 2014-01-02T22:42:08.7287327Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\ZenGarden\zenForeground.xnb
 2014-01-02T22:42:10.2038171Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\commanderAtlas.xnb
+2014-01-04T23:39:05.2699252Z
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\dotAtlas.xnb
+2014-01-05T00:29:07.8664339Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\bombardier_blue.xnb
 2014-01-02T22:41:04.8740804Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\Blue\bomber_blue.xnb
@@ -620,11 +630,11 @@ C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 36
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_rocket.xnb
 2014-01-02T22:41:11.1614401Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_shotgun.xnb
-2014-01-02T22:41:11.2544454Z
+2014-01-04T00:51:26.9066021Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_sniper.xnb
-2014-01-02T22:41:11.3424504Z
+2014-01-04T00:51:26.9936071Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_standard.xnb
-2014-01-02T22:41:11.4244551Z
+2014-01-04T00:51:27.0776119Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_blue.xnb
 2014-01-02T22:41:11.5024596Z
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_green.xnb

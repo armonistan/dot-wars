@@ -283,6 +283,11 @@ Content\Textures\Effects\bombardier_blueVFX.xnb
 Content\Textures\Effects\bombardier_greenVFX.xnb
 Content\Textures\Effects\bombardier_redVFX.xnb
 Content\Textures\Effects\bombardier_yellowVFX.xnb
+Content\Textures\Backgrounds\Menu\dotapedia.xnb
+Content\Textures\Dots\dotAtlas.xnb
+Content\Textures\Dots\commanderAtlas.xnb
+Content\Textures\Backgrounds\PreGame\profileMeanie.xnb
+Content\Fonts\tinytext.xnb
 Content\Audio\GameAudio.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb
