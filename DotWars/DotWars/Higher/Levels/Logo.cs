@@ -47,6 +47,11 @@ namespace DotWars
             textures.Add("Backgrounds/Menu/triggersOnly", new Rectangle(0, 0, 1248, 720));
             textures.Add("Backgrounds/Menu/menuSelector", new Rectangle(0, 0, 625, 139));
 
+            //Dotapedia
+            textures.Add("Backgrounds/Menu/dotapedia", new Rectangle(0, 0, 1248, 720));
+            textures.Add("Dots/dotAtlas", new Rectangle(0, 0, 128, 32));
+            textures.Add("Dots/commanderAtlas", new Rectangle(0, 0, 32, 32));
+
             //PlayerScreen
             textures.Add("Backgrounds/Menu/CommanderCards", new Rectangle(0, 0, 260, 432));
             textures.Add("Backgrounds/Menu/buttonA", new Rectangle(0, 0, 48, 48));
@@ -159,12 +164,14 @@ namespace DotWars
             textures.Add("Backgrounds/PreGame/profileSniper", new Rectangle(0, 0, 400, 200));
             textures.Add("Backgrounds/PreGame/profileSpecialist", new Rectangle(0, 0, 200, 300));
             textures.Add("Backgrounds/PreGame/tipsBases", new Rectangle(0, 0, 200, 200));
+            textures.Add("Backgrounds/PreGame/profileMeanie", new Rectangle(0, 0, 250, 250));
             #endregion
 
             #region Default Textures
 
             textures.Add("Dots/Red/grunt_red", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Red/bombardier_red", new Rectangle(0, 0, 32, 32));
+            textures.Add("Effects/bombardier_redVFX", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Red/specialist_red", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Red/juggernaut_red", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Red/sniper_red", new Rectangle(0, 0, 32, 32));
@@ -174,6 +181,7 @@ namespace DotWars
 
             textures.Add("Dots/Blue/grunt_blue", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Blue/bombardier_blue", new Rectangle(0, 0, 32, 32));
+            textures.Add("Effects/bombardier_blueVFX", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Blue/specialist_blue", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Blue/juggernaut_blue", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Blue/sniper_blue", new Rectangle(0, 0, 32, 32));
@@ -183,6 +191,7 @@ namespace DotWars
 
             textures.Add("Dots/Green/grunt_green", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Green/bombardier_green", new Rectangle(0, 0, 32, 32));
+            textures.Add("Effects/bombardier_greenVFX", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Green/specialist_green", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Green/juggernaut_green", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Green/sniper_green", new Rectangle(0, 0, 32, 32));
@@ -192,6 +201,7 @@ namespace DotWars
 
             textures.Add("Dots/Yellow/grunt_yellow", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Yellow/bombardier_yellow", new Rectangle(0, 0, 32, 32));
+            textures.Add("Effects/bombardier_yellowVFX", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Yellow/specialist_yellow", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Yellow/juggernaut_yellow", new Rectangle(0, 0, 32, 32));
             textures.Add("Dots/Yellow/sniper_yellow", new Rectangle(0, 0, 32, 32));
@@ -211,10 +221,10 @@ namespace DotWars
 
             textures.Add("Projectiles/bullet_standard", new Rectangle(0, 0, 7, 6));
             textures.Add("Projectiles/bullet_sniper", new Rectangle(0, 0, 7, 6));
-            textures.Add("Projectiles/bullet_rocket", new Rectangle(0, 0, 7, 6));
+            textures.Add("Projectiles/bullet_rocket", new Rectangle(0, 0, 17, 10));
             textures.Add("Projectiles/bullet_shotgun", new Rectangle(0, 0, 7, 6));
 
-            textures.Add("Projectiles/grenade", new Rectangle(0, 0, 15, 15));
+            textures.Add("Projectiles/grenade", new Rectangle(0, 0, 16, 16));
             textures.Add("Projectiles/bullet_bombs", new Rectangle(0, 0, 14, 5));
 
             textures.Add("Effects/particle_smoke", new Rectangle(0, 0, 8, 8));

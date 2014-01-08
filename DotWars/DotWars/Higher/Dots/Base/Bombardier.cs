@@ -10,7 +10,10 @@ namespace DotWars
         protected double campingCounter; //search counter
         protected double campingEnd;
         protected bool threatened;
-
+        protected Sprite radioWave;
+        protected double calledIn;
+        protected double radioTimer;
+        protected double radioTimerCounter;
         private const float TURN_AMOUNT = 0.05f;
 
         public Bombardier(String aN, Vector2 p)
@@ -32,6 +35,45 @@ namespace DotWars
             threatened = true;
             campingCounter = 11;
             campingEnd = 5;
+            calledIn = 2;
+            radioTimer = .5;
+            radioTimerCounter = 0;
+        }
+
+        public override void LoadContent(TextureManager tM)
+        {
+            if (radioWave != null)
+                radioWave.LoadContent(tM);
+
+            base.LoadContent(tM);
+        }
+
+        public override void Update(ManagerHelper mH)
+        {
+            base.Update(mH);
+
+            if (calledIn < 1)
+            {
+                if (radioWave.GetFrameIndex() < 4 && radioTimerCounter > radioTimer)
+                {
+                    radioTimerCounter = 0;
+                    radioWave.SetFrameIndex(radioWave.GetFrameIndex() + 1);
+                }
+                else if (radioTimerCounter > radioTimer)
+                {
+                    radioWave.SetFrameIndex(0);
+                    radioTimerCounter = 0;
+                }
+                else
+                {
+                    radioTimerCounter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                }
+                radioWave.position = this.position;
+                radioWave.origin = this.origin;
+                radioWave.SetRotation(this.GetRotation());
+                radioWave.Update(mH);
+                calledIn += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            }
         }
 
         protected override void Behavior(ManagerHelper mH)
@@ -165,9 +207,16 @@ namespace DotWars
         protected override void Shoot(ManagerHelper mH)
         {
             mH.GetNPCManager().Add(new Bomber(BomberOrigin(mH), affiliation, target, mH));
-
+            calledIn = 0;
             mH.GetAudioManager().Play(AudioManager.STATIC, AudioManager.RandomVolume(mH),
                 AudioManager.RandomPitch(mH), 0, false);
+        }
+
+        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, Vector2 displacement, ManagerHelper mH)
+        {
+            base.Draw(sB, displacement, mH);
+            if (calledIn < 1)
+                radioWave.Draw(sB, displacement, mH);
         }
     }
 }

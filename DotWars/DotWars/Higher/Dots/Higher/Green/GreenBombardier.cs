@@ -8,6 +8,7 @@ namespace DotWars
             : base("Dots/Green/bombardier_green", p)
         {
             affiliation = AffliationTypes.green;
+            radioWave = new Sprite("Effects/bombardier_greenVFX", this.position);
         }
 
         //This method will be used to dictate the AI's behavior in this public class
