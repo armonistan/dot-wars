@@ -2493,3 +2493,12 @@ C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\obj\x86\Deb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\profileMeanie.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Fonts\tinytext.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\bombardier_blueVFX.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\bombardier_greenVFX.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\bombardier_redVFX.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\bombardier_yellowVFX.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Fonts\tinytext.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\dotapedia.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Dots\commanderAtlas.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Dots\dotAtlas.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\profileMeanie.xnb

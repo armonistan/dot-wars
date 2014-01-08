@@ -88,54 +88,82 @@ namespace DotWars
             this.DictTip = new Dictionary<Gametype.GT, Tip[]>();
 
             Tip[] assassinsTips = new Tip[4];
-            assassinsTips[0] = new Tip("Mustachio's ability does damage over time.");
-            assassinsTips[1] = new Tip("Not only does Aquoes' ability slow\nenemies, but it also heals himself and his\nallies.");
-            assassinsTips[2] = new Tip("Terron's ability deals damage if it hits\nan enemy.");
-            assassinsTips[3] = new Tip("Dian's ability does damage to any enemy\nDot that walks through the lightning.");
+            assassinsTips[0] = new Tip( "Mustachio's ability does damage over time.");
+            assassinsTips[1] = new Tip( "Not only does Aquoes' ability slow enemies" + "\n"
+                                     +  "but it also heals himself and his allies.");
+            assassinsTips[2] = new Tip( "Terron's ability deals damage if it hits an" + "\n"
+                                     +  "enemy.");
+            assassinsTips[3] = new Tip( "Dian's ability does damage to any enemy Dot" + "\n"
+                                     +  "that walks through the lightning.");
             this.DictTip.Add(Gametype.GT.ASSASSINS, assassinsTips);
 
             Tip[] assaultTips = new Tip[2];
-            assaultTips[0] = new Tip("Assault is a game of offense and defense.\nBe wary of other commanders!");
-            assaultTips[1] = new Tip("Flares can be especially useful in Assault.\nUse them to defend key spots or to send\ntroops into battle while you flank the\nenemy's front line.");
+            assaultTips[0] = new Tip(   "Assault is a game of offense and defense. " + "\n"
+                                   +    "Be wary of other commanders!");
+            assaultTips[1] = new Tip(   "Only Commanders and Grunts can take the flag.");
             this.DictTip.Add(Gametype.GT.ASSAULT, assaultTips);
 
             Tip[] conquestTips = new Tip[7];
-            conquestTips[0] = new Tip("Mustachio's ability deals so much concentrated\ndamage that it is a great tool for base\ncontrol.");
-            conquestTips[1] = new Tip("Aquoes's ability has many uses in Conquest.\nIt can be used to defend bases or heal\ntroops to siege an enemy's base.");
-            conquestTips[2] = new Tip("Use Terron's ability to keep enemies away\nfrom your bases or to give yourself cover\nwhile you take theirs.");
-            conquestTips[3] = new Tip("Dian's ability can be used to shred through\nenemies that try to go on the offensive.");
-            conquestTips[4] = new Tip("When capturing a base, the base will change\nto the color of the team, not necessarily\nthe color of the individual unit that\ncaptured it.");
-            conquestTips[5] = new Tip("Be wary of airstrikes while attempting to\ncapture a base.");
-            conquestTips[6] = new Tip("Only Commanders and Grunts can capture bases.");
+            conquestTips[0] = new Tip(  "Mustachio's ability to deal large amounts" + "\n"
+                                    +   "of damage makes it a great for base control.");
+            conquestTips[1] = new Tip(  "Aquoes's ability has many uses in Conquest." + "\n"
+                                    +   "It can be used to defend bases or heal " + "\n"
+                                    +   "troops to siege an enemy's base.");
+            conquestTips[2] = new Tip(  "Use Terron's ability to keep enemies away " + "\n"
+                                    +   "from your bases or to give yourself cover " + "\n"
+                                    +   "while you take theirs.");
+            conquestTips[3] = new Tip(  "Dian's ability can be used to shred through " + "\n"
+                                    +   "enemies that try to go on the offensive.");
+            conquestTips[4] = new Tip(  "When capturing a base, the base will change " + "\n"
+                                    +   "to the color of the team, not necessarily the" + "\n"
+                                    +   "color of the individual unit that captured it.");
+            conquestTips[5] = new Tip(  "Be wary of airstrikes while attempting to" + "\n"
+                                    +   "capture a base.");
+            conquestTips[6] = new Tip(  "Only Commanders and Grunts can capture bases.");
             this.DictTip.Add(Gametype.GT.CONQUEST, conquestTips);
 
             Tip[] ctfTips = new Tip[5];
-            ctfTips[0] = new Tip("Mustachio's ability can be used to easily\nshut down an enemy flag runner or mow through\na crowd while trying to make a capture.");
-            ctfTips[1] = new Tip("Aquoes can keep enemies off his trail by\nusing his ability to slow anyone coming\nafter him.");
-            ctfTips[2] = new Tip("Terron's boulders are great for blocking\noff paths and stopping persuing enemies.");
-            ctfTips[3] = new Tip("Dian has amazing mobility thanks to her\nability, making her very effective at\ncapturing flags.");
-            ctfTips[4] = new Tip("Only Grunts and Commanders can capture flags.");
+            ctfTips[0] = new Tip(       "Mustachio's ability can be used to easily" + "\n"
+                               +        "shut down an enemy flag runner or mow through" + "\n"
+                               +        "a crowd while trying to make a capture.");
+            ctfTips[1] = new Tip(       "Aquoes can keep enemies off his trail by" + "\n"
+                               +        "using his ability to slow anyone coming " + "\n"
+                               +        "after him.");
+            ctfTips[2] = new Tip(       "Terron's boulders are great for blocking" + "\n"
+                               +        "off paths and stopping persuing enemies.");
+            ctfTips[3] = new Tip(       "Dian has amazing mobility thanks to her" + "\n"
+                               +        "ability, making her very effective at" + "\n"
+                               +        "capturing flags.");
+            ctfTips[4] = new Tip(       "Only Grunts and Commanders can capture flags.");
             this.DictTip.Add(Gametype.GT.CTF, ctfTips);
 
             Tip[] deathmatchTips = new Tip[6];
-            deathmatchTips[0] = new Tip("Coming face-to-face with a Gunner is\nalmost certain death. Try to take a Gunner\nout from a distance by using grenades.");
-            deathmatchTips[1] = new Tip("Rockets explode, and can take out many\nallied units at once. Beware the Specialist.");
+            deathmatchTips[0] = new Tip("Coming face-to-face with a Gunner is almost " + "\n"
+                               +        "certain death. Try to take a Gunner out from" + "\n" 
+                                    +   "a distance by using grenades.");
+            deathmatchTips[1] = new Tip("Rockets explode, and can take out many allied" + "\n"
+                                      + "units at once. Beware the Specialist.");
             deathmatchTips[2] = new Tip("The Medic heals nearby allies.");
-            deathmatchTips[3] = new Tip("The Bombardier calls in devastating\nairstrikes. A large reticle will appear\nto indicate their target.");
-            deathmatchTips[4] = new Tip("Keep an eye out for Snipers, who can kill\nyou from afar.");
-            deathmatchTips[5] = new Tip("The Juggernaut will try to act as a shield\nfor his allies. Dispatch them by tossing\ngrenades behind them.");
+            deathmatchTips[3] = new Tip("The Bombardier calls in devastating airstrikes." + "\n"
+                                      + "A large reticle will appear to indicate their " + "\n"
+                                      + "target.");
+            deathmatchTips[4] = new Tip("Keep an eye out for Snipers, who can kill" + "\n"
+                                      + "you from afar.");
+            deathmatchTips[5] = new Tip("The Juggernaut will try to act as a shield for" + "\n"
+                                      + "his allies. Dispatch them by tossing grenades" + "\n"
+                                      +  "behind them.");
             this.DictTip.Add(Gametype.GT.DEATHMATCH, deathmatchTips);
 
             Tip[] survivalTips = new Tip[9];
-            survivalTips[0] = new Tip("Gray dots will become faster over time.");
-            survivalTips[1] = new Tip("You cannot kill one another in Survival.");
-            survivalTips[2] = new Tip("Gray dots will become faster over time.");
-            survivalTips[3] = new Tip("You cannot kill other commanders in Survival.");
-            survivalTips[4] = new Tip("Gray dots will become faster over time.");
-            survivalTips[5] = new Tip("You cannot kill other commanders in Survival.");
-            survivalTips[6] = new Tip("Gray dots will become faster over time.");
-            survivalTips[7] = new Tip("You cannot kill other commanders in Survival.");
-            survivalTips[8] = new Tip("SIE SIND DAS ESSEN UND WIR SIND DIE JAGER!");
+            survivalTips[0] = new Tip(  "Gray dots will become faster over time.");
+            survivalTips[1] = new Tip(  "You cannot kill one another in Survival.");
+            survivalTips[2] = new Tip(  "Gray dots will become faster over time.");
+            survivalTips[3] = new Tip(  "You cannot kill other commanders in Survival.");
+            survivalTips[4] = new Tip(  "Gray dots will become faster over time.");
+            survivalTips[5] = new Tip(  "You cannot kill other commanders in Survival.");
+            survivalTips[6] = new Tip(  "Gray dots will become faster over time.");
+            survivalTips[7] = new Tip(  "You cannot kill other commanders in Survival.");
+            survivalTips[8] = new Tip(  "SIE SIND DAS ESSEN UND WIR SIND DIE JAGER!");
             this.DictTip.Add(Gametype.GT.SURVIVAL, survivalTips);
             #endregion
         }
@@ -161,10 +189,10 @@ namespace DotWars
             green = "Terron";
             yellow = "Dian";
 
-            redPos = new Vector2(100, 50);
-            bluePos = new Vector2(1100, 50);
-            greenPos = new Vector2(100, 450);
-            yellowPos = new Vector2(1100, 450);
+            redPos = new Vector2(DEFAUT_SCREEN_SIZE.X/11, DEFAUT_SCREEN_SIZE.Y/10);
+            bluePos = new Vector2(DEFAUT_SCREEN_SIZE.X/11 * 10, DEFAUT_SCREEN_SIZE.Y/10);
+            greenPos = new Vector2(DEFAUT_SCREEN_SIZE.X/11, DEFAUT_SCREEN_SIZE.Y/10 * 6);
+            yellowPos = new Vector2(DEFAUT_SCREEN_SIZE.X/11 * 10, DEFAUT_SCREEN_SIZE.Y/10 * 6);
         }
 
         private void initalizeCommanderImagesAssassinsSurvival()
@@ -174,10 +202,10 @@ namespace DotWars
             Vector2 terronPos = new Vector2();
             Vector2 dianPos = new Vector2();
 
-            mustachioPos    = new Vector2(100, 200);
-            aqueosPos       = new Vector2(1100, 200);
-            terronPos       = new Vector2(100, 600);
-            dianPos         = new Vector2(1100, 600);
+            mustachioPos    =new Vector2(DEFAUT_SCREEN_SIZE.X/11, DEFAUT_SCREEN_SIZE.Y/10 + 120);
+            aqueosPos        =new Vector2(DEFAUT_SCREEN_SIZE.X/11 * 10, DEFAUT_SCREEN_SIZE.Y/10 + 120);
+            terronPos       = new Vector2(DEFAUT_SCREEN_SIZE.X/11, DEFAUT_SCREEN_SIZE.Y/10 * 6 + 120);
+            dianPos          = new Vector2(DEFAUT_SCREEN_SIZE.X/11 * 10, DEFAUT_SCREEN_SIZE.Y/10 * 6 + 120);
 
             mustachio = new Sprite("Backgrounds/PreGame/commanders", mustachioPos);
             aqueos = new Sprite("Backgrounds/PreGame/commanders", aqueosPos);
@@ -200,6 +228,11 @@ namespace DotWars
             Vector2 terronPos = new Vector2();
             Vector2 dianPos = new Vector2();
 
+            float x1 = DEFAUT_SCREEN_SIZE.X / 11,
+                    x2 = DEFAUT_SCREEN_SIZE.X / 11 * 10,
+                    y1 = DEFAUT_SCREEN_SIZE.Y / 8 + 120,
+                    y2 = DEFAUT_SCREEN_SIZE.Y / 8 * 4 + 120,
+                    y3 = DEFAUT_SCREEN_SIZE.Y / 8; //text
 
             NPC.AffliationTypes team = nextGame.GetTeams()[0];
             NPC.AffliationTypes secondary = NPC.AffliationTypes.grey;
@@ -219,32 +252,32 @@ namespace DotWars
             }
             if (team == NPC.AffliationTypes.red)
             {
-                redPos = new Vector2(200, 60);
-                mustachioPos = new Vector2(200, 200);
+                redPos = new Vector2(x1, y3);
+                mustachioPos = new Vector2(x1, y1);
             }
             else if (team == NPC.AffliationTypes.blue)
             {
-                bluePos = new Vector2(200, 60);
-                aqueosPos = new Vector2(200, 200);
+                bluePos = new Vector2(x1, y3);
+                aqueosPos = new Vector2(x1, y1);
             }
             else if (team == NPC.AffliationTypes.green)
             {
-                greenPos = new Vector2(200, 60);
-                terronPos = new Vector2(200, 200);
+                greenPos = new Vector2(x1, y3);
+                terronPos = new Vector2(x1, y1);
             }
             else if (team == NPC.AffliationTypes.yellow)
             {
-                yellowPos = new Vector2(200, 60);
-                dianPos = new Vector2(200, 200);
+                yellowPos = new Vector2(x1, y3);
+                dianPos = new Vector2(x1, y1);
             }
             if (secondary == NPC.AffliationTypes.red)
-                mustachioPos = new Vector2(200, 400);
+                mustachioPos = new Vector2(x1, y2);
             else if (secondary == NPC.AffliationTypes.blue)
-                aqueosPos = new Vector2(200, 400);
+                aqueosPos = new Vector2(x1, y2);
             else if (secondary == NPC.AffliationTypes.green)
-                terronPos = new Vector2(200, 400);
+                terronPos = new Vector2(x1, y2);
             else if (secondary == NPC.AffliationTypes.yellow)
-                dianPos = new Vector2(200, 400);
+                dianPos = new Vector2(x1, y2);
             ////
             team = nextGame.GetTeams()[1];
             foreach (KeyValuePair<Type, NPC.AffliationTypes> commander in commanders)
@@ -261,32 +294,32 @@ namespace DotWars
             }
             if (team == NPC.AffliationTypes.red)
             {
-                redPos = new Vector2(1000, 60);
-                mustachioPos = new Vector2(1000, 200);
+                redPos = new Vector2(x2, y3);
+                mustachioPos = new Vector2(x2, y1);
             }
             else if (team == NPC.AffliationTypes.blue)
             {
-                bluePos = new Vector2(1000, 60);
-                aqueosPos = new Vector2(1000, 200);
+                bluePos = new Vector2(x2, y3);
+                aqueosPos = new Vector2(x2, y1);
             }
             else if (team == NPC.AffliationTypes.green)
             {
-                greenPos = new Vector2(1000, 60);
-                terronPos = new Vector2(1000, 200);
+                greenPos = new Vector2(x2, y3);
+                terronPos = new Vector2(x2, y1);
             }
             else if (team == NPC.AffliationTypes.yellow)
             {
-                yellowPos = new Vector2(1000, 60);
-                dianPos = new Vector2(1000, 200);
+                yellowPos = new Vector2(x2, y3);
+                dianPos = new Vector2(x2, y1);
             } 
             if (secondary == NPC.AffliationTypes.red)
-                mustachioPos = new Vector2(1000, 400);
+                mustachioPos = new Vector2(x2, y2);
             else if (secondary == NPC.AffliationTypes.blue)
-                aqueosPos = new Vector2(1000, 400);
+                aqueosPos = new Vector2(x2, y2);
             else if (secondary == NPC.AffliationTypes.green)
-                terronPos = new Vector2(1000, 400);
+                terronPos = new Vector2(x2, y2);
             else if (secondary == NPC.AffliationTypes.yellow)
-                dianPos = new Vector2(1000, 400);
+                dianPos = new Vector2(x2, y2);
 
 
             mustachio = new Sprite("Backgrounds/PreGame/commanders", mustachioPos);
@@ -460,7 +493,7 @@ namespace DotWars
 
             textures.DrawString(sB, ((timer <= beginTime) ? "" : (int)Math.Ceiling(timer) + ""), new Vector2(DEFAUT_SCREEN_SIZE.X / 2, DEFAUT_SCREEN_SIZE.Y / 8 + 320), Color.White, TextureManager.FontSizes.big, true);
 
-            textures.DrawString(sB, tipText, new Vector2(DEFAUT_SCREEN_SIZE.X / 4, DEFAUT_SCREEN_SIZE.Y / 2 + 160), Color.White, TextureManager.FontSizes.small, true);
+            textures.DrawString(sB, tipText, new Vector2(DEFAUT_SCREEN_SIZE.X / 2, DEFAUT_SCREEN_SIZE.Y / 2 + 230), Color.White, TextureManager.FontSizes.small, true);
             sB.End();
         }
     }

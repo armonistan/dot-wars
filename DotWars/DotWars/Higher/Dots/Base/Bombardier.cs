@@ -11,13 +11,15 @@ namespace DotWars
         protected double campingEnd;
         protected bool threatened;
         protected Sprite radioWave;
-        protected float calledIn;
+        protected double calledIn;
+        protected double radioTimer;
+        protected double radioTimerCounter;
         private const float TURN_AMOUNT = 0.05f;
 
         public Bombardier(String aN, Vector2 p)
             : base(aN, p)
         {
-            health = 9000;
+            health = 90;
             maxHealth = health; //The units starting health will always be his max health
             movementSpeed = 100; //The bombardier isn't the most athletic, average speed (still under decision
             shootingSpeed = 6; //Bombardiers call in plane. Slow "reload" time
@@ -33,7 +35,9 @@ namespace DotWars
             threatened = true;
             campingCounter = 11;
             campingEnd = 5;
-            calledIn = 0;
+            calledIn = 2;
+            radioTimer = .5;
+            radioTimerCounter = 0;
         }
 
         public override void LoadContent(TextureManager tM)
@@ -46,20 +50,30 @@ namespace DotWars
 
         public override void Update(ManagerHelper mH)
         {
-            if (calledIn > 0)
-            {
-                if (radioWave.GetFrameIndex() < 4)
-                    radioWave.SetFrameIndex(radioWave.GetFrameIndex() + 1);
-                else
-                    radioWave.SetFrameIndex(0);
+            base.Update(mH);
 
-                radioWave.position = new Vector2(position.X - origin.X, position.Y - origin.Y);
+            if (calledIn < 1)
+            {
+                if (radioWave.GetFrameIndex() < 4 && radioTimerCounter > radioTimer)
+                {
+                    radioTimerCounter = 0;
+                    radioWave.SetFrameIndex(radioWave.GetFrameIndex() + 1);
+                }
+                else if (radioTimerCounter > radioTimer)
+                {
+                    radioWave.SetFrameIndex(0);
+                    radioTimerCounter = 0;
+                }
+                else
+                {
+                    radioTimerCounter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                }
+                radioWave.position = this.position;
+                radioWave.origin = this.origin;
                 radioWave.SetRotation(this.GetRotation());
                 radioWave.Update(mH);
-                calledIn -= mH.GetGameTime().ElapsedGameTime.Seconds;
+                calledIn += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
             }
-
-            base.Update(mH);
         }
 
         protected override void Behavior(ManagerHelper mH)
@@ -83,7 +97,7 @@ namespace DotWars
                     if (target == null)
                     {
                         Turn(TURN_AMOUNT);
-                        campingCounter += (float)mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+                        campingCounter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
                     }
                     else
                     {
@@ -149,16 +163,16 @@ namespace DotWars
         protected override void Shoot(ManagerHelper mH)
         {
             mH.GetNPCManager().Add(new Bomber(BomberOrigin(mH), affiliation, target, mH));
-            calledIn = 1;
+            calledIn = 0;
             mH.GetAudioManager().Play("staticCall", AudioManager.RandomVolume(mH),
                 AudioManager.RandomPitch(mH), 0, false);
         }
 
         public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, Vector2 displacement, ManagerHelper mH)
         {
-            if (calledIn > 0)
-                radioWave.Draw(sB, displacement, mH);
             base.Draw(sB, displacement, mH);
+            if (calledIn < 1)
+                radioWave.Draw(sB, displacement, mH);
         }
     }
 }
