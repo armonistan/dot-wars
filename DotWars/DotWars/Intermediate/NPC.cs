@@ -146,7 +146,10 @@ namespace DotWars
             //Finalize direction
             foreach (Vector2 a in accelerations)
             {
-                acceleration += a;
+                if (!float.IsNaN(a.X) && !float.IsNaN(a.Y))
+                {
+                    acceleration += a;
+                }
             }
             drag = 0.05f;
             thrust = movementSpeed*drag;

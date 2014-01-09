@@ -279,6 +279,15 @@ Content\Audio\Waves\menu\back_style_2_002.xnb
 Content\Audio\Waves\menu\confirm_style_2_002.xnb
 Content\Audio\Waves\juggernautRicohet.xnb
 Content\Audio\Waves\DotWars.xnb
+Content\Fonts\tinytext.xnb
+Content\Textures\Backgrounds\Menu\dotapedia.xnb
+Content\Textures\Effects\bombardier_blueVFX.xnb
+Content\Textures\Effects\bombardier_greenVFX.xnb
+Content\Textures\Effects\bombardier_redVFX.xnb
+Content\Textures\Effects\bombardier_yellowVFX.xnb
+Content\Textures\Dots\commanderAtlas.xnb
+Content\Textures\Dots\dotAtlas.xnb
+Content\Textures\Backgrounds\PreGame\profileMeanie.xnb
 Content\Audio\GameAudio.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb

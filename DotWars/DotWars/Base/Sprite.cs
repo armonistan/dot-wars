@@ -91,13 +91,14 @@ namespace DotWars
 
         public virtual void Update(ManagerHelper mH)
         {
-            originPosition = position + origin;
-
             #region Finalize Direction
 
             foreach (Vector2 a in accelerations)
             {
-                acceleration += a*mH.GetDeltaSeconds();
+                if (!float.IsNaN(a.X) && !float.IsNaN(a.Y))
+                {
+                    acceleration += a*mH.GetDeltaSeconds();
+                }
             }
 
             velocity += thrust*acceleration - drag*velocity;
@@ -109,6 +110,14 @@ namespace DotWars
 
             //Update position
             position += velocity*mH.GetDeltaSeconds();
+
+            if (float.IsNaN(position.X) || float.IsNaN(position.Y))
+            {
+                //TODO: Do not leave this in.
+                throw new Exception("Not sure how this happened.");
+            }
+
+            originPosition = position + origin;
 
             //Update frame
             if (frameIndex < 0)
