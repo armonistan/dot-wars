@@ -72,10 +72,6 @@ Content\Textures\Projectiles\bullet_rocket.xnb
 Content\Textures\Projectiles\bullet_shotgun.xnb
 Content\Textures\Projectiles\bullet_sniper.xnb
 Content\Textures\Projectiles\bullet_standard.xnb
-Content\Textures\Projectiles\flare_blue.xnb
-Content\Textures\Projectiles\flare_green.xnb
-Content\Textures\Projectiles\flare_red.xnb
-Content\Textures\Projectiles\flare_yellow.xnb
 Content\Textures\Projectiles\grenade.xnb
 Content\Textures\Effects\smoke_blue.xnb
 Content\Textures\Effects\smoke_green.xnb
@@ -288,6 +284,7 @@ Content\Textures\Effects\bombardier_yellowVFX.xnb
 Content\Textures\Dots\commanderAtlas.xnb
 Content\Textures\Dots\dotAtlas.xnb
 Content\Textures\Backgrounds\PreGame\profileMeanie.xnb
+Content\Textures\Projectiles\mine.xnb
 Content\Audio\GameAudio.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb

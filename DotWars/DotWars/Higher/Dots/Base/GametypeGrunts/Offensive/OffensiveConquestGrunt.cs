@@ -9,18 +9,27 @@ namespace DotWars
         {
         }
 
-        protected override void NewPath(ManagerHelper mH)
-        {
-            if (mH.GetProjectileManager().GetFlare(affiliation) != null)
-                FlarePath(mH);
-            else
-                SpecialPath(mH);
-        }
-
         protected override void SpecialPath(ManagerHelper mH)
         {
             var temp = (Conquest) mH.GetGametype();
-            ConquestBase targetBase = temp.GetClosestInList(temp.GetEnemyBases(affiliation), GetOriginPosition());
+
+            ConquestBase targetBase = null;
+            float distanceToClosest = float.PositiveInfinity;
+
+            foreach (ConquestBase conquestBase in temp.GetBases())
+            {
+                if (conquestBase.affiliation != affiliation)
+                {
+                    float distanceToBase = PathHelper.DistanceSquared(GetOriginPosition(),
+                                                                      conquestBase.GetOriginPosition());
+
+                    if (distanceToBase < distanceToClosest)
+                    {
+                        distanceToClosest = distanceToBase;
+                        targetBase = conquestBase;
+                    }
+                }
+            }
 
             if (targetBase != null)
             {

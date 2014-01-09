@@ -258,10 +258,7 @@ namespace DotWars
             textures.Add("health_station", new Rectangle(0, 0, 64, 64));
             textures.Add("Effects/spr_bolt_strip3", new Rectangle(0, 0, 30, 30));
 
-            textures.Add("Projectiles/flare_red", new Rectangle(0, 0, 15, 15));
-            textures.Add("Projectiles/flare_blue", new Rectangle(0, 0, 15, 15));
-            textures.Add("Projectiles/flare_green", new Rectangle(0, 0, 15, 15));
-            textures.Add("Projectiles/flare_yellow", new Rectangle(0, 0, 15, 15));
+            textures.Add("Projectiles/mine", new Rectangle(0, 0, 16, 16));
 
             textures.Add("Effects/explodeTop", new Rectangle(0, 0, 128, 128));
             textures.Add("bases", new Rectangle(0, 0, 64, 64));

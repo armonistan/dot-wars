@@ -668,42 +668,6 @@
       <Time>2014-01-03T18:50:33.9528989-06:00</Time>
     </Item>
     <Item>
-      <Source>Textures\Projectiles\flare_blue.png</Source>
-      <Name>Textures\Projectiles\flare_blue</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_blue.xnb</Output>
-      <Time>2013-07-02T16:33:08-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Projectiles\flare_green.png</Source>
-      <Name>Textures\Projectiles\flare_green</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_green.xnb</Output>
-      <Time>2013-07-02T16:33:08-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Projectiles\flare_red.png</Source>
-      <Name>Textures\Projectiles\flare_red</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_red.xnb</Output>
-      <Time>2013-07-02T16:33:08-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Projectiles\flare_yellow.png</Source>
-      <Name>Textures\Projectiles\flare_yellow</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_yellow.xnb</Output>
-      <Time>2013-07-02T16:33:08-05:00</Time>
-    </Item>
-    <Item>
       <Source>Textures\Projectiles\grenade.png</Source>
       <Name>Textures\Projectiles\grenade</Name>
       <Importer>TextureImporter</Importer>
@@ -2610,6 +2574,15 @@
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileMeanie.xnb</Output>
       <Time>2014-01-04T19:02:18-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Projectiles\mine.png</Source>
+      <Name>Textures\Projectiles\mine</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\mine.xnb</Output>
+      <Time>2014-01-04T15:16:19-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

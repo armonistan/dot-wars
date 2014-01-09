@@ -226,6 +226,12 @@ namespace DotWars
             Vector2 tempOPos = tempPos + origin;
             float distSquared = 1000000;
 
+            if (float.IsNaN(tempPos.X) || float.IsNaN(tempPos.Y))
+            {
+                //TODO: Do not leave this in.
+                throw new Exception("Not sure how this happened.");
+            }
+
             //Collisions
             foreach (NPC a in mH.GetNPCManager().GetNPCs()) //first go through every single npc
             {
@@ -744,22 +750,6 @@ namespace DotWars
             else
             {
                 RandomPath(mH);
-            }
-        }
-
-        protected void FlarePath(ManagerHelper mH)
-        {
-            Flare f = mH.GetProjectileManager().GetFlare(affiliation);
-            float tempDist = PathHelper.DistanceSquared(GetOriginPosition(), f.GetOriginPosition());
-
-            if (!f.IsInList(this) && tempDist > f.GetFlareRadius() * f.GetFlareRadius())
-            {
-                mH.GetPathHelper().FindClearPath(GetOriginPosition(), f.GetOriginPosition(), mH, path);
-            }
-            else
-            {
-                f.AddToList(this);
-                SpecialPath(mH);
             }
         }
 

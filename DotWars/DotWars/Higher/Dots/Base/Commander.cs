@@ -161,16 +161,14 @@ namespace DotWars
                     grenadeCounter = 0;
                     TossGrenade(mH);
                 }
+                else if (ShouldUseMine(mH) && grenadeCounter > grenadeSpeed)
+                {
+                    grenadeCounter = 0;
+                    LayMine(mH);
+                }
                 else
                     grenadeCounter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
             }
-
-            #endregion
-
-            #region Flare Code
-
-            if (ShouldTossFlare(mH))
-                TossFlare(mH); //toss flare
 
             #endregion
 
@@ -223,186 +221,16 @@ namespace DotWars
                 AudioManager.RandomPitch(mH), 0, false);
         }
 
-        protected void TossFlare(ManagerHelper mH)
+        protected void LayMine(ManagerHelper mH)
         {
-            mH.GetProjectileManager().AddFlare(this, PathHelper.Direction(rotation)*300);
+            mH.GetProjectileManager().AddMine(this);
 
-            FlareSound(mH);
+            MineSound(mH);
         }
 
-        protected virtual void FlareSound(ManagerHelper mH)
+        protected virtual void MineSound(ManagerHelper mH)
         {
-            mH.GetAudioManager().Play(FLARE_SHOOT, AudioManager.RandomVolume(mH),
-                   AudioManager.RandomPitch(mH), 0, false);
-        }
-
-        private bool ShouldTossFlare(ManagerHelper mH)
-        {
-            Gametype tempGameType = mH.GetGametype();
-
-            if (mH.GetProjectileManager().GetFlare(affiliation) == null)
-            {
-                #region General Combat Emergency
-
-                int closeAllyCount = 0;
-
-                foreach (var ally in mH.GetNPCManager().GetAllies(affiliation))
-                {
-                    if (NPCManager.IsNPCInRadius(ally, GetOriginPosition(), 250))
-                    {
-                        closeAllyCount++;
-                    }
-                }
-
-                int closeEnemiesCount = 0;
-
-                if (target != null)
-                {
-                    foreach (var enemy in mH.GetNPCManager().GetAllies(target.GetAffiliation()))
-                    {
-                        if (NPCManager.IsNPCInRadius(enemy, target.GetOriginPosition(), target.GetAwareness()))
-                        {
-                            closeEnemiesCount++;
-                        }
-                    }
-                    
-                }
-
-                bool hasAllies = (closeAllyCount > 3);
-                bool isThreat = ((target != null) && closeEnemiesCount > 2 || target is Commander);
-
-                if (hasAllies && isThreat)
-                    return true;
-
-                #endregion
-
-                #region Gametype Occurances    
-
-                if (tempGameType is Assasssins)
-                    return false;
-
-                else if (tempGameType is Conquest)
-                {
-                    var temp = (Conquest) tempGameType;
-
-                    int allyCount = 0;
-                    foreach (var ally in mH.GetNPCManager().GetAllies(affiliation))
-                    {
-                        if (NPCManager.IsNPCInRadius(ally, GetOriginPosition(), 250))
-                        {
-                            allyCount++;
-                        }
-                    }
-
-                    hasAllies = (allyCount > 2);
-
-                    var closestBase = temp.GetClosestInList(temp.GetEnemyBases(affiliation), GetOriginPosition());
-                    bool isNearBase = closestBase != null && (PathHelper.DistanceSquared(GetOriginPosition(), closestBase.GetOriginPosition()) < 128 * 128) ;
-
-                    return (hasAllies && isNearBase);
-                }
-
-                else if (tempGameType is CaptureTheFlag)
-                {
-                    var temp = (CaptureTheFlag) tempGameType;
-
-                    int allyCount = 0;
-                    int enemyCount = 0;
-                    foreach (var agent in mH.GetNPCManager().GetNPCs())
-                    {
-                        if (agent.GetAffiliation() == affiliation)
-                        {
-                            if (NPCManager.IsNPCInRadius(agent, GetOriginPosition(), 250))
-                            {
-                                allyCount++;
-                            }
-                        }
-                        else
-                        {
-                            if (NPCManager.IsNPCInRadius(agent,
-                                                         temp.GetEnemyBase(affiliation).GetMyFlag().GetOriginPosition(),
-                                                         128))
-                            {
-                                enemyCount++;
-                            }
-                        }
-                    }
-
-                    hasAllies = (allyCount > 2);
-                    bool isSucidal = (enemyCount > 2);
-
-                    return (hasAllies && isSucidal);
-                }
-
-                else if (tempGameType is Assault)
-                {
-                    var temp = (Assault) tempGameType;
-
-                    if (temp.GetAttacker() == affiliation)
-                    {
-                        int allyCount = 0;
-                        int enemyCount = 0;
-                        foreach (var agent in mH.GetNPCManager().GetNPCs())
-                        {
-                            if (agent.GetAffiliation() == affiliation)
-                            {
-                                if (NPCManager.IsNPCInRadius(agent, GetOriginPosition(), 250))
-                                {
-                                    allyCount++;
-                                }
-                            }
-                            else
-                            {
-                                if (NPCManager.IsNPCInRadius(agent,
-                                                             temp.GetEnemyBase(affiliation).GetMyFlag().GetOriginPosition(),
-                                                             128))
-                                {
-                                    enemyCount++;
-                                }
-                            }
-                        }
-
-                        hasAllies = (allyCount > 2);
-                        bool isSucidal = (enemyCount > 2);
-
-                        return (hasAllies && isSucidal);
-                    }
-                    else
-                    {
-                        int allyCount = 0;
-                        int enemyCount = 0;
-                        foreach (var agent in mH.GetNPCManager().GetNPCs())
-                        {
-                            if (agent.GetAffiliation() == affiliation)
-                            {
-                                if (NPCManager.IsNPCInRadius(agent, GetOriginPosition(), 250))
-                                {
-                                    allyCount++;
-                                }
-                            }
-                            else if (target != null && agent.GetAffiliation() == target.GetAffiliation())
-                            {
-                                if (NPCManager.IsNPCInRadius(agent,
-                                                             target.GetOriginPosition(),
-                                                             target.GetAwareness()))
-                                {
-                                    enemyCount++;
-                                }
-                            }
-                        }
-
-
-                        hasAllies = (allyCount > 2);
-                        isThreat = enemyCount > 2 || target is Commander;
-
-                        return (hasAllies && isThreat);
-                    }
-                }
-
-                #endregion
-            }
-
-            return false;
+            //TODO: Does it need sound?
         }
 
         protected virtual void UsePower(ManagerHelper mH)
@@ -445,6 +273,69 @@ namespace DotWars
             return false;
         }
 
+        protected bool ShouldUseMine(ManagerHelper mH)
+        {
+            if (mH.GetGametype() is CaptureTheFlag)
+            {
+                CaptureTheFlag tempGametype = (CaptureTheFlag) mH.GetGametype();
+
+                if (tempGametype.GetEnemyBase(affiliation).GetMyFlag().GetCaptor() == this)
+                {
+                    return true;
+                }
+            }
+            else if (mH.GetGametype() is Assault)
+            {
+                Assault tempGametype = (Assault) mH.GetGametype();
+
+                if (tempGametype.GetAttacker() == affiliation &&
+                    tempGametype.GetEnemyBase(affiliation).GetMyFlag().GetCaptor() == this)
+                {
+                    return true;
+                }
+            }
+            else if (mH.GetGametype() is Conquest)
+            {
+                Conquest tempGametype = (Conquest) mH.GetGametype();
+
+                foreach (ConquestBase point in tempGametype.GetBases())
+                {
+                    if (point.affiliation != affiliation &&
+                        PathHelper.DistanceSquared(GetOriginPosition(), point.GetOriginPosition()) < awareness*awareness)
+                    {
+                        return true;
+                    }
+                }
+            }
+            else if (mH.GetGametype() is Deathmatch)
+            {
+                Deathmatch tempGametype = (Deathmatch) mH.GetGametype();
+
+                foreach (Claimable claimable in tempGametype.GetClaimables())
+                {
+                    if (PathHelper.DistanceSquared(GetOriginPosition(), claimable.GetOriginPosition()) <
+                        awareness*awareness)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            //Default
+            int numEnemies = 0;
+
+            foreach (NPC agent in mH.GetNPCManager().GetNPCs())
+            {
+                if (agent.GetAffiliation() != affiliation &&
+                    NPCManager.IsNPCInRadius(agent, GetOriginPosition(), awareness))
+                {
+                    numEnemies++;
+                }
+            }
+
+            return numEnemies > 2;
+        }
+
         public virtual void UsePower()
         {
             //does nothing here
@@ -473,7 +364,23 @@ namespace DotWars
         protected override void ConquestPath(ManagerHelper mH)
         {
             var temp = (Conquest) mH.GetGametype();
-            ConquestBase targetBase = temp.GetClosestInList(temp.GetEnemyBases(affiliation), GetOriginPosition());
+
+            ConquestBase targetBase = null;
+            float distanceToClosest = float.PositiveInfinity;
+
+            foreach (ConquestBase conquestBase in temp.GetBases())
+            {
+                if (conquestBase.affiliation != affiliation)
+                {
+                    float distanceToBase = PathHelper.DistanceSquared(GetOriginPosition(), conquestBase.GetOriginPosition());
+
+                    if (distanceToBase < distanceToClosest)
+                    {
+                        distanceToClosest = distanceToBase;
+                        targetBase = conquestBase;
+                    }
+                }
+            }
 
             if (targetBase != null)
             {

@@ -67,7 +67,7 @@ namespace DotWars
                 else if (grenadeType == 1)
                 {
                     grenadeCounter = 0;
-                    TossFlare(mH);
+                    LayMine(mH);
                 }
             }
 
@@ -106,7 +106,7 @@ namespace DotWars
                 else if (grenadeType == 1)
                 {
                     grenadeCounter = 0;
-                    TossFlare(mH);
+                    LayMine(mH);
                 }
             }
             
@@ -369,7 +369,7 @@ namespace DotWars
                 (float)(mH.GetRandom().NextDouble() * -0.25), 0, false);
         }
 
-        protected override void FlareSound(ManagerHelper mH)
+        protected override void MineSound(ManagerHelper mH)
         {
             mH.GetAudioManager().Play(AudioManager.COMMANDER_FLARE, 0.90f,
                    AudioManager.RandomPitch(mH), 0, false);

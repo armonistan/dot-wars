@@ -49,19 +49,19 @@ namespace DotWars
 
             if (teams.Contains(NPC.AffliationTypes.red))
             {
-                ChangeScoreAbsolute(NPC.AffliationTypes.red, GetAlliedBases(NPC.AffliationTypes.red).Count);
+                ChangeScoreAbsolute(NPC.AffliationTypes.red, GetNumAlliedBases(NPC.AffliationTypes.red));
             }
             if (teams.Contains(NPC.AffliationTypes.blue))
             {
-                ChangeScoreAbsolute(NPC.AffliationTypes.blue, GetAlliedBases(NPC.AffliationTypes.blue).Count);
+                ChangeScoreAbsolute(NPC.AffliationTypes.blue, GetNumAlliedBases(NPC.AffliationTypes.blue));
             }
             if (teams.Contains(NPC.AffliationTypes.green))
             {
-                ChangeScoreAbsolute(NPC.AffliationTypes.green, GetAlliedBases(NPC.AffliationTypes.green).Count);
+                ChangeScoreAbsolute(NPC.AffliationTypes.green, GetNumAlliedBases(NPC.AffliationTypes.green));
             }
             if (teams.Contains(NPC.AffliationTypes.yellow))
             {
-                ChangeScoreAbsolute(NPC.AffliationTypes.yellow, GetAlliedBases(NPC.AffliationTypes.yellow).Count);
+                ChangeScoreAbsolute(NPC.AffliationTypes.yellow, GetNumAlliedBases(NPC.AffliationTypes.yellow));
             }
 
             //Spawn Section
@@ -74,7 +74,7 @@ namespace DotWars
                     if (b.affiliation != NPC.AffliationTypes.grey)
                     {
                         Spawn(mH, b.affiliation,
-                              mH.GetSpawnHelper().Spawn(b.affiliation, (GetAlliedBases(b.affiliation).Count == 0)),
+                              mH.GetSpawnHelper().Spawn(b.affiliation, (GetNumAlliedBases(b.affiliation) == 0)),
                               mH.GetRandom().Next(3));
                     }
                 }
@@ -101,7 +101,7 @@ namespace DotWars
                                   new RedCommander(
                                       mH.GetSpawnHelper()
                                         .Spawn(commanders.Values.ElementAt(i),
-                                               (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
+                                               (GetNumAlliedBases(commanders.Values.ElementAt(i)) == 0)),
                                       commanders.Values.ElementAt(i)));
                             spawnsCounters[i] = 0;
                         }
@@ -112,7 +112,7 @@ namespace DotWars
                                   new BlueCommander(
                                       mH.GetSpawnHelper()
                                         .Spawn(commanders.Values.ElementAt(i),
-                                               (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
+                                               (GetNumAlliedBases(commanders.Values.ElementAt(i)) == 0)),
                                       commanders.Values.ElementAt(i)));
                             spawnsCounters[i] = 0;
                         }
@@ -123,7 +123,7 @@ namespace DotWars
                                   new GreenCommander(
                                       mH.GetSpawnHelper()
                                         .Spawn(commanders.Values.ElementAt(i),
-                                               (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
+                                               (GetNumAlliedBases(commanders.Values.ElementAt(i)) == 0)),
                                       commanders.Values.ElementAt(i)));
                             spawnsCounters[i] = 0;
                         }
@@ -134,7 +134,7 @@ namespace DotWars
                                   new YellowCommander(
                                       mH.GetSpawnHelper()
                                         .Spawn(commanders.Values.ElementAt(i),
-                                               (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
+                                               (GetNumAlliedBases(commanders.Values.ElementAt(i)) == 0)),
                                       commanders.Values.ElementAt(i)));
                             spawnsCounters[i] = 0;
                         }
@@ -145,7 +145,7 @@ namespace DotWars
                                   new RedPlayerCommander(
                                       mH.GetSpawnHelper()
                                         .Spawn(commanders.Values.ElementAt(i),
-                                               (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
+                                               (GetNumAlliedBases(commanders.Values.ElementAt(i)) == 0)),
                                       commanders.Values.ElementAt(i), mH));
                             spawnsCounters[i] = 0;
                         }
@@ -156,7 +156,7 @@ namespace DotWars
                                   new BluePlayerCommander(
                                       mH.GetSpawnHelper()
                                         .Spawn(commanders.Values.ElementAt(i),
-                                               (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
+                                               (GetNumAlliedBases(commanders.Values.ElementAt(i)) == 0)),
                                       commanders.Values.ElementAt(i), mH));
                             spawnsCounters[i] = 0;
                         }
@@ -167,7 +167,7 @@ namespace DotWars
                                   new GreenPlayerCommander(
                                       mH.GetSpawnHelper()
                                         .Spawn(commanders.Values.ElementAt(i),
-                                               (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
+                                               (GetNumAlliedBases(commanders.Values.ElementAt(i)) == 0)),
                                       commanders.Values.ElementAt(i), mH));
                             spawnsCounters[i] = 0;
                         }
@@ -178,7 +178,7 @@ namespace DotWars
                                   new YellowPlayerCommander(
                                       mH.GetSpawnHelper()
                                         .Spawn(commanders.Values.ElementAt(i),
-                                               (GetAlliedBases(commanders.Values.ElementAt(i)).Count == 0)),
+                                               (GetNumAlliedBases(commanders.Values.ElementAt(i)) == 0)),
                                       commanders.Values.ElementAt(i), mH));
                             spawnsCounters[i] = 0;
                         }
@@ -247,40 +247,6 @@ namespace DotWars
             base.DrawBottom(sB, d);
         }
 
-        public List<ConquestBase> GetEnemyBases(NPC.AffliationTypes a)
-        {
-            //Holds the temporary list of greys
-            var bL = new List<ConquestBase>();
-
-            //Cycles through all agents
-            foreach (ConquestBase b in bases)
-            {
-                if (b.affiliation != a)
-                    bL.Add(b);
-            }
-
-            //Returns the completed list
-            return bL;
-        }
-
-        #region Gets
-
-        public List<ConquestBase> GetAlliedBases(NPC.AffliationTypes a)
-        {
-            //Holds the temporary list of greys
-            var bL = new List<ConquestBase>();
-
-            //Cycles through all agents
-            foreach (ConquestBase b in bases)
-            {
-                if (b.affiliation == a)
-                    bL.Add(b);
-            }
-
-            //Returns the completed list
-            return bL;
-        }
-
         public ConquestBase GetClosestInList(List<ConquestBase> bL, Vector2 p)
         {
             if (bL.Count > 0)
@@ -305,6 +271,21 @@ namespace DotWars
             return null;
         }
 
+        private int GetNumAlliedBases(NPC.AffliationTypes team)
+        {
+            int numBases = 0;
+
+            foreach (ConquestBase conquestBase in bases)
+            {
+                if (conquestBase.affiliation == team)
+                {
+                    numBases++;
+                }
+            }
+
+            return numBases;
+        }
+
         public List<ConquestBase> GetBases()
         {
             return bases;
@@ -314,21 +295,39 @@ namespace DotWars
         {
             ConquestBase fb = null;
 
-            if (GetAlliedBases(a).Count != 0 && GetAlliedBases(a).Count != winScore)
+            if (GetNumAlliedBases(a) != 0 && GetNumAlliedBases(a) != winScore)
             {
-                foreach (ConquestBase b in GetAlliedBases(a))
+                ConquestBase closestToFB = null;
+                float distanceToClosestToFB = float.PositiveInfinity;
+
+                foreach (ConquestBase b in GetBases())
                 {
-                    if (fb == null)
-                        fb = b;
-                    else if (
-                        PathHelper.DistanceSquared(b.GetOriginPosition(),
-                                            GetClosestInList(GetEnemyBases(a), b.GetOriginPosition())
-                                                .GetOriginPosition()) <
-                        PathHelper.DistanceSquared(fb.GetOriginPosition(),
-                                            GetClosestInList(GetEnemyBases(a), fb.GetOriginPosition())
-                                                .GetOriginPosition()))
-                    {
-                        fb = b;
+                    if (b.affiliation == a)
+                    {   
+                        ConquestBase closestToB = null;
+                        float distanceToClosestToB = float.PositiveInfinity;
+
+                        foreach (ConquestBase conquestBase in GetBases())
+                        {
+                            if (conquestBase.affiliation != b.affiliation)
+                            {
+                                float distanceToNewEnemy = PathHelper.DistanceSquared(conquestBase.GetOriginPosition(),
+                                                                                      b.GetOriginPosition());
+
+                                if (distanceToNewEnemy < distanceToClosestToB)
+                                {
+                                    distanceToClosestToB = distanceToNewEnemy;
+                                    closestToB = conquestBase;
+                                }
+                            }
+                        }
+
+                        if (distanceToClosestToB < distanceToClosestToFB)
+                        {
+                            distanceToClosestToFB = distanceToClosestToB;
+                            closestToFB = closestToB;
+                            fb = b;
+                        }
                     }
                 }
             }
@@ -348,8 +347,6 @@ namespace DotWars
 
             return false;
         }
-
-        #endregion
 
         public override string GetGametypeStatistics()
         {

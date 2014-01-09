@@ -68,7 +68,7 @@ namespace DotWars
         {
             //Initialize Managers (the thing that will hold all textures used)
             agents = new NPCManager();
-            projectiles = new ProjectileManager(400, 20, 5);
+            projectiles = new ProjectileManager(400, 20, 15);
             objects = new EnvironmentManager();
             backgrounds = new BackgroundManager();
             spawnplaces = new List<SpawnPoint>();
@@ -105,6 +105,7 @@ namespace DotWars
             cameras.LoadContent(managers);
             paths.LoadContent(textures);
             abilities.LoadContent(managers);
+            projectiles.LoadContent();
         }
 
         //Where the objects will be updated (this means any actions that they can do can actually be done)

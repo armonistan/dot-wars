@@ -3481,10 +3481,6 @@ C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWar
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_shotgun.xnb
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_sniper.xnb
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\bullet_standard.xnb
-C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_blue.xnb
-C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_green.xnb
-C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_red.xnb
-C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\flare_yellow.xnb
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\grenade.xnb
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_blue.xnb
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_green.xnb
@@ -4570,3 +4566,4 @@ C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWar
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\commanderAtlas.xnb
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Dots\dotAtlas.xnb
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\profileMeanie.xnb
+C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Projectiles\mine.xnb

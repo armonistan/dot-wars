@@ -9,14 +9,6 @@ namespace DotWars
         {
         }
 
-        protected override void NewPath(ManagerHelper mH)
-        {
-            if (mH.GetProjectileManager().GetFlare(affiliation) != null)
-                FlarePath(mH);
-            else
-                SpecialPath(mH);
-        }
-
         protected override void SpecialPath(ManagerHelper mH)
         {
             var temp = (Assault) mH.GetGametype();

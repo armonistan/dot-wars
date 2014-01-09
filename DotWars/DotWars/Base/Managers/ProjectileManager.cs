@@ -12,9 +12,10 @@ namespace DotWars
         private readonly Stack<Projectile> inactiveProjectiles;
         private readonly int projectileCap;
 
-        private readonly Queue<Flare> activeFlares;
-        private readonly Stack<Flare> inactiveFlares;
-        private readonly int flareCap;
+        private readonly List<Mine> activeMines;
+        private readonly List<Mine> removeTheseMines;
+        private readonly Stack<Mine> inactiveMines;
+        private readonly int mineCap;
 
         private readonly Queue<Tossable> activeTossables;
         private readonly Stack<Tossable> inactiveTossables;
@@ -29,7 +30,7 @@ namespace DotWars
         public static string GRENADE = "Projectiles/grenade";
         #endregion
 
-        public ProjectileManager(int pC, int tC, int fC)
+        public ProjectileManager(int pC, int tC, int mC)
         {
             projectileCap = pC;
             inactiveProjectiles = new Stack<Projectile>(projectileCap);
@@ -49,19 +50,28 @@ namespace DotWars
                 inactiveTossables.Push(new Tossable());
             }
 
-            flareCap = fC;
-            inactiveFlares = new Stack<Flare>(flareCap);
-            activeFlares = new Queue<Flare>(flareCap);
+            mineCap = mC;
+            inactiveMines = new Stack<Mine>(mineCap);
+            activeMines = new List<Mine>(mineCap);
+            removeTheseMines = new List<Mine>(mineCap);
 
-            for (int i = 0; i < flareCap; i++)
+            for (int i = 0; i < mineCap; i++)
             {
-                inactiveFlares.Push(new Flare());
+                inactiveMines.Push(new Mine());
             }
         }
 
         public void Initialize(ManagerHelper mH)
         {
             managers = mH;
+        }
+
+        public void LoadContent()
+        {
+            foreach (Mine mine in inactiveMines)
+            {
+                mine.LoadContent(managers.GetTextureManager());
+            }
         }
 
         public void AddProjectile(String a, Vector2 p, NPC n, Vector2 v, int d, bool iE, bool collide, float dT)
@@ -98,19 +108,21 @@ namespace DotWars
             inactiveTossables.Push(activeTossables.Dequeue());
         }
 
-        public void AddFlare(NPC n, Vector2 v)
+        public void AddMine(NPC n)
         {
-            if (inactiveFlares.Count > 0)
+            if (inactiveMines.Count > 0)
             {
-                Flare temp = inactiveFlares.Pop();
-                temp.Set(n, v, managers);
-                activeFlares.Enqueue(temp);
+                Mine temp = inactiveMines.Pop();
+                temp.Set(n, n.GetOriginPosition());
+                activeMines.Add(temp);
             }
         }
 
-        private void RemoveFlare()
+        private void RemoveMine(Mine m)
         {
-            inactiveFlares.Push(activeFlares.Dequeue());
+            int tempIndex = activeMines.IndexOf(m);
+            inactiveMines.Push(activeMines[tempIndex]);
+            activeMines.RemoveAt(tempIndex);
         }
 
         public void Update()
@@ -145,20 +157,22 @@ namespace DotWars
                 RemoveTossable();
             }
 
-            numDeletes = 0;
-            foreach (Flare f in activeFlares)
+            foreach (Mine mine in activeMines)
             {
-                f.Update(managers);
+                mine.Update(managers);
 
-                if (f.GetExistenceTime() < 0)
+                if (!mine.IsDrawing())
                 {
-                    numDeletes++;
+                    removeTheseMines.Add(mine);
                 }
             }
-            for (int i = 0; i < numDeletes; i++)
+
+            foreach (Mine mine in removeTheseMines)
             {
-                RemoveFlare();
+                RemoveMine(mine);
             }
+
+            removeTheseMines.Clear();
         }
 
         public void Draw(SpriteBatch sB, Vector2 d)
@@ -173,9 +187,9 @@ namespace DotWars
                 t.Draw(sB, d, managers);
             }
 
-            foreach (Flare f in activeFlares)
+            foreach (Mine mine in activeMines)
             {
-                f.Draw(sB, d, managers);
+                mine.Draw(sB, d, managers);
             }
         }
 
@@ -184,19 +198,6 @@ namespace DotWars
         public Queue<Projectile> GetProjectiles()
         {
             return activeProjectiles;
-        }
-
-        public Flare GetFlare(NPC.AffliationTypes aT)
-        {
-            foreach (Flare f in activeFlares)
-            {
-                if (f.GetAffiliation() == aT)
-                {
-                    return f;
-                }
-            }
-
-            return null;
         }
 
         #endregion
