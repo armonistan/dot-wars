@@ -133,12 +133,12 @@ namespace DotWars
             }
         }
 
-        public void AddFireball(Vector2 p, NPC.AffliationTypes aT)
+        public void AddFireball(Vector2 p, Vector2 direction, NPC.AffliationTypes aT)
         {
             if (inactiveFireballs.Count > 0)
             {
                 Fireball temp = inactiveFireballs.Pop();
-                temp.Set(p, aT, managers);
+                temp.Set(p, direction, aT, managers);
                 activeFireballs.Enqueue(temp);
             }
         }
