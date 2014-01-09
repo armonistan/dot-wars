@@ -530,13 +530,17 @@ namespace DotWars
                         {
                             NPC closestEnemyForTeam =
                                 mH.GetNPCManager().GetClosestInList(mH.GetNPCManager().GetAllies(team), captor);
-                            float closestDistanceToEnemyForTeam =
-                                PathHelper.DistanceSquared(closestEnemyForTeam.GetOriginPosition(), captor.GetOriginPosition());
 
-                            if (closestDistanceToEnemyForTeam < closestDistanceToEnemy)
+                            if (closestEnemyForTeam != null)
                             {
-                                closestDistanceToEnemy = closestDistanceToEnemyForTeam;
-                                closestEnemy = closestEnemyForTeam;
+                                float closestDistanceToEnemyForTeam =
+                                    PathHelper.DistanceSquared(closestEnemyForTeam.GetOriginPosition(), captor.GetOriginPosition());
+
+                                if (closestDistanceToEnemyForTeam < closestDistanceToEnemy)
+                                {
+                                    closestDistanceToEnemy = closestDistanceToEnemyForTeam;
+                                    closestEnemy = closestEnemyForTeam;
+                                }
                             }
                         }
                     }

@@ -46,13 +46,17 @@ namespace DotWars
                         NPC closestTargetForTeam = mH.GetNPCManager()
                                                      .GetClosestInList(mH.GetNPCManager().GetAllies(team),
                                                                        friend.GetOriginPosition());
-                        float closestDiestanceToTargetForTeam = PathHelper.DistanceSquared(
-                            closestTargetForTeam.GetOriginPosition(), friend.GetOriginPosition());
 
-                        if (closestDiestanceToTargetForTeam < closestDistancetoTarget)
+                        if (closestTargetForTeam != null)
                         {
-                            target = closestTargetForTeam;
-                            closestDistancetoTarget = closestDiestanceToTargetForTeam;
+                            float closestDiestanceToTargetForTeam = PathHelper.DistanceSquared(
+                                closestTargetForTeam.GetOriginPosition(), friend.GetOriginPosition());
+
+                            if (closestDiestanceToTargetForTeam < closestDistancetoTarget)
+                            {
+                                target = closestTargetForTeam;
+                                closestDistancetoTarget = closestDiestanceToTargetForTeam;
+                            }
                         }
                     }
                 }
