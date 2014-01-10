@@ -112,7 +112,7 @@ namespace DotWars
                         else
                         {
                             Vector2 knockback = new Vector2((float)(p.velocity.X * .05), (float)(p.velocity.Y * .05));
-                            accelerations.Add(knockback);
+                            AddAcceleration(knockback);
                             mH.GetAudioManager().Play(AudioManager.JUGGERNAUT_RICOHET, (float).05, 0, 0, false);
                         }
 

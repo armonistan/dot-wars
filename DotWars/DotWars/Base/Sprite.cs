@@ -58,6 +58,13 @@ namespace DotWars
             thrust = 0;
             accelerations = new List<Vector2>();
             scale = 1;
+
+            //TODO: Do not leave this in.
+            if (float.IsNaN(position.X) || float.IsNaN(position.Y) ||
+                float.IsNaN(velocity.X) || float.IsNaN(velocity.Y))
+            {
+                throw new Exception("How?");
+            }
         }
 
         public Sprite(String a, Vector2 p)
@@ -218,7 +225,15 @@ namespace DotWars
 
         public void AddAcceleration(Vector2 a)
         {
-            accelerations.Add(a);
+            if (!float.IsNaN(a.X) && !float.IsNaN(a.Y))
+            {
+                accelerations.Add(a);
+            }
+            else
+            {
+                //TODO: Do not leave this in.
+                throw new Exception("How?");
+            }
         }
 
         public Rectangle GetFrame()

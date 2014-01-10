@@ -129,7 +129,7 @@ namespace DotWars
                 {
                     Vector2 next = path.Last(); //Get next destination
                     dir = PathHelper.Direction(base.GetOriginPosition(), next); //Find angle between points
-                    accelerations.Add(PathHelper.Direction(dir));
+                    AddAcceleration(PathHelper.Direction(dir));
                         //Get x and y values from angle and set up direction
 
                     //If already there...
@@ -146,10 +146,7 @@ namespace DotWars
             //Finalize direction
             foreach (Vector2 a in accelerations)
             {
-                if (!float.IsNaN(a.X) && !float.IsNaN(a.Y))
-                {
-                    acceleration += a;
-                }
+                acceleration += a;
             }
             drag = 0.05f;
             thrust = movementSpeed*drag;
@@ -224,7 +221,12 @@ namespace DotWars
             //Update position
             Vector2 tempPos = position + velocity*mH.GetDeltaSeconds();
             Vector2 tempOPos = tempPos + origin;
-            float distSquared = 1000000;
+
+            if (float.IsNaN(velocity.X) || float.IsNaN(velocity.Y))
+            {
+                //TODO: Do not leave this in.
+                throw new Exception("How?");
+            }
 
             if (float.IsNaN(tempPos.X) || float.IsNaN(tempPos.Y))
             {
@@ -235,52 +237,69 @@ namespace DotWars
             //Collisions
             foreach (NPC a in mH.GetNPCManager().GetNPCs()) //first go through every single npc
             {
-                if (a.GetAffiliation() != affiliation && distSquared > PathHelper.DistanceSquared(a.GetOriginPosition(), tempOPos)) 
+                if (a.GetAffiliation() != affiliation) 
                 {
-                    Vector2 tempVect = CollisionHelper.IntersectPixelsSimple(this, a);
+                    Vector2 tempVect = CollisionHelper.IntersectPixelsRadius(this, a, origin.X, origin.X);
+
                     if (tempVect != new Vector2(-1))
                     {
-                        velocity = CollisionHelper.CollideRandom(GetOriginPosition(), tempVect)*movementSpeed;
+                        velocity = CollisionHelper.CollideRandom(GetOriginPosition(), tempVect) * movementSpeed;
+
+                        if (float.IsNaN(velocity.X) || float.IsNaN(velocity.Y))
+                        {
+                            //TODO: Do not leave this in.
+                            throw new Exception("How?");
+                        }
                     }
                 }
             }
 
             foreach (LargeRock r in mH.GetAbilityManager().GetLargeRocks())
             {
-                if (distSquared > PathHelper.DistanceSquared(r.GetOriginPosition(), tempOPos))
+                int tempVect = CollisionHelper.IntersectPixelsDirectionalRaw(this, tempOPos, r);
+                if (tempVect != -1)
                 {
-                    int tempVect = CollisionHelper.IntersectPixelsDirectionalRaw(this, tempOPos, r);
-                    if (tempVect != -1)
+                    velocity = CollisionHelper.CollideSimple(tempVect, velocity);
+
+                    if (float.IsNaN(velocity.X) || float.IsNaN(velocity.Y))
                     {
-                        velocity = CollisionHelper.CollideSimple(tempVect, velocity);
+                        //TODO: Do not leave this in.
+                        throw new Exception("How?");
                     }
                 }
             }
 
             foreach (Environment e in mH.GetEnvironmentManager().GetStaticBlockers())
             {
-                if (distSquared > PathHelper.DistanceSquared(e.GetOriginPosition(), tempOPos))
+                int tempVect = CollisionHelper.IntersectPixelsDirectionalRaw(this, tempOPos, e);
+                if (tempVect != -1)
                 {
-                    int tempVect = CollisionHelper.IntersectPixelsDirectionalRaw(this, tempOPos, e);
-                    if (tempVect != -1)
+                    if (e is SwitchBox) {
+                        SwitchBox box = (SwitchBox)e;
+                        box.lowerHealth();
+                    }
+
+                    velocity = CollisionHelper.CollideSimple(tempVect, velocity);
+
+                    if (float.IsNaN(velocity.X) || float.IsNaN(velocity.Y))
                     {
-                        if (e is SwitchBox) {
-                            SwitchBox box = (SwitchBox)e;
-                            box.lowerHealth();
-                        }
-                        velocity = CollisionHelper.CollideSimple(tempVect, velocity);
+                        //TODO: Do not leave this in.
+                        throw new Exception("How?");
                     }
                 }
             }
 
             foreach (Impassable e in mH.GetEnvironmentManager().GetImpassables())
             {
-                if (distSquared > PathHelper.DistanceSquared(e.GetOriginPosition(), tempOPos))
+                int tempVect = CollisionHelper.IntersectPixelsDirectionalRaw(this, tempOPos, e);
+                if (tempVect != -1)
                 {
-                    int tempVect = CollisionHelper.IntersectPixelsDirectionalRaw(this, tempOPos, e);
-                    if (tempVect != -1)
+                    velocity = CollisionHelper.CollideDirectional(velocity, tempVect);
+
+                    if (float.IsNaN(velocity.X) || float.IsNaN(velocity.Y))
                     {
-                        velocity = CollisionHelper.CollideDirectional(velocity, tempVect);
+                        //TODO: Do not leave this in.
+                        throw new Exception("How?");
                     }
                 }
             }

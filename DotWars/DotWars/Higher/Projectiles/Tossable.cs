@@ -89,10 +89,7 @@ namespace DotWars
 
                 foreach (Vector2 a in accelerations)
                 {
-                    if (!float.IsNaN(a.X) && !float.IsNaN(a.Y))
-                    {
-                        acceleration += a*mH.GetDeltaSeconds();
-                    }
+                    acceleration += a*mH.GetDeltaSeconds();
                 }
 
                 velocity += thrust*acceleration - drag*velocity;

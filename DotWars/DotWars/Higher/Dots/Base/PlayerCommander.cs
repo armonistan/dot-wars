@@ -172,15 +172,15 @@ namespace DotWars
             if (dir != Vector2.Zero)
             {
                 dir.Normalize();
-                accelerations.Add(dir);
+                AddAcceleration(dir);
             }
 #elif XBOX
     //Forward
             if (theState.ThumbSticks.Left.Y != 0 || theState.ThumbSticks.Left.X != 0)
             {
-                accelerations.Add(new Vector2(theState.ThumbSticks.Left.X, theState.ThumbSticks.Left.Y * -1));
+                AddAcceleration(new Vector2(theState.ThumbSticks.Left.X, theState.ThumbSticks.Left.Y * -1));
             }
-            #endif
+#endif
 
             #endregion
 
@@ -189,10 +189,7 @@ namespace DotWars
             acceleration = Vector2.Zero;
             foreach (Vector2 a in accelerations)
             {
-                if (!float.IsNaN(a.X) && !float.IsNaN(a.Y))
-                {
-                    acceleration += a;
-                }
+                acceleration += a;
             }
             drag = 0.1f;
             thrust = movementSpeed*drag;

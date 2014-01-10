@@ -53,7 +53,7 @@ namespace DotWars
             }
             else if (y == 0f && x == 0f)
             {
-                return float.NaN;
+                return 0f;
             }
 
             return float.NaN;
