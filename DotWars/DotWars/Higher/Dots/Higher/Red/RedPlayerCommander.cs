@@ -24,8 +24,8 @@ namespace DotWars
         {
             if (CurrentPower() > abilityUse)
             {
-                Vector2 tempPos = new Vector2(64)*PathHelper.Direction(rotation) + GetOriginPosition();
-                mH.GetAbilityManager().AddFireball(tempPos, affiliation);
+                Vector2 tempPos = new Vector2(32)*PathHelper.Direction(rotation) + GetOriginPosition();
+                mH.GetAbilityManager().AddFireball(tempPos, PathHelper.Direction(this.rotation), affiliation);
 
                 base.UsePower(mH);
             }

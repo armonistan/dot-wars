@@ -17,6 +17,7 @@ namespace DotWars
         protected List<Vector2>[,] blockers;
         protected float drag;
         protected Rectangle frame;
+        protected float scale;
 
         protected int frameIndex,
                    modeIndex;
@@ -56,6 +57,7 @@ namespace DotWars
             drag = 0;
             thrust = 0;
             accelerations = new List<Vector2>();
+            scale = 1;
         }
 
         public Sprite(String a, Vector2 p)
@@ -154,17 +156,7 @@ namespace DotWars
 
         public virtual void Draw(SpriteBatch sB, Vector2 displacement, ManagerHelper mH, Color alpha)
         {
-            float scale = 1;
-            if (mH != null)
-            {
-                CameraManager.Camera cam = mH.GetCurrentCam();
-
-                if (cam != null)
-                {
-                    scale = cam.GetZoom();
-                }
-            }
-            sB.Draw(texture, (CameraManager.Transform(position, displacement) + origin) * scale, frame, alpha,
+            sB.Draw(texture, (CameraManager.Transform(position, displacement) + origin), frame, alpha,
                     rotation, origin, scale, SpriteEffects.None, 0);
         }
 

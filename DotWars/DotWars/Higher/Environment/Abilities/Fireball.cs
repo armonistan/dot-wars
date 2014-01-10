@@ -15,9 +15,11 @@ namespace DotWars
         private ManagerHelper managers;
 
         private int frameCounter;
-        private const int drawFrames = 10;
+        private const int drawFrames = 50;
         private const int existFrames = 60;
         private const int burnFrames = 3;
+
+        private const float modifer = 0.99f;
 
         #endregion
 
@@ -29,15 +31,17 @@ namespace DotWars
             managers = mH;
         }
 
-        public void Set(Vector2 p, NPC.AffliationTypes aT, ManagerHelper mH)
+        public void Set(Vector2 p, Vector2 direction, NPC.AffliationTypes aT, ManagerHelper mH)
         {
             frameCounter = 0;
+            scale = 1;
             doomedDots.Clear();
             dotsSetOnFire.Clear();
             affiliation = aT;
             frameIndex = 0;
             originPosition = p;
             position = p - origin;
+            velocity = new Vector2(300 * direction.X, 300 * direction.Y);
 
             mH.GetAudioManager().Play(AudioManager.FIREBALL, (float)mH.GetRandom().NextDouble()/4 + 0.75f, AudioManager.RandomPitch(mH), 0, false);
         }
@@ -49,7 +53,7 @@ namespace DotWars
                 frameIndex = (int)((float)frameCounter/drawFrames*totalFrames);
 
                 //Spawn fire
-                if (mH.GetRandom().NextDouble() < 0.7)
+                if (mH.GetRandom().NextDouble() < 0.3)
                 {
                     mH.GetParticleManager()
                       .AddFire(GetOriginPosition(),
@@ -87,7 +91,7 @@ namespace DotWars
                                 a.ChangeFireStatus();
                                 dotsSetOnFire.Add(a);
                             }
-                            a.ChangeHealth(-30, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.red));
+                            a.ChangeHealth(-70, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.red));
                         }
                     }
                 }
@@ -120,6 +124,7 @@ namespace DotWars
             }
 
             frameCounter++;
+            this.scale = scale * modifer;
 
             base.Update(mH);
         }

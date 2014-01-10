@@ -368,11 +368,13 @@ namespace DotWars
             {
                 float x = 25;
                 float y = -40;
+                Vector2 crane = DEFAUT_SCREEN_SIZE / 2;
+                crane.X += 116;
+                crane.Y -= 112;
 
                 backgrounds.AddBackground(new Sprite("Backgrounds/Switch/switchBackground", DEFAUT_SCREEN_SIZE/2));
                 backgrounds.AddForeground(new Sprite("Backgrounds/Switch/switchForeground", DEFAUT_SCREEN_SIZE/2));
                 backgrounds.AddForeground(new Sprite("Backgrounds/Switch/switchBlockers", DEFAUT_SCREEN_SIZE / 2));
-                backgrounds.AddForeground(new Sprite("Backgrounds/Switch/switchCrane", new Vector2(600+x, 600+y)));
 
                 Sprite belts = new Sprite("Backgrounds/Switch/BL", new Vector2(564+x, 288+y));
                 backgrounds.AddForeground(belts);
@@ -394,6 +396,7 @@ namespace DotWars
                 backgrounds.AddForeground(belts);
                 belts = new Sprite("Backgrounds/Switch/DBr", new Vector2(641+x, 359+y));
                 backgrounds.AddForeground(belts);
+                backgrounds.AddForeground(new Sprite("Backgrounds/Switch/switchCrane", crane));
             }
             else if (nextLevel.ToString() == "Zen Garden")
             {
