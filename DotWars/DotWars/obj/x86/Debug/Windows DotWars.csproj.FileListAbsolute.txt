@@ -2273,10 +2273,6 @@ C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Deb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\bullet_shotgun.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\bullet_sniper.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\bullet_standard.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\flare_blue.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\flare_green.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\flare_red.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\flare_yellow.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\grenade.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\smoke_blue.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\smoke_green.xnb
@@ -2499,3 +2495,14 @@ C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWar
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Dots\dotAtlas.xnb
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\profileMeanie.xnb
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\mine.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\dotapedia.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Dots\dotAtlas.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Dots\commanderAtlas.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\profileMeanie.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Fonts\tinytext.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\bombardier_blueVFX.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\bombardier_greenVFX.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\bombardier_redVFX.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\bombardier_yellowVFX.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Audio\Waves\juggernautRicohet.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\mine.xnb
