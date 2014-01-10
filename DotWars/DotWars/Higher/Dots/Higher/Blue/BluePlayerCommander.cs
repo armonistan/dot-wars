@@ -26,7 +26,8 @@ namespace DotWars
             {
                 for (int i = 0; i < 4; i++)
                 {
-                    mH.GetAbilityManager().AddWaterpool(new Vector2(32) * PathHelper.Direction(rotation + (i * (MathHelper.Pi / 2))) + GetOriginPosition(), affiliation);
+                    mH.GetAbilityManager().AddWaterpool((new Vector2(32) * PathHelper.Direction(rotation + (i * (MathHelper.Pi / 2))))
+                        + GetOriginPosition() + (new Vector2(64) * PathHelper.Direction(rotation)), affiliation);
                 }
 
                 base.UsePower(mH);
