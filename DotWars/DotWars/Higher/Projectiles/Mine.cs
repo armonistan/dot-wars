@@ -106,11 +106,6 @@ namespace DotWars
             base.Update(mH);
         }
 
-        public override void Draw(SpriteBatch sB, Vector2 displacement, ManagerHelper mH)
-        {
-            base.Draw(sB, displacement, mH);
-        }
-
         public bool IsDrawing()
         {
             return draw;
