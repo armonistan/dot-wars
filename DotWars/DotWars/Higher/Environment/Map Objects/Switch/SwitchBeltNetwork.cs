@@ -54,7 +54,6 @@ namespace DotWars
             var tempDirs = new List<Vector2>();
             tempDirs.Add(new Vector2(0, 1));
             boxNodes[0] = new Node(new Vector2(416, 112), tempDirs);
-            ;
 
             boxNodes[1] = new Node(new Vector2(416, 192), tempDirs);
 

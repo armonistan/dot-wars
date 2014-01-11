@@ -70,7 +70,7 @@ namespace DotWars
                 //Spawn lightning thing
                 mH.GetParticleManager().AddParticle("Effects/spr_bolt_strip3", GetOriginPosition() +
                     new Vector2(mH.GetRandom().Next(-16, 16), mH.GetRandom().Next(-16, 16)),
-                    Vector2.Zero, 0.05f, 0, 0, (float)MathHelper.Pi / 10);
+                    Vector2.Zero, 0.05f, 0, 0, MathHelper.Pi / 10);
             }
         }
 

@@ -247,19 +247,19 @@ Content\Textures\Effects\spr_bolt_strip3.xnb
 Content\Textures\Backgrounds\PreGame\tipsBases.xnb
 Content\Textures\Backgrounds\ResultsScreen\startButtonWhite.xnb
 Content\Textures\HUD\buttons.xnb
-Content\Textures\Backgrounds\Menu\menuSelector.xnb
-Content\Textures\Backgrounds\Menu\buttonB.xnb
 Content\Textures\Backgrounds\Menu\buttonA.xnb
-Content\Textures\Backgrounds\Menu\Gametypes\tdmInfographic.xnb
-Content\Textures\Backgrounds\Menu\dotapedia.xnb
-Content\Textures\Dots\dotAtlas.xnb
-Content\Textures\Dots\commanderAtlas.xnb
-Content\Textures\Backgrounds\PreGame\profileMeanie.xnb
+Content\Textures\Backgrounds\Menu\buttonB.xnb
+Content\Textures\Backgrounds\Menu\menuSelector.xnb
 Content\Fonts\tinytext.xnb
+Content\Textures\Backgrounds\Menu\dotapedia.xnb
 Content\Textures\Effects\bombardier_blueVFX.xnb
 Content\Textures\Effects\bombardier_greenVFX.xnb
 Content\Textures\Effects\bombardier_redVFX.xnb
 Content\Textures\Effects\bombardier_yellowVFX.xnb
+Content\Textures\Dots\commanderAtlas.xnb
+Content\Textures\Dots\dotAtlas.xnb
+Content\Textures\Backgrounds\PreGame\profileMeanie.xnb
+Content\Textures\Projectiles\mine.xnb
 Content\Audio\Waves\explosion.xnb
 Content\Audio\Waves\fireballSound.xnb
 Content\Audio\Waves\flareShoot.xnb
@@ -284,7 +284,7 @@ Content\Audio\Waves\return.xnb
 Content\Audio\Waves\menu\back_style_2_002.xnb
 Content\Audio\Waves\menu\confirm_style_2_002.xnb
 Content\Audio\Waves\juggernautRicohet.xnb
-Content\Textures\Projectiles\mine.xnb
+Content\Audio\Waves\DotWars.xnb
 Content\Audio\GameAudio.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb

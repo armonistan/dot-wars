@@ -9,7 +9,6 @@ namespace DotWars
         private double spawnCounter; //
         public Vector2 spawnPoint;
         private double spawnTime; //
-        private Vector2 velocity;
         private bool isOneUse;
         private bool isUsed;
 
