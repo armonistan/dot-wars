@@ -267,7 +267,7 @@ namespace DotWars
             {
                 if (!point.GetBlocker())
                 {
-                    path.Add(point.GetPosition()*nodeSize + new Vector2(16), mH);
+                    path.AddPoint(point.GetPosition()*nodeSize + new Vector2(16));
                 }
                 point = point.GetParent();
             }

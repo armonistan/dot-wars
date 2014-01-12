@@ -30,7 +30,7 @@ namespace DotWars
 
             //Set up path
             path = new Path();
-            path.Add(targetPosition, mH);
+            path.AddPoint(targetPosition);
 
             string targeAsset = "";
 
@@ -123,7 +123,7 @@ namespace DotWars
 
         protected override void NewPath(ManagerHelper mH)
         {
-            path.Add(targetPosition, mH);
+            path.AddPoint(targetPosition);
         }
     }
 }

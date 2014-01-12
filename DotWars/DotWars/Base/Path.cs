@@ -18,15 +18,13 @@ namespace DotWars
             moving = true;
         }
 
-        public void Add(Vector2 p, ManagerHelper mH)
+        public void AddPoint(Vector2 p)
         {
-            base.Add(p);
-            //AddFirst(p);
+            Add(p);
 
             if (Count > 1)
             {
                 distance += PathHelper.DistanceSquared(base[Count - 1], base[Count - 2]);
-                //distance += PathHelper.Distance(base.First.Value, base.First.Next.Value);
             }
 
             SetMoving(true);

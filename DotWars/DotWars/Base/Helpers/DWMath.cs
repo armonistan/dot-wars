@@ -26,7 +26,18 @@ namespace DotWars
 
         public static float Atan(float x)
         {
-            return (float)Math.Atan(x);
+            float absX = abs(x);
+
+            if (absX <= 1f)
+            {
+                return MathHelper.PiOver4 * x - x * (absX - 1) * (0.2447f + 0.0663f * absX);
+            }
+            else
+            {
+                return ((x < 0f) ? -1 : 1) * (MathHelper.PiOver2 - Atan(1/absX));
+            }
+
+            //return (float)Math.Atan(x);
         }
 
         public static float Atan2(float y, float x)
