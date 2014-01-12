@@ -18,7 +18,6 @@ namespace DotWars
         private Sprite aqueos;
         private Sprite dian;
         private Sprite terron;
-        private Sprite bases;
 
         private String red;
         private String blue;
@@ -36,11 +35,6 @@ namespace DotWars
         private String tipText;
         private const int NUM_COMMANDERS = 4;
         private Dictionary<Gametype.GT, Tip[]> DictTip;
-
-        private enum DOTS
-        {
-            MUSTACHIO, AQUOES, DIAN, TERRON
-        }
 
         private class Tip
         {
@@ -76,9 +70,6 @@ namespace DotWars
             mapName = nextLevel.ToString();
 
             initalizeTeamImages();
-            initalizeBackground();
-
-        
 
             //bases = new Sprite("Backgrounds/PreGame/tipsBases", picturePos);
 
@@ -328,104 +319,17 @@ namespace DotWars
             dian = new Sprite("Backgrounds/PreGame/commanders", dianPos);
         }
 
-        private void initalizeBackground()
-        {
-            backgrounds = new BackgroundManager();
-
-            if (nextLevel.ToString() == "Relic")
-            {
-                backgrounds.AddBackground(new Sprite("Backgrounds/Relic/relicBackground", DEFAUT_SCREEN_SIZE/2));
-                backgrounds.AddForeground(new Sprite("Backgrounds/Relic/relicBlockers", DEFAUT_SCREEN_SIZE / 2));
-                backgrounds.AddForeground(new Sprite("Backgrounds/Relic/meteorAnimated2", DEFAUT_SCREEN_SIZE / 2));
-            }
-            else if (nextLevel.ToString() == "Archipelago")
-            {
-                backgrounds.AddBackground(new Sprite("Backgrounds/Archipelago/archipelago_background", DEFAUT_SCREEN_SIZE / 2));
-                backgrounds.AddForeground(new Sprite("Backgrounds/Archipelago/archipelago_trees", DEFAUT_SCREEN_SIZE / 2));
-                backgrounds.AddForeground(new Sprite("Backgrounds/Archipelago/archipelago_solid", DEFAUT_SCREEN_SIZE / 2));
-            }
-            else if (nextLevel.ToString() == "Faercrag")
-            {
-                backgrounds.AddBackground(new Sprite("Backgrounds/Faercrag/faercragBackground", DEFAUT_SCREEN_SIZE/2));
-                backgrounds.AddForeground(new Sprite("Backgrounds/Faercrag/faercragBlockers", DEFAUT_SCREEN_SIZE / 2));
-                backgrounds.AddForeground(new Sprite("Backgrounds/Faercrag/faercragImpassable", DEFAUT_SCREEN_SIZE / 2));
-            }
-            else if (nextLevel.ToString() == "Plaza")
-            {
-                backgrounds.AddForeground(new Sprite("Backgrounds/Plaza/plazaLighting", DEFAUT_SCREEN_SIZE / 2));
-                backgrounds.AddBackground(new Sprite("Backgrounds/Plaza/plazaBackground", DEFAUT_SCREEN_SIZE/2));
-                backgrounds.AddBackground(new Sprite("Backgrounds/Plaza/plazaBlockers", DEFAUT_SCREEN_SIZE / 2));
-                Sprite light = new Sprite("Backgrounds/Plaza/light", new Vector2(476, 184));
-                backgrounds.AddBackground(light);
-                light = new Sprite("Backgrounds/Plaza/light", new Vector2(832, 182));
-                light.Turn((float)(Math.PI) * .25f);
-                backgrounds.AddBackground(light);
-                light = new Sprite("Backgrounds/Plaza/light", new Vector2(832, 512));
-                light.Turn((float)(Math.PI) * .5f);
-                backgrounds.AddBackground(light);
-            }
-            else if (nextLevel.ToString() == "Switch")
-            {
-                float x = 25;
-                float y = -40;
-                Vector2 crane = DEFAUT_SCREEN_SIZE / 2;
-                crane.X += 116;
-                crane.Y -= 112;
-
-                backgrounds.AddBackground(new Sprite("Backgrounds/Switch/switchBackground", DEFAUT_SCREEN_SIZE/2));
-                backgrounds.AddForeground(new Sprite("Backgrounds/Switch/switchForeground", DEFAUT_SCREEN_SIZE/2));
-                backgrounds.AddForeground(new Sprite("Backgrounds/Switch/switchBlockers", DEFAUT_SCREEN_SIZE / 2));
-
-                Sprite belts = new Sprite("Backgrounds/Switch/BL", new Vector2(564+x, 288+y));
-                backgrounds.AddForeground(belts);
-                belts = new Sprite("Backgrounds/Switch/BLr", new Vector2(712.5f+x, 435+y));
-                belts.Turn((float)(Math.PI));
-                backgrounds.AddForeground(belts);
-                belts = new Sprite("Backgrounds/Switch/BRr", new Vector2(616+x, 221+y));
-                backgrounds.AddForeground(belts);
-                belts = new Sprite("Backgrounds/Switch/BR", new Vector2(779+x, 384+y));
-                belts.Turn((float)(Math.PI));
-                backgrounds.AddForeground(belts);
-                belts = new Sprite("Backgrounds/Switch/BT", new Vector2(687+x, 192.5f+y));
-                backgrounds.AddForeground(belts);
-                belts = new Sprite("Backgrounds/Switch/BTr", new Vector2(807+x, 313+y));
-                belts.Turn((float)(Math.PI));
-                backgrounds.AddForeground(belts);
-                belts = new Sprite("Backgrounds/Switch/DBr", new Vector2(782+x, 217+y));
-                belts.Turn((float)(Math.PI));
-                backgrounds.AddForeground(belts);
-                belts = new Sprite("Backgrounds/Switch/DBr", new Vector2(641+x, 359+y));
-                backgrounds.AddForeground(belts);
-                backgrounds.AddForeground(new Sprite("Backgrounds/Switch/switchCrane", crane));
-            }
-            else if (nextLevel.ToString() == "Zen Garden")
-            {
-                backgrounds.AddBackground(new Sprite("Backgrounds/ZenGarden/zenBackground", DEFAUT_SCREEN_SIZE/2));
-                backgrounds.AddForeground(new Sprite("Backgrounds/ZenGarden/zenForeground", DEFAUT_SCREEN_SIZE/2));
-                backgrounds.AddForeground(new Sprite("Backgrounds/ZenGarden/zenBlockers", DEFAUT_SCREEN_SIZE / 2));
-            }
-            else if (nextLevel.ToString() == "Caged")
-            {
-                backgrounds.AddForeground(new Sprite("Backgrounds/Caged/cagedBackground", DEFAUT_SCREEN_SIZE / 2));
-                backgrounds.AddForeground(new Sprite("Backgrounds/Caged/cagedBlockers", DEFAUT_SCREEN_SIZE / 2));
-                backgrounds.AddBackground(new Sprite("Backgrounds/Caged/lava",DEFAUT_SCREEN_SIZE / 2));
-            }
-        }
-
         public override void Initialize()
         {
-
+            nextLevel.Initialize();
         }
 
         public override void LoadContent(Microsoft.Xna.Framework.Content.ContentManager cM)
         {
-            backgrounds.LoadContent(textures);
-
             mustachio.LoadContent(textures);
             aqueos.LoadContent(textures);
             terron.LoadContent(textures);
             dian.LoadContent(textures);
-            //bases.LoadContent(textures);
 
             Random tipSelect = new Random();
             Tip[] tipList = this.DictTip[nextGame.typeOfGame];
@@ -446,6 +350,7 @@ namespace DotWars
             this.dian.UpdateFrame();
             #endregion
 
+            nextLevel.LoadContent(cM);
         }
 
         public override Level Update(GameTime gT)
@@ -474,11 +379,9 @@ namespace DotWars
 
         public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, GraphicsDeviceManager gM, bool drawHUD)
         {
+            nextLevel.Draw(sB, gM, false);
+
             sB.Begin();
-            //background.Draw(sB, Vector2.Zero, managers);
-            backgrounds.DrawBackgrounds(sB, Vector2.Zero);
-            backgrounds.Drawforegrounds(sB, Vector2.Zero);
-            
             textures.DrawString(sB, red, redPos, Color.Red, TextureManager.FontSizes.small, true);
             mustachio.Draw(sB, new Vector2(0, 0), managers);
             textures.DrawString(sB, blue, bluePos, Color.Blue, TextureManager.FontSizes.small, true);
@@ -494,7 +397,7 @@ namespace DotWars
 
             textures.DrawString(sB, nextGame.GetSummary(), new Vector2(DEFAUT_SCREEN_SIZE.X / 2, DEFAUT_SCREEN_SIZE.Y / 8 + 192), Color.White, TextureManager.FontSizes.small, true);
 
-            textures.DrawString(sB, ((timer <= beginTime) ? "" : (int)Math.Ceiling(timer) + ""), new Vector2(DEFAUT_SCREEN_SIZE.X / 2, DEFAUT_SCREEN_SIZE.Y / 8 + 320), Color.White, TextureManager.FontSizes.big, true);
+            textures.DrawString(sB, ((timer <= beginTime) ? "Press Start!" : (int)Math.Ceiling(timer) + ""), new Vector2(DEFAUT_SCREEN_SIZE.X / 2, DEFAUT_SCREEN_SIZE.Y / 8 + 320), Color.White, TextureManager.FontSizes.big, true);
 
             textures.DrawString(sB, tipText, new Vector2(DEFAUT_SCREEN_SIZE.X / 2, DEFAUT_SCREEN_SIZE.Y / 2 + 230), Color.White, TextureManager.FontSizes.small, true);
             sB.End();

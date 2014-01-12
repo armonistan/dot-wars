@@ -93,8 +93,17 @@ namespace DotWars
             else if (next != current)
             {
                 current = next;
-                current.Initialize();
-                current.LoadContent(Content);
+
+                if (!current.HasInitialized())
+                {
+                    current.Initialize();
+                }
+
+                if(!current.HasLoaded())
+                {
+                    current.LoadContent(Content);
+                }
+
                 graphics.GraphicsDevice.Viewport =
                     new Viewport(new Rectangle(0, 0, (int) Level.DEFAUT_SCREEN_SIZE.X,
                                                (int) Level.DEFAUT_SCREEN_SIZE.Y));

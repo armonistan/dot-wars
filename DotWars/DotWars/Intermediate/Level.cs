@@ -36,6 +36,9 @@ namespace DotWars
         protected List<Vector2> sniperSpots;
         protected Gametype typeOfGame;
 
+        private bool initialized;
+        private bool loaded;
+
         #endregion
 
         #region Defaults
@@ -62,6 +65,9 @@ namespace DotWars
             textures = tM;
 
             sounds = audio;
+
+            initialized = false;
+            loaded = false;
         }
 
         public virtual void Initialize() //actually setting up needed materials
@@ -96,6 +102,8 @@ namespace DotWars
             backgrounds.Initialize(managers);
             spawns.Intialize(managers);
             statistics.Intitialize(managers);
+
+            initialized = true;
         }
 
         public virtual void LoadContent(ContentManager cM)
@@ -106,6 +114,8 @@ namespace DotWars
             paths.LoadContent(textures);
             abilities.LoadContent(managers);
             projectiles.LoadContent();
+
+            loaded = true;
         }
 
         //Where the objects will be updated (this means any actions that they can do can actually be done)
@@ -217,6 +227,16 @@ namespace DotWars
         public Vector2 GetSizeOfLevel()
         {
             return SizeOfLevel;
+        }
+
+        public bool HasInitialized()
+        {
+            return initialized;
+        }
+
+        public bool HasLoaded()
+        {
+            return loaded;
         }
         #endregion
 

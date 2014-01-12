@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace DotWars
 {
@@ -10,6 +11,7 @@ namespace DotWars
 
         private NPC.AffliationTypes affiliation;
         private double animateTime;
+        private double fadeTime;
 
         private int health;
         private double timer;
@@ -19,6 +21,9 @@ namespace DotWars
 
         private ManagerHelper managers;
 
+        private Sprite pulse;
+        private float pulseDistance;
+
         #endregion
 
         public LargeRock(ManagerHelper mH)
@@ -26,6 +31,8 @@ namespace DotWars
         {
             managers = mH;
             lastDamager = null;
+
+            pulse = new Sprite("Abilities/ability_green2", Vector2.Zero);
         }
 
         public override void Update(ManagerHelper mH)
@@ -45,43 +52,42 @@ namespace DotWars
 
             if (timer < animateTime)
             {
-                frameIndex = (int) (timer/animateTime*12);
+                frameIndex = (int) (timer/animateTime*totalFrames);
                 float frameModifier = ((frameIndex + 1)*6);
 
-                if (mH.GetGametype() is Survival)
+                foreach (NPC agent in mH.GetNPCManager().GetNPCs())
                 {
-                    foreach (NPC a in mH.GetNPCManager().GetAllies(NPC.AffliationTypes.black))
+                    if (agent.GetAffiliation() == NPC.AffliationTypes.black && mH.GetGametype() is Survival ||
+                        agent.GetAffiliation() != affiliation)
                     {
-                        float distanceToAgent = PathHelper.DistanceSquared(GetOriginPosition(), a.GetOriginPosition());
+                        float distanceToAgent = PathHelper.DistanceSquared(GetOriginPosition(),
+                                                                           agent.GetOriginPosition());
 
                         if (distanceToAgent < frameModifier * frameModifier)
                         {
-                            a.AddAcceleration(PathHelper.DirectionVector(GetOriginPosition(), a.GetOriginPosition()) * 10);
-
-                            a.ChangeHealth(-1 * DAMAGE, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.green));
+                            agent.ChangeHealth(-1 * DAMAGE, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.green));
                         }
-                    }
-                }
-                else
-                {
-                    foreach (NPC a in mH.GetNPCManager().GetNPCs())
-                    {
-                        if (a.GetAffiliation() != affiliation)
+
+                        if (distanceToAgent < pulseDistance*pulseDistance)
                         {
-                            var distanceToAgent = PathHelper.DistanceSquared(GetOriginPosition(), a.GetOriginPosition());
+                            Vector2 direction = PathHelper.DirectionVector(GetOriginPosition(),
+                                                                           agent.GetOriginPosition());
 
-                            if (distanceToAgent < frameModifier * frameModifier)
-                            {
-                                a.AddAcceleration(PathHelper.DirectionVector(GetOriginPosition(), a.GetOriginPosition()) * 10);
+                            float modifier = 1f/(distanceToAgent)*(pulseDistance*pulseDistance)*2f;
 
-                                a.ChangeHealth(-1 * DAMAGE, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.green));
-                            }
+                            agent.AddAcceleration(direction*modifier);
                         }
                     }
                 }
-
-                timer += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
             }
+
+            if (timer < fadeTime)
+            {
+                pulse.SetFrameIndex((int)(timer/fadeTime*pulse.totalFrames));
+                pulse.Update(mH);
+            }
+
+            timer += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
 
             base.Update(mH);
         }
@@ -90,7 +96,8 @@ namespace DotWars
         {
             position = p;
 
-            animateTime = 0.3f;
+            animateTime = 0.3;
+            fadeTime = 1.0;
             timer = 0;
 
             health = 150;
@@ -104,6 +111,19 @@ namespace DotWars
             for (int i = 0; i < 10; i++)
             {
                 mH.GetParticleManager().AddStandardSmoke(origin + position, 64);
+            }
+
+            pulse.LoadContent(mH.GetTextureManager());
+            pulseDistance = pulse.GetFrame().Width;
+            pulse.position = p-pulse.origin;
+            pulse.SetRotation((float)mH.GetRandom().NextDouble()*MathHelper.TwoPi);
+        }
+
+        public void DrawPulse(SpriteBatch sB, Vector2 d, ManagerHelper mH)
+        {
+            if (timer < fadeTime)
+            {
+                pulse.Draw(sB, d, mH);
             }
         }
 

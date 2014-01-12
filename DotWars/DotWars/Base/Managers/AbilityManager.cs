@@ -245,6 +245,7 @@ namespace DotWars
         {
             foreach (LargeRock r in activeLargeRocks)
             {
+                r.DrawPulse(sB, d, managers);
                 r.Draw(sB, d, managers);
             }
 
