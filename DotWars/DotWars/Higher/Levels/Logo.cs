@@ -120,7 +120,6 @@ namespace DotWars
             textures.Add("Backgrounds/Switch/switchForeground", new Rectangle(0, 0, 800, 800));
             textures.Add("Backgrounds/Switch/switchBlockers", new Rectangle(0, 0, 800, 800));
             textures.Add("Backgrounds/Switch/switchCrane", new Rectangle(0, 0, 230, 230));
-            textures.Add("Backgrounds/Switch/electricity", new Rectangle(0, 0, 800, 800));
             textures.Add("Backgrounds/Switch/BL", new Rectangle(0, 0, 166, 27));
             textures.Add("Backgrounds/Switch/BLr", new Rectangle(0, 0, 27, 166));
             textures.Add("Backgrounds/Switch/BR", new Rectangle(0, 0, 200, 27));
@@ -129,8 +128,6 @@ namespace DotWars
             textures.Add("Backgrounds/Switch/BTr", new Rectangle(0, 0, 27, 116));
             textures.Add("Backgrounds/Switch/DBr", new Rectangle(0, 0, 77, 76));
             textures.Add("Backgrounds/Switch/switchBox", new Rectangle(0, 0, 21, 21));
-            textures.Add("Backgrounds/Switch/fanLeft", new Rectangle(0, 0, 19, 33));
-            textures.Add("Backgrounds/Switch/gustLeft", new Rectangle(0, 0, 78, 75));
 
             textures.Add("Backgrounds/Switch/elect1", new Rectangle(0, 0, 96, 32));
             textures.Add("Backgrounds/Switch/elect2", new Rectangle(0, 0, 128, 32));
@@ -257,7 +254,6 @@ namespace DotWars
 
             textures.Add("Dots/Grey/grey_claimable", new Rectangle(0, 0, 36, 36));
             textures.Add("Dots/Grey/grey_suicide", new Rectangle(0, 0, 32, 32));
-            textures.Add("health_station", new Rectangle(0, 0, 64, 64));
             textures.Add("Effects/spr_bolt_strip3", new Rectangle(0, 0, 30, 30));
 
             textures.Add("Projectiles/mine", new Rectangle(0, 0, 16, 16));

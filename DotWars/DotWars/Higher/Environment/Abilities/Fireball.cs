@@ -15,11 +15,11 @@ namespace DotWars
         private ManagerHelper managers;
 
         private int frameCounter;
-        private const int drawFrames = 50;
+        private const int drawFrames = 30;
         private const int existFrames = 60;
         private const int burnFrames = 3;
 
-        private const float modifer = 0.99f;
+        private const float modifer = 0.95f;
 
         #endregion
 

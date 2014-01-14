@@ -11,7 +11,7 @@ namespace DotWars
         #region Declarations
 
         //Determines when to spawn
-        private readonly float spawnSecs;
+        private readonly double spawnSecs;
 
         //list of bases
         public List<ConquestBase> bases;
@@ -47,27 +47,15 @@ namespace DotWars
                 b.Update(mH);
             }
 
-            if (teams.Contains(NPC.AffliationTypes.red))
+            foreach (NPC.AffliationTypes team in teams)
             {
-                ChangeScoreAbsolute(NPC.AffliationTypes.red, GetNumAlliedBases(NPC.AffliationTypes.red));
-            }
-            if (teams.Contains(NPC.AffliationTypes.blue))
-            {
-                ChangeScoreAbsolute(NPC.AffliationTypes.blue, GetNumAlliedBases(NPC.AffliationTypes.blue));
-            }
-            if (teams.Contains(NPC.AffliationTypes.green))
-            {
-                ChangeScoreAbsolute(NPC.AffliationTypes.green, GetNumAlliedBases(NPC.AffliationTypes.green));
-            }
-            if (teams.Contains(NPC.AffliationTypes.yellow))
-            {
-                ChangeScoreAbsolute(NPC.AffliationTypes.yellow, GetNumAlliedBases(NPC.AffliationTypes.yellow));
+                ChangeScoreAbsolute(team, GetNumAlliedBases(team));
             }
 
             //Spawn Section
             if (counter > spawnSecs)
             {
-                counter = 0;
+                counter = 0.0;
 
                 foreach (ConquestBase b in bases)
                 {
@@ -224,13 +212,13 @@ namespace DotWars
 
         protected void ChangeScoreAbsolute(NPC.AffliationTypes t, int s)
         {
-            //If the team exists, update it's score
-            if (teams.Contains(t))
-            {
-                scores[teams.IndexOf(t)] = s;
-            }
+            int index = teams.IndexOf(t);
 
-                //Otherwise, throw an exception
+            //If the team exists, update it's score
+            if (index != -1)
+            {
+                scores[index] = s;
+            }
             else if (t != NPC.AffliationTypes.grey)
             {
                 throw new Exception("That team doesn't exist");

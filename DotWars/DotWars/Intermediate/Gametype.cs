@@ -997,7 +997,8 @@ namespace DotWars
                 {
                     return teams[i];
                 }
-                else if(gameEndTimer <= 0) 
+                else if(gameEndTimer <= 0)
+                {
                     if(scores[i] > highestScore)
                     {
                         highestScoreIndex = i;
@@ -1006,6 +1007,7 @@ namespace DotWars
                     }
                     else if(scores[i] == highestScore)
                         isTie = true;
+                }
             }
 
             if (isTie)

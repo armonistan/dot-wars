@@ -59,13 +59,13 @@ namespace DotWars
             {
                 float dir = PathHelper.Direction(GetOriginPosition(), p.GetOriginPosition());
                 p.AddAcceleration(PathHelper.Direction(dir) * 10000.0f / 
-                                    PathHelper.DistanceSquared(GetOriginPosition(), p.GetOriginPosition()));
+                                    (PathHelper.DistanceSquared(GetOriginPosition(), p.GetOriginPosition()) + 1));
             }
             foreach (Gut g in mH.GetParticleManager().GetGuts())
             {
                 float dir = PathHelper.Direction(GetOriginPosition(), g.GetOriginPosition());
                 g.AddAcceleration(PathHelper.Direction(dir) * 10000.0f /
-                                    PathHelper.DistanceSquared(GetOriginPosition(), g.GetOriginPosition()));
+                                    (PathHelper.DistanceSquared(GetOriginPosition(), g.GetOriginPosition()) + 1));
             }
 
             Turn(MathHelper.Pi/21);

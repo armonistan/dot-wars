@@ -19,7 +19,7 @@ namespace DotWars
         #endregion
 
         public SwitchElectricity(Vector2 p)
-            : base("Backgrounds/Switch/electricity", p)
+            : base("", p)
         {
             on = false;
             timer = 0;

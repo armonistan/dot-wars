@@ -19,6 +19,7 @@ namespace DotWars
             indicator = new Sprite("Effects/PI_redCommander", GetOriginPosition(), Vector2.Zero);
 
             abilityUse = 75;
+            abilityCharge = 0.2;
         }
 
         protected override void UsePower(ManagerHelper mH)

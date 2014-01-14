@@ -13,11 +13,19 @@ namespace DotWars
         //variables for counting the amount of time needed
         //to conqueror a territory
         private readonly Dictionary<NPC.AffliationTypes, Double> conquestCounters;
+        private List<KeyValuePair<NPC.AffliationTypes, Double>> countersToRemove; 
         private readonly double conquestTime;
+
+        private List<NPC.AffliationTypes> suitors;
 
         public NPC.AffliationTypes affiliation;
 
         public List<SpawnPoint> spawns;
+
+        private string red = "Effects/smoke_red";
+        private string blue = "Effects/smoke_blue";
+        private string green = "Effects/smoke_green";
+        private string yellow = "Effects/smoke_yellow";
 
         //Constants
         private const int NUM_SMOKES = 10;
@@ -31,6 +39,9 @@ namespace DotWars
             conquestCounters = new Dictionary<NPC.AffliationTypes, Double>();
             spawns = new List<SpawnPoint>();
             conquestTime = 3; //three seconds
+
+            suitors = new List<NPC.AffliationTypes>();
+            countersToRemove = new List<KeyValuePair<NPC.AffliationTypes, double>>();
         }
 
         public ConquestBase(Vector2 p, NPC.AffliationTypes a)
@@ -63,16 +74,22 @@ namespace DotWars
 
         public override void Update(ManagerHelper mH)
         {
-            List<NPC.AffliationTypes> currentContestors = Controllers(mH);
-            //Remove old suitors
-            for (int i = 0; i < conquestCounters.Count; i++)
+            UpdateControllers(mH);
+
+            foreach (KeyValuePair<NPC.AffliationTypes, double> counter in conquestCounters)
             {
-                if (!currentContestors.Contains(conquestCounters.Keys.ElementAt(i)))
+                if (!suitors.Contains(counter.Key))
                 {
-                    conquestCounters.Remove(conquestCounters.Keys.ElementAt(i));
-                    i--;
+                    countersToRemove.Add(counter);
                 }
             }
+
+            foreach (KeyValuePair<NPC.AffliationTypes, double> counter in countersToRemove)
+            {
+                conquestCounters.Remove(counter.Key);
+            }
+
+            countersToRemove.Clear();
 
             foreach (SpawnPoint sP in spawns)
                 if (affiliation != NPC.AffliationTypes.grey)
@@ -81,7 +98,7 @@ namespace DotWars
                     sP.affilation = NPC.AffliationTypes.black;
 
             //Add new suitors
-            foreach (NPC.AffliationTypes t in currentContestors)
+            foreach (NPC.AffliationTypes t in suitors)
             {
                 if (!conquestCounters.ContainsKey(t))
                 {
@@ -106,19 +123,19 @@ namespace DotWars
                             {
                                 case NPC.AffliationTypes.red:
                                     frameIndex = 1;
-                                    smokeAsset = "Effects/smoke_red";
+                                    smokeAsset = red;
                                     break;
                                 case NPC.AffliationTypes.blue:
                                     frameIndex = 2;
-                                    smokeAsset = "Effects/smoke_blue";
+                                    smokeAsset = blue;
                                     break;
                                 case NPC.AffliationTypes.green:
                                     frameIndex = 3;
-                                    smokeAsset = "Effects/smoke_green";
+                                    smokeAsset = green;
                                     break;
                                 case NPC.AffliationTypes.yellow:
                                     frameIndex = 4;
-                                    smokeAsset = "Effects/smoke_yellow";
+                                    smokeAsset = yellow;
                                     break;
                             }
 
@@ -143,17 +160,17 @@ namespace DotWars
                     }
                     else
                     {
-                        NPC.AffliationTypes tempConquestor = conquestCounters.Keys.ElementAt(0);
-                        Double tempTimer = conquestCounters.Values.ElementAt(0);
-                        conquestCounters.Remove(tempConquestor);
-                        conquestCounters.Add(tempConquestor, tempTimer + mH.GetGameTime().ElapsedGameTime.TotalSeconds);
+                        Double tempTimer = conquestCounters.First().Value;
 
-                        if (mH.GetRandom().NextDouble() < (tempTimer/conquestTime*0.2f))
+                        conquestCounters[conquestCounters.First().Key] = tempTimer +
+                                                                         mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+
+                        if (mH.GetRandom().NextDouble() < (tempTimer/conquestTime*0.2))
                         {
                             mH.GetParticleManager()
                               .AddFire(GetOriginPosition(),
-                                       PathHelper.Direction((float) (mH.GetRandom().NextDouble()*Math.PI*2)) * 50, 1, 0.01f,
-                                       1, 0.1f);
+                                       PathHelper.Direction((float) (mH.GetRandom().NextDouble()*Math.PI*2)) * 50, 1f, 0.01f,
+                                       1f, 0.1f);
                         }
                     }
                 }
@@ -167,9 +184,9 @@ namespace DotWars
             base.Draw(sB, d, mH);
         }
 
-        private List<NPC.AffliationTypes> Controllers(ManagerHelper mH)
+        private void UpdateControllers(ManagerHelper mH)
         {
-            var suitors = new List<NPC.AffliationTypes>();
+            suitors.Clear();
 
             //Find suitors
             foreach (NPC a in mH.GetNPCManager().GetNPCs())
@@ -183,8 +200,6 @@ namespace DotWars
                     }
                 }
             }
-
-            return suitors;
         }
 
         public void AddSpawnpoint(Vector2 v, ManagerHelper mH)
