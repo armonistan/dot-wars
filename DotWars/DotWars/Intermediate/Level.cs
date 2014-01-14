@@ -217,9 +217,11 @@ namespace DotWars
         {
             gM.GraphicsDevice.Viewport = cameras.GetFullSize();
 
+            Vector2 displacement = GetSizeOfLevel() / 2 - DEFAUT_SCREEN_SIZE / 2;
+
             sB.Begin();
 
-            DrawStuff(sB, Vector2.Zero);
+            DrawStuff(sB, displacement);
 
             sB.End();
         }

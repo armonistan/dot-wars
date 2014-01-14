@@ -61,7 +61,8 @@ namespace DotWars
 
             foreach (Explosion explosion in mH.GetParticleManager().GetExplosions())
             {
-                if (CollisionHelper.IntersectPixelsRadius(this, explosion, origin.X, explosion.GetRadius()) !=
+                if (explosion.GetAffiliation() != creator.GetAffiliation() &&
+                    CollisionHelper.IntersectPixelsRadius(this, explosion, origin.X, explosion.GetRadius()) !=
                     new Vector2(-1))
                 {
                     shouldExplode = true;
