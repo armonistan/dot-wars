@@ -71,8 +71,6 @@ namespace DotWars
 
             initalizeTeamImages();
 
-            //bases = new Sprite("Backgrounds/PreGame/tipsBases", picturePos);
-
             #region TIP DECLARATIONS
 
 
@@ -165,11 +163,15 @@ namespace DotWars
             {
                 initalizeCommanderImagesAssassinsSurvival();
                 initalizeCommanderTextAssassinsSurvival();
+
+                background = new Sprite("Backgrounds/PreGame/singlesPregameBkg", Level.DEFAUT_SCREEN_SIZE / 2);
             }
             else
             {
                 initalizeCommanderImagesTeams();
                 initalizeCommanderTextTeams();
+
+                background = new Sprite("Backgrounds/PreGame/teamsPregameBkg", Level.DEFAUT_SCREEN_SIZE / 2);
             }
         }
 
@@ -351,6 +353,7 @@ namespace DotWars
             #endregion
 
             nextLevel.LoadContent(cM);
+            background.LoadContent(textures);
         }
 
         public override Level Update(GameTime gT)
@@ -382,6 +385,8 @@ namespace DotWars
             nextLevel.Draw(sB, gM, false);
 
             sB.Begin();
+            background.Draw(sB, Vector2.Zero, managers);
+
             textures.DrawString(sB, red, redPos, Color.Red, TextureManager.FontSizes.small, true);
             mustachio.Draw(sB, new Vector2(0, 0), managers);
             textures.DrawString(sB, blue, bluePos, Color.Blue, TextureManager.FontSizes.small, true);

@@ -2357,7 +2357,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\mine.xnb</Output>
-      <Time>2014-01-04T15:16:19-06:00</Time>
+      <Time>2014-01-12T17:10:19-06:00</Time>
     </Item>
     <Item>
       <Source>Audio\Waves\explosion.wav</Source>
@@ -2592,6 +2592,24 @@
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Abilities\ability_green2.xnb</Output>
       <Time>2014-01-12T16:33:23-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\PreGame\teamsPregameBkg.png</Source>
+      <Name>Textures\Backgrounds\PreGame\teamsPregameBkg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\teamsPregameBkg.xnb</Output>
+      <Time>2014-01-12T17:01:49-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\PreGame\singlesPregameBkg.png</Source>
+      <Name>Textures\Backgrounds\PreGame\singlesPregameBkg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\singlesPregameBkg.xnb</Output>
+      <Time>2014-01-12T17:05:00-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

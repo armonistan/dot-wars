@@ -165,6 +165,8 @@ namespace DotWars
             textures.Add("Backgrounds/PreGame/profileSpecialist", new Rectangle(0, 0, 200, 300));
             textures.Add("Backgrounds/PreGame/tipsBases", new Rectangle(0, 0, 200, 200));
             textures.Add("Backgrounds/PreGame/profileMeanie", new Rectangle(0, 0, 300, 300));
+            textures.Add("Backgrounds/PreGame/singlesPregameBkg", new Rectangle(0, 0, 1248, 720));
+            textures.Add("Backgrounds/PreGame/teamsPregameBkg", new Rectangle(0, 0, 1248, 720));
             #endregion
 
             #region Default Textures
