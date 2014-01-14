@@ -57,6 +57,24 @@ namespace DotWars
 
         public override void Update(ManagerHelper mH)
         {
+            bool shouldExplode = false;
+
+            foreach (Explosion explosion in mH.GetParticleManager().GetExplosions())
+            {
+                if (CollisionHelper.IntersectPixelsRadius(this, explosion, origin.X, explosion.GetRadius()) !=
+                    new Vector2(-1))
+                {
+                    shouldExplode = true;
+                    break;
+                }
+            }
+
+            if (shouldExplode)
+            {
+                draw = false;
+                mH.GetParticleManager().AddExplosion(GetOriginPosition(), creator, damage);
+            }
+
             if (armed)
             {
                 if (existanceTimer > existanceTime)

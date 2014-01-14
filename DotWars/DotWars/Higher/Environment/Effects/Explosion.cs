@@ -118,5 +118,15 @@ namespace DotWars
 
             mH.GetAudioManager().Play(AudioManager.EXPLOSION, AudioManager.RandomVolume(mH), AudioManager.RandomPitch(mH), 0, false);
         }
+
+        public float GetRadius()
+        {
+            return radius;
+        }
+
+        public NPC.AffliationTypes GetAffiliation()
+        {
+            return affiliation;
+        }
     }
 }

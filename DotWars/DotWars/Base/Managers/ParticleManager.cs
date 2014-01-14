@@ -317,5 +317,10 @@ namespace DotWars
         {
             return activeGuts;
         }
+
+        public Queue<Explosion> GetExplosions()
+        {
+            return activeExplosions;
+        } 
     }
 }

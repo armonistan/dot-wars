@@ -7,11 +7,13 @@ namespace DotWars
         private NPC.AffliationTypes affiliation;
         private double lifeTimer;
         private ManagerHelper managers;
+        private int damage;
 
         public LightningTrail(ManagerHelper mH)
             : base("Abilities/yellow_test", Vector2.Zero, Vector2.Zero)
         {
             managers = mH;
+            damage = -3;
         }
 
         public void Set(Vector2 p, float r, NPC.AffliationTypes aT, ManagerHelper mH)
@@ -35,7 +37,7 @@ namespace DotWars
                 {
                     if (CollisionHelper.IntersectPixelsDirectional(a, this) != -1)
                     {
-                        a.ChangeHealth(-1, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.yellow));
+                        a.ChangeHealth(damage, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.yellow));
                     }
                 }
             }
@@ -46,7 +48,7 @@ namespace DotWars
                 {
                     if (a.GetAffiliation() != affiliation && CollisionHelper.IntersectPixelsPoint(GetOriginPosition(), a) != new Vector2(-1))
                     {
-                        a.ChangeHealth(-1, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.yellow));
+                        a.ChangeHealth(damage, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.yellow));
                     }
                 }
             }

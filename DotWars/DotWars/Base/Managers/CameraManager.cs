@@ -24,6 +24,8 @@ namespace DotWars
         private Type pauser;
         private int pauserIndex;
 
+        private double pauseImmunity;
+
         #endregion
 
         public CameraManager(Dictionary<Type, int> pL, Gametype gT, Vector2 sS)
@@ -70,6 +72,8 @@ namespace DotWars
             pauseInstructions = new Sprite("HUD/buttons", sS / 2);
 
             pauserIndex = 0;
+
+            pauseImmunity = 0.5;
         }
 
         public void LoadContent(ManagerHelper mH)
@@ -120,13 +124,16 @@ namespace DotWars
                     }
                 }
 
-                if (cameras[i].GetState().IsButtonDown(Buttons.Start) && !cameras[i].GetOldState().IsButtonDown(Buttons.Start) ||
+                if (pauseImmunity <= 0.0 &&
+                    cameras[i].GetState().IsButtonDown(Buttons.Start) && !cameras[i].GetOldState().IsButtonDown(Buttons.Start) ||
                     cameras[i].GetState().IsButtonDown(Buttons.BigButton) && !cameras[i].GetState().IsButtonDown(Buttons.BigButton) && pauser == null)
                 {
                     SetPause(cameras[i].GetCommanderType(), mH);
                     pauserIndex = i;
                 }
             }
+
+            pauseImmunity -= mH.GetGameTime().ElapsedGameTime.TotalSeconds;
 
             //Reset rumble amounts
             ResetAllRumble();

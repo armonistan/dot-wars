@@ -57,7 +57,10 @@ namespace DotWars
                         if (mH.GetRandom().Next(40) == 0)
                         {
                             a.ChangeHealth(10, NPC.AffliationTypes.same);
-                            mH.GetParticleManager().AddHeal(a);
+                            if (mH.GetRandom().Next(5)==0)
+                            {
+                                mH.GetParticleManager().AddHeal(a);
+                            }
                         }
                     }
                     else

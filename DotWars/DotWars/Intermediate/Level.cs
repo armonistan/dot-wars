@@ -169,24 +169,8 @@ namespace DotWars
 
                 sB.Begin();
 
-                backgrounds.DrawBackgrounds(sB, displacement);
-                paths.Draw(sB, displacement);
-                abilities.DrawBottom(sB, displacement);
-                objects.DrawBottom(sB, displacement);
-                particles.DrawBottom(sB, displacement);
-                typeOfGame.DrawBottom(sB, displacement);
-                
-                projectiles.Draw(sB, displacement);
-                agents.DrawLowest(sB, displacement);
-                
-                abilities.DrawTop(sB, displacement);
-                spawns.Draw(sB, displacement);
-                particles.DrawTop(sB, displacement);
-                objects.DrawTop(sB, displacement);
-                typeOfGame.DrawTop(sB, displacement);
-                agents.DrawHighest(sB, displacement);
-                backgrounds.Drawforegrounds(sB, displacement);
-                
+                DrawStuff(sB, displacement);
+
                 if (drawHUD && cameras.GetPauser() == null)
                 {
                     cameras.GetHud(c).Draw(sB, managers);
@@ -205,6 +189,38 @@ namespace DotWars
             }
 
             cameras.DrawPause(sB, managers);
+            sB.End();
+        }
+
+        private void DrawStuff(SpriteBatch sB, Vector2 displacement)
+        {
+            backgrounds.DrawBackgrounds(sB, displacement);
+            paths.Draw(sB, displacement);
+            abilities.DrawBottom(sB, displacement);
+            objects.DrawBottom(sB, displacement);
+            particles.DrawBottom(sB, displacement);
+            typeOfGame.DrawBottom(sB, displacement);
+
+            projectiles.Draw(sB, displacement);
+            agents.DrawLowest(sB, displacement);
+
+            abilities.DrawTop(sB, displacement);
+            spawns.Draw(sB, displacement);
+            particles.DrawTop(sB, displacement);
+            objects.DrawTop(sB, displacement);
+            typeOfGame.DrawTop(sB, displacement);
+            agents.DrawHighest(sB, displacement);
+            backgrounds.Drawforegrounds(sB, displacement);
+        }
+
+        public void DrawFirstCamera(SpriteBatch sB, GraphicsDeviceManager gM)
+        {
+            gM.GraphicsDevice.Viewport = cameras.GetFullSize();
+
+            sB.Begin();
+
+            DrawStuff(sB, Vector2.Zero);
+
             sB.End();
         }
 

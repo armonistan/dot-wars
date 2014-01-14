@@ -93,7 +93,7 @@ namespace DotWars
 
         public override void Draw(SpriteBatch sB, GraphicsDeviceManager gM, bool drawHUD)
         {
-            result.Draw(sB, gM, false);
+            result.DrawFirstCamera(sB, gM);
 
             sB.Begin();
             backgrounds.DrawBackgrounds(sB, Vector2.Zero);
@@ -111,23 +111,23 @@ namespace DotWars
             managers.GetTextureManager().DrawString(sB, rightHandStats, new Vector2(650, 482), Color.White, TextureManager.FontSizes.small, false);
             managers.GetTextureManager().DrawString(sB, winnerString, new Vector2(620, 150), Color.White, TextureManager.FontSizes.big, true);
 
-            int ct = -1;
+            int ct = result.GetManagerHelper().GetGametype().GetTeams().Count / 2 * -1;
             for (int i = 0; i < 4; i++){
                 if (scores[i] != null)
                 {
                     ct++;
                     switch (i) {
                         case 0:
-                            managers.GetTextureManager().DrawString(sB, scores[i], new Vector2(520 + (80 * ct), 350), Color.Red, TextureManager.FontSizes.small, true);
+                            managers.GetTextureManager().DrawString(sB, scores[i], new Vector2(584 + (80 * ct), 350), Color.Red, TextureManager.FontSizes.small, true);
                             break;
                         case 1:
-                            managers.GetTextureManager().DrawString(sB, scores[i], new Vector2(520 + (80 * ct), 350), Color.Blue, TextureManager.FontSizes.small, true);
+                            managers.GetTextureManager().DrawString(sB, scores[i], new Vector2(584 + (80 * ct), 350), Color.Blue, TextureManager.FontSizes.small, true);
                             break;
                         case 2:
-                            managers.GetTextureManager().DrawString(sB, scores[i], new Vector2(520 + (80 * ct), 350), Color.Green, TextureManager.FontSizes.small, true);
+                            managers.GetTextureManager().DrawString(sB, scores[i], new Vector2(584 + (80 * ct), 350), Color.Green, TextureManager.FontSizes.small, true);
                             break;
                         case 3:
-                            managers.GetTextureManager().DrawString(sB, scores[i], new Vector2(520 + (80 * ct), 350), Color.Yellow, TextureManager.FontSizes.small, true);
+                            managers.GetTextureManager().DrawString(sB, scores[i], new Vector2(584 + (80 * ct), 350), Color.Yellow, TextureManager.FontSizes.small, true);
                             break;
                         default:
                             managers.GetTextureManager().DrawString(sB, scores[i], new Vector2(620, 350), Color.White, TextureManager.FontSizes.small, true);

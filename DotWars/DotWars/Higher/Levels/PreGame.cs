@@ -14,6 +14,7 @@ namespace DotWars
         private double beginTime;
 
         private Sprite background;
+        private Sprite backButton;
         private Sprite mustachio;
         private Sprite aqueos;
         private Sprite dian;
@@ -65,6 +66,8 @@ namespace DotWars
             bluePos = new Vector2(-1000, 0);
             greenPos = new Vector2(-1000, 0);
             yellowPos = new Vector2(-1000, 0);
+
+            backButton = new Sprite("Backgrounds/Menu/backButton", DEFAUT_SCREEN_SIZE/2);
 
             on = "on";
             mapName = nextLevel.ToString();
@@ -354,10 +357,16 @@ namespace DotWars
 
             nextLevel.LoadContent(cM);
             background.LoadContent(textures);
+            backButton.LoadContent(textures);
         }
 
         public override Level Update(GameTime gT)
         {
+            if (timer == 0.0)
+            {
+                nextLevel.Update(gT);
+            }
+
             if (timer <= beginTime)
             {
                 if (GamePad.GetState(hostIndex).IsButtonDown(Buttons.Start) || Keyboard.GetState().IsKeyDown(Keys.Space))
@@ -382,10 +391,11 @@ namespace DotWars
 
         public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, GraphicsDeviceManager gM, bool drawHUD)
         {
-            nextLevel.Draw(sB, gM, false);
+            nextLevel.DrawFirstCamera(sB, gM);
 
             sB.Begin();
             background.Draw(sB, Vector2.Zero, managers);
+            backButton.Draw(sB, Vector2.Zero, managers);
 
             textures.DrawString(sB, red, redPos, Color.Red, TextureManager.FontSizes.small, true);
             mustachio.Draw(sB, new Vector2(0, 0), managers);
