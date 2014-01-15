@@ -1983,10 +1983,6 @@ C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textur
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\bullet_shotgun.xnb
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\bullet_sniper.xnb
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\bullet_standard.xnb
-C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\flare_blue.xnb
-C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\flare_green.xnb
-C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\flare_red.xnb
-C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\flare_yellow.xnb
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\grenade.xnb
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\smoke_blue.xnb
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\smoke_green.xnb
@@ -2195,7 +2191,6 @@ C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\obj\x86\Debug\Microsoft.Xna.
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\menuSelector.xnb
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\buttonB.xnb
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\buttonA.xnb
-C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\Gametypes\tdmInfographic.xnb
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Audio\Waves\juggernautRicohet.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\obj\x86\Debug\DotWars.exe
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\obj\x86\Debug\DotWars.pdb
@@ -2509,3 +2504,17 @@ C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Deb
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Abilities\ability_green2.xnb
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\teamsPregameBkg.xnb
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\singlesPregameBkg.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Fonts\tinytext.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\dotapedia.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\bombardier_blueVFX.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\bombardier_greenVFX.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\bombardier_redVFX.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\bombardier_yellowVFX.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Dots\commanderAtlas.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Dots\dotAtlas.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\profileMeanie.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Projectiles\mine.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Abilities\ability_green2.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\teamsPregameBkg.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\singlesPregameBkg.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Audio\Waves\DotWars.xnb
