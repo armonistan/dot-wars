@@ -1,5 +1,9 @@
-﻿using System;
+﻿#region
+
+using System;
 using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -46,29 +50,15 @@ namespace DotWars
             {
                 var test = PathHelper.DistanceSquared(GetOriginPosition(), largeRock.GetOriginPosition());
 
-                if (!exploaded && test < radius * radius)
+                if (!exploaded && test < radius*radius)
                 {
-                    largeRock.ChangeHealth(-1 * damage);
+                    largeRock.ChangeHealth(-1*damage);
                 }
             }
 
-            frameIndex = (int) (existanceTime*10);
+            frameIndex = (int) (existanceTime*10.0);
 
-            //Move particles from explosions
-            foreach (Particle p in mH.GetParticleManager().GetParticles())
-            {
-                float dir = PathHelper.Direction(GetOriginPosition(), p.GetOriginPosition());
-                p.AddAcceleration(PathHelper.Direction(dir) * 10000.0f / 
-                                    (PathHelper.DistanceSquared(GetOriginPosition(), p.GetOriginPosition()) + 1));
-            }
-            foreach (Gut g in mH.GetParticleManager().GetGuts())
-            {
-                float dir = PathHelper.Direction(GetOriginPosition(), g.GetOriginPosition());
-                g.AddAcceleration(PathHelper.Direction(dir) * 10000.0f /
-                                    (PathHelper.DistanceSquared(GetOriginPosition(), g.GetOriginPosition()) + 1));
-            }
-
-            Turn(MathHelper.Pi/21);
+            Turn(MathHelper.Pi/21f);
 
             //Spawn Fires to make effect
             if (mH.GetRandom().NextDouble() < 0.25f)
@@ -81,7 +71,7 @@ namespace DotWars
                 {
                     mH.GetParticleManager()
                       .AddFire(GetOriginPosition(),
-                               PathHelper.Direction((float)(mH.GetRandom().NextDouble()*MathHelper.TwoPi))*500*
+                               PathHelper.Direction((float) (mH.GetRandom().NextDouble()*MathHelper.TwoPi))*500*
                                (float) mH.GetRandom().NextDouble(), 1, 0.01f, 1, 0.1f);
                 }
             }
@@ -103,7 +93,8 @@ namespace DotWars
 
             originPosition = position + origin;
 
-            mH.GetAudioManager().Play(AudioManager.EXPLOSION, AudioManager.RandomVolume(mH), AudioManager.RandomPitch(mH), 0, false);
+            mH.GetAudioManager()
+              .Play(AudioManager.EXPLOSION, AudioManager.RandomVolume(mH), AudioManager.RandomPitch(mH), 0, false);
         }
 
         public void Set(Vector2 p, int d, NPC.AffliationTypes aT, ManagerHelper mH)
@@ -116,7 +107,8 @@ namespace DotWars
             damage = d;
             exploaded = false;
 
-            mH.GetAudioManager().Play(AudioManager.EXPLOSION, AudioManager.RandomVolume(mH), AudioManager.RandomPitch(mH), 0, false);
+            mH.GetAudioManager()
+              .Play(AudioManager.EXPLOSION, AudioManager.RandomVolume(mH), AudioManager.RandomPitch(mH), 0, false);
         }
 
         public float GetRadius()

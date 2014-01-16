@@ -1,4 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿#region
+
+using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -33,7 +37,7 @@ namespace DotWars
 
             if (targetBase != null)
             {
-                if (PathHelper.DistanceSquared(GetOriginPosition(), targetBase.GetOriginPosition()) > 32 * 32)
+                if (PathHelper.DistanceSquared(GetOriginPosition(), targetBase.GetOriginPosition()) > 32*32)
                     mH.GetPathHelper().FindClearPath(GetOriginPosition(), targetBase.GetOriginPosition(), mH, path);
 
                 else

@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿#region
+
+using System;
 using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
     public class LavaBurner : Impathable
     {
         public LavaBurner(Vector2 pos)
-            :base("Backgrounds/Caged/cagedImpassable", pos, Vector2.Zero)
+            : base("Backgrounds/Caged/cagedImpassable", pos, Vector2.Zero)
         {
-
         }
 
         public override void Update(ManagerHelper mH)
@@ -24,7 +24,7 @@ namespace DotWars
 
                     mH.GetParticleManager()
                       .AddFire(agent.GetOriginPosition(),
-                               PathHelper.Direction((float)(mH.GetRandom().NextDouble() * Math.PI * 2)) * 100, 1, 0.05f, 1,
+                               PathHelper.Direction((float) (mH.GetRandom().NextDouble()*Math.PI*2))*100, 1, 0.05f, 1,
                                0.1f);
                 }
             }

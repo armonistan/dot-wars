@@ -1,6 +1,10 @@
-﻿using System;
+﻿#region
+
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -84,7 +88,7 @@ namespace DotWars
                 //Animation of indicator
                 if (timer > endtime)
                 {
-                    indicator.SetFrameIndex(indicator.GetFrameIndex()+1);
+                    indicator.SetFrameIndex(indicator.GetFrameIndex() + 1);
 
                     if (indicator.GetFrameIndex() > 5)
                     {
@@ -129,7 +133,8 @@ namespace DotWars
             if (target != null)
             {
                 //First find out what gun I want
-                if (PathHelper.DistanceSquared(GetOriginPosition(), target.GetOriginPosition()) > SHOTGUNRANGE * SHOTGUNRANGE)
+                if (PathHelper.DistanceSquared(GetOriginPosition(), target.GetOriginPosition()) >
+                    SHOTGUNRANGE*SHOTGUNRANGE)
                 {
                     weaponType = 1;
                 }
@@ -189,9 +194,9 @@ namespace DotWars
             for (int s = 0; s < 7; s++)
             {
                 mH.GetProjectileManager()
-              .AddProjectile(ProjectileManager.SHOTGUN, GetOriginPosition() + tempPos, this,
-                             PathHelper.Direction(rotation + (float) mH.GetRandom().NextDouble()/4 - 0.125f)*500, 18,
-                             false, true, 0.5f);
+                  .AddProjectile(ProjectileManager.SHOTGUN, GetOriginPosition() + tempPos, this,
+                                 PathHelper.Direction(rotation + (float) mH.GetRandom().NextDouble()/4 - 0.125f)*500, 18,
+                                 false, true, 0.5f);
             }
 
             ShotgunSound(mH);
@@ -200,16 +205,16 @@ namespace DotWars
         protected virtual void ShotgunSound(ManagerHelper mH)
         {
             mH.GetAudioManager().Play(SHOTGUN_SHOOT, AudioManager.RandomVolume(mH),
-                (float)(mH.GetRandom().NextDouble() * -0.25), 0, false);
+                                      (float) (mH.GetRandom().NextDouble()*-0.25), 0, false);
         }
 
         protected override void Shoot(ManagerHelper mH)
         {
-            Vector2 tempPos = PathHelper.Direction(rotation + MathHelper.PiOver2) * new Vector2(10);
+            Vector2 tempPos = PathHelper.Direction(rotation + MathHelper.PiOver2)*new Vector2(10);
 
             mH.GetProjectileManager()
               .AddProjectile(ProjectileManager.STANDARD, GetOriginPosition() + tempPos, this,
-                             PathHelper.Direction(rotation + (float)mH.GetRandom().NextDouble() / 8 - 0.0625f) * 400, 15,
+                             PathHelper.Direction(rotation + (float) mH.GetRandom().NextDouble()/8 - 0.0625f)*400, 15,
                              false, true, 1.3f);
 
             ShootSound(mH);
@@ -218,7 +223,7 @@ namespace DotWars
         protected virtual void ShootSound(ManagerHelper mH)
         {
             mH.GetAudioManager().Play(AudioManager.STANDARD_SHOOT, AudioManager.RandomVolume(mH),
-                AudioManager.RandomPitch(mH), 0, false);
+                                      AudioManager.RandomPitch(mH), 0, false);
         }
 
         protected void LayMine(ManagerHelper mH)
@@ -372,7 +377,8 @@ namespace DotWars
             {
                 if (conquestBase.affiliation != affiliation)
                 {
-                    float distanceToBase = PathHelper.DistanceSquared(GetOriginPosition(), conquestBase.GetOriginPosition());
+                    float distanceToBase = PathHelper.DistanceSquared(GetOriginPosition(),
+                                                                      conquestBase.GetOriginPosition());
 
                     if (distanceToBase < distanceToClosest)
                     {
@@ -384,7 +390,7 @@ namespace DotWars
 
             if (targetBase != null)
             {
-                if (PathHelper.DistanceSquared(GetOriginPosition(), targetBase.GetOriginPosition()) > 32 * 32)
+                if (PathHelper.DistanceSquared(GetOriginPosition(), targetBase.GetOriginPosition()) > 32*32)
                     mH.GetPathHelper().FindClearPath(GetOriginPosition(), targetBase.GetOriginPosition(), mH, path);
                 else
                     HoverPath(mH, targetBase.GetOriginPosition(), 16);
@@ -401,15 +407,15 @@ namespace DotWars
 
             if (temp.GetEnemyBase(affiliation).GetMyFlag().status != Flag.FlagStatus.taken)
                 mH.GetPathHelper()
-                         .FindClearPath(GetOriginPosition(),
-                                        temp.GetEnemyBase(affiliation).GetMyFlag().GetOriginPosition(), mH, path);
+                  .FindClearPath(GetOriginPosition(),
+                                 temp.GetEnemyBase(affiliation).GetMyFlag().GetOriginPosition(), mH, path);
             else
             {
                 NPC captor = temp.GetEnemyBase(affiliation).GetMyFlag().GetCaptor();
 
                 if (captor == this)
                     mH.GetPathHelper()
-                             .FindClearPath(GetOriginPosition(), temp.GetAllyBase(affiliation).GetOriginPosition(), mH, path);
+                      .FindClearPath(GetOriginPosition(), temp.GetAllyBase(affiliation).GetOriginPosition(), mH, path);
                 else
                     mH.GetPathHelper().FindClearPath(GetOriginPosition(), captor.GetOriginPosition(), mH, path);
             }
@@ -423,7 +429,7 @@ namespace DotWars
             {
                 if (temp.GetEnemyBase(affiliation).GetMyFlag().status != Flag.FlagStatus.taken)
                     mH.GetPathHelper()
-                             .FindClearPath(GetOriginPosition(), temp.GetEnemyBase(affiliation).GetOriginPosition(), mH, path);
+                      .FindClearPath(GetOriginPosition(), temp.GetEnemyBase(affiliation).GetOriginPosition(), mH, path);
                 else
                 {
                     NPC captor = temp.GetEnemyBase(affiliation).GetMyFlag().GetCaptor();
@@ -441,7 +447,8 @@ namespace DotWars
                             if (closestEnemyForTeam != null)
                             {
                                 float closestDistanceToEnemyForTeam =
-                                    PathHelper.DistanceSquared(closestEnemyForTeam.GetOriginPosition(), captor.GetOriginPosition());
+                                    PathHelper.DistanceSquared(closestEnemyForTeam.GetOriginPosition(),
+                                                               captor.GetOriginPosition());
 
                                 if (closestDistanceToEnemyForTeam < closestDistanceToEnemy)
                                 {
@@ -482,8 +489,8 @@ namespace DotWars
                         mH.GetPathHelper().FindClearPath(GetOriginPosition(), captor.GetOriginPosition(), mH, path);
                     else
                         mH.GetPathHelper()
-                                 .FindClearPath(GetOriginPosition(),
-                                                temp.GetAllyBase(affiliation).GetMyFlag().GetOriginPosition(), mH, path);
+                          .FindClearPath(GetOriginPosition(),
+                                         temp.GetAllyBase(affiliation).GetMyFlag().GetOriginPosition(), mH, path);
                 }
             }
         }
@@ -510,7 +517,7 @@ namespace DotWars
                   .GetClosestInList(mH.GetNPCManager().GetAllies(AffliationTypes.black),
                                     GetOriginPosition());
 
-            if (enemy != null && PathHelper.DistanceSquared(GetOriginPosition(), enemy.GetOriginPosition()) < 200 * 200)
+            if (enemy != null && PathHelper.DistanceSquared(GetOriginPosition(), enemy.GetOriginPosition()) < 200*200)
             {
                 mH.GetPathHelper().FindEscapePath(GetOriginPosition(), enemy.GetOriginPosition(), 400, mH, 200, path);
             }

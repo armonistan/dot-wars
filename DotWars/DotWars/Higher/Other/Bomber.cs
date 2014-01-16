@@ -1,12 +1,16 @@
-﻿using System;
+﻿#region
+
+using System;
 using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
     public class Bomber : NPC
     {
         private readonly Vector2 targetPosition; //the passed in position of the bomber's bombing target
-        private Sprite targetSprite;
+        private readonly Sprite targetSprite;
         private Boolean hasBombed; //has the bomber dropped its load?
         private Boolean drawTarget;
         private const int NUM_BOMBS = 3;
@@ -58,7 +62,7 @@ namespace DotWars
             targetSprite = new Sprite(targeAsset, targetPosition);
 
             mH.GetAudioManager().Play(AudioManager.PLANE, AudioManager.RandomVolume(mH),
-                AudioManager.RandomPitch(mH), 0, false);
+                                      AudioManager.RandomPitch(mH), 0, false);
         }
 
         public override void LoadContent(TextureManager tM)
@@ -72,13 +76,13 @@ namespace DotWars
         {
             double distanceToTarget = PathHelper.DistanceSquared(GetOriginPosition(), targetPosition);
 
-            if (distanceToTarget < 300 * 300 && !hasBombed)
+            if (distanceToTarget < 300*300 && !hasBombed)
             {
                 Bomb(mH);
                 hasBombed = true;
             }
 
-            if (distanceToTarget < 50 * 50)
+            if (distanceToTarget < 50*50)
             {
                 drawTarget = false;
             }
@@ -90,17 +94,18 @@ namespace DotWars
                 mH.GetNPCManager().Remove(this);
             }
 
-            float distanceSquaredThing = 1000 * 1000 - PathHelper.DistanceSquared(GetOriginPosition(), targetPosition);
-            float divider = distanceSquaredThing / (1000 * 1000);
-            float multipler = divider * targetSprite.GetTotalFrames();
-            var newTargetSpriteIndex = (int)multipler;
+            float distanceSquaredThing = 1000*1000 - PathHelper.DistanceSquared(GetOriginPosition(), targetPosition);
+            float divider = distanceSquaredThing/(1000*1000);
+            float multipler = divider*targetSprite.GetTotalFrames();
+            var newTargetSpriteIndex = (int) multipler;
             targetSprite.SetFrameIndex(newTargetSpriteIndex);
 
             SpriteUpdate(mH);
             targetSprite.Update(mH);
         }
 
-        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, Vector2 displacement, ManagerHelper mH)
+        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, Vector2 displacement,
+                                  ManagerHelper mH)
         {
             if (drawTarget)
             {
@@ -115,7 +120,7 @@ namespace DotWars
             {
                 mH.GetProjectileManager()
                   .AddProjectile(ProjectileManager.BOMB, GetOriginPosition(), this,
-                                 PathHelper.Direction(rotation) * 500, 50, true, false, 0.5f);
+                                 PathHelper.Direction(rotation)*500, 50, true, false, 0.5f);
             }
         }
 

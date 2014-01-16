@@ -1,4 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿#region
+
+using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -23,8 +27,8 @@ namespace DotWars
                     mH.GetPathHelper().FindClearPath(GetOriginPosition(), captor.GetOriginPosition(), mH, path);
                 else
                     mH.GetPathHelper()
-                             .FindClearPath(GetOriginPosition(),
-                                            temp.GetAllyBase(affiliation).GetMyFlag().GetOriginPosition(), mH, path);
+                      .FindClearPath(GetOriginPosition(),
+                                     temp.GetAllyBase(affiliation).GetMyFlag().GetOriginPosition(), mH, path);
             }
         }
     }

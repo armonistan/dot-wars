@@ -1,8 +1,11 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -12,17 +15,18 @@ namespace DotWars
 
         //Collection of NPCs
         private readonly Dictionary<NPC.AffliationTypes, List<NPC>> agents;
-        private readonly List<NPC> allAgents; 
+        private readonly List<NPC> allAgents;
         private readonly List<Commander> commanders;
-        private List<NPC.AffliationTypes> teams = new List<NPC.AffliationTypes>();
-        private List<NPC> bombers;
+        private readonly List<NPC.AffliationTypes> teams = new List<NPC.AffliationTypes>();
+        private readonly List<NPC> bombers;
 
         private ManagerHelper managers;
 
-        private Dictionary<NPC.AffliationTypes, StatisticsManager.StatHolder> stats; 
+        private readonly Dictionary<NPC.AffliationTypes, StatisticsManager.StatHolder> stats;
 
         private int[,] killsToCommanders;
         private int medicKills;
+
         #endregion
 
         public NPCManager()
@@ -54,14 +58,14 @@ namespace DotWars
                 agents.Add(team, new List<NPC>());
             }
 
-            killsToCommanders = new int [4,4];
+            killsToCommanders = new int[4,4];
 
             managers = mH;
         }
 
         public void Add(NPC a)
         {
-            if(a.GetOriginPosition() == new Vector2(-1, -1))
+            if (a.GetOriginPosition() == new Vector2(-1, -1))
                 return;
 
             if (a is Bomber)
@@ -114,7 +118,7 @@ namespace DotWars
                 }
             }
 
-            if(a.GetLastDamager() is Commander)
+            if (a.GetLastDamager() is Commander)
             {
                 this.UpdateKills(a.GetLastDamager().GetPersonalAffilation());
             }
@@ -145,7 +149,7 @@ namespace DotWars
             {
                 if (commander.Value.IsAlive)
                 {
-                        commander.Value.TimeAlive.Increment(managers.GetGameTime().ElapsedGameTime.TotalSeconds);
+                    commander.Value.TimeAlive.Increment(managers.GetGameTime().ElapsedGameTime.TotalSeconds);
                 }
             }
 
@@ -154,7 +158,7 @@ namespace DotWars
                 for (int i = 0; i < team.Value.Count; i++)
                 {
                     a = team.Value[i];
-            
+
                     a.Update(managers);
                     if (!team.Value.Contains(a))
                     {
@@ -162,11 +166,11 @@ namespace DotWars
                     }
                 }
             }
-            
+
             for (int i = 0; i < bombers.Count; i++)
             {
                 a = bombers[i];
-            
+
                 a.Update(managers);
                 if (!bombers.Contains(a))
                 {
@@ -227,7 +231,7 @@ namespace DotWars
         {
             float distanceToNPC = PathHelper.DistanceSquared(agent.GetOriginPosition(), pos);
 
-            return distanceToNPC <= radius * radius;
+            return distanceToNPC <= radius*radius;
         }
 
         public static bool IsNPCInDirection(NPC agent, Vector2 pos, float dir, float cone, ManagerHelper mH)
@@ -282,6 +286,7 @@ namespace DotWars
 
             return null;
         }
+
         #endregion
 
         public NPC GetSpecificCommander(NPC.AffliationTypes personalAffilation)
@@ -400,76 +405,75 @@ namespace DotWars
             switch (killer)
             {
                 case NPC.AffliationTypes.red:
-                {
-                    switch (killed)
                     {
-                        case NPC.AffliationTypes.blue:
-                            killsToCommanders[0, 1]++;
-                            break;
-                        case NPC.AffliationTypes.green:
-                            killsToCommanders[0, 2]++;
-                            break;
-                        case NPC.AffliationTypes.yellow:
-                            killsToCommanders[0, 3]++;
-                            break;
+                        switch (killed)
+                        {
+                            case NPC.AffliationTypes.blue:
+                                killsToCommanders[0, 1]++;
+                                break;
+                            case NPC.AffliationTypes.green:
+                                killsToCommanders[0, 2]++;
+                                break;
+                            case NPC.AffliationTypes.yellow:
+                                killsToCommanders[0, 3]++;
+                                break;
+                        }
+                        break;
                     }
-                    break;
-                }
                 case NPC.AffliationTypes.blue:
-                {
-                    switch (killed)
                     {
-                        case NPC.AffliationTypes.red:
-                            killsToCommanders[1, 0]++;
-                            break;
-                        case NPC.AffliationTypes.green:
-                            killsToCommanders[1, 2]++;
-                            break;
-                        case NPC.AffliationTypes.yellow:
-                            killsToCommanders[1, 3]++;
-                            break;
+                        switch (killed)
+                        {
+                            case NPC.AffliationTypes.red:
+                                killsToCommanders[1, 0]++;
+                                break;
+                            case NPC.AffliationTypes.green:
+                                killsToCommanders[1, 2]++;
+                                break;
+                            case NPC.AffliationTypes.yellow:
+                                killsToCommanders[1, 3]++;
+                                break;
+                        }
+                        break;
                     }
-                    break;
-                }
                 case NPC.AffliationTypes.green:
-                {
-                    switch (killed)
                     {
-                        case NPC.AffliationTypes.blue:
-                            killsToCommanders[2, 1]++;
-                            break;
-                        case NPC.AffliationTypes.red:
-                            killsToCommanders[2, 0]++;
-                            break;
-                        case NPC.AffliationTypes.yellow:
-                            killsToCommanders[2, 3]++;
-                            break;
+                        switch (killed)
+                        {
+                            case NPC.AffliationTypes.blue:
+                                killsToCommanders[2, 1]++;
+                                break;
+                            case NPC.AffliationTypes.red:
+                                killsToCommanders[2, 0]++;
+                                break;
+                            case NPC.AffliationTypes.yellow:
+                                killsToCommanders[2, 3]++;
+                                break;
+                        }
+                        break;
                     }
-                    break;
-                }
                 case NPC.AffliationTypes.yellow:
-                {
-                    switch (killed)
                     {
-                        case NPC.AffliationTypes.blue:
-                            killsToCommanders[3, 1]++;
-                            break;
-                        case NPC.AffliationTypes.green:
-                            killsToCommanders[3, 2]++;
-                            break;
-                        case NPC.AffliationTypes.red:
-                            killsToCommanders[3, 0]++;
-                            break;
+                        switch (killed)
+                        {
+                            case NPC.AffliationTypes.blue:
+                                killsToCommanders[3, 1]++;
+                                break;
+                            case NPC.AffliationTypes.green:
+                                killsToCommanders[3, 2]++;
+                                break;
+                            case NPC.AffliationTypes.red:
+                                killsToCommanders[3, 0]++;
+                                break;
+                        }
+                        break;
                     }
-                    break;
-                }
-
             }
         }
- 
+
         private void UpdateCasualities(NPC.AffliationTypes killedAffilation)
         {
-            if(killedAffilation != NPC.AffliationTypes.black)
+            if (killedAffilation != NPC.AffliationTypes.black)
             {
                 stats[killedAffilation].Casualties++;
             }

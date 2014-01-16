@@ -1,4 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿#region
+
+using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -35,7 +39,7 @@ namespace DotWars
 
         public override bool ShouldUsePower(ManagerHelper mH)
         {
-            if (target != null && PathHelper.DistanceSquared(target.GetOriginPosition(), GetOriginPosition()) < 50 * 50)
+            if (target != null && PathHelper.DistanceSquared(target.GetOriginPosition(), GetOriginPosition()) < 50*50)
                 return true;
             return false;
         }

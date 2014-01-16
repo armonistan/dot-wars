@@ -1,4 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿#region
+
+using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -9,11 +13,11 @@ namespace DotWars
         private double spawnCounter; //
         public Vector2 spawnPoint;
         private double spawnTime; //
-        private bool isOneUse;
+        private readonly bool isOneUse;
         private bool isUsed;
 
         public SpawnPoint(Vector2 sP, NPC.AffliationTypes a, ManagerHelper mH)
-            :base(null, sP)
+            : base(null, sP)
         {
             spawnPoint = sP;
             affilation = a;
@@ -34,7 +38,7 @@ namespace DotWars
                 spawnCounter = 0;
             }
 
-            else if(isOneUse && !isUsed)
+            else if (isOneUse && !isUsed)
             {
                 spawnTime = 8;
                 NPCManager temp = mH.GetNPCManager();
@@ -57,7 +61,7 @@ namespace DotWars
                 }
             }
 
-            else if(!isUsed)
+            else if (!isUsed)
             {
                 spawnTime = 8;
 

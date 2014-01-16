@@ -1,10 +1,14 @@
+#region
+
 using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
     internal class GreenPlayerCommander : PlayerCommander
     {
-        int rockCounter;
+        private int rockCounter;
 
         public GreenPlayerCommander(Vector2 p, ManagerHelper mH)
             : this(p, AffliationTypes.green, mH)
@@ -26,9 +30,9 @@ namespace DotWars
         {
             if (CurrentPower() > abilityUse)
             {
-                Vector2 tempPos = new Vector2(64) * PathHelper.Direction(rotation) + GetOriginPosition();
-                tempPos.X = tempPos.X - (tempPos.X % 32) + 16;
-                tempPos.Y = tempPos.Y - (tempPos.Y % 32) + 16;
+                Vector2 tempPos = new Vector2(64)*PathHelper.Direction(rotation) + GetOriginPosition();
+                tempPos.X = tempPos.X - (tempPos.X%32) + 16;
+                tempPos.Y = tempPos.Y - (tempPos.Y%32) + 16;
 
                 if (tempPos.X > 0 && tempPos.X < mH.GetLevelSize().X &&
                     tempPos.Y > 0 && tempPos.Y < mH.GetLevelSize().Y &&

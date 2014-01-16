@@ -1,8 +1,12 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -13,10 +17,10 @@ namespace DotWars
         //variables for counting the amount of time needed
         //to conqueror a territory
         private readonly Dictionary<NPC.AffliationTypes, Double> conquestCounters;
-        private List<KeyValuePair<NPC.AffliationTypes, Double>> countersToRemove; 
+        private readonly List<KeyValuePair<NPC.AffliationTypes, Double>> countersToRemove;
         private readonly double conquestTime;
 
-        private List<NPC.AffliationTypes> suitors;
+        private readonly List<NPC.AffliationTypes> suitors;
 
         public NPC.AffliationTypes affiliation;
 
@@ -145,7 +149,9 @@ namespace DotWars
                             for (int i = 0; i < NUM_SMOKES; i++)
                             {
                                 mH.GetParticleManager().AddParticle(smokeAsset, GetOriginPosition(),
-                                    PathHelper.Direction((float)(mH.GetRandom().NextDouble() * Math.PI * 2)) * 50, 1, 0.01f, 1, 0.05f);
+                                                                    PathHelper.Direction(
+                                                                        (float) (mH.GetRandom().NextDouble()*Math.PI*2))*
+                                                                    50, 1, 0.01f, 1, 0.05f);
                             }
                         }
                         else
@@ -169,7 +175,8 @@ namespace DotWars
                         {
                             mH.GetParticleManager()
                               .AddFire(GetOriginPosition(),
-                                       PathHelper.Direction((float) (mH.GetRandom().NextDouble()*Math.PI*2)) * 50, 1f, 0.01f,
+                                       PathHelper.Direction((float) (mH.GetRandom().NextDouble()*Math.PI*2))*50, 1f,
+                                       0.01f,
                                        1f, 0.1f);
                         }
                     }

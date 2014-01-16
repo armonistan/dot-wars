@@ -1,4 +1,8 @@
+#region
+
 using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -56,7 +60,7 @@ namespace DotWars
             {
                 shouldUsePower = false;
                 movementSpeed = abilityOffSpeed;
-                if (CurrentPower() > MaxPower() * .3)
+                if (CurrentPower() > MaxPower()*.3)
                 {
                     abilityTimer = abilityTime;
                 }

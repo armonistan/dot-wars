@@ -1,8 +1,11 @@
-﻿using System;
+﻿#region
+
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -232,7 +235,10 @@ namespace DotWars
                         current.SetGScore(parent.GetGScore() + mH.GetRandom().Next(0, randomness));
 
                         //Calculate other scores
-                        current.SetHScore((int) (MathHelper.Distance(current.GetPosition().X, end.X) + MathHelper.Distance(current.GetPosition().Y, end.Y)) * 10);
+                        current.SetHScore(
+                            (int)
+                            (MathHelper.Distance(current.GetPosition().X, end.X) +
+                             MathHelper.Distance(current.GetPosition().Y, end.Y))*10);
                         current.SetFScore(current.GetGScore() + current.GetHScore());
 
                         #endregion
@@ -301,7 +307,7 @@ namespace DotWars
             }
 
             float farthest = 0;
-            float convenience = mD * mD; //forces dot to go to furtherest location that is easiest to get to
+            float convenience = mD*mD; //forces dot to go to furtherest location that is easiest to get to
             Vector2 pointB = pA;
             int nodeX, nodeY;
 
@@ -453,7 +459,7 @@ namespace DotWars
 
         public static float DistanceSquared(Vector2 pA, Vector2 pB)
         {
-            return (pA.X - pB.X) * (pA.X - pB.X) + (pA.Y - pB.Y) * (pA.Y - pB.Y);
+            return (pA.X - pB.X)*(pA.X - pB.X) + (pA.Y - pB.Y)*(pA.Y - pB.Y);
         }
 
         public static float Direction(Vector2 pA, Vector2 pB)

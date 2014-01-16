@@ -1,11 +1,15 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
+using DotWars.Higher.Levels;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using DotWars.Higher.Levels;
+
+#endregion
 
 namespace DotWars
 {
@@ -72,7 +76,7 @@ namespace DotWars
         private int map;
         private int gametype;
 
-        private PlayerIndex[] playerIndices;
+        private readonly PlayerIndex[] playerIndices;
 
         private Sprite exitButtonA;
         private Sprite exitButtonB;
@@ -173,7 +177,8 @@ namespace DotWars
             startOptionsBackground = new Sprite("Backgrounds/Menu/menuSelector", new Vector2(624, 590));
             startTriggers = new Sprite("Backgrounds/Menu/triggers", new Vector2(624, 680));
             logo.LoadContent(textures);
-            startOptionsBackground.LoadContent(textures);startTriggers.LoadContent(textures);
+            startOptionsBackground.LoadContent(textures);
+            startTriggers.LoadContent(textures);
 
             //dotapedia
             dotapediaBackground = new Sprite("Backgrounds/Menu/dotapedia", new Vector2(624, 360));
@@ -184,7 +189,8 @@ namespace DotWars
             commanderCards = new Sprite[4];
             for (int i = 0; i < commanderCards.Length; i++)
             {
-                commanderCards[i] = new Sprite("Backgrounds/Menu/CommanderCards", new Vector2(GetSizeOfLevel().X / 2 + (-2 + i) * 300 + 16, 153));
+                commanderCards[i] = new Sprite("Backgrounds/Menu/CommanderCards",
+                                               new Vector2(GetSizeOfLevel().X/2 + (-2 + i)*300 + 16, 153));
                 commanderCards[i].LoadContent(textures);
                 commanderCards[i].position += commanderCards[i].origin;
             }
@@ -215,7 +221,7 @@ namespace DotWars
             }
 
             //Controls screen
-            controller = new Sprite("HUD/pauseOverlay", DEFAUT_SCREEN_SIZE / 2);
+            controller = new Sprite("HUD/pauseOverlay", DEFAUT_SCREEN_SIZE/2);
             controller.LoadContent(textures);
 
             //Exit screen
@@ -312,6 +318,7 @@ namespace DotWars
                     #region Player Choices
 
                     #region DEBUG: Controller override
+
                     if (keyState.IsKeyDown(Keys.Up))
                     {
                         commanderCards[0].SetFrameIndex(1);
@@ -360,6 +367,7 @@ namespace DotWars
                         ResetAllCounters();
                         break;
                     }
+
                     #endregion
 
                     for (int c = 0; c < theStates.Length; c++)
@@ -489,6 +497,7 @@ namespace DotWars
                     }
                     break;
                 case MenuSelect.levelSelect:
+
                     #region Level Selection
 
                     if (stageCounters[indexOfKing] > SECONDS_TO_WAIT_FOR_INPUT)
@@ -496,7 +505,8 @@ namespace DotWars
                         #region Map and Gametype Selection
 
                         if ((keyState.IsKeyDown(Keys.Left) && pastState.IsKeyUp(Keys.Left)) ||
-                            theStates[indexOfKing].IsButtonDown(Buttons.LeftTrigger) && oldStates[indexOfKing].IsButtonUp(Buttons.LeftTrigger))
+                            theStates[indexOfKing].IsButtonDown(Buttons.LeftTrigger) &&
+                            oldStates[indexOfKing].IsButtonUp(Buttons.LeftTrigger))
                         {
                             if (map > 0)
                             {
@@ -509,7 +519,8 @@ namespace DotWars
                             ResetGametypeCards();
                         }
                         else if ((keyState.IsKeyDown(Keys.Right) && pastState.IsKeyUp(Keys.Right)) ||
-                                 theStates[indexOfKing].IsButtonDown(Buttons.RightTrigger) && oldStates[indexOfKing].IsButtonUp(Buttons.RightTrigger))
+                                 theStates[indexOfKing].IsButtonDown(Buttons.RightTrigger) &&
+                                 oldStates[indexOfKing].IsButtonUp(Buttons.RightTrigger))
                         {
                             if (map < mapNames.Length - 1)
                             {
@@ -523,8 +534,10 @@ namespace DotWars
                         }
                         else if ((keyState.IsKeyDown(Keys.Up) && pastState.IsKeyUp(Keys.Up)) ||
                                  (keyState.IsKeyDown(Keys.Down) && pastState.IsKeyUp(Keys.Down)) ||
-                                 theStates[indexOfKing].IsButtonDown(Buttons.LeftShoulder) && oldStates[indexOfKing].IsButtonUp(Buttons.LeftShoulder) ||
-                                 theStates[indexOfKing].IsButtonDown(Buttons.RightShoulder) && oldStates[indexOfKing].IsButtonUp(Buttons.RightShoulder))
+                                 theStates[indexOfKing].IsButtonDown(Buttons.LeftShoulder) &&
+                                 oldStates[indexOfKing].IsButtonUp(Buttons.LeftShoulder) ||
+                                 theStates[indexOfKing].IsButtonDown(Buttons.RightShoulder) &&
+                                 oldStates[indexOfKing].IsButtonUp(Buttons.RightShoulder))
                         {
                             switch (map)
                             {
@@ -548,7 +561,7 @@ namespace DotWars
                                     break;
                                 case 6:
                                     gametype = (gametype == 3 ? 5 : 3);
-                                    break;   
+                                    break;
                             }
 
                             ResetSingleCounter(indexOfKing);
@@ -607,6 +620,7 @@ namespace DotWars
                     break;
 
                 case MenuSelect.teamSelect:
+
                     #region Team Selection
 
                     for (int c = 0; c < theStates.Length; c++)
@@ -665,7 +679,8 @@ namespace DotWars
 
                                     ResetSingleCounter(c);
                                 }
-                                else if (theStates[c].IsButtonDown(Buttons.RightTrigger) || keyState.IsKeyDown(Keys.Right))
+                                else if (theStates[c].IsButtonDown(Buttons.RightTrigger) ||
+                                         keyState.IsKeyDown(Keys.Right))
                                 {
                                     if (controllerCards[c].GetFrameIndex() == 1)
                                     {
@@ -723,7 +738,8 @@ namespace DotWars
                                         int numReady = 0;
                                         for (int s = 0; s < controllerCards.Length; s++)
                                         {
-                                            if (commanderCards[s].GetModeIndex() == 1 && commanderCards[s].GetFrameIndex() == 0 ||
+                                            if (commanderCards[s].GetModeIndex() == 1 &&
+                                                commanderCards[s].GetFrameIndex() == 0 ||
                                                 commanderCards[s].GetModeIndex() == 0 ||
                                                 controllerCards[s].GetFrameIndex() != 0)
                                             {
@@ -765,6 +781,7 @@ namespace DotWars
                             }
                         }
                     }
+
                     #endregion
 
                     #region Sprite Updates
@@ -778,7 +795,7 @@ namespace DotWars
                         switch (cC.GetFrameIndex())
                         {
                             case 0:
-                                cC.position.X = DEFAUT_SCREEN_SIZE.X / 2 - cC.GetFrame().Width / 2;
+                                cC.position.X = DEFAUT_SCREEN_SIZE.X/2 - cC.GetFrame().Width/2;
                                 break;
                             case 1:
                                 cC.position.X = 100;
@@ -798,7 +815,9 @@ namespace DotWars
                     break;
 
                 case MenuSelect.dotopedia:
+
                     #region Dot-o-pedia functionality
+
                     if (keyState.IsKeyDown(Keys.Left) && pastState.IsKeyUp(Keys.Left))
                     {
                         dotpedia.changeUnitType(-1);
@@ -818,19 +837,23 @@ namespace DotWars
 
                     for (int c = 0; c < theStates.Length; c++)
                     {
-                        if (theStates[c].IsButtonDown(Buttons.LeftTrigger) && oldStates[c].IsButtonUp(Buttons.LeftTrigger))
+                        if (theStates[c].IsButtonDown(Buttons.LeftTrigger) &&
+                            oldStates[c].IsButtonUp(Buttons.LeftTrigger))
                         {
                             dotpedia.changeUnitType(-1);
                         }
-                        else if (theStates[c].IsButtonDown(Buttons.RightTrigger) && oldStates[c].IsButtonUp(Buttons.RightTrigger))
+                        else if (theStates[c].IsButtonDown(Buttons.RightTrigger) &&
+                                 oldStates[c].IsButtonUp(Buttons.RightTrigger))
                         {
                             dotpedia.changeUnitType(1);
                         }
-                        else if (theStates[c].IsButtonDown(Buttons.RightShoulder) && oldStates[c].IsButtonUp(Buttons.RightShoulder))
+                        else if (theStates[c].IsButtonDown(Buttons.RightShoulder) &&
+                                 oldStates[c].IsButtonUp(Buttons.RightShoulder))
                         {
                             dotpedia.changeUnit(1);
                         }
-                        else if (theStates[c].IsButtonDown(Buttons.LeftShoulder) && oldStates[c].IsButtonUp(Buttons.LeftShoulder))
+                        else if (theStates[c].IsButtonDown(Buttons.LeftShoulder) &&
+                                 oldStates[c].IsButtonUp(Buttons.LeftShoulder))
                         {
                             dotpedia.changeUnit(-1);
                         }
@@ -850,11 +873,15 @@ namespace DotWars
                             stageCounters[c] += gT.ElapsedGameTime.TotalSeconds;
                         }
                     }
+
                     #endregion
+
                     break;
 
                 case MenuSelect.controls:
+
                     #region Controls functionality
+
                     for (int c = 0; c < theStates.Length; c++)
                     {
                         if (stageCounters[c] > SECONDS_TO_WAIT_FOR_INPUT)
@@ -871,11 +898,15 @@ namespace DotWars
                             stageCounters[c] += gT.ElapsedGameTime.TotalSeconds;
                         }
                     }
+
                     #endregion
+
                     break;
 
                 case MenuSelect.credits:
+
                     #region Credits functionality
+
                     for (int c = 0; c < theStates.Length; c++)
                     {
                         if (stageCounters[c] > SECONDS_TO_WAIT_FOR_INPUT)
@@ -892,11 +923,15 @@ namespace DotWars
                             stageCounters[c] += gT.ElapsedGameTime.TotalSeconds;
                         }
                     }
+
                     #endregion
+
                     break;
 
                 case MenuSelect.quit:
+
                     #region Quit Functionality
+
                     for (int c = 0; c < theStates.Length; c++)
                     {
                         if (stageCounters[c] > SECONDS_TO_WAIT_FOR_INPUT)
@@ -917,7 +952,9 @@ namespace DotWars
                             stageCounters[c] += gT.ElapsedGameTime.TotalSeconds;
                         }
                     }
+
                     #endregion
+
                     break;
             }
             pastState = keyState;
@@ -939,15 +976,18 @@ namespace DotWars
             {
                 case MenuSelect.start:
                     logo.Draw(sB, Vector2.Zero, managers);
-                    textures.DrawString(sB, version + "", new Vector2(950, 150), Color.White, TextureManager.FontSizes.small, false);
+                    textures.DrawString(sB, version + "", new Vector2(950, 150), Color.White,
+                                        TextureManager.FontSizes.small, false);
                     startOptionsBackground.Draw(sB, Vector2.Zero, managers);
-                    textures.DrawString(sB, startOptions[startOptionInt], startOptionsBackground.GetOriginPosition(), Color.White, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, startOptions[startOptionInt], startOptionsBackground.GetOriginPosition(),
+                                        Color.White, TextureManager.FontSizes.small, true);
                     startTriggers.Draw(sB, Vector2.Zero, managers);
                     startButton.Draw(sB, Vector2.Zero, managers);
                     break;
 
                 case MenuSelect.characterSelect:
-                    textures.DrawString(sB, "Commander Select", new Vector2(624, 88), Color.Black, TextureManager.FontSizes.big, true);//TODO: Make better
+                    textures.DrawString(sB, "Commander Select", new Vector2(624, 88), Color.Black,
+                                        TextureManager.FontSizes.big, true); //TODO: Make better
                     startButton.Draw(sB, Vector2.Zero, managers);
                     backButton.Draw(sB, Vector2.Zero, managers);
                     foreach (Sprite cC in commanderCards)
@@ -962,16 +1002,20 @@ namespace DotWars
                     triggers.Draw(sB, Vector2.Zero, managers);
                     startButton.Draw(sB, Vector2.Zero, managers);
                     backButton.Draw(sB, Vector2.Zero, managers);
-                    textures.DrawString(sB, "Game Select", new Vector2(624, 88), Color.Black, TextureManager.FontSizes.big, true);
+                    textures.DrawString(sB, "Game Select", new Vector2(624, 88), Color.Black,
+                                        TextureManager.FontSizes.big, true);
                     mapBackground.Draw(sB, Vector2.Zero, managers);
                     gametypeBackground.Draw(sB, Vector2.Zero, managers);
-                    textures.DrawString(sB, mapNames[map], new Vector2(624, 260), Color.White, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, gametypeNames[gametype], new Vector2(624, 512), Color.White, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, mapNames[map], new Vector2(624, 260), Color.White,
+                                        TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, gametypeNames[gametype], new Vector2(624, 512), Color.White,
+                                        TextureManager.FontSizes.small, true);
 
                     //If it is trial mode and the map is not Relic
                     if (Guide.IsTrialMode && map != 0)
                     {
-                        textures.DrawString(sB, "Map not available in trial version", new Vector2(624, 390), Color.White, TextureManager.FontSizes.small, true);
+                        textures.DrawString(sB, "Map not available in trial version", new Vector2(624, 390), Color.White,
+                                            TextureManager.FontSizes.small, true);
                     }
                     break;
 
@@ -979,7 +1023,8 @@ namespace DotWars
                     triggersOnly.Draw(sB, Vector2.Zero, managers);
                     startButton.Draw(sB, Vector2.Zero, managers);
                     backButton.Draw(sB, Vector2.Zero, managers);
-                    textures.DrawString(sB, "Team Select", new Vector2(624, 88), Color.Black, TextureManager.FontSizes.big, true);
+                    textures.DrawString(sB, "Team Select", new Vector2(624, 88), Color.Black,
+                                        TextureManager.FontSizes.big, true);
 
                     foreach (Sprite tC in teamCards)
                     {
@@ -991,8 +1036,11 @@ namespace DotWars
                         if (commanderCards[c].GetModeIndex() != 0 && commanderCards[c].GetFrameIndex() != 0)
                         {
                             controllerCards[c].Draw(sB, Vector2.Zero, managers);
-                            textures.DrawString(sB, (c+1) + "", controllerCards[c].position + new Vector2(controllerCards[c].GetFrame().Width / 2,
-                                (controllerCards[c].GetFrame().Height / 2) - 8), Color.Black, TextureManager.FontSizes.tiny, true);
+                            textures.DrawString(sB, (c + 1) + "",
+                                                controllerCards[c].position +
+                                                new Vector2(controllerCards[c].GetFrame().Width/2,
+                                                            (controllerCards[c].GetFrame().Height/2) - 8), Color.Black,
+                                                TextureManager.FontSizes.tiny, true);
                         }
                     }
                     break;
@@ -1001,14 +1049,22 @@ namespace DotWars
                     dotapediaBackground.Draw(sB, Vector2.Zero, managers);
                     dotpedia.getCurrentImage().Draw(sB, Vector2.Zero, managers);
                     dotpedia.getCurrentIngameImage().Draw(sB, Vector2.Zero, managers);
-                    textures.DrawString(sB, "In-Game", new Vector2(280, 460), Color.Black, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, dotpedia.getCurrentUnitType(), new Vector2(274, 94), Color.Black, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, dotpedia.getCurrentName(), new Vector2(834, 94), Color.Black, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, dotpedia.getCurrentDescription(), new Vector2(850, 383), Color.Black, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, dotpedia.getCurrentDamage(), new Vector2(694, 184), Color.Black, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, dotpedia.getCurrentHealth(), new Vector2(834, 184), Color.Black, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, dotpedia.getCurrentReload(), new Vector2(960, 184), Color.Black, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, dotpedia.getCurrentVision(), new Vector2(1090, 184), Color.Black, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "In-Game", new Vector2(280, 460), Color.Black,
+                                        TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, dotpedia.getCurrentUnitType(), new Vector2(274, 94), Color.Black,
+                                        TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, dotpedia.getCurrentName(), new Vector2(834, 94), Color.Black,
+                                        TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, dotpedia.getCurrentDescription(), new Vector2(850, 383), Color.Black,
+                                        TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, dotpedia.getCurrentDamage(), new Vector2(694, 184), Color.Black,
+                                        TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, dotpedia.getCurrentHealth(), new Vector2(834, 184), Color.Black,
+                                        TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, dotpedia.getCurrentReload(), new Vector2(960, 184), Color.Black,
+                                        TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, dotpedia.getCurrentVision(), new Vector2(1090, 184), Color.Black,
+                                        TextureManager.FontSizes.small, true);
                     //textures.DrawString(sB, "There are no dots in this game.", DEFAUT_SCREEN_SIZE / 2, Color.White, TextureManager.FontSizes.small, true);
                     backButton.Draw(sB, Vector2.Zero, managers);
                     break;
@@ -1019,24 +1075,36 @@ namespace DotWars
                     break;
 
                 case MenuSelect.credits:
-                    textures.DrawString(sB, "Credits", new Vector2(624, 88), Color.Black, TextureManager.FontSizes.big, true);
+                    textures.DrawString(sB, "Credits", new Vector2(624, 88), Color.Black, TextureManager.FontSizes.big,
+                                        true);
 
                     Vector2 creditsStartPos = DEFAUT_SCREEN_SIZE/2 + new Vector2(0, -100);
 
-                    textures.DrawString(sB, "Emberware Team:", creditsStartPos, Color.White, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, "Armon Nayeraini", creditsStartPos + new Vector2(0, 48), Color.White, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, "Daniel Pumford", creditsStartPos + new Vector2(0, 96), Color.White, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, "David \"Steak\" Campbell", creditsStartPos + new Vector2(0, 144), Color.White, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, "Riley Turben", creditsStartPos + new Vector2(0, 192), Color.White, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, "Sound Credits:", creditsStartPos + new Vector2(0, 288), Color.White, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, "www.emberware.com/index.php?page=attributions.html", creditsStartPos + new Vector2(0, 336), Color.White, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "Emberware Team:", creditsStartPos, Color.White,
+                                        TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "Armon Nayeraini", creditsStartPos + new Vector2(0, 48), Color.White,
+                                        TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "Daniel Pumford", creditsStartPos + new Vector2(0, 96), Color.White,
+                                        TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "David \"Steak\" Campbell", creditsStartPos + new Vector2(0, 144),
+                                        Color.White, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "Riley Turben", creditsStartPos + new Vector2(0, 192), Color.White,
+                                        TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "Sound Credits:", creditsStartPos + new Vector2(0, 288), Color.White,
+                                        TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "www.emberware.com/index.php?page=attributions.html",
+                                        creditsStartPos + new Vector2(0, 336), Color.White,
+                                        TextureManager.FontSizes.small, true);
                     backButton.Draw(sB, Vector2.Zero, managers);
                     break;
 
                 case MenuSelect.quit:
-                    textures.DrawString(sB, "Are you sure you want to quit?", DEFAUT_SCREEN_SIZE / 2, Color.White, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, "to confirm", new Vector2(230, 680), Color.White, TextureManager.FontSizes.small, true);
-                    textures.DrawString(sB, "to cancel", new Vector2(1040, 680), Color.White, TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "Are you sure you want to quit?", DEFAUT_SCREEN_SIZE/2, Color.White,
+                                        TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "to confirm", new Vector2(230, 680), Color.White,
+                                        TextureManager.FontSizes.small, true);
+                    textures.DrawString(sB, "to cancel", new Vector2(1040, 680), Color.White,
+                                        TextureManager.FontSizes.small, true);
                     exitButtonA.Draw(sB, Vector2.Zero, managers);
                     exitButtonB.Draw(sB, Vector2.Zero, managers);
                     break;
@@ -1086,15 +1154,17 @@ namespace DotWars
             Vector2 middlePosition = new Vector2(DEFAUT_SCREEN_SIZE.X/2, 670);
 
             if (pressA)
-            {   
+            {
                 commanderButtonA.Draw(sB, Vector2.Zero, managers);
-                textures.DrawString(sB, "lock in", middlePosition + new Vector2(-220, 0), Color.White, TextureManager.FontSizes.small, true);
+                textures.DrawString(sB, "lock in", middlePosition + new Vector2(-220, 0), Color.White,
+                                    TextureManager.FontSizes.small, true);
             }
 
             if (pressB)
-            {   
+            {
                 commanderButtonB.Draw(sB, Vector2.Zero, managers);
-                textures.DrawString(sB, "back out", middlePosition + new Vector2(210, 0), Color.White, TextureManager.FontSizes.small, true);
+                textures.DrawString(sB, "back out", middlePosition + new Vector2(210, 0), Color.White,
+                                    TextureManager.FontSizes.small, true);
             }
         }
 
@@ -1158,7 +1228,6 @@ namespace DotWars
                     gametype = 3;
                     break;
             }
-            
         }
 
         private void SetUpFourTeams()
@@ -1240,7 +1309,7 @@ namespace DotWars
             numTeam[0] = 0;
             numTeam[1] = 0;
 
-            
+
             //TODO: Fix team creation problems
             for (int t = 0; t < teamCards.Length; t++)
             {
@@ -1267,7 +1336,7 @@ namespace DotWars
                         }
                     }
 
-                        theTeams.Add(GetAffiliation(possibleTeams[reallyTempRandom.Next(possibleTeams.Count)]));
+                    theTeams.Add(GetAffiliation(possibleTeams[reallyTempRandom.Next(possibleTeams.Count)]));
                 }
                 else
                 {
@@ -1368,19 +1437,26 @@ namespace DotWars
             switch (map)
             {
                 case 0:
-                    return new PreGame(new Relic(theGametype, playerCommanders, textures, sounds), theGametype, playerIndices[indexOfKing], textures, sounds);
+                    return new PreGame(new Relic(theGametype, playerCommanders, textures, sounds), theGametype,
+                                       playerIndices[indexOfKing], textures, sounds);
                 case 1:
-                    return new PreGame(new Archipelago(theGametype, playerCommanders, textures, sounds), theGametype, playerIndices[indexOfKing], textures, sounds);
-                    case 2:
-                    return new PreGame(new Switch(theGametype, playerCommanders, textures, sounds), theGametype, playerIndices[indexOfKing], textures, sounds);
+                    return new PreGame(new Archipelago(theGametype, playerCommanders, textures, sounds), theGametype,
+                                       playerIndices[indexOfKing], textures, sounds);
+                case 2:
+                    return new PreGame(new Switch(theGametype, playerCommanders, textures, sounds), theGametype,
+                                       playerIndices[indexOfKing], textures, sounds);
                 case 3:
-                    return new PreGame(new Faercrag(theGametype, playerCommanders, textures, sounds), theGametype, playerIndices[indexOfKing], textures, sounds);
+                    return new PreGame(new Faercrag(theGametype, playerCommanders, textures, sounds), theGametype,
+                                       playerIndices[indexOfKing], textures, sounds);
                 case 4:
-                    return new PreGame(new Caged(theGametype, playerCommanders, textures, sounds), theGametype, playerIndices[indexOfKing], textures, sounds);
+                    return new PreGame(new Caged(theGametype, playerCommanders, textures, sounds), theGametype,
+                                       playerIndices[indexOfKing], textures, sounds);
                 case 5:
-                    return new PreGame(new ZenGarden(theGametype, playerCommanders, textures, sounds), theGametype, playerIndices[indexOfKing], textures, sounds);
+                    return new PreGame(new ZenGarden(theGametype, playerCommanders, textures, sounds), theGametype,
+                                       playerIndices[indexOfKing], textures, sounds);
                 case 6:
-                    return new PreGame(new Plaza(theGametype, playerCommanders, textures, sounds), theGametype, playerIndices[indexOfKing], textures, sounds);
+                    return new PreGame(new Plaza(theGametype, playerCommanders, textures, sounds), theGametype,
+                                       playerIndices[indexOfKing], textures, sounds);
                 default:
                     return this;
             }

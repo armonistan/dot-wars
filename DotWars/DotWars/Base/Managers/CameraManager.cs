@@ -1,9 +1,13 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+
+#endregion
 
 namespace DotWars
 {
@@ -16,11 +20,11 @@ namespace DotWars
         private readonly List<HUD> huds;
         private readonly int[] rumbleAmount;
         private readonly int width;
-        private Viewport fullSize;
-        private Rectangle safeArea;
-        private Sprite SplitScreen;
-        private Sprite pauseScreen;
-        private Sprite pauseInstructions;
+        private readonly Viewport fullSize;
+        private readonly Rectangle safeArea;
+        private readonly Sprite SplitScreen;
+        private readonly Sprite pauseScreen;
+        private readonly Sprite pauseInstructions;
         private Type pauser;
         private int pauserIndex;
 
@@ -49,14 +53,14 @@ namespace DotWars
                 width = (int) sS.X;
                 height = (int) sS.Y/2;
 
-                SplitScreen = new Sprite("HUD/2playerSplit", sS / 2);
+                SplitScreen = new Sprite("HUD/2playerSplit", sS/2);
             }
             else
             {
                 width = (int) sS.X/2;
                 height = (int) sS.Y/2;
 
-                SplitScreen = new Sprite("HUD/4playerSplit", sS / 2);
+                SplitScreen = new Sprite("HUD/4playerSplit", sS/2);
             }
 
             cameras = new List<Camera>();
@@ -68,8 +72,8 @@ namespace DotWars
                 huds.Add(new HUD(cameras[i], i, gT.GetTeams().Count, pL.Count <= 2));
             }
 
-            pauseScreen = new Sprite("HUD/pauseOverlay", sS / 2);
-            pauseInstructions = new Sprite("HUD/buttons", sS / 2);
+            pauseScreen = new Sprite("HUD/pauseOverlay", sS/2);
+            pauseInstructions = new Sprite("HUD/buttons", sS/2);
 
             pauserIndex = 0;
 
@@ -117,16 +121,18 @@ namespace DotWars
                                                                    (rumbleAmount[i]/2))
                                                              : Vector2.Zero), 0.05f);
 
-                        cameras[i].dimensions.X = (int)newPlace.X;
-                        cameras[i].dimensions.Y = (int)newPlace.Y;
+                        cameras[i].dimensions.X = (int) newPlace.X;
+                        cameras[i].dimensions.Y = (int) newPlace.Y;
 
                         huds[i].Update(mH, commander);
                     }
                 }
 
                 if (pauseImmunity <= 0.0 &&
-                    cameras[i].GetState().IsButtonDown(Buttons.Start) && !cameras[i].GetOldState().IsButtonDown(Buttons.Start) ||
-                    cameras[i].GetState().IsButtonDown(Buttons.BigButton) && !cameras[i].GetState().IsButtonDown(Buttons.BigButton) && pauser == null)
+                    cameras[i].GetState().IsButtonDown(Buttons.Start) &&
+                    !cameras[i].GetOldState().IsButtonDown(Buttons.Start) ||
+                    cameras[i].GetState().IsButtonDown(Buttons.BigButton) &&
+                    !cameras[i].GetState().IsButtonDown(Buttons.BigButton) && pauser == null)
                 {
                     SetPause(cameras[i].GetCommanderType(), mH);
                     pauserIndex = i;
@@ -203,9 +209,13 @@ namespace DotWars
             {
                 pauseScreen.Draw(sB, Vector2.Zero, mH);
                 pauseInstructions.Draw(sB, Vector2.Zero, mH);
-                mH.GetTextureManager().DrawString(sB, "Quit", new Vector2(140, 650), Color.White, TextureManager.FontSizes.small, false);
-                mH.GetTextureManager().DrawString(sB, "Continue", new Vector2(950, 650), Color.White, TextureManager.FontSizes.small, false);
-                mH.GetTextureManager().DrawString(sB, "Paused", Level.DEFAUT_SCREEN_SIZE / 2 + new Vector2(0, -75), GetPlayerColorFromType(pauser), TextureManager.FontSizes.small, true);
+                mH.GetTextureManager()
+                  .DrawString(sB, "Quit", new Vector2(140, 650), Color.White, TextureManager.FontSizes.small, false);
+                mH.GetTextureManager()
+                  .DrawString(sB, "Continue", new Vector2(950, 650), Color.White, TextureManager.FontSizes.small, false);
+                mH.GetTextureManager()
+                  .DrawString(sB, "Paused", Level.DEFAUT_SCREEN_SIZE/2 + new Vector2(0, -75),
+                              GetPlayerColorFromType(pauser), TextureManager.FontSizes.small, true);
             }
         }
 
@@ -253,11 +263,16 @@ namespace DotWars
         {
             switch (index)
             {
-                case 0: return PlayerIndex.One;
-                case 1: return PlayerIndex.Two;
-                case 2: return PlayerIndex.Three;
-                case 3: return PlayerIndex.Four;
-                default: return PlayerIndex.One;
+                case 0:
+                    return PlayerIndex.One;
+                case 1:
+                    return PlayerIndex.Two;
+                case 2:
+                    return PlayerIndex.Three;
+                case 3:
+                    return PlayerIndex.Four;
+                default:
+                    return PlayerIndex.One;
             }
         }
 
@@ -293,15 +308,15 @@ namespace DotWars
             {
                 return 0;
             }
-            else if (cT == typeof(BluePlayerCommander))
+            else if (cT == typeof (BluePlayerCommander))
             {
                 return 1;
             }
-            else if (cT == typeof(GreenPlayerCommander))
+            else if (cT == typeof (GreenPlayerCommander))
             {
                 return 2;
             }
-            else if (cT == typeof(YellowPlayerCommander))
+            else if (cT == typeof (YellowPlayerCommander))
             {
                 return 3;
             }
@@ -315,11 +330,11 @@ namespace DotWars
             {
                 return Color.Red;
             }
-            else if (player == typeof(BluePlayerCommander))
+            else if (player == typeof (BluePlayerCommander))
             {
                 return Color.Blue;
             }
-            else if (player == typeof(GreenPlayerCommander))
+            else if (player == typeof (GreenPlayerCommander))
             {
                 return Color.Green;
             }
@@ -364,7 +379,7 @@ namespace DotWars
             #region Declarations
 
             public Type commanderType;
-            private NPC.AffliationTypes teammateColor;
+            private readonly NPC.AffliationTypes teammateColor;
             public Rectangle dimensions;
             public Vector2 focus;
             public PlayerIndex gamePadIndex;
@@ -488,17 +503,19 @@ namespace DotWars
                         powerWidth;
 
             private float damageWidth,
-                healthCalcWidth;
+                          healthCalcWidth;
 
-            private Vector2 leftPos, rightPos;
+            private readonly Vector2 leftPos;
+            private readonly Vector2 rightPos;
 
-            private bool shouldDrawScores;
+            private readonly bool shouldDrawScores;
 
             private string gameTime = "";
-            private int lastMinute = 0;
-            private int lastSecond = 0;
-            private int[] lastScores;
-            private string[] lastScoreStrings;
+            private int lastMinute;
+            private int lastSecond;
+            private readonly int[] lastScores;
+            private readonly string[] lastScoreStrings;
+
             #endregion
 
             public HUD(Camera c, int i, int numTeams, bool canDrawScores)
@@ -507,11 +524,16 @@ namespace DotWars
 
                 shouldDrawScores = canDrawScores;
 
-                Vector2 safeAreaStart = new Vector2((i / 2 == 0) ? c.GetPort().TitleSafeArea.Left : 0, (i % 2 == 0) ? c.GetPort().TitleSafeArea.Top : 0);
-                Vector2 safeAreaEnd = new Vector2(((i / 2 == 0) ? c.GetPort().TitleSafeArea.Left : 0) + c.GetPort().TitleSafeArea.Width, (i % 2 == 0) ? c.GetPort().TitleSafeArea.Top : 0);
+                Vector2 safeAreaStart = new Vector2((i/2 == 0) ? c.GetPort().TitleSafeArea.Left : 0f,
+                                                    (i%2 == 0) ? c.GetPort().TitleSafeArea.Top : 0f);
+                Vector2 safeAreaEnd =
+                    new Vector2(((i/2 == 0) ? c.GetPort().TitleSafeArea.Left : 0f) + c.GetPort().TitleSafeArea.Width,
+                                (i%2 == 0) ? c.GetPort().TitleSafeArea.Top : 0f);
 
                 leftPos = safeAreaStart + new Vector2(150, 50);
-                rightPos = ((shouldDrawScores) ? safeAreaEnd + new Vector2(-24 + (4 - Math.Min(numTeams, 4)) * 82, 50) : Level.DEFAUT_SCREEN_SIZE / 2 + new Vector2(364.0f, -16.0f));
+                rightPos = ((shouldDrawScores)
+                                ? safeAreaEnd + new Vector2(-24 + (4 - Math.Min(numTeams, 4))*82, 50)
+                                : Level.DEFAUT_SCREEN_SIZE/2 + new Vector2(364.0f, -16.0f));
 
                 if (c.commanderType == typeof (RedCommander) || c.commanderType == typeof (RedPlayerCommander))
                 {
@@ -579,16 +601,17 @@ namespace DotWars
             {
                 if (c != null)
                 {
-                    healthCalcWidth = c.GetHealth()/(float)c.GetMaxHealth()*healthWidth;
-                    damageWidth = ((damageWidth < healthCalcWidth) ? healthCalcWidth : damageWidth-0.5f); //change the float for red bar speed, higher the faster
+                    healthCalcWidth = c.GetHealth()/(float) c.GetMaxHealth()*healthWidth;
+                    damageWidth = ((damageWidth < healthCalcWidth) ? healthCalcWidth : damageWidth - 0.5f);
+                        //change the float for red bar speed, higher the faster
 
                     gun.SetFrameIndex(c.GetModeIndex());
                     toss.SetFrameIndex(c.grenadeType);
                     gun.Update(mH);
                     toss.Update(mH);
-                    damage.Update(mH, (int)damageWidth);
-                    health.Update(mH, (int)healthCalcWidth);
-                    power.Update(mH, (int)((float)c.CurrentPower() / (float)c.MaxPower() * powerWidth));
+                    damage.Update(mH, (int) damageWidth);
+                    health.Update(mH, (int) healthCalcWidth);
+                    power.Update(mH, (int) ((float) c.CurrentPower()/(float) c.MaxPower()*powerWidth));
                     teammate.Update(mH);
                 }
 
@@ -599,9 +622,9 @@ namespace DotWars
             public void DrawScores(SpriteBatch sB, ManagerHelper mH)
             {
                 //Draw time left
-                int timeLeft = (int)(mH.GetGametype().GetGameEndTimer()) + 1,
-                    mins = timeLeft / 60,
-                    secs = timeLeft % 60;
+                int timeLeft = (int) (mH.GetGametype().GetGameEndTimer()) + 1,
+                    mins = timeLeft/60,
+                    secs = timeLeft%60;
 
                 if (mins != lastMinute)
                 {
@@ -652,10 +675,11 @@ namespace DotWars
                             lastScoreStrings[x] = lastScores[x] + "";
                         }
 
-                        mH.GetTextureManager().DrawString(sB, lastScoreStrings[x], rightPos - new Vector2((4 - x) * 82 - 24, -10), teamColor, TextureManager.FontSizes.small, true);
+                        mH.GetTextureManager()
+                          .DrawString(sB, lastScoreStrings[x], rightPos - new Vector2((4 - x)*82 - 24, -10), teamColor,
+                                      TextureManager.FontSizes.small, true);
                     }
                 }
-
             }
 
             public void Draw(SpriteBatch sB, ManagerHelper mH)
@@ -694,7 +718,6 @@ namespace DotWars
             public StatBar(String a, Vector2 p)
                 : base(a, p)
             {
-                
             }
 
             public void Update(ManagerHelper mH, int widthVal)

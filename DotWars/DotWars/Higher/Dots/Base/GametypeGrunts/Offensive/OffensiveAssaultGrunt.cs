@@ -1,4 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿#region
+
+using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -8,7 +12,7 @@ namespace DotWars
             : base(a, p)
         {
         }
-        
+
         protected override void SpecialPath(ManagerHelper mH)
         {
             var temp = (Assault) mH.GetGametype();
@@ -16,15 +20,15 @@ namespace DotWars
 
             if (f.status != Flag.FlagStatus.taken)
                 mH.GetPathHelper()
-                         .FindClearPath(GetOriginPosition(),
-                                        temp.GetEnemyBase(affiliation).GetMyFlag().GetOriginPosition(), mH, path);
+                  .FindClearPath(GetOriginPosition(),
+                                 temp.GetEnemyBase(affiliation).GetMyFlag().GetOriginPosition(), mH, path);
             else
             {
                 NPC captor = temp.GetEnemyBase(affiliation).GetMyFlag().GetCaptor();
 
                 if (captor == this)
                     mH.GetPathHelper()
-                             .FindClearPath(GetOriginPosition(), temp.GetAllyBase(affiliation).GetOriginPosition(), mH, path);
+                      .FindClearPath(GetOriginPosition(), temp.GetAllyBase(affiliation).GetOriginPosition(), mH, path);
                 else
                     mH.GetPathHelper().FindClearPath(GetOriginPosition(), captor.GetOriginPosition(), mH, path);
             }

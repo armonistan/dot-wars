@@ -1,6 +1,10 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Linq;
 using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -56,6 +60,7 @@ namespace DotWars
         private bool fireStatus;
 
         protected double protectedTimer;
+
         #endregion
 
         protected NPC(String a, Vector2 p) :
@@ -130,10 +135,10 @@ namespace DotWars
                     Vector2 next = path.Last(); //Get next destination
                     dir = PathHelper.Direction(base.GetOriginPosition(), next); //Find angle between points
                     AddAcceleration(PathHelper.Direction(dir));
-                        //Get x and y values from angle and set up direction
+                    //Get x and y values from angle and set up direction
 
                     //If already there...
-                    if (PathHelper.DistanceSquared(next, GetOriginPosition()) < 15 * 15)
+                    if (PathHelper.DistanceSquared(next, GetOriginPosition()) < 15*15)
                     {
                         //path.RemoveFirst(); //Go on to next destination
                         path.RemoveAt(path.Count - 1);
@@ -237,13 +242,13 @@ namespace DotWars
             //Collisions
             foreach (NPC a in mH.GetNPCManager().GetNPCs()) //first go through every single npc
             {
-                if (a.GetAffiliation() != affiliation) 
+                if (a.GetAffiliation() != affiliation)
                 {
                     Vector2 tempVect = CollisionHelper.IntersectPixelsRadius(this, a, origin.X, origin.X);
 
                     if (tempVect != new Vector2(-1))
                     {
-                        velocity = CollisionHelper.CollideRandom(GetOriginPosition(), tempVect) * movementSpeed;
+                        velocity = CollisionHelper.CollideRandom(GetOriginPosition(), tempVect)*movementSpeed;
 
                         if (float.IsNaN(velocity.X) || float.IsNaN(velocity.Y))
                         {
@@ -274,8 +279,9 @@ namespace DotWars
                 int tempVect = CollisionHelper.IntersectPixelsDirectionalRaw(this, tempOPos, e);
                 if (tempVect != -1)
                 {
-                    if (e is SwitchBox) {
-                        SwitchBox box = (SwitchBox)e;
+                    if (e is SwitchBox)
+                    {
+                        SwitchBox box = (SwitchBox) e;
                         box.lowerHealth();
                     }
 
@@ -426,7 +432,7 @@ namespace DotWars
 
             mH.GetNPCManager().Remove(this);
 
-            if ((mH.GetGametype() is Assasssins || mH.GetGametype() is Deathmatch) && lastDamager != null) 
+            if ((mH.GetGametype() is Assasssins || mH.GetGametype() is Deathmatch) && lastDamager != null)
             {
                 mH.GetGametype().ChangeScore(lastDamager, 1);
             }
@@ -466,7 +472,8 @@ namespace DotWars
                     if (NPCManager.IsNPCInRadius(suicide, GetOriginPosition(), sight) &&
                         NPCManager.IsNPCInDirection(suicide, GetOriginPosition(), rotation, vision, mH))
                     {
-                        float distanceToSuicide = PathHelper.DistanceSquared(GetOriginPosition(), suicide.GetOriginPosition());
+                        float distanceToSuicide = PathHelper.DistanceSquared(GetOriginPosition(),
+                                                                             suicide.GetOriginPosition());
 
                         if (distanceToSuicide < closestDistance)
                         {
@@ -489,7 +496,8 @@ namespace DotWars
                         NPCManager.IsNPCInRadius(agent, GetOriginPosition(), sight) &&
                         NPCManager.IsNPCInDirection(agent, GetOriginPosition(), rotation, vision, mH))
                     {
-                        float distanceToAgent = PathHelper.DistanceSquared(GetOriginPosition(), agent.GetOriginPosition());
+                        float distanceToAgent = PathHelper.DistanceSquared(GetOriginPosition(),
+                                                                           agent.GetOriginPosition());
 
                         if (distanceToAgent < closestDistance)
                         {
@@ -513,7 +521,7 @@ namespace DotWars
                              false, true, 5);
 
             mH.GetAudioManager().Play(AudioManager.STANDARD_SHOOT, AudioManager.RandomVolume(mH),
-                AudioManager.RandomPitch(mH), 0, false);
+                                      AudioManager.RandomPitch(mH), 0, false);
         }
 
         protected void TossGrenade(ManagerHelper mH)
@@ -530,12 +538,13 @@ namespace DotWars
         protected virtual void GrenadeSound(ManagerHelper mH)
         {
             mH.GetAudioManager().Play(AudioManager.GRENADE_SHOOT, AudioManager.RandomVolume(mH),
-                   AudioManager.RandomPitch(mH), 0, false);
+                                      AudioManager.RandomPitch(mH), 0, false);
         }
 
         #endregion
 
         #region Gets and Sets
+
         public AffliationTypes GetPersonalAffilation()
         {
             return personalAffiliation;
@@ -648,6 +657,7 @@ namespace DotWars
         {
             return fireStatus;
         }
+
         #endregion
 
         public void ChangeFireStatus()
@@ -667,7 +677,7 @@ namespace DotWars
             {
                 validPoint = true;
                 randPoint = new Vector2(mH.GetRandom().Next((int) mH.GetLevelSize().X),
-                                        mH.GetRandom().Next((int) mH.GetLevelSize().Y)) / mH.GetPathHelper().GetNodeSize();
+                                        mH.GetRandom().Next((int) mH.GetLevelSize().Y))/mH.GetPathHelper().GetNodeSize();
 
                 foreach (Environment e in mH.GetEnvironmentManager().GetStaticBlockers())
                 {
@@ -756,10 +766,9 @@ namespace DotWars
 
             if (tempEnemy != null)
             {
-                if (PathHelper.DistanceSquared(GetOriginPosition(), tempEnemy.GetOriginPosition()) > 128 * 128)
+                if (PathHelper.DistanceSquared(GetOriginPosition(), tempEnemy.GetOriginPosition()) > 128*128)
                 {
                     mH.GetPathHelper().FindClearPath(GetOriginPosition(), tempEnemy.GetOriginPosition(), mH, path);
-                    
                 }
                 else
                 {
@@ -781,7 +790,8 @@ namespace DotWars
             do
             {
                 validPoint = true;
-                randPoint = originNode + new Vector2(mH.GetRandom().Next(-1*r/32, r/32), mH.GetRandom().Next(-1*r/32, r/32));
+                randPoint = originNode +
+                            new Vector2(mH.GetRandom().Next(-1*r/32, r/32), mH.GetRandom().Next(-1*r/32, r/32));
 
                 if ((randPoint.X > 0 && randPoint.X < mH.GetLevelSize().X/32) &&
                     (randPoint.Y > 0 && randPoint.Y < mH.GetLevelSize().Y/32))
@@ -859,7 +869,7 @@ namespace DotWars
 
             if (c != null)
             {
-                if (PathHelper.DistanceSquared(c.GetOriginPosition(), GetOriginPosition()) < 96 * 96)
+                if (PathHelper.DistanceSquared(c.GetOriginPosition(), GetOriginPosition()) < 96*96)
                 {
                     HoverPath(mH, c.GetOriginPosition(), 96);
                 }
@@ -882,15 +892,15 @@ namespace DotWars
             {
                 return AffliationTypes.red;
             }
-            else if (commander == typeof(BlueCommander) || commander == typeof(BluePlayerCommander))
+            else if (commander == typeof (BlueCommander) || commander == typeof (BluePlayerCommander))
             {
                 return AffliationTypes.blue;
             }
-            else if (commander == typeof(GreenCommander) || commander == typeof(GreenPlayerCommander))
+            else if (commander == typeof (GreenCommander) || commander == typeof (GreenPlayerCommander))
             {
                 return AffliationTypes.green;
             }
-            else if (commander == typeof(YellowCommander) || commander == typeof(YellowPlayerCommander))
+            else if (commander == typeof (YellowCommander) || commander == typeof (YellowPlayerCommander))
             {
                 return AffliationTypes.yellow;
             }

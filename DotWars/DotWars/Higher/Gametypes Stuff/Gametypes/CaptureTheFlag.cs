@@ -1,7 +1,11 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -117,7 +121,7 @@ namespace DotWars
         {
             return "The first team to capture\n3 flags is the winner!";
         }
-        
+
         public override void ChangeScore(NPC agent, int s)
         {
             if (agent is Commander)

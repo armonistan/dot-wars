@@ -1,5 +1,9 @@
-﻿using System;
+﻿#region
+
+using System;
 using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -16,7 +20,6 @@ namespace DotWars
             grenadeCounter = 0; //default
             grenadeSpeed = 3; //Three second recharge
 
-            
 
             affiliation = AffliationTypes.red;
         }

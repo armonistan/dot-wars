@@ -1,7 +1,11 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
+
+#endregion
 
 namespace DotWars
 {
@@ -19,7 +23,7 @@ namespace DotWars
         public override void Initialize()
         {
             base.Initialize();
-            
+
             //Set up background
             backgrounds.AddBackground(new Sprite("Backgrounds/ZenGarden/zenBackground", new Vector2(656, 496)));
             backgrounds.AddForeground(new Sprite("Backgrounds/ZenGarden/zenForeground", new Vector2(656, 496)));

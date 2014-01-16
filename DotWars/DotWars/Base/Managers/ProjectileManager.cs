@@ -1,13 +1,18 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
     public class ProjectileManager
     {
         #region Declarations
+
         private readonly Queue<Projectile> activeProjectiles;
         private readonly Stack<Projectile> inactiveProjectiles;
         private readonly int projectileCap;
@@ -28,6 +33,7 @@ namespace DotWars
         public static string ROCKET = "Projectiles/bullet_rocket";
         public static string BOMB = "Projectiles/bullet_bombs";
         public static string GRENADE = "Projectiles/grenade";
+
         #endregion
 
         public ProjectileManager(int pC, int tC, int mC)

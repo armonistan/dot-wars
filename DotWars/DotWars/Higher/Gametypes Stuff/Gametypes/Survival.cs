@@ -1,7 +1,11 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -21,6 +25,7 @@ namespace DotWars
         private bool hasAppliedModifier;
 
         private const int NUM_SUICIDES = 15;
+
         #endregion
 
         public Survival(List<NPC.AffliationTypes> tL, Dictionary<Type, NPC.AffliationTypes> pL, int pC, float sT)
@@ -55,14 +60,14 @@ namespace DotWars
             if (GetIfAllPlayersAreDead(mH) && redCommanderHasSpawned)
                 gameEndTimer = -1;
 
-            if ((int)gameEndTimer % 30 == 0)
+            if ((int) gameEndTimer%30 == 0)
             {
                 if (!hasAppliedModifier)
-                {   
+                {
                     survivalPointModifier++;
                     suicideSpawnModifier++;
                     UpdateScoreSurvival(mH);
-                        
+
                     hasAppliedModifier = true;
                 }
             }
@@ -107,18 +112,19 @@ namespace DotWars
         private void UpdateScoreSurvival(ManagerHelper mH)
         {
             if (mH.GetNPCManager().GetCommander(NPC.AffliationTypes.red) != null)
-                scores[0]+=10 * survivalPointModifier;
+                scores[0] += 10*survivalPointModifier;
             if (mH.GetNPCManager().GetCommander(NPC.AffliationTypes.blue) != null)
-                scores[1] += 10 * survivalPointModifier;
+                scores[1] += 10*survivalPointModifier;
             if (mH.GetNPCManager().GetCommander(NPC.AffliationTypes.green) != null)
-                scores[2] += 10 * survivalPointModifier;
+                scores[2] += 10*survivalPointModifier;
             if (mH.GetNPCManager().GetCommander(NPC.AffliationTypes.yellow) != null)
-                scores[3] += 10 * survivalPointModifier;
+                scores[3] += 10*survivalPointModifier;
         }
 
         public bool GetIfAllCommandersAreDead(ManagerHelper mH)
         {
-            return (redCommanderHasSpawned && blueCommanderHasSpawned && greenCommanderHasSpawned && yellowCommanderHasSpawned && mH.GetNPCManager().GetCommanders().Count == 0);
+            return (redCommanderHasSpawned && blueCommanderHasSpawned && greenCommanderHasSpawned &&
+                    yellowCommanderHasSpawned && mH.GetNPCManager().GetCommanders().Count == 0);
         }
 
         public bool GetIfAllPlayersAreDead(ManagerHelper mH)
@@ -148,7 +154,7 @@ namespace DotWars
 
         public override void ChangeScore(NPC agent, int s)
         {
-            base.ChangeScore(agent, s+survivalPointModifier);
+            base.ChangeScore(agent, s + survivalPointModifier);
         }
 
         public List<Claimable> GetClaimables()
@@ -183,44 +189,45 @@ namespace DotWars
             return null;
         }
 
-        public override void SpawnCommander(ManagerHelper mH, Type commanderType, NPC.AffliationTypes team, Vector2 point)
+        public override void SpawnCommander(ManagerHelper mH, Type commanderType, NPC.AffliationTypes team,
+                                            Vector2 point)
         {
-            if (!redCommanderHasSpawned && commanderType == typeof(RedCommander))
+            if (!redCommanderHasSpawned && commanderType == typeof (RedCommander))
             {
                 mH.GetNPCManager().Add(new RedCommander(point, team));
                 redCommanderHasSpawned = true;
             }
-            else if (!blueCommanderHasSpawned && commanderType == typeof(BlueCommander))
+            else if (!blueCommanderHasSpawned && commanderType == typeof (BlueCommander))
             {
                 mH.GetNPCManager().Add(new BlueCommander(point, team));
                 blueCommanderHasSpawned = true;
             }
-            else if (!greenCommanderHasSpawned && commanderType == typeof(GreenCommander))
+            else if (!greenCommanderHasSpawned && commanderType == typeof (GreenCommander))
             {
                 mH.GetNPCManager().Add(new GreenCommander(point, team));
                 greenCommanderHasSpawned = true;
             }
-            else if (!yellowCommanderHasSpawned && commanderType == typeof(YellowCommander))
+            else if (!yellowCommanderHasSpawned && commanderType == typeof (YellowCommander))
             {
                 mH.GetNPCManager().Add(new YellowCommander(point, team));
                 yellowCommanderHasSpawned = true;
             }
-            else if (!redCommanderHasSpawned && commanderType == typeof(RedPlayerCommander))
+            else if (!redCommanderHasSpawned && commanderType == typeof (RedPlayerCommander))
             {
                 mH.GetNPCManager().Add(new RedPlayerCommander(point, team, mH));
                 redCommanderHasSpawned = true;
             }
-            else if (!blueCommanderHasSpawned && commanderType == typeof(BluePlayerCommander))
+            else if (!blueCommanderHasSpawned && commanderType == typeof (BluePlayerCommander))
             {
                 mH.GetNPCManager().Add(new BluePlayerCommander(point, team, mH));
                 blueCommanderHasSpawned = true;
             }
-            else if (!greenCommanderHasSpawned && commanderType == typeof(GreenPlayerCommander))
+            else if (!greenCommanderHasSpawned && commanderType == typeof (GreenPlayerCommander))
             {
                 mH.GetNPCManager().Add(new GreenPlayerCommander(point, team, mH));
                 greenCommanderHasSpawned = true;
             }
-            else if (!yellowCommanderHasSpawned && commanderType == typeof(YellowPlayerCommander))
+            else if (!yellowCommanderHasSpawned && commanderType == typeof (YellowPlayerCommander))
             {
                 mH.GetNPCManager().Add(new YellowPlayerCommander(point, team, mH));
                 yellowCommanderHasSpawned = true;

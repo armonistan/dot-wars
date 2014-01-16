@@ -1,15 +1,19 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
     public class Gametype
     {
         #region Declarations
+
         private int NUMBOMBARDIER;
         private int NUMGRUNT;
         private int NUMGUNNER;
@@ -17,7 +21,7 @@ namespace DotWars
         private int NUMMEDIC;
         private int NUMSNIPER;
         private int NUMSPECIALIST;
-        private int TEAMCAP;
+        private readonly int TEAMCAP;
 
         protected Dictionary<Type, NPC.AffliationTypes> commanders;
         protected List<NPC.AffliationTypes> teams;
@@ -38,11 +42,17 @@ namespace DotWars
         protected Dictionary<NPC.AffliationTypes, double> timeFlagAway;
         protected Dictionary<NPC.AffliationTypes, double> mostTimeFlagAway;
         protected Dictionary<NPC.AffliationTypes, double> quickestFlagCapture;
+
         #endregion
 
         public enum GT
         {
-            ASSASSINS, CONQUEST, DEATHMATCH, SURVIVAL, ASSAULT, CTF
+            ASSASSINS,
+            CONQUEST,
+            DEATHMATCH,
+            SURVIVAL,
+            ASSAULT,
+            CTF
         }
 
         public Gametype(List<NPC.AffliationTypes> tL, Dictionary<Type, NPC.AffliationTypes> pL, int wS, int pC, float sT)
@@ -81,7 +91,7 @@ namespace DotWars
 
             managers = mH;
 
-            flagsCaptured = new Dictionary<NPC.AffliationTypes,int>();
+            flagsCaptured = new Dictionary<NPC.AffliationTypes, int>();
             flagsCaptured.Add(NPC.AffliationTypes.red, 0);
             flagsCaptured.Add(NPC.AffliationTypes.blue, 0);
             flagsCaptured.Add(NPC.AffliationTypes.green, 0);
@@ -101,7 +111,7 @@ namespace DotWars
 
             timeFlagAway = new Dictionary<NPC.AffliationTypes, double>();
             mostTimeFlagAway = new Dictionary<NPC.AffliationTypes, double>();
-            quickestFlagCapture = new Dictionary<NPC.AffliationTypes, double>(); 
+            quickestFlagCapture = new Dictionary<NPC.AffliationTypes, double>();
             foreach (NPC.AffliationTypes af in teams)
             {
                 mostTimeFlagAway.Add(af, 0);
@@ -122,7 +132,7 @@ namespace DotWars
                     if (spawnsCounters[counter] > spawnTime)
                     {
                         SpawnCommander(mH, commander.Key, commander.Value, mH.GetSpawnHelper().Spawn(commander.Value));
-                    
+
                         spawnsCounters[counter] = 0;
                     }
                     else
@@ -143,12 +153,12 @@ namespace DotWars
                     return true;
                 }
             }
-            
+
             if (gameEndTimer < 0)
             {
                 return true;
             }
-            
+
             gameEndTimer -= mH.GetGameTime().ElapsedGameTime.TotalSeconds;
 
             return false;
@@ -241,7 +251,7 @@ namespace DotWars
             if (mH.GetGametype() is Survival)
                 unitType = 0;
             else
-                unitType = 4;// mH.GetRandom().Next(7);
+                unitType = mH.GetRandom().Next(7);
 
             switch (aT)
             {
@@ -997,15 +1007,15 @@ namespace DotWars
                 {
                     return teams[i];
                 }
-                else if(gameEndTimer <= 0)
+                else if (gameEndTimer <= 0)
                 {
-                    if(scores[i] > highestScore)
+                    if (scores[i] > highestScore)
                     {
                         highestScoreIndex = i;
                         highestScore = scores[i];
                         isTie = false;
                     }
-                    else if(scores[i] == highestScore)
+                    else if (scores[i] == highestScore)
                         isTie = true;
                 }
             }
@@ -1050,7 +1060,8 @@ namespace DotWars
 
         public String GetWinnerString()
         {
-            switch(this.GetWinner()){
+            switch (this.GetWinner())
+            {
                 case NPC.AffliationTypes.red:
                     return "Red Team Won!";
                 case NPC.AffliationTypes.blue:
@@ -1062,10 +1073,11 @@ namespace DotWars
                 case NPC.AffliationTypes.same:
                     return "Tie Game";
             }
-            return "error"; 
+            return "error";
         }
 
-        public String[] GetEndScores() {
+        public String[] GetEndScores()
+        {
             String[] score = new String[4];
 
             foreach (NPC.AffliationTypes teamColor in teams)
@@ -1090,7 +1102,7 @@ namespace DotWars
 
             return score;
         }
-        
+
         public virtual String GetGametypeStatistics()
         {
             return "";
@@ -1100,7 +1112,7 @@ namespace DotWars
         {
             return flagsCaptured;
         }
-        
+
         public Dictionary<Type, NPC.AffliationTypes> GetPlayers()
         {
             return commanders;

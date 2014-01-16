@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
+﻿#region
+
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -25,7 +29,7 @@ namespace DotWars
 
         private ManagerHelper managers;
 
-        private Dictionary<NPC.AffliationTypes, int> rocksDestroyedByCommanders;
+        private readonly Dictionary<NPC.AffliationTypes, int> rocksDestroyedByCommanders;
         private int waterSpilledCounter;
         private int lightningTravelledCounter;
         private int dotsSetOnFireCounter;
@@ -162,7 +166,7 @@ namespace DotWars
 
                 if (r.GetHealth() <= 0)
                 {
-                    if(r.GetLastDamager() is Commander)
+                    if (r.GetLastDamager() is Commander)
                         UpdateRocksDestroyedByCommanders(r.GetLastDamager().GetPersonalAffilation());
                     removeTheseRocks.Add(r);
                 }
@@ -289,7 +293,7 @@ namespace DotWars
         {
             return waterSpilledCounter;
         }
-        
+
         public int GetLightningTravelledCounter()
         {
             return lightningTravelledCounter;

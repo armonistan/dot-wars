@@ -1,15 +1,17 @@
-﻿using System;
+﻿#region
+
 using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
     public class SpawnHelper
     {
-        private List<SpawnPoint> spawnPoints;
-        private List<SuicideSpawnPoint> suicideSpawnPoints;
+        private readonly List<SpawnPoint> spawnPoints;
+        private readonly List<SuicideSpawnPoint> suicideSpawnPoints;
         private ManagerHelper managers;
 
         public SpawnHelper(List<SpawnPoint> sP)
@@ -166,8 +168,8 @@ namespace DotWars
 
         public void Draw(SpriteBatch sB, Vector2 d)
         {
-            foreach(SpawnPoint sP in suicideSpawnPoints)
-                    sP.Draw(sB, d, managers);
+            foreach (SpawnPoint sP in suicideSpawnPoints)
+                sP.Draw(sB, d, managers);
         }
     }
 }

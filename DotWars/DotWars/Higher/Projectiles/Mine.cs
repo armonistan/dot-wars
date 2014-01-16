@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿#region
+
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
     public class Mine : Sprite
     {
-        private double existanceTime;
+        private readonly double existanceTime;
         private double existanceTimer;
 
-        private double armedTime;
+        private readonly double armedTime;
 
-        private double pulseTime;
-        private double pulseBeginTime;
+        private readonly double pulseTime;
+        private readonly double pulseBeginTime;
         private double pulseTimer;
 
         private bool draw;
@@ -24,8 +23,8 @@ namespace DotWars
 
         private NPC creator;
 
-        private float explodeRadius;
-        private int damage;
+        private readonly float explodeRadius;
+        private readonly int damage;
 
         public Mine()
             : base("Projectiles/mine", Vector2.Zero)
@@ -107,7 +106,7 @@ namespace DotWars
 
             if (pulseTimer > pulseBeginTime)
             {
-                frameIndex = (int)(totalFrames*(pulseTimer - pulseBeginTime)/(pulseTime - pulseBeginTime));
+                frameIndex = (int) (totalFrames*(pulseTimer - pulseBeginTime)/(pulseTime - pulseBeginTime));
             }
             else
             {

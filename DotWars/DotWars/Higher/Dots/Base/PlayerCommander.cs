@@ -1,6 +1,9 @@
-﻿using System;
+﻿#region
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+
+#endregion
 
 namespace DotWars
 {
@@ -10,7 +13,7 @@ namespace DotWars
 
 #if WINDOWS
         private KeyboardState oldState;
-        #endif
+#endif
 
         public PlayerCommander(string a, AffliationTypes aT, Vector2 p, ManagerHelper mH, double aS)
             : base(a, p)
@@ -223,10 +226,11 @@ namespace DotWars
 
             //Apply turningSpeed to rotation in correct direction
             float otherRot = rotation + MathHelper.TwoPi*((rotation > MathHelper.Pi) ? -1 : 1);
-                //Same angle, different name to compensate for linear numbers
+            //Same angle, different name to compensate for linear numbers
             float distADir = MathHelper.Distance(wantedRotation, rotation),
                   //Archlength sorta from actual rotation
-                  distBDir = MathHelper.Distance(wantedRotation, otherRot); //Archlength sorta from same angle but 2pi over
+                  distBDir = MathHelper.Distance(wantedRotation, otherRot);
+                //Archlength sorta from same angle but 2pi over
 
             //If the usual angle is closer
             if (distADir < distBDir)
@@ -258,26 +262,26 @@ namespace DotWars
 #elif XBOX
             if (theState.ThumbSticks.Right.X != 0 || theState.ThumbSticks.Right.Y != 0)
             {
-                wantedRotation = (float)Math.Atan2(theState.ThumbSticks.Right.Y * -1, theState.ThumbSticks.Right.X);
+                wantedRotation = DWMath.Atan2(theState.ThumbSticks.Right.Y * -1, theState.ThumbSticks.Right.X);
                 if (wantedRotation < 0)
                 {
-                    wantedRotation += (float)Math.PI * 2;
+                    wantedRotation += MathHelper.TwoPi;
                 }
             
                 //Calculate turningSpeed to maximize speed and minimize jittering
-                if (Math.Abs(rotation - wantedRotation) < turningSpeed && turningSpeed > (float)Math.PI / 160)
+                if (MathHelper.Distance(rotation, wantedRotation) < turningSpeed && turningSpeed > MathHelper.Pi / 160f)
                 {
                     turningSpeed /= 2;
                 }
-                else if (Math.Abs(rotation - wantedRotation) > turningSpeed && turningSpeed < maxTurningSpeed)
+                else if (MathHelper.Distance(rotation, wantedRotation) > turningSpeed && turningSpeed < maxTurningSpeed)
                 {
                     turningSpeed *= 2;
                 }
             
                 //Apply turningSpeed to rotation in correct direction
-                float otherRot = rotation + ((float)Math.PI * 2) * ((rotation > Math.PI) ? -1 : 1);//Same angle, different name to compensate for linear numbers
-                float distADir = (float)Math.Abs(wantedRotation - rotation),//Archlength sorta from actual rotation
-                    distBDir = (float)Math.Abs(wantedRotation - otherRot);//Archlength sorta from same angle but 2pi over
+                float otherRot = rotation + (MathHelper.TwoPi) * ((rotation > MathHelper.Pi) ? -1 : 1);//Same angle, different name to compensate for linear numbers
+                float distADir = MathHelper.Distance(wantedRotation, rotation),//Archlength sorta from actual rotation
+                    distBDir = MathHelper.Distance(wantedRotation, otherRot);//Archlength sorta from same angle but 2pi over
             
                 //If the usual angle is closer
                 if (distADir < distBDir)
@@ -321,7 +325,7 @@ namespace DotWars
                 //Animation of indicator
                 if (timer > endtime)
                 {
-                    indicator.SetFrameIndex(indicator.GetFrameIndex()+1);
+                    indicator.SetFrameIndex(indicator.GetFrameIndex() + 1);
 
                     if (indicator.GetFrameIndex() > 5)
                     {
@@ -357,25 +361,25 @@ namespace DotWars
         protected override void ShotgunSound(ManagerHelper mH)
         {
             mH.GetAudioManager().Play(AudioManager.COMMANDER_SHOTGUN, 0.90f,
-                (float)(mH.GetRandom().NextDouble() * -0.25), 0, false);
+                                      (float) (mH.GetRandom().NextDouble()*-0.25), 0, false);
         }
 
         protected override void ShootSound(ManagerHelper mH)
         {
             mH.GetAudioManager().Play(AudioManager.COMMANDER_SHOOT, 0.90f,
-                (float)(mH.GetRandom().NextDouble() * -0.25), 0, false);
+                                      (float) (mH.GetRandom().NextDouble()*-0.25), 0, false);
         }
 
         protected override void MineSound(ManagerHelper mH)
         {
             mH.GetAudioManager().Play(AudioManager.COMMANDER_FLARE, 0.90f,
-                   AudioManager.RandomPitch(mH), 0, false);
+                                      AudioManager.RandomPitch(mH), 0, false);
         }
 
         protected override void GrenadeSound(ManagerHelper mH)
         {
             mH.GetAudioManager().Play(AudioManager.COMMANDER_GRENADE, 0.90f,
-                   AudioManager.RandomPitch(mH), 0, false);
+                                      AudioManager.RandomPitch(mH), 0, false);
         }
     }
 }

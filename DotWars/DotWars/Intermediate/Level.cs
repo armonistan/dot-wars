@@ -1,9 +1,13 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+
+#endregion
 
 namespace DotWars
 {
@@ -30,7 +34,7 @@ namespace DotWars
         protected SpawnHelper spawns;
 
         //Others
-        private Vector2 SizeOfLevel;
+        private readonly Vector2 SizeOfLevel;
         protected List<SpawnPoint> spawnplaces;
         protected List<SuicideSpawnPoint> suicideSpawnplaces;
         protected List<Vector2> sniperSpots;
@@ -83,7 +87,7 @@ namespace DotWars
             spawns = new SpawnHelper(spawnplaces, suicideSpawnplaces);
             particles = new ParticleManager(200, 40, 40, 20);
             abilities = new AbilityManager(3, 25, 10, 20, managers);
-            statistics = new StatisticsManager(typeOfGame.GetTeams());            
+            statistics = new StatisticsManager(typeOfGame.GetTeams());
 
             //NOTE: Upper level creates gametype & cameraManager
 
@@ -217,7 +221,7 @@ namespace DotWars
         {
             gM.GraphicsDevice.Viewport = cameras.GetFullSize();
 
-            Vector2 displacement = GetSizeOfLevel() / 2 - DEFAUT_SCREEN_SIZE / 2;
+            Vector2 displacement = GetSizeOfLevel()/2 - DEFAUT_SCREEN_SIZE/2;
 
             sB.Begin();
 
@@ -227,6 +231,7 @@ namespace DotWars
         }
 
         #region Gets
+
         public List<SpawnPoint> GetSpawnPoints()
         {
             return spawnplaces;
@@ -256,6 +261,7 @@ namespace DotWars
         {
             return loaded;
         }
+
         #endregion
 
         public override String ToString()

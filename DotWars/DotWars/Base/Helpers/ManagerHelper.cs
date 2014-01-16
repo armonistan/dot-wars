@@ -1,6 +1,10 @@
-﻿using System;
+﻿#region
+
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+
+#endregion
 
 namespace DotWars
 {
@@ -23,7 +27,7 @@ namespace DotWars
         private readonly Gametype typeOfGame; //Used to change scores
         private CameraManager.Camera currentCam;
         private KeyboardState currentState;
-        private StatisticsManager statistics;
+        private readonly StatisticsManager statistics;
         private GameTime time; //Used to get the current gametime from anywhere
         private float deltaSeconds;
 
@@ -152,7 +156,7 @@ namespace DotWars
             return currentCam;
         }
 
-        public StatisticsManager GetStatisticsManager() 
+        public StatisticsManager GetStatisticsManager()
         {
             return statistics;
         }

@@ -1,8 +1,12 @@
+#region
+
 using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -20,7 +24,7 @@ namespace DotWars
         protected float scale;
 
         protected int frameIndex,
-                   modeIndex;
+                      modeIndex;
 
         //Movement and Drawing Info
         public Vector2 origin,
@@ -94,7 +98,7 @@ namespace DotWars
             frame = new Rectangle(0, 0, texture.Width, texture.Height);
 
             //Calculate origin
-            origin = new Vector2(frame.Width / 2, frame.Height / 2);
+            origin = new Vector2(frame.Width/2, frame.Height/2);
             position -= origin;
         }
 
@@ -152,7 +156,7 @@ namespace DotWars
 
         public void UpdateFrame()
         {
-            frame.X = frameIndex * frame.Width;
+            frame.X = frameIndex*frame.Width;
             frame.Y = modeIndex*frame.Height;
         }
 

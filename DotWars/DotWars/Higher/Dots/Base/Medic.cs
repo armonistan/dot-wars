@@ -1,6 +1,10 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -35,7 +39,7 @@ namespace DotWars
         protected override void Behavior(ManagerHelper mH)
         {
             if (TargetDecider(mH) != null &&
-                PathHelper.DistanceSquared(GetOriginPosition(), TargetDecider(mH).GetOriginPosition()) < 96 * 96)
+                PathHelper.DistanceSquared(GetOriginPosition(), TargetDecider(mH).GetOriginPosition()) < 96*96)
                 target = TargetDecider(mH);
             else if (TargetDecider(mH) == null)
                 target = null;
@@ -54,7 +58,7 @@ namespace DotWars
         protected override void Shoot(ManagerHelper mH)
         {
             foreach (NPC agent in mH.GetNPCManager().GetAllies(affiliation))
-            {   
+            {
                 if (agent != this && NPCManager.IsNPCInRadius(agent, GetOriginPosition(), healRadius))
                 {
                     if (agent.GetHealth() < agent.GetMaxHealth())

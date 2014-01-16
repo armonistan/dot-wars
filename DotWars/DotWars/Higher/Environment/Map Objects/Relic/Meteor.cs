@@ -1,7 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -139,7 +141,7 @@ namespace DotWars
                 {
                     float dir = PathHelper.Direction(GetOriginPosition(), a.GetOriginPosition());
 
-                    a.AddAcceleration(PathHelper.Direction(dir) * 15);
+                    a.AddAcceleration(PathHelper.Direction(dir)*15);
 
                     if (a is Commander)
                     {

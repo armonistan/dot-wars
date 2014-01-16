@@ -1,10 +1,14 @@
-﻿using Microsoft.Xna.Framework;
+﻿#region
+
+using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
     public class GreenCommander : Commander
     {
-        int rockCounter;
+        private int rockCounter;
 
         public GreenCommander(Vector2 p)
             : this(p, AffliationTypes.green)
@@ -31,11 +35,11 @@ namespace DotWars
                 Vector2 tempPos;
 
                 if (GetPercentHealth() < .5)
-                    tempPos = new Vector2(64) * lastDamagerDirection + GetOriginPosition();
+                    tempPos = new Vector2(64)*lastDamagerDirection + GetOriginPosition();
                 else
-                    tempPos = new Vector2(64) * PathHelper.Direction(rotation) + GetOriginPosition();
-                tempPos.X = tempPos.X - (tempPos.X % 32) + 16;
-                tempPos.Y = tempPos.Y - (tempPos.Y % 32) + 16;
+                    tempPos = new Vector2(64)*PathHelper.Direction(rotation) + GetOriginPosition();
+                tempPos.X = tempPos.X - (tempPos.X%32) + 16;
+                tempPos.Y = tempPos.Y - (tempPos.Y%32) + 16;
 
                 if (tempPos.X > 0 && tempPos.X < mH.GetLevelSize().X &&
                     tempPos.Y > 0 && tempPos.Y < mH.GetLevelSize().Y &&
@@ -55,7 +59,8 @@ namespace DotWars
             {
                 if (mH.GetGametype() is Survival)
                 {
-                    if (target != null && PathHelper.DistanceSquared(target.GetOriginPosition(), GetOriginPosition()) < 200 * 200)
+                    if (target != null &&
+                        PathHelper.DistanceSquared(target.GetOriginPosition(), GetOriginPosition()) < 200*200)
                         return true;
                 }
                 else

@@ -1,8 +1,12 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -12,6 +16,7 @@ namespace DotWars
 
         public List<Claimable> claimables;
         public Dictionary<NPC.AffliationTypes, int> commanderKills;
+
         #endregion
 
         public Deathmatch(List<NPC.AffliationTypes> tL, Dictionary<Type, NPC.AffliationTypes> pL, int pC, float sT)

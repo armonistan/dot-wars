@@ -1,7 +1,11 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -21,7 +25,7 @@ namespace DotWars
 
         private const float modifer = 0.95f;
 
-        private Sprite indicator;
+        private readonly Sprite indicator;
 
         #endregion
 
@@ -45,9 +49,11 @@ namespace DotWars
             frameIndex = 0;
             originPosition = p;
             position = p - origin;
-            velocity = new Vector2(300 * direction.X, 300 * direction.Y);
+            velocity = new Vector2(300*direction.X, 300*direction.Y);
 
-            mH.GetAudioManager().Play(AudioManager.FIREBALL, (float)mH.GetRandom().NextDouble()/4 + 0.75f, AudioManager.RandomPitch(mH), 0, false);
+            mH.GetAudioManager()
+              .Play(AudioManager.FIREBALL, (float) mH.GetRandom().NextDouble()/4 + 0.75f, AudioManager.RandomPitch(mH),
+                    0, false);
         }
 
         public override void LoadContent(TextureManager tM)
@@ -92,7 +98,8 @@ namespace DotWars
                 {
                     foreach (NPC a in mH.GetNPCManager().GetNPCs())
                     {
-                        if (a.GetAffiliation() != affiliation && NPCManager.IsNPCInRadius(a, GetOriginPosition(), 64) && !doomedDots.Contains(a))
+                        if (a.GetAffiliation() != affiliation && NPCManager.IsNPCInRadius(a, GetOriginPosition(), 64) &&
+                            !doomedDots.Contains(a))
                         {
                             doomedDots.Add(a);
 
@@ -134,7 +141,7 @@ namespace DotWars
             }
 
             frameCounter++;
-            this.scale = scale * modifer;
+            this.scale = scale*modifer;
 
             base.Update(mH);
         }

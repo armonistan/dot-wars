@@ -1,8 +1,9 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -78,7 +79,8 @@ namespace DotWars
             private bool isAlive;
             private int casualties;
 
-            public StatHolder(int kills, int deaths, DoubleWrapper timeAlive, double maxTimeAlive, bool isAlive, int casualties)
+            public StatHolder(int kills, int deaths, DoubleWrapper timeAlive, double maxTimeAlive, bool isAlive,
+                              int casualties)
             {
                 this.kills = kills;
                 this.deaths = deaths;
@@ -89,12 +91,12 @@ namespace DotWars
             }
         }
 
-        private Dictionary<NPC.AffliationTypes, StatHolder> stats; 
+        private readonly Dictionary<NPC.AffliationTypes, StatHolder> stats;
 
         protected int medicKills;
 
         protected Dictionary<NPC.AffliationTypes, int> flagsCaptured;
-        
+
         protected Dictionary<NPC.AffliationTypes, int> flagsReturned;
 
         private int[,] killsToCommanders;
@@ -141,7 +143,7 @@ namespace DotWars
             rocksDestroyed = new Dictionary<NPC.AffliationTypes, int>();
             dotsRecruited = new Dictionary<NPC.AffliationTypes, int>();
 
-            killsToCommanders = new int[4, 4];
+            killsToCommanders = new int[4,4];
             vendittaKills = 0;
             vendittaKiller = NPC.AffliationTypes.black;
             vendittaVictim = NPC.AffliationTypes.black;
@@ -159,13 +161,16 @@ namespace DotWars
             }
         }
 
-        public void Update(ManagerHelper mH) 
+        public void Update(ManagerHelper mH)
         {
             medicKills = mH.GetNPCManager().GetMedicKills();
             flagsCaptured = mH.GetGametype().GetFlagsCaptured();
             flagsReturned = mH.GetGametype().GetFlagsReturned();
-            rocksCreatedCounter += (mH.GetNPCManager().GetSpecificCommander(NPC.AffliationTypes.green) != null) ? 
-                mH.GetNPCManager().GetSpecificCommander(NPC.AffliationTypes.green).GetPowerStatistic() : 0;
+            rocksCreatedCounter += (mH.GetNPCManager().GetSpecificCommander(NPC.AffliationTypes.green) != null)
+                                       ? mH.GetNPCManager()
+                                           .GetSpecificCommander(NPC.AffliationTypes.green)
+                                           .GetPowerStatistic()
+                                       : 0;
             rocksDestroyed = mH.GetAbilityManager().GetRocksDestroyedByCommanders();
             waterSpilledCounter = mH.GetAbilityManager().GetWaterSpilledCounter();
             dotsRecruited = mH.GetGametype().GetDotsRecruited();
@@ -173,8 +178,6 @@ namespace DotWars
             mostTimeFlagAway = mH.GetGametype().GetMostTimeFlagAway();
             quickestFlagCapture = mH.GetGametype().GetQuickestFlagCapture();
             dotsSetOnFireCounter = mH.GetAbilityManager().GetDotsSetOnFireCounter();
-
-
         }
 
         private NPC.AffliationTypes CalculateMaxTime()
@@ -207,7 +210,7 @@ namespace DotWars
 
             foreach (NPC.AffliationTypes af in affilations)
             {
-                if(flagsCapped < flagsCaptured[af])
+                if (flagsCapped < flagsCaptured[af])
                 {
                     a = af;
                     flagsCapped = flagsCaptured[af];
@@ -238,8 +241,8 @@ namespace DotWars
         {
             NPC.AffliationTypes a = NPC.AffliationTypes.black;
             int rocksCrushed = 0;
-            
-            foreach(NPC.AffliationTypes af in affilations)
+
+            foreach (NPC.AffliationTypes af in affilations)
                 if (rocksCrushed < rocksDestroyed[af])
                 {
                     rocksCrushed = rocksDestroyed[af];
@@ -335,7 +338,6 @@ namespace DotWars
                                     }
                                     break;
                                 }
-
                         }
                     }
         }
@@ -357,10 +359,10 @@ namespace DotWars
             return a;
         }
 
-        public String GetMostMedicsKilledStatistic() 
+        public String GetMostMedicsKilledStatistic()
         {
             if (medicKills > 0)
-                    return medicKills + " harmless medics died";
+                return medicKills + " harmless medics died";
             else
                 return "No medics were harmed!";
         }
@@ -373,21 +375,21 @@ namespace DotWars
             {
                 if (a != NPC.AffliationTypes.black)
                 {
-                   switch (a)
-                   {
-                       case NPC.AffliationTypes.red:
-                           result += "Mustachio:  ";
-                           break;
-                       case NPC.AffliationTypes.blue:
-                           result += "Aquoes:      ";
-                           break;
-                       case NPC.AffliationTypes.green:
-                           result += "Terron:      ";
-                           break;
-                       case NPC.AffliationTypes.yellow:
-                           result += "Dian:         ";
-                           break;
-                   }
+                    switch (a)
+                    {
+                        case NPC.AffliationTypes.red:
+                            result += "Mustachio:  ";
+                            break;
+                        case NPC.AffliationTypes.blue:
+                            result += "Aquoes:      ";
+                            break;
+                        case NPC.AffliationTypes.green:
+                            result += "Terron:      ";
+                            break;
+                        case NPC.AffliationTypes.yellow:
+                            result += "Dian:         ";
+                            break;
+                    }
 
                     result += ("K: " + stats[a].Kills + " D: " + stats[a].Deaths + "\n");
                 }
@@ -401,24 +403,25 @@ namespace DotWars
 
             switch (CalculateMaxTime())
             {
-                 case NPC.AffliationTypes.red:
-                     result += "Mustachio ";
-                     break;
-                 case NPC.AffliationTypes.blue:
-                     result += "Aquoes ";
-                     break;
-                 case NPC.AffliationTypes.green:
-                     result += "Terron ";
-                     break;
-                 case NPC.AffliationTypes.yellow:
-                     result += "Dian ";
-                     break;
-             }
+                case NPC.AffliationTypes.red:
+                    result += "Mustachio ";
+                    break;
+                case NPC.AffliationTypes.blue:
+                    result += "Aquoes ";
+                    break;
+                case NPC.AffliationTypes.green:
+                    result += "Terron ";
+                    break;
+                case NPC.AffliationTypes.yellow:
+                    result += "Dian ";
+                    break;
+            }
             if (stats[CalculateMaxTime()].MaxTimeAlive == 0)
                 result += "never died!";
             else
-                result += " lived longest (" + (int)stats[CalculateMaxTime()].MaxTimeAlive + " sec" + (((int)stats[CalculateMaxTime()].MaxTimeAlive != 1) ? "s" : "") + ")";
-            
+                result += " lived longest (" + (int) stats[CalculateMaxTime()].MaxTimeAlive + " sec" +
+                          (((int) stats[CalculateMaxTime()].MaxTimeAlive != 1) ? "s" : "") + ")";
+
             return result;
         }
 
@@ -485,13 +488,16 @@ namespace DotWars
                         switch (vendittaVictim)
                         {
                             case NPC.AffliationTypes.blue:
-                                result = "Mustachio killed Aquoes\n " + vendittaKills + " time" + ((vendittaKills != 1) ? "s" : "");
+                                result = "Mustachio killed Aquoes\n " + vendittaKills + " time" +
+                                         ((vendittaKills != 1) ? "s" : "");
                                 break;
                             case NPC.AffliationTypes.green:
-                                result = "Mustachio killed Terron\n " + vendittaKills + " time" + ((vendittaKills != 1) ? "s" : "");
+                                result = "Mustachio killed Terron\n " + vendittaKills + " time" +
+                                         ((vendittaKills != 1) ? "s" : "");
                                 break;
                             case NPC.AffliationTypes.yellow:
-                                result = "Mustachio killed Dian\n " + vendittaKills + " time" + ((vendittaKills != 1) ? "s" : "");
+                                result = "Mustachio killed Dian\n " + vendittaKills + " time" +
+                                         ((vendittaKills != 1) ? "s" : "");
                                 break;
                         }
                         break;
@@ -501,13 +507,16 @@ namespace DotWars
                         switch (vendittaVictim)
                         {
                             case NPC.AffliationTypes.red:
-                                result = "Aquoes killed Mustachio\n " + vendittaKills + " time" + ((vendittaKills != 1) ? "s" : "");
+                                result = "Aquoes killed Mustachio\n " + vendittaKills + " time" +
+                                         ((vendittaKills != 1) ? "s" : "");
                                 break;
                             case NPC.AffliationTypes.green:
-                                result = "Aquoes killed Terron\n " + vendittaKills + " time" + ((vendittaKills != 1) ? "s" : "");
+                                result = "Aquoes killed Terron\n " + vendittaKills + " time" +
+                                         ((vendittaKills != 1) ? "s" : "");
                                 break;
                             case NPC.AffliationTypes.yellow:
-                                result = "Aquoes killed Dian\n " + vendittaKills + " time" + ((vendittaKills != 1) ? "s" : "");
+                                result = "Aquoes killed Dian\n " + vendittaKills + " time" +
+                                         ((vendittaKills != 1) ? "s" : "");
                                 break;
                         }
                         break;
@@ -517,13 +526,16 @@ namespace DotWars
                         switch (vendittaVictim)
                         {
                             case NPC.AffliationTypes.blue:
-                                result = "Terron killed Aquoes\n " + vendittaKills + " time" + ((vendittaKills != 1) ? "s" : "");
+                                result = "Terron killed Aquoes\n " + vendittaKills + " time" +
+                                         ((vendittaKills != 1) ? "s" : "");
                                 break;
                             case NPC.AffliationTypes.red:
-                                result = "Terron killed Mustachio\n " + vendittaKills + " time" + ((vendittaKills != 1) ? "s" : "");
+                                result = "Terron killed Mustachio\n " + vendittaKills + " time" +
+                                         ((vendittaKills != 1) ? "s" : "");
                                 break;
                             case NPC.AffliationTypes.yellow:
-                                result = "Terron killed Dian\n " + vendittaKills + " time" + ((vendittaKills != 1) ? "s" : "");
+                                result = "Terron killed Dian\n " + vendittaKills + " time" +
+                                         ((vendittaKills != 1) ? "s" : "");
                                 break;
                         }
                         break;
@@ -533,13 +545,16 @@ namespace DotWars
                         switch (vendittaVictim)
                         {
                             case NPC.AffliationTypes.blue:
-                                result = "Dian killed Aquoes\n " + vendittaKills + " time" + ((vendittaKills != 1) ? "s" : "");
+                                result = "Dian killed Aquoes\n " + vendittaKills + " time" +
+                                         ((vendittaKills != 1) ? "s" : "");
                                 break;
                             case NPC.AffliationTypes.green:
-                                result = "Dian killed Terron\n " + vendittaKills + " time" + ((vendittaKills != 1) ? "s" : "");
+                                result = "Dian killed Terron\n " + vendittaKills + " time" +
+                                         ((vendittaKills != 1) ? "s" : "");
                                 break;
                             case NPC.AffliationTypes.red:
-                                result = "Dian killed Mustachio\n " + vendittaKills + " time" + ((vendittaKills != 1) ? "s" : "");
+                                result = "Dian killed Mustachio\n " + vendittaKills + " time" +
+                                         ((vendittaKills != 1) ? "s" : "");
                                 break;
                         }
                         break;
@@ -551,7 +566,8 @@ namespace DotWars
 
         public String GetYellowCommanderPowerStatistic()
         {
-            return "Dian left " + lightningTravelledCounter + "\n meter" + ((lightningTravelledCounter != 1) ? "s" : "") + " of lightning";
+            return "Dian left " + lightningTravelledCounter + "\n meter" + ((lightningTravelledCounter != 1) ? "s" : "") +
+                   " of lightning";
         }
 
         public String GetGreenCommanderPowerStatistic()
@@ -561,14 +577,16 @@ namespace DotWars
 
         public String GetBlueCommanderPowerStatistic()
         {
-            return "Aquoes spilled " + waterSpilledCounter + "\n gallon" + ((waterSpilledCounter != 1) ? "s" : "") + " of water";
+            return "Aquoes spilled " + waterSpilledCounter + "\n gallon" + ((waterSpilledCounter != 1) ? "s" : "") +
+                   " of water";
         }
-       
+
         public String GetRedCommanderPowerStatistic()
         {
-            return "Mustachio set " + dotsSetOnFireCounter + "\n dot" + ((dotsSetOnFireCounter != 1) ? "s" : "") + " on fire";
+            return "Mustachio set " + dotsSetOnFireCounter + "\n dot" + ((dotsSetOnFireCounter != 1) ? "s" : "") +
+                   " on fire";
         }
-        
+
         public String GetRocksDestroyedStatistic()
         {
             String result = "";
@@ -617,7 +635,8 @@ namespace DotWars
                 case NPC.AffliationTypes.black:
                     return "No dots were sent to their deaths this game.";
             }
-            result += "recruited " + dotsRecruited[CalculateMostDotsRecruited()] + " dot" + ((dotsRecruited[CalculateMostDotsRecruited()] != 1) ? "s" : "");
+            result += "recruited " + dotsRecruited[CalculateMostDotsRecruited()] + " dot" +
+                      ((dotsRecruited[CalculateMostDotsRecruited()] != 1) ? "s" : "");
 
 
             return result;
@@ -628,7 +647,7 @@ namespace DotWars
             double maxTime = 0;
             NPC.AffliationTypes af = NPC.AffliationTypes.black;
 
-            foreach(NPC.AffliationTypes a in teams)
+            foreach (NPC.AffliationTypes a in teams)
             {
                 if (mostTimeFlagAway[a] > maxTime)
                 {

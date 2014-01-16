@@ -1,5 +1,9 @@
-﻿using System;
+﻿#region
+
+using System;
 using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -214,7 +218,8 @@ namespace DotWars
             #endregion
 
             base.Set(tempAsset, n.GetOriginPosition(),
-                     PathHelper.Direction(n.GetRotation() + (float) (mH.GetRandom().NextDouble() - 0.5))*n.velocity.Length(),
+                     PathHelper.Direction(n.GetRotation() + (float) (mH.GetRandom().NextDouble() - 0.5))*
+                     n.velocity.Length(),
                      3, 0.05f, 1, 0, mH);
 
             frameIndex = gutFrame;

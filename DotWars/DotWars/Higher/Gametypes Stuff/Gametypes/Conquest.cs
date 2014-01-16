@@ -1,8 +1,12 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -80,7 +84,8 @@ namespace DotWars
             {
                 if (mH.GetNPCManager().GetCommander(commanders.Keys.ElementAt(i)) == null)
                 {
-                    if (spawnsCounters[i] > spawnTime && (!HasSomeoneWon() || GetWinner() == commanders.Values.ElementAt(i)))
+                    if (spawnsCounters[i] > spawnTime &&
+                        (!HasSomeoneWon() || GetWinner() == commanders.Values.ElementAt(i)))
                     {
                         if (commanders.Keys.ElementAt(i) == typeof (RedCommander))
                         {
@@ -291,7 +296,7 @@ namespace DotWars
                 foreach (ConquestBase b in GetBases())
                 {
                     if (b.affiliation == a)
-                    {   
+                    {
                         ConquestBase closestToB = null;
                         float distanceToClosestToB = float.PositiveInfinity;
 

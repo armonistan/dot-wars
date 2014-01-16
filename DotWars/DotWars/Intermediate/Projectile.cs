@@ -1,6 +1,10 @@
-﻿using System;
+﻿#region
+
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -15,6 +19,7 @@ namespace DotWars
         protected bool isExplosive;
         protected NPC creator;
         protected bool shouldCollide;
+
         #endregion
 
         public Projectile(NPC c) :
@@ -66,7 +71,8 @@ namespace DotWars
             {
                 mH.GetParticleManager()
                   .AddParticle("Effects/particle_smoke", GetOriginPosition(),
-                               PathHelper.Direction((float) (MathHelper.Pi*mH.GetRandom().NextDouble())*2)*20, 4, 0.005f, 1,
+                               PathHelper.Direction((float) (MathHelper.Pi*mH.GetRandom().NextDouble())*2)*20, 4, 0.005f,
+                               1,
                                0.1f);
             }
         }
@@ -78,7 +84,8 @@ namespace DotWars
 
         #region Sets and Gets
 
-        public virtual void Set(String a, Vector2 p, NPC n, Vector2 v, int d, bool iE, bool collide, float dT, ManagerHelper mH)
+        public virtual void Set(String a, Vector2 p, NPC n, Vector2 v, int d, bool iE, bool collide, float dT,
+                                ManagerHelper mH)
         {
             asset = a;
             position = p;
@@ -99,8 +106,8 @@ namespace DotWars
             drag = 0;
 
             LoadContent(mH.GetTextureManager());
-            if(!(this is Tossable))
-                setModeIndex();//set mode index
+            if (!(this is Tossable))
+                setModeIndex(); //set mode index
         }
 
         private void setModeIndex()
@@ -152,7 +159,7 @@ namespace DotWars
             return shouldCollide;
         }
 
-        public NPC GetCreator() 
+        public NPC GetCreator()
         {
             return creator;
         }

@@ -1,5 +1,9 @@
-﻿using System;
+﻿#region
+
+using System;
 using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -28,10 +32,10 @@ namespace DotWars
 
             mH.GetProjectileManager()
               .AddProjectile(ProjectileManager.ROCKET, GetOriginPosition() + tempPos, this,
-                             PathHelper.Direction(rotation) * 300, 100, true, true, 5);
+                             PathHelper.Direction(rotation)*300, 100, true, true, 5);
 
             mH.GetAudioManager().Play(AudioManager.SPECIALIST_SHOOT, AudioManager.RandomVolume(mH),
-                AudioManager.RandomPitch(mH), 0, false);
+                                      AudioManager.RandomPitch(mH), 0, false);
         }
     }
 }

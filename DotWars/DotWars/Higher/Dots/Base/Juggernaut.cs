@@ -1,5 +1,9 @@
-﻿using System;
+﻿#region
+
+using System;
 using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -111,9 +115,9 @@ namespace DotWars
                         }
                         else
                         {
-                            Vector2 knockback = new Vector2((float)(p.velocity.X * .05), (float)(p.velocity.Y * .05));
+                            Vector2 knockback = new Vector2((float) (p.velocity.X*.05), (float) (p.velocity.Y*.05));
                             AddAcceleration(knockback);
-                            mH.GetAudioManager().Play(AudioManager.JUGGERNAUT_RICOHET, (float).05, 0, 0, false);
+                            mH.GetAudioManager().Play(AudioManager.JUGGERNAUT_RICOHET, (float) .05, 0, 0, false);
                         }
 
                         p.SetDrawTime(0);

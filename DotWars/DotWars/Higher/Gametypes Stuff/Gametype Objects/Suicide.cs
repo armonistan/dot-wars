@@ -1,4 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿#region
+
+using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -13,7 +17,7 @@ namespace DotWars
 
             maxHealth = (int) (50*temp.suicideSpawnModifier);
             health = maxHealth;
-            movementSpeed = (int) (50 + temp.suicideSpawnModifier * 50);
+            movementSpeed = (int) (50 + temp.suicideSpawnModifier*50);
             affiliation = AffliationTypes.black;
             animateCounter = 0;
         }
@@ -58,7 +62,7 @@ namespace DotWars
             {
                 Explode(mH);
             }
-            else if (PathHelper.DistanceSquared(this.GetOriginPosition(), FindClosestRock(mH)) < 48 * 48)
+            else if (PathHelper.DistanceSquared(this.GetOriginPosition(), FindClosestRock(mH)) < 48*48)
             {
                 Explode(mH);
             }
@@ -142,7 +146,7 @@ namespace DotWars
                 }
             }
 
-            return (closestRock != null ? closestRock.GetOriginPosition() : new Vector2(-1,-1));
+            return (closestRock != null ? closestRock.GetOriginPosition() : new Vector2(-1, -1));
         }
     }
 }

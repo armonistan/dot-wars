@@ -1,7 +1,11 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
+
+#endregion
 
 namespace DotWars
 {
@@ -19,7 +23,7 @@ namespace DotWars
         public override void Initialize()
         {
             base.Initialize();
-            
+
             //Set up background
             backgrounds.AddBackground(new Sprite("Backgrounds/Faercrag/faercragBackground", new Vector2(656, 496)));
 
@@ -47,7 +51,7 @@ namespace DotWars
                 tempBases.Add(new CTFBase(temp.GetTeams()[0], new Vector2(80, 86), managers));
                 tempBases.Add(new CTFBase(temp.GetTeams()[1], new Vector2(1250, 920), managers));
                 temp.Initialize(managers, tempBases);
-                
+
                 //spawnpoints
                 //team one spawns
                 spawnplaces.Add(new SpawnPoint(temp.GetAllyBase(temp.GetTeams()[0]).GetOriginPosition(),

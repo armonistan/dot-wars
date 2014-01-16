@@ -1,7 +1,10 @@
-﻿using System;
+﻿#region
+
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -22,7 +25,7 @@ namespace DotWars
 
         private ManagerHelper managers;
 
-        private Sprite pulse;
+        private readonly Sprite pulse;
         private float pulseDistance;
 
         #endregion
@@ -64,9 +67,9 @@ namespace DotWars
                         float distanceToAgent = PathHelper.DistanceSquared(GetOriginPosition(),
                                                                            agent.GetOriginPosition());
 
-                        if (distanceToAgent < frameModifier * frameModifier)
+                        if (distanceToAgent < frameModifier*frameModifier)
                         {
-                            agent.ChangeHealth(-1 * DAMAGE, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.green));
+                            agent.ChangeHealth(-1*DAMAGE, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.green));
                         }
 
                         if (distanceToAgent < pulseDistance*pulseDistance)
@@ -90,7 +93,7 @@ namespace DotWars
 
             if (timer < fadeTime)
             {
-                pulse.SetFrameIndex((int)(timer/fadeTime*pulse.totalFrames));
+                pulse.SetFrameIndex((int) (timer/fadeTime*pulse.totalFrames));
                 pulse.Update(mH);
             }
 
@@ -114,7 +117,9 @@ namespace DotWars
 
             LoadContent(mH.GetTextureManager());
 
-            mH.GetAudioManager().Play(AudioManager.LARGE_ROCK, (float)mH.GetRandom().NextDouble() / 4 + 0.75f, AudioManager.RandomPitch(mH), 0, false);
+            mH.GetAudioManager()
+              .Play(AudioManager.LARGE_ROCK, (float) mH.GetRandom().NextDouble()/4 + 0.75f, AudioManager.RandomPitch(mH),
+                    0, false);
 
             for (int i = 0; i < 10; i++)
             {
@@ -123,8 +128,8 @@ namespace DotWars
 
             pulse.LoadContent(mH.GetTextureManager());
             pulseDistance = pulse.GetFrame().Width;
-            pulse.position = p-pulse.origin;
-            pulse.SetRotation((float)mH.GetRandom().NextDouble()*MathHelper.TwoPi);
+            pulse.position = p - pulse.origin;
+            pulse.SetRotation((float) mH.GetRandom().NextDouble()*MathHelper.TwoPi);
         }
 
         public void DrawPulse(SpriteBatch sB, Vector2 d, ManagerHelper mH)

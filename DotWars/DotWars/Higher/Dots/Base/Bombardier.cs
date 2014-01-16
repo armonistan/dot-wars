@@ -1,7 +1,10 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -18,8 +21,8 @@ namespace DotWars
 
         public Bombardier(String aN, Vector2 p)
             : base(aN, p)
-        {
-            health = 9000;
+        { 
+            health = 90;
             maxHealth = health; //The units starting health will always be his max health
             movementSpeed = 100; //The bombardier isn't the most athletic, average speed (still under decision
             shootingSpeed = 6; //Bombardiers call in plane. Slow "reload" time
@@ -190,7 +193,7 @@ namespace DotWars
                     if (closestForTeam != null)
                     {
                         float closestDistanceForTeam = PathHelper.DistanceSquared(GetOriginPosition(),
-                                                                            closestForTeam.GetOriginPosition());
+                                                                                  closestForTeam.GetOriginPosition());
 
                         if (closestDistanceForTeam < closestDistance)
                         {
@@ -209,10 +212,11 @@ namespace DotWars
             mH.GetNPCManager().Add(new Bomber(BomberOrigin(mH), affiliation, target, mH));
             calledIn = 0;
             mH.GetAudioManager().Play(AudioManager.STATIC, AudioManager.RandomVolume(mH),
-                AudioManager.RandomPitch(mH), 0, false);
+                                      AudioManager.RandomPitch(mH), 0, false);
         }
 
-        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, Vector2 displacement, ManagerHelper mH)
+        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, Vector2 displacement,
+                                  ManagerHelper mH)
         {
             base.Draw(sB, displacement, mH);
             if (calledIn < 1)

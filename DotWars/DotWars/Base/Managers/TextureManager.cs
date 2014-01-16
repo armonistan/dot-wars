@@ -1,9 +1,13 @@
+#region
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -36,6 +40,7 @@ namespace DotWars
         private SpriteFont smallFont;
         private SpriteFont bigFont;
         private SpriteFont tinyFont;
+
         #endregion
 
         #region Location Constants
@@ -132,23 +137,24 @@ namespace DotWars
             int nodeSize = 32;
 
             textures.Add(cM.Load<Texture2D>("./Textures/" + assets.ElementAt(assetNumber)));
-            colors.Add(new Color[textures[assetNumber].Width, textures[assetNumber].Height]);
-            Color[] tempColors = new Color[textures[assetNumber].Width * textures[assetNumber].Height];
+            colors.Add(new Color[textures[assetNumber].Width,textures[assetNumber].Height]);
+            Color[] tempColors = new Color[textures[assetNumber].Width*textures[assetNumber].Height];
             textures[assetNumber].GetData(tempColors);
 
             for (int x = 0; x < textures[assetNumber].Width; x++)
             {
                 for (int y = 0; y < textures[assetNumber].Height; y++)
                 {
-                    colors[assetNumber][x, y] = tempColors[y * textures[assetNumber].Width + x];
+                    colors[assetNumber][x, y] = tempColors[y*textures[assetNumber].Width + x];
                 }
             }
 
-            int spriteCols = frames[assetNumber].Width / nodeSize,
-                spriteRows = frames[assetNumber].Height / nodeSize;
+            int spriteCols = frames[assetNumber].Width/nodeSize,
+                spriteRows = frames[assetNumber].Height/nodeSize;
 
             List<Vector2>[,] tempBlockers =
-                new List<Vector2>[textures[assetNumber].Width / frames[assetNumber].Width, textures[assetNumber].Height / frames[assetNumber].Height];
+                new List<Vector2>[textures[assetNumber].Width/frames[assetNumber].Width,
+                    textures[assetNumber].Height/frames[assetNumber].Height];
 
             for (int j = 0; j < tempBlockers.GetLength(0); j++)
             {
@@ -167,8 +173,8 @@ namespace DotWars
                                 {
                                     if (
                                         colors[assetNumber][
-                                            spriteX * nodeSize + blockX + j * frames[assetNumber].Width,
-                                            spriteY * nodeSize + blockY + k * frames[assetNumber].Height].A > 0)
+                                            spriteX*nodeSize + blockX + j*frames[assetNumber].Width,
+                                            spriteY*nodeSize + blockY + k*frames[assetNumber].Height].A > 0)
                                     {
                                         tempBlockers[j, k].Add(new Vector2(spriteX, spriteY));
                                         found = true;
@@ -200,7 +206,7 @@ namespace DotWars
 
         public int GetLoadPercent()
         {
-            return (int) ((float)assetNumber/assets.Count*100.0f);
+            return (int) ((float) assetNumber/assets.Count*100.0f);
         }
 
         public void DrawString(SpriteBatch sB, String message, Vector2 loc, Color color, FontSizes fS, bool centered)

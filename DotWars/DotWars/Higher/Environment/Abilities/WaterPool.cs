@@ -1,6 +1,10 @@
-﻿using System;
+﻿#region
+
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -12,7 +16,7 @@ namespace DotWars
 
         private readonly double deathTime;
 
-        private Sprite splash;
+        private readonly Sprite splash;
         private readonly double splashEnd;
         private NPC.AffliationTypes affiliation;
 
@@ -37,7 +41,9 @@ namespace DotWars
             splash.SetOriginPosition(originPosition);
             splash.position = position;
 
-            mH.GetAudioManager().Play(AudioManager.WATER, (float)mH.GetRandom().NextDouble() / 4 + 0.5f, AudioManager.RandomPitch(mH), 0, false);
+            mH.GetAudioManager()
+              .Play(AudioManager.WATER, (float) mH.GetRandom().NextDouble()/4 + 0.5f, AudioManager.RandomPitch(mH), 0,
+                    false);
         }
 
         public override void LoadContent(TextureManager tM)
@@ -56,7 +62,7 @@ namespace DotWars
                     {
                         if (mH.GetRandom().Next(40) == 0)
                         {
-                            if (a.GetHealth() < a.GetMaxHealth() && mH.GetRandom().Next(5)==0)
+                            if (a.GetHealth() < a.GetMaxHealth() && mH.GetRandom().Next(5) == 0)
                             {
                                 mH.GetParticleManager().AddHeal(a);
                             }
@@ -66,7 +72,7 @@ namespace DotWars
                     }
                     else
                     {
-                        a.AddAcceleration(a.velocity * new Vector2(-0.003f));
+                        a.AddAcceleration(a.velocity*new Vector2(-0.003f));
                     }
                 }
             }
@@ -78,7 +84,7 @@ namespace DotWars
             }
             if (animateTimer < splashEnd)
             {
-                splash.SetFrameIndex((int)(animateTimer/splashEnd*splash.totalFrames));
+                splash.SetFrameIndex((int) (animateTimer/splashEnd*splash.totalFrames));
             }
             animateTimer += mH.GetGameTime().ElapsedGameTime.TotalSeconds +
                             (mH.GetRandom().NextDouble()/1000);

@@ -1,6 +1,10 @@
+#region
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -99,7 +103,7 @@ namespace DotWars
                     current.Initialize();
                 }
 
-                if(!current.HasLoaded())
+                if (!current.HasLoaded())
                 {
                     current.LoadContent(Content);
                 }

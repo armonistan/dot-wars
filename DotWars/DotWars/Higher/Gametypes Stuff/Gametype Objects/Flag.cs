@@ -1,5 +1,9 @@
-﻿using Microsoft.Xna.Framework;
+﻿#region
+
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -99,7 +103,6 @@ namespace DotWars
                         position = homePosition - origin;
                         temp.ChangeScore(this.GetCaptor(), 1);
                         captor = null;
-                        
                     }
                 }
             }
@@ -117,7 +120,6 @@ namespace DotWars
                         position = homePosition - origin;
                         temp.ChangeScore(this.GetCaptor(), 1);
                         captor = null;
-                        
                     }
                 }
             }

@@ -1,8 +1,9 @@
-﻿using System;
+﻿#region
+
 using System.Collections.Generic;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
+
+#endregion
 
 namespace DotWars
 {
@@ -10,11 +11,11 @@ namespace DotWars
     {
         #region Declarations
 
-        private AudioEngine theAudio;
+        private readonly AudioEngine theAudio;
         private WaveBank theWaves;
-        private SoundBank theSounds;
+        private readonly SoundBank theSounds;
 
-        private List<Cue> keptSounds;
+        private readonly List<Cue> keptSounds;
 
         #endregion
 
@@ -84,7 +85,7 @@ namespace DotWars
 
         public static float RandomVolume(ManagerHelper mH)
         {
-            return (float)(mH.GetRandom().NextDouble()/2) + 0.5f;
+            return (float) (mH.GetRandom().NextDouble()/2) + 0.5f;
         }
 
         public static float RandomPitch(ManagerHelper mH)

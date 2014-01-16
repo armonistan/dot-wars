@@ -1,4 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿#region
+
+using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -7,7 +11,7 @@ namespace DotWars
         private NPC.AffliationTypes affiliation;
         private double lifeTimer;
         private ManagerHelper managers;
-        private int damage;
+        private readonly int damage;
 
         public LightningTrail(ManagerHelper mH)
             : base("Abilities/yellow_test", Vector2.Zero, Vector2.Zero)
@@ -24,7 +28,9 @@ namespace DotWars
 
             lifeTimer = 2;
 
-            mH.GetAudioManager().Play(AudioManager.SPARK, (float)mH.GetRandom().NextDouble() / 4 + 0.5f, AudioManager.RandomPitch(mH), 0, false);
+            mH.GetAudioManager()
+              .Play(AudioManager.SPARK, (float) mH.GetRandom().NextDouble()/4 + 0.5f, AudioManager.RandomPitch(mH), 0,
+                    false);
         }
 
         public override void Update(ManagerHelper mH)
@@ -46,7 +52,8 @@ namespace DotWars
             {
                 foreach (NPC a in mH.GetNPCManager().GetNPCs())
                 {
-                    if (a.GetAffiliation() != affiliation && CollisionHelper.IntersectPixelsPoint(GetOriginPosition(), a) != new Vector2(-1))
+                    if (a.GetAffiliation() != affiliation &&
+                        CollisionHelper.IntersectPixelsPoint(GetOriginPosition(), a) != new Vector2(-1))
                     {
                         a.ChangeHealth(damage, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.yellow));
                     }

@@ -1,7 +1,10 @@
-﻿using System;
+﻿#region
+
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -88,19 +91,19 @@ namespace DotWars
         {
             string asset = "Effects/particle_blood_";
 
-            if (n.GetType() == typeof(RedCommander) || n.GetType() == typeof(RedPlayerCommander))
+            if (n.GetType() == typeof (RedCommander) || n.GetType() == typeof (RedPlayerCommander))
             {
                 asset += "red";
             }
-            else if (n.GetType() == typeof(BlueCommander) || n.GetType() == typeof(BluePlayerCommander))
+            else if (n.GetType() == typeof (BlueCommander) || n.GetType() == typeof (BluePlayerCommander))
             {
                 asset += "blue";
             }
-            else if (n.GetType() == typeof(GreenCommander) || n.GetType() == typeof(GreenPlayerCommander))
+            else if (n.GetType() == typeof (GreenCommander) || n.GetType() == typeof (GreenPlayerCommander))
             {
                 asset += "green";
             }
-            else if (n.GetType() == typeof(YellowCommander) || n.GetType() == typeof(YellowPlayerCommander))
+            else if (n.GetType() == typeof (YellowCommander) || n.GetType() == typeof (YellowPlayerCommander))
             {
                 asset += "yellow";
             }
@@ -126,7 +129,8 @@ namespace DotWars
             }
 
             AddParticle(asset, n.GetOriginPosition(),
-                        PathHelper.Direction((float) (managers.GetRandom().NextDouble()*MathHelper.TwoPi))*50, 2, 0.03f, 1, 2);
+                        PathHelper.Direction((float) (managers.GetRandom().NextDouble()*MathHelper.TwoPi))*50, 2, 0.03f,
+                        1, 2);
         }
 
         public void AddHeal(NPC n)
@@ -147,16 +151,18 @@ namespace DotWars
             }
 
             AddParticle("Effects/particle_heal", managers.GetRandom().Next(5), tempMode, n.GetOriginPosition(),
-                        PathHelper.Direction((float) (managers.GetRandom().NextDouble()*MathHelper.TwoPi))*50, 2, 0.03f, 1, 0);
+                        PathHelper.Direction((float) (managers.GetRandom().NextDouble()*MathHelper.TwoPi))*50, 2, 0.03f,
+                        1, 0);
 
             managers.GetAudioManager().Play(AudioManager.HEAL_SOUND, AudioManager.RandomVolume(managers),
-                AudioManager.RandomPitch(managers), 0, false);
+                                            AudioManager.RandomPitch(managers), 0, false);
         }
 
         public void AddStandardSmoke(Vector2 p, float v)
         {
             AddParticle("Effects/smoke_standard", p,
-                                   PathHelper.Direction((float)(managers.GetRandom().NextDouble() * MathHelper.TwoPi)) * v, 1, 0.01f, 1, 3);
+                        PathHelper.Direction((float) (managers.GetRandom().NextDouble()*MathHelper.TwoPi))*v, 1, 0.01f,
+                        1, 3);
         }
 
         private void RemoveParticle()
@@ -321,6 +327,6 @@ namespace DotWars
         public Queue<Explosion> GetExplosions()
         {
             return activeExplosions;
-        } 
+        }
     }
 }

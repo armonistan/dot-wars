@@ -1,4 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿#region
+
+using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -53,14 +57,14 @@ namespace DotWars
             }
             else
             {
-                for (int i = 0; i < theNet.boxNodes.Length; i++)
+                foreach (SwitchBeltNetwork.Node t in theNet.boxNodes)
                 {
-                    if (lastNode != theNet.boxNodes[i] &&
-                        PathHelper.DistanceSquared(GetOriginPosition(), theNet.boxNodes[i].pos) < 4 * 4)
+                    if (lastNode != t &&
+                        PathHelper.DistanceSquared(GetOriginPosition(), t.pos) < 4*4)
                     {
-                        lastNode = theNet.boxNodes[i];
-                        velocity = theNet.boxNodes[i].GetRandomDir(mH) * 15;
-                        position = theNet.boxNodes[i].pos - origin;
+                        lastNode = t;
+                        velocity = t.GetRandomDir(mH)*15;
+                        position = t.pos - origin;
                         break;
                     }
                 }

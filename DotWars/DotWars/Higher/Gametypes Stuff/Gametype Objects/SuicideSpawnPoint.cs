@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿#region
+
 using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
     public class SuicideSpawnPoint : SpawnPoint
     {
-        private Sprite suicideSpawnSprite;
+        private readonly Sprite suicideSpawnSprite;
         private double spriteTimer;
-        private double spriteEndtime;
+        private readonly double spriteEndtime;
 
         public SuicideSpawnPoint(Vector2 sP, ManagerHelper mH)
-            :base(sP, NPC.AffliationTypes.black, mH)
+            : base(sP, NPC.AffliationTypes.black, mH)
         {
             pathTimer = 11;
             pathTimerEnd = 5; //TODO: Find out if this is reasonable
@@ -58,7 +58,7 @@ namespace DotWars
         {
             NPCUpdate(mH);
             spawnPoint = GetOriginPosition();
-            
+
             animateEffects(mH);
             base.Update(mH);
         }
@@ -69,15 +69,17 @@ namespace DotWars
             {
                 //Spawn lightning thing
                 mH.GetParticleManager().AddParticle("Effects/spr_bolt_strip3", GetOriginPosition() +
-                    new Vector2(mH.GetRandom().Next(-16, 16), mH.GetRandom().Next(-16, 16)),
-                    Vector2.Zero, 0.05f, 0, 0, MathHelper.Pi / 10);
+                                                                               new Vector2(
+                                                                                   mH.GetRandom().Next(-16, 16),
+                                                                                   mH.GetRandom().Next(-16, 16)),
+                                                    Vector2.Zero, 0.05f, 0, 0, MathHelper.Pi/10);
             }
         }
 
         protected override void PosUpdate(ManagerHelper mH)
         {
             //Update position
-            Vector2 tempPos = position + velocity * mH.GetDeltaSeconds();
+            Vector2 tempPos = position + velocity*mH.GetDeltaSeconds();
             Vector2 tempOPos = tempPos + origin;
             float distSquared = 1000000;
 
@@ -105,7 +107,7 @@ namespace DotWars
                     }
                 }
             }
-            tempPos = position + velocity * mH.GetDeltaSeconds();
+            tempPos = position + velocity*mH.GetDeltaSeconds();
 
             if (
                 !(tempPos.X < buffer || tempPos.X > mH.GetLevelSize().X - frame.Width - buffer || tempPos.Y < buffer ||
@@ -136,8 +138,8 @@ namespace DotWars
             position = tempPos;
 
             //Update frames
-            frame.X = frameIndex * frame.Width;
-            frame.Y = modeIndex * frame.Height;
+            frame.X = frameIndex*frame.Width;
+            frame.Y = modeIndex*frame.Height;
         }
 
         protected override bool ProjectileCheck(ManagerHelper mH)
@@ -151,7 +153,8 @@ namespace DotWars
             RandomPath(mH);
         }
 
-        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, Vector2 displacement, ManagerHelper mH)
+        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, Vector2 displacement,
+                                  ManagerHelper mH)
         {
             suicideSpawnSprite.Draw(sB, displacement, mH);
         }

@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region
+
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
+
+#endregion
 
 namespace DotWars
 {
-    class Lava : Environment
+    internal class Lava : Environment
     {
         public Lava(Vector2 p, Vector2 v) :
             base("Backgrounds/Caged/lava", p, v)
@@ -21,6 +20,5 @@ namespace DotWars
 
             position += velocity;
         }
-
     }
 }

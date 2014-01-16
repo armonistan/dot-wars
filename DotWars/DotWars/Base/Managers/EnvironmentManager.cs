@@ -1,20 +1,24 @@
-﻿using System;
+﻿#region
+
 using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
     public class EnvironmentManager
     {
         #region Declarations
+
         private readonly List<Environment> botObjects;
         private readonly List<Impassable> notPassables;
         private readonly List<Impathable> notPathables;
         private readonly List<Environment> staticBlockers;
         private readonly List<Environment> topObjects;
         private ManagerHelper managers;
+
         #endregion
 
         public EnvironmentManager()
@@ -198,6 +202,7 @@ namespace DotWars
         }
 
         #region Sets and Gets
+
         public List<Environment> GetStaticBlockers()
         {
             return staticBlockers;
@@ -212,6 +217,7 @@ namespace DotWars
         {
             return notPathables;
         }
+
         #endregion
     }
 }

@@ -1,4 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿#region
+
+using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -27,8 +31,10 @@ namespace DotWars
             {
                 for (int i = 0; i < 4; i++)
                 {
-                    mH.GetAbilityManager().AddWaterpool((new Vector2(32) * PathHelper.Direction(rotation + (i * (MathHelper.Pi / 2))))
-                        + GetOriginPosition() + (new Vector2(64) * PathHelper.Direction(rotation)), affiliation);
+                    mH.GetAbilityManager()
+                      .AddWaterpool((new Vector2(32)*PathHelper.Direction(rotation + (i*(MathHelper.Pi/2))))
+                                    + GetOriginPosition() + (new Vector2(64)*PathHelper.Direction(rotation)),
+                                    affiliation);
                 }
 
                 base.UsePower(mH);
@@ -39,7 +45,8 @@ namespace DotWars
         {
             if (mH.GetGametype() is Survival)
             {
-                if (target != null && PathHelper.DistanceSquared(target.GetOriginPosition(), GetOriginPosition()) < 200 * 200)
+                if (target != null &&
+                    PathHelper.DistanceSquared(target.GetOriginPosition(), GetOriginPosition()) < 200*200)
                     return true;
             }
             else
@@ -49,7 +56,8 @@ namespace DotWars
 
                 foreach (NPC ally in mH.GetNPCManager().GetAllies(affiliation))
                 {
-                    if (NPCManager.IsNPCInRadius(ally, GetOriginPosition(), 200) && ally.GetHealth() < (ally.GetMaxHealth() / 2))
+                    if (NPCManager.IsNPCInRadius(ally, GetOriginPosition(), 200) &&
+                        ally.GetHealth() < (ally.GetMaxHealth()/2))
                     {
                         return true;
                     }
@@ -60,7 +68,8 @@ namespace DotWars
 
                 foreach (var agent in mH.GetNPCManager().GetNPCs())
                 {
-                    if (agent.GetAffiliation() != affiliation && NPCManager.IsNPCInRadius(agent, GetOriginPosition(), 200))
+                    if (agent.GetAffiliation() != affiliation &&
+                        NPCManager.IsNPCInRadius(agent, GetOriginPosition(), 200))
                     {
                         enemyCount++;
                     }

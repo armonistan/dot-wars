@@ -1,9 +1,13 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+
+#endregion
 
 namespace DotWars
 {
@@ -53,7 +57,7 @@ namespace DotWars
             base.Initialize();
             backgrounds.AddBackground(new Sprite("Backgrounds/ResultsScreen/winnersBackground", new Vector2(624, 240)));
             backgrounds.AddBackground(new Sprite("Backgrounds/ResultsScreen/resultsBackground", new Vector2(624, 360)));
-            backgrounds.AddBackground(new Sprite("Backgrounds/ResultsScreen/startButtonWhite", GetSizeOfLevel() / 2));
+            backgrounds.AddBackground(new Sprite("Backgrounds/ResultsScreen/startButtonWhite", GetSizeOfLevel()/2));
             GenerateScores();
             GenerateLeftHandStatistic();
             GenerateRightHandStatistic();
@@ -104,40 +108,59 @@ namespace DotWars
             objects.DrawTop(sB, Vector2.Zero);
             agents.DrawHighest(sB, Vector2.Zero);
             backgrounds.Drawforegrounds(sB, Vector2.Zero);
-            managers.GetTextureManager().DrawString(sB, leftHandStats, new Vector2(155, 482), Color.White, TextureManager.FontSizes.small, false);
+            managers.GetTextureManager()
+                    .DrawString(sB, leftHandStats, new Vector2(155, 482), Color.White, TextureManager.FontSizes.small,
+                                false);
             //colored commander names
             DrawCommanderNames(sB);
             //end colored names
-            managers.GetTextureManager().DrawString(sB, rightHandStats, new Vector2(650, 482), Color.White, TextureManager.FontSizes.small, false);
-            managers.GetTextureManager().DrawString(sB, winnerString, new Vector2(620, 150), Color.White, TextureManager.FontSizes.big, true);
+            managers.GetTextureManager()
+                    .DrawString(sB, rightHandStats, new Vector2(650, 482), Color.White, TextureManager.FontSizes.small,
+                                false);
+            managers.GetTextureManager()
+                    .DrawString(sB, winnerString, new Vector2(620, 150), Color.White, TextureManager.FontSizes.big, true);
 
-            int ct = result.GetManagerHelper().GetGametype().GetTeams().Count / 2 * -1;
-            for (int i = 0; i < 4; i++){
+            int ct = result.GetManagerHelper().GetGametype().GetTeams().Count/2*-1;
+            for (int i = 0; i < 4; i++)
+            {
                 if (scores[i] != null)
                 {
                     ct++;
-                    switch (i) {
+                    switch (i)
+                    {
                         case 0:
-                            managers.GetTextureManager().DrawString(sB, scores[i], new Vector2(584 + (80 * ct), 350), Color.Red, TextureManager.FontSizes.small, true);
+                            managers.GetTextureManager()
+                                    .DrawString(sB, scores[i], new Vector2(584 + (80*ct), 350), Color.Red,
+                                                TextureManager.FontSizes.small, true);
                             break;
                         case 1:
-                            managers.GetTextureManager().DrawString(sB, scores[i], new Vector2(584 + (80 * ct), 350), Color.Blue, TextureManager.FontSizes.small, true);
+                            managers.GetTextureManager()
+                                    .DrawString(sB, scores[i], new Vector2(584 + (80*ct), 350), Color.Blue,
+                                                TextureManager.FontSizes.small, true);
                             break;
                         case 2:
-                            managers.GetTextureManager().DrawString(sB, scores[i], new Vector2(584 + (80 * ct), 350), Color.Green, TextureManager.FontSizes.small, true);
+                            managers.GetTextureManager()
+                                    .DrawString(sB, scores[i], new Vector2(584 + (80*ct), 350), Color.Green,
+                                                TextureManager.FontSizes.small, true);
                             break;
                         case 3:
-                            managers.GetTextureManager().DrawString(sB, scores[i], new Vector2(584 + (80 * ct), 350), Color.Yellow, TextureManager.FontSizes.small, true);
+                            managers.GetTextureManager()
+                                    .DrawString(sB, scores[i], new Vector2(584 + (80*ct), 350), Color.Yellow,
+                                                TextureManager.FontSizes.small, true);
                             break;
                         default:
-                            managers.GetTextureManager().DrawString(sB, scores[i], new Vector2(620, 350), Color.White, TextureManager.FontSizes.small, true);
+                            managers.GetTextureManager()
+                                    .DrawString(sB, scores[i], new Vector2(620, 350), Color.White,
+                                                TextureManager.FontSizes.small, true);
                             break;
                     }
                 }
             }
 
-            if(winnerString.CompareTo("Tie Game ") != 0)
-                managers.GetTextureManager().DrawString(sB, winsString, new Vector2(620, 260), Color.White, TextureManager.FontSizes.big, true);
+            if (winnerString.CompareTo("Tie Game ") != 0)
+                managers.GetTextureManager()
+                        .DrawString(sB, winsString, new Vector2(620, 260), Color.White, TextureManager.FontSizes.big,
+                                    true);
 
             if (winnerSpriteLeft != null)
             {
@@ -166,9 +189,9 @@ namespace DotWars
         }
 
         public void GenerateRightHandStatistic()
-        { 
+        {
             //players
-            switch(managers.GetRandom().Next(4))
+            switch (managers.GetRandom().Next(4))
             {
                 case 0:
                     rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetRedCommanderPowerStatistic();
@@ -180,7 +203,8 @@ namespace DotWars
                     rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetGreenCommanderPowerStatistic();
                     break;
                 case 3:
-                    rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetYellowCommanderPowerStatistic();
+                    rightHandStats +=
+                        result.GetManagerHelper().GetStatisticsManager().GetYellowCommanderPowerStatistic();
                     break;
             }
 
@@ -201,20 +225,24 @@ namespace DotWars
                 rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetMostDotsRecruitedStatistic();
                 rightHandStats += "\n";
             }
-            else if (result.GetManagerHelper().GetGametype() is CaptureTheFlag || result.GetManagerHelper().GetGametype() is Assault)
+            else if (result.GetManagerHelper().GetGametype() is CaptureTheFlag ||
+                     result.GetManagerHelper().GetGametype() is Assault)
             {
                 rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetCasualitiesStatistic();
                 rightHandStats += "\n";
-                switch(managers.GetRandom().Next(2))
+                switch (managers.GetRandom().Next(2))
                 {
                     case 0:
-                        rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetMostFlagsCaputuredStatistic();
+                        rightHandStats +=
+                            result.GetManagerHelper().GetStatisticsManager().GetMostFlagsCaputuredStatistic();
                         break;
                     case 1:
-                        rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetMostFlagsReturnedStatistic();
+                        rightHandStats +=
+                            result.GetManagerHelper().GetStatisticsManager().GetMostFlagsReturnedStatistic();
                         break;
                     case 2:
-                        rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetQuickestFlagCaptureStatistic();
+                        rightHandStats +=
+                            result.GetManagerHelper().GetStatisticsManager().GetQuickestFlagCaptureStatistic();
                         break;
                 }
             }
@@ -225,7 +253,7 @@ namespace DotWars
                 rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetMostMedicsKilledStatistic();
                 rightHandStats += "\n";
             }
-            //survival
+                //survival
             else
             {
                 rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetCasualitiesStatistic();
@@ -241,7 +269,7 @@ namespace DotWars
 
             if (result.GetManagerHelper().GetGametype() is Assasssins)
             {
-                Assasssins gametypeWinner = (Assasssins)result.GetManagerHelper().GetGametype();
+                Assasssins gametypeWinner = (Assasssins) result.GetManagerHelper().GetGametype();
                 NPC.AffliationTypes winner = gametypeWinner.GetWinner();
                 secondaryWinner = result.GetManagerHelper().GetGametype().GetSecondaryWinner(winner);
 
@@ -272,7 +300,7 @@ namespace DotWars
             }
             else if (result.GetManagerHelper().GetGametype() is Assault)
             {
-                Assault gametypeWinner = (Assault)result.GetManagerHelper().GetGametype();
+                Assault gametypeWinner = (Assault) result.GetManagerHelper().GetGametype();
                 NPC.AffliationTypes winner = gametypeWinner.GetWinnerEnd();
                 secondaryWinner = result.GetManagerHelper().GetGametype().GetSecondaryWinner(winner);
 
@@ -303,7 +331,7 @@ namespace DotWars
             }
             else if (result.GetManagerHelper().GetGametype() is CaptureTheFlag)
             {
-                CaptureTheFlag gametypeWinner = (CaptureTheFlag)result.GetManagerHelper().GetGametype();
+                CaptureTheFlag gametypeWinner = (CaptureTheFlag) result.GetManagerHelper().GetGametype();
                 NPC.AffliationTypes winner = gametypeWinner.GetWinner();
                 secondaryWinner = result.GetManagerHelper().GetGametype().GetSecondaryWinner(winner);
 
@@ -334,7 +362,7 @@ namespace DotWars
             }
             else if (result.GetManagerHelper().GetGametype() is Conquest)
             {
-                Conquest gametypeWinner = (Conquest)result.GetManagerHelper().GetGametype();
+                Conquest gametypeWinner = (Conquest) result.GetManagerHelper().GetGametype();
                 NPC.AffliationTypes winner = gametypeWinner.GetWinner();
                 secondaryWinner = result.GetManagerHelper().GetGametype().GetSecondaryWinner(winner);
 
@@ -365,7 +393,7 @@ namespace DotWars
             }
             else if (result.GetManagerHelper().GetGametype() is Deathmatch)
             {
-                Deathmatch gametypeWinner = (Deathmatch)result.GetManagerHelper().GetGametype();
+                Deathmatch gametypeWinner = (Deathmatch) result.GetManagerHelper().GetGametype();
                 NPC.AffliationTypes winner = gametypeWinner.GetWinner();
                 secondaryWinner = result.GetManagerHelper().GetGametype().GetSecondaryWinner(winner);
 
@@ -396,7 +424,7 @@ namespace DotWars
             }
             else if (result.GetManagerHelper().GetGametype() is Survival)
             {
-                Survival gametypeWinner = (Survival)result.GetManagerHelper().GetGametype();
+                Survival gametypeWinner = (Survival) result.GetManagerHelper().GetGametype();
                 NPC.AffliationTypes winner = gametypeWinner.GetWinner();
                 secondaryWinner = result.GetManagerHelper().GetGametype().GetSecondaryWinner(winner);
 
@@ -462,129 +490,167 @@ namespace DotWars
             int g = -1;
             int y = -1;
 
-            foreach(CameraManager.Camera c in cameras)
+            foreach (CameraManager.Camera c in cameras)
             {
                 Type cT = c.GetCommanderType();
 
-                if (cT == typeof(RedPlayerCommander))
+                if (cT == typeof (RedPlayerCommander))
                 {
                     red = true;
                     r = c.GetIndex();
                 }
-                else if (cT == typeof(BluePlayerCommander))
+                else if (cT == typeof (BluePlayerCommander))
                 {
                     blue = true;
                     b = c.GetIndex();
                 }
-                else if (cT == typeof(GreenPlayerCommander))
+                else if (cT == typeof (GreenPlayerCommander))
                 {
                     green = true;
                     g = c.GetIndex();
                 }
-                else if (cT == typeof(YellowPlayerCommander))
+                else if (cT == typeof (YellowPlayerCommander))
                 {
                     yellow = true;
                     y = c.GetIndex();
                 }
-
-                
             }
-                DrawMustachioText(sB, red, r);
-                DrawAquoesText(sB, blue, b);
-                DrawTerronText(sB, green, g);
-                DrawDianText(sB, yellow, y);
+            DrawMustachioText(sB, red, r);
+            DrawAquoesText(sB, blue, b);
+            DrawTerronText(sB, green, g);
+            DrawDianText(sB, yellow, y);
         }
 
         private void DrawMustachioText(SpriteBatch sB, Boolean isPlayer, int playerIndex)
         {
-            managers.GetTextureManager().DrawString(sB, MUSTACHIO, new Vector2(155, 482), Color.Red, TextureManager.FontSizes.small, false);
+            managers.GetTextureManager()
+                    .DrawString(sB, MUSTACHIO, new Vector2(155, 482), Color.Red, TextureManager.FontSizes.small, false);
             if (isPlayer)
                 switch (playerIndex)
                 {
                     case 0:
-                        managers.GetTextureManager().DrawString(sB, P1, new Vector2(105, 482), Color.Red, TextureManager.FontSizes.small, false);
+                        managers.GetTextureManager()
+                                .DrawString(sB, P1, new Vector2(105, 482), Color.Red, TextureManager.FontSizes.small,
+                                            false);
                         break;
                     case 1:
-                        managers.GetTextureManager().DrawString(sB, P2, new Vector2(105, 482), Color.Red, TextureManager.FontSizes.small, false);
+                        managers.GetTextureManager()
+                                .DrawString(sB, P2, new Vector2(105, 482), Color.Red, TextureManager.FontSizes.small,
+                                            false);
                         break;
                     case 2:
-                        managers.GetTextureManager().DrawString(sB, P3, new Vector2(105, 482), Color.Red, TextureManager.FontSizes.small, false);
+                        managers.GetTextureManager()
+                                .DrawString(sB, P3, new Vector2(105, 482), Color.Red, TextureManager.FontSizes.small,
+                                            false);
                         break;
                     case 3:
-                        managers.GetTextureManager().DrawString(sB, P4, new Vector2(105, 482), Color.Red, TextureManager.FontSizes.small, false);
+                        managers.GetTextureManager()
+                                .DrawString(sB, P4, new Vector2(105, 482), Color.Red, TextureManager.FontSizes.small,
+                                            false);
                         break;
                 }
             else
-                managers.GetTextureManager().DrawString(sB, AI, new Vector2(105, 482), Color.Red, TextureManager.FontSizes.small, false);
+                managers.GetTextureManager()
+                        .DrawString(sB, AI, new Vector2(105, 482), Color.Red, TextureManager.FontSizes.small, false);
         }
 
         private void DrawAquoesText(SpriteBatch sB, Boolean isPlayer, int playerIndex)
         {
-            managers.GetTextureManager().DrawString(sB, AQUOES, new Vector2(155, 520), Color.Blue, TextureManager.FontSizes.small, false);
+            managers.GetTextureManager()
+                    .DrawString(sB, AQUOES, new Vector2(155, 520), Color.Blue, TextureManager.FontSizes.small, false);
             if (isPlayer)
                 switch (playerIndex)
                 {
                     case 0:
-                        managers.GetTextureManager().DrawString(sB, P1, new Vector2(105, 520), Color.Blue, TextureManager.FontSizes.small, false);
+                        managers.GetTextureManager()
+                                .DrawString(sB, P1, new Vector2(105, 520), Color.Blue, TextureManager.FontSizes.small,
+                                            false);
                         break;
                     case 1:
-                        managers.GetTextureManager().DrawString(sB, P2, new Vector2(105, 520), Color.Blue, TextureManager.FontSizes.small, false);
+                        managers.GetTextureManager()
+                                .DrawString(sB, P2, new Vector2(105, 520), Color.Blue, TextureManager.FontSizes.small,
+                                            false);
                         break;
                     case 2:
-                        managers.GetTextureManager().DrawString(sB, P3, new Vector2(105, 520), Color.Blue, TextureManager.FontSizes.small, false);
+                        managers.GetTextureManager()
+                                .DrawString(sB, P3, new Vector2(105, 520), Color.Blue, TextureManager.FontSizes.small,
+                                            false);
                         break;
                     case 3:
-                        managers.GetTextureManager().DrawString(sB, P4, new Vector2(105, 520), Color.Blue, TextureManager.FontSizes.small, false);
+                        managers.GetTextureManager()
+                                .DrawString(sB, P4, new Vector2(105, 520), Color.Blue, TextureManager.FontSizes.small,
+                                            false);
                         break;
                 }
             else
-                managers.GetTextureManager().DrawString(sB, AI, new Vector2(105, 520), Color.Blue, TextureManager.FontSizes.small, false);
+                managers.GetTextureManager()
+                        .DrawString(sB, AI, new Vector2(105, 520), Color.Blue, TextureManager.FontSizes.small, false);
         }
 
         private void DrawTerronText(SpriteBatch sB, Boolean isPlayer, int playerIndex)
         {
-            managers.GetTextureManager().DrawString(sB, TERRON, new Vector2(155, 558), Color.Green, TextureManager.FontSizes.small, false);
+            managers.GetTextureManager()
+                    .DrawString(sB, TERRON, new Vector2(155, 558), Color.Green, TextureManager.FontSizes.small, false);
             if (isPlayer)
                 switch (playerIndex)
                 {
                     case 0:
-                        managers.GetTextureManager().DrawString(sB, P1, new Vector2(105, 558), Color.Green, TextureManager.FontSizes.small, false);
+                        managers.GetTextureManager()
+                                .DrawString(sB, P1, new Vector2(105, 558), Color.Green, TextureManager.FontSizes.small,
+                                            false);
                         break;
                     case 1:
-                        managers.GetTextureManager().DrawString(sB, P2, new Vector2(105, 558), Color.Green, TextureManager.FontSizes.small, false);
+                        managers.GetTextureManager()
+                                .DrawString(sB, P2, new Vector2(105, 558), Color.Green, TextureManager.FontSizes.small,
+                                            false);
                         break;
                     case 2:
-                        managers.GetTextureManager().DrawString(sB, P3, new Vector2(105, 558), Color.Green, TextureManager.FontSizes.small, false);
+                        managers.GetTextureManager()
+                                .DrawString(sB, P3, new Vector2(105, 558), Color.Green, TextureManager.FontSizes.small,
+                                            false);
                         break;
                     case 3:
-                        managers.GetTextureManager().DrawString(sB, P4, new Vector2(105, 558), Color.Green, TextureManager.FontSizes.small, false);
+                        managers.GetTextureManager()
+                                .DrawString(sB, P4, new Vector2(105, 558), Color.Green, TextureManager.FontSizes.small,
+                                            false);
                         break;
                 }
             else
-                managers.GetTextureManager().DrawString(sB, AI, new Vector2(105, 558), Color.Green, TextureManager.FontSizes.small, false);        
+                managers.GetTextureManager()
+                        .DrawString(sB, AI, new Vector2(105, 558), Color.Green, TextureManager.FontSizes.small, false);
         }
 
         private void DrawDianText(SpriteBatch sB, Boolean isPlayer, int playerIndex)
         {
-            managers.GetTextureManager().DrawString(sB, DIAN, new Vector2(155, 596), Color.Yellow, TextureManager.FontSizes.small, false);
+            managers.GetTextureManager()
+                    .DrawString(sB, DIAN, new Vector2(155, 596), Color.Yellow, TextureManager.FontSizes.small, false);
             if (isPlayer)
                 switch (playerIndex)
                 {
                     case 0:
-                        managers.GetTextureManager().DrawString(sB, P1, new Vector2(105, 596), Color.Yellow, TextureManager.FontSizes.small, false);
+                        managers.GetTextureManager()
+                                .DrawString(sB, P1, new Vector2(105, 596), Color.Yellow, TextureManager.FontSizes.small,
+                                            false);
                         break;
                     case 1:
-                        managers.GetTextureManager().DrawString(sB, P2, new Vector2(105, 596), Color.Yellow, TextureManager.FontSizes.small, false);
+                        managers.GetTextureManager()
+                                .DrawString(sB, P2, new Vector2(105, 596), Color.Yellow, TextureManager.FontSizes.small,
+                                            false);
                         break;
                     case 2:
-                        managers.GetTextureManager().DrawString(sB, P3, new Vector2(105, 596), Color.Yellow, TextureManager.FontSizes.small, false);
+                        managers.GetTextureManager()
+                                .DrawString(sB, P3, new Vector2(105, 596), Color.Yellow, TextureManager.FontSizes.small,
+                                            false);
                         break;
                     case 3:
-                        managers.GetTextureManager().DrawString(sB, P4, new Vector2(105, 596), Color.Yellow, TextureManager.FontSizes.small, false);
+                        managers.GetTextureManager()
+                                .DrawString(sB, P4, new Vector2(105, 596), Color.Yellow, TextureManager.FontSizes.small,
+                                            false);
                         break;
                 }
-            else    
-                managers.GetTextureManager().DrawString(sB, AI, new Vector2(105, 596), Color.Yellow, TextureManager.FontSizes.small, false);
+            else
+                managers.GetTextureManager()
+                        .DrawString(sB, AI, new Vector2(105, 596), Color.Yellow, TextureManager.FontSizes.small, false);
         }
     }
 }

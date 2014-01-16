@@ -1,4 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿#region
+
+using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -11,10 +15,10 @@ namespace DotWars
             radioWave = new Sprite("Effects/bombardier_blueVFX", this.position);
         }
 
-        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, Vector2 displacement, ManagerHelper mH)
+        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, Vector2 displacement,
+                                  ManagerHelper mH)
         {
             base.Draw(sB, displacement, mH);
-            
         }
     }
 }

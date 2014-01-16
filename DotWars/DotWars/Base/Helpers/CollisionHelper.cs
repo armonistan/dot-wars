@@ -1,6 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region
+
+using System;
 using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -55,7 +58,7 @@ namespace DotWars
         {
             float dist = PathHelper.DistanceSquared(sA.GetOriginPosition(), sB.GetOriginPosition());
 
-            if (dist < (rA * rA + rB * rB))
+            if (dist < (rA*rA + rB*rB))
             {
                 return sB.GetOriginPosition();
             }
@@ -81,14 +84,13 @@ namespace DotWars
             }
 
             return -1;
-           
         }
 
         public static int IntersectPixelsDirectionalRaw(Sprite sA, Vector2 fA, Sprite sB)
         {
             Vector2 tempVector = new Vector2(-1),
                     tempRadius = new Vector2(sA.origin.X);
-            
+
             for (int i = 0; i < NUM_DIRECTIONS; i++)
             {
                 tempVector = IntersectPixelsPoint(fA + (DIRECTIONS[i]*tempRadius), sB);
@@ -105,8 +107,8 @@ namespace DotWars
         {
             int frameWidth = sB.GetFrame().Width,
                 frameHeight = sB.GetFrame().Height,
-                frameStartX = sB.GetFrameIndex() * frameWidth,
-                frameStartY = sB.GetModeIndex() * frameHeight,
+                frameStartX = sB.GetFrameIndex()*frameWidth,
+                frameStartY = sB.GetModeIndex()*frameHeight,
                 frameEndX = frameStartX + frameWidth,
                 frameEndY = frameStartY + frameHeight;
 

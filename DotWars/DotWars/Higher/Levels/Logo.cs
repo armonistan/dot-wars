@@ -1,39 +1,43 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+
+#endregion
 
 namespace DotWars
 {
     public class Logo : Level
     {
-        enum stage
+        private enum stage
         {
-            drawing, loading
+            drawing,
+            loading
         }
 
         private stage theStage;
         private ContentManager theContent;
-        private Sprite logo, logoFade, controlsFade, controls;
+        private readonly Sprite logo;
+        private Sprite logoFade, controlsFade;
+        private readonly Sprite controls;
         private int startLoad;
 
         public Logo()
             : base(null, new Dictionary<Type, int>(), new Vector2(1248, 720), null, null)
         {
             textures = new TextureManager();
-            logo = new Sprite("Textures/Backgrounds/LogoScreen/splashLogoCombined", DEFAUT_SCREEN_SIZE / 2);
-            controls = new Sprite("Textures/Backgrounds/LogoScreen/controllerSplash", DEFAUT_SCREEN_SIZE / 2);
+            logo = new Sprite("Textures/Backgrounds/LogoScreen/splashLogoCombined", DEFAUT_SCREEN_SIZE/2);
+            controls = new Sprite("Textures/Backgrounds/LogoScreen/controllerSplash", DEFAUT_SCREEN_SIZE/2);
             theStage = stage.drawing;
             sounds = new AudioManager();
         }
 
         public override void Initialize()
         {
-
             #region Menu
 
             textures.Add("Backgrounds/Menu/menuBackground", new Rectangle(0, 0, 1248, 720));
@@ -90,32 +94,41 @@ namespace DotWars
             #endregion
 
             #region Caged
+
             textures.Add("Backgrounds/Caged/cagedBackground", new Rectangle(0, 0, 864, 544));
             textures.Add("Backgrounds/Caged/cagedBlockers", new Rectangle(0, 0, 864, 544));
             textures.Add("Backgrounds/Caged/cagedImpassable", new Rectangle(0, 0, 864, 544));
             textures.Add("Backgrounds/Caged/lava", new Rectangle(0, 0, 200, 544));
+
             #endregion
 
             #region Zen Garden
+
             textures.Add("Backgrounds/ZenGarden/zenBackground", new Rectangle(0, 0, 1312, 992));
             textures.Add("Backgrounds/ZenGarden/zenBlockers", new Rectangle(0, 0, 1312, 992));
             textures.Add("Backgrounds/ZenGarden/zenForeground", new Rectangle(0, 0, 1312, 992));
+
             #endregion
 
             #region Faercrag
+
             textures.Add("Backgrounds/Faercrag/faercragBlockers", new Rectangle(0, 0, 1312, 992));
             textures.Add("Backgrounds/Faercrag/faercragBackground", new Rectangle(0, 0, 1312, 992));
             textures.Add("Backgrounds/Faercrag/faercragImpassable", new Rectangle(0, 0, 1312, 992));
+
             #endregion
 
             #region Relic
+
             textures.Add("Backgrounds/Relic/relicBackground", new Rectangle(0, 0, 1088, 864));
             textures.Add("Backgrounds/Relic/relicBlockers", new Rectangle(0, 0, 1088, 864));
             textures.Add("Backgrounds/Relic/meteorAnimated2", new Rectangle(0, 0, 128, 128));
             textures.Add("Backgrounds/Relic/pulse", new Rectangle(0, 0, 470, 441));
+
             #endregion
 
             #region Switch
+
             textures.Add("Backgrounds/Switch/switchBackground", new Rectangle(0, 0, 800, 800));
             textures.Add("Backgrounds/Switch/switchForeground", new Rectangle(0, 0, 800, 800));
             textures.Add("Backgrounds/Switch/switchBlockers", new Rectangle(0, 0, 800, 800));
@@ -141,16 +154,20 @@ namespace DotWars
             textures.Add("Backgrounds/Switch/elect10", new Rectangle(0, 0, 96, 32));
             textures.Add("Backgrounds/Switch/elect11", new Rectangle(0, 0, 32, 145));
             textures.Add("Backgrounds/Switch/elect12", new Rectangle(0, 0, 32, 98));
+
             #endregion
 
             #region Plaza
+
             textures.Add("Backgrounds/Plaza/plazaBackground", new Rectangle(0, 0, 1328, 1008));
             textures.Add("Backgrounds/Plaza/plazaBlockers", new Rectangle(0, 0, 1328, 1008));
             textures.Add("Backgrounds/Plaza/plazaLighting", new Rectangle(0, 0, 1328, 1008));
             textures.Add("Backgrounds/Plaza/light", new Rectangle(0, 0, 160, 160));
+
             #endregion
 
             #region PreGame
+
             textures.Add("Backgrounds/PreGame/splashTemplate", new Rectangle(0, 0, 1200, 800));
             textures.Add("Backgrounds/PreGame/commanders", new Rectangle(0, 0, 200, 200));
             textures.Add("Backgrounds/PreGame/profileBombardier", new Rectangle(0, 0, 200, 200));
@@ -164,6 +181,7 @@ namespace DotWars
             textures.Add("Backgrounds/PreGame/profileMeanie", new Rectangle(0, 0, 300, 300));
             textures.Add("Backgrounds/PreGame/singlesPregameBkg", new Rectangle(0, 0, 1248, 720));
             textures.Add("Backgrounds/PreGame/teamsPregameBkg", new Rectangle(0, 0, 1248, 720));
+
             #endregion
 
             #region Default Textures
@@ -330,7 +348,6 @@ namespace DotWars
             textures.Add("square", new Rectangle(0, 0, 32, 32));
 
             #endregion
-
         }
 
         public override void LoadContent(ContentManager cM)
@@ -357,18 +374,20 @@ namespace DotWars
 
                     for (int c = 0; c < 4; c++)
                     {
-                        if (GamePad.GetState(CameraManager.GetPlayerIndex(c)).IsButtonDown(Buttons.Start) || Keyboard.GetState().IsKeyDown(Keys.Space))
+                        if (GamePad.GetState(CameraManager.GetPlayerIndex(c)).IsButtonDown(Buttons.Start) ||
+                            Keyboard.GetState().IsKeyDown(Keys.Space))
                         {
                             return new Menu(textures, sounds);
                         }
                     }
-                }  
+                }
             }
 
             return this;
         }
 
-        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, GraphicsDeviceManager gM, bool drawHUD)
+        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, GraphicsDeviceManager gM,
+                                  bool drawHUD)
         {
             sB.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
             sB.GraphicsDevice.Clear(Color.White);
@@ -383,11 +402,13 @@ namespace DotWars
 
             if (textures.GetLoadPercent() != 100)
             {
-                textures.DrawString(sB, "Loading " + textures.GetLoadPercent() + "%", new Vector2(624, 624), Color.Gray, TextureManager.FontSizes.small, true);
+                textures.DrawString(sB, "Loading " + textures.GetLoadPercent() + "%", new Vector2(624, 624), Color.Gray,
+                                    TextureManager.FontSizes.small, true);
             }
             else
             {
-                textures.DrawString(sB, "Finished Loading\n   Press Start", new Vector2(624, 624), Color.Gray, TextureManager.FontSizes.small, true);
+                textures.DrawString(sB, "Finished Loading\n   Press Start", new Vector2(624, 624), Color.Gray,
+                                    TextureManager.FontSizes.small, true);
             }
             sB.End();
 

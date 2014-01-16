@@ -1,5 +1,8 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿#region
+
+using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -12,7 +15,8 @@ namespace DotWars
 
         private double elapsedTime;
 
-        public Tossable() : base(null) {
+        public Tossable() : base(null)
+        {
             frameDirection = 1;
             frameTimer = 0.0;
             pulseTimer = 0.0;
@@ -32,6 +36,7 @@ namespace DotWars
                 drawTime -= mH.GetGameTime().ElapsedGameTime.TotalSeconds;
                 pulseTimer += elapsedTime;
                 frameTimer += elapsedTime;
+
                 #region Tossable Update
 
                 #region Keep it in the level
@@ -120,7 +125,7 @@ namespace DotWars
                     pulseTimer = 0;
                 }
 
-                if (frameTimer > pulseTime / (totalFrames * 2))
+                if (frameTimer > pulseTime/(totalFrames*2))
                 {
                     frameTimer = 0;
                     frameIndex += frameDirection;
@@ -154,10 +159,11 @@ namespace DotWars
             }
         }
 
-        public override void Set(string a, Vector2 p, NPC n, Vector2 v, int d, bool iE, bool collide, float dT, ManagerHelper mH)
+        public override void Set(string a, Vector2 p, NPC n, Vector2 v, int d, bool iE, bool collide, float dT,
+                                 ManagerHelper mH)
         {
             base.Set(a, p, n, v, d, iE, collide, dT, mH);
-            pulseTime = dT *.5;
+            pulseTime = dT*.5;
             frameTimer = 0.0;
             pulseTimer = 0.0;
             drag = 0.03f;

@@ -1,7 +1,11 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
+
+#endregion
 
 namespace DotWars
 {
@@ -15,7 +19,7 @@ namespace DotWars
         public override void Initialize()
         {
             base.Initialize();
-            
+
             //Set up background
             backgrounds.AddBackground(new Lava(new Vector2(232, 272), new Vector2(1, 0)));
             backgrounds.AddBackground(new Lava(new Vector2(432, 272), new Vector2(1, 0)));
@@ -71,7 +75,8 @@ namespace DotWars
             return base.Update(gT);
         }
 
-        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, GraphicsDeviceManager gM, bool drawHUD)
+        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, GraphicsDeviceManager gM,
+                                  bool drawHUD)
         {
             foreach (CameraManager.Camera c in cameras.GetCameras())
             {

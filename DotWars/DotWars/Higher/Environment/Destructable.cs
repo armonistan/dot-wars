@@ -1,6 +1,10 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+
+#endregion
 
 namespace DotWars
 {
@@ -42,7 +46,8 @@ namespace DotWars
             Queue<Projectile> tempProjectiles = mH.GetProjectileManager().GetProjectiles();
             foreach (Projectile p in tempProjectiles)
             {
-                if (CollisionHelper.IntersectPixelsPoint(p.GetOriginPosition(), this) != new Vector2(-1) && p.GetDrawTime() > 0)
+                if (CollisionHelper.IntersectPixelsPoint(p.GetOriginPosition(), this) != new Vector2(-1) &&
+                    p.GetDrawTime() > 0)
                 {
                     health -= p.GetDamage();
                     p.SetDrawTime(0f);

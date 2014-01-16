@@ -1,7 +1,11 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
+#endregion
 
 namespace DotWars
 {
@@ -46,8 +50,8 @@ namespace DotWars
             directions[3] = new Vector2(1, 0);
             directions[4] = new Vector2(-1, 0);
             directions[5] = new Vector2(0, -1);
-            directions[6] = new Vector2(-(float)Math.Sqrt(2) / 2, -(float)Math.Sqrt(2) / 2);
-            directions[7] = new Vector2((float)Math.Sqrt(2) / 2, (float)Math.Sqrt(2) / 2);
+            directions[6] = new Vector2(-(float) Math.Sqrt(2)/2, -(float) Math.Sqrt(2)/2);
+            directions[7] = new Vector2((float) Math.Sqrt(2)/2, (float) Math.Sqrt(2)/2);
 
             #region Set up nodes
 
@@ -62,7 +66,7 @@ namespace DotWars
             boxNodes[2] = new Node(new Vector2(544, 192), tempDirs);
 
             tempDirs = new List<Vector2>();
-            tempDirs.Add(new Vector2(-(float)Math.Sqrt(2) / 2, -(float)Math.Sqrt(2) / 2));
+            tempDirs.Add(new Vector2(-(float) Math.Sqrt(2)/2, -(float) Math.Sqrt(2)/2));
             boxNodes[3] = new Node(new Vector2(608, 256), tempDirs);
 
             tempDirs = new List<Vector2>();
@@ -74,7 +78,7 @@ namespace DotWars
             boxNodes[5] = new Node(new Vector2(416, 288), tempDirs);
 
             tempDirs = new List<Vector2>();
-            tempDirs.Add(new Vector2((float)Math.Sqrt(2) / 2, (float)Math.Sqrt(2) / 2));
+            tempDirs.Add(new Vector2((float) Math.Sqrt(2)/2, (float) Math.Sqrt(2)/2));
             boxNodes[6] = new Node(new Vector2(416, 320), tempDirs);
 
             tempDirs = new List<Vector2>();
@@ -144,7 +148,7 @@ namespace DotWars
 
                         if (tempCollide != -1)
                         {
-                            a.AddAcceleration(directions[i] * 2);
+                            a.AddAcceleration(directions[i]*2);
                         }
                     }
 
@@ -154,8 +158,8 @@ namespace DotWars
                 if (mH.GetRandom().NextDouble() > 0.993)
                 {
                     mH.GetEnvironmentManager()
-                                          .AddStaticBlocker(new SwitchBox(boxNodes[(mH.GetRandom().Next(2) == 0) ? 0 : 11].pos, this,
-                                           theCrane));
+                      .AddStaticBlocker(new SwitchBox(boxNodes[(mH.GetRandom().Next(2) == 0) ? 0 : 11].pos, this,
+                                                      theCrane));
                 }
             }
             else
