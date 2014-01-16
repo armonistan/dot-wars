@@ -580,7 +580,7 @@ namespace DotWars
                 if (c != null)
                 {
                     healthCalcWidth = c.GetHealth()/(float)c.GetMaxHealth()*healthWidth;
-                    damageWidth = ((damageWidth < healthCalcWidth) ? healthCalcWidth : damageWidth-0.3f);
+                    damageWidth = ((damageWidth < healthCalcWidth) ? healthCalcWidth : damageWidth-0.5f); //change the float for red bar speed, higher the faster
 
                     gun.SetFrameIndex(c.GetModeIndex());
                     toss.SetFrameIndex(c.grenadeType);

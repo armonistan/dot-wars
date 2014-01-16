@@ -185,10 +185,10 @@ namespace DotWars
             green = "Terron";
             yellow = "Dian";
 
-            redPos = new Vector2(DEFAUT_SCREEN_SIZE.X/11, DEFAUT_SCREEN_SIZE.Y/10);
-            bluePos = new Vector2(DEFAUT_SCREEN_SIZE.X/11 * 10, DEFAUT_SCREEN_SIZE.Y/10);
-            greenPos = new Vector2(DEFAUT_SCREEN_SIZE.X/11, DEFAUT_SCREEN_SIZE.Y/10 * 6);
-            yellowPos = new Vector2(DEFAUT_SCREEN_SIZE.X/11 * 10, DEFAUT_SCREEN_SIZE.Y/10 * 6);
+            redPos = new Vector2(DEFAUT_SCREEN_SIZE.X / 8, DEFAUT_SCREEN_SIZE.Y / 9 + 10);
+            bluePos = new Vector2(DEFAUT_SCREEN_SIZE.X / 8 * 7, DEFAUT_SCREEN_SIZE.Y / 9 + 10);
+            greenPos = new Vector2(DEFAUT_SCREEN_SIZE.X / 8, DEFAUT_SCREEN_SIZE.Y / 10 * 6);
+            yellowPos = new Vector2(DEFAUT_SCREEN_SIZE.X / 8 * 7, DEFAUT_SCREEN_SIZE.Y / 10 * 6);
         }
 
         private void initalizeCommanderImagesAssassinsSurvival()
@@ -198,10 +198,10 @@ namespace DotWars
             Vector2 terronPos = new Vector2();
             Vector2 dianPos = new Vector2();
 
-            mustachioPos    =new Vector2(DEFAUT_SCREEN_SIZE.X/11, DEFAUT_SCREEN_SIZE.Y/10 + 120);
-            aqueosPos        =new Vector2(DEFAUT_SCREEN_SIZE.X/11 * 10, DEFAUT_SCREEN_SIZE.Y/10 + 120);
-            terronPos       = new Vector2(DEFAUT_SCREEN_SIZE.X/11, DEFAUT_SCREEN_SIZE.Y/10 * 6 + 120);
-            dianPos          = new Vector2(DEFAUT_SCREEN_SIZE.X/11 * 10, DEFAUT_SCREEN_SIZE.Y/10 * 6 + 120);
+            mustachioPos    =new Vector2(DEFAUT_SCREEN_SIZE.X/8, DEFAUT_SCREEN_SIZE.Y/10 + 140);
+            aqueosPos        =new Vector2(DEFAUT_SCREEN_SIZE.X/8 * 7, DEFAUT_SCREEN_SIZE.Y/10 + 140);
+            terronPos       = new Vector2(DEFAUT_SCREEN_SIZE.X/8, DEFAUT_SCREEN_SIZE.Y/10 * 6 + 120);
+            dianPos          = new Vector2(DEFAUT_SCREEN_SIZE.X/8 * 7, DEFAUT_SCREEN_SIZE.Y/10 * 6 + 120);
 
             mustachio = new Sprite("Backgrounds/PreGame/commanders", mustachioPos);
             aqueos = new Sprite("Backgrounds/PreGame/commanders", aqueosPos);
@@ -224,10 +224,10 @@ namespace DotWars
             Vector2 terronPos = new Vector2();
             Vector2 dianPos = new Vector2();
 
-            float x1 = DEFAUT_SCREEN_SIZE.X / 11,
-                    x2 = DEFAUT_SCREEN_SIZE.X / 11 * 10,
-                    y1 = DEFAUT_SCREEN_SIZE.Y / 8 + 120,
-                    y2 = DEFAUT_SCREEN_SIZE.Y / 8 * 4 + 120,
+            float x1 = DEFAUT_SCREEN_SIZE.X / 8,
+                    x2 = DEFAUT_SCREEN_SIZE.X / 8 * 7,
+                    y1 = DEFAUT_SCREEN_SIZE.Y / 8 + 130,
+                    y2 = DEFAUT_SCREEN_SIZE.Y / 8 * 4 + 130,
                     y3 = DEFAUT_SCREEN_SIZE.Y / 8; //text
 
             NPC.AffliationTypes team = nextGame.GetTeams()[0];

@@ -241,7 +241,7 @@ namespace DotWars
             if (mH.GetGametype() is Survival)
                 unitType = 0;
             else
-                unitType = mH.GetRandom().Next(7);
+                unitType = 4;// mH.GetRandom().Next(7);
 
             switch (aT)
             {

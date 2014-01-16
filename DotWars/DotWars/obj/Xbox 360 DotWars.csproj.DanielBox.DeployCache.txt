@@ -7,6 +7,9 @@ C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWar
 2013-07-02T21:32:32.0000000Z
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\DotWars.exe
 2014-01-15T01:51:23.4733316Z
+=======
+2014-01-14T23:07:19.2654675Z
+>>>>>>> Stashed changes
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\DotWars.exe.orig
 2013-07-23T23:19:40.0000000Z
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\DotWars.pdb.orig

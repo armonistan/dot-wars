@@ -90,10 +90,10 @@ namespace DotWars
                 mH.GetNPCManager().Remove(this);
             }
 
-            int newTargetSpriteIndex =
-                (int)
-                ((targetSprite.GetTotalFrames() - 1)*
-                 Math.Max(0, Math.Min(1000 * 1000, 1000 * 1000 - PathHelper.DistanceSquared(GetOriginPosition(), targetPosition))) / 1000 * 1000);
+            float distanceSquaredThing = 1000 * 1000 - PathHelper.DistanceSquared(GetOriginPosition(), targetPosition);
+            float divider = distanceSquaredThing / (1000 * 1000);
+            float multipler = divider * targetSprite.GetTotalFrames();
+            var newTargetSpriteIndex = (int)multipler;
             targetSprite.SetFrameIndex(newTargetSpriteIndex);
 
             SpriteUpdate(mH);

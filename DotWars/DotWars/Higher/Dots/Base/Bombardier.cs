@@ -19,7 +19,7 @@ namespace DotWars
         public Bombardier(String aN, Vector2 p)
             : base(aN, p)
         {
-            health = 90;
+            health = 9000;
             maxHealth = health; //The units starting health will always be his max health
             movementSpeed = 100; //The bombardier isn't the most athletic, average speed (still under decision
             shootingSpeed = 6; //Bombardiers call in plane. Slow "reload" time
