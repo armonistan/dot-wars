@@ -14,6 +14,7 @@ namespace DotWars
         private double fadeTime;
 
         private int health;
+        private int maxHealth;
         private double timer;
         private const int DAMAGE = 10;
 
@@ -80,6 +81,12 @@ namespace DotWars
                     }
                 }
             }
+            else
+            {
+                modeIndex = 1;
+
+                frameIndex = 4 - 4*health/maxHealth;
+            }
 
             if (timer < fadeTime)
             {
@@ -101,6 +108,7 @@ namespace DotWars
             timer = 0;
 
             health = 150;
+            maxHealth = health;
 
             affiliation = aT;
 
@@ -149,7 +157,7 @@ namespace DotWars
 
         public bool IsFullyUp()
         {
-            return timer > animateTime;
+            return modeIndex == 1;
         }
     }
 }

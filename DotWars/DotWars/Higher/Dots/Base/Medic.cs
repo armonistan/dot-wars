@@ -57,8 +57,12 @@ namespace DotWars
             {   
                 if (agent != this && NPCManager.IsNPCInRadius(agent, GetOriginPosition(), healRadius))
                 {
+                    if (agent.GetHealth() < agent.GetMaxHealth())
+                    {
+                        mH.GetParticleManager().AddHeal(agent);
+                    }
+
                     agent.ChangeHealth(HEAL_NUM, this);
-                    mH.GetParticleManager().AddHeal(agent);
                 }
             }
         }

@@ -21,6 +21,8 @@ namespace DotWars
 
         private const float modifer = 0.95f;
 
+        private Sprite indicator;
+
         #endregion
 
         public Fireball(ManagerHelper mH)
@@ -29,6 +31,8 @@ namespace DotWars
             doomedDots = new List<NPC>();
             dotsSetOnFire = new List<NPC>();
             managers = mH;
+
+            indicator = new Sprite("Abilities/ability_red2", Vector2.Zero);
         }
 
         public void Set(Vector2 p, Vector2 direction, NPC.AffliationTypes aT, ManagerHelper mH)
@@ -46,11 +50,17 @@ namespace DotWars
             mH.GetAudioManager().Play(AudioManager.FIREBALL, (float)mH.GetRandom().NextDouble()/4 + 0.75f, AudioManager.RandomPitch(mH), 0, false);
         }
 
+        public override void LoadContent(TextureManager tM)
+        {
+            base.LoadContent(tM);
+            indicator.LoadContent(tM);
+        }
+
         public override void Update(ManagerHelper mH)
         {
             if (frameIndex < totalFrames)
             {
-                frameIndex = (int)((float)frameCounter/drawFrames*totalFrames);
+                frameIndex = frameCounter/drawFrames*totalFrames;
 
                 //Spawn fire
                 if (mH.GetRandom().NextDouble() < 0.3)
@@ -101,7 +111,7 @@ namespace DotWars
             for (int i = 0; i < doomedDots.Count; i++)
             {
                 NPC a = doomedDots[i];
-                if (!mH.GetNPCManager().GetNPCs().Contains(a))
+                if (a.GetHealth() <= 0)
                 {
                     doomedDots.Remove(a);
                     i--;
@@ -109,7 +119,7 @@ namespace DotWars
                 }
 
                 //Spawn fire
-                if (mH.GetRandom().NextDouble() < 0.1f)
+                if (mH.GetRandom().NextDouble() < 0.1)
                 {
                     mH.GetParticleManager()
                       .AddFire(a.GetOriginPosition(),
@@ -134,6 +144,14 @@ namespace DotWars
             if (frameCounter <= drawFrames)
             {
                 base.Draw(sB, displacement, mH);
+            }
+
+            foreach (NPC dot in doomedDots)
+            {
+                indicator.position = dot.GetOriginPosition() - indicator.origin;
+                indicator.SetFrameIndex(mH.GetRandom().Next(indicator.totalFrames));
+                indicator.UpdateFrame();
+                indicator.Draw(sB, displacement, mH);
             }
         }
 

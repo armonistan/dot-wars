@@ -320,11 +320,12 @@ namespace DotWars
 
             //Abilities
             textures.Add("Abilities/ability_red", new Rectangle(0, 0, 64, 64));
-            textures.Add("Abilities/ability_green", new Rectangle(0, 0, 64, 64));
+            textures.Add("Abilities/ability_green", new Rectangle(0, 0, 32, 32));
             textures.Add("Abilities/ability_blue_splash", new Rectangle(0, 0, 64, 64));
             textures.Add("Abilities/ability_blue_spread2", new Rectangle(0, 0, 64, 64));
             textures.Add("Abilities/yellow_test", new Rectangle(0, 0, 32, 16));
             textures.Add("Abilities/ability_green2", new Rectangle(0, 0, 96, 96));
+            textures.Add("Abilities/ability_red2", new Rectangle(0, 0, 32, 32));
 
             textures.Add("square", new Rectangle(0, 0, 32, 32));
 

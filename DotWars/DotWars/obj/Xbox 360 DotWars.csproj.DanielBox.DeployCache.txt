@@ -6,7 +6,7 @@ C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWar
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\GameThumbnail.png
 2013-07-02T21:32:32.0000000Z
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\DotWars.exe
-2014-01-14T23:32:34.7211466Z
+2014-01-15T01:51:23.4733316Z
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\DotWars.exe.orig
 2013-07-23T23:19:40.0000000Z
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\DotWars.pdb.orig
@@ -98,11 +98,13 @@ C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWar
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_blue_spread2.xnb
 2014-01-11T20:49:24.7638008Z
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_green.xnb
-2014-01-11T20:49:21.8896364Z
+2014-01-15T01:07:18.1630285Z
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_green2.xnb
 2014-01-12T22:35:46.1969889Z
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_red.xnb
 2014-01-11T20:49:21.7556287Z
+C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\ability_red2.xnb
+2014-01-15T01:09:21.3800761Z
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Abilities\yellow_test.xnb
 2014-01-11T20:49:22.2316560Z
 C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Archipelago\archipelago_background.xnb

@@ -1394,7 +1394,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Abilities\ability_green.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>2014-01-14T19:02:32-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Abilities\ability_blue_ripple.png</Source>
@@ -2610,6 +2610,15 @@
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\singlesPregameBkg.xnb</Output>
       <Time>2014-01-12T17:05:00-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Abilities\ability_red2.png</Source>
+      <Name>Textures\Abilities\ability_red2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Abilities\ability_red2.xnb</Output>
+      <Time>2014-01-14T13:39:14-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
