@@ -20,7 +20,7 @@ namespace DotWars
             personalAffiliation = AffliationTypes.green;
             //Set up indicator
             indicator = new Sprite("Effects/PI_greenCommander", GetOriginPosition());
-
+            abilityCharge = .3;
             abilityUse = 55;
         }
 
