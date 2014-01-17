@@ -670,20 +670,20 @@ namespace DotWars
         protected void RandomPath(ManagerHelper mH)
         {
             bool validPoint;
-            Vector2 randPoint;
+            PathHelper.Vector2Int randPoint;
             pathTimerEnd = 10;
 
             do
             {
                 validPoint = true;
-                randPoint = new Vector2(mH.GetRandom().Next((int) mH.GetLevelSize().X),
-                                        mH.GetRandom().Next((int) mH.GetLevelSize().Y))/mH.GetPathHelper().GetNodeSize();
+                randPoint = new PathHelper.Vector2Int(mH.GetRandom().Next((int) (mH.GetLevelSize().X/mH.GetPathHelper().GetNodeSize().X)),
+                                        mH.GetRandom().Next((int)(mH.GetLevelSize().Y / mH.GetPathHelper().GetNodeSize().Y)));
 
                 foreach (Environment e in mH.GetEnvironmentManager().GetStaticBlockers())
                 {
-                    foreach (Vector2 n in e.GetFrameBlockers())
+                    foreach (PathHelper.Vector2Int n in e.GetFrameBlockers())
                     {
-                        if (n.Equals(randPoint))
+                        if (n == randPoint)
                         {
                             validPoint = false;
                             break;
@@ -701,7 +701,7 @@ namespace DotWars
                 }
             } while (!validPoint);
 
-            mH.GetPathHelper().FindClearPath(GetOriginPosition(), randPoint*32, mH, path);
+            mH.GetPathHelper().FindClearPath(GetOriginPosition(), new Vector2(randPoint.X *mH.GetPathHelper().GetNodeSize().X, randPoint.Y*mH.GetPathHelper().GetNodeSize().Y), mH, path);
         }
 
         protected virtual void SpecialPath(ManagerHelper mH)
@@ -784,21 +784,21 @@ namespace DotWars
         protected void HoverPath(ManagerHelper mH, Vector2 p, int r)
         {
             bool validPoint;
-            Vector2 randPoint;
-            Vector2 originNode = GetOriginPosition()/mH.GetPathHelper().GetNodeSize();
+            PathHelper.Vector2Int randPoint;
+            PathHelper.Vector2Int originNode = new PathHelper.Vector2Int((int)(GetOriginPosition().X/mH.GetPathHelper().GetNodeSize().X), (int)(GetOriginPosition().Y/mH.GetPathHelper().GetNodeSize().Y));
 
             do
             {
                 validPoint = true;
                 randPoint = originNode +
-                            new Vector2(mH.GetRandom().Next(-1*r/32, r/32), mH.GetRandom().Next(-1*r/32, r/32));
+                            new PathHelper.Vector2Int(mH.GetRandom().Next(-1*r/32, r/32), mH.GetRandom().Next(-1*r/32, r/32));
 
                 if ((randPoint.X > 0 && randPoint.X < mH.GetLevelSize().X/32) &&
                     (randPoint.Y > 0 && randPoint.Y < mH.GetLevelSize().Y/32))
                 {
                     foreach (Environment e in mH.GetEnvironmentManager().GetStaticBlockers())
                     {
-                        foreach (Vector2 n in e.GetFrameBlockers())
+                        foreach (PathHelper.Vector2Int n in e.GetFrameBlockers())
                         {
                             if ((n.X + (int) e.GetOriginPosition().X) == randPoint.X &&
                                 (n.Y + (int) e.GetOriginPosition().Y) == randPoint.Y)
@@ -820,7 +820,7 @@ namespace DotWars
                 }
             } while (!validPoint);
 
-            mH.GetPathHelper().FindClearPath(GetOriginPosition(), randPoint*32, mH, path);
+            mH.GetPathHelper().FindClearPath(GetOriginPosition(), new Vector2(randPoint.X, randPoint.Y) * 32f, mH, path);
         }
 
         protected virtual void DeathmatchPath(ManagerHelper mH)

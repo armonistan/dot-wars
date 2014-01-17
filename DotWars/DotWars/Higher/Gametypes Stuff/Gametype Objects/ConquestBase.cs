@@ -114,7 +114,7 @@ namespace DotWars
             {
                 if (!conquestCounters.Keys.Contains(affiliation))
                 {
-                    if (conquestCounters.Values.ElementAt(0) > conquestTime)
+                    if (conquestCounters.First().Value > conquestTime)
                     {
                         if (affiliation == NPC.AffliationTypes.grey)
                         {

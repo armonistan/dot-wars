@@ -88,7 +88,7 @@ namespace DotWars
             {
                 modeIndex = 1;
 
-                frameIndex = 4 - 4*health/maxHealth;
+                frameIndex = 3 - 3*health/maxHealth;
             }
 
             if (timer < fadeTime)

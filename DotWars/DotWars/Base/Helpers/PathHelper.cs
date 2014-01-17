@@ -74,36 +74,47 @@ namespace DotWars
 
             foreach (Environment e in managers.GetEnvironmentManager().GetStaticBlockers())
             {
-                foreach (Vector2 n in e.GetFrameBlockersSpecial(managers))
+                foreach (Vector2Int n in e.GetFrameBlockers())
                 {
-                    field[(int) n.X, (int) n.Y].SetBlocker(true);
+                    SetBlockerRelative(e, n);
                 }
             }
 
             foreach (Impassable e in managers.GetEnvironmentManager().GetImpassables())
             {
-                foreach (Vector2 n in e.GetFrameBlockersSpecial(managers))
+                foreach (Vector2Int n in e.GetFrameBlockers())
                 {
-                    field[(int) n.X, (int) n.Y].SetBlocker(true);
+                    SetBlockerRelative(e, n);
                 }
             }
 
             foreach (Impathable e in managers.GetEnvironmentManager().GetImpathables())
             {
-                foreach (Vector2 n in e.GetFrameBlockersSpecial(managers))
+                foreach (Vector2Int n in e.GetFrameBlockers())
                 {
-                    field[(int) n.X, (int) n.Y].SetBlocker(true);
+                    SetBlockerRelative(e, n);
                 }
             }
 
             foreach (LargeRock r in managers.GetAbilityManager().GetLargeRocks())
             {
-                field[(int) (r.GetOriginPosition().X/32), (int) (r.GetOriginPosition().Y/32)].SetBlocker(true);
+                field[(int) (r.GetOriginPosition().X/32f), (int) (r.GetOriginPosition().Y/32f)].SetBlocker(true);
             }
 
             foreach (LightningTrail l in managers.GetAbilityManager().GetLightning())
             {
-                field[(int) (l.GetOriginPosition().X/32), (int) (l.GetOriginPosition().Y/32)].SetBlocker(true);
+                field[(int) (l.GetOriginPosition().X/32f), (int) (l.GetOriginPosition().Y/32f)].SetBlocker(true);
+            }
+        }
+
+        private void SetBlockerRelative(Environment e, Vector2Int n)
+        {
+            int x = (int) (e.position.X/32f) + n.X;
+            int y = (int) (e.position.Y/32f) + n.Y;
+
+            if (x >= 0 && x < GetLength() && y >= 0 && y < GetWidth())
+            {
+                field[x, y].SetBlocker(true);
             }
         }
 
@@ -161,15 +172,15 @@ namespace DotWars
                 return;
             }
 
-            Vector2 end = new Vector2((int) (pB.X/nodeSize.X), (int) (pB.Y/nodeSize.Y)),
-                    beginning = new Vector2((int) (pA.X/nodeSize.X), (int) (pA.Y/nodeSize.Y));
+            Vector2Int end = new Vector2Int((int) (pB.X/nodeSize.X), (int) (pB.Y/nodeSize.Y)),
+                    beginning = new Vector2Int((int) (pA.X/nodeSize.X), (int) (pA.Y/nodeSize.Y));
 
             if (end == beginning)
             {
                 return;
             }
 
-            if (field[(int) end.X, (int) end.Y].GetBlocker())
+            if (field[end.X, end.Y].GetBlocker())
             {
                 end = FindOpenNodePoint(end, mH);
             }
@@ -273,7 +284,7 @@ namespace DotWars
             {
                 if (!point.GetBlocker())
                 {
-                    path.AddPoint(point.GetPosition()*nodeSize + new Vector2(16));
+                    path.AddPoint(new Vector2(point.GetPosition().X, point.GetPosition().Y) * nodeSize + new Vector2(16));
                 }
                 point = point.GetParent();
             }
@@ -344,31 +355,33 @@ namespace DotWars
             FindClearPath(pA, pointB, mH, path);
         }
 
-        private Vector2 FindOpenNodePoint(Vector2 e, ManagerHelper mH)
+        private Vector2Int FindOpenNodePoint(Vector2Int e, ManagerHelper mH)
         {
-            Vector2 tempEnd = e,
+            Vector2Int tempEnd = e,
                     tempNewEnd = e;
 
-            while (field[(int) tempEnd.X, (int) tempEnd.Y].GetBlocker())
+            while (field[tempEnd.X, tempEnd.Y].GetBlocker())
             {
                 for (int x = -1; x < 2; x++)
                 {
                     for (int y = -1; y < 2; y++)
                     {
-                        if ((int) tempEnd.X + x < 0 || (int) tempEnd.X + x > length || tempEnd.Y + y < 0 ||
+                        if (tempEnd.X + x < 0 || tempEnd.X + x > length || tempEnd.Y + y < 0 ||
                             tempEnd.Y + y > width)
-                            continue;
-
-                        if (!field[(int) tempEnd.X + x, (int) tempEnd.Y + y].GetBlocker())
                         {
-                            return new Vector2((int) tempEnd.X + x, (int) tempEnd.Y + y);
+                            continue;
+                        }
+
+                        if (!field[tempEnd.X + x, tempEnd.Y + y].GetBlocker())
+                        {
+                            return new Vector2Int(tempEnd.X + x, tempEnd.Y + y);
                         }
                     }
                 }
 
                 do
                 {
-                    tempNewEnd = new Vector2((mH.GetRandom().NextDouble() > 0.5) ? -1 : 1, mH.GetRandom().Next(-1, 1)) +
+                    tempNewEnd = new Vector2Int((mH.GetRandom().NextDouble() > 0.5) ? -1 : 1, mH.GetRandom().Next(-1, 1)) +
                                  tempEnd;
                 } while (tempNewEnd.X < 0 || tempNewEnd.X > length || tempNewEnd.Y < 0 || tempNewEnd.Y > width);
 
@@ -505,9 +518,36 @@ namespace DotWars
 
         #endregion
 
+        public struct Vector2Int
+        {
+            public int X { get; set; }
+            public int Y { get; set; }
+
+            public Vector2Int(int x, int y) : this()
+            {
+                X = x;
+                Y = y;
+            }
+
+            public static bool operator ==(Vector2Int a, Vector2Int b)
+            {
+                return a.X == b.X && a.Y == b.Y;
+            }
+
+            public static bool operator !=(Vector2Int a, Vector2Int b)
+            {
+                return !(a == b);
+            }
+
+            public static Vector2Int operator +(Vector2Int a, Vector2Int b)
+            {
+                return new Vector2Int(a.X + b.X, a.Y + b.Y);
+            }
+        }
+
         public class Node
         {
-            private readonly Vector2 position;
+            private readonly Vector2Int position;
             private bool blocker;
 
             private int fScore,
@@ -523,7 +563,7 @@ namespace DotWars
                 hScore = h;
                 fScore = g + h;
                 blocker = b;
-                position = new Vector2(x, y);
+                position = new Vector2Int(x, y);
             }
 
             public void SetBlocker(bool b)
@@ -576,7 +616,7 @@ namespace DotWars
                 return parent;
             }
 
-            public Vector2 GetPosition()
+            public Vector2Int GetPosition()
             {
                 return position;
             }

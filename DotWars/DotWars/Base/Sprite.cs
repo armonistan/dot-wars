@@ -18,7 +18,7 @@ namespace DotWars
         protected Vector2 acceleration;
         protected List<Vector2> accelerations;
         protected String asset;
-        protected List<Vector2>[,] blockers;
+        protected List<PathHelper.Vector2Int>[,] blockers;
         protected float drag;
         protected Rectangle frame;
         protected float scale;
@@ -217,7 +217,7 @@ namespace DotWars
             originPosition = newOriginPosition;
         }
 
-        public virtual List<Vector2> GetFrameBlockers()
+        public virtual List<PathHelper.Vector2Int> GetFrameBlockers()
         {
             return blockers[frameIndex, modeIndex];
         }

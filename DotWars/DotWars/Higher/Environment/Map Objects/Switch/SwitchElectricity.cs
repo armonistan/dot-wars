@@ -69,7 +69,8 @@ namespace DotWars
 
         public override void LoadContent(TextureManager tM)
         {
-            blockers = new List<Vector2>[0,0];
+            blockers = new List<PathHelper.Vector2Int>[1,1];
+            blockers[0, 0] = new List<PathHelper.Vector2Int>();
 
             foreach (Sprite b in beams)
             {
@@ -144,9 +145,9 @@ namespace DotWars
         {
         }
 
-        public override List<Vector2> GetFrameBlockers()
+        public override List<PathHelper.Vector2Int> GetFrameBlockers()
         {
-            return new List<Vector2>();
+            return blockers[0, 0];
         }
     }
 }

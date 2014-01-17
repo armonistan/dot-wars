@@ -25,7 +25,7 @@ namespace DotWars
 
         //The assets
         private readonly List<String> assets;
-        private readonly List<List<Vector2>[,]> blockers;
+        private readonly List<List<PathHelper.Vector2Int>[,]> blockers;
 
         //The Data
         private readonly List<Color[,]> colors;
@@ -70,7 +70,7 @@ namespace DotWars
             //Sets up frames
             frames = new List<Rectangle>();
 
-            blockers = new List<List<Vector2>[,]>();
+            blockers = new List<List<PathHelper.Vector2Int>[,]>();
 
             //Sets loadcalled
             assetNumber = 0;
@@ -97,7 +97,7 @@ namespace DotWars
             }
         }
 
-        public void GetData(String a, out Texture2D t, out Rectangle f, out Color[,] cD, out List<Vector2>[,] b)
+        public void GetData(String a, out Texture2D t, out Rectangle f, out Color[,] cD, out List<PathHelper.Vector2Int>[,] b)
         {
             //Prevents premature call
             if (loadCalled)
@@ -152,15 +152,15 @@ namespace DotWars
             int spriteCols = frames[assetNumber].Width/nodeSize,
                 spriteRows = frames[assetNumber].Height/nodeSize;
 
-            List<Vector2>[,] tempBlockers =
-                new List<Vector2>[textures[assetNumber].Width/frames[assetNumber].Width,
+            List<PathHelper.Vector2Int>[,] tempBlockers =
+                new List<PathHelper.Vector2Int>[textures[assetNumber].Width/frames[assetNumber].Width,
                     textures[assetNumber].Height/frames[assetNumber].Height];
 
             for (int j = 0; j < tempBlockers.GetLength(0); j++)
             {
                 for (int k = 0; k < tempBlockers.GetLength(1); k++)
                 {
-                    tempBlockers[j, k] = new List<Vector2>();
+                    tempBlockers[j, k] = new List<PathHelper.Vector2Int>();
 
                     for (int spriteX = 0; spriteX < spriteCols; spriteX++)
                     {
@@ -176,7 +176,7 @@ namespace DotWars
                                             spriteX*nodeSize + blockX + j*frames[assetNumber].Width,
                                             spriteY*nodeSize + blockY + k*frames[assetNumber].Height].A > 0)
                                     {
-                                        tempBlockers[j, k].Add(new Vector2(spriteX, spriteY));
+                                        tempBlockers[j, k].Add(new PathHelper.Vector2Int(spriteX, spriteY));
                                         found = true;
                                         break;
                                     }
