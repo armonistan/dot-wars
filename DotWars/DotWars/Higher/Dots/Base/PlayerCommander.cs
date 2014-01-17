@@ -267,7 +267,7 @@ namespace DotWars
                 {
                     wantedRotation += MathHelper.TwoPi;
                 }
-            
+                
                 //Calculate turningSpeed to maximize speed and minimize jittering
                 if (MathHelper.Distance(rotation, wantedRotation) < turningSpeed && turningSpeed > MathHelper.Pi / 160f)
                 {
@@ -277,12 +277,12 @@ namespace DotWars
                 {
                     turningSpeed *= 2;
                 }
-            
+                
                 //Apply turningSpeed to rotation in correct direction
                 float otherRot = rotation + (MathHelper.TwoPi) * ((rotation > MathHelper.Pi) ? -1 : 1);//Same angle, different name to compensate for linear numbers
                 float distADir = MathHelper.Distance(wantedRotation, rotation),//Archlength sorta from actual rotation
                     distBDir = MathHelper.Distance(wantedRotation, otherRot);//Archlength sorta from same angle but 2pi over
-            
+                
                 //If the usual angle is closer
                 if (distADir < distBDir)
                 {

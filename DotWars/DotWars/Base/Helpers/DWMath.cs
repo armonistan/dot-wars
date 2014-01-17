@@ -56,11 +56,11 @@ namespace DotWars
             }
             else if (y > 0f && x == 0f)
             {
-                return MathHelper.PiOver2*-1f;
+                return MathHelper.PiOver2;
             }
             else if (y < 0f && x == 0f)
             {
-                return MathHelper.PiOver2;
+                return MathHelper.PiOver2*-1f;
             }
             else if (y == 0f && x == 0f)
             {
