@@ -199,7 +199,7 @@ namespace DotWars
             foreach (NPC a in mH.GetNPCManager().GetNPCs())
             {
                 if ((a is Commander || a is OffensiveConquestGrunt) &&
-                    CollisionHelper.IntersectPixelsRadius(a, this, 16, 32) != new Vector2(-1))
+                    CollisionHelper.IntersectPixelsRadius(a, this, 16, 64) != new Vector2(-1))
                 {
                     if (!suitors.Contains(a.GetAffiliation()))
                     {

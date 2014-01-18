@@ -120,7 +120,7 @@ namespace DotWars
 
         public void Draw(SpriteBatch sB, Vector2 d)
         {
-            for (int x = 0; x < length; x++)
+            /*for (int x = 0; x < length; x++)
             {
                 for (int y = 0; y < width; y++)
                 {
@@ -156,6 +156,7 @@ namespace DotWars
                     square.Draw(sB, d, managers);
                 }
             }
+             */
         }
 
         public void FindClearPath(Vector2 pA, Vector2 pB, ManagerHelper mH, Path path)

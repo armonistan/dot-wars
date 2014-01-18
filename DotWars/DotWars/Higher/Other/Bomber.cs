@@ -22,7 +22,7 @@ namespace DotWars
             drawTarget = true;
             targetPosition = t.GetOriginPosition();
             health = 100;
-            movementSpeed = 1000;
+            movementSpeed = 800;
             affiliation = a;
 
             //Set up rotation

@@ -22,7 +22,7 @@ namespace DotWars
                 //Lightly armored, the sniper can take a little bit more than a medic but thats it. Slightly below average health
             maxHealth = health; //The units starting health will always be his max health
             movementSpeed = 130; //The sniper must rely on speed more than armor. Above average speed
-            shootingSpeed = 1;
+            shootingSpeed = 1.5;
 
             awareness = 150;
             vision = MathHelper.PiOver2;
