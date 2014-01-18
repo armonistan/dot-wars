@@ -678,6 +678,12 @@ namespace DotWars
                         mH.GetTextureManager()
                           .DrawString(sB, lastScoreStrings[x], rightPos - new Vector2((4 - x)*82 - 24, -10), teamColor,
                                       TextureManager.FontSizes.small, true);
+
+                        mH.GetTextureManager()
+                          .DrawString(sB, "" + mH.GetNPCManager().GetAllies(mH.GetGametype().GetTeams()[x]).Count, rightPos - new Vector2((4 - x) * 82 - 24, 10), teamColor,
+                                      TextureManager.FontSizes.small, true);
+
+
                     }
                 }
             }

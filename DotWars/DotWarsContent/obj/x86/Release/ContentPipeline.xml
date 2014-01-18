@@ -20,33 +20,6 @@
       <Time>2013-07-02T16:33:08-05:00</Time>
     </Item>
     <Item>
-      <Source>Textures\flash.png</Source>
-      <Name>Textures\flash</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\flash.xnb</Output>
-      <Time>2013-07-02T16:33:08-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\health_station.png</Source>
-      <Name>Textures\health_station</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\health_station.xnb</Output>
-      <Time>2013-07-02T16:33:08-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\press_start.png</Source>
-      <Name>Textures\press_start</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\press_start.xnb</Output>
-      <Time>2013-07-02T16:33:08-05:00</Time>
-    </Item>
-    <Item>
       <Source>Textures\Backgrounds\Switch\switchBox.png</Source>
       <Name>Textures\Backgrounds\Switch\switchBox</Name>
       <Importer>TextureImporter</Importer>
@@ -224,7 +197,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Dots\Grey\grey_claimable.xnb</Output>
-      <Time>2014-01-02T14:01:07-06:00</Time>
+      <Time>2014-01-18T12:00:49.8618692-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Dots\Grey\grey_suicide.png</Source>
@@ -398,15 +371,6 @@
       <Time>2013-07-02T16:33:02-05:00</Time>
     </Item>
     <Item>
-      <Source>Textures\Effects\flash.png</Source>
-      <Name>Textures\Effects\flash</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Effects\flash.xnb</Output>
-      <Time>2013-07-02T16:33:06-05:00</Time>
-    </Item>
-    <Item>
       <Source>Textures\Effects\floating_health.png</Source>
       <Name>Textures\Effects\floating_health</Name>
       <Importer>TextureImporter</Importer>
@@ -416,30 +380,12 @@
       <Time>2013-07-02T16:33:06-05:00</Time>
     </Item>
     <Item>
-      <Source>Textures\Effects\grass_test.png</Source>
-      <Name>Textures\Effects\grass_test</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Effects\grass_test.xnb</Output>
-      <Time>2013-07-02T16:33:06-05:00</Time>
-    </Item>
-    <Item>
       <Source>Textures\Effects\particle_fire.png</Source>
       <Name>Textures\Effects\particle_fire</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Effects\particle_fire.xnb</Output>
-      <Time>2013-07-02T16:33:06-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Effects\particle_leaves.png</Source>
-      <Name>Textures\Effects\particle_leaves</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Effects\particle_leaves.xnb</Output>
       <Time>2013-07-02T16:33:06-05:00</Time>
     </Item>
     <Item>
@@ -458,15 +404,6 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Effects\particle_smoke.xnb</Output>
-      <Time>2013-07-02T16:33:06-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Effects\particle_water.png</Source>
-      <Name>Textures\Effects\particle_water</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Effects\particle_water.xnb</Output>
       <Time>2013-07-02T16:33:06-05:00</Time>
     </Item>
     <Item>
@@ -875,15 +812,6 @@
       <Time>2013-07-02T16:33:02-05:00</Time>
     </Item>
     <Item>
-      <Source>Textures\Backgrounds\Switch\electricity.png</Source>
-      <Name>Textures\Backgrounds\Switch\electricity</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Switch\electricity.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
       <Source>Textures\Effects\Guts\Red\deadBombRed.png</Source>
       <Name>Textures\Effects\Guts\Red\deadBombRed</Name>
       <Importer>TextureImporter</Importer>
@@ -1217,105 +1145,6 @@
       <Time>2013-07-02T16:33:06-05:00</Time>
     </Item>
     <Item>
-      <Source>Textures\Backgrounds\Mire\bridges.png</Source>
-      <Name>Textures\Backgrounds\Mire\bridges</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Mire\bridges.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Mire\lilypadA.png</Source>
-      <Name>Textures\Backgrounds\Mire\lilypadA</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Mire\lilypadA.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Mire\lilypadB.png</Source>
-      <Name>Textures\Backgrounds\Mire\lilypadB</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Mire\lilypadB.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Mire\lilypadC.png</Source>
-      <Name>Textures\Backgrounds\Mire\lilypadC</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Mire\lilypadC.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Mire\lilypadD.png</Source>
-      <Name>Textures\Backgrounds\Mire\lilypadD</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Mire\lilypadD.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Mire\lilypadE.png</Source>
-      <Name>Textures\Backgrounds\Mire\lilypadE</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Mire\lilypadE.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Mire\mireBkg.png</Source>
-      <Name>Textures\Backgrounds\Mire\mireBkg</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Mire\mireBkg.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Mire\mireSolid.png</Source>
-      <Name>Textures\Backgrounds\Mire\mireSolid</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Mire\mireSolid.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Mire\bridgesDown.png</Source>
-      <Name>Textures\Backgrounds\Mire\bridgesDown</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Mire\bridgesDown.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Mire\bridgesUp.png</Source>
-      <Name>Textures\Backgrounds\Mire\bridgesUp</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Mire\bridgesUp.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Effects\explodeBottom.png</Source>
-      <Name>Textures\Effects\explodeBottom</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Effects\explodeBottom.xnb</Output>
-      <Time>2013-07-02T16:33:06-05:00</Time>
-    </Item>
-    <Item>
       <Source>Textures\Effects\explodeTop.png</Source>
       <Name>Textures\Effects\explodeTop</Name>
       <Importer>TextureImporter</Importer>
@@ -1397,30 +1226,12 @@
       <Time>2014-01-16T19:41:13.0453932-06:00</Time>
     </Item>
     <Item>
-      <Source>Textures\Abilities\ability_blue_ripple.png</Source>
-      <Name>Textures\Abilities\ability_blue_ripple</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Abilities\ability_blue_ripple.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
       <Source>Textures\Abilities\ability_blue_splash.png</Source>
       <Name>Textures\Abilities\ability_blue_splash</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Abilities\ability_blue_splash.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Abilities\ability_blue_spread.png</Source>
-      <Name>Textures\Abilities\ability_blue_spread</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Abilities\ability_blue_spread.xnb</Output>
       <Time>2013-07-02T16:33:02-05:00</Time>
     </Item>
     <Item>
@@ -1457,33 +1268,6 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Switch\BT.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Mire\bubbles.png</Source>
-      <Name>Textures\Backgrounds\Mire\bubbles</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Mire\bubbles.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Mire\waterBlocker.png</Source>
-      <Name>Textures\Backgrounds\Mire\waterBlocker</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Mire\waterBlocker.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Mire\fort.png</Source>
-      <Name>Textures\Backgrounds\Mire\fort</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Mire\fort.xnb</Output>
       <Time>2013-07-02T16:33:02-05:00</Time>
     </Item>
     <Item>
@@ -1532,42 +1316,6 @@
       <Time>2013-07-02T16:33:02-05:00</Time>
     </Item>
     <Item>
-      <Source>Textures\Backgrounds\Switch\fanLeft.png</Source>
-      <Name>Textures\Backgrounds\Switch\fanLeft</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Switch\fanLeft.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Switch\gustLeft.png</Source>
-      <Name>Textures\Backgrounds\Switch\gustLeft</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Switch\gustLeft.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Glade\gladeBlockers.png</Source>
-      <Name>Textures\Backgrounds\Glade\gladeBlockers</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Glade\gladeBlockers.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Glade\gladeBackground.png</Source>
-      <Name>Textures\Backgrounds\Glade\gladeBackground</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Glade\gladeBackground.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
       <Source>Textures\Backgrounds\Caged\cagedBackground.png</Source>
       <Name>Textures\Backgrounds\Caged\cagedBackground</Name>
       <Importer>TextureImporter</Importer>
@@ -1604,15 +1352,6 @@
       <Time>2013-08-06T19:45:56-05:00</Time>
     </Item>
     <Item>
-      <Source>Textures\Backgrounds\Menu\PlayerScreen.png</Source>
-      <Name>Textures\Backgrounds\Menu\PlayerScreen</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Menu\PlayerScreen.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
       <Source>Textures\Backgrounds\Menu\LogoScreen.png</Source>
       <Name>Textures\Backgrounds\Menu\LogoScreen</Name>
       <Importer>TextureImporter</Importer>
@@ -1620,15 +1359,6 @@
       <Options>None</Options>
       <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Menu\LogoScreen.xnb</Output>
       <Time>2014-01-14T10:22:30-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Menu\testBack.png</Source>
-      <Name>Textures\Backgrounds\Menu\testBack</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Menu\testBack.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Menu\CommanderCards.png</Source>
@@ -1640,33 +1370,6 @@
       <Time>2013-08-17T10:48:59-05:00</Time>
     </Item>
     <Item>
-      <Source>Textures\Backgrounds\Menu\GameScreen.png</Source>
-      <Name>Textures\Backgrounds\Menu\GameScreen</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Menu\GameScreen.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Menu\GametypeCards.png</Source>
-      <Name>Textures\Backgrounds\Menu\GametypeCards</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Menu\GametypeCards.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Menu\MapCards.png</Source>
-      <Name>Textures\Backgrounds\Menu\MapCards</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Menu\MapCards.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
-    </Item>
-    <Item>
       <Source>Textures\Backgrounds\Menu\teamCards.png</Source>
       <Name>Textures\Backgrounds\Menu\teamCards</Name>
       <Importer>TextureImporter</Importer>
@@ -1674,15 +1377,6 @@
       <Options>None</Options>
       <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Menu\teamCards.xnb</Output>
       <Time>2013-08-17T10:48:59-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\Menu\TeamScreen.png</Source>
-      <Name>Textures\Backgrounds\Menu\TeamScreen</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Menu\TeamScreen.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Menu\controllerCards.png</Source>
@@ -2034,15 +1728,6 @@
       <Options>None</Options>
       <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\HUD\hud_time_frame.xnb</Output>
       <Time>2014-01-02T15:54:13-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\Backgrounds\PreGame\splashTemplate.png</Source>
-      <Name>Textures\Backgrounds\PreGame\splashTemplate</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\PreGame\splashTemplate.xnb</Output>
-      <Time>2013-07-23T18:19:38-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\PreGame\commanders.png</Source>
@@ -2619,6 +2304,15 @@
       <Options>None</Options>
       <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Audio\Waves\DotWars.xnb</Output>
       <Time>2013-08-18T11:03:33-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Relic\impathableMeteor.png</Source>
+      <Name>Textures\Backgrounds\Relic\impathableMeteor</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Relic\impathableMeteor.xnb</Output>
+      <Time>2014-01-18T12:33:25.5167262-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

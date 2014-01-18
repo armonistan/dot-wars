@@ -429,8 +429,8 @@ namespace DotWars
                                 new Vector2(DEFAUT_SCREEN_SIZE.X/2, DEFAUT_SCREEN_SIZE.Y/8 + 320), Color.White,
                                 TextureManager.FontSizes.big, true);
 
-            textures.DrawString(sB, tipText, new Vector2(DEFAUT_SCREEN_SIZE.X/2, DEFAUT_SCREEN_SIZE.Y/2 + 230),
-                                Color.White, TextureManager.FontSizes.small, true);
+            //textures.DrawString(sB, tipText, new Vector2(DEFAUT_SCREEN_SIZE.X/2, DEFAUT_SCREEN_SIZE.Y/2 + 230),
+            //                    Color.White, TextureManager.FontSizes.small, true);
             sB.End();
         }
     }
