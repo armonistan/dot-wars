@@ -1,2 +1,4 @@
 C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWarsContent\obj\x86\Release\ResolveAssemblyReference.cache
 C:\Users\Riley\Documents\Emberware\Dot Wars\Code\dot-wars-ignored\DotWars\DotWarsContent\obj\x86\Release\Audio\GameAudio.xml
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWarsContent\obj\x86\Release\DotWarsContent.contentprojResolveAssemblyReference.cache
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWarsContent\obj\x86\Release\Audio\GameAudio.xml

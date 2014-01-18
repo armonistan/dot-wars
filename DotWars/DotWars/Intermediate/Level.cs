@@ -78,7 +78,7 @@ namespace DotWars
         {
             //Initialize Managers (the thing that will hold all textures used)
             agents = new NPCManager();
-            projectiles = new ProjectileManager(400, 20, 15);
+            projectiles = new ProjectileManager(400, 20, 12);
             objects = new EnvironmentManager();
             backgrounds = new BackgroundManager();
             spawnplaces = new List<SpawnPoint>();
