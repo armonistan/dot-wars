@@ -1,8 +1,4 @@
-﻿#region
-
-using Microsoft.Xna.Framework;
-
-#endregion
+﻿using Microsoft.Xna.Framework;
 
 namespace DotWars
 {
@@ -79,18 +75,18 @@ namespace DotWars
 
         public override bool ShouldUsePower(ManagerHelper mH)
         {
-            if (CurrentPower() < .5*MaxPower())
+            if (CurrentPower() < .5 * MaxPower())
                 return false;
 
             if (mH.GetGametype() is Assault)
             {
-                var temp = (Assault) mH.GetGametype();
+                var temp = (Assault)mH.GetGametype();
                 Flag f = temp.GetAllyBase(temp.GetDefender()).GetMyFlag();
 
                 if (temp.GetAttacker() == affiliation)
                 {
                     if (f.status != Flag.FlagStatus.taken)
-                        return (PathHelper.DistanceSquared(GetOriginPosition(), f.GetOriginPosition()) < 300*300);
+                        return (PathHelper.DistanceSquared(GetOriginPosition(), f.GetOriginPosition()) < 300 * 300);
                     else
                         return (f.GetCaptor() is YellowCommander);
                 }
@@ -103,12 +99,12 @@ namespace DotWars
 
             else if (mH.GetGametype() is CaptureTheFlag)
             {
-                var temp = (CaptureTheFlag) mH.GetGametype();
+                var temp = (CaptureTheFlag)mH.GetGametype();
                 Flag eF = temp.GetEnemyBase(affiliation).GetMyFlag();
 
                 if (eF.status != Flag.FlagStatus.taken)
                 {
-                    return (PathHelper.DistanceSquared(GetOriginPosition(), eF.GetOriginPosition()) < 240*240);
+                    return (PathHelper.DistanceSquared(GetOriginPosition(), eF.GetOriginPosition()) < 240 * 240);
                 }
 
                 else if (eF.GetCaptor() != null)
@@ -118,8 +114,7 @@ namespace DotWars
             }
 
             else if (mH.GetGametype() is Survival)
-                return (target != null) &&
-                       (PathHelper.DistanceSquared(GetOriginPosition(), target.GetOriginPosition()) < 200*200);
+                return (target != null) && (PathHelper.DistanceSquared(GetOriginPosition(), target.GetOriginPosition()) < 200 * 200);
 
             else
             {

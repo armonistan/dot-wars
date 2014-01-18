@@ -8,6 +8,8 @@ namespace DotWars
 {
     public class DefensiveCTFGrunt : Grunt
     {
+        const int RADIUS = 128;
+
         public DefensiveCTFGrunt(string a, Vector2 p)
             : base(a, p)
         {
@@ -18,7 +20,9 @@ namespace DotWars
             var temp = (CaptureTheFlag) mH.GetGametype();
 
             if (temp.GetAllyBase(affiliation).GetMyFlag().status == Flag.FlagStatus.home)
-                DefensePath(mH, temp.GetAllyBase(affiliation).GetOriginPosition());
+            {
+                this.HoverPath(mH, temp.GetAllyBase(affiliation).originPosition, RADIUS);
+            }
             else
             {
                 NPC captor = temp.GetAllyBase(affiliation).GetMyFlag().GetCaptor();
