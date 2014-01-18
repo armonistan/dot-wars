@@ -396,12 +396,12 @@ namespace DotWars
                         mH.GetParticleManager().AddBlood(this);
                         counter = 0;
 
+                        p.SetDrawTime(0);
+
                         if (health <= 0)
                         {
                             return true;
                         }
-
-                        p.SetDrawTime(0);
                     }
 
                     else

@@ -30,19 +30,21 @@ namespace DotWars
 
         public override void Update(ManagerHelper mH)
         {
-            if (isExplosive && drawTime <= 0)
-            {
-                mH.GetParticleManager().AddExplosion(GetOriginPosition(), this.creator, damage);
-                isExplosive = false;
-            }
-
             if (position.X < 0 || position.X > mH.GetLevelSize().X ||
                 position.Y < 0 || position.Y > mH.GetLevelSize().Y)
             {
                 SetDrawTime(0);
             }
 
-            if (drawTime > 0)
+            if (drawTime <= 0)
+            {
+                if (isExplosive)
+                {
+                    mH.GetParticleManager().AddExplosion(GetOriginPosition(), this.creator, damage);
+                    isExplosive = false;
+                }
+            }
+            else
             {
                 drawTime -= mH.GetGameTime().ElapsedGameTime.TotalSeconds;
 

@@ -97,6 +97,8 @@ namespace DotWars
                         lastDamagerDirection = PathHelper.DirectionVector(GetOriginPosition(), p.GetOriginPosition());
                         counter = 0;
 
+                        p.SetDrawTime(0);
+
                         float test = p.GetRotation() + MathHelper.Pi;
                         if (test > MathHelper.TwoPi)
                         {
@@ -119,8 +121,6 @@ namespace DotWars
                             AddAcceleration(knockback);
                             mH.GetAudioManager().Play(AudioManager.JUGGERNAUT_RICOHET, (float) .05, 0, 0, false);
                         }
-
-                        p.SetDrawTime(0);
                     }
 
                     else

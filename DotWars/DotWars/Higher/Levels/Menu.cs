@@ -153,7 +153,10 @@ namespace DotWars
 
             version = 1.1f;
 
-            sounds.Play(AudioManager.DOT_WARS, 0.9f, 0, 0, true);
+            if (!sounds.IsPlaying(AudioManager.DOT_WARS))
+            {
+                sounds.Play(AudioManager.DOT_WARS, 0.9f, 0, 0, true);
+            }
         }
 
         public override void LoadContent(ContentManager cM)
@@ -280,7 +283,6 @@ namespace DotWars
                             {
                                 sounds.Play(AudioManager.CONFIRM, 3, 0, 0, false);
 
-                                //TODO: Connect to other screens
                                 switch (startOptionInt)
                                 {
                                     case 0:
@@ -396,6 +398,23 @@ namespace DotWars
 
                             if (stageCounters[c] > SECONDS_TO_WAIT_FOR_INPUT)
                             {
+                                if (keyState.IsKeyDown(Keys.Escape) ||
+                                             theStates[((indexOfKing != -1) ? indexOfKing : c)].IsButtonDown
+                                                 (Buttons.Back))
+                                {
+                                    sounds.Play(AudioManager.RETURN, 3, 0, 0, false);
+                                    stage = MenuSelect.start;
+                                    ResetAllCounters();
+                                    for (int i = 0; i < commanderCards.Length; i++)
+                                    {
+                                        commanderCards[i].SetFrameIndex(0);
+                                        commanderCards[i].SetModeIndex(0);
+                                        commanderSlots[i] = -1;
+                                        indexOfKing = -1;
+                                    }
+                                    break;
+                                }
+
                                 if (commanderCards[c].GetModeIndex() == 0)
                                 {
                                     if ((theStates[c].IsButtonDown(Buttons.A) || keyState.IsKeyDown(Keys.A)) &&
@@ -440,22 +459,6 @@ namespace DotWars
                                     {
                                         commanderCards[c].SetFrameIndex(4);
                                         ResetSingleCounter(c);
-                                    }
-                                    else if (keyState.IsKeyDown(Keys.Escape) ||
-                                             theStates[((indexOfKing != -1) ? indexOfKing : c)].IsButtonDown
-                                                 (Buttons.Back))
-                                    {
-                                        sounds.Play(AudioManager.RETURN, 3, 0, 0, false);
-                                        stage = MenuSelect.start;
-                                        ResetAllCounters();
-                                        for (int i = 0; i < commanderCards.Length; i++)
-                                        {
-                                            commanderCards[i].SetFrameIndex(0);
-                                            commanderCards[i].SetModeIndex(0);
-                                            commanderSlots[i] = -1;
-                                            indexOfKing = -1;
-                                        }
-                                        break;
                                     }
                                 }
                                 else

@@ -92,5 +92,18 @@ namespace DotWars
         {
             return (float) (mH.GetRandom().NextDouble()/4) - 0.125f;
         }
+
+        public bool IsPlaying(string sound)
+        {
+            foreach (Cue cue in keptSounds)
+            {
+                if (cue.Name == sound)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }
