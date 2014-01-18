@@ -11,10 +11,10 @@ namespace DotWars
 {
     public class Plaza : Level
     {
-        private readonly Vector2 savingTime = new Vector2(16);
+        private readonly Vector2 savingTime = new Vector2(0);
 
         public Plaza(Gametype gT, Dictionary<Type, int> pL, TextureManager tM, AudioManager audio) :
-            base(gT, pL, new Vector2(1296, 976), tM, audio)
+            base(gT, pL, new Vector2(1328, 1008), tM, audio)
         {
         }
 

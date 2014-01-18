@@ -58,7 +58,7 @@ namespace DotWars
                 tempDM.Initialize(managers, tempClaimables);
 
                 //spawn points
-                spawnplaces.Add(new SpawnPoint(new Vector2(493, 110), NPC.AffliationTypes.grey, managers));
+                spawnplaces.Add(new SpawnPoint(new Vector2(493, 90), NPC.AffliationTypes.grey, managers));
                 spawnplaces.Add(new SpawnPoint(new Vector2(1286, 169), NPC.AffliationTypes.grey, managers));
                 spawnplaces.Add(new SpawnPoint(new Vector2(332, 725), NPC.AffliationTypes.grey, managers));
                 spawnplaces.Add(new SpawnPoint(new Vector2(1094, 943), NPC.AffliationTypes.grey, managers));
