@@ -21,7 +21,7 @@ namespace DotWars
             //Slow it to a stop
             if (velocity.Length() > 5)
             {
-                Turn(((turnRight) ? -1 : 1)*MathHelper.Pi/15*(velocity.Length()/64));
+                Turn(((turnRight) ? -1f : 1f)*MathHelper.Pi/5*(velocity.Length()/64f));
 
                 //Spawn blood
                 if (mH.GetRandom().Next(100) < 0)
@@ -217,9 +217,11 @@ namespace DotWars
 
             #endregion
 
+            float moveSpeed = MathHelper.Clamp(n.velocity.Length(), 0f, 50f);
+
             base.Set(tempAsset, n.GetOriginPosition(),
                      PathHelper.Direction(n.GetRotation() + (float) (mH.GetRandom().NextDouble() - 0.5))*
-                     n.velocity.Length(),
+                     moveSpeed,
                      3, 0.05f, 1, 0, mH);
 
             frameIndex = gutFrame;
