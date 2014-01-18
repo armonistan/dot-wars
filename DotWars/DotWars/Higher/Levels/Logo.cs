@@ -65,8 +65,8 @@ namespace DotWars
             textures.Add("Backgrounds/Menu/mapGametypeCard", new Rectangle(0, 0, 624, 200));
 
             //TeamScreen
-            textures.Add("Backgrounds/Menu/teamCards", new Rectangle(0, 0, 90, 90));
-            textures.Add("Backgrounds/Menu/controllerCards", new Rectangle(0, 0, 260, 432));
+            textures.Add("Backgrounds/Menu/controllerCards", new Rectangle(0, 0, 90, 90));
+            textures.Add("Backgrounds/Menu/teamCards", new Rectangle(0, 0, 260, 432));
 
             //Results Screen
             textures.Add("Backgrounds/ResultsScreen/winnersBackground", new Rectangle(0, 0, 1028, 288));
