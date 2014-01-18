@@ -20,7 +20,7 @@ namespace DotWars
         private Sprite background;
         private readonly Sprite backButton;
         private Sprite mustachio;
-        private Sprite aqueos;
+        private Sprite aquoes;
         private Sprite dian;
         private Sprite terron;
 
@@ -186,14 +186,14 @@ namespace DotWars
         private void initalizeCommanderTextAssassinsSurvival()
         {
             red = "Mustachio";
-            blue = "Aqueos";
+            blue = "Aquoes";
             green = "Terron";
             yellow = "Dian";
 
-            redPos = new Vector2(DEFAUT_SCREEN_SIZE.X/8, DEFAUT_SCREEN_SIZE.Y/9 + 10);
-            bluePos = new Vector2(DEFAUT_SCREEN_SIZE.X/8*7, DEFAUT_SCREEN_SIZE.Y/9 + 10);
-            greenPos = new Vector2(DEFAUT_SCREEN_SIZE.X/8, DEFAUT_SCREEN_SIZE.Y/10*6);
-            yellowPos = new Vector2(DEFAUT_SCREEN_SIZE.X/8*7, DEFAUT_SCREEN_SIZE.Y/10*6);
+            redPos = new Vector2(160, 88);
+            bluePos = new Vector2(1092, 88);
+            greenPos = new Vector2(160, 385);
+            yellowPos = new Vector2(1092, 385);
         }
 
         private void initalizeCommanderImagesAssassinsSurvival()
@@ -203,13 +203,13 @@ namespace DotWars
             Vector2 terronPos = new Vector2();
             Vector2 dianPos = new Vector2();
 
-            mustachioPos = new Vector2(DEFAUT_SCREEN_SIZE.X/8, DEFAUT_SCREEN_SIZE.Y/10 + 140);
-            aqueosPos = new Vector2(DEFAUT_SCREEN_SIZE.X/8*7, DEFAUT_SCREEN_SIZE.Y/10 + 140);
-            terronPos = new Vector2(DEFAUT_SCREEN_SIZE.X/8, DEFAUT_SCREEN_SIZE.Y/10*6 + 120);
-            dianPos = new Vector2(DEFAUT_SCREEN_SIZE.X/8*7, DEFAUT_SCREEN_SIZE.Y/10*6 + 120);
+            mustachioPos = new Vector2(155, 225);
+            aqueosPos = new Vector2(1088, 225);
+            terronPos = new Vector2(155, 515);
+            dianPos = new Vector2(1088, 515);
 
             mustachio = new Sprite("Backgrounds/PreGame/commanders", mustachioPos);
-            aqueos = new Sprite("Backgrounds/PreGame/commanders", aqueosPos);
+            aquoes = new Sprite("Backgrounds/PreGame/commanders", aqueosPos);
             terron = new Sprite("Backgrounds/PreGame/commanders", terronPos);
             dian = new Sprite("Backgrounds/PreGame/commanders", dianPos);
         }
@@ -324,7 +324,7 @@ namespace DotWars
 
 
             mustachio = new Sprite("Backgrounds/PreGame/commanders", mustachioPos);
-            aqueos = new Sprite("Backgrounds/PreGame/commanders", aqueosPos);
+            aquoes = new Sprite("Backgrounds/PreGame/commanders", aqueosPos);
             terron = new Sprite("Backgrounds/PreGame/commanders", terronPos);
             dian = new Sprite("Backgrounds/PreGame/commanders", dianPos);
         }
@@ -337,7 +337,7 @@ namespace DotWars
         public override void LoadContent(Microsoft.Xna.Framework.Content.ContentManager cM)
         {
             mustachio.LoadContent(textures);
-            aqueos.LoadContent(textures);
+            aquoes.LoadContent(textures);
             terron.LoadContent(textures);
             dian.LoadContent(textures);
 
@@ -351,8 +351,8 @@ namespace DotWars
             this.mustachio.SetFrameIndex(0);
             this.mustachio.UpdateFrame();
 
-            this.aqueos.SetFrameIndex(1);
-            this.aqueos.UpdateFrame();
+            this.aquoes.SetFrameIndex(1);
+            this.aquoes.UpdateFrame();
 
             this.terron.SetFrameIndex(2);
             this.terron.UpdateFrame();
@@ -408,7 +408,7 @@ namespace DotWars
             textures.DrawString(sB, red, redPos, Color.Red, TextureManager.FontSizes.small, true);
             mustachio.Draw(sB, new Vector2(0, 0), managers);
             textures.DrawString(sB, blue, bluePos, Color.Blue, TextureManager.FontSizes.small, true);
-            aqueos.Draw(sB, new Vector2(0, 0), managers);
+            aquoes.Draw(sB, new Vector2(0, 0), managers);
             textures.DrawString(sB, green, greenPos, Color.Green, TextureManager.FontSizes.small, true);
             terron.Draw(sB, new Vector2(0, 0), managers);
             textures.DrawString(sB, yellow, yellowPos, Color.Yellow, TextureManager.FontSizes.small, true);

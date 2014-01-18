@@ -784,6 +784,7 @@ namespace DotWars
         protected void HoverPath(ManagerHelper mH, Vector2 p, int r)
         {
             bool validPoint;
+            int tempCounter = 0;
             PathHelper.Vector2Int randPoint;
             PathHelper.Vector2Int originNode = new PathHelper.Vector2Int((int)(GetOriginPosition().X/mH.GetPathHelper().GetNodeSize().X), (int)(GetOriginPosition().Y/mH.GetPathHelper().GetNodeSize().Y));
 
@@ -818,9 +819,13 @@ namespace DotWars
                 {
                     validPoint = false;
                 }
-            } while (!validPoint);
+                tempCounter++;
+            } while (!validPoint && tempCounter < 50);
 
-            mH.GetPathHelper().FindClearPath(GetOriginPosition(), new Vector2(randPoint.X, randPoint.Y) * 32f, mH, path);
+            if(tempCounter < 50)
+                mH.GetPathHelper().FindClearPath(GetOriginPosition(), new Vector2(randPoint.X, randPoint.Y) * 32f, mH, path);
+            else
+                mH.GetPathHelper().FindClearPath(GetOriginPosition(), new Vector2(0,0) * 32f, mH, path);
         }
 
         protected virtual void DeathmatchPath(ManagerHelper mH)

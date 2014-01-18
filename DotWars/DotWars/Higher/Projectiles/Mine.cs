@@ -26,6 +26,8 @@ namespace DotWars
         private readonly float explodeRadius;
         private readonly int damage;
 
+        private bool isSurvial;
+
         public Mine()
             : base("Projectiles/mine", Vector2.Zero)
         {
@@ -40,7 +42,7 @@ namespace DotWars
             damage = 50;
         }
 
-        public void Set(NPC c, Vector2 pos)
+        public void Set(NPC c, Vector2 pos, ManagerHelper mH)
         {
             existanceTimer = 0.0;
 
@@ -52,6 +54,8 @@ namespace DotWars
             creator = c;
 
             position = pos - origin;
+
+            isSurvial = mH.GetGametype() is Survival;
         }
 
         public override void Update(ManagerHelper mH)
@@ -83,15 +87,10 @@ namespace DotWars
                 }
                 else
                 {
-                    foreach (NPC agent in mH.GetNPCManager().GetNPCs())
-                    {
-                        if (agent.GetAffiliation() != creator.GetAffiliation() &&
-                            NPCManager.IsNPCInRadius(agent, GetOriginPosition(), explodeRadius))
-                        {
-                            draw = false;
-                            mH.GetParticleManager().AddExplosion(GetOriginPosition(), creator, damage);
-                        }
-                    }
+                    if (isSurvial)
+                        shouldSurvialExplode(mH);
+                    else
+                        shouldRegularExplode(mH);
                 }
             }
             else
@@ -124,6 +123,32 @@ namespace DotWars
             base.Update(mH);
         }
 
+        private void shouldRegularExplode(ManagerHelper mH)
+        {
+            foreach (NPC agent in mH.GetNPCManager().GetNPCs())
+            {
+                if (agent.GetAffiliation() != creator.GetAffiliation() &&
+                    NPCManager.IsNPCInRadius(agent, GetOriginPosition(), explodeRadius))
+                {
+                    draw = false;
+                    mH.GetParticleManager().AddExplosion(GetOriginPosition(), creator, damage);
+                }
+            }
+        }
+
+        private void shouldSurvialExplode(ManagerHelper mH)
+        {
+            foreach (NPC agent in mH.GetNPCManager().GetNPCs())
+            {
+                if (agent.GetAffiliation() == NPC.AffliationTypes.black &&
+                    NPCManager.IsNPCInRadius(agent, GetOriginPosition(), explodeRadius))
+                {
+                    draw = false;
+                    mH.GetParticleManager().AddExplosion(GetOriginPosition(), creator, damage);
+                }
+            }
+        }
+
         public bool IsDrawing()
         {
             return draw;
@@ -132,6 +157,11 @@ namespace DotWars
         public bool IsArmed()
         {
             return armed;
+        }
+
+        public NPC GetCreator()
+        {
+            return creator;
         }
     }
 }

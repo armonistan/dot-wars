@@ -28,6 +28,8 @@ namespace DotWars
 
         private ManagerHelper managers;
 
+        private int redCounter, blueCounter, greenCounter, yellowCounter;
+
         public static string SHOTGUN = "Projectiles/bullet_shotgun";
         public static string STANDARD = "Projectiles/bullet_standard";
         public static string ROCKET = "Projectiles/bullet_rocket";
@@ -70,6 +72,10 @@ namespace DotWars
         public void Initialize(ManagerHelper mH)
         {
             managers = mH;
+            redCounter = 0;
+            blueCounter = 0;
+            greenCounter = 0;
+            yellowCounter = 0;
         }
 
         public void LoadContent()
@@ -116,16 +122,69 @@ namespace DotWars
 
         public void AddMine(NPC n)
         {
-            if (inactiveMines.Count > 0)
+            Boolean canMine = false;
+
+            switch (n.GetPersonalAffilation())
+            {
+                case NPC.AffliationTypes.red:
+                    if (redCounter < mineCap / 4)
+                    {
+                        canMine = true;
+                        redCounter++;
+                    }
+                    break;
+                case NPC.AffliationTypes.blue:
+                    if (blueCounter < mineCap / 4)
+                    {
+                        canMine = true;
+                        blueCounter++;
+                    }
+                    break;
+                case NPC.AffliationTypes.green:
+                    if (greenCounter < mineCap / 4)
+                    {
+                        canMine = true;
+                        greenCounter++;
+                    }
+                    break;
+                case NPC.AffliationTypes.yellow:
+                    if (yellowCounter < mineCap / 4)
+                    {
+                        canMine = true;
+                        yellowCounter++;
+                    }
+                    break;
+            }
+
+            if (inactiveMines.Count > 0 && canMine)
             {
                 Mine temp = inactiveMines.Pop();
-                temp.Set(n, n.GetOriginPosition());
+                temp.Set(n, n.GetOriginPosition(), managers);
                 activeMines.Add(temp);
             }
         }
 
         private void RemoveMine(Mine m)
         {
+            NPC n = m.GetCreator();
+
+            switch (n.GetPersonalAffilation())
+            {
+                case NPC.AffliationTypes.red:
+                        redCounter--;
+                    break;
+                case NPC.AffliationTypes.blue:
+                    blueCounter--;
+                    break;
+                case NPC.AffliationTypes.green:
+                    greenCounter--;
+                    break;
+                case NPC.AffliationTypes.yellow:
+                    yellowCounter--;
+                    break;
+            }
+
+
             int tempIndex = activeMines.IndexOf(m);
             inactiveMines.Push(activeMines[tempIndex]);
             activeMines.RemoveAt(tempIndex);
