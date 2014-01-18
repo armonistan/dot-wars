@@ -2196,9 +2196,6 @@ C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\obj\x86\Deb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\obj\x86\Debug\DotWars.pdb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Archipelago\whirlpool0.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\bases.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\flash.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\health_station.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\press_start.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Switch\switchBox.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Dots\Blue\bomber_blue.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Dots\Blue\bombardier_blue.xnb
@@ -2238,14 +2235,10 @@ C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Deb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Dots\Yellow\medic_yellow.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Dots\Yellow\sniper_yellow.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Dots\Yellow\specialist_yellow.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\flash.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\floating_health.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\grass_test.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\particle_fire.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\particle_leaves.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\particle_rock.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\particle_smoke.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\particle_water.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\PI_medic.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\smoke_bullet.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\smoke_standard.xnb
@@ -2291,7 +2284,6 @@ C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Deb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Switch\elect7.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Switch\elect8.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Switch\elect9.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Switch\electricity.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\Guts\Red\deadBombRed.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\Guts\Red\deadGruntRed.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\Guts\Red\deadGunnerRed.xnb
@@ -2329,17 +2321,6 @@ C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Deb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\particle_blood_green.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\particle_blood_yellow.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\particle_blood_red.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Mire\bridges.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Mire\lilypadA.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Mire\lilypadB.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Mire\lilypadC.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Mire\lilypadD.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Mire\lilypadE.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Mire\mireBkg.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Mire\mireSolid.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Mire\bridgesDown.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Mire\bridgesUp.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\explodeBottom.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\explodeTop.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\particle_heal.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Archipelago\archipelago_trees.xnb
@@ -2349,38 +2330,23 @@ C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Deb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\PI_YellowCommander.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Abilities\ability_red.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Abilities\ability_green.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Abilities\ability_blue_ripple.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Abilities\ability_blue_splash.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Abilities\ability_blue_spread.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Abilities\yellow_test.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Switch\BL.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Switch\BR.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Switch\BT.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Mire\bubbles.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Mire\waterBlocker.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Mire\fort.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Abilities\ability_blue_spread2.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Switch\BLr.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Switch\BRr.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Switch\BTr.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Switch\DBr.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Switch\fanLeft.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Switch\gustLeft.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Glade\gladeBlockers.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Glade\gladeBackground.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Caged\cagedBackground.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Caged\cagedBlockers.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Caged\lava.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Caged\cagedImpassable.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\PlayerScreen.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\LogoScreen.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\testBack.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\CommanderCards.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\GameScreen.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\GametypeCards.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\MapCards.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\teamCards.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\TeamScreen.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\controllerCards.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Relic\meteorAnimated2.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Relic\pulse.xnb
@@ -2420,7 +2386,6 @@ C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Deb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\mapGametypeCard.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\HUD\hud_score_frame.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\HUD\hud_time_frame.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\splashTemplate.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\commanders.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\profileBombardier.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\profileGunner.xnb
@@ -2446,7 +2411,6 @@ C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Deb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\menuSelector.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\buttonB.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\buttonA.xnb
-C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Menu\Gametypes\tdmInfographic.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Audio\Waves\explosion.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Audio\Waves\fireballSound.xnb
 C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Audio\Waves\flareShoot.xnb
@@ -2519,3 +2483,7 @@ C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textur
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\teamsPregameBkg.xnb
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\singlesPregameBkg.xnb
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Audio\Waves\DotWars.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\singlesPregameBkg.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\PreGame\teamsPregameBkg.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Abilities\ability_green2.xnb
+C:\Users\Riley\Documents\Emberware\Dot Wars\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Abilities\ability_red2.xnb
