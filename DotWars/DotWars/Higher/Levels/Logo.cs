@@ -124,6 +124,7 @@ namespace DotWars
             textures.Add("Backgrounds/Relic/relicBlockers", new Rectangle(0, 0, 1088, 864));
             textures.Add("Backgrounds/Relic/meteorAnimated2", new Rectangle(0, 0, 128, 128));
             textures.Add("Backgrounds/Relic/pulse", new Rectangle(0, 0, 470, 441));
+            textures.Add("Backgrounds/Relic/impathableMeteor", new Rectangle(0, 0, 96, 32));
 
             #endregion
 

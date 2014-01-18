@@ -2384,7 +2384,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\singlesPregameBkg.xnb</Output>
-      <Time>2014-01-12T17:05:00-06:00</Time>
+      <Time>2014-01-18T10:19:01.2625276-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Abilities\ability_red2.png</Source>
@@ -2619,6 +2619,15 @@
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\DotWars.xnb</Output>
       <Time>2013-08-18T11:03:33.9183707-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Relic\impathableMeteor.png</Source>
+      <Name>Textures\Backgrounds\Relic\impathableMeteor</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Relic\impathableMeteor.xnb</Output>
+      <Time>2014-01-18T11:52:56.0658199-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

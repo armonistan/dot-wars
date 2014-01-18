@@ -4587,3 +4587,4 @@ C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\T
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\teamsPregameBkg.xnb
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\PreGame\singlesPregameBkg.xnb
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Audio\Waves\DotWars.xnb
+C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Backgrounds\Relic\impathableMeteor.xnb
