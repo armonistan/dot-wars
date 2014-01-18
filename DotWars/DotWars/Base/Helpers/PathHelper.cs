@@ -120,42 +120,42 @@ namespace DotWars
 
         public void Draw(SpriteBatch sB, Vector2 d)
         {
-            //for (int x = 0; x < length; x++)
-            //{
-            //    for (int y = 0; y < width; y++)
-            //    {
-            //        if (x * y < field.Length)
-            //        {
-            //            if (field[x, y].GetBlocker())
-            //            {
-            //                square.position.X = x * 32;
-            //                square.position.Y = y * 32;
-            //                square.Draw(sB, d, managers);
-            //            }
-            //        }
-            //    }
-            //}
+            for (int x = 0; x < length; x++)
+            {
+                for (int y = 0; y < width; y++)
+                {
+                    if (x * y < field.Length)
+                    {
+                        if (field[x, y].GetBlocker())
+                        {
+                            square.position.X = x * 32;
+                            square.position.Y = y * 32;
+                            square.Draw(sB, d, managers);
+                        }
+                    }
+                }
+            }
 
-            //foreach (var p in managers.GetLevel().GetSpawnPoints())
-            //{
-            //    square.position.X = p.spawnPoint.X;
-            //    square.position.Y = p.spawnPoint.Y;
-            //
-            //    if (p.affilation == NPC.AffliationTypes.grey)
-            //    {
-            //        square.Draw(sB, d, managers);
-            //    }
-            //}
+            foreach (var p in managers.GetLevel().GetSpawnPoints())
+            {
+                square.position.X = p.spawnPoint.X;
+                square.position.Y = p.spawnPoint.Y;
+            
+                if (p.affilation == NPC.AffliationTypes.grey)
+                {
+                    square.Draw(sB, d, managers);
+                }
+            }
 
-            //foreach (NPC a in managers.GetNPCManager().GetNPCs())
-            //{
-            //    if (a.GetPath().Count > 0)
-            //    {
-            //        square.position.X = a.GetPath().Last().X;
-            //        square.position.Y = a.GetPath().Last().Y;
-            //        square.Draw(sB, d, managers);
-            //    }
-            //}
+            foreach (NPC a in managers.GetNPCManager().GetNPCs())
+            {
+                if (a.GetPath().Count > 0)
+                {
+                    square.position.X = a.GetPath().Last().X-16;
+                    square.position.Y = a.GetPath().Last().Y-16;
+                    square.Draw(sB, d, managers);
+                }
+            }
         }
 
         public void FindClearPath(Vector2 pA, Vector2 pB, ManagerHelper mH, Path path)
