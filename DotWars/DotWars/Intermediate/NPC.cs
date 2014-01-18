@@ -787,6 +787,8 @@ namespace DotWars
             PathHelper.Vector2Int randPoint;
             PathHelper.Vector2Int originNode = new PathHelper.Vector2Int((int)(GetOriginPosition().X/mH.GetPathHelper().GetNodeSize().X), (int)(GetOriginPosition().Y/mH.GetPathHelper().GetNodeSize().Y));
 
+            int loopCount = 0;
+
             do
             {
                 validPoint = true;
@@ -796,29 +798,18 @@ namespace DotWars
                 if ((randPoint.X > 0 && randPoint.X < mH.GetLevelSize().X/32) &&
                     (randPoint.Y > 0 && randPoint.Y < mH.GetLevelSize().Y/32))
                 {
-                    foreach (Environment e in mH.GetEnvironmentManager().GetStaticBlockers())
+                    if (mH.GetPathHelper().GetField()[randPoint.X, randPoint.Y].GetBlocker())
                     {
-                        foreach (PathHelper.Vector2Int n in e.GetFrameBlockers())
-                        {
-                            if ((n.X + (int) e.GetOriginPosition().X) == randPoint.X &&
-                                (n.Y + (int) e.GetOriginPosition().Y) == randPoint.Y)
-                            {
-                                validPoint = false;
-                                break;
-                            }
-                        }
-
-                        if (!validPoint)
-                        {
-                            break;
-                        }
+                        validPoint = false;
                     }
                 }
                 else
                 {
                     validPoint = false;
                 }
-            } while (!validPoint);
+
+                loopCount++;
+            } while (!validPoint && loopCount < 16);
 
             mH.GetPathHelper().FindClearPath(GetOriginPosition(), new Vector2(randPoint.X, randPoint.Y) * 32f, mH, path);
         }

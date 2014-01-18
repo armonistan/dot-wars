@@ -432,6 +432,11 @@ namespace DotWars
             }
         }
 
+        public Node[,] GetField()
+        {
+            return field;
+        }
+
         public Vector2 GetNodeSize()
         {
             return nodeSize;
