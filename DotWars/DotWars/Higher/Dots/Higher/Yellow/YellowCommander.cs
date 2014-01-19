@@ -4,8 +4,8 @@ namespace DotWars
 {
     public class YellowCommander : Commander
     {
-        private readonly int abilityOffSpeed;
-        private readonly int abilitySpeed;
+        private readonly float abilityOffSpeed;
+        private readonly float abilitySpeed;
 
         private readonly double abilityTime;
         private double abilityTimer;

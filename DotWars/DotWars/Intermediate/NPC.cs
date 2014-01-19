@@ -23,7 +23,7 @@ namespace DotWars
             same
         }
 
-        public static int buffer = 1;
+        public static float buffer = 1;
 
         #endregion
 
@@ -51,7 +51,7 @@ namespace DotWars
         protected NPC target;
 
         protected readonly float maxTurningSpeed; // Prevents dots from turning too fast
-        protected int movementSpeed; //sets up generic npc movement speed
+        protected float movementSpeed; //sets up generic npc movement speed
         protected float turningSpeed; // Used to smoothly turn
 
         //Path used for going
@@ -132,7 +132,7 @@ namespace DotWars
                 if (pathTimer >= pathTimerEnd || path.Count == 0)
                 {
                     NewPath(mH);
-                    pathTimer = 0;
+                    pathTimer = 0.0;
                 }
                 else
                 {
@@ -176,17 +176,17 @@ namespace DotWars
             }
 
             //Calculate turningSpeed to maximize speed and minimize jittering
-            if (MathHelper.Distance(rotation, dir) < turningSpeed && turningSpeed > MathHelper.Pi/160)
+            if (MathHelper.Distance(rotation, dir) < turningSpeed && turningSpeed > MathHelper.Pi/160f)
             {
-                turningSpeed /= 2;
+                turningSpeed /= 2f;
             }
             else if (MathHelper.Distance(rotation, dir) > turningSpeed && turningSpeed < maxTurningSpeed)
             {
-                turningSpeed *= 2;
+                turningSpeed *= 2f;
             }
 
             //Apply turningSpeed to rotation in correct direction
-            float otherRot = rotation + (MathHelper.TwoPi)*((rotation > MathHelper.Pi) ? -1 : 1);
+            float otherRot = rotation + (MathHelper.TwoPi)*((rotation > MathHelper.Pi) ? -1f : 1f);
             //Same angle, different name to compensate for linear numbers
             float distADir = MathHelper.Distance(dir, rotation),
                   //Archlength sorta from actual rotation
@@ -198,7 +198,7 @@ namespace DotWars
                 //Do normal rotation
                 if (rotation > dir)
                 {
-                    Turn(-1*turningSpeed);
+                    Turn(-1f*turningSpeed);
                 }
                 else if (rotation < dir)
                 {
@@ -211,7 +211,7 @@ namespace DotWars
                 //Do a rotation using the new number, which is able to give the correct turning direction
                 if (otherRot > dir)
                 {
-                    Turn(-1*turningSpeed);
+                    Turn(-1f*turningSpeed);
                 }
                 else if (otherRot < dir)
                 {
@@ -248,9 +248,9 @@ namespace DotWars
             {
                 if (a.GetAffiliation() != affiliation)
                 {
-                    Vector2 tempVect = CollisionHelper.IntersectPixelsRadius(this, a, origin.X, origin.X);
+                    Vector2 tempVect = CollisionHelper.IntersectPixelsSimple(this, a);
 
-                    if (tempVect != new Vector2(-1))
+                    if (tempVect != CollisionHelper.NO_COLLIDE)
                     {
                         velocity = CollisionHelper.CollideRandom(GetOriginPosition(), tempVect)*movementSpeed;
 
@@ -357,7 +357,7 @@ namespace DotWars
 
             if (shootingCounter > shootingSpeed && target != null)
             {
-                shootingCounter = 0;
+                shootingCounter = 0.0;
                 Shoot(mH);
             }
             else
@@ -373,7 +373,7 @@ namespace DotWars
 
         protected void UpdateProtection(ManagerHelper mH)
         {
-            if (protectedTimer > 0)
+            if (protectedTimer > 0.0)
             {
                 protectedTimer -= mH.GetGameTime().ElapsedGameTime.TotalSeconds;
             }
@@ -387,13 +387,16 @@ namespace DotWars
             }
 
             if (mH.GetGametype() is Survival && affiliation != AffliationTypes.black)
+            {
                 return false;
+            }
             else
             {
                 foreach (Projectile p in mH.GetProjectileManager().GetProjectiles())
                 {
-                    if (p.GetDrawTime() > 0 && p.GetAffiliation() != affiliation &&
-                        CollisionHelper.IntersectPixelsSimple(this, p) != new Vector2(-1))
+                    if (p.GetDrawTime() > 0 && 
+                        p.GetAffiliation() != affiliation &&
+                        CollisionHelper.IntersectPixelsSimple(this, p) != CollisionHelper.NO_COLLIDE)
                     {
                         lastDamagerDirection = PathHelper.DirectionVector(GetOriginPosition(), p.GetOriginPosition());
                         ChangeHealth(-1*p.GetDamage(), p.GetCreator());
@@ -411,9 +414,9 @@ namespace DotWars
                     else
                         counter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
 
-                    if (counter > 2)
+                    if (counter > 2.0)
                     {
-                        counter = 0;
+                        counter = 0.0;
                         lastDamagerDirection = Vector2.Zero;
                     }
                 }
@@ -527,24 +530,24 @@ namespace DotWars
 
         protected virtual void Shoot(ManagerHelper mH)
         {
-            Vector2 tempPos = PathHelper.Direction(rotation + MathHelper.PiOver2)*new Vector2(10);
+            Vector2 tempPos = PathHelper.Direction(rotation + MathHelper.PiOver2)*10f;
 
             mH.GetProjectileManager()
               .AddProjectile(ProjectileManager.STANDARD, GetOriginPosition() + tempPos, this,
-                             PathHelper.Direction(rotation + (float) mH.GetRandom().NextDouble()/8 - 0.0625f)*400, 25,
-                             false, true, 5);
+                             PathHelper.Direction(rotation + (float) mH.GetRandom().NextDouble()/8f - 0.0625f)*400f, 25,
+                             false, true, 5f);
 
             mH.GetAudioManager().Play(AudioManager.STANDARD_SHOOT, AudioManager.RandomVolume(mH),
-                                      AudioManager.RandomPitch(mH), 0, false);
+                                      AudioManager.RandomPitch(mH), 0f, false);
         }
 
         protected void TossGrenade(ManagerHelper mH)
         {
-            Vector2 tempPos = PathHelper.Direction(rotation + MathHelper.PiOver2)*new Vector2(10);
+            Vector2 tempPos = PathHelper.Direction(rotation + MathHelper.PiOver2)*10f;
 
             mH.GetProjectileManager()
               .AddTossable(ProjectileManager.GRENADE, GetOriginPosition() + tempPos, this,
-                           PathHelper.Direction(rotation)*500, 100, true, 1.5f);
+                           PathHelper.Direction(rotation)*500f, 100, true, 1.5f);
 
             GrenadeSound(mH);
         }
@@ -552,7 +555,7 @@ namespace DotWars
         protected virtual void GrenadeSound(ManagerHelper mH)
         {
             mH.GetAudioManager().Play(AudioManager.GRENADE_SHOOT, AudioManager.RandomVolume(mH),
-                                      AudioManager.RandomPitch(mH), 0, false);
+                                      AudioManager.RandomPitch(mH), 0.0f, false);
         }
 
         #endregion
@@ -568,7 +571,6 @@ namespace DotWars
         {
             return 0;
         }
-
 
         public int GetHealth()
         {
@@ -612,11 +614,6 @@ namespace DotWars
 
         public void ChangeHealth(int hM, NPC lD)
         {
-            if (this is Suicide)
-            {
-                //TODO: Find out why large rocks kill suicides
-            }
-
             if (!IsProtected())
             {
                 health += hM;
@@ -633,7 +630,7 @@ namespace DotWars
             }
         }
 
-        public void ChangeHealth(int hM, NPC.AffliationTypes lD)
+        public void ChangeHealth(int hM)
         {
             if (!IsProtected())
             {

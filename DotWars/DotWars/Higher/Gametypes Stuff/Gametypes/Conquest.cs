@@ -51,9 +51,12 @@ namespace DotWars
                 b.Update(mH);
             }
 
+            //Fucking stupid counter
+            int teamCounter = 0;
             foreach (NPC.AffliationTypes team in teams)
             {
-                ChangeScoreAbsolute(team, GetNumAlliedBases(team));
+                ChangeScoreAbsolute(teamCounter, GetNumAlliedBases(team));
+                teamCounter++;
             }
 
             //Spawn Section
@@ -185,7 +188,7 @@ namespace DotWars
 
             #endregion
 
-            if (gameEndTimer < 0)
+            if (gameEndTimer < 0.0)
             {
                 return true;
             }
@@ -215,19 +218,24 @@ namespace DotWars
             #endregion
         }
 
-        protected void ChangeScoreAbsolute(NPC.AffliationTypes t, int s)
+        private void ChangeScoreAbsolute(int index, int s)
         {
-            int index = teams.IndexOf(t);
+            //int index = teams.IndexOf(t);
 
             //If the team exists, update it's score
-            if (index != -1)
-            {
-                scores[index] = s;
-            }
-            else if (t != NPC.AffliationTypes.grey)
-            {
-                throw new Exception("That team doesn't exist");
-            }
+            //if (index != -1)
+            //{
+            //    scores[index] = s;
+            //}
+            //else if (t != NPC.AffliationTypes.grey)
+            //{
+            //    throw new Exception("That team doesn't exist");
+            //}
+
+            //TODO: Change back
+
+            scores[index] = s;
+
         }
 
         public override void DrawBottom(SpriteBatch sB, Vector2 d)

@@ -1005,11 +1005,11 @@ namespace DotWars
             //Go through each team and see if they won
             for (int i = 0; i < teams.Count; i++)
             {
-                if (gameEndTimer > 0 && scores[i] >= winScore)
+                if (gameEndTimer > 0.0 && scores[i] >= winScore)
                 {
                     return teams[i];
                 }
-                else if (gameEndTimer <= 0)
+                else if (gameEndTimer <= 0.0)
                 {
                     if (scores[i] > highestScore)
                     {

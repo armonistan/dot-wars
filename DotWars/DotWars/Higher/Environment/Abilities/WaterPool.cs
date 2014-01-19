@@ -67,7 +67,7 @@ namespace DotWars
                                 mH.GetParticleManager().AddHeal(a);
                             }
 
-                            a.ChangeHealth(10, NPC.AffliationTypes.same);
+                            a.ChangeHealth(10);
                         }
                     }
                     else

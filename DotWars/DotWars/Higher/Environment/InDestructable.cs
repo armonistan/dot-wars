@@ -33,7 +33,7 @@ namespace DotWars
             foreach (Projectile p in mH.GetProjectileManager().GetProjectiles())
             {
                 if (p.GetDrawTime() > 0 &&
-                    CollisionHelper.IntersectPixelsPoint(p.GetOriginPosition(), this) != new Vector2(-1) &&
+                    CollisionHelper.IntersectPixelsPoint(p.GetOriginPosition(), this) != CollisionHelper.NO_COLLIDE &&
                     p.GetIfShouldCollide())
                 {
                     p.SetDrawTime(0);

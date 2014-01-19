@@ -39,7 +39,7 @@ namespace DotWars
             {
                 //Get picked up
                 if (theCrane.myBox == null &&
-                    CollisionHelper.IntersectPixelsPoint(theCrane.GetCranePoint(), this) != new Vector2(-1))
+                    CollisionHelper.IntersectPixelsPoint(theCrane.GetCranePoint(), this) != CollisionHelper.NO_COLLIDE)
                 {
                     theCrane.myBox = this;
                 }

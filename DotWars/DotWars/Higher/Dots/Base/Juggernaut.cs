@@ -92,7 +92,7 @@ namespace DotWars
                 foreach (Projectile p in mH.GetProjectileManager().GetProjectiles())
                 {
                     if (p.GetDrawTime() > 0 && p.GetAffiliation() != affiliation &&
-                        CollisionHelper.IntersectPixelsSimple(this, p) != new Vector2(-1))
+                        CollisionHelper.IntersectPixelsSimple(this, p) != CollisionHelper.NO_COLLIDE)
                     {
                         lastDamagerDirection = PathHelper.DirectionVector(GetOriginPosition(), p.GetOriginPosition());
                         counter = 0;

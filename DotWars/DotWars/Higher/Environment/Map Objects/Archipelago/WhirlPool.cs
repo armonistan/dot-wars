@@ -9,12 +9,15 @@ namespace DotWars
     internal class WhirlPool : Impathable
     {
         private readonly Sprite[] poolSections;
+        private float[] sectionWidths;
         private const int NUM_SECTIONS = 5;
+        private float radius;
 
         public WhirlPool(Vector2 p)
             : base("Backgrounds/Archipelago/whirlpool0", p, Vector2.Zero)
         {
             poolSections = new Sprite[NUM_SECTIONS];
+            sectionWidths = new float[NUM_SECTIONS];
 
             for (int i = 0; i < NUM_SECTIONS; i++)
             {
@@ -24,19 +27,25 @@ namespace DotWars
 
         public override void LoadContent(TextureManager tM)
         {
-            foreach (Sprite section in poolSections)
+            for (int i = 0; i < poolSections.Length; i++)
             {
+                Sprite section = poolSections[i];
                 section.LoadContent(tM);
+
+                sectionWidths[i] = section.GetFrame().Width;
             }
 
             base.LoadContent(tM);
+
+            radius = frame.Width/2f;
         }
 
         public override void Update(ManagerHelper mH)
         {
-            foreach (Sprite section in poolSections)
+            for (int i = 0; i < poolSections.Length; i++)
             {
-                section.Turn(10000.0f/(section.GetFrame().Width*section.GetFrame().Width)*mH.GetDeltaSeconds());
+                Sprite section = poolSections[i];
+                section.Turn(10000.0f/(sectionWidths[i]*sectionWidths[i])*mH.GetDeltaSeconds());
             }
 
             foreach (NPC a in mH.GetNPCManager().GetNPCs())
@@ -45,16 +54,16 @@ namespace DotWars
                 {
                     float tempDistance = PathHelper.DistanceSquared(GetOriginPosition(), a.GetOriginPosition());
 
-                    if (tempDistance < 15*15)
+                    if (tempDistance < 15f*15f)
                     {
                         //TODO: Modify
                         a.position = mH.GetLevelSize()*new Vector2(mH.GetRandom().Next(2), mH.GetRandom().Next(2));
                     }
-                    else if (tempDistance < frame.Width/2*frame.Width/2)
+                    else if (tempDistance < radius*radius)
                     {
                         float tempRot = PathHelper.Direction(a.GetOriginPosition(), GetOriginPosition()) -
-                                        MathHelper.Pi/9;
-                        a.AddAcceleration(new Vector2(DWMath.Cos(tempRot), DWMath.Sin(tempRot))*4);
+                                        MathHelper.Pi/9f;
+                        a.AddAcceleration(new Vector2(DWMath.Cos(tempRot), DWMath.Sin(tempRot))*4f);
                     }
                 }
             }
@@ -63,13 +72,13 @@ namespace DotWars
             {
                 float tempDistance = PathHelper.DistanceSquared(GetOriginPosition(), e.GetOriginPosition());
 
-                if (tempDistance < 15*15)
+                if (tempDistance < 15f*15f)
                 {
                     e.SetDrawTime(0);
                 }
                 else if (tempDistance < (frame.Width/2)*(frame.Width/2))
                 {
-                    float tempRot = PathHelper.Direction(e.GetOriginPosition(), GetOriginPosition()) + MathHelper.Pi/9;
+                    float tempRot = PathHelper.Direction(e.GetOriginPosition(), GetOriginPosition()) + MathHelper.Pi/9f;
                     e.AddAcceleration(new Vector2(DWMath.Cos(tempRot), DWMath.Sin(tempRot))*100);
                 }
             }

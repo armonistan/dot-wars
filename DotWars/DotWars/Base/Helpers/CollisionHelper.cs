@@ -15,6 +15,8 @@ namespace DotWars
         private static readonly Vector2[] DIRECTIONS = new Vector2[NUM_DIRECTIONS];
         private static readonly float[] ROTATIONS = new float[NUM_DIRECTIONS];
 
+        public static Vector2 NO_COLLIDE = new Vector2(-1f);
+
         #endregion
 
         public static void Initialize()
@@ -64,7 +66,7 @@ namespace DotWars
             }
             else
             {
-                return new Vector2(-1);
+                return NO_COLLIDE;
             }
         }
 
@@ -88,7 +90,7 @@ namespace DotWars
 
         public static int IntersectPixelsDirectionalRaw(Sprite sA, Vector2 fA, Sprite sB)
         {
-            Vector2 tempVector = new Vector2(-1),
+            Vector2 tempVector = CollisionHelper.NO_COLLIDE,
                     tempRadius = new Vector2(sA.origin.X);
 
             for (int i = 0; i < NUM_DIRECTIONS; i++)
@@ -117,7 +119,7 @@ namespace DotWars
 
             if (x < frameStartX || x >= frameEndX || y < frameStartY || y >= frameEndY)
             {
-                return -Vector2.One;
+                return NO_COLLIDE;
             }
 
             if (sB.GetTextureData()[x, y].A != 0)
@@ -126,7 +128,7 @@ namespace DotWars
             }
             else
             {
-                return -Vector2.One;
+                return NO_COLLIDE;
             }
         }
     }

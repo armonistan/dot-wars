@@ -66,7 +66,7 @@ namespace DotWars
             {
                 if (explosion.GetAffiliation() != creator.GetAffiliation() &&
                     CollisionHelper.IntersectPixelsRadius(this, explosion, origin.X, explosion.GetRadius()) !=
-                    new Vector2(-1))
+                    CollisionHelper.NO_COLLIDE)
                 {
                     shouldExplode = true;
                     break;

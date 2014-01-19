@@ -17,7 +17,7 @@ namespace DotWars
 
             maxHealth = (int) (50*temp.suicideSpawnModifier);
             health = maxHealth;
-            movementSpeed = (int) (50 + temp.suicideSpawnModifier*50);
+            movementSpeed = 50f + temp.suicideSpawnModifier*50f;
             affiliation = AffliationTypes.black;
             animateCounter = 0;
         }
@@ -58,7 +58,7 @@ namespace DotWars
             target = TargetDecider(mH);
 
             //TODO: Make this compatable with NPC death code
-            if (target != null && CollisionHelper.IntersectPixelsRadius(this, target, 24, 24) != new Vector2(-1))
+            if (target != null && CollisionHelper.IntersectPixelsRadius(this, target, 24, 24) != CollisionHelper.NO_COLLIDE)
             {
                 Explode(mH);
             }

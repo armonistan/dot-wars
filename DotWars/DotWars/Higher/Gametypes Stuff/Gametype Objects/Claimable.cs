@@ -32,7 +32,7 @@ namespace DotWars
             {
                 foreach (NPC a in mH.GetNPCManager().GetCommanders())
                 {
-                    if (CollisionHelper.IntersectPixelsRadius(a, this, 16, 32) != new Vector2(-1))
+                    if (CollisionHelper.IntersectPixelsRadius(a, this, 16, 32) != CollisionHelper.NO_COLLIDE)
                     {
                         if (mH.GetNPCManager().GetAllies(a.GetAffiliation()).Count < mH.GetGametype().GetPopCap())
                         {

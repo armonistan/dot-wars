@@ -8,8 +8,8 @@ namespace DotWars
 {
     internal class YellowPlayerCommander : PlayerCommander
     {
-        private readonly int abilityOffSpeed;
-        private readonly int abilitySpeed;
+        private readonly float abilityOffSpeed;
+        private readonly float abilitySpeed;
 
         private readonly double abilityTime;
         private double abilityTimer;

@@ -46,7 +46,7 @@ namespace DotWars
             Queue<Projectile> tempProjectiles = mH.GetProjectileManager().GetProjectiles();
             foreach (Projectile p in tempProjectiles)
             {
-                if (CollisionHelper.IntersectPixelsPoint(p.GetOriginPosition(), this) != new Vector2(-1) &&
+                if (CollisionHelper.IntersectPixelsPoint(p.GetOriginPosition(), this) != CollisionHelper.NO_COLLIDE &&
                     p.GetDrawTime() > 0)
                 {
                     health -= p.GetDamage();

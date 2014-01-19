@@ -18,7 +18,7 @@ namespace DotWars
         {
             foreach (var agent in mH.GetNPCManager().GetNPCs())
             {
-                if (CollisionHelper.IntersectPixelsPoint(agent.GetOriginPosition(), this) != new Vector2(-1))
+                if (CollisionHelper.IntersectPixelsPoint(agent.GetOriginPosition(), this) != CollisionHelper.NO_COLLIDE)
                 {
                     agent.ChangeHealth(-2, null);
 

@@ -46,7 +46,7 @@ namespace DotWars
         {
             foreach (NPC a in mH.GetNPCManager().GetNPCs())
             {
-                if (CollisionHelper.IntersectPixelsSimple(a, this) != new Vector2(-1))
+                if (CollisionHelper.IntersectPixelsSimple(a, this) != CollisionHelper.NO_COLLIDE)
                 {
                     if (status == FlagStatus.home)
                     {
@@ -97,7 +97,7 @@ namespace DotWars
                 foreach (CTFBase b in temp.GetBases())
                 {
                     if (b.affiliation != affiliation &&
-                        CollisionHelper.IntersectPixelsRadius(this, b, 32, 32) != new Vector2(-1))
+                        CollisionHelper.IntersectPixelsRadius(this, b, 32, 32) != CollisionHelper.NO_COLLIDE)
                     {
                         status = FlagStatus.home;
                         position = homePosition - origin;
@@ -114,7 +114,7 @@ namespace DotWars
                 foreach (AssaultBase b in temp.GetBases())
                 {
                     if (b.affiliation != affiliation &&
-                        CollisionHelper.IntersectPixelsRadius(this, b, 32, 32) != new Vector2(-1))
+                        CollisionHelper.IntersectPixelsRadius(this, b, 32, 32) != CollisionHelper.NO_COLLIDE)
                     {
                         status = FlagStatus.home;
                         position = homePosition - origin;
