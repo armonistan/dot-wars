@@ -8,6 +8,8 @@ namespace DotWars
 {
     public class DefensiveConquestGrunt : Grunt
     {
+        const int RADIUS = 128;
+
         public DefensiveConquestGrunt(string a, Vector2 p)
             : base(a, p)
         {
@@ -20,7 +22,7 @@ namespace DotWars
 
             if (forwardBase != null)
             {
-                mH.GetPathHelper().FindClearPath(GetOriginPosition(), forwardBase.GetOriginPosition(), mH, path);
+                this.HoverPath(mH, forwardBase.originPosition, RADIUS);
             }
             else
             {

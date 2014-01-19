@@ -146,7 +146,7 @@ namespace DotWars
                     square.Draw(sB, d, managers);
                 }
             }
-
+             */
             foreach (NPC a in managers.GetNPCManager().GetNPCs())
             {
                 if (a.GetPath().Count > 0)
@@ -156,7 +156,7 @@ namespace DotWars
                     square.Draw(sB, d, managers);
                 }
             }
-             */
+
         }
 
         public void FindClearPath(Vector2 pA, Vector2 pB, ManagerHelper mH, Path path)

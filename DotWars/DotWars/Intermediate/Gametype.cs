@@ -253,6 +253,8 @@ namespace DotWars
             else
                 unitType = mH.GetRandom().Next(7);
 
+            //unitType = 0;//temp temp temp
+
             switch (aT)
             {
                     #region Red Team Spawns
