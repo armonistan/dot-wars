@@ -16,6 +16,7 @@ namespace DotWars
         //Collection of NPCs
         private readonly Dictionary<NPC.AffliationTypes, List<NPC>> agents;
         private readonly List<NPC> allAgents;
+        private readonly List<NPC> agentsToKill; 
         private readonly List<Commander> commanders;
         private readonly List<NPC.AffliationTypes> teams = new List<NPC.AffliationTypes>();
         private readonly List<NPC> bombers;
@@ -37,6 +38,7 @@ namespace DotWars
             medicKills = 0;
 
             allAgents = new List<NPC>();
+            agentsToKill = new List<NPC>();
 
             stats = new Dictionary<NPC.AffliationTypes, StatisticsManager.StatHolder>();
         }
@@ -97,7 +99,7 @@ namespace DotWars
             allAgents.Add(a);
         }
 
-        public void Remove(NPC a)
+        private void Remove(NPC a)
         {
             if (a is Bomber)
             {
@@ -153,30 +155,32 @@ namespace DotWars
                 }
             }
 
-            foreach (var team in agents)
+            foreach (var agent in allAgents)
             {
-                for (int i = 0; i < team.Value.Count; i++)
-                {
-                    a = team.Value[i];
+                agent.Update(managers);
 
-                    a.Update(managers);
-                    if (!team.Value.Contains(a))
-                    {
-                        i--;
-                    }
+                if (!agent.IsAlive())
+                {
+                    agentsToKill.Add(agent);
                 }
             }
 
-            for (int i = 0; i < bombers.Count; i++)
+            foreach (var bomber in bombers)
             {
-                a = bombers[i];
+                bomber.Update(managers);
 
-                a.Update(managers);
-                if (!bombers.Contains(a))
+                if (!bomber.IsAlive())
                 {
-                    i--;
+                    agentsToKill.Add(bomber);
                 }
             }
+
+            foreach (var agent in agentsToKill)
+            {
+                Remove(agent);
+            }
+
+            agentsToKill.Clear();
         }
 
         public void DrawLowest(SpriteBatch sB, Vector2 d)

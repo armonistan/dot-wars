@@ -29,7 +29,7 @@ namespace DotWars
         {
             if (lifeCounter < 0)
             {
-                mH.GetEnvironmentManager().RemoveStaticBlocker(this);
+                SetShouldRemove(true);
             }
 
             lifeCounter -= mH.GetGameTime().ElapsedGameTime.TotalSeconds;
@@ -71,7 +71,7 @@ namespace DotWars
 
                 if (velocity == Vector2.Zero)
                 {
-                    mH.GetEnvironmentManager().RemoveStaticBlocker(this);
+                    SetShouldRemove(true);
                 }
 
                 rotation = PathHelper.Direction(velocity);
@@ -98,7 +98,7 @@ namespace DotWars
 
         public override void DeathCode(ManagerHelper mH)
         {
-            mH.GetEnvironmentManager().RemoveStaticBlocker(this);
+            SetShouldRemove(true);
         }
 
         public void lowerHealth()

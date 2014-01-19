@@ -19,6 +19,9 @@ namespace DotWars
         private readonly List<Environment> topObjects;
         private ManagerHelper managers;
 
+        private readonly List<Environment> blockersToRemove;
+        private readonly List<Impathable> impathablesToRemove; 
+
         #endregion
 
         public EnvironmentManager()
@@ -28,6 +31,9 @@ namespace DotWars
             staticBlockers = new List<Environment>();
             notPassables = new List<Impassable>();
             notPathables = new List<Impathable>();
+
+            blockersToRemove = new List<Environment>();
+            impathablesToRemove = new List<Impathable>();
         }
 
         public void Initialize(ManagerHelper mH)
@@ -39,135 +45,97 @@ namespace DotWars
         {
             topObjects.Add(e);
             e.LoadContent(managers.GetTextureManager());
+            e.SetShouldRemove(false);
         }
 
         public void AddBotObject(Environment e)
         {
             botObjects.Add(e);
             e.LoadContent(managers.GetTextureManager());
+            e.SetShouldRemove(false);
         }
 
         public void AddStaticBlocker(Environment b)
         {
             staticBlockers.Add(b);
             b.LoadContent(managers.GetTextureManager());
+            b.SetShouldRemove(false);
         }
 
         public void AddImpassable(Impassable i)
         {
             notPassables.Add(i);
             i.LoadContent(managers.GetTextureManager());
+            i.SetShouldRemove(false);
         }
 
         public void AddImpathable(Impathable i)
         {
             notPathables.Add(i);
             i.LoadContent(managers.GetTextureManager());
+            i.SetShouldRemove(false);
         }
 
-        public void RemoveTopObject(Environment e)
-        {
-            topObjects.Remove(e);
-        }
-
-        public void RemoveBotObject(Environment e)
-        {
-            botObjects.Remove(e);
-        }
-
-        public void RemoveStaticBlocker(Environment e)
+        private void RemoveStaticBlocker(Environment e)
         {
             staticBlockers.Remove(e);
         }
 
-        public void RemoveImpassable(Impassable i)
-        {
-            notPassables.Remove(i);
-        }
-
-        public void RemoveImpathable(Impathable i)
+        private void RemoveImpathable(Impathable i)
         {
             notPathables.Remove(i);
         }
 
         public void Update()
         {
-            //Goes through all the objects
-            for (int i = 0; i < topObjects.Count; i++)
+            foreach (var environment in topObjects)
             {
-                //Store the item in case it dies
-                Environment e = topObjects[i];
+                environment.Update(managers);
+            }
 
-                //Lets it update
-                e.Update(managers);
+            foreach (var environment in botObjects)
+            {
+                environment.Update(managers);
+            }
 
-                //If it no longer exists, re-sync the loop
-                if (!topObjects.Contains(e))
+            foreach (var blocker in staticBlockers)
+            {
+                blocker.Update(managers);
+
+                if (blocker.IsShouldRemove())
                 {
-                    i--;
+                    blockersToRemove.Add(blocker);
                 }
             }
 
-            //Goes through all the objects
-            for (int i = 0; i < botObjects.Count; i++)
+            foreach (var environment in blockersToRemove)
             {
-                //Store the item in case it dies
-                Environment e = botObjects[i];
+                RemoveStaticBlocker(environment);
+            }
 
-                //Lets it update
-                e.Update(managers);
+            blockersToRemove.Clear();
 
-                //If it no longer exists, re-sync the loop
-                if (!botObjects.Contains(e))
+            foreach (var notPassable in notPassables)
+            {
+                notPassable.Update(managers);
+            }
+
+            foreach (var notPathable in notPathables)
+            {
+                notPathable.Update(managers);
+
+                if (notPathable.IsShouldRemove())
                 {
-                    i--;
+                    impathablesToRemove.Add(notPathable);
                 }
             }
 
-            for (int i = 0; i < staticBlockers.Count; i++)
+            foreach (var impathable in impathablesToRemove)
             {
-                //Store the item in case it dies
-                Environment e = staticBlockers[i];
-
-                //Lets it update
-                e.Update(managers);
-
-                //If it no longer exists, re-sync the loop
-                if (!staticBlockers.Contains(e))
-                {
-                    i--;
-                }
+                RemoveImpathable(impathable);
             }
 
-            for (int i = 0; i < notPassables.Count; i++)
-            {
-                //Store the item in case it dies
-                Impassable e = notPassables[i];
-
-                //Lets it update
-                e.Update(managers);
-
-                //If it no longer exists, re-sync the loop
-                if (!notPassables.Contains(e))
-                {
-                    i--;
-                }
-            }
-
-            for (int i = 0; i < notPathables.Count; i++)
-            {
-                //Store the item in case it dies
-                Impathable e = notPathables[i];
-
-                //Lets it update
-                e.Update(managers);
-
-                //If it no longer exists, re-sync the loop
-                if (!notPathables.Contains(e))
-                {
-                    i--;
-                }
-            }
+            impathablesToRemove.Clear();
         }
 
         public void DrawTop(SpriteBatch sB, Vector2 d)

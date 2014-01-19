@@ -39,7 +39,7 @@ namespace DotWars
         {
             if (health <= 0)
             {
-                mH.GetEnvironmentManager().RemoveStaticBlocker(this);
+                SetShouldRemove(true);
                 return true;
             }
 

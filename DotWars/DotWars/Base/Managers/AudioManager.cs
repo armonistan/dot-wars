@@ -68,6 +68,8 @@ namespace DotWars
             {
                 sound.Stop(AudioStopOptions.Immediate);
             }
+
+            keptSounds.Clear();
         }
 
         public void Play(string a, float v, float pI, float pA, bool keep)

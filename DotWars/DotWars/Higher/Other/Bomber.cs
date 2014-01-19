@@ -91,7 +91,7 @@ namespace DotWars
             if (position.X < -200 || position.X > mH.GetLevelSize().X + 200 || position.Y < -200 ||
                 position.Y > mH.GetLevelSize().Y + 200)
             {
-                mH.GetNPCManager().Remove(this);
+                Kill();
             }
 
             float distanceSquaredThing = 1000*1000 - PathHelper.DistanceSquared(GetOriginPosition(), targetPosition);

@@ -29,6 +29,8 @@ namespace DotWars
 
         #region Declarations
 
+        private bool alive;
+
         protected AffliationTypes affiliation; //the npc's affliation
         protected AffliationTypes personalAffiliation;
 
@@ -66,6 +68,8 @@ namespace DotWars
         protected NPC(String a, Vector2 p) :
             base(a, p)
         {
+            alive = true;
+
             affiliation = AffliationTypes.grey;
             health = 100;
             maxHealth = 100;
@@ -430,12 +434,22 @@ namespace DotWars
                 mH.GetParticleManager().AddGut(this, i);
             }
 
-            mH.GetNPCManager().Remove(this);
+            Kill();
 
             if ((mH.GetGametype() is Assasssins || mH.GetGametype() is Deathmatch) && lastDamager != null)
             {
                 mH.GetGametype().ChangeScore(lastDamager, 1);
             }
+        }
+
+        protected void Kill()
+        {
+            alive = false;
+        }
+
+        public bool IsAlive()
+        {
+            return alive;
         }
 
         #endregion

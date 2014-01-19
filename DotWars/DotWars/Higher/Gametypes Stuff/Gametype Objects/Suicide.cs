@@ -71,7 +71,7 @@ namespace DotWars
         protected override void Explode(ManagerHelper mH)
         {
             mH.GetParticleManager().AddExplosion(GetOriginPosition(), ((lastDamager == null) ? this : lastDamager), 300);
-            mH.GetNPCManager().Remove(this);
+           Kill();
 
             if (lastDamager != null)
             {
@@ -82,7 +82,7 @@ namespace DotWars
         private void Explode(ManagerHelper mH, NPC a)
         {
             mH.GetParticleManager().AddExplosion(GetOriginPosition(), a, 125);
-            mH.GetNPCManager().Remove(this);
+            Kill();
         }
 
         private void Animate(ManagerHelper mH)

@@ -106,7 +106,7 @@ namespace DotWars
                         if (beamOn[i])
                         {
                             beamOn[i] = false;
-                            mH.GetEnvironmentManager().RemoveImpathable(beams[i]);
+                            beams[i].SetShouldRemove(true);
                         }
                     }
                 }
