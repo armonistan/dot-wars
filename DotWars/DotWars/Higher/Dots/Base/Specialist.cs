@@ -28,14 +28,14 @@ namespace DotWars
 
         protected override void Shoot(ManagerHelper mH)
         {
-            Vector2 tempPos = PathHelper.Direction(rotation + MathHelper.PiOver2)*new Vector2(10);
+            Vector2 tempPos = PathHelper.Direction(rotation + MathHelper.PiOver2)*10f;
 
             mH.GetProjectileManager()
               .AddProjectile(ProjectileManager.ROCKET, GetOriginPosition() + tempPos, this,
-                             PathHelper.Direction(rotation)*300, 100, true, true, 5);
+                             PathHelper.Direction(rotation)*300, 100, true, true, 5f);
 
             mH.GetAudioManager().Play(AudioManager.SPECIALIST_SHOOT, AudioManager.RandomVolume(mH),
-                                      AudioManager.RandomPitch(mH), 0, false);
+                                      AudioManager.RandomPitch(mH), 0f, false);
         }
     }
 }

@@ -30,13 +30,13 @@ namespace DotWars
 
         public override void Update(ManagerHelper mH)
         {
-            if (position.X < 0 || position.X > mH.GetLevelSize().X ||
-                position.Y < 0 || position.Y > mH.GetLevelSize().Y)
+            if (position.X < 0f || position.X > mH.GetLevelSize().X ||
+                position.Y < 0f || position.Y > mH.GetLevelSize().Y)
             {
-                SetDrawTime(0);
+                SetDrawTime(0.0);
             }
 
-            if (drawTime <= 0)
+            if (drawTime <= 0.0)
             {
                 if (isExplosive)
                 {
@@ -51,7 +51,7 @@ namespace DotWars
                 SpriteUpdate(mH);
 
                 //Spawn cool things to make it look better
-                if (mH.GetRandom().NextDouble() < 0.5f)
+                if (mH.GetRandom().NextDouble() < 0.5)
                     EffectSpawnCode(mH);
             }
 
@@ -60,7 +60,7 @@ namespace DotWars
 
         public override void Draw(SpriteBatch sB, Vector2 displacement, ManagerHelper mH)
         {
-            if (drawTime > 0)
+            if (drawTime > 0.0)
             {
                 base.Draw(sB, displacement, mH);
             }
@@ -73,8 +73,8 @@ namespace DotWars
             {
                 mH.GetParticleManager()
                   .AddParticle("Effects/particle_smoke", GetOriginPosition(),
-                               PathHelper.Direction((float) (MathHelper.Pi*mH.GetRandom().NextDouble())*2)*20, 4, 0.005f,
-                               1,
+                               PathHelper.Direction((float) (MathHelper.Pi*mH.GetRandom().NextDouble())*2f)*20f, 4f, 0.005f,
+                               1f,
                                0.1f);
             }
         }
@@ -105,7 +105,7 @@ namespace DotWars
             rotation = DWMath.Atan2(velocity.Y, velocity.X);
 
             //No friction
-            drag = 0;
+            drag = 0f;
 
             LoadContent(mH.GetTextureManager());
             if (!(this is Tossable))

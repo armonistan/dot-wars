@@ -113,9 +113,9 @@ namespace DotWars
                 indicator.Draw(sB, displacement, mH);
             }
 
-            var test = Color.White*((IsProtected()) ? 0.5f : 1);
+            var test = Color.White*((IsProtected()) ? 0.5f : 1f);
 
-            base.Draw(sB, displacement, mH, test);
+            base.Draw(sB, displacement, test);
         }
 
         //Returns the "threat" score of a dot. Lower is more dangerous

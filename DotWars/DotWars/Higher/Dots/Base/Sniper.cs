@@ -27,14 +27,14 @@ namespace DotWars
             awareness = 150;
             vision = MathHelper.PiOver2;
             sight = 750;
-            turningSpeed = MathHelper.Pi/20;
+            turningSpeed = MathHelper.Pi/20f;
 
             pathTimerEnd = 100;
             path.SetMoving(false);
 
             threatened = true;
-            campingCounter = 11;
-            campingEnd = 5;
+            campingCounter = 11.0;
+            campingEnd = 5.0;
         }
 
         protected override void Behavior(ManagerHelper mH)

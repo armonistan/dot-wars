@@ -162,10 +162,10 @@ namespace DotWars
 
         public virtual void Draw(SpriteBatch sB, Vector2 displacement, ManagerHelper mH)
         {
-            this.Draw(sB, displacement, mH, Color.White);
+            this.Draw(sB, displacement, Color.White);
         }
 
-        public virtual void Draw(SpriteBatch sB, Vector2 displacement, ManagerHelper mH, Color alpha)
+        protected void Draw(SpriteBatch sB, Vector2 displacement, Color alpha)
         {
             sB.Draw(texture, (CameraManager.Transform(position, displacement) + origin), frame, alpha,
                     rotation, origin, scale, SpriteEffects.None, 0);
