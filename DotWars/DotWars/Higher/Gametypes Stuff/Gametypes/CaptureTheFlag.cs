@@ -47,7 +47,7 @@ namespace DotWars
                 else
                 {
                     UpdateMostTimeFlagAway(a);
-                    timeFlagAway[a] = 0;
+                    timeFlagAway[NPC.GetTeam(a)] = 0;
                 }
             }
 
@@ -125,7 +125,7 @@ namespace DotWars
         public override void ChangeScore(NPC agent, int s)
         {
             if (agent is Commander)
-                flagsCaptured[agent.GetPersonalAffilation()]++;
+                flagsCaptured[NPC.GetTeam(agent.GetPersonalAffilation())]++;
 
             UpdateQuickestSuccessfulCapture(agent.GetAffiliation());
 

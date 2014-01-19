@@ -1,5 +1,6 @@
 ﻿#region
 
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -44,42 +45,45 @@ namespace DotWars
 
         public override void Update(ManagerHelper mH)
         {
-            foreach (NPC a in mH.GetNPCManager().GetNPCs())
+            foreach (var agent in mH.GetNPCManager().GetNPCs())
             {
-                if (CollisionHelper.IntersectPixelsSimple(a, this) != CollisionHelper.NO_COLLIDE)
+                switch (status)
                 {
-                    if (status == FlagStatus.home)
-                    {
-                        if (a.GetAffiliation() != affiliation &&
-                            (a is Commander || a is OffensiveAssaultGrunt || a is OffensiveCTFGrunt))
+                    case FlagStatus.home:
+                        if (agent.GetAffiliation() != affiliation &&
+                            (agent is Commander || agent is Grunt) &&
+                            CollisionHelper.IntersectPixelsSimple(agent, this) != CollisionHelper.NO_COLLIDE)
                         {
-                            captor = a;
+                            captor = agent;
                             status = FlagStatus.taken;
                         }
-                    }
-                    else if (status == FlagStatus.away)
-                    {
-                        if (a.GetAffiliation() == affiliation)
+                        break;
+                    case FlagStatus.away:
+                        if (CollisionHelper.IntersectPixelsSimple(agent, this) != CollisionHelper.NO_COLLIDE)
                         {
-                            if (a is Commander)
-                                mH.GetGametype().UpdateFlagsReturned(a.GetPersonalAffilation());
+                            if (agent.GetAffiliation() == affiliation)
+                            {
+                                if (agent is Commander)
+                                {
+                                    mH.GetGametype().UpdateFlagsReturned(agent.GetPersonalAffilation());
+                                }
 
-                            position = homePosition - origin;
-                            status = FlagStatus.home;
+                                position = homePosition - origin;
+                                status = FlagStatus.home;
+                            }
+                            else if (agent is Commander || agent is Grunt)
+                            {
+                                captor = agent;
+                                status = FlagStatus.taken;
+                            }
                         }
-                        else if (a.GetAffiliation() != affiliation &&
-                                 (a is Commander || a is OffensiveAssaultGrunt || a is OffensiveCTFGrunt))
-                        {
-                            status = FlagStatus.taken;
-                            captor = a;
-                        }
-                    }
+                        break;
                 }
             }
 
             if (status == FlagStatus.taken)
             {
-                if (mH.GetNPCManager().DoesNPCExist(captor))
+                if (captor.GetHealth() > 0)
                 {
                     position = captor.position;
                 }
@@ -97,11 +101,11 @@ namespace DotWars
                 foreach (CTFBase b in temp.GetBases())
                 {
                     if (b.affiliation != affiliation &&
-                        CollisionHelper.IntersectPixelsRadius(this, b, 32, 32) != CollisionHelper.NO_COLLIDE)
+                        CollisionHelper.IntersectPixelsRadius(this, b, 32f, 32f) != CollisionHelper.NO_COLLIDE)
                     {
                         status = FlagStatus.home;
                         position = homePosition - origin;
-                        temp.ChangeScore(this.GetCaptor(), 1);
+                        temp.ChangeScore(GetCaptor(), 1);
                         captor = null;
                     }
                 }
@@ -114,11 +118,11 @@ namespace DotWars
                 foreach (AssaultBase b in temp.GetBases())
                 {
                     if (b.affiliation != affiliation &&
-                        CollisionHelper.IntersectPixelsRadius(this, b, 32, 32) != CollisionHelper.NO_COLLIDE)
+                        CollisionHelper.IntersectPixelsRadius(this, b, 32f, 32f) != CollisionHelper.NO_COLLIDE)
                     {
                         status = FlagStatus.home;
                         position = homePosition - origin;
-                        temp.ChangeScore(this.GetCaptor(), 1);
+                        temp.ChangeScore(GetCaptor(), 1);
                         captor = null;
                     }
                 }

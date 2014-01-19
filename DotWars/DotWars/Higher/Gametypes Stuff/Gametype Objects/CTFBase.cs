@@ -76,7 +76,6 @@ namespace DotWars
             if (myFlag != null)
             {
                 myFlag.Update(mH);
-                Vector2 tempVector = myFlag.GetOriginPosition();
             }
             Spawn(mH);
             base.Update(mH);
@@ -104,7 +103,7 @@ namespace DotWars
                 mH.GetGametype()
                   .Spawn(mH, affiliation, mH.GetSpawnHelper().Spawn(affiliation), mH.GetRandom().Next(6, 9));
 
-                spawnCounter = 0;
+                spawnCounter = 0.0;
             }
 
             else

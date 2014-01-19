@@ -755,29 +755,36 @@ namespace DotWars
             }
             else
             {
-                NPC tempClosestEnemy = null;
-                float tempClosestDistance = float.PositiveInfinity;
-
-                foreach (var agent in mH.GetNPCManager().GetNPCs())
+                if (target != null)
                 {
-                    if (agent.GetAffiliation() != affiliation)
-                    {
-                        float distaceToEnemy = PathHelper.DistanceSquared(GetOriginPosition(), agent.GetOriginPosition());
+                    tempEnemy = target;
+                }
+                else
+                {
+                    NPC tempClosestEnemy = null;
+                    float tempClosestDistance = float.PositiveInfinity;
 
-                        if (distaceToEnemy < tempClosestDistance)
+                    foreach (var agent in mH.GetNPCManager().GetNPCs())
+                    {
+                        if (agent.GetAffiliation() != affiliation)
                         {
-                            tempClosestDistance = distaceToEnemy;
-                            tempClosestEnemy = agent;
+                            float distaceToEnemy = PathHelper.DistanceSquared(GetOriginPosition(), agent.GetOriginPosition());
+
+                            if (distaceToEnemy < tempClosestDistance)
+                            {
+                                tempClosestDistance = distaceToEnemy;
+                                tempClosestEnemy = agent;
+                            }
                         }
                     }
-                }
 
-                tempEnemy = target != null ? target : tempClosestEnemy;
+                    tempEnemy = tempClosestEnemy;
+                }
             }
 
             if (tempEnemy != null)
             {
-                if (PathHelper.DistanceSquared(GetOriginPosition(), tempEnemy.GetOriginPosition()) > 128*128)
+                if (PathHelper.DistanceSquared(GetOriginPosition(), tempEnemy.GetOriginPosition()) > 128f*128f)
                 {
                     mH.GetPathHelper().FindClearPath(GetOriginPosition(), tempEnemy.GetOriginPosition(), mH, path);
                 }
@@ -796,7 +803,7 @@ namespace DotWars
         {
             bool validPoint;
             PathHelper.Vector2Int randPoint;
-            PathHelper.Vector2Int originNode = new PathHelper.Vector2Int((int)(GetOriginPosition().X/mH.GetPathHelper().GetNodeSize().X), (int)(GetOriginPosition().Y/mH.GetPathHelper().GetNodeSize().Y));
+            PathHelper.Vector2Int originNode = new PathHelper.Vector2Int((int)(p.X/mH.GetPathHelper().GetNodeSize().X), (int)(p.Y/mH.GetPathHelper().GetNodeSize().Y));
 
             int loopCount = 0;
 
@@ -871,7 +878,7 @@ namespace DotWars
 
             if (c != null)
             {
-                if (PathHelper.DistanceSquared(c.GetOriginPosition(), GetOriginPosition()) < 96*96)
+                if (PathHelper.DistanceSquared(c.GetOriginPosition(), GetOriginPosition()) < 96f*96f)
                 {
                     HoverPath(mH, c.GetOriginPosition(), 96);
                 }
@@ -924,6 +931,23 @@ namespace DotWars
                     return 3;
                 default:
                     return 0;
+            }
+        }
+
+        public static AffliationTypes GetTeamFromIndex(int index)
+        {
+            switch (index)
+            {
+                case 0:
+                    return AffliationTypes.red;
+                case 1:
+                    return AffliationTypes.blue;
+                case 2:
+                    return AffliationTypes.green;
+                case 3:
+                    return AffliationTypes.yellow;
+                default:
+                    return AffliationTypes.same;
             }
         }
     }

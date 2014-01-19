@@ -146,7 +146,7 @@ namespace DotWars
                     square.Draw(sB, d, managers);
                 }
             }
-             */
+             
             foreach (NPC a in managers.GetNPCManager().GetNPCs())
             {
                 if (a.GetPath().Count > 0)
@@ -155,7 +155,7 @@ namespace DotWars
                     square.position.Y = a.GetPath().Last().Y-16;
                     square.Draw(sB, d, managers);
                 }
-            }
+            }*/
 
         }
 

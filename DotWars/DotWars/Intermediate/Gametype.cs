@@ -36,12 +36,12 @@ namespace DotWars
 
         protected ManagerHelper managers;
 
-        protected Dictionary<NPC.AffliationTypes, int> flagsCaptured;
-        protected Dictionary<NPC.AffliationTypes, int> flagsReturned;
-        protected Dictionary<NPC.AffliationTypes, int> dotsRecruited;
-        protected Dictionary<NPC.AffliationTypes, double> timeFlagAway;
-        protected Dictionary<NPC.AffliationTypes, double> mostTimeFlagAway;
-        protected Dictionary<NPC.AffliationTypes, double> quickestFlagCapture;
+        protected int[] flagsCaptured;
+        protected int[] flagsReturned;
+        protected int[] dotsRecruited;
+        protected double[] timeFlagAway;
+        protected double[] mostTimeFlagAway;
+        protected double[] quickestFlagCapture;
 
         #endregion
 
@@ -91,32 +91,21 @@ namespace DotWars
 
             managers = mH;
 
-            flagsCaptured = new Dictionary<NPC.AffliationTypes, int>();
-            flagsCaptured.Add(NPC.AffliationTypes.red, 0);
-            flagsCaptured.Add(NPC.AffliationTypes.blue, 0);
-            flagsCaptured.Add(NPC.AffliationTypes.green, 0);
-            flagsCaptured.Add(NPC.AffliationTypes.yellow, 0);
+            flagsCaptured = new int[4];
+            flagsReturned = new int[4];
+            dotsRecruited = new int[4];
+            timeFlagAway = new double[4];
+            mostTimeFlagAway = new double[4];
+            quickestFlagCapture = new double[4];
 
-            flagsReturned = new Dictionary<NPC.AffliationTypes, int>();
-            flagsReturned.Add(NPC.AffliationTypes.red, 0);
-            flagsReturned.Add(NPC.AffliationTypes.blue, 0);
-            flagsReturned.Add(NPC.AffliationTypes.green, 0);
-            flagsReturned.Add(NPC.AffliationTypes.yellow, 0);
-
-            dotsRecruited = new Dictionary<NPC.AffliationTypes, int>();
-            dotsRecruited.Add(NPC.AffliationTypes.red, 0);
-            dotsRecruited.Add(NPC.AffliationTypes.blue, 0);
-            dotsRecruited.Add(NPC.AffliationTypes.green, 0);
-            dotsRecruited.Add(NPC.AffliationTypes.yellow, 0);
-
-            timeFlagAway = new Dictionary<NPC.AffliationTypes, double>();
-            mostTimeFlagAway = new Dictionary<NPC.AffliationTypes, double>();
-            quickestFlagCapture = new Dictionary<NPC.AffliationTypes, double>();
-            foreach (NPC.AffliationTypes af in teams)
+            for (int t = 0; t < 4; t++)
             {
-                mostTimeFlagAway.Add(af, 0);
-                timeFlagAway.Add(af, 0);
-                quickestFlagCapture.Add(af, 1000);
+                flagsCaptured[t] = 0;
+                flagsReturned[t] = 0;
+                dotsRecruited[t] = 0;
+                timeFlagAway[t] = 0;
+                mostTimeFlagAway[t] = 0;
+                quickestFlagCapture[t] = double.MaxValue;
             }
         }
 
@@ -1110,7 +1099,7 @@ namespace DotWars
             return "";
         }
 
-        public Dictionary<NPC.AffliationTypes, int> GetFlagsCaptured()
+        public int[] GetFlagsCaptured()
         {
             return flagsCaptured;
         }
@@ -1133,51 +1122,51 @@ namespace DotWars
             return NPC.AffliationTypes.red;
         }
 
-        public Dictionary<NPC.AffliationTypes, int> GetFlagsReturned()
+        public int[] GetFlagsReturned()
         {
             return flagsReturned;
         }
 
-        public Dictionary<NPC.AffliationTypes, double> GetMostTimeFlagAway()
+        public double[] GetMostTimeFlagAway()
         {
             return mostTimeFlagAway;
         }
 
-        public Dictionary<NPC.AffliationTypes, int> GetDotsRecruited()
+        public int[] GetDotsRecruited()
         {
             return dotsRecruited;
         }
 
-        public Dictionary<NPC.AffliationTypes, double> GetQuickestFlagCapture()
+        public double[] GetQuickestFlagCapture()
         {
             return quickestFlagCapture;
         }
 
         public void UpdateFlagsReturned(NPC.AffliationTypes a)
         {
-            flagsReturned[a]++;
+            flagsReturned[NPC.GetTeam(a)]++;
         }
 
         public void UpdateDotsRecruited(NPC.AffliationTypes a)
         {
-            dotsRecruited[a]++;
+            dotsRecruited[NPC.GetTeam(a)]++;
         }
 
         public void UpdateTimeFlagAway(NPC.AffliationTypes a)
         {
-            timeFlagAway[a] += managers.GetGameTime().ElapsedGameTime.TotalSeconds;
+            timeFlagAway[NPC.GetTeam(a)] += managers.GetGameTime().ElapsedGameTime.TotalSeconds;
         }
 
         public void UpdateMostTimeFlagAway(NPC.AffliationTypes a)
         {
-            if (timeFlagAway[a] > mostTimeFlagAway[a])
-                mostTimeFlagAway[a] = timeFlagAway[a];
+            if (timeFlagAway[NPC.GetTeam(a)] > mostTimeFlagAway[NPC.GetTeam(a)])
+                mostTimeFlagAway[NPC.GetTeam(a)] = timeFlagAway[NPC.GetTeam(a)];
         }
 
         public void UpdateQuickestSuccessfulCapture(NPC.AffliationTypes a)
         {
-            if (timeFlagAway[a] < quickestFlagCapture[a])
-                quickestFlagCapture[a] = timeFlagAway[a];
+            if (timeFlagAway[NPC.GetTeam(a)] < quickestFlagCapture[NPC.GetTeam(a)])
+                quickestFlagCapture[NPC.GetTeam(a)] = timeFlagAway[NPC.GetTeam(a)];
         }
 
         #endregion

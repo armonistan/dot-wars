@@ -218,15 +218,17 @@ namespace DotWars
 
         public List<NPC> GetAllies(NPC.AffliationTypes af)
         {
-            List<NPC> tempList;
-            if (agents.TryGetValue(af, out tempList))
-            {
-                return tempList;
-            }
-            else
-            {
-                throw new Exception("Cannot find allies");
-            }
+            //List<NPC> tempList;
+            //if (agents.TryGetValue(af, out tempList))
+            //{
+            //    return tempList;
+            //}
+            //else
+            //{
+            //    throw new Exception("Cannot find allies");
+            //}
+
+            return agents[af];
         }
 
         #endregion

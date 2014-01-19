@@ -95,9 +95,9 @@ namespace DotWars
 
         protected int medicKills;
 
-        protected Dictionary<NPC.AffliationTypes, int> flagsCaptured;
+        protected int[] flagsCaptured;
 
-        protected Dictionary<NPC.AffliationTypes, int> flagsReturned;
+        protected int[] flagsReturned;
 
         private int[,] killsToCommanders;
         private int vendittaKills;
@@ -111,9 +111,9 @@ namespace DotWars
         private int lightningTravelledCounter;
         private int dotsSetOnFireCounter;
 
-        private Dictionary<NPC.AffliationTypes, int> dotsRecruited;
-        private Dictionary<NPC.AffliationTypes, double> mostTimeFlagAway;
-        private Dictionary<NPC.AffliationTypes, double> quickestFlagCapture;
+        private int[] dotsRecruited;
+        private double[] mostTimeFlagAway;
+        private double[] quickestFlagCapture;
         //list of teams
         protected List<NPC.AffliationTypes> affilations;
         protected List<NPC.AffliationTypes> teams;
@@ -138,10 +138,7 @@ namespace DotWars
         {
             //kd stuff
             medicKills = 0;
-            flagsCaptured = new Dictionary<NPC.AffliationTypes, int>();
-            flagsReturned = new Dictionary<NPC.AffliationTypes, int>();
             rocksDestroyed = new Dictionary<NPC.AffliationTypes, int>();
-            dotsRecruited = new Dictionary<NPC.AffliationTypes, int>();
 
             killsToCommanders = new int[4,4];
             vendittaKills = 0;
@@ -152,10 +149,7 @@ namespace DotWars
             lightningTravelledCounter = 0;
             foreach (NPC.AffliationTypes a in affilations)
             {
-                flagsCaptured.Add(a, 0);
-                flagsReturned.Add(a, 0);
                 rocksDestroyed.Add(a, 0);
-                dotsRecruited.Add(a, 0);
 
                 stats.Add(a, mH.GetNPCManager().GetStats(a));
             }
@@ -210,10 +204,10 @@ namespace DotWars
 
             foreach (NPC.AffliationTypes af in affilations)
             {
-                if (flagsCapped < flagsCaptured[af])
+                if (flagsCapped < flagsCaptured[NPC.GetTeam(af)])
                 {
                     a = af;
-                    flagsCapped = flagsCaptured[af];
+                    flagsCapped = flagsCaptured[NPC.GetTeam(af)];
                 }
             }
 
@@ -227,10 +221,10 @@ namespace DotWars
 
             foreach (NPC.AffliationTypes af in affilations)
             {
-                if (flagsReturn < flagsReturned[af])
+                if (flagsReturn < flagsReturned[NPC.GetTeam(af)])
                 {
                     a = af;
-                    flagsReturn = flagsReturned[af];
+                    flagsReturn = flagsReturned[NPC.GetTeam(af)];
                 }
             }
 
@@ -349,9 +343,9 @@ namespace DotWars
 
             foreach (NPC.AffliationTypes af in affilations)
             {
-                if (dotsDeployed < dotsRecruited[af])
+                if (dotsDeployed < dotsRecruited[NPC.GetTeam(af)])
                 {
-                    dotsDeployed = dotsRecruited[af];
+                    dotsDeployed = dotsRecruited[NPC.GetTeam(af)];
                     a = af;
                 }
             }
@@ -428,8 +422,9 @@ namespace DotWars
         public String GetMostFlagsCaputuredStatistic()
         {
             String result = "";
+            NPC.AffliationTypes teamThatDidTheBest = CalculateMostFlagsCaputured();
 
-            switch (CalculateMostFlagsCaputured())
+            switch (teamThatDidTheBest)
             {
                 case NPC.AffliationTypes.red:
                     result += "Mustachio captured\n the most flags (";
@@ -446,7 +441,7 @@ namespace DotWars
                 case NPC.AffliationTypes.black:
                     return "No one captured a flag";
             }
-            result += "" + flagsCaptured[CalculateMostFlagsCaputured()] + ")";
+            result += "" + flagsCaptured[NPC.GetTeam(teamThatDidTheBest)] + ")";
 
             return result;
         }
@@ -454,8 +449,9 @@ namespace DotWars
         public String GetMostFlagsReturnedStatistic()
         {
             String result = "";
+            NPC.AffliationTypes teamThatDidTheBest = CalculateMostFlagsReturned();
 
-            switch (CalculateMostFlagsReturned())
+            switch (teamThatDidTheBest)
             {
                 case NPC.AffliationTypes.red:
                     result += "Mustachio returned\n the most flags(";
@@ -472,7 +468,7 @@ namespace DotWars
                 case NPC.AffliationTypes.black:
                     return "No one returned a flag";
             }
-            result += "" + flagsReturned[CalculateMostFlagsReturned()] + ")";
+            result += "" + flagsReturned[NPC.GetTeam(teamThatDidTheBest)] + ")";
 
             return result;
         }
@@ -617,8 +613,9 @@ namespace DotWars
         public String GetMostDotsRecruitedStatistic()
         {
             String result = "";
+            NPC.AffliationTypes teamThatDidTheBest = CalculateMostDotsRecruited();
 
-            switch (CalculateMostDotsRecruited())
+            switch (teamThatDidTheBest)
             {
                 case NPC.AffliationTypes.red:
                     result += "Mustachio ";
@@ -635,8 +632,8 @@ namespace DotWars
                 case NPC.AffliationTypes.black:
                     return "No dots were sent to their deaths this game.";
             }
-            result += "recruited " + dotsRecruited[CalculateMostDotsRecruited()] + " dot" +
-                      ((dotsRecruited[CalculateMostDotsRecruited()] != 1) ? "s" : "");
+            result += "recruited " + dotsRecruited[NPC.GetTeam(teamThatDidTheBest)] + " dot" +
+                      ((dotsRecruited[NPC.GetTeam(teamThatDidTheBest)] != 1) ? "s" : "");
 
 
             return result;
@@ -649,9 +646,9 @@ namespace DotWars
 
             foreach (NPC.AffliationTypes a in teams)
             {
-                if (mostTimeFlagAway[a] > maxTime)
+                if (mostTimeFlagAway[NPC.GetTeam(a)] > maxTime)
                 {
-                    maxTime = mostTimeFlagAway[a];
+                    maxTime = mostTimeFlagAway[NPC.GetTeam(a)];
                     af = a;
                 }
             }
@@ -680,9 +677,9 @@ namespace DotWars
 
             foreach (NPC.AffliationTypes a in teams)
             {
-                if (quickestFlagCapture[a] < minTime)
+                if (quickestFlagCapture[NPC.GetTeam(a)] < minTime)
                 {
-                    minTime = quickestFlagCapture[a];
+                    minTime = quickestFlagCapture[NPC.GetTeam(a)];
                     af = a;
                 }
             }

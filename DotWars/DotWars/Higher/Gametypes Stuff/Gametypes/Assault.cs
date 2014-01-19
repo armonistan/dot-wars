@@ -72,7 +72,7 @@ namespace DotWars
         public override void ChangeScore(NPC agent, int s)
         {
             if (agent is Commander)
-                flagsCaptured[agent.GetPersonalAffilation()]++;
+                flagsCaptured[NPC.GetTeam(agent.GetPersonalAffilation())]++;
 
             base.ChangeScore(agent, s);
         }
