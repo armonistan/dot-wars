@@ -211,7 +211,7 @@ namespace DotWars
             rightHandStats += "\n";
 
             //gametype specific
-            if (result.GetManagerHelper().GetGametype() is Assasssins)
+            if (result.GetManagerHelper().GetGametype() is Assassins)
             {
                 rightHandStats += result.GetManagerHelper().GetStatisticsManager().GetVendittaStatistic();
                 rightHandStats += "\n";
@@ -267,9 +267,9 @@ namespace DotWars
         {
             NPC.AffliationTypes secondaryWinner = NPC.AffliationTypes.red;
 
-            if (result.GetManagerHelper().GetGametype() is Assasssins)
+            if (result.GetManagerHelper().GetGametype() is Assassins)
             {
-                Assasssins gametypeWinner = (Assasssins) result.GetManagerHelper().GetGametype();
+                Assassins gametypeWinner = (Assassins) result.GetManagerHelper().GetGametype();
                 NPC.AffliationTypes winner = gametypeWinner.GetWinner();
                 secondaryWinner = result.GetManagerHelper().GetGametype().GetSecondaryWinner(winner);
 

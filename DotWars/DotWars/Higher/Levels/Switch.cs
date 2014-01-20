@@ -43,7 +43,7 @@ namespace DotWars
 
             objects.AddImpassable(new SwitchElectricity(new Vector2(400, 400)));
 
-            if (typeOfGame is Assasssins)
+            if (typeOfGame is Assassins)
             {
                 //spawn points
                 spawnplaces.Add(new SpawnPoint(new Vector2(300, 36), NPC.AffliationTypes.grey, managers));

@@ -25,7 +25,7 @@ namespace DotWars
         public AssaultBase(NPC.AffliationTypes a, Vector2 p, ManagerHelper mH)
             : base("bases", p, Vector2.Zero)
         {
-            var temp = (Assault) mH.GetGametype();
+            var temp = mH.Assault;
 
             affiliation = a;
 
@@ -105,7 +105,7 @@ namespace DotWars
         {
             allies = mH.GetNPCManager().GetAllies(affiliation);
             int aT = mH.GetRandom().Next(3, 6);
-            var ass = (Assault) mH.GetGametype();
+            var ass = mH.Assault;
 
             if (spawnCounter > spawnTime && allies.Count < mH.GetGametype().GetPopCap())
             {

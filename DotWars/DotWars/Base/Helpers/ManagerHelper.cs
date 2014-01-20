@@ -31,6 +31,39 @@ namespace DotWars
         private GameTime time; //Used to get the current gametime from anywhere
         private float deltaSeconds;
 
+        //Specific gametypes
+        public Assassins Assassins
+        {
+            get { return assassins; }
+        }
+        public Deathmatch Deathmatch
+        {
+            get { return deathmatch; }
+        }
+        public Conquest Conquest
+        {
+            get { return conquest; }
+        }
+        public CaptureTheFlag CaptureTheFlag
+        {
+            get { return captureTheFlag; }
+        }
+        public Assault Assault
+        {
+            get { return assault; }
+        }
+        public Survival Survival
+        {
+            get { return survival; }
+        }
+
+        private Assassins assassins;
+        private Deathmatch deathmatch;
+        private Conquest conquest;
+        private CaptureTheFlag captureTheFlag;
+        private Assault assault;
+        private Survival survival;
+
         #endregion
 
         public ManagerHelper(TextureManager tM, NPCManager nM, ProjectileManager pM, EnvironmentManager eM,
@@ -51,6 +84,33 @@ namespace DotWars
             statistics = sM;
 
             typeOfGame = tG;
+
+            //Set up specific gametype
+            if (typeOfGame is Assassins)
+            {
+                assassins = (Assassins)typeOfGame;
+            }
+            else if (typeOfGame is Deathmatch)
+            {
+                deathmatch = (Deathmatch)typeOfGame;
+            }
+            else if (typeOfGame is Conquest)
+            {
+                conquest = (Conquest)typeOfGame;
+            }
+            else if (typeOfGame is CaptureTheFlag)
+            {
+                captureTheFlag = (CaptureTheFlag)typeOfGame;
+            }
+            else if (typeOfGame is Assault)
+            {
+                assault = (Assault)typeOfGame;
+            }
+            else if (typeOfGame is Survival)
+            {
+                survival = (Survival)typeOfGame;
+            }
+
             rand = new Random();
         }
 

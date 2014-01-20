@@ -439,7 +439,7 @@ namespace DotWars
 
             Kill();
 
-            if ((mH.GetGametype() is Assasssins || mH.GetGametype() is Deathmatch) && lastDamager != null)
+            if ((mH.GetGametype() is Assassins || mH.GetGametype() is Deathmatch) && lastDamager != null)
             {
                 mH.GetGametype().ChangeScore(lastDamager, 1);
             }
@@ -840,9 +840,9 @@ namespace DotWars
 
         protected virtual void CTFPath(ManagerHelper mH)
         {
-            var ctf = (CaptureTheFlag) mH.GetGametype();
+            var ctf = mH.CaptureTheFlag;
             Flag f = ctf.GetAllyBase(affiliation).GetMyFlag();
-
+            
             if (f.status == Flag.FlagStatus.away)
             {
                 mH.GetPathHelper().FindClearPath(GetOriginPosition(), f.GetOriginPosition(), mH, path);
@@ -855,7 +855,7 @@ namespace DotWars
 
         protected virtual void AssaultPath(ManagerHelper mH)
         {
-            var ass = (Assault) mH.GetGametype();
+            var ass = mH.Assault;
             Flag f = ass.GetAllyBase(affiliation).GetMyFlag();
 
             if (f != null && f.status == Flag.FlagStatus.away)

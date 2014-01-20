@@ -15,7 +15,7 @@ namespace DotWars
 
         protected override void SpecialPath(ManagerHelper mH)
         {
-            var temp = (Conquest) mH.GetGametype();
+            var temp = mH.Conquest;
 
             ConquestBase targetBase = null;
             float distanceToClosest = float.PositiveInfinity;

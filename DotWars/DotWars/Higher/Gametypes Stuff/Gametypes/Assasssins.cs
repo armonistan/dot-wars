@@ -7,13 +7,13 @@ using System.Collections.Generic;
 
 namespace DotWars
 {
-    public class Assasssins : Gametype
+    public class Assassins : Gametype
     {
         #region Declarations
 
         #endregion
 
-        public Assasssins(List<NPC.AffliationTypes> tL, Dictionary<Type, NPC.AffliationTypes> pL, float sT)
+        public Assassins(List<NPC.AffliationTypes> tL, Dictionary<Type, NPC.AffliationTypes> pL, float sT)
             : base(tL, pL, 10, 0, sT)
         {
             this.typeOfGame = GT.ASSASSINS;

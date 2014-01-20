@@ -13,7 +13,7 @@ namespace DotWars
         public Suicide(Vector2 p, ManagerHelper mH)
             : base("Dots/Grey/grey_suicide", p)
         {
-            var temp = (Survival) mH.GetGametype();
+            var temp = mH.Survival;
 
             maxHealth = (int) (50*temp.suicideSpawnModifier);
             health = maxHealth;

@@ -17,7 +17,7 @@ namespace DotWars
 
         protected override void SpecialPath(ManagerHelper mH)
         {
-            var temp = (Conquest) mH.GetGametype();
+            var temp = mH.Conquest;
             ConquestBase forwardBase = temp.GetForwardBase(affiliation, mH);
 
             if (forwardBase != null)

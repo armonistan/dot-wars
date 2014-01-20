@@ -1312,7 +1312,6 @@ namespace DotWars
             numTeam[0] = 0;
             numTeam[1] = 0;
 
-
             //TODO: Fix team creation problems
             for (int t = 0; t < teamCards.Length; t++)
             {
@@ -1414,7 +1413,7 @@ namespace DotWars
             switch (gametype)
             {
                 case 0:
-                    theGametype = new Assasssins(theTeams, allCommanders, 2);
+                    theGametype = new Assassins(theTeams, allCommanders, 2);
                     break;
                 case 1:
                     theGametype = new Deathmatch(theTeams, allCommanders, 8, 2);

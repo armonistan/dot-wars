@@ -55,7 +55,7 @@ namespace DotWars
             CTF
         }
 
-        public Gametype(List<NPC.AffliationTypes> tL, Dictionary<Type, NPC.AffliationTypes> pL, int wS, int pC, float sT)
+        public Gametype(List<NPC.AffliationTypes> tL, Dictionary<Type, NPC.AffliationTypes> pL, int wS, int pC, double sT)
         {
             //Higher level gametype sets up teams
             teams = tL;

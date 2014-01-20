@@ -80,7 +80,7 @@ namespace DotWars
 
             if (mH.GetGametype() is Assault)
             {
-                var temp = (Assault)mH.GetGametype();
+                var temp = mH.Assault;
                 Flag f = temp.GetAllyBase(temp.GetDefender()).GetMyFlag();
 
                 if (temp.GetAttacker() == affiliation)
@@ -99,7 +99,7 @@ namespace DotWars
 
             else if (mH.GetGametype() is CaptureTheFlag)
             {
-                var temp = (CaptureTheFlag)mH.GetGametype();
+                var temp = mH.CaptureTheFlag;
                 Flag eF = temp.GetEnemyBase(affiliation).GetMyFlag();
 
                 if (eF.status != Flag.FlagStatus.taken)

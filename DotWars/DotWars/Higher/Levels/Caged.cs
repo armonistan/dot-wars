@@ -33,7 +33,7 @@ namespace DotWars
             objects.AddStaticBlocker(new InDestructable("Backgrounds/Caged/cagedBlockers", new Vector2(432, 272)));
             objects.AddImpathable(new LavaBurner(new Vector2(432, 272)));
 
-            if (typeOfGame is Assasssins)
+            if (typeOfGame is Assassins)
             {
                 spawnplaces.Add(new SpawnPoint(new Vector2(300, 265), NPC.AffliationTypes.grey, managers));
                 spawnplaces.Add(new SpawnPoint(new Vector2(615, 265), NPC.AffliationTypes.grey, managers));

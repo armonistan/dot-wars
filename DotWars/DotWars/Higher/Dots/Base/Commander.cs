@@ -282,7 +282,7 @@ namespace DotWars
         {
             if (mH.GetGametype() is CaptureTheFlag)
             {
-                CaptureTheFlag tempGametype = (CaptureTheFlag) mH.GetGametype();
+                CaptureTheFlag tempGametype = mH.CaptureTheFlag;
 
                 if (tempGametype.GetEnemyBase(affiliation).GetMyFlag().GetCaptor() == this)
                 {
@@ -291,7 +291,7 @@ namespace DotWars
             }
             else if (mH.GetGametype() is Assault)
             {
-                Assault tempGametype = (Assault) mH.GetGametype();
+                Assault tempGametype = mH.Assault;
 
                 if (tempGametype.GetAttacker() == affiliation &&
                     tempGametype.GetEnemyBase(affiliation).GetMyFlag().GetCaptor() == this)
@@ -301,7 +301,7 @@ namespace DotWars
             }
             else if (mH.GetGametype() is Conquest)
             {
-                Conquest tempGametype = (Conquest) mH.GetGametype();
+                Conquest tempGametype = mH.Conquest;
 
                 foreach (ConquestBase point in tempGametype.GetBases())
                 {
@@ -314,7 +314,7 @@ namespace DotWars
             }
             else if (mH.GetGametype() is Deathmatch)
             {
-                Deathmatch tempGametype = (Deathmatch) mH.GetGametype();
+                Deathmatch tempGametype = mH.Deathmatch;
 
                 foreach (Claimable claimable in tempGametype.GetClaimables())
                 {
@@ -368,7 +368,7 @@ namespace DotWars
 
         protected override void ConquestPath(ManagerHelper mH)
         {
-            var temp = (Conquest) mH.GetGametype();
+            var temp = mH.Conquest;
 
             ConquestBase targetBase = null;
             float distanceToClosest = float.PositiveInfinity;
@@ -403,7 +403,7 @@ namespace DotWars
 
         protected override void CTFPath(ManagerHelper mH)
         {
-            var temp = (CaptureTheFlag) mH.GetGametype();
+            var temp = mH.CaptureTheFlag;
 
             if (temp.GetEnemyBase(affiliation).GetMyFlag().status != Flag.FlagStatus.taken)
                 mH.GetPathHelper()
@@ -423,7 +423,7 @@ namespace DotWars
 
         protected override void AssaultPath(ManagerHelper mH)
         {
-            var temp = (Assault) mH.GetGametype();
+            var temp = mH.Assault;
 
             if (temp.GetAttacker() == affiliation)
             {
@@ -497,7 +497,7 @@ namespace DotWars
 
         protected override void DeathmatchPath(ManagerHelper mH)
         {
-            var temp = (Deathmatch) mH.GetGametype();
+            var temp = mH.Deathmatch;
             Claimable c = temp.GetClosestClaimable(GetOriginPosition(), mH);
 
             if (c != null && temp.GetPopCap() > mH.GetNPCManager().GetAllies(affiliation).Count)
@@ -510,7 +510,7 @@ namespace DotWars
         {
             pathTimerEnd = .5;
 
-            var temp = (Survival) mH.GetGametype();
+            var temp = mH.Survival;
             Claimable c = temp.GetClosestClaimable(GetOriginPosition());
             NPC enemy =
                 mH.GetNPCManager()

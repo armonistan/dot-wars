@@ -167,7 +167,7 @@ namespace DotWars
 
         private void initalizeTeamImages()
         {
-            if (nextGame is Survival || nextGame is Assasssins)
+            if (nextGame is Survival || nextGame is Assassins)
             {
                 initalizeCommanderImagesAssassinsSurvival();
                 initalizeCommanderTextAssassinsSurvival();

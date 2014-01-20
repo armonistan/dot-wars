@@ -15,7 +15,7 @@ namespace DotWars
 
         protected override void SpecialPath(ManagerHelper mH)
         {
-            var temp = (CaptureTheFlag) mH.GetGametype();
+            var temp = mH.CaptureTheFlag;
 
             if (temp.GetEnemyBase(affiliation).GetMyFlag().status != Flag.FlagStatus.taken)
                 mH.GetPathHelper()

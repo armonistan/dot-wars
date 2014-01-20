@@ -96,7 +96,7 @@ namespace DotWars
 
             if (mH.GetGametype() is CaptureTheFlag)
             {
-                var temp = (CaptureTheFlag) mH.GetGametype();
+                var temp = mH.CaptureTheFlag;
 
                 foreach (CTFBase b in temp.GetBases())
                 {
@@ -110,10 +110,9 @@ namespace DotWars
                     }
                 }
             }
-
             else if (mH.GetGametype() is Assault)
             {
-                var temp = (Assault) mH.GetGametype();
+                var temp = mH.Assault;
 
                 foreach (AssaultBase b in temp.GetBases())
                 {

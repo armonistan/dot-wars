@@ -17,7 +17,7 @@ namespace DotWars
 
         protected override void SpecialPath(ManagerHelper mH)
         {
-            var temp = (Assault) mH.GetGametype();
+            var temp = mH.Assault;
 
             if (temp.GetAllyBase(affiliation).GetMyFlag().status == Flag.FlagStatus.home)
             {
