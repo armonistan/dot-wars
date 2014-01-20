@@ -60,7 +60,7 @@ namespace DotWars
         {
             float dist = PathHelper.DistanceSquared(sA.GetOriginPosition(), sB.GetOriginPosition());
 
-            if (dist < (rA*rA + rB*rB))
+            if (dist <= (rA*rA + rB*rB))
             {
                 return sB.GetOriginPosition();
             }
