@@ -390,7 +390,7 @@ namespace DotWars
 
             if (targetBase != null)
             {
-                if (PathHelper.DistanceSquared(GetOriginPosition(), targetBase.GetOriginPosition()) > 32*32)
+                if (PathHelper.DistanceSquared(GetOriginPosition(), targetBase.GetOriginPosition()) > 32f*32f)
                     mH.GetPathHelper().FindClearPath(GetOriginPosition(), targetBase.GetOriginPosition(), mH, path);
                 else
                     HoverPath(mH, targetBase.GetOriginPosition(), 16);

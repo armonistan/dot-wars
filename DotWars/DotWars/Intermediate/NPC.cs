@@ -682,7 +682,7 @@ namespace DotWars
         {
             bool validPoint;
             PathHelper.Vector2Int randPoint;
-            pathTimerEnd = 10;
+            pathTimerEnd = 10.0;
 
             do
             {
@@ -698,10 +698,6 @@ namespace DotWars
                         {
                             validPoint = false;
                             break;
-                        }
-                        else
-                        {
-                            validPoint = true;
                         }
                     }
 

@@ -192,7 +192,7 @@ namespace DotWars
             open.Add(parent);
 
             //Makes the end not a blocker
-            field[(int) end.X, (int) end.Y].SetBlocker(false);
+            field[end.X, end.Y].SetBlocker(false);
 
             #region Loop through array until end is found
 

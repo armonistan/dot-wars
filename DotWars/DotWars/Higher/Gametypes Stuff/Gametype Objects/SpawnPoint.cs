@@ -41,7 +41,6 @@ namespace DotWars
             else if (isOneUse && !isUsed)
             {
                 spawnTime = 8;
-                NPCManager temp = mH.GetNPCManager();
 
                 if (spawnCounter > spawnTime)
                 {
@@ -64,8 +63,6 @@ namespace DotWars
             else if (!isUsed)
             {
                 spawnTime = 8;
-
-                NPCManager temp = mH.GetNPCManager();
 
                 if (spawnCounter > spawnTime)
                 {

@@ -25,6 +25,7 @@ namespace DotWars
 
         //The assets
         private readonly List<String> assets;
+        private readonly StringComparer standard;
         private readonly List<List<PathHelper.Vector2Int>[,]> blockers;
 
         //The Data
@@ -56,13 +57,14 @@ namespace DotWars
             big
         }
 
-        private TextureManager(List<String> aL)
+        public TextureManager()
         {
             //Sets up textures
             textures = new List<Texture2D>();
 
             //Sets up assets
-            assets = aL;
+            assets = new List<string>();
+            standard = StringComparer.Ordinal;
 
             //Sets up colors
             colors = new List<Color[,]>();
@@ -75,12 +77,6 @@ namespace DotWars
             //Sets loadcalled
             assetNumber = 0;
             loadCalled = false;
-        }
-
-        public TextureManager()
-            : this(new List<string>())
-        {
-            //Nothing else
         }
 
         public void Add(String a, Rectangle f)
@@ -103,15 +99,15 @@ namespace DotWars
             if (loadCalled)
             {
                 //Stores the index of the asset
-                int index = assets.IndexOf(a);
+                int index = /*assets.IndexOf(a);*/ assets.BinarySearch(a, standard);
 
                 //Here we test to see if the texture exists in the manager, if not...
                 if (index != -1)
                 {
-                    t = textures.ElementAt(index);
-                    f = frames.ElementAt(index);
-                    cD = colors.ElementAt(index);
-                    b = blockers.ElementAt(index);
+                    t = textures[index];
+                    f = frames[index];
+                    cD = colors[index];
+                    b = blockers[index];
                 }
                     //...then we have a problem. The texture manager does not have the texture for some reason
                 else
@@ -130,6 +126,18 @@ namespace DotWars
             tinyFont = cM.Load<SpriteFont>("Fonts/tinytext");
             smallFont = cM.Load<SpriteFont>("Fonts/text");
             bigFont = cM.Load<SpriteFont>("Fonts/bigtext");
+
+            //Set up assets in sorted order
+            List<string> originalAssets = new List<string>(assets);
+            List<Rectangle> originalFrames = new List<Rectangle>(frames);
+            assets.Sort(standard);
+
+            for (int i = 0; i < assets.Count; i++)
+            {
+                var asset = assets[i];
+                int assetIndex = originalAssets.IndexOf(asset);
+                frames[i] = originalFrames[assetIndex];
+            }
         }
 
         public void LoadContent(ContentManager cM)

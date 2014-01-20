@@ -19,7 +19,7 @@ namespace DotWars
             health = maxHealth;
             movementSpeed = 50f + temp.suicideSpawnModifier*50f;
             affiliation = AffliationTypes.black;
-            animateCounter = 0;
+            animateCounter = 0.0;
         }
 
         public override void Update(ManagerHelper mH)
@@ -58,11 +58,11 @@ namespace DotWars
             target = TargetDecider(mH);
 
             //TODO: Make this compatable with NPC death code
-            if (target != null && CollisionHelper.IntersectPixelsRadius(this, target, 24, 24) != CollisionHelper.NO_COLLIDE)
+            if (target != null && CollisionHelper.IntersectPixelsRadius(this, target, 24f, 24f) != CollisionHelper.NO_COLLIDE)
             {
                 Explode(mH);
             }
-            else if (PathHelper.DistanceSquared(this.GetOriginPosition(), FindClosestRock(mH)) < 48*48)
+            else if (PathHelper.DistanceSquared(this.GetOriginPosition(), FindClosestRock(mH)) < 48f*48f)
             {
                 Explode(mH);
             }
@@ -122,7 +122,7 @@ namespace DotWars
 
             Vector2 closetRockPosition = FindClosestRock(mH);
 
-            if (closetRockPosition != new Vector2(-1, -1))
+            if (closetRockPosition != CollisionHelper.NO_COLLIDE)
                 mH.GetPathHelper().FindClearPath(GetOriginPosition(), closetRockPosition, mH, path);
             else if (tempEnemy != null)
                 mH.GetPathHelper().FindClearPath(GetOriginPosition(), tempEnemy.GetOriginPosition(), mH, path);
@@ -138,7 +138,7 @@ namespace DotWars
 
             foreach (LargeRock rock in mH.GetAbilityManager().GetLargeRocks())
             {
-                distance = PathHelper.DistanceSquared(rock.GetOriginPosition(), this.GetOriginPosition());
+                distance = PathHelper.DistanceSquared(rock.GetOriginPosition(), GetOriginPosition());
                 if (distance < closestDistance && rock.IsFullyUp())
                 {
                     closestDistance = distance;
@@ -146,7 +146,7 @@ namespace DotWars
                 }
             }
 
-            return (closestRock != null ? closestRock.GetOriginPosition() : new Vector2(-1, -1));
+            return (closestRock != null ? closestRock.GetOriginPosition() : CollisionHelper.NO_COLLIDE);
         }
     }
 }
