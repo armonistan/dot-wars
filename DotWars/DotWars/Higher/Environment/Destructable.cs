@@ -47,10 +47,10 @@ namespace DotWars
             foreach (Projectile p in tempProjectiles)
             {
                 if (CollisionHelper.IntersectPixelsPoint(p.GetOriginPosition(), this) != CollisionHelper.NO_COLLIDE &&
-                    p.GetDrawTime() > 0)
+                    p.GetDrawTime() > 0.0)
                 {
                     health -= p.GetDamage();
-                    p.SetDrawTime(0f);
+                    p.SetDrawTime(0.0);
 
                     if (health <= 0)
                     {
@@ -69,7 +69,7 @@ namespace DotWars
 
         public void setHealth(int newHealth)
         {
-            this.health = newHealth;
+            health = newHealth;
         }
     }
 }

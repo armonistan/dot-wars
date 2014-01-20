@@ -26,8 +26,8 @@ namespace DotWars
             : base("", p)
         {
             on = false;
-            timer = 0;
-            endTimer = 5;
+            timer = 0.0;
+            endTimer = 5.0;
 
             //Set up beamOn
             beamOn = new bool[12];
@@ -38,18 +38,18 @@ namespace DotWars
 
             //Set up startpos
             startPos = new Vector2[12];
-            startPos[0] = new Vector2(80, 64);
-            startPos[1] = new Vector2(96, 304);
-            startPos[2] = new Vector2(256, 176);
-            startPos[3] = new Vector2(192, 384);
-            startPos[4] = new Vector2(544, 96);
-            startPos[5] = new Vector2(672, 128);
-            startPos[6] = new Vector2(704, 256);
-            startPos[7] = new Vector2(224, 576);
-            startPos[8] = new Vector2(416, 608);
-            startPos[9] = new Vector2(624, 544);
-            startPos[10] = new Vector2(496, 704);
-            startPos[11] = new Vector2(736, 720);
+            startPos[0] = new Vector2(80f, 64f);
+            startPos[1] = new Vector2(96f, 304f);
+            startPos[2] = new Vector2(256f, 176f);
+            startPos[3] = new Vector2(192f, 384f);
+            startPos[4] = new Vector2(544f, 96f);
+            startPos[5] = new Vector2(672f, 128f);
+            startPos[6] = new Vector2(704f, 256f);
+            startPos[7] = new Vector2(224f, 576f);
+            startPos[8] = new Vector2(416f, 608f);
+            startPos[9] = new Vector2(624f, 544f);
+            startPos[10] = new Vector2(496f, 704f);
+            startPos[11] = new Vector2(736f, 720f);
 
             //Set up sprites
             beams = new Impathable[12];
@@ -82,14 +82,14 @@ namespace DotWars
         {
             if (timer > endTimer)
             {
-                timer = 0;
+                timer = 0.0;
                 on = !on;
 
                 if (on)
                 {
                     for (int i = 0; i < beamOn.Length; i++)
                     {
-                        if (mH.GetRandom().NextDouble() > 0.5f)
+                        if (mH.GetRandom().NextDouble() > 0.5)
                         {
                             beamOn[i] = true;
 
@@ -99,8 +99,6 @@ namespace DotWars
                 }
                 else
                 {
-                    //blockers.Clear();
-
                     for (int i = 0; i < beamOn.Length; i++)
                     {
                         if (beamOn[i])
@@ -124,12 +122,9 @@ namespace DotWars
                     {
                         foreach (NPC a in mH.GetNPCManager().GetNPCs())
                         {
-                            if (!(a is Bomber))
+                            if (CollisionHelper.IntersectPixelsDirectional(a, beams[i]) != -1)
                             {
-                                if (CollisionHelper.IntersectPixelsDirectional(a, beams[i]) != -1)
-                                {
-                                    a.ChangeHealth(-3, a.GetLastDamager());
-                                }
+                                a.ChangeHealth(-3, a.GetLastDamager());
                             }
                         }
                     }

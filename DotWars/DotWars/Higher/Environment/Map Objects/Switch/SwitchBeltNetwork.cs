@@ -44,12 +44,12 @@ namespace DotWars
             belts[6].Turn(MathHelper.Pi);
             belts[7] = new Sprite("Backgrounds/Switch/DBr", new Vector2(441, 359));
 
-            directions[0] = new Vector2(-1, 0);
-            directions[1] = new Vector2(0, -1);
-            directions[2] = new Vector2(0, 1);
-            directions[3] = new Vector2(1, 0);
-            directions[4] = new Vector2(-1, 0);
-            directions[5] = new Vector2(0, -1);
+            directions[0] = new Vector2(-1f, 0f);
+            directions[1] = new Vector2(0f, -1f);
+            directions[2] = new Vector2(0f, 1f);
+            directions[3] = new Vector2(1f, 0f);
+            directions[4] = new Vector2(-1f, 0f);
+            directions[5] = new Vector2(0f, -1f);
             directions[6] = new Vector2(-(float) Math.Sqrt(2)/2, -(float) Math.Sqrt(2)/2);
             directions[7] = new Vector2((float) Math.Sqrt(2)/2, (float) Math.Sqrt(2)/2);
 
@@ -109,8 +109,8 @@ namespace DotWars
 
             #endregion
 
-            timer = 0;
-            endTime = .05f;
+            timer = 0.0;
+            endTime = .05;
         }
 
         public override void LoadContent(TextureManager tM)
@@ -125,7 +125,7 @@ namespace DotWars
         {
             if (timer > endTime)
             {
-                timer = 0;
+                timer = 0.0;
 
                 for (int i = 0; i < belts.Length; i++)
                 {

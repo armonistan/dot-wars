@@ -17,12 +17,12 @@ namespace DotWars
             : base("Backgrounds/Switch/switchBox", p, 50)
         {
             theNet = n;
-            thrust = 500;
-            drag = 0;
-            lifeCounter = 30;
+            thrust = 500f;
+            drag = 0f;
+            lifeCounter = 30.0;
             theCrane = c;
             position -= origin;
-            this.setHealth(75);
+            setHealth(75);
         }
 
         public override void Update(ManagerHelper mH)
@@ -60,10 +60,10 @@ namespace DotWars
                 foreach (SwitchBeltNetwork.Node t in theNet.boxNodes)
                 {
                     if (lastNode != t &&
-                        PathHelper.DistanceSquared(GetOriginPosition(), t.pos) < 4*4)
+                        PathHelper.DistanceSquared(GetOriginPosition(), t.pos) < 4f*4f)
                     {
                         lastNode = t;
-                        velocity = t.GetRandomDir(mH)*15;
+                        velocity = t.GetRandomDir(mH)*15f;
                         position = t.pos - origin;
                         break;
                     }
@@ -75,10 +75,6 @@ namespace DotWars
                 }
 
                 rotation = PathHelper.Direction(velocity);
-            }
-
-            if (this.health < 0)
-            {
             }
 
             base.Update(mH);
