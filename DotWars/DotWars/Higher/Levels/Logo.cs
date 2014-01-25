@@ -99,11 +99,8 @@ namespace DotWars
             #endregion
 
             #region Zen Garden
-
-            textures.Add("Backgrounds/ZenGarden/zenBackground", new Rectangle(0, 0, 1312, 992));
-            textures.Add("Backgrounds/ZenGarden/zenBlockers", new Rectangle(0, 0, 1312, 992));
-            textures.Add("Backgrounds/ZenGarden/zenForeground", new Rectangle(0, 0, 1312, 992));
-
+            textures.Add("Backgrounds/ZenGarden/midwinterBlockers", new Rectangle(0, 0, 1312, 992));
+            textures.Add("Backgrounds/ZenGarden/midwinterBackground", new Rectangle(0, 0, 1312, 992));
             #endregion
 
             #region Faercrag

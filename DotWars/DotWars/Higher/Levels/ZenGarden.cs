@@ -25,8 +25,8 @@ namespace DotWars
             base.Initialize();
 
             //Set up background
-            backgrounds.AddBackground(new Sprite("Backgrounds/ZenGarden/zenBackground", new Vector2(656, 496)));
-            backgrounds.AddForeground(new Sprite("Backgrounds/ZenGarden/zenForeground", new Vector2(656, 496)));
+            backgrounds.AddBackground(new Sprite("Backgrounds/ZenGarden/midwinterBackground", new Vector2(656, 496)));
+            //backgrounds.AddForeground(new Sprite("Backgrounds/ZenGarden/zenForeground", new Vector2(656, 496)));
 
             sniperSpots.Add(new Vector2(90, 60));
             sniperSpots.Add(new Vector2(290, 780));
@@ -40,7 +40,7 @@ namespace DotWars
         {
             base.LoadContent(cM);
 
-            objects.AddStaticBlocker(new InDestructable("Backgrounds/ZenGarden/zenBlockers", new Vector2(656, 496)));
+            objects.AddStaticBlocker(new InDestructable("Backgrounds/ZenGarden/midwinterBlockers", new Vector2(656, 496)));
 
             if (typeOfGame is Deathmatch)
             {

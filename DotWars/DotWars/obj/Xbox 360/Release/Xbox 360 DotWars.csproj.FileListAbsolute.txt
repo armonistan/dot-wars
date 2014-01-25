@@ -539,3 +539,5 @@ C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\obj\Xbox 360\Release\Microso
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\obj\Xbox 360\Release\DotWars.exe
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\obj\Xbox 360\Release\DotWars.pdb
 C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\Xbox 360\Release\Content\Textures\Backgrounds\Relic\impathableMeteor.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\Xbox 360\Release\Content\Textures\Backgrounds\ZenGarden\midwinterBlockers.xnb
+C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\Xbox 360\Release\Content\Textures\Backgrounds\ZenGarden\midwinterBackground.xnb
