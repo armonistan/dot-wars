@@ -56,7 +56,7 @@ namespace DotWars
         {
             foreach (NPC a in mH.GetNPCManager().GetNPCs())
             {
-                if (CollisionHelper.IntersectPixelsDirectional(a, this) != -1)
+                if (CollisionHelper.IntersectPixelsPoint(GetOriginPosition(), a) != CollisionHelper.NO_COLLIDE)
                 {
                     if (a.GetAffiliation() == affiliation)
                     {

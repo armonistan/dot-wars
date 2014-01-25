@@ -11,7 +11,7 @@ namespace DotWars
     {
         #region NPC Vectors
 
-        private const int NUM_DIRECTIONS = 64;
+        private const int NUM_DIRECTIONS = 8;
         private static readonly Vector2[] DIRECTIONS = new Vector2[NUM_DIRECTIONS];
         private static readonly float[] ROTATIONS = new float[NUM_DIRECTIONS];
 
