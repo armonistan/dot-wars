@@ -69,10 +69,13 @@ namespace DotWars
             i.SetShouldRemove(false);
         }
 
-        public void AddImpathable(Impathable i)
+        public void AddImpathable(Impathable i, bool shouldLoad)
         {
             notPathables.Add(i);
-            i.LoadContent(managers.GetTextureManager());
+            if (shouldLoad)
+            {
+                i.LoadContent(managers.GetTextureManager());
+            }
             i.SetShouldRemove(false);
         }
 

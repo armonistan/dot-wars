@@ -41,7 +41,7 @@ namespace DotWars
             base.LoadContent(cM);
 
             objects.AddStaticBlocker(new Meteor(new Vector2(544, 432)));
-            objects.AddImpathable(new Impathable("Backgrounds/Relic/impathableMeteor", new Vector2(544, 496), Vector2.Zero));
+            objects.AddImpathable(new Impathable("Backgrounds/Relic/impathableMeteor", new Vector2(544, 496), Vector2.Zero), true);
             objects.AddStaticBlocker(new InDestructable("Backgrounds/Relic/relicBlockers", new Vector2(544, 432)));
 
             if (typeOfGame is CaptureTheFlag)
