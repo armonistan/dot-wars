@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 
 namespace DotWars
 {
-    public class Path : List<Vector2>
+    public class Path : List<PathHelper.Vector2Int>
     {
         #region Declarations
 
@@ -22,7 +22,7 @@ namespace DotWars
             moving = true;
         }
 
-        public void AddPoint(Vector2 p)
+        public void AddPoint(PathHelper.Vector2Int p)
         {
             Add(p);
 

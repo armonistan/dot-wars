@@ -58,6 +58,7 @@ namespace DotWars
         protected Path path;
         protected double pathTimer;
         protected double pathTimerEnd;
+        private Vector2 next;
 
         private bool fireStatus;
 
@@ -77,6 +78,8 @@ namespace DotWars
             path = new Path();
             pathTimer = 11;
             pathTimerEnd = 5; //TODO: Find out if this is reasonable
+            next = CollisionHelper.NO_COLLIDE;
+
             velocity = new Vector2(1, 0)*movementSpeed;
             drag = 0;
 
@@ -136,16 +139,22 @@ namespace DotWars
                 }
                 else
                 {
-                    Vector2 next = path.Last(); //Get next destination
-                    dir = PathHelper.Direction(base.GetOriginPosition(), next); //Find angle between points
+                    if (next == CollisionHelper.NO_COLLIDE)
+                    {
+                        PathHelper.Vector2Int nextInt = path.Last();
+                        next = new Vector2(nextInt.X, nextInt.Y) * 32f + new Vector2(16); //Get next destination 
+                    }
+
+                    dir = PathHelper.Direction(GetOriginPosition(), next); //Find angle between points
                     AddAcceleration(PathHelper.Direction(dir));
                     //Get x and y values from angle and set up direction
 
                     //If already there...
-                    if (PathHelper.DistanceSquared(next, GetOriginPosition()) < 15*15)
+                    if (PathHelper.DistanceSquared(next, GetOriginPosition()) < 15f*15f)
                     {
                         //path.RemoveFirst(); //Go on to next destination
                         path.RemoveAt(path.Count - 1);
+                        next = CollisionHelper.NO_COLLIDE;
                     }
 
                     pathTimer += mH.GetGameTime().ElapsedGameTime.TotalSeconds;

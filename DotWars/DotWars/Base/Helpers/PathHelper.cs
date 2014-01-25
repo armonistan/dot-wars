@@ -99,11 +99,13 @@ namespace DotWars
             foreach (LargeRock r in managers.GetAbilityManager().GetLargeRocks())
             {
                 field[(int) (r.GetOriginPosition().X/32f), (int) (r.GetOriginPosition().Y/32f)].SetBlocker(true);
+                //field[r.GetFrameBlockers()[0].X, r.GetFrameBlockers()[0].Y].SetBlocker(true);
             }
 
             foreach (LightningTrail l in managers.GetAbilityManager().GetLightning())
             {
                 field[(int) (l.GetOriginPosition().X/32f), (int) (l.GetOriginPosition().Y/32f)].SetBlocker(true);
+                //field[l.GetFrameBlockers()[0].X, l.GetFrameBlockers()[0].Y].SetBlocker(true);
             }
         }
 
@@ -151,12 +153,12 @@ namespace DotWars
             {
                 if (a.GetPath().Count > 0)
                 {
-                    square.position.X = a.GetPath().Last().X-16;
-                    square.position.Y = a.GetPath().Last().Y-16;
+                    square.position.X = a.GetPath().Last().X*32f-16;
+                    square.position.Y = a.GetPath().Last().Y*32f-16;
                     square.Draw(sB, d, managers);
                 }
-            }*/
-
+            }
+*/
         }
 
         public void FindClearPath(Vector2 pA, Vector2 pB, ManagerHelper mH, Path path)
@@ -167,8 +169,8 @@ namespace DotWars
             closed.Clear();
 
             //Prevent excecution if current position or end position is bad
-            if (pA.X < 0 || pA.X > mH.GetLevelSize().X || pA.Y < 0 || pA.Y > mH.GetLevelSize().Y ||
-                pB.X < 0 || pB.X > mH.GetLevelSize().X || pB.Y < 0 || pB.Y > mH.GetLevelSize().Y)
+            if (pA.X < 0f || pA.X > mH.GetLevelSize().X || pA.Y < 0f || pA.Y > mH.GetLevelSize().Y ||
+                pB.X < 0f || pB.X > mH.GetLevelSize().X || pB.Y < 0f || pB.Y > mH.GetLevelSize().Y)
             {
                 return;
             }
@@ -187,8 +189,11 @@ namespace DotWars
             }
 
             //Set up parent according to A*
-            Node parent = field[(int) beginning.X, (int) beginning.Y];
-            parent.SetFScore((int) (MathHelper.Distance(end.X, beginning.X) + MathHelper.Distance(end.Y, beginning.Y)));
+            Node parent = field[beginning.X, beginning.Y];
+            //parent.SetFScore((int) (MathHelper.Distance(end.X, beginning.X) + MathHelper.Distance(end.Y, beginning.Y)));
+
+            //TODO: Trying this out.
+            parent.SetFScore(DistanceSquared(end, beginning));
             open.Add(parent);
 
             //Makes the end not a blocker
@@ -226,9 +231,9 @@ namespace DotWars
 
                 #region Calculate F scores of adjacent nodes
 
-                for (int i = (int) parent.GetPosition().X - 1; i <= (int) parent.GetPosition().X + 1; i++)
+                for (int i = parent.GetPosition().X - 1; i <= parent.GetPosition().X + 1; i++)
                 {
-                    for (int j = (int) parent.GetPosition().Y - 1; j <= (int) parent.GetPosition().Y + 1; j++)
+                    for (int j = parent.GetPosition().Y - 1; j <= parent.GetPosition().Y + 1; j++)
                     {
                         //If node is invalid
                         if (i < 0 || j < 0 || i >= length || j >= width || field[i, j].GetBlocker() ||
@@ -247,10 +252,13 @@ namespace DotWars
                         current.SetGScore(parent.GetGScore() + mH.GetRandom().Next(0, randomness));
 
                         //Calculate other scores
-                        current.SetHScore(
-                            (int)
-                            (MathHelper.Distance(current.GetPosition().X, end.X) +
-                             MathHelper.Distance(current.GetPosition().Y, end.Y))*10);
+                        //current.SetHScore(
+                        //    (int)
+                        //    (MathHelper.Distance(current.GetPosition().X, end.X) +
+                        //     MathHelper.Distance(current.GetPosition().Y, end.Y))*10);
+
+                        //TODO: Trying this out
+                        current.SetHScore(DistanceSquared(current.GetPosition(), end)*10);
                         current.SetFScore(current.GetGScore() + current.GetHScore());
 
                         #endregion
@@ -285,7 +293,7 @@ namespace DotWars
             {
                 if (!point.GetBlocker())
                 {
-                    path.AddPoint(new Vector2(point.GetPosition().X, point.GetPosition().Y) * nodeSize + new Vector2(16));
+                    path.AddPoint(point.GetPosition());
                 }
                 point = point.GetParent();
             }
@@ -481,6 +489,11 @@ namespace DotWars
             return (pA.X - pB.X)*(pA.X - pB.X) + (pA.Y - pB.Y)*(pA.Y - pB.Y);
         }
 
+        public static int DistanceSquared(Vector2Int pA, Vector2Int pB)
+        {
+            return (pA.X - pB.X)*(pA.X - pB.X) + (pA.Y - pB.Y)*(pA.Y - pB.Y);
+        }
+
         public static float Direction(Vector2 pA, Vector2 pB)
         {
             //Slope
@@ -548,6 +561,11 @@ namespace DotWars
             public static Vector2Int operator +(Vector2Int a, Vector2Int b)
             {
                 return new Vector2Int(a.X + b.X, a.Y + b.Y);
+            }
+
+            public static Vector2Int operator /(Vector2Int a, int b)
+            {
+                return new Vector2Int(a.X / b, a.Y / b);
             }
         }
 

@@ -33,8 +33,7 @@ namespace DotWars
             velocity = new Vector2(DWMath.Cos(dir), DWMath.Sin(dir))*movementSpeed;
 
             //Set up path
-            path = new Path();
-            path.AddPoint(targetPosition);
+            NewPath(mH);
 
             string targeAsset = "";
 
@@ -126,7 +125,7 @@ namespace DotWars
 
         protected override void NewPath(ManagerHelper mH)
         {
-            path.AddPoint(targetPosition);
+            path.AddPoint(new PathHelper.Vector2Int((int)targetPosition.X, (int)targetPosition.Y) / (int)mH.GetPathHelper().GetNodeSize().X);
         }
     }
 }
