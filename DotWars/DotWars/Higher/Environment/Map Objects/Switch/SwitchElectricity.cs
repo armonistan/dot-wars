@@ -93,7 +93,7 @@ namespace DotWars
                         {
                             beamOn[i] = true;
 
-                            mH.GetEnvironmentManager().GetImpathables().Add(beams[i]);
+                            mH.GetEnvironmentManager().AddImpathable(beams[i], false);
                         }
                     }
                 }

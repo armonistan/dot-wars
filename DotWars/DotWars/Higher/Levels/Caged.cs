@@ -31,7 +31,7 @@ namespace DotWars
             base.LoadContent(cM);
 
             objects.AddStaticBlocker(new InDestructable("Backgrounds/Caged/cagedBlockers", new Vector2(432, 272)));
-            objects.AddImpathable(new LavaBurner(new Vector2(432, 272)));
+            objects.AddImpathable(new LavaBurner(new Vector2(432, 272)), true);
 
             if (typeOfGame is Assassins)
             {

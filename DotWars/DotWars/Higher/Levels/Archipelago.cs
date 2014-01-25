@@ -43,7 +43,7 @@ namespace DotWars
 
             objects.AddStaticBlocker(new InDestructable("Backgrounds/Archipelago/archipelago_solid",
                                                         new Vector2(656, 496)));
-            objects.AddImpathable(new WhirlPool(new Vector2(640, 384)));
+            objects.AddImpathable(new WhirlPool(new Vector2(640, 384)), true);
 
             if (typeOfGame is Assault)
             {
