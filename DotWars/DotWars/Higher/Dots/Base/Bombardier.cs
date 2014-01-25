@@ -89,15 +89,15 @@ namespace DotWars
                     NPCManager.IsNPCInRadius(agent, GetOriginPosition(), awareness))
                 {
                     threatened = true;
+                    break;
                 }
             }
 
-            //also temp
             threatened = threatened || campingCounter >= campingEnd;
 
             target = TargetDecider(mH);
 
-            if (threatened)
+            if (threatened && !path.GetMoving())
             {
                 NewPath(mH);
                 campingCounter = 0;
@@ -151,13 +151,22 @@ namespace DotWars
 
         protected override void NewPath(ManagerHelper mH)
         {
+            Vector2 endPoint = pickAPoint(mH);
+
+            mH.GetPathHelper().FindClearPath(GetOriginPosition(), endPoint, mH, path);
+        }
+
+        private Vector2 pickAPoint(ManagerHelper mH)
+        {
             List<Vector2> sniperSpots = mH.GetLevel().GetSniperSpots();
             Vector2 endPoint = GetOriginPosition();
+            bool validPoint = true;
+            int localCounter = 0;
 
-            foreach (Vector2 v in sniperSpots)
+            while (localCounter < 100)
             {
-                bool validPoint = true;
-
+                validPoint = true;
+                Vector2 v = sniperSpots[mH.GetRandom().Next(sniperSpots.Count)];
                 foreach (NPC agent in mH.GetNPCManager().GetNPCs())
                 {
                     if (agent.GetAffiliation() != affiliation &&
@@ -170,14 +179,15 @@ namespace DotWars
 
                 if (validPoint)
                 {
-                    endPoint = v;
-                    break;
+                    return v;
                 }
+
+                localCounter++;
             }
 
-            mH.GetPathHelper().FindClearPath(GetOriginPosition(), endPoint, mH, path);
+            return sniperSpots[mH.GetRandom().Next(sniperSpots.Count)];
         }
-
+        
         protected override NPC TargetDecider(ManagerHelper mH)
         {
             NPC closest = null;

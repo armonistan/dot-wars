@@ -58,7 +58,7 @@ namespace DotWars
             target = TargetDecider(mH);
 
             //TODO: Make this compatable with NPC death code
-            if (target != null && CollisionHelper.IntersectPixelsRadius(this, target, 24f, 24f) != CollisionHelper.NO_COLLIDE)
+            if (target != null && PathHelper.DistanceSquared(this.GetOriginPosition(), target.GetOriginPosition()) < 48f * 48f)
             {
                 Explode(mH);
             }
@@ -77,12 +77,6 @@ namespace DotWars
             {
                 mH.GetGametype().ChangeScore(lastDamager, 1);
             }
-        }
-
-        private void Explode(ManagerHelper mH, NPC a)
-        {
-            mH.GetParticleManager().AddExplosion(GetOriginPosition(), a, 125);
-            Kill();
         }
 
         private void Animate(ManagerHelper mH)

@@ -20,7 +20,7 @@ namespace DotWars
         private readonly List<Mine> activeMines;
         private readonly List<Mine> removeTheseMines;
         private readonly Stack<Mine> inactiveMines;
-        private readonly int mineCap;
+        public readonly int mineCap;
 
         private readonly Queue<Tossable> activeTossables;
         private readonly Stack<Tossable> inactiveTossables;
@@ -28,7 +28,7 @@ namespace DotWars
 
         private ManagerHelper managers;
 
-        private int redCounter, blueCounter, greenCounter, yellowCounter;
+        public int redCounter, blueCounter, greenCounter, yellowCounter;
 
         public static string SHOTGUN = "Projectiles/bullet_shotgun";
         public static string STANDARD = "Projectiles/bullet_standard";
