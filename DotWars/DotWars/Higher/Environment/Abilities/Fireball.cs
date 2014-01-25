@@ -81,7 +81,7 @@ namespace DotWars
                 {
                     foreach (NPC a in mH.GetNPCManager().GetAllies(NPC.AffliationTypes.black))
                     {
-                        if (NPCManager.IsNPCInRadius(a, GetOriginPosition(), 64) && !doomedDots.Contains(a))
+                        if (NPCManager.IsNPCInRadius(a, GetOriginPosition(), 64*this.scale) && !doomedDots.Contains(a))
                         {
                             doomedDots.Add(a);
 
@@ -98,7 +98,7 @@ namespace DotWars
                 {
                     foreach (NPC a in mH.GetNPCManager().GetNPCs())
                     {
-                        if (a.GetAffiliation() != affiliation && NPCManager.IsNPCInRadius(a, GetOriginPosition(), 64) &&
+                        if (a.GetAffiliation() != affiliation && NPCManager.IsNPCInRadius(a, GetOriginPosition(), 64 * this.scale) &&
                             !doomedDots.Contains(a))
                         {
                             doomedDots.Add(a);

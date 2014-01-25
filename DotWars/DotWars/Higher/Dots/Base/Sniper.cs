@@ -19,7 +19,7 @@ namespace DotWars
             : base(aN, p)
         {
             health = 90;
-                //Lightly armored, the sniper can take a little bit more than a medic but thats it. Slightly below average health
+            //Lightly armored, the sniper can take a little bit more than a medic but thats it. Slightly below average health
             maxHealth = health; //The units starting health will always be his max health
             movementSpeed = 130; //The sniper must rely on speed more than armor. Above average speed
             shootingSpeed = 1.5;
@@ -27,7 +27,7 @@ namespace DotWars
             awareness = 150;
             vision = MathHelper.PiOver2;
             sight = 750;
-            turningSpeed = MathHelper.Pi/20f;
+            turningSpeed = MathHelper.Pi / 20f;
 
             pathTimerEnd = 100;
             path.SetMoving(false);
@@ -47,15 +47,15 @@ namespace DotWars
                     NPCManager.IsNPCInRadius(agent, GetOriginPosition(), awareness))
                 {
                     threatened = true;
+                    break;
                 }
             }
 
-            //also temp
             threatened = threatened || campingCounter >= campingEnd;
 
             target = TargetDecider(mH);
 
-            if (threatened)
+            if (threatened && !path.GetMoving())
             {
                 NewPath(mH);
                 campingCounter = 0;
@@ -91,11 +91,11 @@ namespace DotWars
 
         protected override void Shoot(ManagerHelper mH)
         {
-            Vector2 tempPos = PathHelper.Direction(rotation + MathHelper.PiOver2)*new Vector2(10);
+            Vector2 tempPos = PathHelper.Direction(rotation + MathHelper.PiOver2) * new Vector2(10);
 
             mH.GetProjectileManager()
               .AddProjectile(ProjectileManager.STANDARD, GetOriginPosition() + tempPos, this,
-                             PathHelper.Direction(rotation + (float) mH.GetRandom().NextDouble()/8 - 0.0625f)*1200, 90,
+                             PathHelper.Direction(rotation + (float)mH.GetRandom().NextDouble() / 8 - 0.0625f) * 1200, 90,
                              false, true, 5);
 
             mH.GetAudioManager().Play(AudioManager.SNIPER_SHOOT, AudioManager.RandomVolume(mH),
@@ -104,13 +104,22 @@ namespace DotWars
 
         protected override void NewPath(ManagerHelper mH)
         {
+            Vector2 endPoint = pickAPoint(mH);
+
+            mH.GetPathHelper().FindClearPath(GetOriginPosition(), endPoint, mH, path);
+        }
+
+        private Vector2 pickAPoint(ManagerHelper mH)
+        {
             List<Vector2> sniperSpots = mH.GetLevel().GetSniperSpots();
             Vector2 endPoint = GetOriginPosition();
+            bool validPoint = true;
+            int localCounter = 0;
 
-            foreach (Vector2 v in sniperSpots)
+            while(localCounter < 100)
             {
-                bool validPoint = true;
-
+                validPoint = true;
+                Vector2 v = sniperSpots[mH.GetRandom().Next(sniperSpots.Count)];
                 foreach (NPC agent in mH.GetNPCManager().GetNPCs())
                 {
                     if (agent.GetAffiliation() != affiliation &&
@@ -123,12 +132,13 @@ namespace DotWars
 
                 if (validPoint)
                 {
-                    endPoint = v;
-                    break;
+                    return v;
                 }
-            }
 
-            mH.GetPathHelper().FindClearPath(GetOriginPosition(), endPoint, mH, path);
+                localCounter++;
+            }
+            
+            return sniperSpots[mH.GetRandom().Next(sniperSpots.Count)];
         }
     }
 }

@@ -516,6 +516,11 @@ namespace DotWars
             private readonly int[] lastScores;
             private readonly string[] lastScoreStrings;
 
+            private NPC.AffliationTypes affilation;
+            private int mineCounter;
+            private Vector2 mineCounterPos;
+            private bool drawMine;
+
             #endregion
 
             public HUD(Camera c, int i, int numTeams, bool canDrawScores)
@@ -538,18 +543,22 @@ namespace DotWars
                 if (c.commanderType == typeof (RedCommander) || c.commanderType == typeof (RedPlayerCommander))
                 {
                     front = new Sprite("HUD/hud_red", leftPos);
+                    affilation = NPC.AffliationTypes.red;
                 }
                 else if (c.commanderType == typeof (BlueCommander) || c.commanderType == typeof (BluePlayerCommander))
                 {
                     front = new Sprite("HUD/hud_blue", leftPos);
+                    affilation = NPC.AffliationTypes.blue;
                 }
                 else if (c.commanderType == typeof (GreenCommander) || c.commanderType == typeof (GreenPlayerCommander))
                 {
                     front = new Sprite("HUD/hud_green", leftPos);
+                    affilation = NPC.AffliationTypes.green;
                 }
                 else if (c.commanderType == typeof (YellowCommander) || c.commanderType == typeof (YellowPlayerCommander))
                 {
                     front = new Sprite("HUD/hud_yellow", leftPos);
+                    affilation = NPC.AffliationTypes.yellow;
                 }
 
                 //Set up other sprites
@@ -562,6 +571,8 @@ namespace DotWars
                 teammate = new Sprite("HUD/hud_teammates", leftPos + new Vector2(86, 11));
                 scoreboard = new Sprite("HUD/hud_score_frame", rightPos - new Vector2(180, -10));
                 timer = new Sprite("HUD/hud_time_frame", rightPos - new Vector2(440, -7));
+                mineCounterPos = leftPos + new Vector2(-45, 0);
+                drawMine = false;
 
                 lastScores = new int[numTeams];
                 lastScoreStrings = new string[numTeams];
@@ -613,6 +624,7 @@ namespace DotWars
                     health.Update(mH, (int) healthCalcWidth);
                     power.Update(mH, (int) ((float) c.CurrentPower()/(float) c.MaxPower()*powerWidth));
                     teammate.Update(mH);
+                    drawMine = (c.grenadeType==1);
                 }
 
                 scoreboard.Update(mH);
@@ -654,15 +666,19 @@ namespace DotWars
                     {
                         case NPC.AffliationTypes.red:
                             teamColor = Color.Red;
+                            mineCounter = mH.GetProjectileManager().redCounter;
                             break;
                         case NPC.AffliationTypes.blue:
                             teamColor = Color.Blue;
+                            mineCounter = mH.GetProjectileManager().blueCounter;
                             break;
                         case NPC.AffliationTypes.green:
                             teamColor = Color.Green;
+                            mineCounter = mH.GetProjectileManager().greenCounter;
                             break;
                         case NPC.AffliationTypes.yellow:
                             teamColor = Color.Yellow;
+                            mineCounter = mH.GetProjectileManager().yellowCounter;
                             break;
                     }
 
@@ -682,8 +698,6 @@ namespace DotWars
                         //mH.GetTextureManager()
                         //  .DrawString(sB, "" + mH.GetNPCManager().GetAllies(mH.GetGametype().GetTeams()[x]).Count, rightPos - new Vector2((4 - x) * 82 - 24, 10), teamColor,
                         //              TextureManager.FontSizes.small, true);
-
-
                     }
                 }
             }
@@ -705,12 +719,43 @@ namespace DotWars
                     front.Draw(sB, Vector2.Zero, null);
                     gun.Draw(sB, Vector2.Zero, null);
                     toss.Draw(sB, Vector2.Zero, null);
+                    if(drawMine)
+                        DrawMineCounter(sB, mH);
 
                     if (myCamera.GetTeammateColor() != NPC.AffliationTypes.grey)
                     {
                         teammate.Draw(sB, Vector2.Zero, null);
                     }
                 }
+            }
+
+            private void DrawMineCounter(SpriteBatch sB, ManagerHelper mH)
+            {
+                Color teamColor = Color.White;
+
+                switch (affilation)
+                {
+                    case NPC.AffliationTypes.red:
+                        teamColor = Color.Red;
+                        mineCounter = mH.GetProjectileManager().mineCap/4 - mH.GetProjectileManager().redCounter;
+                        break;
+                    case NPC.AffliationTypes.blue:
+                        teamColor = Color.Blue;
+                        mineCounter = mH.GetProjectileManager().mineCap/4 -mH.GetProjectileManager().blueCounter;
+                        break;
+                    case NPC.AffliationTypes.green:
+                        teamColor = Color.Green;
+                        mineCounter = mH.GetProjectileManager().mineCap/4 -mH.GetProjectileManager().greenCounter;
+                        break;
+                    case NPC.AffliationTypes.yellow:
+                        teamColor = Color.Yellow;
+                        mineCounter = mH.GetProjectileManager().mineCap/4 -mH.GetProjectileManager().yellowCounter;
+                        break;
+                }
+
+                mH.GetTextureManager()
+                .DrawString(sB, ""+mineCounter, mineCounterPos, teamColor,
+                TextureManager.FontSizes.tiny, true);
             }
 
             public Camera GetCamera()

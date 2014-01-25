@@ -32,7 +32,6 @@ namespace DotWars
 
         private const string SHOTGUN_SHOOT = "shotgunShoot";
         private const string FLARE_SHOOT = "flareShoot";
-
         #endregion
 
         public Commander(String aN, Vector2 p)
@@ -345,6 +344,7 @@ namespace DotWars
         {
             //does nothing here
         }
+
 
         #region Paths
 
