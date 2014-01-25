@@ -12,10 +12,6 @@ namespace DotWars
     public class Archipelago : Level
     {
         #region Declarations
-
-        private float danielIsGay = 10;
-        private float danielsGayness = 0;
-
         #endregion
 
         public Archipelago(Gametype gT, Dictionary<Type, int> pL, TextureManager tM, AudioManager audio) :

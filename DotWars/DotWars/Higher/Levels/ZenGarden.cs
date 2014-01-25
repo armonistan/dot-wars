@@ -26,7 +26,7 @@ namespace DotWars
 
             //Set up background
             backgrounds.AddBackground(new Sprite("Backgrounds/ZenGarden/midwinterBackground", new Vector2(656, 496)));
-            //backgrounds.AddForeground(new Sprite("Backgrounds/ZenGarden/zenForeground", new Vector2(656, 496)));
+            backgrounds.AddForeground(new Sprite("Backgrounds/ZenGarden/midwinterForeground", new Vector2(656, 496)));
 
             sniperSpots.Add(new Vector2(90, 60));
             sniperSpots.Add(new Vector2(290, 780));

@@ -144,7 +144,7 @@ namespace DotWars
 
                     foreach (NPC a in mH.GetNPCManager().GetNPCs())
                     {
-                        Vector2 tempCollide = CollisionHelper.IntersectPixelsPoint(GetOriginPosition(), belts[i]);
+                        Vector2 tempCollide = CollisionHelper.IntersectPixelsPoint(a.GetOriginPosition(), belts[i]);
 
                         if (tempCollide != CollisionHelper.NO_COLLIDE)
                         {

@@ -22,9 +22,7 @@ namespace DotWars
         private stage theStage;
         private ContentManager theContent;
         private readonly Sprite logo;
-        private Sprite logoFade, controlsFade;
         private readonly Sprite controls;
-        private int startLoad;
 
         public Logo()
             : base(null, new Dictionary<Type, int>(), new Vector2(1248, 720), null, null)
@@ -101,6 +99,7 @@ namespace DotWars
             #region Zen Garden
             textures.Add("Backgrounds/ZenGarden/midwinterBlockers", new Rectangle(0, 0, 1312, 992));
             textures.Add("Backgrounds/ZenGarden/midwinterBackground", new Rectangle(0, 0, 1312, 992));
+            textures.Add("Backgrounds/ZenGarden/midwinterForeground", new Rectangle(0, 0, 1312, 992));
             #endregion
 
             #region Faercrag

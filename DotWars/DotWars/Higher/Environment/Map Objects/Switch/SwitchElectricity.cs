@@ -138,6 +138,17 @@ namespace DotWars
 
         public override void Draw(SpriteBatch sB, Vector2 displacement, ManagerHelper mH)
         {
+            int counter = 0;
+
+            foreach (var beam in beams)
+            {
+                if (beamOn[counter])
+                {
+                    beam.Draw(sB, displacement, mH);
+                }
+
+                counter++;
+            }
         }
 
         public override List<PathHelper.Vector2Int> GetFrameBlockers()

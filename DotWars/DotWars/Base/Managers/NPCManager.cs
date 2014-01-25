@@ -145,8 +145,6 @@ namespace DotWars
 
         public void Update()
         {
-            NPC a;
-
             foreach (var commander in stats)
             {
                 if (commander.Value.IsAlive)

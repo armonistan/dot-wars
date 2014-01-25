@@ -257,6 +257,7 @@ Content\Audio\Waves\DotWars.xnb
 Content\Textures\Backgrounds\Relic\impathableMeteor.xnb
 Content\Textures\Backgrounds\ZenGarden\midwinterBlockers.xnb
 Content\Textures\Backgrounds\ZenGarden\midwinterBackground.xnb
+Content\Textures\Backgrounds\ZenGarden\midwinterForeground.xnb
 Content\Audio\GameAudio.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb
