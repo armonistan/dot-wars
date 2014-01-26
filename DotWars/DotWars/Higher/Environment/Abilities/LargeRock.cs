@@ -44,7 +44,8 @@ namespace DotWars
             Queue<Projectile> tempProjectiles = mH.GetProjectileManager().GetProjectiles();
             foreach (Projectile p in tempProjectiles)
             {
-                if (p.GetDrawTime() > 0 &&
+                if (p.GetIfShouldCollide() &&
+                    p.GetDrawTime() > 0 &&
                     CollisionHelper.IntersectPixelsPoint(p.GetOriginPosition(), this) != CollisionHelper.NO_COLLIDE)
                 {
                     health -= p.GetDamage();
@@ -77,7 +78,7 @@ namespace DotWars
                             Vector2 direction = PathHelper.DirectionVector(GetOriginPosition(),
                                                                            agent.GetOriginPosition());
 
-                            float modifier = 1f/(distanceToAgent)*(pulseDistance*pulseDistance)*2f;
+                            float modifier = MathHelper.Clamp(1f / (distanceToAgent) * (pulseDistance * pulseDistance) * 2f, 0f, 200f);
 
                             agent.AddAcceleration(direction*modifier);
                         }

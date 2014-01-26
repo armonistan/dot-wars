@@ -16,12 +16,12 @@ namespace DotWars
         private readonly List<NPC> doomedDots;
         private readonly List<NPC> dotsSetOnFire;
         private NPC.AffliationTypes affiliation;
-        private ManagerHelper managers;
 
-        private int frameCounter;
-        private const int drawFrames = 30;
-        private const int existFrames = 60;
-        private const int burnFrames = 3;
+        private double timer;
+        private const double drawTime = 0.5;
+        private const double existTime = 1f;
+
+        private const int DAMAGE = -60;
 
         private const float modifer = 0.95f;
 
@@ -29,19 +29,18 @@ namespace DotWars
 
         #endregion
 
-        public Fireball(ManagerHelper mH)
+        public Fireball()
             : base("Abilities/ability_red", Vector2.Zero, Vector2.Zero)
         {
             doomedDots = new List<NPC>();
             dotsSetOnFire = new List<NPC>();
-            managers = mH;
 
             indicator = new Sprite("Abilities/ability_red2", Vector2.Zero);
         }
 
         public void Set(Vector2 p, Vector2 direction, NPC.AffliationTypes aT, ManagerHelper mH)
         {
-            frameCounter = 0;
+            timer = 0.0;
             scale = 1;
             doomedDots.Clear();
             dotsSetOnFire.Clear();
@@ -66,7 +65,7 @@ namespace DotWars
         {
             if (frameIndex < totalFrames)
             {
-                frameIndex = frameCounter/drawFrames*totalFrames;
+                frameIndex = (int) (timer/drawTime*totalFrames);
 
                 //Spawn fire
                 if (mH.GetRandom().NextDouble() < 0.3)
@@ -81,7 +80,7 @@ namespace DotWars
                 {
                     foreach (NPC a in mH.GetNPCManager().GetAllies(NPC.AffliationTypes.black))
                     {
-                        if (NPCManager.IsNPCInRadius(a, GetOriginPosition(), 64*this.scale) && !doomedDots.Contains(a))
+                        if (NPCManager.IsNPCInRadius(a, GetOriginPosition(), 64*scale) && !doomedDots.Contains(a))
                         {
                             doomedDots.Add(a);
 
@@ -90,7 +89,7 @@ namespace DotWars
                                 a.ChangeFireStatus();
                                 dotsSetOnFire.Add(a);
                             }
-                            a.ChangeHealth(-30, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.red));
+                            a.ChangeHealth(DAMAGE, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.red));
                         }
                     }
                 }
@@ -108,7 +107,7 @@ namespace DotWars
                                 a.ChangeFireStatus();
                                 dotsSetOnFire.Add(a);
                             }
-                            a.ChangeHealth(-70, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.red));
+                            a.ChangeHealth(-50, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.red));
                         }
                     }
                 }
@@ -133,22 +132,17 @@ namespace DotWars
                                PathHelper.Direction((float) (mH.GetRandom().NextDouble()*Math.PI*2))*30, 1, 0.05f, 1,
                                0.1f);
                 }
-
-                if (frameCounter%burnFrames == 0)
-                {
-                    a.ChangeHealth(-2, mH.GetNPCManager().GetCommander(NPC.AffliationTypes.red));
-                }
             }
 
-            frameCounter++;
-            this.scale = scale*modifer;
+            timer += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            scale = scale*modifer;
 
             base.Update(mH);
         }
 
         public override void Draw(SpriteBatch sB, Vector2 displacement, ManagerHelper mH)
         {
-            if (frameCounter <= drawFrames)
+            if (timer <= drawTime)
             {
                 base.Draw(sB, displacement, mH);
             }
@@ -164,7 +158,7 @@ namespace DotWars
 
         public bool IsDone()
         {
-            return frameCounter > existFrames;
+            return timer > existTime;
         }
 
         public void ResetFireStatus()

@@ -404,7 +404,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\particle_smoke.xnb</Output>
-      <Time>2013-07-02T16:33:06-05:00</Time>
+      <Time>2014-01-25T15:22:44-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Effects\PI_medic.png</Source>
@@ -431,7 +431,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\Xbox 360\Debug\Content\Textures\Effects\smoke_standard.xnb</Output>
-      <Time>2013-07-02T16:33:06-05:00</Time>
+      <Time>2014-01-25T15:27:21-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Effects\smoke_standard2.png</Source>

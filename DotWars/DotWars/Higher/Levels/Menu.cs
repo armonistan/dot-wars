@@ -137,7 +137,7 @@ namespace DotWars
             mapNames[2] = "Switch";
             mapNames[3] = "Faercrag";
             mapNames[4] = "Caged";
-            mapNames[5] = "Zen Garden";
+            mapNames[5] = "Midwinter";
             mapNames[6] = "Plaza";
 
             gametypeNames = new String[6];
@@ -1454,7 +1454,7 @@ namespace DotWars
                     return new PreGame(new Caged(theGametype, playerCommanders, textures, sounds), theGametype,
                                        playerIndices[indexOfKing], textures, sounds);
                 case 5:
-                    return new PreGame(new ZenGarden(theGametype, playerCommanders, textures, sounds), theGametype,
+                    return new PreGame(new Midwinter(theGametype, playerCommanders, textures, sounds), theGametype,
                                        playerIndices[indexOfKing], textures, sounds);
                 case 6:
                     return new PreGame(new Plaza(theGametype, playerCommanders, textures, sounds), theGametype,

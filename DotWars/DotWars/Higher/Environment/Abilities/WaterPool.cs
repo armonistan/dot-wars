@@ -26,7 +26,7 @@ namespace DotWars
             : base("Abilities/ability_blue_spread2", Vector2.Zero, Vector2.Zero)
         {
             animateEnd = 3;
-            deathTime = 7;
+            deathTime = 6.0;
             splashEnd = 0.2;
             splash = new Sprite("Abilities/ability_blue_splash", GetOriginPosition());
         }

@@ -53,7 +53,7 @@ namespace DotWars
             }
         }
 
-        public override bool ShouldUsePower(ManagerHelper mH)
+        protected override bool ShouldUsePower(ManagerHelper mH)
         {
             if (!mH.GetAbilityManager().HasReachedLargeRockCap())
             {

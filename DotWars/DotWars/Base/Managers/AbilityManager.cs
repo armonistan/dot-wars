@@ -74,7 +74,7 @@ namespace DotWars
 
             for (int i = 0; i < fireballCap; i++)
             {
-                inactiveFireballs.Push(new Fireball(managers));
+                inactiveFireballs.Push(new Fireball());
             }
 
             waterpoolCap = wC;

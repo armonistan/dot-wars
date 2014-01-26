@@ -73,7 +73,7 @@ namespace DotWars
             }
         }
 
-        public override bool ShouldUsePower(ManagerHelper mH)
+        protected override bool ShouldUsePower(ManagerHelper mH)
         {
             if (CurrentPower() < .5 * MaxPower())
                 return false;

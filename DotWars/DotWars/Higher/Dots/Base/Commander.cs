@@ -180,6 +180,7 @@ namespace DotWars
 
             if (ShouldUsePower(mH))
                 UsePower(mH);
+
             ChargePower();
 
             #endregion
@@ -271,7 +272,7 @@ namespace DotWars
             ChangePower(abilityCharge);
         }
 
-        public virtual bool ShouldUsePower(ManagerHelper mH)
+        protected virtual bool ShouldUsePower(ManagerHelper mH)
         {
             //does nothing here
             return false;

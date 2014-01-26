@@ -403,7 +403,8 @@ namespace DotWars
             {
                 foreach (Projectile p in mH.GetProjectileManager().GetProjectiles())
                 {
-                    if (p.GetDrawTime() > 0 && 
+                    if (p.GetIfShouldCollide() && 
+                        p.GetDrawTime() > 0 && 
                         p.GetAffiliation() != affiliation &&
                         CollisionHelper.IntersectPixelsSimple(this, p) != CollisionHelper.NO_COLLIDE)
                     {

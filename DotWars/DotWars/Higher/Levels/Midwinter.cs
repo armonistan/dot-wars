@@ -9,13 +9,13 @@ using Microsoft.Xna.Framework.Content;
 
 namespace DotWars
 {
-    public class ZenGarden : Level
+    public class Midwinter : Level
     {
         #region Declarations
 
         #endregion
 
-        public ZenGarden(Gametype gT, Dictionary<Type, int> pL, TextureManager tM, AudioManager audio) :
+        public Midwinter(Gametype gT, Dictionary<Type, int> pL, TextureManager tM, AudioManager audio) :
             base(gT, pL, new Vector2(1312, 992), tM, audio)
         {
         }
@@ -102,7 +102,7 @@ namespace DotWars
 
         public override String ToString()
         {
-            return "Zen Garden";
+            return "Midwinter";
         }
     }
 }

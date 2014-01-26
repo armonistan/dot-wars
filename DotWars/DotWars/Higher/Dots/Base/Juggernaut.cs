@@ -12,7 +12,7 @@ namespace DotWars
         public Juggernaut(String aN, Vector2 p)
             : base(aN, p)
         {
-            health = maxHealth = 250; //A completely defensive unit. Like a tank
+            health = maxHealth = 200; //A completely defensive unit. Like a tank
             movementSpeed = 120; //He's worthless if he can't keep up with the npc's he's trying to defend
             pathTimerEnd = 0.1;
 

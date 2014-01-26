@@ -15,7 +15,7 @@ namespace DotWars
             health = 125; //Above average health (he is a heavy trooper)
             maxHealth = health; //set up max health
             movementSpeed = 80; //He's a bit weighted down by all that gear. Below average speed
-            shootingCounter = shootingSpeed = 1.8; //Powerful weapon but harder to reload. Medium Slow shooting speed 
+            shootingCounter = shootingSpeed = 2.2; //Powerful weapon but harder to reload. Medium Slow shooting speed 
 
             affiliation = AffliationTypes.red;
         }
