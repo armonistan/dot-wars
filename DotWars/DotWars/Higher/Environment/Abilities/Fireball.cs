@@ -19,9 +19,9 @@ namespace DotWars
 
         private double timer;
         private const double drawTime = 0.5;
-        private const double existTime = 1f;
+        private const double existTime = 2f;
 
-        private const int DAMAGE = -60;
+        private const int DAMAGE = -75;
 
         private const float modifer = 0.95f;
 

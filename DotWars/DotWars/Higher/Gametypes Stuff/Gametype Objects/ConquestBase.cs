@@ -33,6 +33,7 @@ namespace DotWars
 
         //Constants
         private const int NUM_SMOKES = 10;
+        private const int NUM_AGENTS_ON_CAPTURE = 3;
 
         #endregion
 
@@ -152,6 +153,19 @@ namespace DotWars
                                                                     PathHelper.Direction(
                                                                         (float) (mH.GetRandom().NextDouble()*Math.PI*2))*
                                                                     50, 1, 0.01f, 1, 0.05f);
+                            }
+
+                            for (int a = 0; a < NUM_AGENTS_ON_CAPTURE; a++)
+                            {
+                                if (mH.GetNPCManager().GetAllies(affiliation).Count < mH.GetGametype().GetPopCap())
+                                {
+                                    for (int i = 0;
+                                         i < 50 && !mH.GetGametype().Spawn(mH, affiliation, GetOriginPosition());
+                                         i++)
+                                    {
+                                        //Ain't this just a gem?
+                                    }
+                                }
                             }
                         }
                         else

@@ -100,8 +100,12 @@ namespace DotWars
 
             if (spawnCounter > spawnTime && allies.Count < mH.GetGametype().GetPopCap())
             {
-                mH.GetGametype()
-                  .Spawn(mH, affiliation, mH.GetSpawnHelper().Spawn(affiliation), mH.GetRandom().Next(6, 9));
+                for (int i = 0;
+                     i < 50 && !mH.GetGametype().Spawn(mH, affiliation, mH.GetSpawnHelper().Spawn(affiliation), mH.GetRandom().Next(6, 9));
+                     i++)
+                {
+                    //Ain't this just a gem?
+                }
 
                 spawnCounter = 0.0;
             }

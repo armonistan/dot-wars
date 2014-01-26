@@ -56,13 +56,13 @@ namespace DotWars
         {
             foreach (NPC a in mH.GetNPCManager().GetNPCs())
             {
-                if (CollisionHelper.IntersectPixelsPoint(GetOriginPosition(), a) != CollisionHelper.NO_COLLIDE)
+                if (CollisionHelper.IntersectPixelsPoint(a.GetOriginPosition(), this) != CollisionHelper.NO_COLLIDE)
                 {
                     if (a.GetAffiliation() == affiliation)
                     {
-                        if (mH.GetRandom().Next(40) == 0)
+                        if (mH.GetRandom().Next(20) == 0)
                         {
-                            if (a.GetHealth() < a.GetMaxHealth() && mH.GetRandom().Next(5) == 0)
+                            if (a.GetHealth() < a.GetMaxHealth() && mH.GetRandom().Next(2) == 0)
                             {
                                 mH.GetParticleManager().AddHeal(a);
                             }
@@ -72,7 +72,7 @@ namespace DotWars
                     }
                     else
                     {
-                        a.AddAcceleration(a.velocity*new Vector2(-0.003f));
+                        a.AddAcceleration(a.velocity*new Vector2(-0.005f));
                     }
                 }
             }

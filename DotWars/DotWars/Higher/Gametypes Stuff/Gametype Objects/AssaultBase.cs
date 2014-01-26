@@ -117,7 +117,12 @@ namespace DotWars
                         aT = 4;
                 }
 
-                mH.GetGametype().Spawn(mH, affiliation, mH.GetSpawnHelper().Spawn(affiliation), aT);
+                for (int i = 0;
+                     i < 50 && !mH.GetGametype().Spawn(mH, affiliation, mH.GetSpawnHelper().Spawn(affiliation), aT);
+                     i++)
+                {
+                    //Ain't this just a gem?
+                }
 
                 spawnCounter = 0.0;
             }

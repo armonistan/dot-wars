@@ -68,9 +68,18 @@ namespace DotWars
                 {
                     if (b.affiliation != NPC.AffliationTypes.grey)
                     {
-                        Spawn(mH, b.affiliation,
-                              mH.GetSpawnHelper().Spawn(b.affiliation, (GetNumAlliedBases(b.affiliation) == 0)),
-                              mH.GetRandom().Next(3));
+                        
+
+                        if (mH.GetNPCManager().GetAllies(b.affiliation).Count < mH.GetGametype().GetPopCap())
+                        {
+                            for (int i = 0; i < 50 &&
+                                            !Spawn(mH, b.affiliation,
+                                                mH.GetSpawnHelper().Spawn(b.affiliation, (GetNumAlliedBases(b.affiliation) == 0)),
+                                                mH.GetRandom().Next(3)); i++)
+                            {
+                                //Ain't this just a gem?
+                            }
+                        }
                     }
                 }
             }
