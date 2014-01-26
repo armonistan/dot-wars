@@ -2314,6 +2314,33 @@
       <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\Relic\impathableMeteor.xnb</Output>
       <Time>2014-01-18T12:33:25.5167262-06:00</Time>
     </Item>
+    <Item>
+      <Source>Textures\Backgrounds\ZenGarden\midwinterBlockers.png</Source>
+      <Name>Textures\Backgrounds\ZenGarden\midwinterBlockers</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\ZenGarden\midwinterBlockers.xnb</Output>
+      <Time>2014-01-25T13:23:54-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\ZenGarden\midwinterBackground.png</Source>
+      <Name>Textures\Backgrounds\ZenGarden\midwinterBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\ZenGarden\midwinterBackground.xnb</Output>
+      <Time>2014-01-25T13:23:05-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\ZenGarden\midwinterForeground.png</Source>
+      <Name>Textures\Backgrounds\ZenGarden\midwinterForeground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\1574\Desktop\dots\dot-wars\DotWars\DotWars\bin\x86\Release\Content\Textures\Backgrounds\ZenGarden\midwinterForeground.xnb</Output>
+      <Time>2014-01-25T14:22:46-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

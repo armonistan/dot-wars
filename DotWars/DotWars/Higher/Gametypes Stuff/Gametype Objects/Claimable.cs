@@ -11,9 +11,6 @@ namespace DotWars
     public class Claimable : Sprite
     {
         #region Declarations
-
-        private List<NPC> allies;
-
         private double counter;
         public bool taken;
 

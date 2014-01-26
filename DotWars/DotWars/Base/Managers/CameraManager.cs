@@ -571,7 +571,7 @@ namespace DotWars
                 teammate = new Sprite("HUD/hud_teammates", leftPos + new Vector2(86, 11));
                 scoreboard = new Sprite("HUD/hud_score_frame", rightPos - new Vector2(180, -10));
                 timer = new Sprite("HUD/hud_time_frame", rightPos - new Vector2(440, -7));
-                mineCounterPos = leftPos + new Vector2(-45, 0);
+                mineCounterPos = leftPos + new Vector2(-40, -3);
                 drawMine = false;
 
                 lastScores = new int[numTeams];
@@ -752,6 +752,8 @@ namespace DotWars
                         mineCounter = mH.GetProjectileManager().mineCap/4 -mH.GetProjectileManager().yellowCounter;
                         break;
                 }
+
+                teamColor = Color.White;
 
                 mH.GetTextureManager()
                 .DrawString(sB, ""+mineCounter, mineCounterPos, teamColor,

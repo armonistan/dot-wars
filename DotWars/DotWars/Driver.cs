@@ -22,7 +22,6 @@ namespace DotWars
                       next;
 
         //For pausing the game
-        private bool pause;
         private SpriteBatch spriteBatch;
 
         #endregion
@@ -38,8 +37,6 @@ namespace DotWars
             //Set up first level
             current = new Logo();
 
-            //Set pause to false
-            pause = false;
 
             CollisionHelper.Initialize();
         }
