@@ -205,7 +205,7 @@ namespace DotWars
             //If the team exists, update it's score
             if (teams.Contains(t))
             {
-                scores[teams.IndexOf(t)] += s;
+                ChangeScore(t, s);
             }
 
                 //Otherwise, throw an exception
@@ -215,7 +215,7 @@ namespace DotWars
             }
         }
 
-        protected virtual void ChangeScoreAbsolute(NPC agent, int s)
+        protected void ChangeScoreAbsolute(NPC agent, int s)
         {
             NPC.AffliationTypes t = agent.GetAffiliation();
 
@@ -230,6 +230,11 @@ namespace DotWars
             {
                 throw new Exception("That team doesn't exist");
             }
+        }
+
+        protected void ChangeScore(NPC.AffliationTypes team, int amount)
+        {
+            scores[teams.IndexOf(team)] += amount;
         }
 
         public bool Spawn(ManagerHelper mH, NPC.AffliationTypes aT, Vector2 p, int aiType)

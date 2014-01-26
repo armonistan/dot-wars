@@ -2314,6 +2314,33 @@
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Audio\Waves\DotWars.xnb</Output>
       <Time>2013-08-18T11:03:33.9183707-05:00</Time>
     </Item>
+    <Item>
+      <Source>Textures\Backgrounds\ZenGarden\midwinterBackground.png</Source>
+      <Name>Textures\Backgrounds\ZenGarden\midwinterBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\ZenGarden\midwinterBackground.xnb</Output>
+      <Time>2014-01-26T11:34:14.2932162-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\ZenGarden\midwinterBlockers.png</Source>
+      <Name>Textures\Backgrounds\ZenGarden\midwinterBlockers</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\ZenGarden\midwinterBlockers.xnb</Output>
+      <Time>2014-01-26T11:34:14.2962164-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\ZenGarden\midwinterForeground.png</Source>
+      <Name>Textures\Backgrounds\ZenGarden\midwinterForeground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\ZenGarden\midwinterForeground.xnb</Output>
+      <Time>2014-01-26T02:57:16-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

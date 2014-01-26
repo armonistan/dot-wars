@@ -15,26 +15,32 @@ namespace DotWars
         #region Declarations
 
         //Determines when to spawn
+        private double counter;
         private readonly double spawnSecs;
+
+        private double scoreTimer;
+        private readonly double scoreTime;
+        private const int SCORE_CHANGE = 1;
 
         //list of bases
         public List<ConquestBase> bases;
-        private double counter;
 
         #endregion
 
         public Conquest(List<NPC.AffliationTypes> tL, Dictionary<Type, NPC.AffliationTypes> pL, int pC, float sT)
-            : base(tL, pL, 0, pC, sT)
+            : base(tL, pL, 200, pC, sT)
         {
             spawnSecs = 4;
             counter = 0;
+            scoreTimer = 0.0;
+            scoreTime = 1.0;
             this.typeOfGame = GT.CONQUEST;
         }
 
         public void Initialize(ManagerHelper mH, List<ConquestBase> bL)
         {
             bases = bL;
-            winScore = bL.Count;
+            //winScore = bL.Count;
 
             foreach (ConquestBase b in bases)
             {
@@ -51,13 +57,14 @@ namespace DotWars
                 b.Update(mH);
             }
 
+            //TODO: Trying this out.
             //Fucking stupid counter
-            int teamCounter = 0;
-            foreach (NPC.AffliationTypes team in teams)
-            {
-                ChangeScoreAbsolute(teamCounter, GetNumAlliedBases(team));
-                teamCounter++;
-            }
+            //int teamCounter = 0;
+            //foreach (NPC.AffliationTypes team in teams)
+            //{
+            //    ChangeScoreAbsolute(teamCounter, GetNumAlliedBases(team));
+            //    teamCounter++;
+            //}
 
             //Spawn Section
             if (counter > spawnSecs)
@@ -68,8 +75,6 @@ namespace DotWars
                 {
                     if (b.affiliation != NPC.AffliationTypes.grey)
                     {
-                        
-
                         if (mH.GetNPCManager().GetAllies(b.affiliation).Count < mH.GetGametype().GetPopCap())
                         {
                             for (int i = 0; i < 50 &&
@@ -88,6 +93,23 @@ namespace DotWars
                 counter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
             }
 
+            if (scoreTimer > scoreTime)
+            {
+                scoreTimer = 0.0;
+
+                foreach (var conquestBase in bases)
+                {
+                    if (conquestBase.affiliation != NPC.AffliationTypes.grey)
+                    {
+                        ChangeScore(conquestBase.affiliation, SCORE_CHANGE);
+                    }
+                }
+            }
+            else
+            {
+                scoreTimer += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
+            }
+
             #region base code slightly modified
 
             #region Spawning Commanders
@@ -97,8 +119,8 @@ namespace DotWars
             {
                 if (mH.GetNPCManager().GetCommander(commander.Key) == null)
                 {
-                    if (spawnsCounters[commanderCounter] > spawnTime &&
-                        (!HasSomeoneWon() || GetWinner() == commander.Value))
+                    if (spawnsCounters[commanderCounter] > spawnTime/* &&
+                        (!HasSomeoneWon() || GetWinner() == commander.Value)*/)
                     {
                         SpawnCommander(mH, commander.Key, commander.Value, mH.GetSpawnHelper().Spawn(commander.Value, GetNumAlliedBases(commander.Value) == 0));
 
@@ -124,7 +146,7 @@ namespace DotWars
 
             if (tryGetWinner != NPC.AffliationTypes.same)
             {
-                foreach (KeyValuePair<Type, NPC.AffliationTypes> commander in commanders)
+                /*foreach (KeyValuePair<Type, NPC.AffliationTypes> commander in commanders)
                 {
                     if (commander.Value != tryGetWinner)
                     {
@@ -133,7 +155,7 @@ namespace DotWars
                             return false;
                         }
                     }
-                }
+                }*/
 
                 return true;
             }
@@ -147,22 +169,7 @@ namespace DotWars
 
         private void ChangeScoreAbsolute(int index, int s)
         {
-            //int index = teams.IndexOf(t);
-
-            //If the team exists, update it's score
-            //if (index != -1)
-            //{
-            //    scores[index] = s;
-            //}
-            //else if (t != NPC.AffliationTypes.grey)
-            //{
-            //    throw new Exception("That team doesn't exist");
-            //}
-
-            //TODO: Change back
-
             scores[index] = s;
-
         }
 
         public override void DrawBottom(SpriteBatch sB, Vector2 d)

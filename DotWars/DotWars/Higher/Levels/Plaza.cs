@@ -11,8 +11,6 @@ namespace DotWars
 {
     public class Plaza : Level
     {
-        private readonly Vector2 savingTime = new Vector2(0);
-
         public Plaza(Gametype gT, Dictionary<Type, int> pL, TextureManager tM, AudioManager audio) :
             base(gT, pL, new Vector2(1328, 1008), tM, audio)
         {
@@ -22,8 +20,8 @@ namespace DotWars
         {
             base.Initialize();
 
-            backgrounds.AddForeground(new Sprite("Backgrounds/Plaza/plazaLighting", new Vector2(664, 504) - savingTime));
-            backgrounds.AddBackground(new Sprite("Backgrounds/Plaza/plazaBackground", new Vector2(664, 504) - savingTime));
+            backgrounds.AddForeground(new Sprite("Backgrounds/Plaza/plazaLighting", new Vector2(664, 504)));
+            backgrounds.AddBackground(new Sprite("Backgrounds/Plaza/plazaBackground", new Vector2(664, 504)));
 
             sniperSpots.Add(new Vector2(80, 270));
             sniperSpots.Add(new Vector2(930, 100));
@@ -36,10 +34,10 @@ namespace DotWars
             base.LoadContent(cM);
 
             objects.AddStaticBlocker(new InDestructable("Backgrounds/Plaza/plazaBlockers",
-                                                        new Vector2(664, 504) - savingTime));
-            objects.AddTopObject(new AnimatedLight(new Vector2(516, 328) - savingTime, 0));
-            objects.AddTopObject(new AnimatedLight(new Vector2(872, 326) - savingTime, MathHelper.Pi*.25f));
-            objects.AddTopObject(new AnimatedLight(new Vector2(872, 656) - savingTime, MathHelper.Pi*.5f));
+                                                        new Vector2(664, 504)));
+            objects.AddTopObject(new AnimatedLight(new Vector2(516, 328), 0));
+            objects.AddTopObject(new AnimatedLight(new Vector2(872, 326), MathHelper.Pi*.25f));
+            objects.AddTopObject(new AnimatedLight(new Vector2(872, 656), MathHelper.Pi*.5f));
 
             if (typeOfGame is Assault)
             {
@@ -47,35 +45,35 @@ namespace DotWars
                 var temp = (Assault) typeOfGame;
                 var tempBases = new List<AssaultBase>();
                 //attacker
-                tempBases.Add(new AssaultBase(temp.GetTeams()[0], new Vector2(1132, 110) - savingTime, managers));
+                tempBases.Add(new AssaultBase(temp.GetTeams()[0], new Vector2(1132, 110), managers));
                 //defender
-                tempBases.Add(new AssaultBase(temp.GetTeams()[1], new Vector2(90, 905) - savingTime, managers));
+                tempBases.Add(new AssaultBase(temp.GetTeams()[1], new Vector2(90+128, 905-128), managers));
 
                 //intitialize bases
                 temp.Initialize(managers, tempBases);
 
                 //sniper positions
-                sniperSpots.Add(new Vector2(1290, 930) - savingTime);
-                sniperSpots.Add(new Vector2(200, 160) - savingTime);
-                sniperSpots.Add(new Vector2(1230, 155) - savingTime);
-                sniperSpots.Add(new Vector2(195, 860) - savingTime);
+                sniperSpots.Add(new Vector2(1290, 930));
+                sniperSpots.Add(new Vector2(200, 160));
+                sniperSpots.Add(new Vector2(1230, 155));
+                sniperSpots.Add(new Vector2(195, 860));
 
                 //set up spawns
                 //team one (attackers) spawns
-                spawnplaces.Add(new SpawnPoint(temp.GetAllyBase(temp.GetAttacker()).GetOriginPosition() - savingTime,
+                spawnplaces.Add(new SpawnPoint(temp.GetAllyBase(temp.GetAttacker()).GetOriginPosition(),
                                                temp.GetTeams()[0], managers));
-                spawnplaces.Add(new SpawnPoint(new Vector2(1050, 150) - savingTime, temp.GetTeams()[0], managers));
-                spawnplaces.Add(new SpawnPoint(new Vector2(1290, 405) - savingTime, temp.GetTeams()[0], managers));
-                spawnplaces.Add(new SpawnPoint(new Vector2(520, 120) - savingTime, temp.GetTeams()[0], managers));
-                spawnplaces.Add(new SpawnPoint(new Vector2(1140, 670) - savingTime, temp.GetTeams()[0], managers));
+                spawnplaces.Add(new SpawnPoint(new Vector2(1050, 150), temp.GetTeams()[0], managers));
+                spawnplaces.Add(new SpawnPoint(new Vector2(1290, 405), temp.GetTeams()[0], managers));
+                spawnplaces.Add(new SpawnPoint(new Vector2(520, 120), temp.GetTeams()[0], managers));
+                spawnplaces.Add(new SpawnPoint(new Vector2(1140, 670), temp.GetTeams()[0], managers));
 
                 //team two (defenders) spawns
-                spawnplaces.Add(new SpawnPoint(temp.GetAllyBase(temp.GetDefender()).GetOriginPosition() - savingTime,
+                spawnplaces.Add(new SpawnPoint(temp.GetAllyBase(temp.GetDefender()).GetOriginPosition(),
                                                temp.GetTeams()[1], managers));
-                spawnplaces.Add(new SpawnPoint(new Vector2(100, 920) - savingTime, temp.GetTeams()[1], managers));
-                spawnplaces.Add(new SpawnPoint(new Vector2(100, 445) - savingTime, temp.GetTeams()[1], managers));
-                spawnplaces.Add(new SpawnPoint(new Vector2(550, 960) - savingTime, temp.GetTeams()[1], managers));
-                spawnplaces.Add(new SpawnPoint(new Vector2(445, 565) - savingTime, temp.GetTeams()[1], managers));
+                spawnplaces.Add(new SpawnPoint(new Vector2(100, 920), temp.GetTeams()[1], managers));
+                spawnplaces.Add(new SpawnPoint(new Vector2(100, 445), temp.GetTeams()[1], managers));
+                spawnplaces.Add(new SpawnPoint(new Vector2(550, 960), temp.GetTeams()[1], managers));
+                spawnplaces.Add(new SpawnPoint(new Vector2(445, 565), temp.GetTeams()[1], managers));
             }
 
             else if (typeOfGame is Survival)
@@ -83,20 +81,20 @@ namespace DotWars
                 var temp = (Survival) typeOfGame;
 
                 var tempClaimables = new List<Claimable>();
-                tempClaimables.Add(new Claimable(new Vector2(930, 270) - savingTime));
-                tempClaimables.Add(new Claimable(new Vector2(1050, 785) - savingTime));
-                tempClaimables.Add(new Claimable(new Vector2(515, 205) - savingTime));
-                tempClaimables.Add(new Claimable(new Vector2(380, 630) - savingTime));
+                tempClaimables.Add(new Claimable(new Vector2(930, 270)));
+                tempClaimables.Add(new Claimable(new Vector2(1050, 785)));
+                tempClaimables.Add(new Claimable(new Vector2(515, 205)));
+                tempClaimables.Add(new Claimable(new Vector2(380, 630)));
 
-                spawnplaces.Add(new SpawnPoint(new Vector2(60, 945) - savingTime, NPC.AffliationTypes.grey, managers));
-                spawnplaces.Add(new SpawnPoint(new Vector2(60, 860) - savingTime, NPC.AffliationTypes.grey, managers));
-                spawnplaces.Add(new SpawnPoint(new Vector2(155, 945) - savingTime, NPC.AffliationTypes.grey, managers));
-                spawnplaces.Add(new SpawnPoint(new Vector2(155, 860) - savingTime, NPC.AffliationTypes.grey, managers));
+                spawnplaces.Add(new SpawnPoint(new Vector2(60, 945), NPC.AffliationTypes.grey, managers));
+                spawnplaces.Add(new SpawnPoint(new Vector2(60, 860), NPC.AffliationTypes.grey, managers));
+                spawnplaces.Add(new SpawnPoint(new Vector2(155, 945), NPC.AffliationTypes.grey, managers));
+                spawnplaces.Add(new SpawnPoint(new Vector2(155, 860), NPC.AffliationTypes.grey, managers));
 
-                suicideSpawnplaces.Add(new SuicideSpawnPoint(new Vector2(520, 120) - savingTime, managers));
-                suicideSpawnplaces.Add(new SuicideSpawnPoint(new Vector2(1050, 155) - savingTime, managers));
-                suicideSpawnplaces.Add(new SuicideSpawnPoint(new Vector2(200, 160) - savingTime, managers));
-                suicideSpawnplaces.Add(new SuicideSpawnPoint(new Vector2(1290, 405) - savingTime, managers));
+                suicideSpawnplaces.Add(new SuicideSpawnPoint(new Vector2(520, 120), managers));
+                suicideSpawnplaces.Add(new SuicideSpawnPoint(new Vector2(1050, 155), managers));
+                suicideSpawnplaces.Add(new SuicideSpawnPoint(new Vector2(200, 160), managers));
+                suicideSpawnplaces.Add(new SuicideSpawnPoint(new Vector2(1290, 405), managers));
 
                 spawns.LoadTextures(textures);
 
