@@ -100,6 +100,19 @@ namespace DotWars
             }
         }
 
+        public override Level Update(GameTime gT)
+        {
+            //TODO: Test code
+            if (managers.GetRandom().NextDouble() < 0.5)
+            {
+                bool top = managers.GetRandom().Next(2) == 0;
+
+                managers.GetParticleManager().AddParticle("Effects/particle_snow", new Vector2(((top) ? managers.GetRandom().Next((int)GetSizeOfLevel().X) : 0f), ((!top) ? managers.GetRandom().Next((int)GetSizeOfLevel().Y) : 0f)), new Vector2(managers.GetRandom().Next(495, 505), managers.GetRandom().Next(495, 505)), 100, 0, 1, 0.5f, false);
+            }
+
+            return base.Update(gT);
+        }
+
         public override String ToString()
         {
             return "Midwinter";

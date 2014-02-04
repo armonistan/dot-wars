@@ -258,6 +258,9 @@ Content\Audio\Waves\DotWars.xnb
 Content\Textures\Backgrounds\ZenGarden\midwinterBackground.xnb
 Content\Textures\Backgrounds\ZenGarden\midwinterBlockers.xnb
 Content\Textures\Backgrounds\ZenGarden\midwinterForeground.xnb
+Content\Textures\Effects\particle_snow.xnb
+Content\Textures\Backgrounds\Faercrag\faercragLava.xnb
+Content\Textures\Backgrounds\Caged\cagedLava.xnb
 Content\Audio\GameAudio.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb

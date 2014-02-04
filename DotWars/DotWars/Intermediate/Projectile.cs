@@ -75,7 +75,7 @@ namespace DotWars
                   .AddParticle("Effects/particle_smoke", GetOriginPosition(),
                                PathHelper.Direction((float) (MathHelper.Pi*mH.GetRandom().NextDouble())*2f)*20f, 4f, 0.005f,
                                1f,
-                               0.1f);
+                               0.1f, false);
             }
         }
 

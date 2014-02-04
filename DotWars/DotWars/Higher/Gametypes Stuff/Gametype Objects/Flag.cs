@@ -52,14 +52,14 @@ namespace DotWars
                     case FlagStatus.home:
                         if (agent.GetAffiliation() != affiliation &&
                             (agent is Commander || agent is Grunt) &&
-                            CollisionHelper.IntersectPixelsSimple(agent, this) != CollisionHelper.NO_COLLIDE)
+                            CollisionHelper.IntersectPixelsRadius(agent, this, agent.origin.X, 20f) != CollisionHelper.NO_COLLIDE)
                         {
                             captor = agent;
                             status = FlagStatus.taken;
                         }
                         break;
                     case FlagStatus.away:
-                        if (CollisionHelper.IntersectPixelsSimple(agent, this) != CollisionHelper.NO_COLLIDE)
+                        if (CollisionHelper.IntersectPixelsRadius(agent, this, agent.origin.X, 20f) != CollisionHelper.NO_COLLIDE)
                         {
                             if (agent.GetAffiliation() == affiliation)
                             {

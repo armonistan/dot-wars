@@ -9,8 +9,8 @@ namespace DotWars
 {
     public class LavaBurner : Impathable
     {
-        public LavaBurner(Vector2 pos)
-            : base("Backgrounds/Caged/cagedImpassable", pos, Vector2.Zero)
+        public LavaBurner(string asset, Vector2 pos)
+            : base(asset, pos, Vector2.Zero)
         {
         }
 

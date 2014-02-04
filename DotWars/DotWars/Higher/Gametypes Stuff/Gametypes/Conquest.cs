@@ -28,12 +28,12 @@ namespace DotWars
         #endregion
 
         public Conquest(List<NPC.AffliationTypes> tL, Dictionary<Type, NPC.AffliationTypes> pL, int pC, float sT)
-            : base(tL, pL, 200, pC, sT)
+            : base(tL, pL, 300, pC, sT)
         {
             spawnSecs = 4;
             counter = 0;
             scoreTimer = 0.0;
-            scoreTime = 1.0;
+            scoreTime = 1.33;
             this.typeOfGame = GT.CONQUEST;
         }
 
@@ -56,15 +56,6 @@ namespace DotWars
             {
                 b.Update(mH);
             }
-
-            //TODO: Trying this out.
-            //Fucking stupid counter
-            //int teamCounter = 0;
-            //foreach (NPC.AffliationTypes team in teams)
-            //{
-            //    ChangeScoreAbsolute(teamCounter, GetNumAlliedBases(team));
-            //    teamCounter++;
-            //}
 
             //Spawn Section
             if (counter > spawnSecs)
@@ -295,7 +286,7 @@ namespace DotWars
 
         public override string GetSummary()
         {
-            return "Capture all bases and\nkill the enemy commanders!";
+            return "Hold bases to earn points.\nFirst to " + winScore + " points wins!";
         }
     }
 }

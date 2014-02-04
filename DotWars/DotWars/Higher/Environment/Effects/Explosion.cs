@@ -83,7 +83,7 @@ namespace DotWars
 
         public void Set(Vector2 p, int d, NPC n, ManagerHelper mH)
         {
-            base.Set(asset, p, Vector2.Zero, 0.1f, 0, 0, 0.5f, mH);
+            base.Set(asset, p, Vector2.Zero, 0.1f, 0, 0, 0.5f, true, mH);
 
             existanceTime = 0.1f;
             affiliation = n.GetAffiliation();
@@ -99,7 +99,7 @@ namespace DotWars
 
         public void Set(Vector2 p, int d, NPC.AffliationTypes aT, ManagerHelper mH)
         {
-            base.Set(asset, p, Vector2.Zero, 0.1f, 0, 0, 0.5f, mH);
+            base.Set(asset, p, Vector2.Zero, 0.1f, 0, 0, 0.5f, true, mH);
 
             existanceTime = 0.1f;
             affiliation = aT;

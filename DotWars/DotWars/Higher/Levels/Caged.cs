@@ -21,8 +21,8 @@ namespace DotWars
             base.Initialize();
 
             //Set up background
-            backgrounds.AddBackground(new Lava(new Vector2(232, 272), new Vector2(1, 0)));
-            backgrounds.AddBackground(new Lava(new Vector2(432, 272), new Vector2(1, 0)));
+            backgrounds.AddBackground(new Lava("Backgrounds/Caged/cagedLava", new Vector2(101+100, 272), new Vector2(1f, 0), 1+100, 400+100));
+            backgrounds.AddBackground(new Lava("Backgrounds/Caged/cagedLava", new Vector2(301+100, 272), new Vector2(1f, 0), 1+100, 400+100));
             backgrounds.AddBackground(new Sprite("Backgrounds/Caged/cagedBackground", new Vector2(432, 272)));
         }
 
@@ -31,7 +31,7 @@ namespace DotWars
             base.LoadContent(cM);
 
             objects.AddStaticBlocker(new InDestructable("Backgrounds/Caged/cagedBlockers", new Vector2(432, 272)));
-            objects.AddImpathable(new LavaBurner(new Vector2(432, 272)), true);
+            objects.AddImpathable(new LavaBurner("Backgrounds/Caged/cagedImpassable", new Vector2(432, 272)), true);
 
             if (typeOfGame is Assassins)
             {
@@ -78,12 +78,12 @@ namespace DotWars
         public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sB, GraphicsDeviceManager gM,
                                   bool drawHUD)
         {
-            foreach (CameraManager.Camera c in cameras.GetCameras())
-            {
-                managers.SetCurrentCam(c);
-                gM.GraphicsDevice.Viewport = c.port;
-                Vector2 displacement = cameras.GetDisplacement(c.commanderType);
-            }
+            //foreach (CameraManager.Camera c in cameras.GetCameras())
+            //{
+            //    managers.SetCurrentCam(c);
+            //    gM.GraphicsDevice.Viewport = c.port;
+            //    Vector2 displacement = cameras.GetDisplacement(c.commanderType);
+            //}
 
             base.Draw(sB, gM, drawHUD);
         }

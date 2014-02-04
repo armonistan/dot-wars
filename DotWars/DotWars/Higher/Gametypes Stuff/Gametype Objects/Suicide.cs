@@ -20,6 +20,7 @@ namespace DotWars
             movementSpeed = 50f + temp.suicideSpawnModifier*50f;
             affiliation = AffliationTypes.black;
             animateCounter = 0.0;
+            awareness = 2000f;
         }
 
         public override void Update(ManagerHelper mH)
@@ -36,8 +37,7 @@ namespace DotWars
             foreach (var agent in mH.GetNPCManager().GetNPCs())
             {
                 if (agent.GetAffiliation() != affiliation &&
-                    NPCManager.IsNPCInRadius(agent, GetOriginPosition(), sight) &&
-                    NPCManager.IsNPCInDirection(agent, GetOriginPosition(), rotation, vision, mH))
+                    NPCManager.IsNPCInRadius(agent, GetOriginPosition(), awareness))
                 {
                     float distanceToEnemy = PathHelper.DistanceSquared(GetOriginPosition(), agent.GetOriginPosition());
 
@@ -71,7 +71,7 @@ namespace DotWars
         protected override void Explode(ManagerHelper mH)
         {
             mH.GetParticleManager().AddExplosion(GetOriginPosition(), ((lastDamager == null) ? this : lastDamager), 300);
-           Kill();
+            Kill();
 
             if (lastDamager != null)
             {

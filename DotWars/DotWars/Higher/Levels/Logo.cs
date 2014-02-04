@@ -92,7 +92,8 @@ namespace DotWars
             textures.Add("Backgrounds/Caged/cagedBackground", new Rectangle(0, 0, 864, 544));
             textures.Add("Backgrounds/Caged/cagedBlockers", new Rectangle(0, 0, 864, 544));
             textures.Add("Backgrounds/Caged/cagedImpassable", new Rectangle(0, 0, 864, 544));
-            textures.Add("Backgrounds/Caged/lava", new Rectangle(0, 0, 200, 544));
+            textures.Add("Backgrounds/Caged/lava", new Rectangle(0, 0, 300, 544));
+            textures.Add("Backgrounds/Caged/cagedLava", new Rectangle(0, 0, 200, 544));
 
             #endregion
 
@@ -107,6 +108,7 @@ namespace DotWars
             textures.Add("Backgrounds/Faercrag/faercragBlockers", new Rectangle(0, 0, 1312, 992));
             textures.Add("Backgrounds/Faercrag/faercragBackground", new Rectangle(0, 0, 1312, 992));
             textures.Add("Backgrounds/Faercrag/faercragImpassable", new Rectangle(0, 0, 1312, 992));
+            textures.Add("Backgrounds/Faercrag/faercragLava", new Rectangle(0, 0, 1312, 992));
 
             #endregion
 
@@ -242,6 +244,7 @@ namespace DotWars
             textures.Add("Effects/smoke_green", new Rectangle(0, 0, 9, 9));
             textures.Add("Effects/smoke_yellow", new Rectangle(0, 0, 9, 9));
             textures.Add("Effects/smoke_standard", new Rectangle(0, 0, 30, 30));
+            textures.Add("Effects/particle_snow", new Rectangle(0, 0, 8, 8));
 
             textures.Add("Effects/suicide_spawn_sprite", new Rectangle(0, 0, 96, 96));
 

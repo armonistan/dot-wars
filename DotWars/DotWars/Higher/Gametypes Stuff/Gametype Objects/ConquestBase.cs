@@ -152,7 +152,7 @@ namespace DotWars
                                 mH.GetParticleManager().AddParticle(smokeAsset, GetOriginPosition(),
                                                                     PathHelper.Direction(
                                                                         (float) (mH.GetRandom().NextDouble()*Math.PI*2))*
-                                                                    50, 1, 0.01f, 1, 0.05f);
+                                                                    50, 1, 0.01f, 1, 0.05f, false);
                             }
 
                             for (int a = 0; a < NUM_AGENTS_ON_CAPTURE; a++)

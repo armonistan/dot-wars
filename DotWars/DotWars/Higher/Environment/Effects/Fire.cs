@@ -24,7 +24,7 @@ namespace DotWars
 
         public void Set(Vector2 p, Vector2 v, float dT, float d, float t, float rA, ManagerHelper mH)
         {
-            base.Set("Effects/particle_fire", p, v, dT, d, t, rA, mH);
+            base.Set("Effects/particle_fire", p, v, dT, d, t, rA, true, mH);
 
             frameIndex = mH.GetRandom().Next(4);
             rotation = (float) (mH.GetRandom().NextDouble()*Math.PI)*2;

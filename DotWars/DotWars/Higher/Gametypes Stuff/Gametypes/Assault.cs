@@ -27,6 +27,7 @@ namespace DotWars
             //set up defender and attacker
             attacker = att;
             defender = def;
+            gameEndTimer = 180;
         }
 
         public void Initialize(ManagerHelper mH, List<AssaultBase> bL)

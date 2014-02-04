@@ -369,7 +369,7 @@ namespace DotWars
 
         public override Level Update(GameTime gT)
         {
-            if (timer == 0.0)
+            if (timer == 5)
             {
                 nextLevel.Update(gT);
             }

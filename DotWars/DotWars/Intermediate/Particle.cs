@@ -9,7 +9,7 @@ namespace DotWars
 {
     public class Particle : Sprite
     {
-        public static float MAX_EXIST_TIME = 1;
+        public static float MAX_EXIST_TIME = 2;
 
         #region Declarations
 
@@ -21,6 +21,8 @@ namespace DotWars
 
         protected NPC creator;
 
+        private bool drawOutOfBounds;
+
         #endregion
 
         public Particle() : base("", Vector2.Zero)
@@ -28,12 +30,12 @@ namespace DotWars
             creator = null;
         }
 
-        protected void Set(string a, Vector2 p, Vector2 v, float dT, float d, float t, float rA, ManagerHelper mH)
+        protected void Set(string a, Vector2 p, Vector2 v, float dT, float d, float t, float rA, bool oOB,ManagerHelper mH)
         {
-            Set(a, 0, 0, p, v, dT, d, t, rA, mH);
+            Set(a, 0, 0, p, v, dT, d, t, rA, oOB, mH);
         }
 
-        public void Set(string a, int fI, int mI, Vector2 p, Vector2 v, float dT, float d, float t, float rA,
+        public void Set(string a, int fI, int mI, Vector2 p, Vector2 v, float dT, float d, float t, float rA, bool oOB,
                         ManagerHelper mH)
         {
             asset = a;
@@ -50,10 +52,21 @@ namespace DotWars
             LoadContent(mH.GetTextureManager());
             frameIndex = fI;
             modeIndex = mI;
+
+            drawOutOfBounds = oOB;
         }
 
         public override void Update(ManagerHelper mH)
         {
+            if (!drawOutOfBounds)
+            {
+                if (originPosition.X < 0 || originPosition.X > mH.GetLevelSize().X ||
+                    originPosition.Y < 0 || originPosition.Y > mH.GetLevelSize().Y)
+                {
+                    SetDrawTime(0);
+                }
+            }
+
             if (drawTime > 0)
             {
                 Turn(rotationAmount);

@@ -1340,7 +1340,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Caged\lava.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>2014-01-26T19:49:44-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Caged\cagedImpassable.png</Source>
@@ -1430,7 +1430,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Faercrag\faercragBackground.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>2014-01-27T18:33:35-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Faercrag\faercragBlockers.png</Source>
@@ -1439,7 +1439,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Faercrag\faercragBlockers.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>2014-01-26T20:21:18-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Faercrag\faercragImpassable.png</Source>
@@ -1574,7 +1574,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Plaza\plazaBlockers.xnb</Output>
-      <Time>2013-07-02T16:33:02-05:00</Time>
+      <Time>2014-01-26T17:52:10-06:00</Time>
     </Item>
     <Item>
       <Source>Textures\Backgrounds\Plaza\plazaLighting.png</Source>
@@ -2339,7 +2339,34 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\ZenGarden\midwinterForeground.xnb</Output>
-      <Time>2014-01-26T02:57:16-06:00</Time>
+      <Time>2014-01-26T17:20:42-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Effects\particle_snow.png</Source>
+      <Name>Textures\Effects\particle_snow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Effects\particle_snow.xnb</Output>
+      <Time>2014-01-26T17:34:57-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Faercrag\faercragLava.png</Source>
+      <Name>Textures\Backgrounds\Faercrag\faercragLava</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Faercrag\faercragLava.xnb</Output>
+      <Time>2014-01-26T19:20:54.4998064-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Backgrounds\Caged\cagedLava.png</Source>
+      <Name>Textures\Backgrounds\Caged\cagedLava</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Daniel\Documents\Emberware\Git_Dot_Wars\current\dot-wars\DotWars\DotWars\bin\x86\Debug\Content\Textures\Backgrounds\Caged\cagedLava.xnb</Output>
+      <Time>2014-01-26T19:49:44-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -25,6 +25,10 @@ namespace DotWars
             base.Initialize();
 
             //Set up background
+            backgrounds.AddBackground(new Lava("Backgrounds/Caged/lava", new Vector2(151+180, 272), new Vector2(1f, 0), 1+180, 600+180));
+            backgrounds.AddBackground(new Lava("Backgrounds/Caged/lava", new Vector2(451+180, 272), new Vector2(1f, 0), 1+180, 600+180));
+            backgrounds.AddBackground(new Lava("Backgrounds/Caged/lava", new Vector2(151+180, 720), new Vector2(1f, 0), 1+180, 600+180));
+            backgrounds.AddBackground(new Lava("Backgrounds/Caged/lava", new Vector2(451+180, 720), new Vector2(1f, 0), 1+180, 600+180));
             backgrounds.AddBackground(new Sprite("Backgrounds/Faercrag/faercragBackground", new Vector2(656, 496)));
 
             //sniper points
@@ -39,7 +43,8 @@ namespace DotWars
             base.LoadContent(cM);
 
             objects.AddStaticBlocker(new InDestructable("Backgrounds/Faercrag/faercragBlockers", new Vector2(656, 496)));
-            objects.AddImpassable(new Impassable("Backgrounds/Faercrag/faercragImpassable", new Vector2(656, 496)));
+            //objects.AddImpassable(new Impassable("Backgrounds/Faercrag/faercragImpassable", new Vector2(656, 496)));
+            objects.AddImpathable(new LavaBurner("Backgrounds/Faercrag/faercragLava", new Vector2(656, 496)), true);
 
             if (typeOfGame is CaptureTheFlag)
             {

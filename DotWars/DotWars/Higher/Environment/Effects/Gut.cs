@@ -222,7 +222,7 @@ namespace DotWars
             base.Set(tempAsset, n.GetOriginPosition(),
                      PathHelper.Direction(n.GetRotation() + (float) (mH.GetRandom().NextDouble() - 0.5))*
                      moveSpeed,
-                     3, 0.05f, 1, 0, mH);
+                     3, 0.05f, 1, 0, true, mH);
 
             frameIndex = gutFrame;
         }

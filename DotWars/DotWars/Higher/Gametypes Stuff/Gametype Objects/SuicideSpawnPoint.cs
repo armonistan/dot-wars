@@ -72,7 +72,7 @@ namespace DotWars
                                                                                new Vector2(
                                                                                    mH.GetRandom().Next(-16, 16),
                                                                                    mH.GetRandom().Next(-16, 16)),
-                                                    Vector2.Zero, 0.05f, 0, 0, MathHelper.Pi/10);
+                                                    Vector2.Zero, 0.05f, 0, 0, MathHelper.Pi/10, false);
             }
         }
 

@@ -78,7 +78,7 @@ namespace DotWars
         {
             //Initialize Managers (the thing that will hold all textures used)
             agents = new NPCManager();
-            projectiles = new ProjectileManager(400, 20, 12);
+            projectiles = new ProjectileManager(600, 20, 12);
             objects = new EnvironmentManager();
             backgrounds = new BackgroundManager();
             spawnplaces = new List<SpawnPoint>();
@@ -198,6 +198,7 @@ namespace DotWars
 
         private void DrawStuff(SpriteBatch sB, Vector2 displacement)
         {
+            //TODO: Change back
             backgrounds.DrawBackgrounds(sB, displacement);
             paths.Draw(sB, displacement);
             abilities.DrawBottom(sB, displacement);
@@ -210,9 +211,9 @@ namespace DotWars
 
             abilities.DrawTop(sB, displacement);
             spawns.Draw(sB, displacement);
-            particles.DrawTop(sB, displacement);
-            objects.DrawTop(sB, displacement);
             typeOfGame.DrawTop(sB, displacement);
+            objects.DrawTop(sB, displacement);
+            particles.DrawTop(sB, displacement);
             agents.DrawHighest(sB, displacement);
             backgrounds.Drawforegrounds(sB, displacement);
         }

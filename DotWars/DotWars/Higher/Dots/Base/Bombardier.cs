@@ -72,7 +72,6 @@ namespace DotWars
                     radioTimerCounter += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
                 }
                 radioWave.position = this.position;
-                radioWave.origin = this.origin;
                 radioWave.SetRotation(this.GetRotation());
                 radioWave.Update(mH);
                 calledIn += mH.GetGameTime().ElapsedGameTime.TotalSeconds;
@@ -159,7 +158,6 @@ namespace DotWars
         private Vector2 pickAPoint(ManagerHelper mH)
         {
             List<Vector2> sniperSpots = mH.GetLevel().GetSniperSpots();
-            Vector2 endPoint = GetOriginPosition();
             bool validPoint = true;
             int localCounter = 0;
 

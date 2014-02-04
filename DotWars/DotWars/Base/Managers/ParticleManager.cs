@@ -72,18 +72,22 @@ namespace DotWars
             managers = mH;
         }
 
-        public void AddParticle(string a, Vector2 p, Vector2 v, float dT, float d, float t, float rA)
+        public void AddParticle(string a, Vector2 p, Vector2 v, float dT, float d, float t, float rA, bool oOB)
         {
-            AddParticle(a, 0, 0, p, v, dT, d, t, rA);
+            AddParticle(a, 0, 0, p, v, dT, d, t, rA, oOB);
         }
 
-        private void AddParticle(string a, int fI, int mI, Vector2 p, Vector2 v, float dT, float d, float t, float rA)
+        private void AddParticle(string a, int fI, int mI, Vector2 p, Vector2 v, float dT, float d, float t, float rA, bool oOB)
         {
             if (inactiveParticles.Count > 0)
             {
                 Particle temp = inactiveParticles.Pop();
-                temp.Set(a, fI, mI, p, v, dT, d, t, rA, managers);
+                temp.Set(a, fI, mI, p, v, dT, d, t, rA, oOB, managers);
                 activeParticles.Enqueue(temp);
+            }
+            else
+            {
+                ;
             }
         }
 
@@ -130,7 +134,7 @@ namespace DotWars
 
             AddParticle(asset, n.GetOriginPosition(),
                         PathHelper.Direction((float) (managers.GetRandom().NextDouble()*MathHelper.TwoPi))*50, 2, 0.03f,
-                        1, 2);
+                        1, 2, false);
         }
 
         public void AddHeal(NPC n)
@@ -152,7 +156,7 @@ namespace DotWars
 
             AddParticle("Effects/particle_heal", managers.GetRandom().Next(5), tempMode, n.GetOriginPosition(),
                         PathHelper.Direction((float) (managers.GetRandom().NextDouble()*MathHelper.TwoPi))*50, 2, 0.03f,
-                        1, 0);
+                        1, 0, true);
 
             managers.GetAudioManager().Play(AudioManager.HEAL_SOUND, AudioManager.RandomVolume(managers),
                                             AudioManager.RandomPitch(managers), 0, false);
@@ -162,7 +166,7 @@ namespace DotWars
         {
             AddParticle("Effects/smoke_standard", p,
                         PathHelper.Direction((float) (managers.GetRandom().NextDouble()*MathHelper.TwoPi))*v, 1, 0.01f,
-                        1, 3);
+                        1, 3, true);
         }
 
         private void RemoveParticle()
